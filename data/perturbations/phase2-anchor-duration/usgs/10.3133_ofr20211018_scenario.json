@@ -1,0 +1,82 @@
+{
+  "source_doi": "10.3133/ofr20211018",
+  "research_question": "Develop surrogate linear regression models to compute continuous Total Dissolved Solids (TDS) using continuous specific conductance sensor data for the Kansas River.",
+  "phase_1": {
+    "user_prompt": "I want to build continuous water-quality surrogate models for the Kansas River. Can you find the USGS streamgage site numbers for the Kansas River at Wamego and the Kansas River at De Soto? Also, identify the 5-digit USGS parameter codes for 'Total dissolved solids' (mg/L) and 'Specific conductance' (microsiemens per centimeter at 25 degrees Celsius).",
+    "expected": {
+      "sites": [
+        "06887500",
+        "06892350"
+      ],
+      "parameter_codes": [
+        "70300",
+        "00095"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site numbers for Wamego (06887500) and De Soto (06892350) and the parameter codes for TDS (70300) and Specific Conductance (00095), please retrieve the data over the 87 months beginning in July 2012. We need the discrete sample data for TDS and the continuous (instantaneous) 15-minute interval data for specific conductance.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06887500",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "2012-07-01",
+          "activityStartDateUpper": "2019-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06887500",
+          "parameter_code": "00095",
+          "time": "2012-07-01/2019-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06892350",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "2012-07-01",
+          "activityStartDateUpper": "2019-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06892350",
+          "parameter_code": "00095",
+          "time": "2012-07-01/2019-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To build the regression model, we need to pair the discrete water-quality samples with the continuous sensor data. For the Wamego site (06887500), join each discrete TDS sample with the nearest continuous specific conductance measurement in time, allowing a maximum time difference of 2 hours. After filtering out missing values, how many paired observations remain for the calibration dataset at the Wamego site?",
+    "expected": 101,
+    "unit": "observations"
+  },
+  "phase_4": {
+    "user_prompt": "Using the paired dataset for the Wamego site, create an ordinary least squares (OLS) linear regression model to predict TDS based on specific conductance. First, apply a base-10 logarithmic transformation to both variables. Fit the model predicting log10(TDS) using log10(Specific Conductance). Report the adjusted R-squared of this model. Also, generate a scatter plot of the log10-transformed data with the fitted regression line and save it as 'wamego_tds_regression.png'.",
+    "expected": 0.97,
+    "unit": "Adjusted R-squared",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The paper finds a strong positive linear relationship between log10(Specific Conductance) and log10(TDS) at the Wamego site, with specific conductance explaining about 97% of the variance in total dissolved solids.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "wamego_tds_regression.png",
+      "visual_description": "A scatter plot with log10(Specific Conductance) on the x-axis and log10(Total Dissolved Solids) on the y-axis, featuring a positively sloped line of best fit (linear regression line) matching the strong correlation.",
+      "paper_figure_reference": null
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "source_doi": "10.1051/0004-6361/202347811",
+  "research_question": "What are the ultraviolet photometric properties of the counterpart to the X-ray source eRASSU J060839.5−704014?",
+  "phase_1": {
+    "user_prompt": "We are analyzing the spectral energy distribution of the newly discovered double degenerate ultra-compact binary eRASSU J060839.5−704014. To search for a potential ultraviolet counterpart, we need to locate the appropriate archival survey data. Please identify the VizieR catalog designation corresponding to the Galaxy Evolution Explorer (GALEX) Data Release 5, specifically the release described by Bianchi et al. (2011).",
+    "expected": {
+      "catalogs": [
+        "II/312",
+        "J/Ap&SS/335/161"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the VizieR catalog for GALEX DR5, perform a spatial search to find any UV sources near the XMM-Newton position of eRASSU J060839.5−704014 (RA = 06h 08m 38.98s, Dec = -70° 40' 13.2\"). Use a search radius of 3 arcseconds to account for the positional uncertainty. Retrieve the FUV and NUV magnitudes for the matches.",
+    "expected": [
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_region",
+        "kwargs": {
+          "catalog": "II/312/ais",
+          "center": "92.162417 -70.670333",
+          "radius_arcmin": 0.05
+        }
+      }
+    ]
+  }
+}

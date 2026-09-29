@@ -1,0 +1,97 @@
+{
+  "source_doi": "10.3133/ofr20141204",
+  "research_question": "Can we develop reliable continuous suspended-sediment concentration (SSC) estimates using instream turbidity and discharge as surrogate variables for gaging stations in the Toutle River Basin?",
+  "phase_1": {
+    "user_prompt": "I'm researching sediment transport in the Toutle River Basin near Mount St. Helens, Washington. I want to build a regression model to estimate suspended-sediment concentration using surrogate continuous variables. How can I find the USGS gaging stations for the 'North Fork Toutle River below Sediment Retention Structure' and the mainstem 'Toutle River at Tower Road', and what are their site numbers? I'll be looking for data from April 2010 to September 2011, specifically discharge, instream turbidity, and suspended-sediment concentration.",
+    "expected": {
+      "sites": [
+        "14240525",
+        "14242580"
+      ],
+      "parameter_codes": [
+        "00060",
+        "63680",
+        "80154"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers (14240525 and 14242580), please retrieve their 15-minute (continuous/instantaneous) data for discharge and turbidity. Also, retrieve the discrete sampled suspended-sediment concentrations (this includes both point/pump samples and cross-sectional samples). We need this data over the 18 months beginning in April 2010.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-14240525",
+          "parameter_code": "00060",
+          "time": "2010-04-01/2011-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-14240525",
+          "parameter_code": "63680",
+          "time": "2010-04-01/2011-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-14242580",
+          "parameter_code": "00060",
+          "time": "2010-04-01/2011-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-14242580",
+          "parameter_code": "63680",
+          "time": "2010-04-01/2011-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-14240525",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2010-04-01",
+          "activityStartDateUpper": "2011-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-14242580",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2010-04-01",
+          "activityStartDateUpper": "2011-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To prepare for modeling, match each suspended-sediment sample to the closest-in-time 15-minute turbidity and discharge observation. If a sample collection spanned more than 30 minutes, average the 15-minute turbidity values over that period. Exclude any data points where turbidity is 'flat-lined' at the sensor's maximum threshold (e.g., above 1600 FNU). Then, log10-transform all three variables (SSC, turbidity, and discharge). Finally, create a new lagged variable for turbidity representing the previous 15-minute reading (a lag of 1) and log10-transform it as well. How many paired sample observations (cross-sectional and pumping samples combined) do you have for the North Fork Toutle River site (14240525) after this matching?",
+    "expected": 653.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Using the processed dataset, build a multiple linear regression model for the North Fork Toutle River site (14240525) using ordinary least squares (OLS) to predict log10(SSC) from log10(turbidity), log10(lagged_turbidity), and log10(discharge). Because estimating SSC in linear space from a log-transformed model introduces bias, compute Duan's smearing bias correction factor (BCF) using the unlogged residuals of your model. What is the calculated BCF for this site?",
+    "expected": 1.149,
+    "unit": null,
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

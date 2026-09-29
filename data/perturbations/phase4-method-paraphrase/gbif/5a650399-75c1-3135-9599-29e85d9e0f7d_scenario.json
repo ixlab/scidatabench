@@ -1,0 +1,45 @@
+{
+  "source_doi": "10.15560/16.4.991",
+  "research_question": "How far is a newly discovered Caribbean population of the introduced hoverfly Syritta flaviventris from its previously known established range in the Americas?",
+  "phase_1": {
+    "user_prompt": "I'm studying the biogeography of hoverflies and recently documented a population of the introduced species Syritta flaviventris in the Dominican Republic. I want to contextualize this finding by figuring out how far it is from the species' known historical range in the Americas. To start, I need to find all georeferenced records of this species globally up to the year 2020. What parameters should I use to query the database for this baseline data?",
+    "expected": {
+      "taxon_keys": [
+        "1544486"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the correct search parameters, please go ahead and download the actual occurrence data for Syritta flaviventris up to 2020 with coordinates. We'll need the raw tabular data for the spatial analysis.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "hasCoordinate": true,
+          "taxonKey": 1544486,
+          "year": "*,2020"
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Since this species is native to the Old World, the global dataset will include many records from Europe and Africa. I'm only interested in its introduced range in the Americas. Please filter the downloaded dataset to only include occurrences in the Western Hemisphere (for example, where longitude is between -170 and -30). How many occurrence records remain in the Americas prior to 2021?",
+    "expected": 457,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "I want to determine the magnitude of this range extension. Calculate the shortest distance over the Earth's surface between two latitude/longitude points (shortest distance over the Earth's surface between two latitude/longitude points) distance in kilometers between my new Dominican Republic record (latitude 18.47169, longitude -69.32667) and the closest known historical occurrence in our filtered Americas dataset. Additionally, create a geographic map showing the historical distribution in the Americas with my new Caribbean record highlighted as a distinct point. Save the visualization as `syritta_range_extension_map.png`.",
+    "expected": 1400.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The newly discovered population in the Dominican Republic represents the first record of the genus Syritta in the West Indies. It is geographically isolated, located approximately 1,400 km away from the nearest previously known established population in Florida, United States, indicating a significant jump likely mediated by human transport.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "syritta_range_extension_map.png",
+      "visual_description": "A geographic map of the Americas showing baseline occurrence points for S. flaviventris (predominantly in the USA, Mexico, Brazil, Argentina, and Chile) with a distinct, highlighted point (e.g., in red) located in the Dominican Republic (Caribbean).",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

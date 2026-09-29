@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.1038/s41598-018-22758-z",
+  "research_question": "What are the core hydrographic variables a standard Argo float reports, and which float documents the deep equatorward flow past Cape Hatteras?",
+  "phase_1": {
+    "user_prompt": "We are reconstructing the deep equatorward flow of Labrador Sea Water as it rounds Cape Hatteras, using a float that was released there in April 2017 and drifted at a nominal parking depth of 1000 dbar. Two things before we fetch anything. First, name the three core variables that every standard (non-biogeochemical) Argo float returns on each profile, written exactly as the Argo data format labels them. Second, work out the WMO identifier of the float itself, which was the fourth SOLO-II deployed on that cruise and carried serial number 7424.",
+    "expected": {
+      "float_wmo_ids": [
+        "4902912"
+      ],
+      "parameters": [
+        "TEMP",
+        "PSAL",
+        "PRES"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the WMO ID for the Argo float deployed during the AR-15 cruise near Cape Hatteras (WMO 4902166), retrieve its trajectory and profile data. We need to access its location and time variables to ultimately calculate the float's drift speed between its 6th and 8th satellite fixes.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 4902912
+        }
+      }
+    ]
+  }
+}

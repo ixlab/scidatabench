@@ -1,0 +1,54 @@
+{
+  "source_doi": "10.1007/s10530-023-03071-x",
+  "research_question": "Map the distribution of introduced predatory Testacella slugs in North America and calculate the spatial extent of the newly established Testacella maugei population.",
+  "phase_1": {
+    "user_prompt": "I'm researching the spread of introduced subterranean predatory slugs in North America. Specifically, I want to track occurrences of the genus Testacella across the United States, Canada, and Mexico to see where they've established. Can you identify the correct taxonomy and scope out what filters I'll need to retrieve georeferenced data?",
+    "expected": {
+      "country_codes": [
+        "US",
+        "CA",
+        "MX"
+      ],
+      "taxon_keys": [
+        "6530"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the occurrence records for this genus in North America. Make sure to only include records that have spatial coordinates so we can map their distribution.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": [
+            "US",
+            "CA",
+            "MX"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 6530
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded records. First, remove any duplicate observations based on exact coordinates and date. Then, clean the data to isolate distinct species (e.g., removing records identified only to the genus level). How many cleaned occurrences remain in total?",
+    "expected": 166,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "I'm particularly interested in the recently established Testacella maugei population in California. Calculate the maximum geographic distance (in kilometers) between any two Testacella maugei occurrence points to estimate the extent of their spread. Also, generate a map showing the distribution of all Testacella species in North America, color-coded by species, and save it as `testacella_distribution_map.png`.",
+    "expected": 100.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Testacella haliotidea has a widespread but scattered distribution in the eastern USA, Pacific states, and British Columbia. In contrast, Testacella maugei is restricted to a highly localized range spanning approximately 100 km in the San Francisco Bay area of California.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "testacella_distribution_map.png",
+      "visual_description": "A geographic map of North America showing occurrence points of Testacella species. Points should be color-coded by species, clearly distinguishing the broad, scattered coastal distribution of T. haliotidea and the tightly clustered grouping of T. maugei in central California.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

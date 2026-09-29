@@ -1,0 +1,57 @@
+{
+  "source_doi": "10.3133/ofr20181089",
+  "research_question": "How strongly correlated are base-flow field measurements at a partial-record streamgage in New Jersey with concurrent daily mean flows at a nearby continuous-record index station?",
+  "phase_1": {
+    "user_prompt": "I'm looking to apply the MOVE.1 regression technique (Line of Organic Correlation) to estimate low-flow statistics at a partial-record streamgage in New Jersey. My target site is the South Branch Raritan River at Four Bridges, NJ. I want to use the Rockaway River at Main Street at Boonton, NJ as my continuous-record index station. Could you find the official USGS site numbers for these two stations, as well as the standard parameter code for streamflow/discharge?",
+    "expected": {
+      "sites": [
+        "01396190",
+        "01380450"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers (01396190 for the Four Bridges partial-record site and 01380450 for the Boonton index site) and the discharge parameter code (00060), please retrieve the flow data. For the Four Bridges site, download the discrete field measurements of discharge. For the Boonton site, download the continuous daily mean discharge data. We are interested in the period covering Water Years 1999 through 2012 (October 1, 1998 to September 30, 2012).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01396190",
+          "time": "1998-10-01/2012-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01380450",
+          "parameter_code": "00060",
+          "time": "1998-10-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "We need to pair the instantaneous base-flow measurements at the partial-record site with the daily mean flows at the index site. First, filter the field measurements to ensure you only have valid discharge measurements. Then, match each field measurement at the Four Bridges site with the daily mean discharge at the Boonton site on the exact same date. Finally, apply a base-10 logarithmic transformation to both sets of discharge values. How many paired observations remain after this matching process?",
+    "expected": 140,
+    "unit": "observations"
+  },
+  "phase_4": {
+    "user_prompt": "Using the paired, log-transformed discharge data, compute the coefficient of determination (R²) to evaluate how well the index station explains the variance in the partial-record station's flows. Additionally, generate a scatterplot with the index station daily flow on the x-axis and the partial-record station flow on the y-axis (both plotted using log scales or log-transformed values), and overlay the MOVE.1 regression line (line of organic correlation). Save the plot as `move1_correlation_scatterplot.png`.",
+    "expected": 0.96,
+    "unit": "unitless",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The daily mean flows at the Rockaway River index station exhibit a strong correlation with the instantaneous base flows at the South Branch Raritan River partial-record station, explaining approximately 96% of the variance in the log-transformed flows. The points generally fall very close to the regression line, indicating that daily flows measured at the index station are a reliable predictor of flows at the partial record station.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "move1_correlation_scatterplot.png",
+      "visual_description": "A scatterplot showing concurrent log-transformed base flows at the partial-record station (y-axis) against log-transformed daily flows at the index station (x-axis), with a strongly positive linear relationship and a fitted MOVE.1 regression line intersecting the center of the data cloud.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

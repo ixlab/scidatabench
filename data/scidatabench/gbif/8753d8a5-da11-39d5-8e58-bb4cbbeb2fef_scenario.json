@@ -1,0 +1,51 @@
+{
+  "source_doi": "10.24310/abm.49.2024.19775",
+  "research_question": "What is the geographic distribution and altitudinal limit of the naturalized fern Cyrtomium falcatum in the Iberian Peninsula based on GBIF occurrence data?",
+  "phase_1": {
+    "user_prompt": "I'm studying the invasion of the exotic fern Cyrtomium falcatum in southwestern Europe. Could you find GBIF occurrence records for this species specifically in Spain and Portugal to represent the Iberian Peninsula and Balearic Islands?",
+    "expected": {
+      "country_codes": [
+        "ES",
+        "PT"
+      ],
+      "taxon_keys": [
+        "2650829"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the occurrence data for Cyrtomium falcatum in Spain and Portugal that you just located.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": [
+            "ES",
+            "PT"
+          ],
+          "taxonKey": 2650829
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the downloaded data by filtering out records without geographic coordinates and those lacking valid elevation data. How many complete records remain for analysis?",
+    "expected": 362,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Based on the cleaned data, what is the maximum altitude (in meters) at which this species has been recorded in this region? Also, generate a map showing the spatial distribution of these occurrences and save it as `cfalcatum_iberian_distribution.png`. Finally, summarize whether this species exhibits primarily a coastal or inland distribution pattern.",
+    "expected": 180.0,
+    "unit": "meters",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Cyrtomium falcatum behaves primarily as a coastal species in the Iberian Peninsula, being restricted to low altitudes near the coastline with a maximum elevation limit of approximately 180 meters.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "cfalcatum_iberian_distribution.png",
+      "visual_description": "A map of the Iberian Peninsula (Spain and Portugal) and the Balearic Islands showing occurrence points of Cyrtomium falcatum. The points should be concentrated heavily along the coastal margins, with very few or no points deep inland.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

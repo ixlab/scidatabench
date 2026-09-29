@@ -1,0 +1,72 @@
+{
+  "source_doi": "10.3133/ofr20211065",
+  "research_question": "Evaluate the representativeness and coverage of discrete suspended-sediment sampling across the hydrograph using continuous streamflow and turbidity data in the Upper Esopus Creek watershed, New York.",
+  "phase_1": {
+    "user_prompt": "I'm planning a study on suspended-sediment dynamics in the Upper Esopus Creek watershed in Ulster County, New York. I want to evaluate sampling coverage and build regression models between continuous turbidity and suspended-sediment concentration. Can you identify the USGS monitoring stations in Ulster County that have concurrent high-frequency continuous (15-minute) streamflow, continuous turbidity, and discrete suspended-sediment concentration data available during Water Years 2017 to 2019 (October 2016 through September 2019)? Please provide the site numbers and the relevant 5-digit parameter codes for these three variables.",
+    "expected": {
+      "sites": [
+        "0136219503",
+        "013621955",
+        "01362200",
+        "01362286",
+        "0136230002",
+        "01362322",
+        "01362336",
+        "01362345",
+        "01362357",
+        "01362368",
+        "01362370",
+        "01362487",
+        "01362497",
+        "01362500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "63680",
+        "80154"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the sites, let's focus our analysis on the mainstem site 'Esopus Creek at Allaben' (USGS 01362200). Retrieve the high-frequency continuous streamflow data and all available discrete suspended-sediment concentration samples for this specific site over our study period (Water Years 2017-2019).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01362200",
+          "parameter_code": "00060",
+          "time": "2016-10-01/2019-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01362200",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2016-10-01",
+          "activityStartDateUpper": "2019-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To evaluate how well the discrete suspended-sediment samples capture the full range of hydrological conditions at the Allaben site, we first need to establish the upper bound of the flow regime. Process the continuous streamflow data to filter out any erroneous values, and identify the absolute maximum continuous streamflow value observed during the 3-year study period. What is this maximum observed flow?",
+    "expected": 3090.0,
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "Finally, we need to compare the sampled flows against the continuous record to identify any extrapolation bounds. Map the timestamps of the discrete suspended-sediment samples to the continuous streamflow record for the Allaben site to determine the maximum streamflow condition that was actually sampled. Create a time-series plot of the continuous streamflow with the discrete sample points overlaid as scatter points, and save the visualization as 'allaben_sampling_coverage.png'. Based on comparing the highest flow actually sampled versus the overall maximum observed flow, what conclusion can you draw about the sampling coverage during extreme high-flow events? Provide the overall maximum observed streamflow as your numeric answer.",
+    "expected": 3090.0,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "While discrete sampling captured the majority of the flow regime, it failed to capture the most extreme peak flow events. The maximum sampled streamflow was approximately 1,700 cfs, meaning that predicting suspended-sediment concentrations for the highest extreme flows (up to the maximum observed ~3,090 cfs) requires extrapolation beyond the bounds of the sampled calibration data.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "allaben_sampling_coverage.png",
+      "visual_description": "A hydrograph (time series line plot) of streamflow for site 01362200 over the WY 2017-2019 period, with distinct markers (e.g., dots or stars) overlaid indicating the specific times and flow magnitudes when discrete suspended-sediment samples were collected.",
+      "paper_figure_reference": null
+    }
+  }
+}

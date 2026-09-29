@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.3133/sir20165176",
+  "research_question": "What is the long-term trend in flow-normalized filtered nitrate plus nitrite concentrations at the Hackensack River at Rivervale, NJ from 1980 to 2011?",
+  "phase_1": {
+    "user_prompt": "I want to perform a WRTDS (Weighted Regressions on Time, Discharge, and Season) trend analysis on filtered nitrate plus nitrite at the Hackensack River at Rivervale, NJ (USGS site 01377000) from 1971 to 2011. I need to find the standard USGS parameter codes for daily streamflow and filtered nitrate plus nitrite (as N). What are the parameter codes and appropriate NWIS data types to retrieve this data?",
+    "expected": {
+      "sites": [
+        "01377000"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00631"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve the daily streamflow records and all discrete water quality sample data for filtered nitrate plus nitrite at the Hackensack River at Rivervale station for water years 1971 through 2011 (October 1, 1970 to September 30, 2011).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01377000",
+          "parameter_code": "00060",
+          "time": "1970-10-01/2011-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01377000",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1970-10-01",
+          "activityStartDateUpper": "2011-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Before running the trend models, count the total number of discrete water quality measurements available for filtered nitrate plus nitrite at this station during the study period (water years 1971-2011). How many measurements are there?",
+    "expected": 200,
+    "unit": "measurements"
+  },
+  "phase_4": {
+    "user_prompt": "Using the EGRET package in R (or an equivalent WRTDS implementation in Python), fit a Weighted Regressions on Time, Discharge, and Season (WRTDS) model for filtered nitrate plus nitrite at the Hackensack River site using the retrieved data. Calculate the estimated percent change in the flow-normalized annual concentration from water year 1980 to water year 2011. Report this percentage change as a number. Additionally, create a visualization of the flow-normalized concentration over time and save it as 'nitrate_wrtds_trend.png'.",
+    "expected": -1.3,
+    "unit": "percent",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis shows a small but statistically significant downward trend (-1.3%) in flow-normalized filtered nitrate plus nitrite concentrations from 1980 to 2011 at the Hackensack River station.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "nitrate_wrtds_trend.png",
+      "visual_description": "A time-series plot spanning from 1971 to 2011 showing discrete nitrate plus nitrite concentration data points, with a relatively stable but slightly decreasing smoothed line representing the flow-normalized annual concentration.",
+      "paper_figure_reference": null
+    }
+  }
+}

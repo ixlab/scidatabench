@@ -1,0 +1,946 @@
+{
+  "source_doi": "10.1002/ecs2.70209",
+  "research_question": "What are the spatial and temporal trends, and the demographic and morphological factors associated with hantavirus seroprevalence in wild rodents across the United States?",
+  "phase_1": {
+    "user_prompt": "I want to study hantavirus transmission in wild rodents across the US using NEON data. Can you find the data products for small mammal box trapping and rodent pathogen status (specifically hantavirus)?",
+    "expected": {
+      "data_products": [
+        "DP1.10072.001",
+        "DP1.10064.001"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Download the small mammal trapping and rodent hantavirus data for all available terrestrial sites over the 6 calendar years beginning in 2014.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "ABBY",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "ABBY",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "BARR",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "BARR",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "BART",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "BART",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "BLAN",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "BLAN",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "BONA",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "BONA",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "CLBJ",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "CLBJ",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "CPER",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "CPER",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "DCFS",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "DCFS",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "DEJU",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "DEJU",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "DELA",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "DELA",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "DSNY",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "DSNY",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "GRSM",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "GRSM",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "GUAN",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "GUAN",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "HARV",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "HARV",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "HEAL",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "HEAL",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "JERC",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "JERC",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "JORN",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "JORN",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "KONA",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "KONA",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "KONZ",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "KONZ",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "LAJA",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "LAJA",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "LENO",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "LENO",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "MLBS",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "MLBS",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "MOAB",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "MOAB",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "NIWO",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "NIWO",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "NOGP",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "NOGP",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "OAES",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "OAES",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "ONAQ",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "ONAQ",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "ORNL",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "ORNL",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "OSBS",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "OSBS",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "RMNP",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "RMNP",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SCBI",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "SCBI",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SERC",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "SERC",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SJER",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "SJER",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SOAP",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "SOAP",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SRER",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "SRER",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "STEI",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "STEI",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "STER",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "STER",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "TALL",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "TALL",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "TEAK",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "TEAK",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "TOOL",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "TOOL",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "TREE",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "TREE",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "UKFS",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "UKFS",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "UNDE",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "UNDE",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "WOOD",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "WOOD",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "WREF",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10064.001",
+          "site": "WREF",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "YELL",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded NEON data by joining the small mammal trapping records with the hantavirus pathogen test results using their shared identifiers. Filter the combined dataset to the study period of 2014-2019. Count the total number of hantavirus seropositive blood samples across all rodent species.",
+    "expected": 296,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Focus your analysis on the deer mouse (Peromyscus maniculatus) and the white-footed mouse (Peromyscus leucopus). Calculate the mean body mass for hantavirus seropositive individuals of Peromyscus maniculatus. Then, create a boxplot comparing body mass between seropositive and seronegative individuals for both species. Save this visualization as `hantavirus_bodymass_boxplot.png`. Briefly interpret whether seropositive individuals tend to be larger or smaller.",
+    "expected": 20.8,
+    "unit": "g",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Seropositive individuals of both P. maniculatus and P. leucopus tend to have significantly larger body masses compared to seronegative individuals, suggesting that heavier, more robust, sexually active, and potentially more aggressive rodents are more susceptible to hantavirus exposure.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "hantavirus_bodymass_boxplot.png",
+      "visual_description": "A boxplot with body mass (weight) on the y-axis and test result (positive/negative) on the x-axis, separated or faceted by the two species (P. maniculatus and P. leucopus). The positive groups should show higher median body masses than the negative groups for both species.",
+      "paper_figure_reference": "Figure 5"
+    }
+  }
+}

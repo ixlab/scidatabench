@@ -1,0 +1,100 @@
+{
+  "source_doi": "10.1007/s10584-024-03743-0",
+  "research_question": "How do daily observed temperature and precipitation probability density functions from NOAA GHCN stations compare with the GSWP3-W5E5 factual climate dataset across Central Asia?",
+  "phase_1": {
+    "user_prompt": "We are validating the GSWP3-W5E5 factual climate dataset against ground-truth station observations in Central Asia. Before calculating the probability density functions (PDFs), we need the geographic scope to search for stations. What are the specific countries that comprise the Central Asia domain, and what are the standard daily meteorological parameters we should retrieve from the Global Historical Climatology Network (GHCN) to evaluate air temperature and rainfall?",
+    "expected": {
+      "parameters": [
+        "PRCP",
+        "TMAX",
+        "TMIN",
+        "TAVG"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have established the target region and variables, please retrieve the daily temperature and precipitation records from the GHCN database for all available stations located within Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, and Uzbekistan. The data should cover the validation period from 1979 to 2019.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "KZ000035478",
+          "startDate": "1979-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          48.0,
+          68.0
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "KG000036963",
+          "startDate": "1979-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          41.2,
+          74.8
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "TI000038734",
+          "startDate": "1979-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          38.9,
+          71.0
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "TX000038665",
+          "startDate": "1979-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          39.0,
+          59.0
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "UZM00038427",
+          "startDate": "1979-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          41.4,
+          64.6
+        ]
+      }
+    ]
+  }
+}

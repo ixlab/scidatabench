@@ -1,0 +1,175 @@
+{
+  "source_doi": "10.1038/s41467-026-71933-8",
+  "research_question": "How does nocturnal dew formation influence next-day ecosystem gross primary productivity (GPP) across different ecosystem types?",
+  "phase_1": {
+    "user_prompt": "I want to study the impact of dew on gross primary productivity (GPP) in US terrestrial ecosystems. To calculate dew formation, I need canopy surface temperature, relative humidity, and air temperature. To ensure I'm not confusing dew with rain, I need precipitation data. For GPP, I'll need eddy covariance data (specifically gap-filled NEE and ecosystem respiration). Lastly, I also want to account for soil water content. What NEON data products should I use to get the bundled eddy covariance data, IR biological temperature, relative humidity, soil water content, and precipitation?",
+    "expected": {
+      "data_products": [
+        "DP4.00200.001",
+        "DP1.00005.001",
+        "DP1.00098.001",
+        "DP1.00094.001",
+        "DP1.00044.001",
+        "DP1.00045.001",
+        "DP1.00046.001"
+      ],
+      "sites": [
+        "HARV",
+        "KONZ"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the 30-minute resolution data for the bundled eddy covariance, IR biological temperature, relative humidity, soil water content, and precipitation. To keep the processing manageable, limit your download to one forest site (HARV) and one grassland site (KONZ) for the growing season (April to October) of 2018.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP4.00200.001",
+          "site": "HARV",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP4.00200.001",
+          "site": "KONZ",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00005.001",
+          "site": "HARV",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00005.001",
+          "site": "KONZ",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00098.001",
+          "site": "HARV",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00098.001",
+          "site": "KONZ",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00094.001",
+          "site": "HARV",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00094.001",
+          "site": "KONZ",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00044.001",
+          "site": "HARV",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00044.001",
+          "site": "KONZ",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00045.001",
+          "site": "HARV",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00046.001",
+          "site": "HARV",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00046.001",
+          "site": "KONZ",
+          "startdate": "2018-04",
+          "enddate": "2018-10"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved 30-minute data to identify dew nights and calculate daily GPP. First, calculate the dew point temperature (Td) using the empirical equation: Td = Ta - (100 - RH)/5. Define a half-hourly dew event as any interval where the canopy temperature (Tc) is less than or equal to Td. Calculate the cumulative nightly dew duration in hours for the nocturnal window of 20:00 to 07:00 (multiplying half-hourly event counts by 0.5). Exclude any nights with precipitation > 0. For productivity, calculate daytime GPP (06:00 to 18:00) using the nighttime partitioning method (where GPP = RECO - NEE, using the provided gap-filled metrics). What is the calculated average nightly dew duration for the HARV site over this period?",
+    "expected": 2.31,
+    "unit": "hours"
+  },
+  "phase_4": {
+    "user_prompt": "Now compare the next-day vegetation productivity (GPP) following dew nights versus non-dew nights. Define a 'dew night' as a night with a cumulative dew duration strictly greater than 0.5 hours. Normalize the daily GPP values using a z-score transformation within each site. Generate a grouped boxplot comparing the next-day z-scored GPP between dew nights and non-dew nights for both the HARV and KONZ sites, and save the plot as 'dew_gpp_boxplot.png'. Finally, based on the original paper's continental-scale results, what was the reported overall mean dew-associated increase in GPP z-score for forest ecosystems?",
+    "expected": 0.13,
+    "unit": "z-score",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Dew formation is significantly associated with higher next-day gross primary productivity (GPP) in both forest and grassland ecosystems compared to nights without dew.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "dew_gpp_boxplot.png",
+      "visual_description": "A boxplot displaying next-day z-scored GPP. The data should be partitioned into 'Dew nights' and 'Non-dew nights' and grouped or faceted by site (HARV and KONZ). The median horizontal line in the boxes representing 'Dew nights' should visually sit higher than the median line for 'Non-dew nights', demonstrating the positive association between dew and productivity.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

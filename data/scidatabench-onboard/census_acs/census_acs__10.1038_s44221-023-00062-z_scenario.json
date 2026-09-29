@@ -1,0 +1,121 @@
+{
+  "source_doi": "10.1038/s44221-023-00062-z",
+  "research_question": "How do community-level socioeconomic vulnerabilities relate to unexcused school absence rates in Jackson, Mississippi, while controlling for boil water alerts?",
+  "phase_1": {
+    "user_prompt": "We are building a community-level vulnerability score for Jackson, Mississippi, and need demographic and socioeconomic data from the US Census American Community Survey (ACS) 5-year estimates (2016-2020). Identify the most standard 'Detailed Tables' (those starting with 'B') that provide data for the following categories: poverty status, race and Hispanic origin, household type (for single-parent households), sex by age (for elderly and youth), ability to speak English, presence of a computer in the household, disability status, and living arrangements for individuals over 65 (living alone). Also, determine the geographic summary level to use for a community-scale analysis finer than the census tract, as well as the FIPS codes for the state of Mississippi and Hinds County (the primary county for Jackson).",
+    "expected": {
+      "tables": [
+        "B17001",
+        "B03002",
+        "B11001",
+        "B01001",
+        "B16004",
+        "B28001",
+        "B18101",
+        "B09020"
+      ],
+      "geographies": [
+        "block group"
+      ],
+      "state_codes": [
+        "28"
+      ],
+      "county_codes": [
+        "049"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified ACS Detailed Tables for poverty, race, household type, age, English ability, computer access, disability, and living arrangements over 65, retrieve the 2016-2020 5-year ACS data for all block groups in Hinds County, Mississippi.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2020,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B17001)",
+          "for": "block group:*",
+          "in": "state:28 county:049 tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2020,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "block group:*",
+          "in": "state:28 county:049 tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2020,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B11001)",
+          "for": "block group:*",
+          "in": "state:28 county:049 tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2020,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B01001)",
+          "for": "block group:*",
+          "in": "state:28 county:049 tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2020,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B16004)",
+          "for": "block group:*",
+          "in": "state:28 county:049 tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2020,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B28001)",
+          "for": "block group:*",
+          "in": "state:28 county:049 tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2020,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B18101)",
+          "for": "block group:*",
+          "in": "state:28 county:049 tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2020,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B09020)",
+          "for": "block group:*",
+          "in": "state:28 county:049 tract:*"
+        }
+      }
+    ]
+  }
+}

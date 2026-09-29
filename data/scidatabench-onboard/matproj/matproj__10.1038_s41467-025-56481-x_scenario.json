@@ -1,0 +1,30 @@
+{
+  "source_doi": "10.1038/s41467-025-56481-x",
+  "research_question": "What is the relationship between CrystalTransformer-generated atomic embeddings and physical properties for oxide compounds in the Materials Project?",
+  "phase_1": {
+    "user_prompt": "We want to check whether our learned atomic embeddings separate elements in a chemically meaningful way, and for that we need one large, well-populated compound family out of the Materials Project. We have settled on the oxides, which comes to over 60,000 materials, and we will keep only the entries that actually carry values for three computed quantities: the formation energy per atom, the electronic band gap, and the total magnetisation. Name the element that defines that family, and the three Materials Project property fields we should filter on.",
+    "expected": {
+      "elements": [
+        "O"
+      ],
+      "properties": [
+        "formation_energy_per_atom",
+        "band_gap",
+        "total_magnetization"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Materials Project, please retrieve the dataset we need for the interpretability analysis. Specifically, query all oxide compounds (materials containing oxygen) and fetch their formation energy per atom, bandgap, and total magnetization.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "elements": "O",
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom,band_gap,total_magnetization"
+        }
+      }
+    ]
+  }
+}

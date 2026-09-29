@@ -1,0 +1,263 @@
+{
+  "source_doi": "10.3133/fs20203023",
+  "research_question": "Evaluate the data completeness and sensor reliability of the continuous water-quality monitoring network in San Francisco Bay for Water Years 2016-2017, focusing on the impact of biological fouling on specific conductance, temperature, and turbidity sensors.",
+  "phase_1": {
+    "user_prompt": "I am evaluating data completeness for the continuous water-quality monitoring network in San Francisco Bay to understand sensor reliability. Help me identify the USGS site numbers for the 8 key stations monitored in the Bay: Mallard Island, Benicia Bridge, Carquinez Bridge, Richmond/San Rafael Bridge, Alcatraz Island, Pier 17, San Mateo Bridge, and Dumbarton Bridge. Also, what are the standard USGS parameter codes for specific conductance, water temperature, and turbidity?",
+    "expected": {
+      "sites": [
+        "11185185",
+        "11455780",
+        "11455820",
+        "375607122264701",
+        "374938122251801",
+        "374811122235001",
+        "11162765",
+        "373015122071000"
+      ],
+      "parameter_codes": [
+        "00095",
+        "00010",
+        "63680"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now, download the 15-minute continuous data for these 8 stations and 3 parameters for Water Years 2016 and 2017 (over the 24 months beginning in October 2015).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11185185",
+          "parameter_code": "00095",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11185185",
+          "parameter_code": "00010",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11185185",
+          "parameter_code": "63680",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455780",
+          "parameter_code": "00095",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455780",
+          "parameter_code": "00010",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455780",
+          "parameter_code": "63680",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455820",
+          "parameter_code": "00095",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455820",
+          "parameter_code": "00010",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455820",
+          "parameter_code": "63680",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-375607122264701",
+          "parameter_code": "00095",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-375607122264701",
+          "parameter_code": "00010",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-375607122264701",
+          "parameter_code": "63680",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374938122251801",
+          "parameter_code": "00095",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374938122251801",
+          "parameter_code": "00010",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374938122251801",
+          "parameter_code": "63680",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374811122235001",
+          "parameter_code": "00095",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374811122235001",
+          "parameter_code": "00010",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374811122235001",
+          "parameter_code": "63680",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11162765",
+          "parameter_code": "00095",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11162765",
+          "parameter_code": "00010",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11162765",
+          "parameter_code": "63680",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-373015122071000",
+          "parameter_code": "00095",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-373015122071000",
+          "parameter_code": "00010",
+          "time": "2015-10-01/2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-373015122071000",
+          "parameter_code": "63680",
+          "time": "2015-10-01/2017-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Filter the downloaded data to remove any null or rejected values, retaining only valid observations. To check our processing logic, calculate the data completeness percentage for water temperature at the Alcatraz Island station. The completeness percentage is the number of valid records divided by the theoretical maximum number of 15-minute records for the two water years (using 96 points per day), multiplied by 100. What is this percentage for water temperature at Alcatraz?",
+    "expected": 99.0,
+    "unit": "percent"
+  },
+  "phase_4": {
+    "user_prompt": "First, expand this completeness calculation to all parameters across all 8 stations (including upper and lower sensors if present). Compute the percentage of valid data points for each sensor. Average these individual percentages to find the overall network-wide data completeness average. Second, create a grouped bar chart visualization comparing the completeness percentages of the three parameters across all sites to see which sensors are most vulnerable. Save this plot as `parameter_completeness_comparison.png`. Finally, state the network average completeness and discuss which parameter exhibits the lowest data recovery and what typical estuarine challenges (e.g., biological fouling) might cause this.",
+    "expected": 89.0,
+    "unit": "percent",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The overall network data completeness average is approximately 89%. Turbidity consistently has the lowest percentage of valid data across the stations compared to temperature and specific conductance. This lower recovery is largely attributed to biological fouling, which heavily affects optical sensors in estuarine environments.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "parameter_completeness_comparison.png",
+      "visual_description": "A bar chart comparing data completeness percentages (Y-axis) for specific conductance, temperature, and turbidity (grouped on the X-axis by site or parameter) across the network. Turbidity should visibly show the lowest completeness values at most sites.",
+      "paper_figure_reference": null
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "source_doi": "10.1007/s11606-021-06785-7",
+  "research_question": "What is the association between neighborhood poverty (derived from US Census ACS data) and incident heart failure, independent of demographic and clinical risk factors?",
+  "phase_1": {
+    "user_prompt": "We are studying neighborhood poverty and incident heart failure among patients in the Northwestern Medicine network (primarily in Illinois). We derive a neighborhood-level poverty metric from the 5-year 2007-2011 American Community Survey, defining neighborhood poverty as the proportion of individuals living below the poverty threshold at the census-tract level within the state of Illinois. Can you identify the ACS geography level, the state FIPS code, and the detailed variable codes for the total population (for whom poverty status is determined) and the number of individuals living below the poverty level that we would use to calculate this proportion?",
+    "expected": {
+      "variables": [
+        "B17001_001E",
+        "B17001_002E"
+      ],
+      "geographies": [
+        "tract"
+      ],
+      "state_codes": [
+        "17"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the identifiers, please retrieve the 2007-2011 ACS 5-year estimates for the total number of individuals and the number of individuals living below the poverty line for all census tracts in Illinois. Return the extracted data so we can calculate the tract-level poverty proportions.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2011,
+          "dataset": "acs/acs5",
+          "get": "NAME,B17001_001E,B17001_002E",
+          "for": "tract:*",
+          "in": "state:17"
+        }
+      }
+    ]
+  }
+}

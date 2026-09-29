@@ -1,0 +1,205 @@
+{
+  "source_doi": "10.1016/j.tra.2020.02.016",
+  "research_question": "What local socio-demographic characteristics are associated with bus ridership at a point in time, and how do static socio-demographic characteristics correlate with changes in bus ridership over time in Portland, Miami, Minneapolis/St-Paul, and Atlanta?",
+  "phase_1": {
+    "user_prompt": "We are analyzing bus ridership decline in four cities: Portland (OR), Miami, Minneapolis/St-Paul, and Atlanta. To model static neighborhood socio-demographics around bus stops we need 2013-2017 ACS 5-year estimates at a neighborhood scale finer than the census tract. Identify that geographic summary level. Also, provide the 2-digit FIPS state codes corresponding to the states containing these four cities, and the primary ACS detailed table IDs (starting with 'B') required to calculate our core variables: 1) total population by age and sex (to identify residents aged 22-34 and over 62), 2) total population by race (to identify white residents), 3) educational attainment for the population 25 and over (to identify residents with high-school or less), and 4) household size by vehicles available (to identify zero-vehicle households).",
+    "expected": {
+      "tables": [
+        "B01001",
+        "B02001",
+        "B15003",
+        "B08201"
+      ],
+      "geographies": [
+        "block group"
+      ],
+      "state_codes": [
+        "12",
+        "13",
+        "27",
+        "41"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identifiers we found, write a script to retrieve tables B01001, B02001, B15003, and B08201 from the 2013-2017 ACS 5-year estimates. Download this data at the block group geographic level for all block groups located in Florida (FIPS 12), Georgia (FIPS 13), Minnesota (FIPS 27), and Oregon (FIPS 41).",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B01001)",
+          "for": "block group:*",
+          "in": "state:12 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B02001)",
+          "for": "block group:*",
+          "in": "state:12 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B15003)",
+          "for": "block group:*",
+          "in": "state:12 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B08201)",
+          "for": "block group:*",
+          "in": "state:12 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B01001)",
+          "for": "block group:*",
+          "in": "state:13 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B02001)",
+          "for": "block group:*",
+          "in": "state:13 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B15003)",
+          "for": "block group:*",
+          "in": "state:13 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B08201)",
+          "for": "block group:*",
+          "in": "state:13 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B01001)",
+          "for": "block group:*",
+          "in": "state:27 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B02001)",
+          "for": "block group:*",
+          "in": "state:27 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B15003)",
+          "for": "block group:*",
+          "in": "state:27 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B08201)",
+          "for": "block group:*",
+          "in": "state:27 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B01001)",
+          "for": "block group:*",
+          "in": "state:41 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B02001)",
+          "for": "block group:*",
+          "in": "state:41 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B15003)",
+          "for": "block group:*",
+          "in": "state:41 county:* tract:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B08201)",
+          "for": "block group:*",
+          "in": "state:41 county:* tract:*"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.3133/sir20125264",
+  "research_question": "How can record-augmentation techniques (MOVE.1) be applied using long-term continuous streamgages on Kaua'i to estimate natural low-flow availability (flow-duration discharges) at ungaged or partial-record sites?",
+  "phase_1": {
+    "user_prompt": "I am designing a surface water availability study for streams on Kaua'i, Hawaii. I need to identify long-term continuous streamgages on the windward side of the island to use as index stations for flow-duration analysis. Specifically, please find the USGS site numbers for the streamgages on Halaulani Stream and the left branch of 'Opaeka'a Stream. Also, what is the standard USGS 5-digit parameter code for volumetric flow?",
+    "expected": {
+      "sites": [
+        "16097500",
+        "16071500"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the two index streamgages identified on Halaulani Stream and the left branch of 'Opaeka'a Stream, retrieve their daily mean discharge data for a 51-year base period spanning water years 1961 through 2011 (October 1, 1960, to September 30, 2011).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-16097500",
+          "parameter_code": "00060",
+          "time": "1960-10-01/2011-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-16071500",
+          "parameter_code": "00060",
+          "time": "1960-10-01/2011-09-30",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the daily discharge data for the index stations to compute their 50th percentile (median) flow-duration discharges over the 1961-2011 base period. Because water management in Hawaii often relies on million gallons per day (Mgal/d), convert your computed percentiles from cubic feet per second (cfs) to Mgal/d. What is the calculated median discharge (Q50) for the Halaulani Stream station?",
+    "expected": 4.6,
+    "unit": "Mgal/d"
+  },
+  "phase_4": {
+    "user_prompt": "To estimate median flow at an ungaged site on a nearby stream, we will use the Maintenance of Variance Extension Type 1 (MOVE.1) record-augmentation technique. We conducted several low-flow discharge measurements at the ungaged site and paired them with the concurrent daily mean discharge from the Halaulani Stream index station. The paired (Index, Ungaged) measurements in Mgal/d are: [(3.9, 2.50), (3.4, 1.51), (3.7, 2.01), (3.3, 1.50), (4.3, 2.86), (5.7, 2.92), (4.1, 1.66), (3.1, 1.36), (2.6, 0.80)]. First, convert both sets of values to base-10 logarithms. Compute the MOVE.1 regression relation in log-space. Finally, apply this relation to the index station's log-transformed base period Q50 (from the previous step, roughly 4.6 Mgal/d) to estimate the Q50 for the ungaged site. Convert your final answer back to linear space and provide the estimated Q50 in Mgal/d.",
+    "expected": 2.7,
+    "unit": "Mgal/d",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

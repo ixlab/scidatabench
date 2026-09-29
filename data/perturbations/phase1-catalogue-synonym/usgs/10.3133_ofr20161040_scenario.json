@@ -1,0 +1,98 @@
+{
+  "source_doi": "10.3133/ofr20161040",
+  "research_question": "How can continuous real-time specific conductance sensor data be used to develop surrogate linear regression models for discretely sampled total dissolved solids (TDS) in the Kansas River?",
+  "phase_1": {
+    "user_prompt": "I want to develop statistical surrogate models for the Kansas River upstream of major drinking water intakes to estimate constituent concentrations in real-time. Specifically, I'm trying to relate continuous electrical conductivity measurements to discretely sampled dissolved mineral content (TDS) concentrations (dried at 180 degrees C). I'm focusing on two mainstem sites: the Kansas River at Wamego and the Kansas River at De Soto, Kansas. The study period of interest is from July 2012 through June 2015. What are the USGS site numbers for these two locations, and what are the standard 5-digit parameter codes for specific conductance and total dissolved solids? I will need both continuous/instantaneous data and discrete sample data.",
+    "expected": {
+      "sites": [
+        "06887500",
+        "06892350"
+      ],
+      "parameter_codes": [
+        "00095",
+        "70300"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site numbers for Wamego (06887500) and De Soto (06892350) and the parameter codes for specific conductance (00095) and TDS (70300), please retrieve the data for our study period (July 1, 2012, to June 30, 2015). The paper pairs each discrete TDS sample with the field-measured SC collected at the same sampling event, so you need both: the high-frequency continuous SC for context, and discrete QW samples for BOTH TDS (70300) and SC (00095).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06887500",
+          "parameter_code": "00095",
+          "time": "2012-07-01/2015-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06892350",
+          "parameter_code": "00095",
+          "time": "2012-07-01/2015-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06887500",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "2012-07-01",
+          "activityStartDateUpper": "2015-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06892350",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "2012-07-01",
+          "activityStartDateUpper": "2015-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06887500",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2012-07-01",
+          "activityStartDateUpper": "2015-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06892350",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2012-07-01",
+          "activityStartDateUpper": "2015-06-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To build the surrogate model, pair each discrete TDS sampling event at the Wamego site (06887500) with the field-measured SC collected at the same sampling event. Match by sampling date, computing one TDS value per date (mean if multiple samples that day) and one SC value per date (mean if multiple samples that day). Drop dates missing either TDS or SC. After matching, how many paired TDS-SC observations remain for the Wamego site?",
+    "expected": 55,
+    "unit": "paired samples"
+  },
+  "phase_4": {
+    "user_prompt": "Now fit an ordinary least squares (OLS) linear regression model to estimate the base-10 logarithm of TDS using the base-10 logarithm of Specific Conductance for the paired data at the Wamego site. What is the multiple R-squared (coefficient of determination) for this surrogate model? Additionally, create a scatter plot of log10(Specific Conductance) on the x-axis versus log10(TDS) on the y-axis, and overlay the fitted linear regression line. Save the plot as `wamego_tds_surrogate_model.png`.",
+    "expected": 0.977,
+    "unit": "R-squared",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The plot should show a strong positive linear relationship between log-transformed specific conductance and log-transformed total dissolved solids at the Wamego site, reflecting the tight correlation (R2 ~ 0.97) typical of major ion and specific conductance relations.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "wamego_tds_surrogate_model.png",
+      "visual_description": "A scatter plot with log10(Specific Conductance) on the x-axis and log10(TDS) on the y-axis, containing approximately 55 points. A straight regression line with a positive slope (approx 0.91) should be overlaid, fitting the points very closely.",
+      "paper_figure_reference": null
+    }
+  }
+}

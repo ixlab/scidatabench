@@ -1,0 +1,132 @@
+{
+  "source_doi": "10.1007/s00122-019-03428-8",
+  "research_question": "What were the temperature and precipitation conditions across the seven European field trial locations used for maize landrace evaluation in 2017 and 2018?",
+  "phase_1": {
+    "user_prompt": "We are evaluating European maize landraces and need to characterize our field experimental environments using climate data from the GHCN-daily network. Our trials ran at Einbeck, Roggenstein, Bernburg, Klein Wanzleben and Oberer Lindenhof in Germany, and at Golada and Tomeza in Spain. What are the geographic locations we should search on, and which GHCN weather parameters give us daily average, maximum and minimum air temperature and daily rainfall?",
+    "expected": {
+      "parameters": [
+        "TAVG",
+        "TMAX",
+        "TMIN",
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the daily temperature and precipitation records for the years 2017 and 2018 from the weather stations nearest to the seven field trial locations: Einbeck, Roggenstein, Bernburg, Klein Wanzleben, and Oberer Lindenhof in Germany, as well as Golada and Tomeza in Spain.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "GMM00010444",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          51.8222,
+          9.8991
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "GMW00034178",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          48.176,
+          11.32
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "GMM00010356",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          51.794,
+          11.7374
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "GMM00010261",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          52.07,
+          11.3637
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "GMW00034046",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          48.4741,
+          9.3042
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "SPE00120260",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          42.778,
+          -8.0475
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "SPE00120395",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          42.405,
+          -8.627
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.1371/journal.pone.0198231",
+  "research_question": "To characterize the genomic structure, transcripts, and alternative splicing of the long non-coding RNA GAS5 in humans.",
+  "phase_1": {
+    "user_prompt": "We are investigating the genomic structure and alternative splicing of a long non-coding RNA (also known as small nucleolar RNA host gene 2 or SNHG2) that is typically overexpressed in growth-arrested cells. Identify the primary gene symbol for this lncRNA and the species we should characterise it in.",
+    "expected": {
+      "gene_symbols": [
+        "GAS5"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified gene symbol and species, retrieve the comprehensive genomic structure of this gene, including the list of all its alternative splice transcripts and their exons.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "GAS5",
+          "expand": 1
+        }
+      }
+    ]
+  }
+}

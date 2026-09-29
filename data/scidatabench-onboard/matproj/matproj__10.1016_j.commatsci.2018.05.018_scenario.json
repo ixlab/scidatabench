@@ -1,0 +1,31 @@
+{
+  "source_doi": "10.1016/j.commatsci.2018.05.018",
+  "research_question": "How do different crystal structure featurization methods compare in predicting the formation energy of stable ternary oxide materials from the Materials Project?",
+  "phase_1": {
+    "user_prompt": "We are benchmarking crystal-structure featurization methods for machine learning on a ternary-oxide dataset drawn from the Materials Project. Please identify the target property we should train the models to predict, and the elemental constraint that defines this dataset.",
+    "expected": {
+      "properties": [
+        "formation_energy_per_atom"
+      ],
+      "elements": [
+        "O"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Following the TER_OX dataset definition in the 2018 matminer paper, please retrieve the required materials data from the Materials Project. We need stable ternary oxides with a unit cell size of at most 30 atoms. Please fetch the structure, number of sites, formation energy per atom, and energy above hull for these materials.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "elements": "O",
+          "nelements": 3,
+          "energy_above_hull_max": 0.1,
+          "nsites_max": 30,
+          "_fields": "material_id,formula_pretty,nsites,formation_energy_per_atom,energy_above_hull"
+        }
+      }
+    ]
+  }
+}

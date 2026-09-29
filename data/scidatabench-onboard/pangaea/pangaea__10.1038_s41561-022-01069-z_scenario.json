@@ -1,0 +1,30 @@
+{
+  "source_doi": "10.1038/s41561-022-01069-z",
+  "research_question": "How much atmospheric carbon is sequestered in the deep Arctic Ocean via cross-shelf transport of dense Barents Sea Bottom Water?",
+  "phase_1": {
+    "user_prompt": "We are studying the lateral transport of Barents Sea Bottom Water and its role in carbon sequestration. To define our baseline water masses we need the physical oceanography input data: CTD measurements from the 2018 Akademik Tryoshnikov (AT2018) cruise to the Arctic Ocean. Can you find the PANGAEA dataset DOI for these CTD measurements, as well as the main sensor parameters they record?",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.905471"
+      ],
+      "parameters": [
+        "Conductivity",
+        "Temperature",
+        "Fluorescence",
+        "Turbidity"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the dataset identifier (10.1594/PANGAEA.905471), please retrieve the dataset from PANGAEA. Load the tabular data into a pandas DataFrame so we can later analyze the temperature, conductivity, fluorescence, and turbidity variables for the cruise stations.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.905471"
+        }
+      }
+    ]
+  }
+}

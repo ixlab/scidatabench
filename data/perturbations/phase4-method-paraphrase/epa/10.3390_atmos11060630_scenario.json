@@ -1,0 +1,764 @@
+{
+  "source_doi": "10.3390/atmos11060630",
+  "research_question": "Did the COVID-19 stay-at-home order significantly reduce ambient air pollution (PM2.5, NO2, ozone) in the Memphis Metropolitan Area compared to historical baselines?",
+  "phase_1": {
+    "user_prompt": "I want to replicate a study by Jia et al. (2020) on the COVID-19 lockdown impact in the Memphis area. Could you identify the exact 9-digit EPA AQS site IDs for the five stations used: Ncore (center of Memphis), Hernando (Mississippi), Marion (Arkansas), Frayser (North Memphis), and Orgill (northern border)? Also identify the 5-digit parameter codes for the daily criteria pollutants they studied: fine particulate matter, nitrogen dioxide, and ozone.",
+    "expected": {
+      "sites": [
+        "471570075",
+        "471570021",
+        "471571004",
+        "280330002",
+        "050350005"
+      ],
+      "parameter_codes": [
+        "88101",
+        "42602",
+        "44201"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now download the daily summary data for those pollutants at these five sites. I need the data for the lockdown period (March 25 to May 4, 2020) and the baseline period (the same dates in 2017, 2018, and 2019).",
+    "expected": [
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0075"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "0021"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "47",
+          "countycode": "157",
+          "sitenum": "1004"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "28",
+          "countycode": "033",
+          "sitenum": "0002"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "42602",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2017-03-25",
+          "edate": "2017-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2018-03-25",
+          "edate": "2018-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2019-03-25",
+          "edate": "2019-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2020-03-25",
+          "edate": "2020-05-04",
+          "stateFIPS": "05",
+          "countycode": "035",
+          "sitenum": "0005"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To check if our baseline data matches the study, calculate the average PM2.5 concentration at the Hernando site during the baseline period (March 25 to May 4, combined across 2017-2019).",
+    "expected": 7.57,
+    "unit": "µg/m³"
+  },
+  "phase_4": {
+    "user_prompt": "Let's assess the spatial similarity of the background air pollution and the effect of the lockdown. First, calculate the covariance of the two variables divided by the product of their standard deviations for daily Ozone concentrations between the Ncore and Marion stations over the dataset. Second, create a visualization comparing the average concentrations of PM2.5 during the baseline vs. lockdown periods across the Ncore, Hernando, and Marion sites, with error bars representing standard deviations. Save the plot as `pm25_lockdown_comparison.png`. Finally, summarize whether the lockdown led to significant air quality improvements.",
+    "expected": 0.94,
+    "unit": "correlation",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis should conclude that the lockdown period did not result in a significant drop in air pollution compared to the 2017-2019 baseline. Concentrations of PM2.5, NO2, and Ozone remained statistically similar to baseline levels, indicating an insignificant impact of the stay-at-home order.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "pm25_lockdown_comparison.png",
+      "visual_description": "A grouped bar chart displaying mean PM2.5 concentrations for Ncore, Hernando, and Marion sites. Each site should have two bars side-by-side representing the baseline (2017-2019) and lockdown (2020) periods. Error bars representing standard deviations should be present. The plot should visually confirm minimal differences between the two periods.",
+      "paper_figure_reference": "Figure 2 Panel A"
+    }
+  }
+}

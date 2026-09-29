@@ -1,0 +1,319 @@
+{
+  "source_doi": "10.3133/sir20185087",
+  "research_question": "How do tidal conditions (spring vs. neap tides) affect the transport and partitioning of dissolved and particulate mercury in the stormwater drain system discharging into Sinclair Inlet at the Bremerton Naval Complex?",
+  "phase_1": {
+    "user_prompt": "I am researching the tidal flushing of mercury from the stormwater drain system at the Bremerton Naval Complex into Sinclair Inlet, Washington. I know there was a specific USGS project that collected data in this area under the project code 'D6M1200'. Can you find all the USGS site numbers associated with this project? Also, identify the standard 5-digit USGS parameter codes for Specific conductance, Total suspended solids, and Gage height.",
+    "expected": {
+      "sites": [
+        "473346122390308",
+        "473346122390302",
+        "473346122390303",
+        "473346122390304",
+        "473346122390305",
+        "473346122390306",
+        "473343122390201",
+        "473343122390203",
+        "473343122390204",
+        "473339122390300",
+        "473339122390303",
+        "473339122390302",
+        "473337122390301",
+        "473337122390305",
+        "473337122390303",
+        "473337122390306",
+        "473337122390307",
+        "473335122390300",
+        "473335122390302",
+        "473332122390303",
+        "473329122390301",
+        "473329122390304",
+        "473329122390300",
+        "473329122390302",
+        "473329122390306",
+        "473329122390307",
+        "473329122390309",
+        "473322122390703"
+      ],
+      "parameter_codes": [
+        "00095",
+        "00530",
+        "00065"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site numbers you found, retrieve the discrete water quality sample data for these locations. I am specifically interested in the data collected during the spring and neap tide sampling campaigns between May 1, 2012, and June 30, 2012. Please download the records including filtered and particulate mercury, specific conductance, and total suspended solids.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473346122390308",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473346122390302",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473346122390303",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473346122390304",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473346122390305",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473346122390306",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473343122390201",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473343122390203",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473343122390204",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473339122390300",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473339122390303",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473339122390302",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473337122390301",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473337122390305",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473337122390303",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473337122390306",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473337122390307",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473335122390300",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473335122390302",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473332122390303",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473329122390301",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473329122390304",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473329122390300",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473329122390302",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473329122390306",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473329122390307",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473329122390309",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473322122390703",
+          "activityStartDateLower": "2012-05-01",
+          "activityStartDateUpper": "2012-06-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Focus specifically on the samples collected from the A42 vault (which includes all sites where the site number begins with '4733291223903') during the spring tide study on May 7, 2012. Filter your dataset to these records and calculate the maximum concentration of Filtered Total Mercury (FTHg) measured across any of the A42 vault samples on that specific day. Report the result in micrograms per liter (µg/L).",
+    "expected": 0.06,
+    "unit": "ug/L"
+  },
+  "phase_4": {
+    "user_prompt": "Now, analyze the Particulate Total Mercury (PTHg) concentrations from the same A42 vault sites, comparing the spring tide (May 7, 2012) and the neap tide (June 26-27, 2012) sampling campaigns. First, what was the maximum PTHg concentration observed during the June neap tide study? Second, generate a visualization comparing FTHg and PTHg over time for both events, saved as `mercury_dynamics_tides.png`. Finally, based on your analysis, provide a brief qualitative summary of how the particulate mercury concentrations and their relative contribution to total mercury differed between the spring and neap tides.",
+    "expected": 133.0,
+    "unit": "ng/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Particulate total mercury (PTHg) concentrations were an order of magnitude higher during the neap tidal study (reaching up to 133 ng/L) compared to the spring tidal study (where they peaked at around 4.34 ng/L). Furthermore, during the neap tide, the majority of the total mercury was bound to particulates (PTHg), whereas during the spring tide, filtered mercury (FTHg) was the dominant fraction.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "mercury_dynamics_tides.png",
+      "visual_description": "A time-series plot or clustered bar chart showing both Filtered Total Mercury (FTHg) and Particulate Total Mercury (PTHg) on the y-axis over the sampling times (x-axis) for both May 7 and June 26-27. The plot should clearly display the massive spike in PTHg during the June neap tide compared to the relatively low PTHg values during the May spring tide.",
+      "paper_figure_reference": null
+    }
+  }
+}

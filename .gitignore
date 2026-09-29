@@ -1,0 +1,11 @@
+# Produced by running the benchmark (anchored to the repo root, so that
+# skills/*/exec/ is not caught by /exec/)
+/gold/
+/results/
+/exec/
+/cache/
+/logs/
+
+__pycache__/
+*.pyc
+.env

@@ -1,0 +1,38 @@
+{
+  "source_doi": "10.1038/s41598-021-91547-y",
+  "research_question": "How did the 2019-2020 Australian bushfire particulate pollution impact the biochemical properties, specifically chlorophyll-a concentrations and particulate backscattering, in the water column of the Tasman Sea and Southeast Pacific Ocean?",
+  "phase_1": {
+    "user_prompt": "We are studying the impact of the 2019-2020 Australian bushfire particulate pollution on the South Pacific Ocean, using biogeochemical profiling floats to measure the response of phytoplankton and particle concentrations through the water column. Can you identify the WMO numbers of the two SOCCOM floats in that region, and the parameters we need for hydrography, chlorophyll and particle backscatter?",
+    "expected": {
+      "float_wmo_ids": [
+        "5905108",
+        "5904843"
+      ],
+      "parameters": [
+        "TEMP",
+        "PSAL",
+        "CHLA",
+        "BBP700"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the float identifiers (5905108 and 5904843) and parameters (TEMP, PSAL, CHLA, BBP700), please retrieve the profile data for these floats covering the study's timeframe from August 2019 through February 2020. This data will be used to calculate the mixed layer depth and observe the subsurface biological response to the atmospheric deposition.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5905108
+        }
+      },
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5904843
+        }
+      }
+    ]
+  }
+}

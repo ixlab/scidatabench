@@ -1,0 +1,317 @@
+{
+  "source_doi": "10.1007/s10530-022-02831-5",
+  "research_question": "To establish where specific native and non-native myna species (genus Acridotheres) have been observed in the wild on the Indonesian islands of Java, Bali, and Lombok to identify the establishment of invasive alien populations.",
+  "phase_1": {
+    "user_prompt": "We track the establishment of non-native mynas (genus Acridotheres) in Indonesia using research-grade citizen-science observations. Our study region is three adjacent islands, running west to east: the one holding Jakarta, Bandung and Yogyakarta; the Hindu-majority island immediately east of it, whose capital is Denpasar; and the next island east again, capital Mataram, in West Nusa Tenggara province. Eight mynas matter for this work: the black-winged, crested, common, great, bank and pale-bellied mynas, the jungle myna, and the white-vented myna that colonised Singapore and spread from there into West Malaysia. Give me the accepted scientific names for those eight species, and the names of the three islands as iNaturalist records places, so we can scope the occurrence query.",
+    "expected": {
+      "taxon_names": [
+        "Acridotheres melanopterus",
+        "Acridotheres javanicus",
+        "Acridotheres cristatellus",
+        "Acridotheres tristis",
+        "Acridotheres grandis",
+        "Acridotheres ginginianus",
+        "Acridotheres fuscus",
+        "Acridotheres cinereus"
+      ],
+      "place_names": [
+        "Java",
+        "Bali",
+        "Lombok"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the target taxa and locations, please retrieve all 'Research Grade' iNaturalist observations for these 8 myna species (Acridotheres melanopterus, A. javanicus, A. cristatellus, A. tristis, A. grandis, A. ginginianus, A. fuscus, A. cinereus) recorded on the islands of Java, Bali, and Lombok between August 2016 and June 2019.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 145097,
+          "place_id": 6996,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 145097,
+          "place_id": 10782,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 145097,
+          "nelat": -8.2103136,
+          "nelng": 116.725107,
+          "swlat": -8.9561016,
+          "swlng": 115.8212014,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 145095,
+          "place_id": 6996,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 145095,
+          "place_id": 10782,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 145095,
+          "nelat": -8.2103136,
+          "nelng": 116.725107,
+          "swlat": -8.9561016,
+          "swlng": 115.8212014,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14872,
+          "place_id": 6996,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14872,
+          "place_id": 10782,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14872,
+          "nelat": -8.2103136,
+          "nelng": 116.725107,
+          "swlat": -8.9561016,
+          "swlng": 115.8212014,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 204454,
+          "place_id": 6996,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 204454,
+          "place_id": 10782,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 204454,
+          "nelat": -8.2103136,
+          "nelng": 116.725107,
+          "swlat": -8.9561016,
+          "swlng": 115.8212014,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14870,
+          "place_id": 6996,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14870,
+          "place_id": 10782,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14870,
+          "nelat": -8.2103136,
+          "nelng": 116.725107,
+          "swlat": -8.9561016,
+          "swlng": 115.8212014,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14874,
+          "place_id": 6996,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14874,
+          "place_id": 10782,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14874,
+          "nelat": -8.2103136,
+          "nelng": 116.725107,
+          "swlat": -8.9561016,
+          "swlng": 115.8212014,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14869,
+          "place_id": 6996,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14869,
+          "place_id": 10782,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14869,
+          "nelat": -8.2103136,
+          "nelng": 116.725107,
+          "swlat": -8.9561016,
+          "swlng": 115.8212014,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14871,
+          "place_id": 6996,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14871,
+          "place_id": 10782,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 14871,
+          "nelat": -8.2103136,
+          "nelng": 116.725107,
+          "swlat": -8.9561016,
+          "swlng": 115.8212014,
+          "quality_grade": "research",
+          "d1": "2016-08-01",
+          "d2": "2019-06-30"
+        }
+      }
+    ]
+  }
+}

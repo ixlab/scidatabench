@@ -1,0 +1,40 @@
+{
+  "source_doi": "10.5194/acp-22-173-2022",
+  "research_question": "Can ICON-LAM represent the spatio-temporal structure of the Arctic moisture intrusion reasonably, and what is the effect of model horizontal resolution on its representation?",
+  "phase_1": {
+    "user_prompt": "We are conducting a case study evaluating high-resolution simulations of an atmospheric river (moisture intrusion) over Ny-Ålesund, Svalbard, that occurred in June 2017. To validate our model runs, we need the observational ground truth from the AWIPEV research base for the month of June 2017. Please search PANGAEA and identify the datasets containing: 1) high-resolution radiosonde measurements, 2) integrated water vapor derived from the HATPRO microwave radiometer, and 3) basic surface radiation measurements. What are the specific DOIs for these three datasets?",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.879822",
+        "10.1594/PANGAEA.902142",
+        "10.1594/PANGAEA.887502"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the dataset DOIs (10.1594/PANGAEA.879822, 10.1594/PANGAEA.902142, and 10.1594/PANGAEA.887502), please download the corresponding tabular data. We are focusing specifically on the atmospheric river event period from June 5 to June 8, 2017. Extract the temporal records for these dates across all three datasets so we can compare them against our model outputs.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.879822"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.902142"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.887502"
+        }
+      }
+    ]
+  }
+}

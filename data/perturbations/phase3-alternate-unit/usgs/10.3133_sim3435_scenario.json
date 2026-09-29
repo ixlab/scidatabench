@@ -1,0 +1,67 @@
+{
+  "source_doi": "10.3133/sim3435",
+  "research_question": "How did groundwater levels in the Albuquerque area (Santa Fe Group aquifer system) change between 2002 and 2016, and what do nested piezometers indicate about vertical hydraulic gradients near the Rio Grande?",
+  "phase_1": {
+    "user_prompt": "I am conducting a regional analysis of groundwater level changes in the Santa Fe Group aquifer system around Albuquerque, New Mexico. I need to identify the correct USGS parameter code for 'depth to water level, feet below land surface', the standard data type abbreviation for periodic field groundwater level measurements, and the 5-digit FIPS county codes for Bernalillo and Sandoval counties where my study sites are located.",
+    "expected": {
+      "parameter_codes": [
+        "72019"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the parameter code for depth to water, retrieve the periodic groundwater level field measurements for four specific nested piezometer sites located near the Rio Grande: 351059106385902, 351059106385903, 350836106395603, and 350836106395401. Please fetch all records covering the period from January 1, 2002, to December 31, 2016.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-351059106385902",
+          "time": "2002-01-01/2016-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-351059106385903",
+          "time": "2002-01-01/2016-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-350836106395603",
+          "time": "2002-01-01/2016-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-350836106395401",
+          "time": "2002-01-01/2016-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the depth-to-water data to calculate the vertical groundwater-elevation difference for the first nested piezometer pair (shallow alluvial well: 351059106385902, deep production zone well: 351059106385903). Extract the measurements taken on March 12, 2002. Assuming both wells share the exact same land surface elevation, calculate the difference by subtracting the shallow well's depth to water from the deep well's depth to water. What is the calculated vertical difference in meters?",
+    "expected": 11.503152,
+    "unit": "meters"
+  },
+  "phase_4": {
+    "user_prompt": "Now, calculate the same vertical groundwater-elevation difference (deep well depth minus shallow well depth) for the second nested piezometer pair (shallow well: 350836106395603, deep well: 350836106395401) using measurements from January 2, 2002. Based on these positive vertical differences, interpret the direction of the vertical hydraulic gradient between the shallow alluvial aquifer and the deep production zone (e.g., does water have the potential to flow upward or downward?). Finally, create a simple visualization comparing these two 2002 vertical differences and save it as `vertical_gradients_chart.png`.",
+    "expected": 21.67,
+    "unit": "feet",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Because the depth to water is greater in the deep production zone wells compared to the shallow alluvial wells (a positive difference), the groundwater elevation is lower in the deep zone. This indicates a downward vertical hydraulic gradient, meaning there is potential for groundwater to flow from the shallow alluvial aquifer downward into the deep production zone.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "vertical_gradients_chart.png",
+      "visual_description": "A bar chart or similar comparison plot showing two vertical differences representing the year 2002. One bar should be approximately 37.7 feet and the other approximately 21.7 feet.",
+      "paper_figure_reference": null
+    }
+  }
+}

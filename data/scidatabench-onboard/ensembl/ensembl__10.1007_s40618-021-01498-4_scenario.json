@@ -1,0 +1,129 @@
+{
+  "source_doi": "10.1007/s40618-021-01498-4",
+  "research_question": "Which specific human genes harboring functional SNPs (deleterious nsSNPs, miRNA target SNPs, TFBS SNPs, and enhancer SNPs) were computationally characterized in this polycystic ovarian syndrome (PCOS) study, and what are their associated variants in Ensembl?",
+  "phase_1": {
+    "user_prompt": "We are putting together the gene set for a computational study of polycystic ovary syndrome. Our deleterious-nsSNP screen came back with seven amino-acid-changing variants: rs192066345, rs528780505, rs180765750, rs79312957, rs121912525, rs575660698 and rs199505545 — for each of these we want the gene whose protein the variant actually alters, not merely a neighbouring or overlapping locus. Our regulatory screen added five more variants sitting in miRNA target sites or transcription-factor binding sites: rs1042725, rs7312910, rs242538, rs8191514 and rs62579216. On top of those we are carrying forward one further gene from the 5q31 risk region: the double-strand-break repair gene that forms the MRN complex together with MRE11 and NBN. Give me the human gene symbols for that whole set, and the species name to use against Ensembl.",
+    "expected": {
+      "gene_symbols": [
+        "ERBB4",
+        "GATA4",
+        "INSR",
+        "LHCGR",
+        "SUOX",
+        "YAP1",
+        "HMGA2",
+        "MAPRE1",
+        "NEIL2",
+        "DENND1A",
+        "RAD50"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the list of PCOS-related human genes (ERBB4, GATA4, INSR, LHCGR, SUOX, YAP1, HMGA2, MAPRE1, NEIL2, DENND1A, RAD50), please use Ensembl to retrieve the comprehensive list of variants for each of these genes, as the authors did to categorize them into 5'-UTR, intronic, missense, etc.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "2:211375717-212539266",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "8:11676785-11763223",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "19:7112255-7294443",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "2:48686774-48755731",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "12:55996855-56006641",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "11:102109968-102233534",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "12:65824224-65966291",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "20:32819769-32856294",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "8:11769633-11787346",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "9:123379648-123930154",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "5:132556019-132646349",
+          "feature": "variation"
+        }
+      }
+    ]
+  }
+}

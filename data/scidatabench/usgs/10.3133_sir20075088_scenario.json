@@ -1,0 +1,158 @@
+{
+  "source_doi": "10.3133/sir20075088",
+  "research_question": "Investigate spatial and temporal variations, specifically seasonal water-level declines, in the High Plains Aquifer near Seward, Nebraska using nested monitoring wells.",
+  "phase_1": {
+    "user_prompt": "I'm investigating seasonal groundwater flow patterns in the High Plains Aquifer near Seward, Nebraska. I need to locate a set of 12 USGS monitoring wells that were installed in 4 nested groups (often designated locally as FP1, FP2, FP3, and FP4) in Seward County. Please find the official USGS site numbers for these 12 wells, which have groundwater level data spanning from July 2004 through March 2006.",
+    "expected": {
+      "sites": [
+        "405340097094501",
+        "405340097094502",
+        "405340097094503",
+        "405330097110001",
+        "405330097110002",
+        "405330097110003",
+        "405212097110001",
+        "405212097110002",
+        "405212097110003",
+        "405420097114001",
+        "405420097114002",
+        "405420097114003"
+      ],
+      "parameter_codes": [
+        "72019"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 12 site numbers, retrieve their field groundwater level measurements (depth to water below land surface) for the study period from July 1, 2004, to March 31, 2006.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405340097094501",
+          "time": "2004-07-01/2006-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405340097094502",
+          "time": "2004-07-01/2006-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405340097094503",
+          "time": "2004-07-01/2006-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405330097110001",
+          "time": "2004-07-01/2006-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405330097110002",
+          "time": "2004-07-01/2006-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405330097110003",
+          "time": "2004-07-01/2006-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405212097110001",
+          "time": "2004-07-01/2006-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405212097110002",
+          "time": "2004-07-01/2006-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405212097110003",
+          "time": "2004-07-01/2006-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405420097114001",
+          "time": "2004-07-01/2006-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405420097114002",
+          "time": "2004-07-01/2006-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-405420097114003",
+          "time": "2004-07-01/2006-03-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "For each of the 12 wells, process the data to calculate the maximum observed seasonal water-level range (maximum depth to water minus minimum depth to water) during the study period.",
+    "expected": {
+      "USGS-405212097110001": 9.99,
+      "USGS-405212097110002": 10.19,
+      "USGS-405212097110003": 12.25,
+      "USGS-405330097110001": 6.71,
+      "USGS-405330097110002": 6.09,
+      "USGS-405330097110003": 5.42,
+      "USGS-405340097094501": 4.14,
+      "USGS-405340097094502": 3.95,
+      "USGS-405340097094503": 4.14,
+      "USGS-405420097114001": 1.57,
+      "USGS-405420097114002": 4.2,
+      "USGS-405420097114003": 4.17
+    },
+    "unit": "feet"
+  },
+  "phase_4": {
+    "user_prompt": "Using the maximum water-level ranges calculated for each well, identify which of the four well nests (FP1, FP2, FP3, or FP4) experienced the largest seasonal water-level declines. What was the average seasonal decline (in feet) for the wells in that specific nest? Also, please generate a time-series plot of the groundwater levels for all the wells, separated by nest into multiple panels, to visually compare these seasonal patterns. Save this figure as `groundwater_levels_by_nest.png`.",
+    "expected": 11.0,
+    "unit": "feet",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The FP3 well nest exhibited the largest seasonal water-level declines, averaging between 10 and 12 feet, which was significantly greater than the 4 to 7 feet declines observed at the other well nests.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "groundwater_levels_by_nest.png",
+      "visual_description": "A multipanel plot or grouped line chart showing groundwater levels (depth to water or elevation) over time from July 2004 to March 2006 for the four well nests (FP1, FP2, FP3, FP4). The FP3 nest should clearly show the largest seasonal amplitude (steepest drops during the summer).",
+      "paper_figure_reference": "Figure 4"
+    }
+  }
+}

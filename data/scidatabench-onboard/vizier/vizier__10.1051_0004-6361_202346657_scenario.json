@@ -1,0 +1,26 @@
+{
+  "source_doi": "10.1051/0004-6361/202346657",
+  "research_question": "How do rotation periods of magnetic chemically peculiar (mCP) stars derived from TESS data compare with previously published literature periods, specifically those from the International Variable Star Index (VSX)?",
+  "phase_1": {
+    "user_prompt": "I am characterizing the photometric variability of a sample of magnetic chemically peculiar (mCP) stars originally discovered in LAMOST DR4. To compare my newly derived TESS rotation periods against existing literature, I need to retrieve known variable star periods and variability types. Which primary VizieR catalog designation corresponds to the AAVSO International Variable Star Index (VSX), the most comprehensive and up-to-date collection of variable star data?",
+    "expected": {
+      "catalogs": [
+        "B/vsx"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we've identified the AAVSO International Variable Star Index as our reference, query the VizieR catalog B/vsx to retrieve the literature variability type and period for one of our mCP stars located at RA 00h08m40.998s, Dec +58d02m13.20s (J2000). Use a small search radius of 3 arcseconds to avoid mismatched background sources.",
+    "expected": [
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_region",
+        "kwargs": {
+          "catalog": "B/vsx/vsx",
+          "center": "2.17083 58.03700",
+          "radius_arcmin": 0.05
+        }
+      }
+    ]
+  }
+}

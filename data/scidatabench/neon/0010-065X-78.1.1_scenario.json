@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.1649/0010-065x-78.1.1",
+  "research_question": "Do Discoderus species exhibit large episodic fluctuations in annual abundance in Sonoran Desert habitats?",
+  "phase_1": {
+    "user_prompt": "I'm interested in understanding the natural history and population dynamics of ground beetles in the Sonoran Desert, specifically looking at episodic mass emergences. Can you find the NEON data product for pitfall trap sampling of ground beetles? Also, I want to study this at the Santa Rita Experimental Range. What is the 4-letter site code for this location?",
+    "expected": {
+      "data_products": [
+        "DP1.10022.001"
+      ],
+      "sites": [
+        "SRER"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Great. Now please download the ground beetle pitfall trap data for the Santa Rita Experimental Range for all available years from 2016 to 2022.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10022.001",
+          "site": "SRER",
+          "startdate": "2016-01",
+          "enddate": "2022-12"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Now that you have the data, clean and process it to focus on all ground beetles (family Carabidae). Count the total number of individual Carabidae specimens collected at this site across the entire study period (2016-2022). What is the total count?",
+    "expected": 9047,
+    "unit": "individuals"
+  },
+  "phase_4": {
+    "user_prompt": "I want to know if a specific genus, *Discoderus*, drives the overall abundance of ground beetles at this site. First, aggregate the data to calculate the total annual abundance of all Carabidae and the total annual abundance of all *Discoderus* (including *D. robustus*, *D. obsidianus*, and those identified only as *Discoderus* spp.). Then, exclude the year 2016 (which had an extreme mass emergence) and calculate the R-squared (coefficient of determination) between annual total Carabidae abundance and annual *Discoderus* abundance for the remaining years (2017-2022). \n\nAdditionally, create a stacked bar plot showing the annual carabids per trap day for each year (2016-2022). Normalize the counts by the total number of trap days for the year (the sum of days each cup was deployed, based on set and collect dates). The bars should be broken down into four categories: *Discoderus robustus*, *Discoderus obsidianus*, other *Discoderus* spp., and other carabids. Save the plot as `carabid_abundance_normalized.png`.",
+    "expected": 0.91,
+    "unit": "R^2",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Annual Discoderus abundance is a major driver of the overall carabid abundance observed at the SRER site. The year 2016 saw a massive, episodic emergence of Discoderus robustus, which dwarfed counts in all other years.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "carabid_abundance_normalized.png",
+      "visual_description": "A stacked bar chart with years 2016-2022 on the x-axis and individuals per trap day on the y-axis. The year 2016 should show a massive spike (>0.7 individuals per trap day) mostly composed of D. robustus. The rest of the years should have much lower totals (around 0.05 to 0.3), with varying proportions of Discoderus spp., D. robustus, and other carabids.",
+      "paper_figure_reference": "Figure 4"
+    }
+  }
+}

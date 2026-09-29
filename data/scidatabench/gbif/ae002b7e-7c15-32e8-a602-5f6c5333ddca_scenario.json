@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.3897/imafungus.16.166407",
+  "research_question": "How has the invasive American bolete Aureoboletus projectellus expanded geographically and temporally in Poland since its first European observation in 2007?",
+  "phase_1": {
+    "user_prompt": "I am studying the biogeography and spread of the invasive American bolete, Aureoboletus projectellus, in Poland. To track its invasion dynamics, I need to find species occurrence data with precise geographic coordinates from 2007 (when it started expanding) up through 2023. What GBIF data is available for this?",
+    "expected": {
+      "country_codes": [
+        "PL"
+      ],
+      "taxon_keys": [
+        "8339825"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the occurrence records for Aureoboletus projectellus in Poland from 2007 to 2023 that have coordinate data.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "PL",
+          "hasCoordinate": true,
+          "taxonKey": 8339825,
+          "year": "2007,2023"
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To correct for sampling bias and spatial autocorrelation in highly visited foraging spots, we need to spatially deduplicate the records. Please filter the occurrences by creating a spatial grid and removing multiple records that fall within the same 21.62 km² grid cell (which corresponds to roughly 4.65 x 4.65 km). Keep only one record per grid cell. How many spatially thinned records remain in Poland?",
+    "expected": 30,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Using the spatially thinned dataset, calculate the maximum distance (in kilometers) that the fungus has spread from its initial introduction site in Poland (Stilo lighthouse on the Baltic coast, approx. 54.78° N, 17.73° E) to its furthest inland record. Additionally, aggregate the data to calculate the cumulative number of records per year from 2007 to 2023. Plot this cumulative curve over time to visualize the invasion trajectory and save it as `aureoboletus_cumulative_invasion.png`. What is the maximum distance, and what does the curve shape indicate?",
+    "expected": 600.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The cumulative curve exhibits a classic biological invasion pattern, characterized by a slow initial establishment phase followed by a rapid, exponential or curvilinear expansion phase starting around 2017. This indicates the species is successfully established and rapidly dispersing across a broad geographic range.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "aureoboletus_cumulative_invasion.png",
+      "visual_description": "A line or scatter plot showing time (years 2007-2023) on the x-axis and the cumulative number of occurrence records on the y-axis, displaying a distinct exponential or steep curvilinear upward trend taking off roughly halfway through the time series.",
+      "paper_figure_reference": "Figure 3A"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.3133/ofr20201120",
+  "research_question": "What is the long-term trend of nitrate plus nitrite concentrations in groundwater well 12L277 in Dougherty County, Georgia, between 1998 and 2020?",
+  "phase_1": {
+    "user_prompt": "I am researching groundwater quality in the Upper Floridan aquifer near Albany, Dougherty County, Georgia. I'm specifically interested in tracking long-term trends of nitrate contamination between 1998 and 2020. There's a well locally known as '12L277' that has historically shown high nitrate levels. How can I discover the official 15-digit USGS site number for this well, and what is the standard USGS parameter code for 'Nitrate plus nitrite as nitrogen'?",
+    "expected": {
+      "sites": [
+        "313040084125901"
+      ],
+      "parameter_codes": [
+        "00630"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site number (313040084125901) and parameter code (00630) we identified, please download all discrete water quality sample records for this well from the beginning of 1998 through the end of 2020.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-313040084125901",
+          "usgsPCode": "00630",
+          "activityStartDateLower": "1998-01-01",
+          "activityStartDateUpper": "2020-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the retrieved water quality data to prepare it for trend analysis. Keep only routine environmental samples, handle any missing values for the nitrate result, and extract the sample year along with the corresponding nitrate concentrations. What is the mean nitrate concentration for this well across the valid samples in the study period?",
+    "expected": 11.8,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Now, perform a simple linear regression on the processed data to estimate the long-term trend in nitrate concentrations. Regress the nitrate concentration (mg/L) against the year of the sample. What is the slope of this trend line (in mg/L per year)? Additionally, create a scatter plot of the data with the fitted trend line overlaid, and save it as 'nitrate_trend_12L277.png'.",
+    "expected": 0.1987,
+    "unit": "mg/L/year",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Nitrate plus nitrite concentrations in well 12L277 show a significant increasing trend of approximately 0.20 mg/L per year. Recent concentrations consistently exceed the EPA Maximum Contaminant Level of 10 mg/L.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "nitrate_trend_12L277.png",
+      "visual_description": "A scatter plot displaying nitrate concentrations over time for well 12L277 (1998-2020), overlaid with a linear regression trend line indicating a positive upward slope. The y-axis represents nitrate plus nitrite as nitrogen (mg/L) and the x-axis represents the year.",
+      "paper_figure_reference": "Figure 5"
+    }
+  }
+}

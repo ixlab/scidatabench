@@ -1,0 +1,86 @@
+{
+  "source_doi": "10.3133/sir20235131",
+  "research_question": "Evaluate the surface water and groundwater resources in the upper Cienega Creek basin (southeastern Arizona), specifically characterizing the long-term baseflow of Cienega Creek and the major-ion chemistry of the underlying basin-fill aquifer.",
+  "phase_1": {
+    "user_prompt": "I'm assessing the water resources of the Las Cienegas National Conservation Area in southeastern Arizona, focusing on the upper Cienega Creek basin. I need to locate the main USGS streamgage on Cienega Creek near Sonoita, as well as the nearby continuous groundwater observation well known as 'BLM Cienega'. I also need to find four specific basin-fill aquifer wells that have historical discrete water-quality samples from 1971 and 2001 (two of these were historic test wells known as GAC 1 and GAC 2). Please provide the 6 USGS site numbers, along with the standard USGS parameter codes for discharge, groundwater level, and Total Dissolved Solids.",
+    "expected": {
+      "sites": [
+        "09484550",
+        "315021110350301",
+        "314118110360000",
+        "314703110383501",
+        "314719110383001",
+        "314849110353901"
+      ],
+      "parameter_codes": [
+        "00060",
+        "72019",
+        "70300"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve the daily mean streamflow data for the Cienega Creek gage for the complete calendar years 2002 through 2021. Also, retrieve the discrete water chemistry sample results (specifically major ions and Total Dissolved Solids) for the four basin-fill aquifer test wells from 1971 and 2001.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09484550",
+          "parameter_code": "00060",
+          "time": "2002-01-01/2021-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-314118110360000",
+          "usgsPCode": "70300"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-314703110383501",
+          "usgsPCode": "70300"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-314719110383001",
+          "usgsPCode": "70300"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-314849110353901",
+          "usgsPCode": "70300"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Using the daily streamflow data for the Cienega Creek streamgage, calculate the overall average daily streamflow (in cubic feet per second) for the 20-year period spanning 2002 through 2021.",
+    "expected": 1.85,
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "Apply a standard base-flow separation technique (e.g., the Standard Base-Flow Index [BFI] method) to the 2002-2021 Cienega Creek daily streamflow data to estimate the average annual groundwater base flow (in cfs). Additionally, characterize the water type of the four basin-fill aquifer wells using their historical chemistry data. Create a Piper diagram of their relative ionic compositions and save the plot as `basin_fill_piper_diagram.png`.",
+    "expected": 0.62,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The basin-fill aquifer groundwater predominantly exhibits either a calcium-bicarbonate or sodium-bicarbonate water type. The visualization should be a Piper diagram showing the relative milliequivalent percentages of major cations and anions for the four sampled wells, clustering in the bicarbonate region for anions and split between sodium and calcium for cations.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "basin_fill_piper_diagram.png",
+      "visual_description": "A Piper diagram plotting the water chemistry of the four discrete samples. The points should fall in the lower-right area of the anion triangle (bicarbonate dominant) and be split in the cation triangle (two sodium dominant, two calcium dominant).",
+      "paper_figure_reference": "Figure 11"
+    }
+  }
+}

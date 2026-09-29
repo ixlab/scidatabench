@@ -1,0 +1,111 @@
+{
+  "source_doi": "10.3133/ofr20171072",
+  "research_question": "What are the long-term streamflow statistics (mean and maximum daily discharge) for streamgages located on and near the U.S. Army Garrison Fort Carson in Colorado through water year 2015?",
+  "phase_1": {
+    "user_prompt": "I'm assessing surface water resources for the U.S. Army Garrison Fort Carson in Colorado. I need to identify the USGS site numbers for seven specific streamgages in the area: 'Red Creek above Salt Canyon at Fort Carson, CO', 'Turkey Creek near Fountain, CO', 'Turkey Creek ab Teller Res near Stone City, CO', 'Teller Reservoir Spillway near Stone City, CO', 'L Fountain C ab Keaton Re, nr Fort Carson, CO', 'Little Fountain Creek near Fountain, CO', and 'Rock Creek above Fort Carson Reservation, CO'. What are their site numbers?",
+    "expected": {
+      "sites": [
+        "07099085",
+        "07099215",
+        "07099230",
+        "07099238",
+        "07105920",
+        "07105940",
+        "07105945"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that I have the site numbers, I need to retrieve the daily mean discharge records for all seven of these gages. Please download the daily flow data from the beginning of their respective periods of record through the end of water year 2015 (September 30, 2015).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07099085",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2015-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07099215",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2015-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07099230",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2015-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07099238",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2015-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07105920",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2015-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07105940",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2015-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07105945",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2015-09-30",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "I need to calculate the overall historical mean of the daily discharge values for each of the seven sites over their retrieved period of record (up through Sept 30, 2015). Please compute these long-term means, excluding any missing days. What is the computed overall mean daily discharge for the 'Turkey Creek ab Teller Res near Stone City, CO' gage?",
+    "expected": 2.9,
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "Identify the highest recorded daily mean discharge (the maximum daily flow) at the 'Turkey Creek ab Teller Res' gage during this period. Additionally, which of the seven Fort Carson streams had the highest overall mean daily discharge? Finally, create a bar chart comparing the overall mean daily discharge of the seven streamgages and save the plot as `fort_carson_mean_discharge.png`.",
+    "expected": 836.0,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The maximum daily mean discharge at Turkey Creek above Teller Reservoir (site 07099230) was 836 cfs. Among the seven sites analyzed, Little Fountain Creek near Fountain (site 07105940) had the highest overall mean daily discharge at 6.3 cfs.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "fort_carson_mean_discharge.png",
+      "visual_description": "A bar chart showing the mean daily discharge for seven USGS streamgages. The highest bar should belong to Little Fountain Creek (or site 07105940) at approximately 6.3 cfs, closely followed by L Fountain Keaton at 6.2 cfs, with the lowest being Teller Reservoir Spillway near 0 cfs.",
+      "paper_figure_reference": null
+    }
+  }
+}

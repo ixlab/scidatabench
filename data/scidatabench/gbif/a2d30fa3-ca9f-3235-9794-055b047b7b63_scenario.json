@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.1007/s12231-021-09517-4",
+  "research_question": "What is the geographic distribution and total number of recognized Aframomum species in Africa documented as preserved specimens or human observations?",
+  "phase_1": {
+    "user_prompt": "I am conducting a biogeographical study on the plant genus Aframomum across the African continent. I want to map the known wild localities of these plants. What occurrence data can I find for this genus in Africa? Please restrict the search to records that have geographic coordinates and are specifically either preserved museum specimens or human observations.",
+    "expected": {
+      "taxon_keys": [
+        "2758799"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please proceed to retrieve the occurrence data for Aframomum in Africa based on the criteria we just established.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN",
+            "HUMAN_OBSERVATION"
+          ],
+          "continent": "AFRICA",
+          "hasCoordinate": true,
+          "taxonKey": 2758799
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Now, process the downloaded data to prepare it for species-level diversity mapping. Filter the dataset to include only records that are identified down to the specific species level (i.e., exclude records identified only as 'Aframomum sp.' without a species epithet). Provide the total number of occurrence records remaining after this cleaning step.",
+    "expected": 5421,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Based on the cleaned dataset, calculate the total number of unique Aframomum species that have documented occurrences in Africa. Then, create a spatial scatter plot (map) showing all these occurrence locations across the African continent. Save the plot as `aframomum_occurrences_map.png`.",
+    "expected": 51.0,
+    "unit": "species",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The visualization should display a map of the African continent with plotted coordinates demonstrating the geographic distribution of Aframomum species occurrences, primarily concentrated in equatorial and tropical regions.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "aframomum_occurrences_map.png",
+      "visual_description": "A geographic map focused on Africa with scattered points representing plant occurrences. The points should prominently cluster around West, Central, and East Africa (the tropical belt).",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "source_doi": "10.30550/j.azl/2198",
+  "research_question": "What is the spatial distribution and count of established wild populations of 19 commonly traded exotic pet species in India?",
+  "phase_1": {
+    "user_prompt": "I am investigating the wild establishment of commonly traded exotic pet species in India. I need to map the occurrences of 19 specific species: Trachemys scripta elegans, Poecilia reticulata, Cyprinus rubrofuscus, Mastacembelus armatus, Pethia conchonius, Melopsittacus undulatus, Atractosteus spatula, Epalzeorhynchos frenatum, Osphronemus goramy, Agapornis fischeri, Agapornis personata, Agapornis roseicollis, Aratinga solstitialis, Lonchura oryzivora, Oryctolagus cuniculus, Osteoglossum bicirrhosum, Poecilia sphenops, Taeniopygia guttata, and Xiphophorus hellerii. What GBIF search parameters should I use to find records suitable for spatial mapping of these species in this country?",
+    "expected": {
+      "country_codes": [
+        "IN"
+      ],
+      "taxon_keys": [
+        "6157026",
+        "2350050",
+        "2367196",
+        "2351784",
+        "7572096",
+        "2479798",
+        "2346754",
+        "2360401",
+        "2394154",
+        "2479544",
+        "2479553",
+        "9770031",
+        "2479158",
+        "4845776",
+        "2436940",
+        "5212838",
+        "5203748",
+        "2493633",
+        "8246728"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download all the georeferenced GBIF occurrence records for these 19 species within India.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 6157026
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2350050
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2367196
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2351784
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 7572096
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2479798
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2346754
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2360401
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2394154
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2479544
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2479553
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 9770031
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2479158
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 4845776
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2436940
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 5212838
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 5203748
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 2493633
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IN",
+          "hasCoordinate": true,
+          "taxonKey": 8246728
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To map these species accurately and account for sampling bias, I need to address spatial autocorrelation. Please process the dataset by applying a spatial thinning procedure so that no two points for the same species are closer than 10 km to each other. After applying this 10 km spatial thinning, how many occurrence records remain for the Red-eared Slider (Trachemys scripta elegans)?",
+    "expected": 169.0,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Using the spatially thinned data, what is the final record count for the Trinidadian guppy (Poecilia reticulata)? Additionally, please create a map showing the spatial distribution of all 19 invasive species across India, using different colors to distinguish the species. Save this visualization as `alien_invasive_species_india_map.png`.",
+    "expected": 66.0,
+    "unit": "records",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The spatial mapping highlights that several exotic pet species have established wild populations in India, with the Red-eared Slider (Trachemys scripta elegans) having the most widespread occurrences, followed by the Trinidadian guppy (Poecilia reticulata). The occurrences are distributed across various regions of the Indian subcontinent.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "alien_invasive_species_india_map.png",
+      "visual_description": "A map of India showing points overlaid in different colors, representing the occurrence locations of the 19 exotic species. The points should be geographically constrained to India's landmass.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

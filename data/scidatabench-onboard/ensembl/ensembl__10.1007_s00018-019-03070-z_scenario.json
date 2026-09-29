@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.1007/s00018-019-03070-z",
+  "research_question": "Identify the promoter sequence of the human POLD1 gene to analyze putative CpG islands and transcription factor binding sites involved in its age-related downregulation during replicative senescence.",
+  "phase_1": {
+    "user_prompt": "We are studying the mechanisms of age-related downregulation of the catalytic subunit of DNA polymerase delta (p125) in human replicative senescence. To investigate its transcriptional regulation, we need to extract the promoter region of the gene encoding this subunit for CpG island prediction. Please identify the standard gene symbol and the appropriate Ensembl species name for our target.",
+    "expected": {
+      "gene_symbols": [
+        "POLD1"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified human POLD1 gene, please retrieve the 2000-base-pair DNA sequence located immediately upstream of its transcription start site. We will use this sequence to predict potential CpG islands and E2F1 binding sites in the promoter.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSG00000062822",
+          "type": "genomic",
+          "expand_5prime": 2000
+        }
+      }
+    ]
+  }
+}

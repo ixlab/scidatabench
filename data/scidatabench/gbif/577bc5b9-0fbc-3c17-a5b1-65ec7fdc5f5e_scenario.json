@@ -1,0 +1,43 @@
+{
+  "source_doi": "10.15560/21.2.451",
+  "research_question": "What is the known global distribution of Furipterus horrens, and how far is a newly discovered occurrence in the Ecuadorian Andes from the nearest previously recorded historical observation?",
+  "phase_1": {
+    "user_prompt": "I'm investigating the geographic and altitudinal range limits of the thumbless bat, Furipterus horrens. I want to establish its baseline historical distribution before comparing it to a new observation I recently made in the Andes. Could you help me define the parameters to find all known global occurrence records for this species?",
+    "expected": {
+      "taxon_keys": [
+        "2432769"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know what to look for, please go ahead and download the occurrence data for Furipterus horrens from GBIF. I just need the core occurrence records to map their spatial distribution.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "taxonKey": 2432769
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "I recently recorded a new observation of this species at a montane site in Ecuador (Latitude: 0.3031, Longitude: -78.8578). Please clean the historical dataset by filtering out any records that lack valid coordinates, then standardize the spatial data so we can measure how geographically isolated my new observation is from the known population.",
+    "expected": 181,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned historical data, calculate the minimum distance (in kilometers) from my new observation (Lat: 0.3031, Lon: -78.8578) to the nearest previously recorded occurrence. Next, generate a map showing the known historical distribution along with my new point, and save it as 'furipterus_range_extension_map.png'. Finally, provide a brief interpretation of what this spatial gap implies about the species' habitat boundaries.",
+    "expected": 290.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The new observation represents a significant geographic and altitudinal range extension to the Pacific slopes of the Andes, positioned hundreds of kilometers away from the previously known, predominantly Amazonian lowland distribution.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "furipterus_range_extension_map.png",
+      "visual_description": "A geographic map covering northern South America (specifically Ecuador and the Amazon basin) showing a wide cluster of historical occurrence points primarily in the eastern lowland/Amazon region, and a distinctly isolated single new observation point to the northwest (in the Andes).",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

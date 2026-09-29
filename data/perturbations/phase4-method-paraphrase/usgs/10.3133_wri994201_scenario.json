@@ -1,0 +1,117 @@
+{
+  "source_doi": "10.3133/wri994201",
+  "research_question": "Analyze the long-term trend in the annual 7-day low flow for the Little Miami River at Milford, Ohio, from 1927 to 1997 to determine if low flows have significantly increased.",
+  "phase_1": {
+    "user_prompt": "I'm investigating historical changes in low-flow conditions for the Little Miami River, potentially due to increasing wastewater discharges from urbanization. I'd like to analyze the annual 7-day low flow at the Milford, Ohio location from 1927 to 1997. Could you find the appropriate USGS streamgage site number and the parameter code for daily streamflow?",
+    "expected": {
+      "sites": [
+        "03245500"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site and parameter, please download the daily streamflow records for the Little Miami River at Milford, OH, for the period covering water years 1927 to 1997.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03245500",
+          "parameter_code": "00060",
+          "time": "1926-10-01/1997-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the daily streamflow data to calculate the annual 7-day low flow for each water year from 1927 to 1997. The 7-day low flow is the minimum value of the 7-day rolling average discharge within each water year (October 1 to September 30).",
+    "expected": {
+      "1927": 76.14285714285714,
+      "1928": 71.14285714285714,
+      "1929": 74.57142857142857,
+      "1930": 57.57142857142857,
+      "1931": 52.0,
+      "1932": 69.42857142857143,
+      "1933": 73.0,
+      "1934": 40.0,
+      "1935": 44.142857142857146,
+      "1936": 69.71428571428571,
+      "1939": 61.142857142857146,
+      "1940": 53.57142857142857,
+      "1941": 47.57142857142857,
+      "1942": 45.57142857142857,
+      "1943": 96.57142857142857,
+      "1944": 48.857142857142854,
+      "1945": 51.285714285714285,
+      "1946": 69.57142857142857,
+      "1947": 66.0,
+      "1948": 65.42857142857143,
+      "1949": 81.14285714285714,
+      "1950": 130.0,
+      "1951": 85.57142857142857,
+      "1952": 92.57142857142857,
+      "1953": 39.142857142857146,
+      "1954": 38.714285714285715,
+      "1955": 44.285714285714285,
+      "1956": 112.85714285714286,
+      "1957": 88.71428571428571,
+      "1958": 92.28571428571429,
+      "1959": 85.28571428571429,
+      "1960": 56.857142857142854,
+      "1961": 62.57142857142857,
+      "1962": 90.85714285714286,
+      "1963": 63.0,
+      "1964": 37.0,
+      "1965": 65.42857142857143,
+      "1966": 87.71428571428571,
+      "1967": 74.57142857142857,
+      "1968": 100.85714285714286,
+      "1969": 142.28571428571428,
+      "1970": 111.0,
+      "1971": 108.28571428571429,
+      "1972": 132.14285714285714,
+      "1973": 206.85714285714286,
+      "1974": 216.85714285714286,
+      "1975": 124.57142857142857,
+      "1976": 108.71428571428571,
+      "1977": 86.0,
+      "1978": 167.57142857142858,
+      "1979": 165.85714285714286,
+      "1980": 343.7142857142857,
+      "1981": 193.85714285714286,
+      "1982": 121.71428571428571,
+      "1983": 132.57142857142858,
+      "1984": 140.28571428571428,
+      "1985": 107.42857142857143,
+      "1986": 121.71428571428571,
+      "1987": 103.0,
+      "1988": 89.14285714285714,
+      "1989": 124.42857142857143,
+      "1990": 176.42857142857142,
+      "1991": 127.85714285714286,
+      "1992": 110.71428571428571,
+      "1993": 136.42857142857142,
+      "1994": 121.57142857142857,
+      "1995": 129.28571428571428,
+      "1996": 132.85714285714286,
+      "1997": 179.57142857142858
+    },
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "Perform a trend analysis on the annual 7-day low flow time series using the non-parametric rank-based test for a monotonic trend. What is the rank correlation given by the normalised excess of concordant over discordant pairs statistic for this period? Also, create a scatter plot of the annual 7-day low flows over time with a trend line overlaid, and save it as 'little_miami_low_flow_trend.png'. Briefly interpret the result.",
+    "expected": 0.48,
+    "unit": null,
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis reveals a statistically significant positive (increasing) trend in the annual 7-day low flow for the Little Miami River at Milford over the 1927-1997 period. The plot should display the low flow points with an upward-sloping regression line.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "little_miami_low_flow_trend.png",
+      "visual_description": "A scatter or line plot showing annual 7-day low flow on the y-axis and water year on the x-axis, with a superimposed trend line showing a clear upward slope over time.",
+      "paper_figure_reference": "Figure 11"
+    }
+  }
+}

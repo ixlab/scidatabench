@@ -1,0 +1,77 @@
+{
+  "source_doi": "10.3133/ofr99465",
+  "research_question": "Calculate and compare the total annual suspended-sediment discharge for four demonstration watersheds in the Yazoo River Basin (Hickahala Creek near Senatobia, Abiaca Creek near Seven Pines, Abiaca Creek at Cruger, and Harland Creek near Howard) during the 1998 Water Year.",
+  "phase_1": {
+    "user_prompt": "I am evaluating sediment transport in the Yazoo River Basin, specifically focusing on four streams: Hickahala Creek near Senatobia, Abiaca Creek near Seven Pines, Abiaca Creek at Cruger, and Harland Creek near Howard. I need to calculate their total annual suspended-sediment load for the 1998 Water Year (October 1997 through September 1998). What are the official 8-digit USGS site numbers for these four locations, and what parameter code should I use to retrieve daily suspended-sediment discharge?",
+    "expected": {
+      "sites": [
+        "07277700",
+        "07287150",
+        "07287160",
+        "07287404"
+      ],
+      "parameter_codes": [
+        "80155"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that I have the four site numbers and the parameter code for daily suspended-sediment discharge, please retrieve the daily data for the entire 1998 Water Year.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07277700",
+          "parameter_code": "80155",
+          "time": "1997-10-01/1998-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07287150",
+          "parameter_code": "80155",
+          "time": "1997-10-01/1998-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07287160",
+          "parameter_code": "80155",
+          "time": "1997-10-01/1998-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07287404",
+          "parameter_code": "80155",
+          "time": "1997-10-01/1998-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Please process the daily sediment discharge data by summing the daily values for each site to compute the total annual suspended-sediment discharge in metric tonnes for the 1998 Water Year. What is the computed total annual sediment discharge for Harland Creek near Howard?",
+    "expected": 77217.75069932,
+    "unit": "tonnes"
+  },
+  "phase_4": {
+    "user_prompt": "Based on the annual totals computed for all four sites, which creek had the highest total suspended-sediment discharge during the 1998 Water Year, and what was its total load (in tons)?",
+    "expected": 137572.0,
+    "unit": "tons",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Hickahala Creek near Senatobia produced the highest total suspended-sediment discharge among the four studied demonstration watersheds during the 1998 water year.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

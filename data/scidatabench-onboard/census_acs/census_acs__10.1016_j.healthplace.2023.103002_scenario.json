@@ -1,0 +1,30 @@
+{
+  "source_doi": "10.1016/j.healthplace.2023.103002",
+  "research_question": "What is the convergent validity between passively collected walking and bicycling data from StreetLight and self-reported active commuting data from the American Community Survey at the county level?",
+  "phase_1": {
+    "user_prompt": "We are conducting a validation study comparing passively collected mobile-device transit data against purposefully collected survey data on active commuting in the United States. To construct our baseline, we need to extract the self-reported primary commuting modes. Please identify the exact American Community Survey (ACS) detailed table ID that provides base counts for the primary means of transportation to work for workers aged 16 and older, allowing us to isolate those who 'walked', 'bicycled', or 'worked from home'. Also identify the standard geographic summary level needed to conduct this analysis for all county equivalents in the US.",
+    "expected": {
+      "tables": [
+        "B08301"
+      ],
+      "geographies": [
+        "county"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the 2015-2019 ACS 5-year estimates, please retrieve the raw counts of total workers, workers who walked to work, workers who bicycled to work, and workers who worked from home for all counties in the United States. You will need to extract these specific variables from detailed table B08301.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2019,
+          "dataset": "acs/acs5",
+          "get": "NAME,B08301_001E,B08301_018E,B08301_019E,B08301_021E",
+          "for": "county:*"
+        }
+      }
+    ]
+  }
+}

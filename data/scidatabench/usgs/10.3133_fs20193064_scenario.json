@@ -1,0 +1,67 @@
+{
+  "source_doi": "10.3133/fs20193064",
+  "research_question": "How do continuous groundwater nitrate concentrations compare to surface-water nitrate levels in Quiver Creek (Mason County, Illinois), and what are the implications for groundwater-surface water nutrient transport?",
+  "phase_1": {
+    "user_prompt": "I'm investigating groundwater-surface water interactions and nitrogen loading in Mason County, Illinois. I want to compare continuous groundwater monitoring to surface-water measurements in Quiver Creek (which is also known as the Mason-Tazewell Drainage Ditch). Can you identify the USGS site numbers for the continuous groundwater monitoring well and the Quiver Creek stream site in this area? Additionally, I need the 5-digit USGS parameter codes for 'nitrate plus nitrite as nitrogen' and 'depth to water level below land surface'. My study period is from March 8, 2017, to August 1, 2018.",
+    "expected": {
+      "sites": [
+        "401913089534501",
+        "05568704"
+      ],
+      "parameter_codes": [
+        "00630",
+        "72019"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site identifiers (401913089534501 for the well and 05568704 for Quiver Creek), please retrieve the high-frequency/instantaneous data for nitrate (00630) from both sites, as well as the continuous depth to water level (72019) at the groundwater well. Extract the records specifically from March 8, 2017, to August 1, 2018.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-401913089534501",
+          "parameter_code": "00630",
+          "time": "2017-03-08/2018-08-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05568704",
+          "parameter_code": "00630",
+          "time": "2017-03-08/2018-08-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-401913089534501",
+          "parameter_code": "72019",
+          "time": "2017-03-08/2018-08-01"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved time-series data to determine the observed range of nitrate concentrations in the groundwater. Clean the data to remove any missing or invalid measurements. What was the maximum continuous nitrate plus nitrite concentration (in mg/L) recorded at the groundwater well during this period?",
+    "expected": 23.1,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Let's compare the groundwater and surface-water nitrate signatures. First, create a time-series plot comparing the continuous groundwater nitrate concentrations and water levels alongside the surface-water nitrate measurements in Quiver Creek. Save this visualization as `nitrate_gw_sw_comparison.png`. Second, based on your processed data, what was the maximum surface-water nitrate concentration measured in Quiver Creek during this period?",
+    "expected": 6.4,
+    "unit": "mg/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Groundwater nitrate concentrations (16-23.1 mg/L) are significantly and consistently higher than surface water nitrate concentrations in Quiver Creek (0.9-6.4 mg/L), highlighting the stark contrast between the high-load shallow aquifer and the nearby stream.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "nitrate_gw_sw_comparison.png",
+      "visual_description": "A time-series plot spanning from March 2017 to August 2018. It should feature a continuous, high-concentration line/curve for groundwater nitrate (between 16 and 24 mg/L), an inverted secondary y-axis showing groundwater level fluctuations (between 15.5 and 19 ft below land surface), and separate discrete points or a lower curve for surface water nitrate in Quiver Creek (ranging between 0.9 and 6.4 mg/L).",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

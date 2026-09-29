@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.3133/sir20235128",
+  "research_question": "How much streamflow is lost to irrigation diversions and groundwater infiltration along the Big Lost River between Mackay Reservoir and Arco, Idaho, during water years 2019-2021?",
+  "phase_1": {
+    "user_prompt": "I'm studying surface water transmission losses and groundwater recharge along the Big Lost River in Idaho. I need to find the USGS streamgages located 'below Mackay Reservoir, near Mackay' and 'near Arco'. What are their official site numbers? Additionally, what are the standard USGS parameter and statistic codes for daily mean streamflow (discharge)?",
+    "expected": {
+      "sites": [
+        "13127000",
+        "13132500"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers for the two Big Lost River streamgages and the discharge parameter code, please retrieve the daily streamflow records for the period covering complete Water Years 2019 through 2021 (October 1, 2018 to September 30, 2021).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13127000",
+          "parameter_code": "00060",
+          "time": "2018-10-01/2021-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13132500",
+          "parameter_code": "00060",
+          "time": "2018-10-01/2021-09-30",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved daily discharge data by calculating the average streamflow for each water year (2019, 2020, and 2021) at both streamgages. As a baseline check to ensure the data was grouped correctly, what is the calculated average annual streamflow at the downstream 'near Arco' streamgage for Water Year 2019? Report the result in cubic meters per second (m³/s).",
+    "expected": 1.8405950285,
+    "unit": "m3/s"
+  },
+  "phase_4": {
+    "user_prompt": "Calculate the difference in average annual streamflow between the upstream gage (below Mackay Reservoir) and the downstream gage (near Arco) for Water Year 2019. This difference represents the volume of water lost to irrigation diversions and groundwater infiltration along this reach. What is the calculated streamflow difference? Additionally, create a grouped bar chart comparing the average annual streamflow of the two gages side-by-side for Water Years 2019, 2020, and 2021 to visualize these transmission losses. Save the plot as `big_lost_river_streamflow_comparison.png`.",
+    "expected": 267.0,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Most of the streamflow between Mackay Reservoir and Arco is lost to irrigation diversions and groundwater recharge, leading to significantly lower discharge at the downstream Arco gage compared to the upstream Mackay Reservoir gage across all three water years.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "big_lost_river_streamflow_comparison.png",
+      "visual_description": "A grouped bar chart showing Water Years 2019, 2020, and 2021 on the x-axis and average annual streamflow (cfs) on the y-axis. There should be two bars per year, representing the upstream (Mackay Reservoir) and downstream (Arco) gages. The Mackay Reservoir bars should be significantly higher than the Arco bars in all three years (e.g., ~332 vs ~65 in WY2019, ~222 vs ~9 in WY2020), demonstrating the consistent flow loss.",
+      "paper_figure_reference": "Table 4"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "source_doi": "10.1007/s12526-022-01271-7",
+  "research_question": "To determine the species richness and geographic/bathymetric distribution of coral species in Chilean marine and coastal waters.",
+  "phase_1": {
+    "user_prompt": "We are studying the biodiversity and distribution of corals in the southeastern Pacific, specifically in Chilean marine and coastal waters. We need to query global biodiversity databases for the two primary taxonomic classes that encompass all these hard corals, soft corals, and hydrocorals (including families like Stylasteridae and Milleporidae). Could you identify the scientific names of these two main taxonomic classes and the primary country name to use as the geographic scope?",
+    "expected": {
+      "scientific_names": [
+        "Anthozoa",
+        "Hydrozoa"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the taxonomic classes and geographic scope we identified, please retrieve the occurrence records for these coral groups from the OBIS database. Ensure the retrieval covers the coastal and marine waters associated with this country.",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Anthozoa",
+          "geometry": "POLYGON((-80 -56, -66 -56, -66 -17, -80 -17, -80 -56))"
+        }
+      },
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Hydrozoa",
+          "geometry": "POLYGON((-80 -56, -66 -56, -66 -17, -80 -17, -80 -56))"
+        }
+      }
+    ]
+  }
+}

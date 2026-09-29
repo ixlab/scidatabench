@@ -1,0 +1,73 @@
+{
+  "source_doi": "10.5194/hess-27-349-2023",
+  "research_question": "How can the ctbi (cyclic/trend decomposition using bin interpolation) procedure be used to aggregate and quantify the diurnal cyclicity of high-frequency canopy air temperature data?",
+  "phase_1": {
+    "user_prompt": "I want to analyze high-frequency summer canopy temperature data from the San Joaquin Experimental Range in California to test a time series cleaning procedure. Could you find the relevant NEON data product code for 'single aspirated air temperature' and the 4-letter site code for this location?",
+    "expected": {
+      "data_products": [
+        "DP1.00002.001"
+      ],
+      "sites": [
+        "SJER"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Great. Now please download the 5-minute resolution single aspirated air temperature data for this site for the specific study month of August 2020.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00002.001",
+          "site": "SJER",
+          "startdate": "2020-08",
+          "enddate": "2020-08"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Now, I want to process this raw data using the `ctbi` (cyclic/trend decomposition using bin interpolation) framework described in Ritter (2023). Please process the 5-minute temperature data using two levels of aggregation with the mean operator: first, aggregate the 5-minute data into hourly bins (nbin = 12), and then aggregate the resulting hourly data into daily bins (nbin = 24).",
+    "expected": [
+      5.7567,
+      4.6028,
+      2.7143,
+      0.9214,
+      -0.2113,
+      -1.4081,
+      -2.5649,
+      -3.2692,
+      -3.5806,
+      -3.9457,
+      -4.3257,
+      -4.6725,
+      -4.9218,
+      -5.2316,
+      -4.0981,
+      -1.9584,
+      -0.8087,
+      0.098,
+      1.5057,
+      3.1115,
+      4.4742,
+      5.4666,
+      6.1472,
+      6.1984
+    ],
+    "unit": null
+  },
+  "phase_4": {
+    "user_prompt": "Based on your aggregated data, please calculate the Stacked Cycles Index (SCI) for the second level of aggregation (the daily bins containing hourly data) to quantify the strength of the diurnal cyclicity. Also, create a visualization of the mean diurnal cycle over the 24-hour period, saving it as `diurnal_temperature_cycle.png`. What does the SCI value tell us about the diurnal temperature patterns in this canopy?",
+    "expected": 0.88,
+    "unit": "adimensional",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis demonstrates a strong diurnal cycle in the canopy temperature at SJER during August 2020. This strong cyclicity is captured by a high Stacked Cycles Index (SCI) of approximately 0.88. The visualization should show a clear cyclical pattern matching a typical daily temperature profile (lowest before dawn, peaking in mid-afternoon).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "diurnal_temperature_cycle.png",
+      "visual_description": "A line plot showing the mean diurnal cycle of temperature over a 24-hour period. The x-axis should represent hours of the day (00:00 to 23:00/24:00) and the y-axis should represent aggregated mean temperature in Celsius. The curve should show a minimum in the early morning and a distinct peak in the afternoon.",
+      "paper_figure_reference": "Figure 6 Panel a (second column)"
+    }
+  }
+}

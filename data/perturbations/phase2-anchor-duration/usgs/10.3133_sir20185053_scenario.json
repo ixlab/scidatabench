@@ -1,0 +1,334 @@
+{
+  "source_doi": "10.3133/sir20185053",
+  "research_question": "Can we estimate the magnitudes and uncertainties of unmeasured water-quality parameters from a measured subset using an exploratory discrete Bayesian Network based on historically sampled discrete water-quality data?",
+  "phase_1": {
+    "user_prompt": "I want to explore the relationships among a broad suite of water-quality parameters using a Bayesian Network. I am focusing on the USGS streamgage on the White River at Hazleton, Indiana. Please identify the USGS site number for this location. Additionally, find the 5-digit USGS parameter codes for the following 27 parameters: Water temperature, Barometric pressure, Discharge (instantaneous), Specific conductance (field), pH, Carbon dioxide, Dissolved oxygen, Calcium, Magnesium, Sodium, Potassium, Chloride, Sulfate, Fluoride, Silica, Alkalinity, Total nitrogen, Kjeldahl nitrogen, Nitrite, Nitrate, Phosphorus, Orthophosphate, Suspended sediment concentration, Total dissolved solids, Atrazine, Metolachlor, and Simazine. What are the site number and the parameter codes?",
+    "expected": {
+      "sites": [
+        "03374100"
+      ],
+      "parameter_codes": [
+        "00010",
+        "00025",
+        "00061",
+        "00095",
+        "00300",
+        "00400",
+        "00405",
+        "00600",
+        "00613",
+        "00618",
+        "00625",
+        "00665",
+        "00671",
+        "00915",
+        "00925",
+        "00930",
+        "00935",
+        "00940",
+        "00945",
+        "00950",
+        "00955",
+        "39086",
+        "39415",
+        "39632",
+        "70300",
+        "80154",
+        "04035"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site number and 27 parameter codes you identified, retrieve all discrete surface-water quality samples over the 312 months beginning in October 1990. Ensure that you filter the results to include only regular water samples (avoiding bottom material, tissue, or composite samples).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00010",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00025",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00061",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00400",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00405",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00613",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00618",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00671",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00925",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00930",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00935",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00945",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00950",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "00955",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "39086",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "39415",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "39632",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03374100",
+          "usgsPCode": "04035",
+          "activityStartDateLower": "1990-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved discrete water-quality data into an observation matrix. First, resolve any data qualifiers: treat 'M' (presence verified but not quantified) or missing fields as NA; for censored values ('<' or '>'), use the censoring threshold numerical value; and for estimated values ('E'), use the reported numerical value. Aggregate the data so that each row represents a unique sampling event (date/time) and columns are the 27 parameters. After structuring this matrix for the date range October 1, 1990 to September 30, 2016, how many total unique sampling events (rows) are in the dataset?",
+    "expected": 596,
+    "unit": "observations"
+  },
+  "phase_4": {
+    "user_prompt": "Now construct a discrete Bayesian Network to evaluate parameter predictability. Add a feature for the 'month' of sample collection (1-12). Discretize the 27 continuous water-quality parameters into five equal-frequency intervals (quintiles) and discretize the month into 12 distinct bins. Randomly partition the dataset into an 80% training set and a 20% testing set. Using the training set, fit a Tree Augmented Naive (TAN) Bayesian Network where 'month' is forced to be the target (root) node. Once trained, use the testing set to predict the quintile bin of all 27 parameters given ONLY the 'month' as conditioning evidence. What is the average correct classification rate (accuracy, expressed as a percentage) across all 27 parameters in the testing set?",
+    "expected": 40.8,
+    "unit": "percent",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "source_doi": "10.3892/ol.2021.12558",
+  "research_question": "What are the genomic coordinates, strand orientations, and transcript variants of FAM83A and its antisense lncRNA FAM83A-AS1 in the human genome?",
+  "phase_1": {
+    "user_prompt": "We are studying the genomic characteristics of the FAM83A gene and its associated antisense long non-coding RNA, both of which are overexpressed in lung adenocarcinoma. To examine their structural relationship (genomic location, strand orientation, and transcript variants) using Ensembl, please identify the exact gene symbols and the scientific species name we need for our database query.",
+    "expected": {
+      "gene_symbols": [
+        "FAM83A",
+        "FAM83A-AS1"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the gene symbols FAM83A and FAM83A-AS1 for the human genome, retrieve their complete gene records from Ensembl. Please extract their chromosome, start and end coordinates, strand orientation, and a list of all their known transcript variants so we can confirm their antisense relationship and multiform transcript structures.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "FAM83A",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "FAM83A-AS1",
+          "expand": 1
+        }
+      }
+    ]
+  }
+}

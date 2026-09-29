@@ -1,0 +1,256 @@
+{
+  "source_doi": "10.3133/sir20235019",
+  "research_question": "What is the relationship between Escherichia coli (E. coli) concentrations and streamflow in the South Valley reach of the Rio Grande in Albuquerque, New Mexico, and what does this imply about the sources of fecal contamination during the dry season?",
+  "phase_1": {
+    "user_prompt": "I am studying fecal contamination in the Rio Grande in the South Valley of Albuquerque, New Mexico. I need to identify the USGS monitoring sites in this reach to analyze streamflow and water quality. First, find the two main continuous discharge streamgages at Albuquerque and at Valle de Oro, as well as the gage at Isleta Lakes. Next, find the five specific surface-water sampling sites located in this reach: below Bridge Blvd, below Rio Bravo, above Tijeras Arroyo, below Tijeras Arroyo, and at Valle de Oro. What are the 8- to 15-digit USGS site numbers for these 7 monitoring locations? (Note: Valle de Oro acts as both a continuous discharge gage and a water quality site).",
+    "expected": {
+      "sites": [
+        "08330000",
+        "350403106393210",
+        "350135106402210",
+        "350049106402510",
+        "350028106404610",
+        "08330830",
+        "08330875"
+      ],
+      "parameter_codes": [
+        "00060",
+        "31633",
+        "82079"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the sites identified, please retrieve the daily mean discharge data for the continuous streamgages at Albuquerque and Valle de Oro. Also, retrieve the discrete water-quality sample data specifically for E. coli (in MPN or CFU/100 mL) and turbidity for the five water quality sites (Bridge Blvd, Rio Bravo, Above Tijeras, Below Tijeras, and Valle de Oro). The study period of interest is from April 1, 2020 to August 31, 2021.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08330000",
+          "parameter_code": "00060",
+          "time": "2020-04-01/2021-08-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-350403106393210",
+          "parameter_code": "00060",
+          "time": "2020-04-01/2021-08-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-350135106402210",
+          "parameter_code": "00060",
+          "time": "2020-04-01/2021-08-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-350049106402510",
+          "parameter_code": "00060",
+          "time": "2020-04-01/2021-08-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-350028106404610",
+          "parameter_code": "00060",
+          "time": "2020-04-01/2021-08-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08330830",
+          "parameter_code": "00060",
+          "time": "2020-04-01/2021-08-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08330875",
+          "parameter_code": "00060",
+          "time": "2020-04-01/2021-08-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08330000",
+          "usgsPCode": "31633",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350403106393210",
+          "usgsPCode": "31633",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350135106402210",
+          "usgsPCode": "31633",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350049106402510",
+          "usgsPCode": "31633",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350028106404610",
+          "usgsPCode": "31633",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08330830",
+          "usgsPCode": "31633",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08330875",
+          "usgsPCode": "31633",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08330000",
+          "usgsPCode": "82079",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350403106393210",
+          "usgsPCode": "82079",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350135106402210",
+          "usgsPCode": "82079",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350049106402510",
+          "usgsPCode": "82079",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350028106404610",
+          "usgsPCode": "82079",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08330830",
+          "usgsPCode": "82079",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08330875",
+          "usgsPCode": "82079",
+          "activityStartDateLower": "2020-04-01",
+          "activityStartDateUpper": "2021-08-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's verify the flow conditions at the start of our sampling period. Filter your retrieved daily discharge data to find the flow on the date of the very first water-quality sampling event. What was the daily mean discharge (in cubic feet per second) at the Albuquerque streamgage (USGS 08330000) on April 7, 2020?",
+    "expected": 465.7,
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "To understand the drivers of fecal contamination, we need to evaluate how E. coli concentrations respond to changes in streamflow. Pair each discrete E. coli sample with the daily mean discharge on the date of sampling. Use the Albuquerque gage (08330000) as the reference flow for the Bridge Blvd and Rio Bravo sites, and the Valle de Oro gage (08330830) as the reference flow for the Above Tijeras, Below Tijeras, and Valle de Oro sites.\n\nCalculate the rank correlation given by the normalised excess of concordant over discordant pairs correlation coefficient between the E. coli concentrations and their paired daily mean discharges across all samples. For any left-censored E. coli values (e.g., reported with a '<' sign), use an appropriate survival analysis method for censored environmental data (such as the 'cenken' function in the NADA package) or treat them properly as tied ranks at the detection limit. What is the overall rank correlation given by the normalised excess of concordant over discordant pairs correlation coefficient?\n\nAdditionally, create a scatterplot of E. coli concentration (log10 scale) versus discharge for these samples to visually assess the relationship. Save the plot as `ecoli_discharge_correlation.png`.",
+    "expected": -0.41,
+    "unit": "tau",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "There is a weak to moderate negative correlation between E. coli concentration and discharge (Kendall's tau ~ -0.41). The lack of a strong positive correlation, combined with elevated concentrations occurring at lower flows, suggests that E. coli primarily originates from persistent nonpoint sources (such as septic systems, wildlife, or localized dumping) during dry periods, rather than being driven by high-flow stormwater runoff.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "ecoli_discharge_correlation.png",
+      "visual_description": "A scatterplot with daily mean discharge on the x-axis and E. coli concentration on the y-axis (log10 scaled). The points should show a wide vertical spread at lower discharges and a generally negative or flat trend, rather than a positive flush effect.",
+      "paper_figure_reference": null
+    }
+  }
+}

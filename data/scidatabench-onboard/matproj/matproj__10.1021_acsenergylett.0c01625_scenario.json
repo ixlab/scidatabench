@@ -1,0 +1,96 @@
+{
+  "source_doi": "10.1021/acsenergylett.0c01625",
+  "research_question": "To identify acid-stable non-binary metal oxides for oxygen electrocatalysis by computationally screening materials based on aqueous stability and phase stability.",
+  "phase_1": {
+    "user_prompt": "We are running a high-throughput computational screen for acid-stable non-binary metal oxides that are promising for oxygen reduction and evolution electrocatalysis. Please identify the Materials Project IDs of the stable candidates, and the two computed properties we need for the screen: the measure of thermodynamic stability relative to the convex hull, and the electronic property that tells us whether the oxide will conduct.",
+    "expected": {
+      "material_ids": [
+        "mp-541194",
+        "mp-24845",
+        "mp-25043",
+        "mp-763546",
+        "mp-705699",
+        "mp-609510",
+        "mvc-5033",
+        "mp-690561",
+        "mp-1043238",
+        "mp-770991",
+        "mp-1218921",
+        "mp-765886",
+        "mp-768291",
+        "mp-1042897",
+        "mp-1043019",
+        "mp-754065",
+        "mp-20727",
+        "mp-8922",
+        "mp-23018",
+        "mp-29892",
+        "mp-757115",
+        "mp-19594",
+        "mp-505271",
+        "mp-31766",
+        "mp-705435",
+        "mp-675127",
+        "mp-9126",
+        "mp-9127",
+        "mp-9125",
+        "mp-766341",
+        "mp-17708",
+        "mp-1201722",
+        "mp-1078318",
+        "mp-3188",
+        "mp-3653",
+        "mp-1224786",
+        "mp-1225944",
+        "mp-1223385",
+        "mp-704851",
+        "mp-765436",
+        "mp-766163",
+        "mp-1212730",
+        "mp-1116820",
+        "mp-766391",
+        "mp-1042864",
+        "mp-1043032",
+        "mp-765970",
+        "mp-1216649",
+        "mp-776763",
+        "mp-757375",
+        "mp-1042873",
+        "mp-1043041",
+        "mp-761148",
+        "mp-753048",
+        "mp-1178209",
+        "mp-1042928",
+        "mp-766168",
+        "mp-759737",
+        "mp-761118",
+        "mp-773864",
+        "mp-1041577",
+        "mvc-4401",
+        "mp-1041486",
+        "mp-1045304",
+        "mp-1216868",
+        "mvc-4408",
+        "mp-1048765",
+        "mp-675680"
+      ],
+      "properties": [
+        "energy_above_hull",
+        "band_gap"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Materials Project, please retrieve the phase stability (energy above hull) and band gap for the 68 acid-stable oxide candidates identified in Wang et al. The required IDs are: mp-541194, mp-24845, mp-25043, mp-763546, mp-705699, mp-609510, mvc-5033, mp-690561, mp-1043238, mp-770991, mp-1218921, mp-765886, mp-768291, mp-1042897, mp-1043019, mp-754065, mp-20727, mp-8922, mp-23018, mp-29892, mp-757115, mp-19594, mp-505271, mp-31766, mp-705435, mp-675127, mp-9126, mp-9127, mp-9125, mp-766341, mp-17708, mp-1201722, mp-1078318, mp-3188, mp-3653, mp-1224786, mp-1225944, mp-1223385, mp-704851, mp-765436, mp-766163, mp-1212730, mp-1116820, mp-766391, mp-1042864, mp-1043032, mp-765970, mp-1216649, mp-776763, mp-757375, mp-1042873, mp-1043041, mp-761148, mp-753048, mp-1178209, mp-1042928, mp-766168, mp-759737, mp-761118, mp-773864, mp-1041577, mvc-4401, mp-1041486, mp-1045304, mp-1216868, mvc-4408, mp-1048765, mp-675680.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "material_ids": "mp-541194,mp-24845,mp-25043,mp-763546,mp-705699,mp-609510,mvc-5033,mp-690561,mp-1043238,mp-770991,mp-1218921,mp-765886,mp-768291,mp-1042897,mp-1043019,mp-754065,mp-20727,mp-8922,mp-23018,mp-29892,mp-757115,mp-19594,mp-505271,mp-31766,mp-705435,mp-675127,mp-9126,mp-9127,mp-9125,mp-766341,mp-17708,mp-1201722,mp-1078318,mp-3188,mp-3653,mp-1224786,mp-1225944,mp-1223385,mp-704851,mp-765436,mp-766163,mp-1212730,mp-1116820,mp-766391,mp-1042864,mp-1043032,mp-765970,mp-1216649,mp-776763,mp-757375,mp-1042873,mp-1043041,mp-761148,mp-753048,mp-1178209,mp-1042928,mp-766168,mp-759737,mp-761118,mp-773864,mp-1041577,mvc-4401,mp-1041486,mp-1045304,mp-1216868,mvc-4408,mp-1048765,mp-675680",
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom,energy_above_hull,band_gap"
+        }
+      }
+    ]
+  }
+}

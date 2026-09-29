@@ -1,0 +1,530 @@
+{
+  "source_doi": "10.3133/sir20075288",
+  "research_question": "Investigate trends in streamflow, salinity, and major ion concentrations in the Upper Colorado River Basin upstream from the Grand Valley Salinity Control Unit from water years 1986 to 2003 to identify mineralogical drivers of salinity changes.",
+  "phase_1": {
+    "user_prompt": "I'm researching salinity and major ion trends in the Upper Colorado River Basin upstream of the Grand Valley Salinity Control Unit between water years 1986 and 2003. I need to identify the USGS streamgages that monitor the Colorado River mainstem (specifically above Glenwood Springs, near Cameo, and near the UT state line), the Gunnison River near Grand Junction, the Eagle River at Gypsum, and the Roaring Fork River at Glenwood Springs. What are their site numbers, and what are the standard USGS parameter codes for discharge, specific conductance, calcium, magnesium, sodium, sulfate, chloride, and dissolved solids?",
+    "expected": {
+      "sites": [
+        "09069000",
+        "09071750",
+        "09085000",
+        "09095500",
+        "09152500",
+        "09163500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00095",
+        "00915",
+        "00925",
+        "00930",
+        "00940",
+        "00945",
+        "70300"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the daily mean discharge, daily mean specific conductance, and periodic discrete water-quality measurements for the major ions and dissolved solids for these six streamgages covering the period from October 1, 1985, to September 30, 2003.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09069000",
+          "parameter_code": "00060",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09069000",
+          "parameter_code": "00095",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09069000",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09069000",
+          "usgsPCode": "00925",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09069000",
+          "usgsPCode": "00930",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09069000",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09069000",
+          "usgsPCode": "00945",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09069000",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09071750",
+          "parameter_code": "00060",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09071750",
+          "parameter_code": "00095",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09071750",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09071750",
+          "usgsPCode": "00925",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09071750",
+          "usgsPCode": "00930",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09071750",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09071750",
+          "usgsPCode": "00945",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09071750",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09085000",
+          "parameter_code": "00060",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09085000",
+          "parameter_code": "00095",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09085000",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09085000",
+          "usgsPCode": "00925",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09085000",
+          "usgsPCode": "00930",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09085000",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09085000",
+          "usgsPCode": "00945",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09085000",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09095500",
+          "parameter_code": "00060",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09095500",
+          "parameter_code": "00095",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09095500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09095500",
+          "usgsPCode": "00925",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09095500",
+          "usgsPCode": "00930",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09095500",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09095500",
+          "usgsPCode": "00945",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09095500",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09152500",
+          "parameter_code": "00060",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09152500",
+          "parameter_code": "00095",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "usgsPCode": "00925",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "usgsPCode": "00930",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "usgsPCode": "00945",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09163500",
+          "parameter_code": "00060",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09163500",
+          "parameter_code": "00095",
+          "time": "1985-10-01/2003-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09163500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09163500",
+          "usgsPCode": "00925",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09163500",
+          "usgsPCode": "00930",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09163500",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09163500",
+          "usgsPCode": "00945",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09163500",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the discharge data to compute the annual mean streamflow (in cubic meters per second (m³/s)) for each water year at the Colorado River near Cameo station. What was the mean annual streamflow for the driest year in the study period, water year 2002?",
+    "expected": 49.5827983826,
+    "unit": "m3/s"
+  },
+  "phase_4": {
+    "user_prompt": "Compute the trend in streamflow at the Colorado River near Cameo for water years 1986-2003 using the Seasonal Kendall test with the Sen slope estimator. Use four seasons per water year: Oct-Dec, Jan-Mar, Apr-Jun, and Jul-Sep. For each season-year combination, take the median of the daily mean discharges. Then compute the Sen slope as the median of all pairwise (yj - yi)/(year_j - year_i) slopes formed within the same season, pooled across the four seasons. Also analyze trends in the discrete concentrations of calcium, magnesium, and sulfate to infer the mineralogical drivers of salinity changes. Save a plot of the annual mean streamflow over time with a trendline as `cameo_streamflow_trend.png`.",
+    "expected": -24.8,
+    "unit": "cfs/year",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis should indicate that processes within source areas bearing calcium, sulfate, and magnesium had the largest effect on the downward trend upstream from Cameo. The steep relative declines in these specific ions implicate reduced dissolution of evaporite minerals, specifically gypsum (calcium sulfate) and dolomite, likely originating from the Mancos Shale and Eagle Valley Evaporite formations.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "cameo_streamflow_trend.png",
+      "visual_description": "A line plot or scatter plot showing the annual mean streamflow (in cfs) for water years 1986 through 2003 at the Cameo station (09095500). The y-axis should represent streamflow and the x-axis the water year, with a downward sloping trendline indicating the negative (though potentially not statistically significant) trend of ~ -24.8 cfs/yr.",
+      "paper_figure_reference": null
+    }
+  }
+}

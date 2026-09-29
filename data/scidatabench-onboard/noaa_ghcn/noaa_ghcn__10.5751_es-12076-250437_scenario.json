@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.5751/es-12076-250437",
+  "research_question": "What is the observed 95th percentile daily summer wet day precipitation for Philadelphia International Airport between 1992 and 2018?",
+  "phase_1": {
+    "user_prompt": "We are establishing a present-day observed rainfall baseline for a study of Philadelphia's green infrastructure, using daily records at Philadelphia International Airport from 1992 to 2018. Can you find the NOAA GHCN station identifier for that airport and the weather parameter we need?",
+    "expected": {
+      "station_ids": [
+        "USW00013739"
+      ],
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the identifiers, please download the daily precipitation data for the Philadelphia International Airport (station USW00013739) for the years 1992 through 2018.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013739",
+          "startDate": "1992-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "source_doi": "10.3133/sir20125129",
+  "research_question": "How did flood-control reservoir releases affect streamflow in the Kansas River Basin during September 2011 compared to historical baselines for the Republican, Big Blue, and Delaware Rivers?",
+  "phase_1": {
+    "user_prompt": "I am investigating the effect of flood-control reservoir releases on downstream tributaries in the Kansas River Basin during the fall of 2011. To do this, I need to compare 2011 streamflow to historical baselines at three key locations: the Republican River at Junction City (Kansas), the Big Blue River near Manhattan (Kansas), and the Delaware River at Perry (Kansas). Please identify the official USGS site numbers for these three streamgages, as well as the parameter code for discharge and the statistic code for daily mean values.",
+    "expected": {
+      "sites": [
+        "06857100",
+        "06887000",
+        "06890900"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the sites and parameter codes you identified, retrieve the daily mean discharge data for these three locations. To establish the post-impoundment historical baseline, pull data starting from August 1967 for the Republican River, May 1963 for the Big Blue River, and July 1970 for the Delaware River. Retrieve all daily records for these sites through the end of October 2011.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06857100",
+          "parameter_code": "00060",
+          "time": "1967-08-01/2011-10-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06887000",
+          "parameter_code": "00060",
+          "time": "1963-05-01/2011-10-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06890900",
+          "parameter_code": "00060",
+          "time": "1970-07-01/2011-10-31",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved daily data to calculate the monthly mean discharge for the month of September 2011 at the Big Blue River near Manhattan gage. What is the September 2011 monthly mean streamflow in cubic meters per second (m³/s)?",
+    "expected": 109.586196311,
+    "unit": "m3/s"
+  },
+  "phase_4": {
+    "user_prompt": "Now, calculate the historical baseline to understand the magnitude of the 2011 event. Compute the long-term monthly mean discharge for September across the entire post-impoundment period of record (May 1963 through October 2011) for the Big Blue River near Manhattan. What is this historical September mean? Based on a comparison between the September 2011 mean and this historical mean, briefly summarize how the 2011 streamflow deviated from normal September conditions.",
+    "expected": 1780.0,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The agent should conclude that the September 2011 monthly mean streamflow at the Big Blue River was substantially higher (more than double or roughly 2.17 times) than the historical September mean, reflecting abnormally high flows due to flood-control reservoir releases.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

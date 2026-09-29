@@ -1,0 +1,50 @@
+{
+  "source_doi": "10.1038/s41561-021-00851-9",
+  "research_question": "What is the modern seasonal climatology (air temperature and precipitation) for the region surrounding Jiangjun Cave in China?",
+  "phase_1": {
+    "user_prompt": "We are establishing the modern climatological context for a paleoclimate record from Jiangjun Cave, and want to plot modern seasonal cycles of air temperature and rainfall from historical station data. Can you identify the specific station locations near the cave that we should use for this context, and the standard weather parameters corresponding to air temperature and rainfall?",
+    "expected": {
+      "parameters": [
+        "TAVG",
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the target locations are Kunming and Longzhou in China, and we need average temperature and precipitation, please retrieve the historical monthly climate records for these two cities from the NOAA GHCN database (or via Meteostat).",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "CHM00056778",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          25.0399,
+          102.7169
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "CHM00059417",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          22.436,
+          106.872
+        ]
+      }
+    ]
+  }
+}

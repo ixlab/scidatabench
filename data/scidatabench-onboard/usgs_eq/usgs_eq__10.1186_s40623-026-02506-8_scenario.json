@@ -1,0 +1,24 @@
+{
+  "source_doi": "10.1186/s40623-026-02506-8",
+  "research_question": "What are the ground motion characteristics of the 2022 Mw 5.9 Keng Tung earthquake in the northern Sunda Block, and what are its exact source parameters?",
+  "phase_1": {
+    "user_prompt": "We are studying the Mw 5.9 earthquake that struck near Keng Tung (Kyaing Tong) in eastern Myanmar, within the northern Sunda Block, on July 21, 2022. We need the exact source parameters for Ground Motion Prediction Equations from the USGS earthquake catalog. Before we pull the data, could you find the specific USGS earthquake event identifier for this mainshock?",
+    "expected": {
+      "event_ids": [
+        "us7000hsg4"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the event identifier 'us7000hsg4', please retrieve the detailed earthquake source parameters from the USGS catalog. Specifically, I need the hypocenter location (latitude, longitude, depth), magnitude, and the focal mechanism (strike, dip, and rake) so we can construct the planar rupture geometry for our GMPE evaluation.",
+    "expected": [
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "eventid": "us7000hsg4"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "source_doi": "10.22201/fc.25942158e.2022.3.471",
+  "research_question": "What is the known spatial distribution of Philodryas psammophidea, and how far is a new high-elevation observation in Argentina from the closest previously recorded GBIF occurrence?",
+  "phase_1": {
+    "user_prompt": "I'm studying the distribution of the snake Philodryas psammophidea, particularly investigating potential new altitudinal records in the Andes. To establish the known baseline, I need to map all existing records. What parameters should I use to search GBIF to get data suitable for spatial mapping of this specific species?",
+    "expected": {
+      "taxon_keys": [
+        "2453538"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the parameters identified, please retrieve the occurrence records for Philodryas psammophidea from GBIF that include coordinate data.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "hasCoordinate": true,
+          "taxonKey": 2453538
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Raw GBIF data often contains errors. Please clean the retrieved dataset by removing duplicate occurrences based on exact coordinates and dropping any records with a reported coordinate uncertainty greater than 100 km (100,000 meters). How many valid records remain after this cleaning step?",
+    "expected": 216,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "I recently documented a new observation of this species at a high elevation in San Juan, Argentina, at coordinates 29.992244° S, 68.871935° W. I need to know how far this observation is from the previously known range limits. Calculate the straight-line distance in kilometers between my new observation and the closest historical GBIF record in the cleaned dataset. Also, please plot the cleaned GBIF records and my new observation on a map, saving the output as `p_psammophidea_distribution_map.png`.",
+    "expected": 60.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The known range of Philodryas psammophidea covers parts of Argentina, Bolivia, Paraguay, and Brazil. The new high-altitude record in San Juan, Argentina (-29.99, -68.87), extends the known distribution, being located approximately 60 km away from the nearest historical GBIF record.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "p_psammophidea_distribution_map.png",
+      "visual_description": "A map showing the spatial distribution of Philodryas psammophidea occurrence records (points) across central/southern South America (Argentina, Brazil, Bolivia, Paraguay), with a distinctly styled marker highlighting the new observation point in San Juan, Argentina (near latitude -30.0, longitude -68.9).",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

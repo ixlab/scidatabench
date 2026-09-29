@@ -1,0 +1,31 @@
+{
+  "source_doi": "10.1038/s41524-018-0143-2",
+  "research_question": "What is the discrepancy between the binary formation approximation and the true decomposition enthalpy for quaternary garnet oxides?",
+  "phase_1": {
+    "user_prompt": "We are evaluating the thermodynamic stability of solid compounds, and want to demonstrate the disagreement between the true decomposition enthalpy and approximations based on constituent binary oxides. Our worked example is the set of four common aluminosilicate garnet end-members, in which the divalent cation is calcium, magnesium, manganese or iron. Identify the exact chemical formulas of these four garnets, and the primary Materials Project computed thermodynamic property (formation enthalpy relative to the elements) we should use.",
+    "expected": {
+      "formulas": [
+        "Ca3Al2Si3O12",
+        "Mg3Al2Si3O12",
+        "Mn3Al2Si3O12",
+        "Fe3Al2Si3O12"
+      ],
+      "properties": [
+        "formation_energy_per_atom"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Materials Project package, retrieve the computed formation enthalpy (per atom) for the four specific quaternary garnet oxides highlighted by Bartel et al.: Ca3Al2Si3O12, Mg3Al2Si3O12, Mn3Al2Si3O12, and Fe3Al2Si3O12.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "formula": "Ca3Al2Si3O12,Mg3Al2Si3O12,Mn3Al2Si3O12,Fe3Al2Si3O12",
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom"
+        }
+      }
+    ]
+  }
+}

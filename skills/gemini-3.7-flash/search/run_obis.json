@@ -1,0 +1,61 @@
+{
+  "platform": "obis",
+  "condition": "search",
+  "model": "gemini-3.7-flash",
+  "elapsed_s": 13.2,
+  "tokens": {
+    "input": 29740,
+    "output": 2133,
+    "thinking": 0,
+    "total": 31873,
+    "cache_read": 0
+  },
+  "tool_call_turns": 4,
+  "research_log": [
+    {
+      "kind": "search",
+      "query": "pyobis python package documentation occurrences taxon",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "http://resources.obis.org/packages",
+        "https://techdocs.gbif.org/en/data-use/pygbif",
+        "https://medium.com/@theayushanand/exploring-marine-data-easily-using-python-with-pyobis-148a0eddeb36",
+        "https://iobis.github.io/pyobis",
+        "https://github.com/iobis/pyobis",
+        "https://marinebon.org/py-dwc-viz/taxon.html",
+        "https://pyobis.readthedocs.io",
+        "https://iobis.github.io/pyobis/occurrences.html"
+      ]
+    },
+    {
+      "kind": "fetch",
+      "url": "https://iobis.github.io/pyobis/occurrences.html",
+      "status": "200",
+      "chars": 13426
+    },
+    {
+      "kind": "fetch",
+      "url": "https://iobis.github.io/pyobis/taxa.html",
+      "status": "200",
+      "chars": 2618
+    },
+    {
+      "kind": "search",
+      "query": "\"pyobis\" \"checklist\" \"dataset\" \"nodes\"",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://iobis.github.io/pyobis",
+        "https://github.com/iobis/pyobis",
+        "https://mirrors.dotsrc.org/cran/web/packages/robis/robis.pdf",
+        "https://pyobis.readthedocs.io",
+        "https://www.iobis.org",
+        "https://medium.com/@theayushanand/exploring-marine-data-easily-using-python-with-pyobis-148a0eddeb36",
+        "https://manual.obis.org/access",
+        "https://www.youtube.com/watch?v=9PSPEtqgjUI"
+      ]
+    }
+  ],
+  "generated_utc": "2026-08-14T17:01:20.461680+00:00"
+}

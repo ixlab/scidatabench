@@ -1,0 +1,180 @@
+{
+  "source_doi": "10.3133/ofr20171160",
+  "research_question": "What are the dissolved organic carbon (DOC) concentrations at key monitoring sites in the Upper Klamath River, Lost River, and Klamath Straits Drain basins, and which specific locations act as the primary sources or areas of highest concentration?",
+  "phase_1": {
+    "user_prompt": "I am investigating dissolved organic carbon (DOC) concentrations in the Upper Klamath River, Lost River, and Klamath Straits Drain basins in Oregon and California. I want to access discrete water quality sample data for a set of 13 specific monitoring locations: 'Lost River below Malone Reservoir', 'Miller Creek at Round Valley', 'Lost River below Harpold Reservoir', 'Lost River at East-West Road', 'Pump Plant D', 'Klamath Straits Headworks', 'Klamath Straits at Township Road', 'Klamath Straits Drain at Highway 97', 'Upper Klamath Lake at Fremont Bridge', 'Lost River Diversion Channel at Tingley Lane', 'North Canal', 'Ady Canal at Highway 97', and 'Klamath River downstream of Keno Dam'. My study period is April 2013 to May 2016. Please determine the correct USGS site numbers for these 13 locations and the standard parameter code for dissolved organic carbon.",
+    "expected": {
+      "sites": [
+        "420025121132800",
+        "421114121080100",
+        "421010121271200",
+        "11488495",
+        "11488510",
+        "415950121463701",
+        "420219121474500",
+        "420450121504500",
+        "421420121481700",
+        "11486990",
+        "11509105",
+        "11509200",
+        "11509500"
+      ],
+      "parameter_codes": [
+        "00681"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the 13 USGS site numbers and the parameter code for DOC you identified, retrieve all available discrete water quality sample data for these sites from April 1, 2013 to May 31, 2016.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-420025121132800",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-421114121080100",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-421010121271200",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11488495",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11488510",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-415950121463701",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-420219121474500",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-420450121504500",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-421420121481700",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11486990",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11509105",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11509200",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11509500",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2013-04-01",
+          "activityStartDateUpper": "2016-05-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved water quality data by filtering for valid (non-null) DOC measurements. To verify the data coverage for the Tule Lake outflow, count the number of valid DOC sample records available specifically for the 'Pump Plant D' site during this period.",
+    "expected": 5.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Now, compute the average (mean) DOC concentration for each of the 13 sites over the study period. What is the average DOC concentration for the 'Pump Plant D' site? Next, create a bar chart comparing the average DOC concentrations across all 13 sites and save it as `average_doc_comparison.png`. Finally, based on the chart, write a brief conclusion identifying which specific areas or sites exhibit the highest DOC concentrations overall.",
+    "expected": 22.0,
+    "unit": "mg/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The Klamath Straits Drain sites and Pump Plant D have the highest concentrations of dissolved organic carbon compared to the other monitoring locations in the Upper Klamath River and Lost River.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "average_doc_comparison.png",
+      "visual_description": "A bar chart displaying average DOC concentrations for 13 sites. The bars for Pump Plant D and the Klamath Straits Drain sites should be visibly the highest, with values generally around 18-24 mg/L, while the other sites are mostly below 10 mg/L.",
+      "paper_figure_reference": "Figure 2 (top)"
+    }
+  }
+}

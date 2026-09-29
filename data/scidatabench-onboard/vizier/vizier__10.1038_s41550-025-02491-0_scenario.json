@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.1038/s41550-025-02491-0",
+  "research_question": "What is the probability of a chance alignment between the radio transient ILT J1101+5521 and its optical counterpart based on the local stellar density?",
+  "phase_1": {
+    "user_prompt": "We are analyzing the newly discovered sporadic radio transient ILT J1101+5521 and need to verify if its candidate optical counterpart is a genuine association or a chance alignment. To calculate the chance alignment probability, we need to extract a wide-field background sample to establish the local stellar density. We plan to use the Early Data Release 3 (EDR3) from the Gaia mission for this astrometric background check. Please identify the VizieR catalog designation for the Gaia EDR3 main source table, and state the name of the target object we are centering our search on.",
+    "expected": {
+      "catalogs": [
+        "I/350/gaiaedr3"
+      ],
+      "target_names": [
+        "ILT J1101+5521"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the catalog ('I/350/gaiaedr3') and the target (ILT J1101+5521), please retrieve the astrometric data. The radio-derived position of our target is approximately RA = 11h 1m 50.5s, Dec = +55° 21' 19.6\" (J2000). To ensure we have a robust sample for our chance alignment statistical test (which utilizes 10^6 random positions), extract all sources that lie within a radius of 3 degrees around this position. Do not apply any other photometric or astrometric filters to the catalog.",
+    "expected": [
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_region",
+        "kwargs": {
+          "catalog": "I/350/gaiaedr3",
+          "center": "165.4604 55.3554",
+          "radius_arcmin": 180
+        }
+      }
+    ]
+  }
+}

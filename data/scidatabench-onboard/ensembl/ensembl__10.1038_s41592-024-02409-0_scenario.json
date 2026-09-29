@@ -1,0 +1,40 @@
+{
+  "source_doi": "10.1038/s41592-024-02409-0",
+  "research_question": "Which transcript should variant-to-protein mapping use as the reference for a gene, and how is it retrieved?",
+  "phase_1": {
+    "user_prompt": "We map coding variants onto protein structures, and the mapping is only reproducible if everyone agrees on which transcript counts as the reference. Our test case is the gene for the de novo DNA methyltransferase whose R882H hotspot substitution defines a large subset of acute myeloid leukaemia. Give us its approved human gene symbol, the Ensembl species name, and the stable transcript ID of the transcript agreed between Ensembl and RefSeq as the single reference for clinical reporting — the MANE Select — since that is the isoform our coordinates must refer to.",
+    "expected": {
+      "gene_symbols": [
+        "DNMT3A"
+      ],
+      "transcript_ids": [
+        "ENST00000321117"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now retrieve the gene model with all its transcripts, and separately fetch the protein sequence translated from the reference transcript, so we have the residue numbering our variant coordinates map onto.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "DNMT3A",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENST00000321117",
+          "type": "protein"
+        }
+      }
+    ]
+  }
+}

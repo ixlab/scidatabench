@@ -1,0 +1,56 @@
+{
+  "source_doi": "10.3133/fs20183069",
+  "research_question": "What are the historical average streamflow and seasonal flow statistics for major rivers (Boeuf River and Bayou Macon) in northeastern Louisiana?",
+  "phase_1": {
+    "user_prompt": "I'm assessing historical surface water resources in northeastern Louisiana. I need to find the specific USGS streamgages for two major reference points: the 'Boeuf River near AR/LA State Line' and 'Bayou Macon near Delhi' so I can analyze their long-term flow conditions. Could you find the site numbers for these two monitoring locations?",
+    "expected": {
+      "sites": [
+        "07367700",
+        "07370000"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the two site numbers you identified, please download their historical daily streamflow records. For the Boeuf River site, extract the data from the beginning of 1986 through the end of 2012. For the Bayou Macon site, extract the data from the beginning of 1934 through the end of 1992.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07367700",
+          "parameter_code": "00060",
+          "time": "1986-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07370000",
+          "parameter_code": "00060",
+          "time": "1934-01-01/1992-12-31",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's determine the overall baseline flow for the Boeuf River over its study period. Please calculate the overall average of the daily mean streamflow values for the Boeuf River site across the entire 1986-2012 timeframe.",
+    "expected": 347.0,
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "Next, I want to understand the seasonal streamflow dynamics for the Boeuf River. Calculate the long-term average flow for each calendar month (e.g., the average of all January days across all years, all February days, etc.) using the 1986-2012 data. Based on these monthly averages, what is the value of the highest monthly average streamflow?",
+    "expected": 619.0,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

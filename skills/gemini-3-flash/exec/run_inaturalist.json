@@ -1,0 +1,16 @@
+{
+  "platform": "inaturalist",
+  "condition": "exec",
+  "model": "gemini-3-flash-preview",
+  "elapsed_s": 67.4,
+  "tokens": {
+    "input": 216191,
+    "output": 5848,
+    "thinking": 0,
+    "total": 222039,
+    "cache_read": 85803
+  },
+  "tool_call_turns": 29,
+  "research_log": [],
+  "generated_utc": "2026-08-14T02:08:30.050937+00:00"
+}

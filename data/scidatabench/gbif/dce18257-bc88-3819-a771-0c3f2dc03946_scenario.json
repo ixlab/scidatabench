@@ -1,0 +1,84 @@
+{
+  "source_doi": "10.17159/2254-8854/2022/a13967",
+  "research_question": "Map the distribution of Sphodromantis gastrica in South Africa using filtered citizen science data, and compare its presence with other Sphodromantis species in Southern Africa.",
+  "phase_1": {
+    "user_prompt": "I am conducting a biogeographical review of the praying mantis genus Sphodromantis in Southern Africa. I want to compile occurrence data for Sphodromantis gastrica and Sphodromantis rudolfae in South Africa, Sphodromantis lineola in Mozambique, Zimbabwe, and Namibia, and Sphodromantis viridis in Namibia.",
+    "expected": {
+      "country_codes": [
+        "ZA",
+        "MZ",
+        "ZW",
+        "NA"
+      ],
+      "taxon_keys": [
+        "1404857",
+        "1404886",
+        "1404875",
+        "1404864"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please use the GBIF API to retrieve all available occurrence records for these specific species in their respective countries.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ZA",
+          "taxonKey": 1404857
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ZA",
+          "taxonKey": 1404886
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": [
+            "MZ",
+            "ZW",
+            "NA"
+          ],
+          "taxonKey": 1404875
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "NA",
+          "taxonKey": 1404864
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "For Sphodromantis gastrica in South Africa, I only want high-quality citizen science data. Filter its records to include only those from the 'iNaturalist Research-grade Observations' dataset, and carefully exclude any records that indicate the observation is just an egg case (ootheca), as I need occurrences of hatched mantises. For the other three species in their respective countries, no filtering is required—just keep all retrieved records.",
+    "expected": 160,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "How many total records of Sphodromantis rudolfae did you find in South Africa? Additionally, please create a map showing the spatial distributions of all four species across the specified countries (South Africa, Namibia, Zimbabwe, Mozambique) based on your final dataset. Color-code the points by species, and save this map as `sphodromantis_southern_africa_map.png`.",
+    "expected": 2.0,
+    "unit": "records",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The spatial analysis maps the four Sphodromantis species in Southern Africa. The map should show S. gastrica and S. rudolfae in South Africa, S. lineola in Mozambique, Zimbabwe, and Namibia, and S. viridis in Namibia. The presence of exactly two S. rudolfae records in South Africa should be clearly visible.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "sphodromantis_southern_africa_map.png",
+      "visual_description": "A map of Southern Africa displaying the borders of South Africa, Namibia, Zimbabwe, and Mozambique. Point markers indicate the occurrence locations of four Sphodromantis species, distinctly color-coded. S. gastrica and S. rudolfae should appear in South Africa, S. lineola in Mozambique, Zimbabwe, and Namibia, and S. viridis in Namibia. Only a very small number of points (ideally 2) should appear for S. rudolfae.",
+      "paper_figure_reference": null
+    }
+  }
+}

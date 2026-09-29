@@ -1,0 +1,74 @@
+{
+  "source_doi": "10.3133/sir20185120",
+  "research_question": "What is the impact of cemetery leachate on shallow groundwater quality, specifically regarding nutrients and trace metals, compared to background conditions?",
+  "phase_1": {
+    "user_prompt": "I am looking to investigate the groundwater quality impacts of a cemetery in Lansing, Michigan. I know the USGS sampled several monitoring wells immediately downgradient of Mt. Hope Cemetery, as well as a background well at the nearby Fenner Nature Center, between December 2016 and July 2017. Can you find the USGS site numbers for these four wells and identify the data type required to retrieve discrete water-quality measurements for this study?",
+    "expected": {
+      "sites": [
+        "424240084314001",
+        "424230084314101",
+        "424221084313801",
+        "424235084311201"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 4 site numbers (424240084314001, 424230084314101, 424221084313801, 424235084311201) and the study period (December 2016 to July 2017), please retrieve the discrete water-quality sample results for these sites. We are specifically interested in retrieving the records for nutrients (such as total nitrogen) and trace metals (such as arsenic).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-424240084314001",
+          "activityStartDateLower": "2016-12-01",
+          "activityStartDateUpper": "2017-07-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-424230084314101",
+          "activityStartDateLower": "2016-12-01",
+          "activityStartDateUpper": "2017-07-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-424221084313801",
+          "activityStartDateLower": "2016-12-01",
+          "activityStartDateUpper": "2017-07-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-424235084311201",
+          "activityStartDateLower": "2016-12-01",
+          "activityStartDateUpper": "2017-07-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved water-quality data to compare nutrient levels across the sites. Specifically, isolate the Total Nitrogen records for the well immediately downgradient of the cemetery (site 424240084314001, often referred to as well C1). Treat any censored values (reported as less than the detection limit) as equal to the reporting limit. What is the median Total Nitrogen concentration for this site across the sampling events? Report the result in micrograms per liter (µg/L).",
+    "expected": 2110.0,
+    "unit": "ug/L"
+  },
+  "phase_4": {
+    "user_prompt": "Evaluate the trace metal data to assess potential human-health concerns compared to drinking-water standards. First, find the maximum observed Arsenic concentration at site 424221084313801 (well C3). Next, create a visualization comparing the Arsenic concentrations at all four wells against the EPA Maximum Contaminant Level (MCL) of 10 µg/L. Save this plot as `arsenic_mcl_comparison.png`. Finally, provide a short interpretation of which wells, if any, exceed the EPA standard and how the cemetery wells compare to the background Fenner well.",
+    "expected": 22.7,
+    "unit": "µg/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Well C3 (site 424221084313801) is the only well that exhibits Arsenic concentrations exceeding the EPA Maximum Contaminant Level (MCL) of 10 µg/L, with values roughly two times the limit. The background Fenner well and the other two cemetery wells (C1 and C2) have low Arsenic concentrations that remain well below the 10 µg/L threshold.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "arsenic_mcl_comparison.png",
+      "visual_description": "A scatter plot, bar chart, or strip chart showing Arsenic concentrations (µg/L) on the y-axis and the four USGS site numbers (or well names) on the x-axis. A clear horizontal line must be present at y=10 indicating the EPA MCL. The data points for site 424221084313801 should be visibly plotted above the 10 µg/L line, while all other sites should have points below the line.",
+      "paper_figure_reference": null
+    }
+  }
+}

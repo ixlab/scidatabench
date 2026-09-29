@@ -1,0 +1,39 @@
+{
+  "source_doi": "10.1093/mnras/staa1228",
+  "research_question": "To identify 3D runaway and walkaway stars originating from the Orion Nebula Cluster (ONC), we need to enrich Gaia DR2 astrometric data with secondary radial velocity (RV) measurements from literature catalogs hosted on VizieR.",
+  "phase_1": {
+    "user_prompt": "To confirm the 3D kinematic traceback of our runaway and walkaway star candidates from the Orion Nebula Cluster (ONC), we need additional radial velocity measurements to supplement Gaia DR2. We are specifically looking for the VizieR catalogs corresponding to the prominent Orion radial velocity datasets published by Cottaar et al. (2015) and Kounkel et al. (2018). Please identify the VizieR catalog designations for these two specific publications.",
+    "expected": {
+      "catalogs": [
+        "J/ApJ/807/27",
+        "J/AJ/156/84"
+      ],
+      "target_names": [
+        "Orion Nebula Cluster"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the catalog designations you found for Cottaar et al. (2015) and Kounkel et al. (2018), please retrieve the data tables for all stellar sources located within a 14-degree search radius around the center of the Orion Nebula Cluster (RA: 5h 35m 16s, Dec: -05° 23' 40'').",
+    "expected": [
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_region",
+        "kwargs": {
+          "catalog": "J/ApJ/807/27",
+          "center": "83.816667 -5.394444",
+          "radius_arcmin": 840
+        }
+      },
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_region",
+        "kwargs": {
+          "catalog": "J/AJ/156/84",
+          "center": "83.816667 -5.394444",
+          "radius_arcmin": 840
+        }
+      }
+    ]
+  }
+}

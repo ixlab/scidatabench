@@ -1,0 +1,72 @@
+{
+  "source_doi": "10.3389/fmars.2020.00426",
+  "research_question": "How do benthic oxygen uptake rates and environmental drivers compare between shelf and deep-sea habitats across the Barents, central Arctic, Laptev, and Beaufort Seas?",
+  "phase_1": {
+    "user_prompt": "We are comparing benthic ecosystem functioning in Arctic shelf and deep-sea sediments. Our baseline draws on data from the Polarstern PS94 expedition for the Barents Sea and central Arctic, together with previously published data for the Beaufort Sea (2008/2009) and the Laptev Sea (Polarstern ARK-XXVII/3, 2012). Can you find the PANGAEA dataset DOIs for these, and the benthic flux parameters they report?",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.863150",
+        "10.1594/PANGAEA.892279",
+        "10.1594/PANGAEA.892280",
+        "10.1594/PANGAEA.892286",
+        "10.1594/PANGAEA.907889",
+        "10.1594/PANGAEA.908091"
+      ],
+      "parameters": [
+        "Diffusive oxygen uptake",
+        "Total oxygen uptake",
+        "Chlorophyll a",
+        "Phaeopigments",
+        "Total organic carbon",
+        "Prokaryotic cell abundance"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the DOIs for the datasets (10.1594/PANGAEA.863150, 10.1594/PANGAEA.892279, 10.1594/PANGAEA.892280, 10.1594/PANGAEA.892286, 10.1594/PANGAEA.907889, 10.1594/PANGAEA.908091), please retrieve the actual data tables for all six of them so we can begin merging and analyzing the habitat differences between shelf and deep-sea environments.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.863150"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.892279"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.892280"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.892286"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.907889"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.908091"
+        }
+      }
+    ]
+  }
+}

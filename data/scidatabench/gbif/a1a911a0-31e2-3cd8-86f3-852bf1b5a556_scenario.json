@@ -1,0 +1,43 @@
+{
+  "source_doi": "10.15560/18.4.773",
+  "research_question": "What is the known global distribution of the lichen Pyrenula chlorospila based on GBIF records?",
+  "phase_1": {
+    "user_prompt": "I am researching the global biogeography of the lichen species Pyrenula chlorospila. I'd like to understand its known distribution pattern worldwide before looking into potential new regional records. What are the fundamental parameters needed to query the GBIF database for all global occurrences of this species?",
+    "expected": {
+      "taxon_keys": [
+        "3467506"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the parameters identified, please download all available occurrence records for Pyrenula chlorospila from GBIF. Save the dataset to a structured file.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "taxonKey": 3467506
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To accurately map the species, we need to clean the retrieved dataset. Please filter the records to keep only those that have valid geographic coordinates (latitude and longitude) and remove any duplicates based on coordinates. How many unique occurrence records remain after cleaning?",
+    "expected": 1968,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned coordinate data, identify the total number of unique countries where Pyrenula chlorospila has been recorded. Additionally, generate a global map plotting these occurrences to visualize its range. Save the map as `p_chlorospila_global_map.png`.",
+    "expected": 12,
+    "unit": "countries",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Globally, Pyrenula chlorospila is primarily distributed across Europe (including Denmark, France, Germany, Greece, Ireland, Spain, the Netherlands, etc.) and extends into parts of Eurasia such as Iran and the Russian Federation.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "p_chlorospila_global_map.png",
+      "visual_description": "A world map showing occurrence points for Pyrenula chlorospila heavily concentrated in Europe (e.g., UK, Spain, France, Germany) with sparse points extending to Western Asia and the Russian Federation.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

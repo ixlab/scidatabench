@@ -1,0 +1,495 @@
+{
+  "source_doi": "10.1007/s00442-025-05731-2",
+  "research_question": "How do interacting phenotypic (sex, body condition) and environmental (animal density, habitat type, latitude) factors influence the home range area of Peromyscus mice?",
+  "phase_1": {
+    "user_prompt": "I'm looking to study the space use and home range size of deer mice (Peromyscus) across the continent. Could you find the NEON data product that provides small mammal capture data, specifically the records that include their morphological measurements, sex, reproductive status, and the spatial coordinates of where they were trapped?",
+    "expected": {
+      "data_products": [
+        "DP1.10072.001"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the small mammal capture data for all available terrestrial sites over the 10 calendar years beginning in 2013. We need the data tables that contain the individuals' field capture records, traits, and trap coordinates so we can map their spatial locations.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "ABBY",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "BARR",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "BART",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "BLAN",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "BONA",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "CLBJ",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "CPER",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "DCFS",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "DEJU",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "DELA",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "DSNY",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "GRSM",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "GUAN",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "HARV",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "HEAL",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "JERC",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "JORN",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "KONA",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "KONZ",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "LAJA",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "LENO",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "MLBS",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "MOAB",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "NIWO",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "NOGP",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "OAES",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "ONAQ",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "ORNL",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "OSBS",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "RMNP",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SCBI",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SERC",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SJER",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SOAP",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SRER",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "STEI",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "STER",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "TALL",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "TEAK",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "TOOL",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "TREE",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "UKFS",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "UNDE",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "WOOD",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "WREF",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "YELL",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the small mammal data to prepare for home range analysis. Filter for the genus Peromyscus, but remove the monogamous species (californicus, eremicus, and polionotus). Apply an 'ever-adult' criterion based on mass: an individual is classified as adult if it ever met the species-specific mass threshold at any capture event (>=16g for 'small' species maniculatus and leucopus; >=19g for 'large' species keeni, truei, gossypinus, attwateri, boylii). Once classified, include ALL of that individual's captures (regardless of weight or life stage at each individual capture). Remove any obvious outliers (weight > 50g, hindfoot > 28mm, or weight < 10g). Then filter to individuals that were captured at least 5 times across at least 3 unique trap locations. Count the total number of unique individuals that meet these criteria.",
+    "expected": 2420,
+    "unit": "individuals"
+  },
+  "phase_4": {
+    "user_prompt": "For the qualifying individuals, calculate their 50% Kernel Density Estimate (KDE) home range area (in square meters) using their trap coordinates. What is the overall mean home range area across all individuals? Additionally, group the NEON plot vegetation types into three broad categories: 'forest' (deciduous, mixed, evergreen, and woody wetlands), 'grassland' (herbaceous, cultivated crops, pasture hay), and 'shrubland' (shrub/scrub). Create a boxplot comparing the calculated home range areas across these three habitat types, and save it as `homerange_by_habitat.png`.",
+    "expected": 1463,
+    "unit": "m^2",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Home range area varies significantly by habitat type. The smallest home ranges are found in structurally complex forested habitats, the largest home ranges are found in less complex grassland habitats, and shrubland habitats fall intermediately between the two.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "homerange_by_habitat.png",
+      "visual_description": "A boxplot displaying home range area (y-axis) categorized into three habitat types (x-axis): forest, shrubland, and grassland. The median and interquartile range for 'grassland' should be visibly higher/larger than 'forest', with 'shrubland' positioned intermediately.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

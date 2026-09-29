@@ -1,0 +1,339 @@
+{
+  "source_doi": "10.1007/s13280-020-01360-6",
+  "research_question": "To understand the seasonal influence of temperature on the growth patterns and peak occurrence of floating vegetation invasions across 20 global reservoirs.",
+  "phase_1": {
+    "user_prompt": "We are studying the climate drivers of floating vegetation invasions across a global set of reservoirs, and will use the Global Historical Climatology Network for air temperature at each site. Which geographic locations (the reservoirs in our sample) and which meteorological parameters should we look up for this analysis?",
+    "expected": {
+      "parameters": [
+        "TAVG",
+        "TMAX",
+        "TMIN"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the 20 reservoirs we identified (Bailianhe, Batujai, Bellandur, Chao Phraya, Chivero, Guadiana, Hartebeespoort, Kafue gorge, Kanewal, Koka, Mariquita, Minjiang, Petrobras, Ross Barnett, Salto Grande, Taabo, Tapacurá, Tomine, Valsequillo, and Vam Co Dong), please fetch the monthly temperature records from 1984 to 2018 for the weather stations closest to each of these locations.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "CHM00058314",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          30.5994,
+          115.4457
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "IDM00097240",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -8.7304,
+          116.2686
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "IN009010100",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          12.9371,
+          77.672
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "TH000048400",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          15.1593,
+          100.18
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "ZI000067775",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -17.9024,
+          30.7941
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "SPE00120152",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          38.2,
+          -7.5
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "SFM00068368",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -25.747,
+          27.8586
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "ZI000067761",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -15.8548,
+          28.4641
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "IN005050100",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          22.55,
+          72.55
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "ET000063450",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          8.3911,
+          39.086
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "CO000080222",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          5.2,
+          -74.9
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "CHM00056187",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          31.0,
+          103.5
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "BRM00083746",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -22.8,
+          -43.0
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00003940",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          32.45,
+          -90.03
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "AR000000011",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -29.96,
+          -57.75
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "IV000005557",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          6.2248,
+          -5.0827
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "BRM00082900",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -8.04,
+          -35.19
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "CO000080222",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          4.97,
+          -73.83
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "MXM00076683",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          18.91,
+          -98.12
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "VM000048900",
+          "startDate": "1984-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          11.0136,
+          106.2709
+        ]
+      }
+    ]
+  }
+}

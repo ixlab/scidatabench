@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.3133/fs20053044",
+  "research_question": "How can continuous acoustic Doppler velocity data be used to enhance the accuracy of daily mean springflow estimates at Barton Springs during periods when the standard stage-discharge relation is inapplicable, and what previously unrecognized hydrologic patterns can this high-frequency data reveal?",
+  "phase_1": {
+    "user_prompt": "I am studying the hydrology of Barton Springs in Austin, Texas. I want to analyze standard daily discharge and continuous gage height alongside high-frequency water velocity data to better understand springflow dynamics. Could you find the specific USGS site number for Barton Springs, along with the standard 5-digit USGS parameter codes for discharge and gage height?",
+    "expected": {
+      "sites": [
+        "08155500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00065"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now, please retrieve the daily mean discharge data, as well as the 15-minute continuous (instantaneous) gage height and continuous water velocity data for this site covering the period from April 1, 2004, through September 30, 2004.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08155500",
+          "parameter_code": "00060",
+          "time": "2004-04-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08155500",
+          "parameter_code": "00065",
+          "time": "2004-04-01/2004-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Focusing on the 15-minute continuous velocity data you retrieved, we need to establish a baseline for a specific event. Please calculate the daily mean water velocity (in ft/s) for April 29, 2004. Handle any missing data appropriately.",
+    "expected": 1.63,
+    "unit": "ft/s"
+  },
+  "phase_4": {
+    "user_prompt": "During pool maintenance on April 29, 2004, standard stage-discharge relations were invalid. Researchers established that an empirical cross-sectional area (discharge-to-velocity ratio) of 40 square feet can be used during this period. Using your calculated daily mean velocity for April 29, estimate the daily mean springflow (in cfs) for that day. Additionally, to investigate short-term dynamics, plot the 15-minute velocity data from April 1 to April 13, 2004, and save it as `springflow_velocity_comparison.png`. Evaluate the plot and describe any specific cyclical patterns visible between April 3 and April 5.",
+    "expected": 65.2,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The high-frequency velocity data reveals a distinct 24-hour cyclical variation between April 3 and April 5, with velocity reaching a maximum in the early afternoon and a minimum in the early morning. Assuming a constant discharge-to-velocity ratio, this daily variation indicates that springflow from the aquifer likely also experiences a natural or anthropogenic daily cyclical pattern.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "springflow_velocity_comparison.png",
+      "visual_description": "A line plot or scatter plot showing 15-minute water velocity from April 1 to April 13, 2004, with clear 24-hour cyclic peaks and troughs visible during the April 3 to April 5 window.",
+      "paper_figure_reference": "Figure 6"
+    }
+  }
+}

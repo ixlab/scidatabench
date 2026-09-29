@@ -1,0 +1,64 @@
+{
+  "source_doi": "10.1038/s41698-019-0105-2",
+  "research_question": "How to identify mouse gene sequences from Ensembl and retrieve them for designing qPCR primers for CXCL9, CXCL10, CXCL11, TGFB1, and beta-actin?",
+  "phase_1": {
+    "user_prompt": "We are designing primers for RT-PCR analysis of the immune-modulatory effects of a liposomal formulation in a syngeneic mouse model of ccRCC (Renca cells). We will measure mRNA expression of the three interferon-gamma-inducible C-X-C motif chemokines, of transforming growth factor beta 1, and of the standard cytoskeletal housekeeping gene used for normalization. Please identify the gene symbols for all of these, as well as the species name.",
+    "expected": {
+      "gene_symbols": [
+        "CXCL9",
+        "CXCL10",
+        "CXCL11",
+        "TGFB1",
+        "ACTB"
+      ],
+      "species": [
+        "mus_musculus"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the target gene symbols (CXCL9, CXCL10, CXCL11, TGFB1, and ACTB) and the species (mus_musculus), please retrieve their cDNA or mRNA sequences from Ensembl. This data is needed to design qPCR primers as originally done in the study.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSMUST00000113093",
+          "type": "cdna"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSMUST00000038816",
+          "type": "cdna"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSMUST00000122808",
+          "type": "cdna"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSMUST00000002678",
+          "type": "cdna"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSMUST00000100497",
+          "type": "cdna"
+        }
+      }
+    ]
+  }
+}

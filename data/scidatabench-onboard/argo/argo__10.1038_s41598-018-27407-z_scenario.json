@@ -1,0 +1,28 @@
+{
+  "source_doi": "10.1038/s41598-018-27407-z",
+  "research_question": "Which Argo float was used to track salinity anomalies indicative of a submarine hydrothermal iron source in the Western Tropical South Pacific?",
+  "phase_1": {
+    "user_prompt": "We are studying a shallow submarine iron source in the Tonga arc region and want the physical oceanography that supports it. An autonomous profiling float deployed during the OUTPACE cruise tracked the hydrological anomalies. Could you work out which float that was, and the core hydrographic parameters we need from it?",
+    "expected": {
+      "float_wmo_ids": [
+        "6901663"
+      ],
+      "parameters": [
+        "TEMP",
+        "PSAL"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the float identifier (6901663) and the parameters of interest (temperature and salinity), please retrieve all the profile data for this float from its deployment in mid-March 2015 through the end of September 2016.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 6901663
+        }
+      }
+    ]
+  }
+}

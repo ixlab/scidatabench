@@ -1,0 +1,324 @@
+{
+  "source_doi": "10.3133/sir20135068",
+  "research_question": "I am investigating the concentrations and bioaccumulation potential of total mercury and methylmercury in wetlands at the Glacial Ridge National Wildlife Refuge in northwestern Minnesota from 2007 to 2009.",
+  "phase_1": {
+    "user_prompt": "I'm setting up a study on wetland water and sediment quality at the Glacial Ridge National Wildlife Refuge in Polk County, Minnesota, focusing on mercury methylation. There is an established network of 29 specific wetland monitoring sites here that were active from June 2007 to September 2009. Can you identify the USGS site numbers for these locations and determine the appropriate data type for discrete water quality samples?",
+    "expected": {
+      "sites": [
+        "474426096192901",
+        "474426096192902",
+        "474426096192903",
+        "474426096192904",
+        "474403096191401",
+        "474403096191402",
+        "474403096191403",
+        "474403096191404",
+        "474449096192701",
+        "474456096193701",
+        "474448096192301",
+        "474445096192201",
+        "474440096185101",
+        "474428096184901",
+        "474434096184801",
+        "474443096185101",
+        "474236096171801",
+        "474426096192905",
+        "474426096192906",
+        "474426096192907",
+        "474403096191405",
+        "474403096191406",
+        "474403096191407",
+        "474449096192702",
+        "474448096192801",
+        "474448096192901",
+        "474440096185201",
+        "474440096185301",
+        "474440096185302"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the 29 Glacial Ridge wetland sites, please retrieve all discrete water quality and bed sediment records over the 28 months beginning in June 2007. I am primarily interested in total mercury, methylmercury, and dissolved organic carbon (DOC) concentrations.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474426096192901",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474426096192902",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474426096192903",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474426096192904",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474403096191401",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474403096191402",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474403096191403",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474403096191404",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474449096192701",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474456096193701",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474448096192301",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474445096192201",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474440096185101",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474428096184901",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474434096184801",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474443096185101",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474236096171801",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474426096192905",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474426096192906",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474426096192907",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474403096191405",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474403096191406",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474403096191407",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474449096192702",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474448096192801",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474448096192901",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474440096185201",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474440096185301",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474440096185302",
+          "activityStartDateLower": "2007-06-01",
+          "activityStartDateUpper": "2009-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved water samples. Filter out any blank or quality-control samples so we are only looking at actual environmental wetland water measurements. If there are field replicates taken on the same day at the same site, average them together. To understand the biogeochemical baseline, calculate the overall median concentration of dissolved organic carbon (DOC) in mg/L across all sampled wetlands.",
+    "expected": 20.5,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Now turn to the mercury species in the wetland water. Calculate the overall median methylmercury concentration (in ng/L) in the water column across the environmental samples. Create a boxplot showing the distribution of water methylmercury concentrations, saving it as `methylmercury_distribution_boxplot.png`. Based on the numeric findings, provide a brief conclusion on what these methylmercury levels imply about the risk to the aquatic food web in these wetlands compared to typical uncontaminated waters.",
+    "expected": 2.9,
+    "unit": "ng/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The median methylmercury concentration in the wetland water is quite high (~2.9 ng/L), with maximum concentrations up to 16 ng/L. These values are much higher than typical lakes or flowing streams. This indicates a high potential for methylmercury bioaccumulation in aquatic biota and the wildlife that consume them, suggesting these newly restored wetlands act as significant sources of methylmercury.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "methylmercury_distribution_boxplot.png",
+      "visual_description": "A boxplot displaying methylmercury concentrations in wetland water (in ng/L). The median line should be positioned around 2.9 ng/L, with a box (IQR) typically spanning from ~1 to ~5 ng/L, and upper whiskers or outliers reaching as high as 16 ng/L.",
+      "paper_figure_reference": "Figure 5"
+    }
+  }
+}

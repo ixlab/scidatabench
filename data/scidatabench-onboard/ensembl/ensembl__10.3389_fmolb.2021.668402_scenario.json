@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.3389/fmolb.2021.668402",
+  "research_question": "What is the 5 kb promoter sequence of the human MCM4 gene, and how can it be extracted for CpG island methylation analysis?",
+  "phase_1": {
+    "user_prompt": "We are assessing the prognostic value of Minichromosome Maintenance (MCM) family genes in osteosarcoma, where the prognostic role of MCM4 — the core component of the MCM2-7 hexamer — appears attributable to changes in its DNA methylation patterns. For our in silico promoter analysis we first need the exact human gene symbol and the corresponding Ensembl gene ID for this factor.",
+    "expected": {
+      "gene_ids": [
+        "ENSG00000104738"
+      ],
+      "gene_symbols": [
+        "MCM4"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the Ensembl gene ID for human MCM4 (ENSG00000104738), please retrieve the DNA sequence for the 5 kilobase (5000 bp) region immediately upstream of the gene. This promoter sequence is required as input for MethPrimer to predict the CpG islands.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSG00000104738",
+          "type": "genomic",
+          "expand_5prime": 5000
+        }
+      }
+    ]
+  }
+}

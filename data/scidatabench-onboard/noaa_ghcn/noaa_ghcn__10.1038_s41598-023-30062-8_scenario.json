@@ -1,0 +1,33 @@
+{
+  "source_doi": "10.1038/s41598-023-30062-8",
+  "research_question": "Can a sparsity-discovering Gaussian Process accurately interpolate daily maximum temperatures from a massive dataset (over 5 million points) across the continental US?",
+  "phase_1": {
+    "user_prompt": "We are testing an exact Gaussian process method with sparsity-discovering kernels on a large climate dataset, modelling a single daily weather metric across a wide geographic region so that the problem reaches over 5 million data points spanning 1990 to 2019. We want the daily peak air temperature across the continental United States. Could you identify the exact weather parameter we should model and the geographic region from which to select the weather stations?",
+    "expected": {
+      "parameters": [
+        "TMAX"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using our findings, please fetch the daily maximum temperatures for weather stations located across the continental United States for the date range starting January 1, 1990, and ending December 31, 2019.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013984",
+          "startDate": "1990-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          39.8,
+          -98.6
+        ]
+      }
+    ]
+  }
+}

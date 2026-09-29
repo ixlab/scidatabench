@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.1038/s41380-018-0336-6",
+  "research_question": "Which inter-alpha-trypsin inhibitor heavy chain genes form the 3p21.1 cluster implicated in psychiatric GWAS, and what are their gene models?",
+  "phase_1": {
+    "user_prompt": "Our bivariate GWAS of depression and bipolar disorder keeps returning the same signal at 3p21.1, and the strongest association sits over a cluster of inter-alpha-trypsin inhibitor heavy chain genes. Not every member of that gene family lives at this locus — some sit on a different chromosome entirely — and we only want the ones actually in the cluster. Give us the approved human gene symbols for the inter-alpha-trypsin inhibitor heavy chain genes located in the 3p21.1 cluster, and the Ensembl species name.",
+    "expected": {
+      "gene_symbols": [
+        "ITIH1",
+        "ITIH3",
+        "ITIH4"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now pull the full gene model for each of those genes from Ensembl, expanded so we get every transcript, so we can look at where the coding variants fall.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "ITIH1",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "ITIH3",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "ITIH4",
+          "expand": 1
+        }
+      }
+    ]
+  }
+}

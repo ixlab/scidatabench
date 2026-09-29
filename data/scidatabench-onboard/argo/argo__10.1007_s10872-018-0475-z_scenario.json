@@ -1,0 +1,28 @@
+{
+  "source_doi": "10.1007/s10872-018-0475-z",
+  "research_question": "What is the detailed vertical structure and temporal evolution of coastal upwelling events along the southern coast of Java during the 2008 positive Indian Ocean Dipole?",
+  "phase_1": {
+    "user_prompt": "We are studying coastal upwelling events along the southern coast of Java during the 2008 positive Indian Ocean Dipole. We want the vertical structure of the ocean during that event from an Argo float that drifted close to the coast. Could you tell us the WMO identification number of a suitable float, along with the main physical ocean parameters we would extract from its profiles?",
+    "expected": {
+      "float_wmo_ids": [
+        "5901172"
+      ],
+      "parameters": [
+        "temperature",
+        "salinity"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the float identifier (WMO 5901172), please retrieve its complete profiling history from the Argo database. We need to access its measurements to analyze the temperature and salinity profiles, particularly for the period leading up to September 2008 when it was approaching the Java coast.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5901172
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "source_doi": "10.3897/biss.6.95052",
+  "research_question": "How can crowdsourced iNaturalist observations of amphibians and reptiles in Idaho be curated and analyzed to map species occupancy for state wildlife conservation?",
+  "phase_1": {
+    "user_prompt": "Our state fish and game department wants to fold research-grade citizen-science herpetofauna records into the State Species Diversity Database that feeds our State Wildlife Action Plan. We work in the only U.S. state that borders both British Columbia and Nevada. To scope an iNaturalist query, tell me the place name for that state as iNaturalist records it, together with the scientific class names covering amphibians and reptiles.",
+    "expected": {
+      "taxon_names": [
+        "Amphibia",
+        "Reptilia"
+      ],
+      "place_names": [
+        "Idaho"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identifiers we established, please write a Python script to retrieve the metadata for all 'research-grade' observations of Amphibia and Reptilia in Idaho. Limit the results to observations submitted up through July 8, 2022, which is the snapshot date we are working to. Save the results to a CSV file.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 20978,
+          "place_id": 22,
+          "quality_grade": "research",
+          "d2": "2022-07-08"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 26036,
+          "place_id": 22,
+          "quality_grade": "research",
+          "d2": "2022-07-08"
+        }
+      }
+    ]
+  }
+}

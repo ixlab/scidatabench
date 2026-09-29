@@ -1,0 +1,92 @@
+{
+  "source_doi": "10.3133/sir20205046",
+  "research_question": "To evaluate the effects of stormwater runoff from selected bridge decks on conditions of water, sediment, and biological quality in receiving waters in South Carolina from 2013 to 2018.",
+  "phase_1": {
+    "user_prompt": "I'm planning a study on the effects of bridge deck stormwater runoff on water quality in South Carolina, specifically focusing on Escherichia coli (E. coli). I need to retrieve historical discrete water quality samples for E. coli (using the defined substrate test method) from 2013 to 2018. The study focuses on five USGS stream monitoring sites located at bridges: Lynches River at Effingham, North Fork Edisto River at Orangeburg, Turkey Creek above Huger, South Fork Edisto River near Denmark, and Fishing Creek at Highway 5 below York. Can you identify the USGS site numbers for these five locations and the parameter code for E. coli?",
+    "expected": {
+      "sites": [
+        "02132000",
+        "02173500",
+        "02172035",
+        "02173000",
+        "021473415"
+      ],
+      "parameter_codes": [
+        "50468"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now retrieve the discrete water quality sample data for E. coli at these five bridge sites for the period from January 1, 2013, to December 31, 2018.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02132000",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2018-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02173500",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2018-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02172035",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2018-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02173000",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2018-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-021473415",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2018-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Filter the retrieved data to isolate the E. coli samples for the North Fork Edisto River at Orangeburg site. Exclude any quality-control blanks (e.g., keep only environmental samples). Count the total number of environmental E. coli sample records collected at this specific site.",
+    "expected": 15.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Now analyze the E. coli data at the North Fork Edisto River site to determine if bridge runoff during storms significantly increases contamination. Identify storm events where paired upstream and downstream samples were collected on the same day. Perform a Wilcoxon one-sided signed rank test on these paired storm samples to test if downstream E. coli concentrations are significantly greater than upstream concentrations. Report the Z-statistic of the test. Finally, summarize whether, across all sites and parameters typically measured in this type of study, bridge deck runoff generally causes significant downstream water quality degradation, or if this E. coli result at North Fork Edisto is an exception.",
+    "expected": 2.108,
+    "unit": "Z-score",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Overall, stormwater runoff from the bridge decks did not significantly degrade physical properties, nutrients, trace metals, or E. coli concentrations beyond the natural variability observed upstream at the five sites. The significant downstream increase in E. coli at the North Fork Edisto River site is one of a few exceptions, alongside downstream increases in total chromium at Turkey Creek and turbidity/nitrogen at Fishing Creek.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

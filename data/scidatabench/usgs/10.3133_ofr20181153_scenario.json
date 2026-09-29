@@ -1,0 +1,696 @@
+{
+  "source_doi": "10.3133/ofr20181153",
+  "research_question": "Analyze the occurrence, concentrations, and temporal changes of key dissolved pesticides (Hexazinone, Diuron, Azoxystrobin, and Clomazone) in the lower Sacramento River and its source waters during May and October 2016.",
+  "phase_1": {
+    "user_prompt": "I'm investigating dissolved pesticide concentrations in the lower Sacramento River watershed. I want to analyze data from a targeted surface-water sampling campaign that took place in May and October 2016 on the mainstem Sacramento River (from near Robbins down to Isleton) and major inflows like the Colusa Basin Drainage Canal, Sacramento Slough, Natomas Cross Canal, Feather River, and American River. Could you identify the USGS site numbers for the locations sampled for pesticides during this campaign? Also, what are the USGS parameter codes for the pesticides Hexazinone, Diuron, Azoxystrobin, and Clomazone?",
+    "expected": {
+      "sites": [
+        "385137121440101",
+        "384804121432401",
+        "384623121411401",
+        "384649121381101",
+        "384726121373901",
+        "384649121361501",
+        "11425500",
+        "383944121363901",
+        "383600121330301",
+        "383609121293200",
+        "383225121304601",
+        "382740121301201",
+        "382605121310401",
+        "382205121311300",
+        "381703121331101",
+        "381038121352501"
+      ],
+      "parameter_codes": [
+        "65085",
+        "66589",
+        "66598",
+        "67562"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the discrete water quality sample data for the identified sites and the four pesticide parameters for the period covering May 1, 2016 through October 31, 2016.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-385137121440101",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-385137121440101",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-385137121440101",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-385137121440101",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384804121432401",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384804121432401",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384804121432401",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384804121432401",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384623121411401",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384623121411401",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384623121411401",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384623121411401",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384649121381101",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384649121381101",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384649121381101",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384649121381101",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384726121373901",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384726121373901",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384726121373901",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384726121373901",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384649121361501",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384649121361501",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384649121361501",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384649121361501",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11425500",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11425500",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11425500",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11425500",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383944121363901",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383944121363901",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383944121363901",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383944121363901",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383600121330301",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383600121330301",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383600121330301",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383600121330301",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383609121293200",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383609121293200",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383609121293200",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383609121293200",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383225121304601",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383225121304601",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383225121304601",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383225121304601",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382740121301201",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382740121301201",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382740121301201",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382740121301201",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382605121310401",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382605121310401",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382605121310401",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382605121310401",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382205121311300",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382205121311300",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382205121311300",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-382205121311300",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-381703121331101",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-381703121331101",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-381703121331101",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-381703121331101",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-381038121352501",
+          "usgsPCode": "65085",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-381038121352501",
+          "usgsPCode": "66589",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-381038121352501",
+          "usgsPCode": "66598",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-381038121352501",
+          "usgsPCode": "67562",
+          "activityStartDateLower": "2016-05-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Using the downloaded water quality data, filter for samples collected during the May 2016 sampling event. What was the highest measured concentration of Clomazone across all monitoring sites during this specific event?",
+    "expected": 576.3,
+    "unit": "ng/L"
+  },
+  "phase_4": {
+    "user_prompt": "Now let's look at detection frequencies. Calculate the overall detection frequency (as a percentage) for Hexazinone across both the May and October 2016 sampling events combined (i.e., the percentage of all collected samples where Hexazinone was detected at quantifiable levels). Additionally, create a grouped bar chart comparing the detection frequencies of all four pesticides (Hexazinone, Diuron, Azoxystrobin, and Clomazone) grouped by sampling month (May vs. October). Save this plot as `pesticide_detection_frequencies.png`.",
+    "expected": 87.5,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Hexazinone, Diuron, and Azoxystrobin maintained consistently high detection frequencies (>70%) across both the May and October sampling periods. In sharp contrast, Clomazone was highly detected in May (94%) due to seasonal agricultural use but was entirely absent (0% detection) in the October samples.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "pesticide_detection_frequencies.png",
+      "visual_description": "A grouped bar chart comparing detection frequencies (0-100%) for Hexazinone, Diuron, Azoxystrobin, and Clomazone. The chart should group the data either by pesticide or by month (May vs. October). It must clearly show Clomazone dropping from >90% in May to 0% in October, while the other three pesticides remain >70% in both months.",
+      "paper_figure_reference": "Figures 3 and 5 (combined concept) / Table 5"
+    }
+  }
+}

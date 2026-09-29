@@ -1,0 +1,16 @@
+{
+  "platform": "vizier",
+  "condition": "exec",
+  "model": "gemini-3.7-flash",
+  "elapsed_s": 56.1,
+  "tokens": {
+    "input": 144315,
+    "output": 6204,
+    "thinking": 0,
+    "total": 150519,
+    "cache_read": 0
+  },
+  "tool_call_turns": 24,
+  "research_log": [],
+  "generated_utc": "2026-08-14T17:10:44.103764+00:00"
+}

@@ -1,0 +1,287 @@
+{
+  "source_doi": "10.3133/sir20255099",
+  "research_question": "Analyze long-term flow-normalized nutrient (total nitrogen and total phosphorus) trends in the Grand River basin and nearby regional rivers in Missouri and Iowa to assess the impact of watershed conservation initiatives implemented since 2010.",
+  "phase_1": {
+    "user_prompt": "I am studying nutrient trends in the Lower Grand River basin and nearby regional rivers in Missouri and Iowa to see if conservation efforts implemented since 2010 have been effective. I need to find the USGS streamgages for the following locations: Medicine Creek at Lucerne, MO; Medicine Creek near Laredo, MO; Locust Creek near Linneus, MO; Nodaway River near Graham, MO; Grand River near Sumner, MO; Chariton River near Prairie Hill, MO; Missouri River at St. Joseph, MO; and Missouri River at Hermann, MO. What are the site numbers, and which parameter codes should I use to retrieve daily mean streamflow, total nitrogen, and total phosphorus data?",
+    "expected": {
+      "sites": [
+        "06899900",
+        "06900050",
+        "06901500",
+        "06817700",
+        "06818000",
+        "06902000",
+        "06905500",
+        "06934500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00600",
+        "00665"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 8 site numbers (06899900, 06900050, 06901500, 06817700, 06818000, 06902000, 06905500, 06934500), please retrieve their daily mean streamflow data and discrete water-quality sample records for total nitrogen and total phosphorus. Limit the data to the period from October 1, 1994, to September 30, 2023.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06899900",
+          "parameter_code": "00060",
+          "time": "1994-10-01/2023-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06899900",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06899900",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06900050",
+          "parameter_code": "00060",
+          "time": "1994-10-01/2023-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06900050",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06900050",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06901500",
+          "parameter_code": "00060",
+          "time": "1994-10-01/2023-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06901500",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06901500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06817700",
+          "parameter_code": "00060",
+          "time": "1994-10-01/2023-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06817700",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06817700",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06818000",
+          "parameter_code": "00060",
+          "time": "1994-10-01/2023-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06818000",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06818000",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06902000",
+          "parameter_code": "00060",
+          "time": "1994-10-01/2023-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06902000",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06902000",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06905500",
+          "parameter_code": "00060",
+          "time": "1994-10-01/2023-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06905500",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06905500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06934500",
+          "parameter_code": "00060",
+          "time": "1994-10-01/2023-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06934500",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06934500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "1994-10-01",
+          "activityStartDateUpper": "2023-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's focus on the long-term site on the Grand River near Sumner (site 06902000) to prepare for total phosphorus trend modeling. Filter the discrete water quality data to keep only regular samples, excluding duplicates taken on the same day. Then, merge these water quality samples with the daily mean streamflow recorded for the exact dates they were collected. How many valid, paired observations (streamflow + total phosphorus) are available for this site between October 1, 1994, and September 30, 2023?",
+    "expected": 318.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Using the paired streamflow and total phosphorus data for the Grand River near Sumner (site 06902000), estimate the annual flow-normalized (FN) total phosphorus concentrations from water year 2000 through 2023 using the WRTDS (Weighted Regressions on Time, Discharge, and Season) method. What is the estimated percentage change in the annual flow-normalized total phosphorus concentration from the start of the watershed initiative (water year 2010) to the end of the study period (water year 2023)? Create a plot showing the annual FN TP concentrations over time from 2000 to 2023 and save it as `grand_river_tp_trend.png`.",
+    "expected": -26.0,
+    "unit": "percent",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The flow-normalized total phosphorus concentrations at the Grand River site (06902000) increased slightly from 2000 until roughly 2008-2010, after which they experienced a steady and substantial decline through 2023, reversing the previous trend.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "grand_river_tp_trend.png",
+      "visual_description": "A line plot of annual flow-normalized total phosphorus concentration (mg/L) over time (2000 to 2023). The y-axis should range around 0.3 to 0.55 mg/L. The curve should show a gentle increase from 2000 to a peak around 2008-2010, followed by a sustained downward trend to approximately 0.31 mg/L in 2023.",
+      "paper_figure_reference": "Figure 6B (Site 06902000 curve, purple line with diamonds)"
+    }
+  }
+}

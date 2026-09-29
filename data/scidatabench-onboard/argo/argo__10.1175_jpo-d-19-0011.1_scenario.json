@@ -1,0 +1,35 @@
+{
+  "source_doi": "10.1175/jpo-d-19-0011.1",
+  "research_question": "What is the climatological velocity and streamfunction of the Intermediate Western Boundary Current (IWBC) and its recirculations off southeast Brazil within the Antarctic Intermediate Water (AAIW) layer?",
+  "phase_1": {
+    "user_prompt": "We are characterizing the time-mean velocity pattern of the Intermediate Western Boundary Current (IWBC) near the Vitoria-Trindade Ridge, in the intermediate circulation between roughly 24 and 18 degrees south off Brazil, using Argo float trajectories and profile data. Give the geographic bounding box we should use to select floats for this region, and identify the standard core oceanographic parameters we need in order to calculate potential density for the AAIW layer (which we define by the 1027.1-1027.4 kg m-3 isopycnals).",
+    "expected": {
+      "parameters": [
+        "TEMP",
+        "PSAL",
+        "PRES"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified study region (26°S to 16°S, 43°W to 32°W) and time frame (January 2000 to April 2019), retrieve the Argo profile and trajectory data to study the AAIW layer. We need to fetch the core temperature, salinity, and pressure variables for this bounding box. Filter the requested dataset to include only floats that have parking depths between 600 and 1100 m.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.region",
+        "kwargs": {
+          "box": [
+            -43,
+            -32,
+            -26,
+            -16,
+            0,
+            2000,
+            "2000-01",
+            "2019-05"
+          ]
+        }
+      }
+    ]
+  }
+}

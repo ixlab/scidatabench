@@ -1,0 +1,100 @@
+{
+  "source_doi": "10.1007/s11252-024-01526-0",
+  "research_question": "To evaluate the effectiveness of the '+Biodiversity@CIÊNCIAS' citizen science project for monitoring urban biodiversity on a university campus, and analyze which specific taxonomic groups experienced the most significant growth in species discovery.",
+  "phase_1": {
+    "user_prompt": "Our faculty runs a campus biodiversity project on the Portuguese node of iNaturalist and we now want to pull every observation belonging to the six groups we are reporting on: spiders and their kin, mushrooms and moulds, insects, mammals, snails and slugs and their relatives, and plants. Give me the iNaturalist iconic-taxon names for those six groups so we can scope the query.",
+    "expected": {
+      "taxon_names": [
+        "Arachnida",
+        "Fungi",
+        "Insecta",
+        "Mammalia",
+        "Mollusca",
+        "Plantae"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the list of taxa (Arachnida, Fungi, Insecta, Mammalia, Mollusca, and Plantae), please retrieve all the iNaturalist observations for these groups from the '+Biodiversity@CIÊNCIAS' project. Get all records from the start of the project on September 1, 2020, through the end of their study period on December 31, 2022, including both validated and non-validated data.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 47119,
+          "nelat": 38.763,
+          "nelng": -9.145,
+          "swlat": 38.747,
+          "swlng": -9.166,
+          "d1": "2020-09-01",
+          "d2": "2022-12-31"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 47170,
+          "nelat": 38.763,
+          "nelng": -9.145,
+          "swlat": 38.747,
+          "swlng": -9.166,
+          "d1": "2020-09-01",
+          "d2": "2022-12-31"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 47158,
+          "nelat": 38.763,
+          "nelng": -9.145,
+          "swlat": 38.747,
+          "swlng": -9.166,
+          "d1": "2020-09-01",
+          "d2": "2022-12-31"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 40151,
+          "nelat": 38.763,
+          "nelng": -9.145,
+          "swlat": 38.747,
+          "swlng": -9.166,
+          "d1": "2020-09-01",
+          "d2": "2022-12-31"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 47115,
+          "nelat": 38.763,
+          "nelng": -9.145,
+          "swlat": 38.747,
+          "swlng": -9.166,
+          "d1": "2020-09-01",
+          "d2": "2022-12-31"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 47126,
+          "nelat": 38.763,
+          "nelng": -9.145,
+          "swlat": 38.747,
+          "swlng": -9.166,
+          "d1": "2020-09-01",
+          "d2": "2022-12-31"
+        }
+      }
+    ]
+  }
+}

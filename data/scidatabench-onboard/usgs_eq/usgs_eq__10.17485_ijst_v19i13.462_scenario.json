@@ -1,0 +1,24 @@
+{
+  "source_doi": "10.17485/ijst/v19i13.462",
+  "research_question": "To assess co-seismic landslide susceptibility in the Imphal region using a modified Newmark Sliding Block Model by integrating scenario-based ground motion (PGA) from the 2016 Mw 6.7 Imphal earthquake.",
+  "phase_1": {
+    "user_prompt": "I am recreating a study on earthquake-induced landslide susceptibility in Manipur, India, focusing on the major magnitude 6.7 earthquake that occurred near Imphal in early January 2016. I need to get the specific USGS catalog identifier for this event to retrieve its peak ground acceleration data. Can you find the correct identifier?",
+    "expected": {
+      "event_ids": [
+        "us10004b2n"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the event identifier 'us10004b2n', please retrieve the detailed earthquake data, specifically the ground motion products (ShakeMap) that contain the Peak Ground Acceleration (PGA) values needed for our slope stability analysis.",
+    "expected": [
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "eventid": "us10004b2n"
+        }
+      }
+    ]
+  }
+}

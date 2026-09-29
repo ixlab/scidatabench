@@ -1,0 +1,86 @@
+{
+  "source_doi": "10.1175/jcli-d-21-0689.1",
+  "research_question": "What are the robust biophysical impacts of idealized global deforestation on precipitation, precipitation extremes, and the seasonal pattern of rainy seasons across CMIP6 Earth system models?",
+  "phase_1": {
+    "user_prompt": "We are running a CMIP6 model intercomparison of the biophysical impacts of deforestation on precipitation, contrasting the idealised global deforestation experiment against its pre-industrial control. Please identify the specific CMIP6 models, those two experimental runs, the target variables (precipitation, evapotranspiration, 3D specific humidity, 3D winds, surface pressure, downward and upward surface shortwave radiation, and leaf area index), and the tables that provide the required temporal frequencies.",
+    "expected": {
+      "source_ids": [
+        "BCC-CSM2-MR",
+        "CanESM5",
+        "CESM2",
+        "CMCC-ESM2",
+        "CNRM-ESM2-1",
+        "EC-Earth3-Veg",
+        "GISS-E2-1-G",
+        "IPSL-CM6A-LR",
+        "MIROC-ES2L",
+        "MPI-ESM1-2-LR",
+        "UKESM1-0-LL"
+      ],
+      "experiment_ids": [
+        "piControl",
+        "deforest-globe"
+      ],
+      "variable_ids": [
+        "pr",
+        "evspsbl",
+        "hus",
+        "ua",
+        "va",
+        "ps",
+        "lai",
+        "rsds",
+        "rsus"
+      ],
+      "table_ids": [
+        "Amon",
+        "Lmon",
+        "day"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the required datasets, please write a script using `intake-esm` or `pyesgf` to search the CMIP6 ESGF catalog. Retrieve the metadata for the models (BCC-CSM2-MR, CanESM5, CESM2, CMCC-ESM2, CNRM-ESM2-1, EC-Earth3-Veg, GISS-E2-1-G, IPSL-CM6A-LR, MIROC-ES2L, MPI-ESM1-2-LR, UKESM1-0-LL), experiments (piControl, deforest-globe), variables (pr, evspsbl, hus, ua, va, ps, lai, rsds, rsus), and tables (Amon, Lmon, day). Limit the search to the first realization available for each if applicable.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "BCC-CSM2-MR",
+            "CanESM5",
+            "CESM2",
+            "CMCC-ESM2",
+            "CNRM-ESM2-1",
+            "EC-Earth3-Veg",
+            "GISS-E2-1-G",
+            "IPSL-CM6A-LR",
+            "MIROC-ES2L",
+            "MPI-ESM1-2-LR",
+            "UKESM1-0-LL"
+          ],
+          "experiment_id": [
+            "piControl",
+            "deforest-globe"
+          ],
+          "variable_id": [
+            "pr",
+            "evspsbl",
+            "hus",
+            "ua",
+            "va",
+            "ps",
+            "lai",
+            "rsds",
+            "rsus"
+          ],
+          "table_id": [
+            "Amon",
+            "Lmon",
+            "day"
+          ]
+        }
+      }
+    ]
+  }
+}

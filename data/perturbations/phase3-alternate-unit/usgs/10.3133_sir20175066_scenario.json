@@ -1,0 +1,334 @@
+{
+  "source_doi": "10.3133/sir20175066",
+  "research_question": "How do high-frequency nutrient concentrations and tidally-driven fluxes vary in the northern Sacramento-San Joaquin Delta, and what proportion of total nitrate flux is advective versus dispersive?",
+  "phase_1": {
+    "user_prompt": "I am investigating high-frequency nutrient dynamics and fluxes in the northern Sacramento-San Joaquin Delta for Water Years 2014 and 2015. I need to identify the continuous USGS monitoring stations in this region that record both water quality (specifically in-situ nitrate and dissolved oxygen) and discharge, which are required for calculating cumulative constituent fluxes. Please find the station numbers for the sites at Freeport, Walnut Grove, Cache Slough (at Ryer Island), Liberty Island, Toe Drain (near Courtland), Liberty Cut, the Deep Water Shipping Channel, and Decker Island.",
+    "expected": {
+      "sites": [
+        "11447650",
+        "11447890",
+        "11455139",
+        "11455146",
+        "11455142",
+        "11455350",
+        "11455315",
+        "11455478"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00300"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that you have the 8 station identifiers, please download the high-frequency (15-minute continuous) time series data for discharge and nitrate concentration for all 8 stations covering Water Years 2014 and 2015.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11447650",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11447650",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11447650",
+          "parameter_code": "99133",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11447650",
+          "parameter_code": "00630",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11447890",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11447890",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11447890",
+          "parameter_code": "99133",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11447890",
+          "parameter_code": "00630",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455139",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455139",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455139",
+          "parameter_code": "99133",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455139",
+          "parameter_code": "00630",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455146",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455146",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455146",
+          "parameter_code": "99133",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455146",
+          "parameter_code": "00630",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455142",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455142",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455142",
+          "parameter_code": "99133",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455142",
+          "parameter_code": "00630",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455350",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455350",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455350",
+          "parameter_code": "99133",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455350",
+          "parameter_code": "00630",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455315",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455315",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455315",
+          "parameter_code": "99133",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455315",
+          "parameter_code": "00630",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455478",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455478",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455478",
+          "parameter_code": "99133",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455478",
+          "parameter_code": "00630",
+          "time": "2013-10-01/2015-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the high-frequency dataset by handling missing values and ensuring the timestamps align. We want to understand the impact of major winter storm events on nutrient pulses before they mix into the tidal estuary. Focus on the Sacramento River at Freeport station. Identify the peak instantaneous nitrate concentration recorded during the major storm event on February 14, 2014. Report the result in micrograms per liter (µg/L).",
+    "expected": 1120.0,
+    "unit": "ug/L"
+  },
+  "phase_4": {
+    "user_prompt": "In tidal environments like Cache Slough, continuous data is necessary to accurately capture constituent transport, which consists of both advective (directional downstream flow) and dispersive (tidally-driven mixing) fluxes. First, compute the total cumulative nitrate flux for the Cache Slough station over the WY 2014-2015 period by continuously multiplying the 15-minute discharge by the simultaneous nitrate concentration. Next, isolate the advective component of this flux (e.g., by using tidally filtered discharge data). What percentage of the total nitrate flux at this station is driven strictly by advection? Additionally, create a time-series line plot comparing the total cumulative nitrate flux and the cumulative advective nitrate flux over this two-year period, saving it as 'cache_slough_nitrate_flux.png'.",
+    "expected": 70.0,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Separating the advective flux from the total flux indicates that the advective flux of nitrate accounts for only about 70 percent of the total nitrate flux at Cache Slough. This highlights that traditional methods using only net flow underestimate total transport by about 30 percent due to the failure to account for substantial dispersive fluxes driven by tidal pumping in the complex wetland environment.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "cache_slough_nitrate_flux.png",
+      "visual_description": "A time-series plot spanning from October 2013 to September 2015 showing two monotonically increasing lines. The line representing 'total cumulative nitrate flux' should track substantially higher than the 'cumulative advective nitrate flux' line, with the total flux diverging upward during periods of high flow and ending approximately 30-40% higher than the advective baseline by the end of the time series.",
+      "paper_figure_reference": "Figure 13"
+    }
+  }
+}

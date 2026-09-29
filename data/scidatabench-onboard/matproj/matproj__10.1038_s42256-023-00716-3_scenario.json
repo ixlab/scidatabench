@@ -1,0 +1,31 @@
+{
+  "source_doi": "10.1038/s42256-023-00716-3",
+  "research_question": "What specific chemical system and target properties were used to fine-tune the CHGNet model for accurate phase diagram calculations?",
+  "phase_1": {
+    "user_prompt": "We have a pretrained universal neural network potential and want to fine-tune it on a restricted subset of data to get better energy accuracy for phase diagram calculations of lithium iron phosphate cathodes. What specific chemical space should we restrict the fine-tuning data to, and which four physical properties should we extract for those structures to use as target labels for the model?",
+    "expected": {
+      "chemsys": [
+        "Li-Fe-P-O"
+      ],
+      "properties": [
+        "energy",
+        "forces",
+        "stress",
+        "magmoms"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified chemical system and properties, query the Materials Project database to retrieve the relevant computational trajectories or relaxation tasks. Ensure you extract the data containing the atomic configurations along with their computed energy, forces, stresses, and magnetic moments to construct the fine-tuning dataset.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/thermo",
+        "kwargs": {
+          "chemsys": "Li-Fe-P-O",
+          "_fields": "material_id,formula_pretty,energy_per_atom,formation_energy_per_atom"
+        }
+      }
+    ]
+  }
+}

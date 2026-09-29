@@ -1,0 +1,141 @@
+{
+  "platform": "inaturalist",
+  "condition": "search",
+  "model": "gemini-3.7-flash",
+  "elapsed_s": 38.0,
+  "tokens": {
+    "input": 272868,
+    "output": 2766,
+    "thinking": 0,
+    "total": 275634,
+    "cache_read": 183699
+  },
+  "tool_call_turns": 11,
+  "research_log": [
+    {
+      "kind": "search",
+      "query": "\"pyinaturalist\" get_observations documentation",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://pyinaturalist.readthedocs.io/en/v0.7.3/user_guide.html",
+        "https://pyinaturalist.readthedocs.io",
+        "https://pypi.org/project/pyinaturalist/0.12.0",
+        "https://forum.inaturalist.org/t/downloading-a-csv-of-all-observations-of-a-species-with-python/30655",
+        "https://github.com/pyinat/pyinaturalist",
+        "https://forum.inaturalist.org/t/how-to-use-inaturalist-apis-to-fetch-observations-like-i-would-from-web-page/61294",
+        "https://stackoverflow.com/questions/68972843/get-taxa-within-an-inaturalist-area-or-project-using-pyinaturalist",
+        "https://jumear.github.io/stirfry/iNatAPIv1_observations.html"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "site:pyinaturalist.readthedocs.io \"get_observations\" OR \"get_taxa\" OR \"get_places\"",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://pyinaturalist.readthedocs.io/en/stable/endpoints.html",
+        "https://pyinaturalist.readthedocs.io/en/v0.13.0/modules/pyinaturalist.node_api.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/examples/Data%20Visualizations%20-%20Regional%20Observation%20Stats.html",
+        "https://pyinaturalist.readthedocs.io/en/v0.7.3/user_guide.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/user_guide/advanced.html",
+        "https://pyinaturalist.readthedocs.io/en/v0.12",
+        "https://pyinaturalist.readthedocs.io/en/stable/examples.html",
+        "https://pyinaturalist.readthedocs.io"
+      ]
+    },
+    {
+      "kind": "fetch",
+      "url": "https://pyinaturalist.readthedocs.io/en/stable/endpoints.html",
+      "status": "200",
+      "chars": 5827
+    },
+    {
+      "kind": "search",
+      "query": "site:pyinaturalist.readthedocs.io \"pyinaturalist.v1\" OR \"get_observations\" parameters",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://pyinaturalist.readthedocs.io/en/v0.13.0/modules/pyinaturalist.node_api.html",
+        "https://pyinaturalist.readthedocs.io/en/v0.7.3/user_guide.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/user_guide/advanced.html",
+        "https://pyinaturalist.readthedocs.io/en/v0.12",
+        "https://pyinaturalist.readthedocs.io",
+        "https://pyinaturalist.readthedocs.io/en/v0.21.1/modules/pyinaturalist.v1.observation_fields.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/modules/pyinaturalist.models.Observation.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/modules/pyinaturalist.v1.places.html"
+      ]
+    },
+    {
+      "kind": "fetch",
+      "url": "https://pyinaturalist.readthedocs.io/en/stable/modules/pyinaturalist.v1.observations.html",
+      "status": "200",
+      "chars": 150716
+    },
+    {
+      "kind": "search",
+      "query": "site:pyinaturalist.readthedocs.io \"pyinaturalist.v1.taxa\" \"get_taxa\" \"get_taxa_autocomplete\"",
+      "provider": "tavily",
+      "n_results": 6,
+      "urls": [
+        "https://pyinaturalist.readthedocs.io/en/v0.11/endpoints.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/endpoints.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/modules/pyinaturalist.models.Taxon.html",
+        "https://pyinaturalist.readthedocs.io/en/v0.15.0/modules/pyinaturalist.models.TaxonCount.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/examples.html",
+        "https://pyinaturalist.readthedocs.io/en/v0.21.1/modules/pyinaturalist.paginator.html"
+      ]
+    },
+    {
+      "kind": "fetch",
+      "url": "https://pyinaturalist.readthedocs.io/en/stable/modules/pyinaturalist.v1.places.html",
+      "status": "200",
+      "chars": 12066
+    },
+    {
+      "kind": "fetch",
+      "url": "https://pyinaturalist.readthedocs.io/en/stable/modules/pyinaturalist.v1.taxa.html",
+      "status": "200",
+      "chars": 58876
+    },
+    {
+      "kind": "fetch",
+      "url": "https://pyinaturalist.readthedocs.io/en/stable/modules/pyinaturalist.v1.observations.html",
+      "status": "200",
+      "chars": 150716
+    },
+    {
+      "kind": "search",
+      "query": "site:pyinaturalist.readthedocs.io \"def get_observations(\"",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://pyinaturalist.readthedocs.io/en/v0.10.0/_modules/pyinaturalist/rest_api.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/examples.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/examples/Data%20Visualizations%20-%20Seaborn.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/examples/Data%20Visualizations%20-%20Regional%20Observation%20Stats.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/modules/pyinaturalist.models.Annotation.html",
+        "https://pyinaturalist.readthedocs.io/en/v0.21.0/examples/Data%20Visualizations%20-%20Regional%20Activity%20Report.html",
+        "https://pyinaturalist.readthedocs.io/en/v0.16.0/pyinaturalist.models.html",
+        "https://pyinaturalist.readthedocs.io/en/v0.13.0/examples/Data%20Visualizations%20-%20Regional%20Observation%20Stats.html"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "site:pyinaturalist.readthedocs.io \"pyinaturalist.v1.taxa\" OR \"pyinaturalist.v1.places\" OR \"pyinaturalist.v1.observations\"",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://pyinaturalist.readthedocs.io/en/v0.14.0/pyinaturalist.models.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/pyinaturalist.models.html",
+        "https://pyinaturalist.readthedocs.io/en/main/modules/pyinaturalist.v2.observations.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/modules/pyinaturalist.models.Taxon.html",
+        "https://pyinaturalist.readthedocs.io/en/v0.21.0/modules/pyinaturalist.v1.taxa.html",
+        "https://pyinaturalist.readthedocs.io/en/stable/user_guide/advanced.html",
+        "https://pyinaturalist.readthedocs.io",
+        "https://pyinaturalist.readthedocs.io/en/stable/examples.html"
+      ]
+    }
+  ],
+  "generated_utc": "2026-08-14T17:00:22.836740+00:00"
+}

@@ -1,0 +1,16 @@
+{
+  "platform": "census_acs",
+  "condition": "exec",
+  "model": "gemini-3.7-flash",
+  "elapsed_s": 37.6,
+  "tokens": {
+    "input": 117519,
+    "output": 6205,
+    "thinking": 0,
+    "total": 123724,
+    "cache_read": 0
+  },
+  "tool_call_turns": 11,
+  "research_log": [],
+  "generated_utc": "2026-08-14T17:04:18.010156+00:00"
+}

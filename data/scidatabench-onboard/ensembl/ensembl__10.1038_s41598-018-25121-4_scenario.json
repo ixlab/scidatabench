@@ -1,0 +1,125 @@
+{
+  "source_doi": "10.1038/s41598-018-25121-4",
+  "research_question": "How does the synteny (gene order and flanking regions) of the umami taste receptor genes T1R1 and T1R3 compare across diverse vertebrate species including mammals and teleost fish?",
+  "phase_1": {
+    "user_prompt": "We are running a comparative genomics analysis of the umami taste receptors (T1R1 and T1R3), examining their synteny in humans, mice, and four fish species (zebrafish, medaka, fugu, and tongue sole) using the Ensembl genome browser. Could you determine the exact Ensembl species designations for these six organisms? Also, identify the standard official human gene symbols for the T1R1 and T1R3 receptors, as we will need these to begin our database searches.",
+    "expected": {
+      "species": [
+        "homo_sapiens",
+        "mus_musculus",
+        "danio_rerio",
+        "oryzias_latipes",
+        "takifugu_rubripes",
+        "cynoglossus_semilaevis"
+      ],
+      "gene_symbols": [
+        "TAS1R1",
+        "TAS1R3"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Ensembl species names (homo_sapiens, mus_musculus, danio_rerio, oryzias_latipes, takifugu_rubripes, cynoglossus_semilaevis) and the receptor gene symbols (TAS1R1 and TAS1R3), please query the Ensembl database. For each species, find the genomic location of these two genes and retrieve the adjacent/flanking genes, such as HER4 or SLC45A1, to assemble the synteny context.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "1:6455303-6679755",
+          "feature": "gene"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "1:1231275-1435314",
+          "feature": "gene"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "mus_musculus",
+          "region": "4:152012371-152223733",
+          "feature": "gene"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "mus_musculus",
+          "region": "4:155843725-156047819",
+          "feature": "gene"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "danio_rerio",
+          "region": "23:21324747-21540054",
+          "feature": "gene"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "danio_rerio",
+          "region": "11:40631602-40842507",
+          "feature": "gene"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "oryzias_latipes",
+          "region": "5:8690698-8901287",
+          "feature": "gene"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "takifugu_rubripes",
+          "region": "3:6943630-7147121",
+          "feature": "gene"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "takifugu_rubripes",
+          "region": "19:10475731-10679234",
+          "feature": "gene"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "cynoglossus_semilaevis",
+          "region": "10:1607418-1814047",
+          "feature": "gene"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "cynoglossus_semilaevis",
+          "region": "11:320673-525287",
+          "feature": "gene"
+        }
+      }
+    ]
+  }
+}

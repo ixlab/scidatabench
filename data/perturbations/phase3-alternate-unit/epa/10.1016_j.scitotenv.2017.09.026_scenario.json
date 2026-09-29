@@ -1,0 +1,50 @@
+{
+  "source_doi": "10.1016/j.scitotenv.2017.09.026",
+  "research_question": "What are the long-term trends (2005-2015) in ambient Sulfur Dioxide (SO2) during the summer season at the primary eastern Rochester, NY monitoring site?",
+  "phase_1": {
+    "user_prompt": "I want to replicate a study on long-term air pollution trends in Rochester, NY from 2005 to 2015, focusing on Sulfur Dioxide (SO2). Can you identify the specific EPA AQS site ID that was active during this period on the east side of Rochester (replacing the downtown site around 2004), and provide the standard EPA parameter code for SO2?",
+    "expected": {
+      "sites": [
+        "360551007"
+      ],
+      "parameter_codes": [
+        "42401"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site ID (36-055-1007) and the parameter code for SO2 (42401), please retrieve the daily summary data for SO2 at this monitor for the entire period from January 1, 2005, through December 31, 2015.",
+    "expected": [
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "055",
+          "parameter": "42401",
+          "sitenum": "1007",
+          "stateFIPS": "36",
+          "bdate": "2005-01-01",
+          "edate": "2015-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the daily SO2 data by first calculating monthly averages. Only include months where at least 75% of the days have valid measurements. Then, filter the dataset to only include the 'Summer' months (June, July, and August). Finally, calculate a single aggregate summer mean for each year (2005-2015) by averaging the valid summer months. What is the mean of these 11 annual summer values? Report the result in parts per million (ppm).",
+    "expected": 0.00199645,
+    "unit": "ppm"
+  },
+  "phase_4": {
+    "user_prompt": "Using the monthly summer SO2 averages (June, July, and August monthly means for each year from 2005 to 2015, i.e., the 33 monthly values from Phase 3's pipeline before annual aggregation), perform a Mann-Kendall trend analysis and calculate the Theil-Sen slope to determine the long-term trend during the summer season. What is the calculated Sen's slope in ppb/year? Also, create a line plot showing these monthly summer averages over time with the Sen's slope trend line overlaid, and save it as `rochester_summer_so2_trend.png`.",
+    "expected": -0.31,
+    "unit": "ppb/year",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis should reveal a significant downward trend in summer SO2 concentrations at the Rochester site from 2005 to 2015, driven by regional emission reductions and power plant closures.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "rochester_summer_so2_trend.png",
+      "visual_description": "A line chart or scatter plot showing monthly summer (June, July, August) SO2 concentrations from 2005 to 2015 on the y-axis (values roughly between 0.5 and 6 ppb) and dates on the x-axis (approximately 33 data points), with a downward-sloping linear trend line representing the Sen's slope overlaid.",
+      "paper_figure_reference": "Figure 2 (Summer SO2 panel)"
+    }
+  }
+}

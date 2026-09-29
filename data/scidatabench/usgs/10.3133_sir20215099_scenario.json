@@ -1,0 +1,106 @@
+{
+  "source_doi": "10.3133/sir20215099",
+  "research_question": "How can continuous sensor data be combined with discrete water quality samples to develop regression models and estimate high-resolution daily loads for suspended sediment and nutrients in the School Branch watershed?",
+  "phase_1": {
+    "user_prompt": "I am setting up a study on agricultural runoff in the School Branch watershed near Brownsburg, Indiana. I need to locate the continuous water-quality monitoring streamgage installed around CR750N. What is the USGS site number for this location? Also, what are the standard 5-digit USGS parameter codes I should use to query instantaneous streamflow, continuous turbidity, and continuous nitrate plus nitrite, as well as the codes for discrete laboratory samples of suspended-sediment concentration, total unfiltered nitrogen, and total unfiltered phosphorus? My study period is June 23, 2015, through February 6, 2019.",
+    "expected": {
+      "sites": [
+        "03353420"
+      ],
+      "parameter_codes": [
+        "00060",
+        "63680",
+        "99133",
+        "80154",
+        "62855",
+        "00665"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site number and parameter codes identified, retrieve the continuous high-frequency (15-minute) measurements for streamflow, turbidity, and nitrate plus nitrite, as well as the discrete water-quality sample records for suspended sediment, total nitrogen, and total phosphorus. Pull all available data between June 23, 2015, and February 6, 2019.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03353420",
+          "parameter_code": "00060",
+          "time": "2015-06-23/2019-02-06"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03353420",
+          "parameter_code": "63680",
+          "time": "2015-06-23/2019-02-06"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03353420",
+          "parameter_code": "99133",
+          "time": "2015-06-23/2019-02-06"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03353420",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2015-06-23",
+          "activityStartDateUpper": "2019-02-06"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03353420",
+          "usgsPCode": "62855",
+          "activityStartDateLower": "2015-06-23",
+          "activityStartDateUpper": "2019-02-06"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03353420",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2015-06-23",
+          "activityStartDateUpper": "2019-02-06"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To begin modeling, we need to match the discrete water-quality sample timestamps with the nearest available 15-minute continuous sensor readings. Once aligned, fit a multiple linear regression model to estimate Suspended-Sediment Concentration (SSC). Use a base-10 logarithmic transformation for the response variable (SSC) and both explanatory variables (turbidity and streamflow). What is the adjusted R-squared value of this fitted multiple linear regression model?",
+    "expected": 0.95,
+    "unit": "adjusted R-squared"
+  },
+  "phase_4": {
+    "user_prompt": "Now let's compute daily nutrient loads. First, fit a multiple linear regression model for Total Nitrogen (TN) using a base-10 log transformation for TN, a square-root transformation for the continuous nitrate plus nitrite sensor data, and a base-10 log transformation for streamflow. Apply this model to the continuous 15-minute sensor data to estimate a high-resolution time series of TN concentration (apply Duan's smearing estimator if correcting for back-transformation bias). Next, calculate the daily total nitrogen load (in pounds per day) by integrating the instantaneous 15-minute TN concentrations and streamflow values. What is the mean daily total nitrogen load over the study period? Finally, create a time-series plot of the estimated daily TN loads and save it as `school_branch_tn_loads.png`.",
+    "expected": 127.5,
+    "unit": "pounds per day",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis successfully applies a log-linear regression model using continuous streamflow and nitrate+nitrite sensors to estimate high-resolution total nitrogen concentrations, computing a highly variable daily load time series that captures significant nutrient transport during runoff events.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "school_branch_tn_loads.png",
+      "visual_description": "A time-series plot showing estimated daily total nitrogen loads (in pounds or tons) from mid-2015 to early 2019. The plot should exhibit a highly variable, flashy response with pronounced peaks during high-flow events and lower baseline loads during dry periods, with large data gaps clearly handled or left blank where sensor data was missing.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

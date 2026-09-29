@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.3133/fs20093100",
+  "research_question": "What were the extreme streamflow conditions (minimum and maximum mean daily discharge) at the Truckee River near Mogul, NV during the 2002-2005 period?",
+  "phase_1": {
+    "user_prompt": "I am researching the hydrologic context of surface-water quality sampling conducted on the Truckee River upstream of Reno, Nevada between 2002 and 2005. I want to retrieve daily volumetric flow records from the USGS streamgage located near Mogul, NV. How can I identify this site and what parameters do I need to query for daily mean discharge over this four-year calendar period?",
+    "expected": {
+      "sites": [
+        "10347460"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified site number for the Truckee River near Mogul, retrieve the complete daily mean streamflow record for the period from January 1, 2002 to December 31, 2005.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-10347460",
+          "parameter_code": "00060",
+          "time": "2002-01-01/2005-12-31",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To understand the low-flow conditions during the study period, process the daily streamflow time series and identify the absolute minimum mean daily flow recorded between 2002 and 2005 at the Mogul gage.",
+    "expected": 30.0,
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "High winter-spring flows are also an important factor for contaminant transport. Analyze the same dataset to find the peak high-flow condition. What was the maximum mean daily flow recorded at the Mogul site during the 2002-2005 study period?",
+    "expected": 1340.0,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

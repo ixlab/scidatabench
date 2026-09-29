@@ -1,0 +1,47 @@
+{
+  "source_doi": "10.3897/aiep.53.103531",
+  "research_question": "What are the global latitudinal distribution limits of the tropical marine fish Chromis weberi, and how does its historical range map out geographically?",
+  "phase_1": {
+    "user_prompt": "I'm studying the global distribution limits of the tropical marine fish Weber's chromis (Chromis weberi) to contextualize potential poleward range expansions due to climate change. I need to find all available global occurrence records for this species that have spatial coordinates so I can map its historical range and establish its northernmost and southernmost boundaries.",
+    "expected": {
+      "taxon_keys": [
+        "5212140"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve all the available occurrence records for Weber's chromis that include spatial coordinates. Since I am conducting a global macroecological assessment, download the entire worldwide dataset for this species.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "hasCoordinate": true,
+          "taxonKey": 5212140
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded occurrence records by extracting the latitude and longitude for each observation. Ensure the data is clean by removing any records with missing coordinates or coordinates falling outside valid geographic bounds (-90 to 90 for latitude, -180 to 180 for longitude). Find the maximum (northernmost) and minimum (southernmost) decimal latitudes in the dataset.",
+    "expected": {
+      "max": 38.073254,
+      "min": -35.0877
+    },
+    "unit": null
+  },
+  "phase_4": {
+    "user_prompt": "Create a global map plotting all occurrence records of Weber's chromis as points to visualize its biogeographic range. Save this map as `c_weberi_global_distribution.png`. Then, based on the cleaned data, report the exact northernmost latitude (in decimal degrees) recorded for this species.",
+    "expected": 34.098,
+    "unit": "decimal degrees",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Chromis weberi is a subtropical marine fish with a global distribution mainly restricted to the Indo-Pacific region. Its historical latitudinal distribution limits fall approximately between 34°N (northernmost record) and 35°S (southernmost limit).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "c_weberi_global_distribution.png",
+      "visual_description": "A global map showing occurrence records as scatter points for Chromis weberi. The points should be predominantly concentrated in the Indo-Pacific region, spanning from the Red Sea and eastern Africa across the Indian Ocean to the central Pacific Ocean, and visibly constrained roughly between the latitudes of 35°N and 35°S.",
+      "paper_figure_reference": "Figure 4"
+    }
+  }
+}

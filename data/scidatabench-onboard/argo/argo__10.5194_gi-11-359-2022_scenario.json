@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.5194/gi-11-359-2022",
+  "research_question": "How does the newly developed glider thermohaline staircase classification algorithm compare to VDB's algorithm when applied to a known benchmark Argo profile in the Mediterranean?",
+  "phase_1": {
+    "user_prompt": "We are validating an automated thermohaline staircase classifier by applying it to an Argo profile from the Mediterranean Sea that has previously been used to demonstrate staircase detection algorithms. Please identify the WMO ID of that Argo float and the core hydrographic parameters we need from it to detect the staircase.",
+    "expected": {
+      "float_wmo_ids": [
+        "6901769"
+      ],
+      "parameters": [
+        "TEMP",
+        "PSAL",
+        "PRES"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the benchmark float (WMO 6901769) and the required parameters, please retrieve the profile data for this float. We need the temperature, salinity, and pressure measurements to calculate the vertical gradients and apply the staircase classification algorithm.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 6901769
+        }
+      }
+    ]
+  }
+}

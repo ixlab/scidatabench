@@ -1,0 +1,64 @@
+{
+  "source_doi": "10.3133/sir20195066",
+  "research_question": "How accurate is the Maintenance of Variance Extension, type 1 (MOVE.1) technique for estimating daily mean discharge at a discontinued streamgage using base-flow measurements to establish correlation with a nearby active reference streamgage?",
+  "phase_1": {
+    "user_prompt": "I am evaluating the MOVE.1 record extension technique for estimating daily streamflow. My study site is a discontinued streamgage on the 'Swift River 0.5 mile below Hobbs Brook, near Conway, NH'. I want to pair it with the active reference streamgage on the 'Saco River near Conway, NH'. What are the USGS site numbers for these two locations, and what are the 5-digit USGS parameter and statistic codes needed to retrieve daily mean discharge?",
+    "expected": {
+      "sites": [
+        "01064485",
+        "01064500"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the daily mean discharge data for both streamgages for their entire available periods of record. Additionally, retrieve the discrete field measurements of discharge for the Swift River study site.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01064485",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01064500",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01064485"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To build a robust MOVE.1 relation, we want to correlate the discrete field measurements at the Swift River study site with the concurrent daily mean discharge at the Saco River reference site, strictly under base-flow conditions. Filter the matched concurrent data pairs based on two criteria: 1) the absolute gage height change during the field measurement (`gage_va_change`) must be 0.04 foot or less, and 2) the daily mean discharge at the reference site on the day of the measurement must not decrease by more than 30% or increase by more than 10% compared to the previous day's daily mean discharge. After applying these filters, compute the Pearson correlation coefficient of the log10-transformed discharge values for the remaining valid concurrent pairs.",
+    "expected": 0.96,
+    "unit": null
+  },
+  "phase_4": {
+    "user_prompt": "Using those filtered base-flow pairs, develop a MOVE.1 (Maintenance of Variance Extension, type 1) linear regression model to estimate log10(discharge) at the Swift River study site based on log10(discharge) at the Saco River reference site. Apply this equation to estimate the arithmetic daily mean discharge (by exponentiating the log10 estimate) at the Swift River site for the entire period where concurrent observed daily mean discharge records exist at both streamgages (August 29, 2009, to July 13, 2011). Finally, evaluate the accuracy of your estimated daily record by calculating the Nash-Sutcliffe efficiency (NSE) coefficient against the actual observed daily mean discharge at the Swift River site during this period.",
+    "expected": 0.851,
+    "unit": null,
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

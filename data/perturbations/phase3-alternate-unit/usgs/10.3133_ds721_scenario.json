@@ -1,0 +1,248 @@
+{
+  "source_doi": "10.3133/ds721",
+  "research_question": "What is the baseline specific conductance and acid neutralizing capacity of high-elevation oligotrophic lakes in Washington's national parks, and how do they compare regionally?",
+  "phase_1": {
+    "user_prompt": "I am looking into the baseline water chemistry of several high-elevation lakes in Washington's national parks, specifically focusing on their specific conductance and acid neutralizing capacity. The 10 lakes I want to study are: Eunice Lake near Carbonado, Hidden Lake near Greenwater, Snow Lake near Packwood, Copper Lake near Glacier, Hidden Lake near Marblemount, Lower Thornton Lake near Marblemount, Stiletto Lake near Stehekin, Heather Lake near Sequim, Hoh Lake near Forks, and Milk Lake near Eldon. How can I find the official USGS site numbers for these lakes, the parameter codes for specific conductance and acid neutralizing capacity, and the correct data type code to retrieve their discrete water quality samples between August 2009 and August 2010?",
+    "expected": {
+      "sites": [
+        "12091956",
+        "12096700",
+        "14224590",
+        "12215650",
+        "12181450",
+        "12178700",
+        "12450880",
+        "12047660",
+        "12040680",
+        "12053810"
+      ],
+      "parameter_codes": [
+        "00095",
+        "00419"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that I have the 10 USGS site numbers and the parameter codes, please download the discrete water quality sample data for specific conductance and acid neutralizing capacity for these lakes for the period from August 2009 through August 2010.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12091956",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12091956",
+          "usgsPCode": "00419",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12096700",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12096700",
+          "usgsPCode": "00419",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-14224590",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-14224590",
+          "usgsPCode": "00419",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12215650",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12215650",
+          "usgsPCode": "00419",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12181450",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12181450",
+          "usgsPCode": "00419",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12178700",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12178700",
+          "usgsPCode": "00419",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12450880",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12450880",
+          "usgsPCode": "00419",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12047660",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12047660",
+          "usgsPCode": "00419",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12040680",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12040680",
+          "usgsPCode": "00419",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12053810",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12053810",
+          "usgsPCode": "00419",
+          "activityStartDateLower": "2009-08-01",
+          "activityStartDateUpper": "2010-08-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded water quality data to help me evaluate how dilute these lakes are. Extract the specific conductance measurements from the discrete samples, ignoring any missing values. What is the maximum specific conductance value observed across all 10 lakes during this time period? Report the result in millisiemens per centimeter (mS/cm).",
+    "expected": 0.071,
+    "unit": "mS/cm"
+  },
+  "phase_4": {
+    "user_prompt": "Now evaluate the acid neutralizing capacity (ANC) data. Calculate the maximum ANC for the lakes in Olympic National Park (Heather, Hoh, Milk) and compare it to the maximum for the lakes in Mount Rainier and North Cascades National Parks. Write a short conclusion summarizing what the combination of specific conductance and ANC indicates about the dilution of these high-elevation lakes, and provide the overall maximum ANC value observed across all sites.",
+    "expected": 19.7,
+    "unit": "mg/L as CaCO3",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Lakes in Mount Rainier and North Cascades have very low specific conductance (less than 20 uS/cm) and ANC (less than 5 mg/L), while lakes in Olympic National Park have slightly higher values but still maintain ANC under 20 mg/L. Combined, these values indicate that all of these high-elevation lake waters are highly dilute and low in ionic strength.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

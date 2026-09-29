@@ -1,0 +1,45 @@
+{
+  "source_doi": "10.3391/bir.2025.14.2.07",
+  "research_question": "What is the global distribution of the redclaw crayfish (Cherax quadricarinatus), and how many countries has it invaded outside its native range?",
+  "phase_1": {
+    "user_prompt": "I want to map the worldwide distribution of the redclaw crayfish (Cherax quadricarinatus) using occurrence data. What is the correct taxonomic identifier to use for querying global occurrence records?",
+    "expected": {
+      "taxon_keys": [
+        "4648609"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve global occurrence records for Cherax quadricarinatus that contain geographic coordinates, restricted to records with year up to and including 2024 to align with the paper's GBIF snapshot date of 2024-07-16 (the baseline that predates subsequent GBIF additions).",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "hasCoordinate": true,
+          "taxonKey": 4648609,
+          "year": "1800,2024"
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded occurrence records to ensure spatial accuracy (the paper applied the CoordinateCleaner R package; equivalent cleaning steps are sufficient here). Remove any records with missing or invalid coordinates, impossible locations (e.g., coordinates out of global bounds or exactly at 0,0), and spatial duplicates (records with identical coordinate pairs). How many unique, valid occurrence records remain after this spatial cleaning?",
+    "expected": 390.0,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Calculate the total number of unique countries where this species occurs based on the cleaned dataset. Additionally, create a global distribution map distinguishing the species' native range (Australia and Papua New Guinea) from its non-native, invaded range (the rest of the world). Save the map as `crayfish_global_distribution_map.png`.",
+    "expected": 29.0,
+    "unit": "countries",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis reveals that Cherax quadricarinatus occurs in at least 29 countries worldwide based on cleaned coordinate data. The spatial distribution map correctly shows the species' restricted native range in Australia and Papua New Guinea, alongside a widespread global invasive range including clusters in the Americas, Europe, Asia, and Africa.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "crayfish_global_distribution_map.png",
+      "visual_description": "A global map showing occurrence points for Cherax quadricarinatus. Points in Australia and Papua New Guinea (the native range) must be visually distinct (e.g., using a different color or marker) from the points scattered across other continents representing the invaded range.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

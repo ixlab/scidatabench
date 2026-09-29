@@ -1,0 +1,27 @@
+{
+  "source_doi": "10.1017/s002531542400047x",
+  "research_question": "What is the known global distribution of Melanochlamys diomedea based on occurrence records, and how does this contextualize its newly reported presence in the North Atlantic?",
+  "phase_1": {
+    "user_prompt": "We are reconstructing the native distribution map of a head-shield sea slug (Cephalaspidea) that is native to the north-east Pacific and has just been recorded for the first time as a non-indigenous species in the North Atlantic. To contextualise that new record we need its global occurrences from the Ocean Biodiversity Information System (OBIS). What is the scientific name of this species, and its WoRMS AphiaID?",
+    "expected": {
+      "scientific_names": [
+        "Melanochlamys diomedea"
+      ],
+      "aphia_ids": [
+        "576296"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the target species is Melanochlamys diomedea (AphiaID: 576296), please download its full global occurrence dataset from OBIS so we can reproduce the distribution map and evaluate its known range.",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "taxonid": 576296
+        }
+      }
+    ]
+  }
+}

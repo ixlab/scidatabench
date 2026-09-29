@@ -1,0 +1,74 @@
+{
+  "source_doi": "10.3133/ds766",
+  "research_question": "What is the spatial distribution of total chlorinated volatile organic compound (CVOC) concentrations in the upper aquifer at the northern phytoremediation plantation of Operable Unit 1, Naval Undersea Warfare Center, Keyport, Washington, based on the June 2012 sampling event?",
+  "phase_1": {
+    "user_prompt": "I'm looking into long-term groundwater monitoring at Operable Unit 1 (OU 1) of the Naval Undersea Warfare Center in Keyport, Kitsap County, Washington. I specifically need to find the official USGS site numbers for the four piezometers located in the northern phytoremediation plantation, locally known as P1-1, P1-3, P1-4, and P1-5. What are the 15-digit USGS site numbers for these piezometers, and what NWIS data type should I query to get their field and laboratory water quality discrete samples?",
+    "expected": {
+      "sites": [
+        "474153122372801",
+        "474153122373102",
+        "474152122373101",
+        "474152122372801"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site numbers you found for piezometers P1-1, P1-3, P1-4, and P1-5, download all the discrete water quality sample data for the year 2012.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474153122372801",
+          "activityStartDateLower": "2012-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474153122373102",
+          "activityStartDateLower": "2012-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474152122373101",
+          "activityStartDateLower": "2012-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474152122372801",
+          "activityStartDateLower": "2012-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "For the June 4, 2012 sampling event, calculate the total CVOC (chlorinated volatile organic compound) concentration at piezometer P1-4. Do this by summing the concentrations of all positively detected CVOCs (i.e., exclude any values flagged with a '<' remark code or designated as non-detect). Include the following compounds in your CVOC definition: tetrachloroethene (PCE), trichloroethene (TCE), cis-1,2-dichloroethene, trans-1,2-dichloroethene, vinyl chloride, 1,1,1-trichloroethane, 1,1-dichloroethane, chloroethane, and 1,1-dichloroethene. Provide the total CVOC concentration in milligrams per liter (mg/L).",
+    "expected": 1.2645,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Now calculate the total CVOC concentration for piezometer P1-5 on June 4, 2012, using the exact same summation method (excluding non-detects and '<' values). Then, based on your calculations for P1-4, P1-5, and a brief look at P1-1 and P1-3 for that same date, what does this indicate about the spatial distribution of CVOCs in the upper aquifer beneath the northern plantation during this period?",
+    "expected": 0.8,
+    "unit": "ug/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Trace or non-detectable concentrations of CVOCs were found at piezometers P1-1, P1-3, and P1-5, whereas much higher concentrations (over 1,000 µg/L) were measured at piezometer P1-4, indicating a localized hotspot of CVOC contamination.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

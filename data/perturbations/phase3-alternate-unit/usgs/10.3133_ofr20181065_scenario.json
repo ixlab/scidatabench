@@ -1,0 +1,76 @@
+{
+  "source_doi": "10.3133/ofr20181065",
+  "research_question": "Estimate the annual chloride load for the Ponaganset River in Rhode Island for Water Year 2015 using continuous specific conductance and a regression model built from historical discrete samples.",
+  "phase_1": {
+    "user_prompt": "I'm studying road salt and chloride transport into the Scituate Reservoir in Rhode Island. I want to focus my analysis on the main tributary, the Ponaganset River at South Foster. Can you identify the USGS site number for this location? Also, provide the standard USGS parameter codes for streamflow (discharge), specific conductance, and chloride.",
+    "expected": {
+      "sites": [
+        "01115187"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00095",
+        "00940"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the Ponaganset River site, please retrieve the daily mean discharge and daily mean specific conductance for Water Year 2015 (October 1, 2014, to September 30, 2015). To help estimate chloride concentrations, also download all historical discrete water quality samples for chloride and specific conductance at this site.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01115187",
+          "parameter_code": "00060",
+          "time": "2014-10-01/2015-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01115187",
+          "parameter_code": "00095",
+          "time": "2014-10-01/2015-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01115187",
+          "usgsPCode": "00940"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01115187",
+          "usgsPCode": "00095"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's verify the baseline hydrology. Calculate the mean annual streamflow in cubic meters per second (m³/s) for the Ponaganset River for Water Year 2015.",
+    "expected": 0.7079211648,
+    "unit": "m3/s"
+  },
+  "phase_4": {
+    "user_prompt": "Now, develop a log-log regression model (specifically, the Maintenance of Variance Extension type 1, or MOVE.1) relating historical discrete chloride concentrations to specific conductance. Apply this model to the daily specific conductance records for Water Year 2015 to estimate daily chloride concentrations. Multiply these estimated concentrations by the daily discharge to calculate the total annual chloride load for WY 2015 in kilograms per year. Finally, create a time-series plot showing the estimated daily chloride load over the water year, and save it as `ponaganset_chloride_load_wy2015.png`.",
+    "expected": 530000.0,
+    "unit": "kg/yr",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The daily chloride load exhibits seasonal variability, with expected peaks occurring in the late winter and early spring (March and April) due to snowmelt and road salt runoff events, driving the highest mass transport of the year.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "ponaganset_chloride_load_wy2015.png",
+      "visual_description": "A time-series plot spanning October 2014 through September 2015. The y-axis should represent daily chloride load in kg/day, and the x-axis should represent time. The plot should show pronounced peaks during the winter and spring months.",
+      "paper_figure_reference": null
+    }
+  }
+}

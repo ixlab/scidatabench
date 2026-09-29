@@ -1,0 +1,45 @@
+{
+  "source_doi": "10.1038/s41598-018-31838-z",
+  "research_question": "Retrieve the daily precipitation records for the specific case study stations (Cagliari and Milan) used to illustrate the superstatistical distribution model in the paper.",
+  "phase_1": {
+    "user_prompt": "We are analyzing daily rainfall extremes using over 20,000 stations globally, and want to illustrate our methodology — the temporal variability of the fitted parameters and the model validation — with two long-record Italian stations, one in Cagliari and one in Milan. Please identify the GHCN station identifiers for those two sites and the weather parameter we need.",
+    "expected": {
+      "station_ids": [
+        "IT000016560",
+        "ITE00100554"
+      ],
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the station IDs (IT000016560 for Cagliari and ITE00100554 for Milan), retrieve their complete daily precipitation records from the NOAA GHCN database to allow us to examine their annual maxima.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "IT000016560",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        }
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "ITE00100554",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        }
+      }
+    ]
+  }
+}

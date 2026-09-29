@@ -1,0 +1,105 @@
+{
+  "source_doi": "10.1021/acs.est.3c06947",
+  "research_question": "How have PM2.5 mass concentrations changed in the Ohio Valley climate region between 2002 and 2017 across continuously operating air quality monitors?",
+  "phase_1": {
+    "user_prompt": "I want to analyze long-term trends in standard fine particulate matter (PM2.5) mass concentrations across the Ohio Valley from 2002 to 2017. Before we pull the data, could you check the EPA AQS system to find the primary 5-digit parameter code used to designate standard PM2.5 local conditions mass measurements?",
+    "expected": {
+      "parameter_codes": [
+        "88101"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the parameter code for PM2.5 mass (88101), please retrieve the annual summary data for this pollutant for all monitoring sites located in the EPA Ohio Valley climate region (which consists of Illinois, Indiana, Kentucky, Missouri, Ohio, Tennessee, and West Virginia). We need the data for every year over the 16 calendar years beginning in 2002.",
+    "expected": [
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "stateFIPS": "17",
+          "bdate": "2002-01-01",
+          "edate": "2017-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "stateFIPS": "18",
+          "bdate": "2002-01-01",
+          "edate": "2017-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "stateFIPS": "21",
+          "bdate": "2002-01-01",
+          "edate": "2017-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "stateFIPS": "29",
+          "bdate": "2002-01-01",
+          "edate": "2017-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "stateFIPS": "39",
+          "bdate": "2002-01-01",
+          "edate": "2017-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "stateFIPS": "47",
+          "bdate": "2002-01-01",
+          "edate": "2017-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "stateFIPS": "54",
+          "bdate": "2002-01-01",
+          "edate": "2017-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "We need to identify long-term monitoring sites to ensure our trend analysis is consistent. Please process the downloaded data: first, exclude any data records that are flagged to include exceptional events. Then, filter the dataset to find only the 'continuous' sites—meaning unique monitoring locations that have a valid annual PM2.5 mean recorded for *every single year* from 2002 to 2017. How many continuous sites are there in the Ohio Valley region?",
+    "expected": 66.0,
+    "unit": "sites"
+  },
+  "phase_4": {
+    "user_prompt": "Using only the continuous sites you just identified, calculate the regional average PM2.5 mass concentration for the Ohio Valley in the start year (2002) and the end year (2017). Create a bar chart comparing these two regional averages to visualize the reduction in particulate matter over the 15-year period. Save this plot as `ohio_valley_pm25_decrease.png`. What was the calculated regional average PM2.5 concentration for the Ohio Valley in 2002?",
+    "expected": 13.6,
+    "unit": "μg/m³",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The average PM2.5 mass concentration across continuously operating monitors in the Ohio Valley decreased substantially (by approximately 44%) from 13.6 μg/m³ in 2002 to 7.6 μg/m³ in 2017, reflecting successful regional emissions mitigation efforts.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "ohio_valley_pm25_decrease.png",
+      "visual_description": "A bar chart comparing PM2.5 concentrations for the Ohio Valley between two years. The 2002 bar should show a value of approximately 13.6 μg/m³, and the 2017 bar should show a significantly lower value of approximately 7.6 μg/m³. The axes should be properly labeled with PM2.5 concentrations and years.",
+      "paper_figure_reference": "Figure 4 Panel A (Row 2 and Row 3 for OV region)"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.31223/x5107c",
+  "research_question": "How effectively can the ctbi procedure clean, decompose, and aggregate a high-frequency temperature time series that has been artificially contaminated with missing values and outliers?",
+  "phase_1": {
+    "user_prompt": "I want to test a new time-series cleaning procedure called 'ctbi' using high-frequency temperature data. Specifically, I need the single aspirated air temperature data from the NEON site located at the San Joaquin Experimental Range. Could you find the corresponding NEON data product ID and the 4-letter site code for this location?",
+    "expected": {
+      "data_products": [
+        "DP1.00002.001"
+      ],
+      "sites": [
+        "SJER"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Great. Please download the 5-minute resolution single aspirated air temperature data for this site for the month of August 2020.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00002.001",
+          "site": "SJER",
+          "startdate": "2020-08",
+          "enddate": "2020-08"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Extract the 5-minute temperature measurements from the downloaded data for the month of August. Before we apply any artificial contamination, count the total number of observation records (n) available in this dataset. What is this baseline record count?",
+    "expected": 8952,
+    "unit": "observations"
+  },
+  "phase_4": {
+    "user_prompt": "Now let's test the outlier detection procedure. First, artificially contaminate the dataset by altering 30% of the data: insert three random large data gaps (totaling 20% of the dataset length), randomly replace 9.5% of the values with NA, and convert 0.5% into extreme outliers. For outliers, assign values of either min - 0.5*(mean - min) or max + 0.5*(max - mean). Next, apply the `ctbi` procedure (using the `ctbi` R package) to clean and aggregate the data to an hourly level (n_bin = 12). Evaluate the algorithm's performance on the first level of aggregation. How many false positives (real data points erroneously flagged as outliers) did the ctbi algorithm produce? Finally, generate a multi-panel visualization showing the raw data, the contaminated data, and the hourly aggregated clean signal. Save it as `temperature_ctbi_aggregation.png`.",
+    "expected": 0.0,
+    "unit": "false positives",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The ctbi procedure is highly robust to severe contamination, perfectly avoiding false positives while accurately recovering the diurnal cyclic pattern of the temperature signal after hourly aggregation.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "temperature_ctbi_aggregation.png",
+      "visual_description": "A time series line plot showing three distinct stages: the original 5-minute raw temperature data, the synthetically contaminated series displaying clear data gaps and extreme spikes/drops (outliers), and a smoothed, cleaned hourly aggregated signal that effectively tracks the original diurnal temperature trend without being distorted by the injected outliers.",
+      "paper_figure_reference": "Figure 6 Panel A"
+    }
+  }
+}

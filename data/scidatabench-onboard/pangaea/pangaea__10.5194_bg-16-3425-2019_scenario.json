@@ -1,0 +1,45 @@
+{
+  "source_doi": "10.5194/bg-16-3425-2019",
+  "research_question": "What environmental and ecological factors control the depth habitat of the planktonic foraminifera Neogloboquadrina pachyderma in the northern high latitudes?",
+  "phase_1": {
+    "user_prompt": "We are studying the vertical distribution of the planktonic foraminifera Neogloboquadrina pachyderma in the Arctic and North Atlantic. Can you find the PANGAEA datasets holding a recent data compilation from cruises such as NEWP-92 and MSM09/2, as well as the historical POLARSTERN ARK-XI/1 and ARK-XIII/2 expedition datasets with N. pachyderma counts?",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.905270",
+        "10.1594/PANGAEA.91119",
+        "10.1594/PANGAEA.136881"
+      ],
+      "parameters": [
+        "Neogloboquadrina pachyderma",
+        "Temperature, water",
+        "Salinity"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the relevant datasets (DOIs: 10.1594/PANGAEA.905270, 10.1594/PANGAEA.91119, and 10.1594/PANGAEA.136881), please retrieve the data tables for them. We need to extract the water depth intervals, the N. pachyderma counts/concentrations, water temperature, and salinity to analyze the depth habitat.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.905270"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.91119"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.136881"
+        }
+      }
+    ]
+  }
+}

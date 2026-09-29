@@ -1,0 +1,28 @@
+{
+  "source_doi": "10.48550/arxiv.1804.09382",
+  "research_question": "How are different classes of known variable stars distributed in the Gaia Galactic Colour-Absolute Magnitude Diagram (CaMD)?",
+  "phase_1": {
+    "user_prompt": "In order to map empirical instability strips in the Gaia Colour-Absolute Magnitude Diagram (CaMD), we need to cross-match Gaia sources against known variable stars from external literature. Identify the VizieR catalog designations for the two foundational reference datasets we will use: the AAVSO International Variable Star Index, and the main ESA 1997 Hipparcos catalog.",
+    "expected": {
+      "catalogs": [
+        "B/vsx",
+        "I/239"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified VizieR catalogs for VSX (`B/vsx/vsx`) and Hipparcos (`I/239/hip_main`), retrieve the coordinates and variability classifications for all known ZZ Ceti stars (type 'ZZ' in VSX) to prepare a reference sample that maps onto the white dwarf sequence in the CaMD.",
+    "expected": [
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_constraints",
+        "kwargs": {
+          "catalog": "B/vsx/vsx",
+          "column_filters": {
+            "Type": "=ZZ"
+          }
+        }
+      }
+    ]
+  }
+}

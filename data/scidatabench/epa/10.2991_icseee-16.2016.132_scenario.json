@@ -1,0 +1,109 @@
+{
+  "source_doi": "10.2991/icseee-16.2016.132",
+  "research_question": "What are the characteristics and chemical composition of PM2.5 pollution, including seasonal trends and major species contributions, at the Taft monitoring site in Cincinnati from 2009 to 2013?",
+  "phase_1": {
+    "user_prompt": "I am trying to replicate a study on PM2.5 composition in the Cincinnati area. The study analyzed data from three EPA monitoring sites named 'Taft', 'St. Bernard', and 'Chase' (which is located just across the Ohio River in upwind Kentucky). Could you help me find the specific state, county, and site codes (9-digit AQS site IDs) for these three monitoring stations?",
+    "expected": {
+      "sites": [
+        "390610040",
+        "390610042",
+        "210373002"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Great. Now I need to focus on the 'Taft' site (39-061-0040). Please retrieve the daily summary data for PM2.5 mass and its chemical speciation components (specifically Sulfate, Nitrate, Organic Carbon, and Elemental Carbon) at the Taft site for the 5-year period from January 1, 2009, to December 31, 2013. You will need to determine the appropriate AQS parameter codes for PM2.5 mass and these speciation species.",
+    "expected": [
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2009-01-01",
+          "edate": "2013-12-31",
+          "stateFIPS": "39",
+          "countycode": "061",
+          "sitenum": "0040"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2009-01-01",
+          "edate": "2013-12-31",
+          "stateFIPS": "39",
+          "countycode": "061",
+          "sitenum": "0040"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2009-01-01",
+          "edate": "2013-12-31",
+          "stateFIPS": "39",
+          "countycode": "061",
+          "sitenum": "0040"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88306",
+          "bdate": "2009-01-01",
+          "edate": "2013-12-31",
+          "stateFIPS": "39",
+          "countycode": "061",
+          "sitenum": "0040"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88320",
+          "bdate": "2009-01-01",
+          "edate": "2013-12-31",
+          "stateFIPS": "39",
+          "countycode": "061",
+          "sitenum": "0040"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88321",
+          "bdate": "2009-01-01",
+          "edate": "2013-12-31",
+          "stateFIPS": "39",
+          "countycode": "061",
+          "sitenum": "0040"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's analyze the temporal trends of the PM2.5 mass data at the Taft site. Please aggregate the daily PM2.5 mass measurements into monthly averages for the 2009-2013 period (average all valid days in each month). What was the highest monthly average PM2.5 concentration observed during these 5 years?",
+    "expected": 21.46,
+    "unit": "µg/m³"
+  },
+  "phase_4": {
+    "user_prompt": "Now let's examine the chemical composition of PM2.5 at the Taft site for the 2009-2013 period. First, calculate the overall multi-year average for PM2.5 mass and each speciation component (Sulfate, Nitrate, Organic Carbon, Elemental Carbon). Convert Organic Carbon (OC) to Organic Mass (OM) using a multiplier of 1.6. What percentage of the overall average PM2.5 mass is accounted for by Sulfate? Finally, create a pie chart showing the relative percentages of Sulfate, Nitrate, OM, EC, and the remainder ('Other'). Save this visualization as `pm25_composition_pie.png`.",
+    "expected": 33.43,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Sulfate is the dominant component of PM2.5 at the Taft site, making up approximately one-third (33%) of the total mass, closely followed by Organic Mass (OM) at roughly 31%. Nitrate contributes around 17%, while Elemental Carbon makes up a much smaller portion.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "pm25_composition_pie.png",
+      "visual_description": "A pie chart showing the chemical composition of PM2.5, with clearly labeled slices for Sulfate (largest, ~33%), OM (~31%), Nitrate (~17%), EC (~3%), and 'Other'. The chart should visually demonstrate that Sulfate and OM are the two largest components.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

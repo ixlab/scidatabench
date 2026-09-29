@@ -1,0 +1,38 @@
+{
+  "source_doi": "10.1186/s40623-026-02378-y",
+  "research_question": "What are the spatial and temporal characteristics of the July 2025 Kamchatka earthquake and its associated deep seismicity (background, foreshocks, and aftershocks)?",
+  "phase_1": {
+    "user_prompt": "I am investigating the major megathrust earthquake that occurred off the coast of the Kamchatka Peninsula on July 29, 2025. To analyze its finite fault model and compare it with regional seismicity, I first need its specific event identifier from the USGS Earthquake Catalog. Could you discover the primary ComCat event ID for this Mw 8.8 earthquake?",
+    "expected": {
+      "event_ids": [
+        "us6000qw60"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified event ID (us6000qw60), please retrieve the detailed event information, including the finite fault model. Additionally, download the regional seismic catalog for the Kamchatka subduction zone (between 48°N and 58°N latitude, and 154°E and 166°E longitude) to capture the relevant deep seismicity context. Specifically, retrieve all earthquakes with a magnitude greater than 4.5 and a depth greater than 90 km from January 1, 2000, to August 5, 2025.",
+    "expected": [
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "eventid": "us6000qw60"
+        }
+      },
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "minlatitude": 48.0,
+          "maxlatitude": 58.0,
+          "minlongitude": 154.0,
+          "maxlongitude": 166.0,
+          "minmagnitude": 4.5,
+          "mindepth": 90.0,
+          "starttime": "2000-01-01",
+          "endtime": "2025-08-05"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "source_doi": "10.21203/rs.3.rs-5312185/v1",
+  "research_question": "How has the bankfull channel capacity and its corresponding flood return period evolved over time for the Little Wabash River at Carmi, Illinois, based on stage-discharge relationships and Peak Over Threshold (POT) frequency analysis?",
+  "phase_1": {
+    "user_prompt": "I want to study changes in river channel capacity for the Little Wabash River at Carmi, Illinois, over the period from 1980 to 2023. What is the USGS site number for this streamgage, and what are the 5-digit parameter codes representing daily streamflow and gage height?",
+    "expected": {
+      "sites": [
+        "03381500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00065"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve the daily mean streamflow records and the discrete field measurements (which contain simultaneous stage and discharge readings) for the Little Wabash River at Carmi, IL (site 03381500), over the 44 calendar years beginning in 1980.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03381500",
+          "parameter_code": "00060",
+          "time": "1980-01-01/2023-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03381500",
+          "time": "1980-01-01/2023-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To understand bankfull channel capacity, we first need to estimate the baseline streamflow at flood stage. Filter the field measurements to the 1980-2023 period. Fit a Locally Weighted Scatterplot Smoothing (Loess) curve to the field measurements of stage vs. discharge. Assume a flood stage of 9.5 meters (convert this to feet for the USGS data). Based on your Loess model, what is the estimated baseline bankfull discharge in cubic meters per second (cms)?",
+    "expected": 509.9,
+    "unit": "cms"
+  },
+  "phase_4": {
+    "user_prompt": "Now, analyze how the bankfull return period has changed over time due to channel evolution. \n\n1. Calculate the time-varying channel capacity: For each field measurement, calculate the residual (Measured Discharge - Loess Predicted Discharge). Add this residual to the base bankfull discharge (from the previous step) to get the capacity at that point in time. Fit a linear trend to these capacity values over time to extract the expected capacity for the year 2023.\n2. Perform a Peak Over Threshold (POT) flood frequency analysis on the daily streamflow. Use an 80th percentile threshold, requiring a minimum separation of 8 days between peaks, and an intermediate flow dropping below 75% of the lower of the two peaks.\n3. Calculate the empirical return period for each peak using the formula (N+1)/rank, and fit a Loess curve between peak flow and return period.\n4. Using this curve, what is the estimated return period (in years) for the channel capacity in the year 2023?",
+    "expected": 1.2,
+    "unit": "years",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

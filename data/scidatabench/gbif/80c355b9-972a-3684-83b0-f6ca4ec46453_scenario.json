@@ -1,0 +1,68 @@
+{
+  "source_doi": "10.12933/therya_notes-23-122",
+  "research_question": "What is the elevational distribution of the jaguarundi (Puma yagouaroundi) across its geographical range?",
+  "phase_1": {
+    "user_prompt": "I'm investigating the elevational range of the jaguarundi across the Americas. I need to find occurrence data for this elusive species. What are the appropriate scientific names (including recent synonyms) to search for, and what filters should I apply to ensure the records are spatially valid and represent verifiable physical evidence or direct observations?",
+    "expected": {
+      "taxon_keys": [
+        "2435146",
+        "5787224"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have established the taxonomic names and filtering criteria, please retrieve the occurrence data for the jaguarundi from GBIF.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN",
+            "HUMAN_OBSERVATION",
+            "MACHINE_OBSERVATION",
+            "OBSERVATION",
+            "MATERIAL_SAMPLE"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 2435146
+        },
+        "requires_pagination": true
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN",
+            "HUMAN_OBSERVATION",
+            "MACHINE_OBSERVATION",
+            "OBSERVATION",
+            "MATERIAL_SAMPLE"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 5787224
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Once you have the data, clean it by ensuring every record has a valid numerical elevation value. You can either filter to records that already have elevation provided in the dataset, or extract elevation using the coordinates and a digital elevation model (DEM). How many records remain after establishing a valid elevation for each occurrence?",
+    "expected": 2394,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned elevation data, calculate the percentage of all jaguarundi occurrences that are found below 500 meters in elevation. Additionally, create a visualization showing the elevational distribution (e.g., an elevation profile or histogram) to illustrate its habitat plasticity, and save this plot as `jaguarundi_elevation_profile.png`.",
+    "expected": 73.0,
+    "unit": "percent",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The jaguarundi has a wide altitudinal distribution reflecting high ecological plasticity, but the vast majority of occurrences (approximately 73%) are concentrated in lowlands below 500 m. The occurrences taper off significantly at higher elevations, with extremely few records approaching or exceeding 3,000 m.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "jaguarundi_elevation_profile.png",
+      "visual_description": "A histogram, density plot, or elevation profile showing the frequency of jaguarundi occurrences along an elevational gradient (X-axis in meters). The distribution should be heavily right-skewed, with a massive peak near 0-500 m and a long tail extending up to roughly 3,000-3,500 m.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

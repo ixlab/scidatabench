@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.5194/bg-15-7177-2018",
+  "research_question": "How can satellite-derived size-partitioned phytoplankton carbon concentrations be retrieved to constrain global ocean biogeochemical models?",
+  "phase_1": {
+    "user_prompt": "I am working on constraining a global ocean inverse model of the coupled iron, phosphorus, and silicon cycles. I need to find the PANGAEA dataset containing satellite estimates of size-partitioned phytoplankton carbon concentrations published by Kostadinov et al. (2016). Could you identify the PANGAEA dataset DOI/ID and list the three phytoplankton size classes provided?",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.859005"
+      ],
+      "parameters": [
+        "picophytoplankton",
+        "nanophytoplankton",
+        "microphytoplankton"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the PANGAEA identifier 10.1594/PANGAEA.859005, please retrieve the dataset record so we can access the data links and metadata for the size-partitioned phytoplankton carbon concentrations.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.859005"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.1007/s00508-019-1526-1",
+  "research_question": "Which spliceosome genes are recurrently mutated in myeloid neoplasms, and what are their transcript structures in Ensembl?",
+  "phase_1": {
+    "user_prompt": "We run a targeted sequencing panel for chronic myelomonocytic leukaemia and annotate the calls against Ensembl. Splicing-factor mutations are close to defining for this disease, and we want to pull the full transcript structure for that part of the panel before we start. Give us the standard human gene symbols for the four spliceosome component genes that are recurrently mutated in myeloid neoplasms — the ones a myeloid panel is expected to cover — together with the species name Ensembl uses for our patients.",
+    "expected": {
+      "gene_symbols": [
+        "SF3B1",
+        "SRSF2",
+        "U2AF1",
+        "ZRSR2"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now retrieve the complete gene model for each of those four genes from Ensembl, expanded so that every transcript isoform comes back with it.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "SF3B1",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "SRSF2",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "U2AF1",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "ZRSR2",
+          "expand": 1
+        }
+      }
+    ]
+  }
+}

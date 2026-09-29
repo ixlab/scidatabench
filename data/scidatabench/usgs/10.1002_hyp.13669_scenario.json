@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.1002/hyp.13669",
+  "research_question": "Can semiparametric methods like Multivariate Adaptive Regression Splines (MARS) effectively capture non-linear and time-varying relationships between nutrient concentrations and streamflow in the Chesapeake Bay watershed?",
+  "phase_1": {
+    "user_prompt": "I am conducting a study on riverine nutrient estimation methods. I need to find the USGS streamgage for the Patuxent River near Bowie, Maryland, and determine the correct data types and parameter codes to retrieve both continuous daily discharge and historical discrete water quality samples for nitrate plus nitrite, covering the period from 1985 to 2017.",
+    "expected": {
+      "sites": [
+        "01594440"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00631"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Download the continuous daily discharge data and all available discrete sample records for nitrate plus nitrite for the Patuxent River site spanning the years 1985 to 2017.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01594440",
+          "parameter_code": "00060",
+          "time": "1985-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01594440",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1985-01-01",
+          "activityStartDateUpper": "2017-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean and merge the two datasets. Filter the water quality data to retain only routine environmental samples (e.g., exclude blank or quality control samples). Join the daily discharge value corresponding to the exact date of each water quality sample. Compute two new temporal features: 'trend' (the sampling date as a decimal year) and 'season' (the day of the year divided by the total number of days in that year, yielding a value from 0 to 1). Finally, apply a natural logarithm transformation to both the discharge and the nitrate plus nitrite concentrations. Drop any observations with missing values. What is the total number of paired observations remaining?",
+    "expected": 1000,
+    "unit": "observations"
+  },
+  "phase_4": {
+    "user_prompt": "I want to estimate the non-linear and interactive relationships between these variables. Fit a Multivariate Adaptive Regression Splines (MARS) model to predict the log-transformed nitrate plus nitrite concentration using the log-transformed discharge, trend, and season variables. Set the maximum interaction degree to 2 to allow for concentration-discharge relationships that change over time. What is the percentage of variance explained (R-squared multiplied by 100) by this model? Provide the numeric value.",
+    "expected": 84.0,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

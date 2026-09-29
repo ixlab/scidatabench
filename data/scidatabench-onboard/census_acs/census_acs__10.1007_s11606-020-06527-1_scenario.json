@@ -1,0 +1,111 @@
+{
+  "source_doi": "10.1007/s11606-020-06527-1",
+  "research_question": "To evaluate the association between patient sociodemographics and neighborhood disadvantage with frequencies of death, invasive mechanical ventilation (IMV), and intensive care unit (ICU) admission in patients hospitalized with COVID-19 in southeast Michigan.",
+  "phase_1": {
+    "user_prompt": "We are studying COVID-19 socioeconomic disparities in southeast Michigan, using 2018 American Community Survey data at the census tract level for the areas surrounding four Henry Ford hospitals (located in Detroit, Macomb, West Bloomfield, and Wyandotte). I need to find the exact FIPS codes for the state and the specific counties covering these locations. Also, identify the primary ACS detailed base tables (B-series) I should query to extract the following 8 socioeconomic indicators: median income, bachelor's degree or higher, less than high school, renters, unemployment, poverty rate, SNAP recipients, and lack of vehicle access.",
+    "expected": {
+      "state_codes": [
+        "26"
+      ],
+      "county_codes": [
+        "26163",
+        "26099",
+        "26125"
+      ],
+      "geographies": [
+        "tract"
+      ],
+      "tables": [
+        "B19013",
+        "B15003",
+        "B25003",
+        "B23025",
+        "B17001",
+        "B22001",
+        "B25044"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the identifiers, please retrieve the 2018 ACS 5-year estimates for all census tracts within Wayne, Macomb, and Oakland counties in Michigan. Fetch all variables from tables B19013, B15003, B25003, B23025, B17001, B22001, and B25044 so we have the raw counts and medians needed to calculate the neighborhood disadvantage metrics.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19013)",
+          "for": "tract:*",
+          "in": "state:26 county:163,099,125"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B15003)",
+          "for": "tract:*",
+          "in": "state:26 county:163,099,125"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B25003)",
+          "for": "tract:*",
+          "in": "state:26 county:163,099,125"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B23025)",
+          "for": "tract:*",
+          "in": "state:26 county:163,099,125"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B17001)",
+          "for": "tract:*",
+          "in": "state:26 county:163,099,125"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B22001)",
+          "for": "tract:*",
+          "in": "state:26 county:163,099,125"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B25044)",
+          "for": "tract:*",
+          "in": "state:26 county:163,099,125"
+        }
+      }
+    ]
+  }
+}

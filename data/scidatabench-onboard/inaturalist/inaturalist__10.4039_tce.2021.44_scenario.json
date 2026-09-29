@@ -1,0 +1,72 @@
+{
+  "source_doi": "10.4039/tce.2021.44",
+  "research_question": "To what extent can photographic observations of elm trees (Ulmus) from citizen science platforms be used to detect the early distribution of the invasive elm zigzag sawfly (Aproceros leucopoda) in North America?",
+  "phase_1": {
+    "user_prompt": "We're investigating the early spread of the elm zigzag sawfly (Aproceros leucopoda) following its initial detections in North America. Since larvae cause characteristic zigzag defoliation on host trees, we want to visually inspect photos from community science observations of its host plant genus, elms, in the regions near the first sightings. Before we pull the records, please find the standard identification code used in the iNaturalist taxonomy for the genus Elm.",
+    "expected": {
+      "taxon_names": [
+        "Ulmus"
+      ],
+      "taxon_ids": [
+        "53549"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the taxon ID for elms (53549), please retrieve the relevant observations so we can look for leaf damage. We are focusing on two regions where the insect or potential signs were first spotted. First, the area around the initial Québec detection, roughly a 163.26 km radius around coordinates 45.6268, -73.4702. Second, the area around a suspected Virginia observation, using a 180 km radius around coordinates 39.037807, -77.951755. For both regions, pull all observations of elms that have a 'needs ID' or 'research' quality grade, recorded during the likely active season (April through November) between the years 2018 and 2020.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 53549,
+          "verifiable": true,
+          "year": [
+            2018,
+            2019,
+            2020
+          ],
+          "month": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "lat": 45.6268,
+          "lng": -73.4702,
+          "radius": 163.26
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 53549,
+          "verifiable": true,
+          "year": [
+            2018,
+            2019,
+            2020
+          ],
+          "month": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "lat": 39.037807,
+          "lng": -77.951755,
+          "radius": 180
+        }
+      }
+    ]
+  }
+}

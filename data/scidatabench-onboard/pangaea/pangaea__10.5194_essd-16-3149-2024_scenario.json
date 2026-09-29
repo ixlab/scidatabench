@@ -1,0 +1,56 @@
+{
+  "source_doi": "10.5194/essd-16-3149-2024",
+  "research_question": "What are the specific PANGAEA datasets used to validate the SMOS-derived Antarctic thin sea ice thickness product (v3.2) in the Weddell Sea using ULS, SUIT, HEM, and MODIS measurements?",
+  "phase_1": {
+    "user_prompt": "We are validating a new SMOS-derived Antarctic thin sea ice thickness product in the Weddell Sea. Our own SMOS v3.2 sea ice thickness data is deposited on PANGAEA, and for validation we need several other PANGAEA datasets: Upward-Looking Sonar (ULS) draft records, Surface and Under-Ice Trawl (SUIT) measurements, helicopter-borne electromagnetic (HEM) ice thickness, and MODIS thermal-infrared thin ice thickness. Please find their dataset identifiers.",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.934732",
+        "10.1594/PANGAEA.785565",
+        "10.1594/PANGAEA.902334",
+        "10.1594/PANGAEA.944879",
+        "10.1594/PANGAEA.848612"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the five DOIs (10.1594/PANGAEA.934732, 10.1594/PANGAEA.785565, 10.1594/PANGAEA.902334, 10.1594/PANGAEA.944879, and 10.1594/PANGAEA.848612), please download the actual tabular data for each dataset so we can access the sea ice thickness and draft measurements for our own validation scripts.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.934732"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.785565"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.902334"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.944879"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.848612"
+        }
+      }
+    ]
+  }
+}

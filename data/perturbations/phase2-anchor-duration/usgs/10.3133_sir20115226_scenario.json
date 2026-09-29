@@ -1,0 +1,114 @@
+{
+  "source_doi": "10.3133/sir20115226",
+  "research_question": "How does brush management (ashe juniper removal) affect streamflow and unit runoff in paired watersheds in the Honey Creek State Natural Area, Texas?",
+  "phase_1": {
+    "user_prompt": "I am researching hydrologic responses in paired watersheds located in the Honey Creek State Natural Area near Spring Branch, Texas (Comal County). I need to identify the USGS streamgages monitoring the 'Unnamed tributary of Honey Creek'—specifically the three sites designated with '1C', '1T', and '2T' in their official station names. I also need the site number for the nearby 'Honey Creek rain gage number 1'. What are the 8-to-15 digit USGS site numbers for these four locations, and what are the standard USGS parameter codes for daily precipitation and daily mean streamflow?",
+    "expected": {
+      "sites": [
+        "08167347",
+        "08167350",
+        "08167353",
+        "295040098283701"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00045"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the four site numbers and the parameter codes for daily streamflow and precipitation, please retrieve the daily data for all four sites covering the full ten-year period over the 10 calendar years beginning in 2001. Also, retrieve the site metadata to confirm their drainage areas.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08167347",
+          "parameter_code": "00060",
+          "time": "2001-01-01/2010-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08167347",
+          "parameter_code": "00045",
+          "time": "2001-01-01/2010-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08167350",
+          "parameter_code": "00060",
+          "time": "2001-01-01/2010-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08167350",
+          "parameter_code": "00045",
+          "time": "2001-01-01/2010-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08167353",
+          "parameter_code": "00060",
+          "time": "2001-01-01/2010-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08167353",
+          "parameter_code": "00045",
+          "time": "2001-01-01/2010-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-295040098283701",
+          "parameter_code": "00060",
+          "time": "2001-01-01/2010-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-295040098283701",
+          "parameter_code": "00045",
+          "time": "2001-01-01/2010-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To understand the meteorological context, we need a single representative rainfall record for the study area. Create a daily rainfall time series by averaging the available daily precipitation totals from the four sites for each day. Then, sum these daily averages to calculate the total annual rainfall for each year. What was the total calculated annual rainfall (in inches) for the study area in the year 2002?",
+    "expected": 54.23,
+    "unit": "inches"
+  },
+  "phase_4": {
+    "user_prompt": "To compare the hydrologic response between the reference watershed (Site 1C) and the downstream treatment watershed (Site 2T), we need to compute their unit runoff. Using the daily mean streamflow data, calculate the daily unit runoff (in inches) for both sites. The drainage area is 223 acres for Site 1C and 340 acres for Site 2T. (To do this: convert daily mean discharge from cubic feet per second to total cubic feet per day, divide by the drainage area in square feet, and convert the result to inches). Sum the daily unit runoff to get the annual unit runoff for each year. To make the average more representative of typical conditions, exclude the daily unit runoff values from the 2002 extreme rainfall event period (June 28 through July 15, 2002, during which more than 22 inches of rainfall fell in a 2-week period). What was the average annual unit runoff (in inches/year) for Site 1C during the three-year period from 2002 through 2004 with this exclusion applied? Additionally, create a bar chart comparing the annual unit runoff of Site 1C and Site 2T from 2001 to 2010, and save it as `honey_creek_unit_runoff.png`.",
+    "expected": 1.63,
+    "unit": "inches/year",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "During the pre-treatment period, average annual unit runoff was relatively similar between the reference and treatment watersheds (e.g., around 1.6 to 1.9 inches/year). Post-treatment (2005-2010), the unit runoff remained similar between the two watersheds, indicating that the brush management practice did not substantially alter the unit runoff relationship relative to the reference watershed, despite high interannual variability in total rainfall.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "honey_creek_unit_runoff.png",
+      "visual_description": "A grouped bar chart or side-by-side comparison showing annual unit runoff (in inches) on the y-axis and years (2001-2010) on the x-axis. There should be two series (Site 1C and Site 2T) clearly distinguished by color or pattern. A massive spike should be visible in 2002 corresponding to the extreme rainfall event, with values generally tracking closely between the two sites across the decade.",
+      "paper_figure_reference": null
+    }
+  }
+}

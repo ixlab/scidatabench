@@ -1,0 +1,798 @@
+{
+  "source_doi": "10.3133/ofr20201145",
+  "research_question": "Estimate total phosphorus loads for major Great Lakes tributaries for water years 2014–2018 using regression models calibrated on continuous streamflow, continuous turbidity, and discrete water quality samples.",
+  "phase_1": {
+    "user_prompt": "I want to estimate total phosphorus loads for tributaries feeding into the Great Lakes. I need to identify the core network of USGS streamgages in the Great Lakes basin that have concurrent data for continuous streamflow, continuous turbidity, and discrete total phosphorus samples spanning water years 2011 through 2018. Can you find the 23 specific site numbers that meet these criteria?",
+    "expected": {
+      "sites": [
+        "04024000",
+        "04027000",
+        "04040000",
+        "04067500",
+        "040851385",
+        "04085427",
+        "04087170",
+        "04092750",
+        "04101500",
+        "04108660",
+        "04119400",
+        "04142000",
+        "04157005",
+        "04165500",
+        "04166500",
+        "04176500",
+        "04193500",
+        "04199500",
+        "04200500",
+        "04208000",
+        "04213500",
+        "04231600",
+        "04249000"
+      ],
+      "parameter_codes": [
+        "00060",
+        "63680",
+        "00665"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 23 Great Lakes tributary monitoring sites, please retrieve their continuous (unit-value/15-minute) streamflow, continuous turbidity, and discrete total phosphorus sample records across the 8 water years beginning in October 2010.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04024000",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04024000",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04024000",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04027000",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04027000",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04027000",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04040000",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04040000",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04040000",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04067500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04067500",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04067500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-040851385",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-040851385",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-040851385",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04085427",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04085427",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04085427",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04087170",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04087170",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04087170",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04092750",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04092750",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04092750",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04101500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04101500",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04101500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04108660",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04108660",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04108660",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04119400",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04119400",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04119400",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04142000",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04142000",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04142000",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04157005",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04157005",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04157005",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04165500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04165500",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04165500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04166500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04166500",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04166500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04176500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04176500",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04176500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04193500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04193500",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04193500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04199500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04199500",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04199500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04200500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04200500",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04200500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04208000",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04208000",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04208000",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04213500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04213500",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04213500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04231600",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04231600",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04231600",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04249000",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04249000",
+          "parameter_code": "63680",
+          "time": "2010-10-01/2018-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-04249000",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To baseline the hydrologic conditions before fitting load models, process the streamflow data for the Maumee River at Waterville, OH (one of our 23 sites). Handle any gaps by substituting available daily summary values. Calculate the average streamflow in cubic feet per second for the Maumee River across the load estimation period (water years 2014 through 2018).",
+    "expected": 6530.0,
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "We need to estimate the nutrient loads. Using a regression approach (like the `rloadest` package or an equivalent custom model), fit a surrogate load model for the Maumee River site predicting log-transformed total phosphorus flux. Use log-streamflow, log-turbidity, and seasonal sine/cosine terms as explanatory variables, calibrated on the entire water year 2011-2018 dataset. Then, apply this model to estimate the cumulative total phosphorus load for water years 2014 through 2018. Provide the total estimated cumulative load in metric tons. Finally, generate a bar plot comparing this estimated cumulative load for the Maumee River against the Fox River at Green Bay (040851385) and the Genesee River (04231600), saving it as `cumulative_tp_loads.png`.",
+    "expected": 11500.0,
+    "unit": "metric tons",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The Maumee River contributed by far the largest estimated cumulative total phosphorus load for water years 2014–2018 (approximately 11,500 metric tons), which was more than three times larger than the Fox River (approximately 3,400 metric tons) and Genesee River (approximately 2,400 metric tons).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "cumulative_tp_loads.png",
+      "visual_description": "A bar chart showing cumulative total phosphorus loads for three sites. The bar for the Maumee River (04193500) should be substantially taller than the others (around 11,500 metric tons). The Fox River (040851385) should be roughly 3,400 metric tons, and the Genesee River (04231600) should be roughly 2,400 metric tons.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

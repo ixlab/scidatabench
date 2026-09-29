@@ -1,0 +1,30 @@
+{
+  "source_doi": "10.1038/s41598-025-26397-z",
+  "research_question": "What are the spatio-temporal patterns of climate-driven shifts in suitable marine habitats for Japanese chum salmon in the North Pacific from 1998 to 2022?",
+  "phase_1": {
+    "user_prompt": "We are modelling recent climate-driven distribution shifts of the Japanese chum salmon in the North Pacific over the last 25 years. Before retrieving occurrence data from OBIS, please identify the exact scientific name for this focal species and find its corresponding unique taxonomic identifier in the WoRMS/OBIS catalog.",
+    "expected": {
+      "scientific_names": [
+        "Oncorhynchus keta"
+      ],
+      "aphia_ids": [
+        "254562"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the AphiaID for Oncorhynchus keta, please retrieve its marine occurrence records from OBIS. Limit the search to the study's time period (1998 to 2022) and its North Pacific geographic domain (spanning from 110°E to 130°W longitude, and 30°N to 75°N latitude).",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Oncorhynchus keta",
+          "geometry": "MULTIPOLYGON(((110 30, 179.999 30, 179.999 75, 110 75, 110 30)), ((-179.999 30, -130 30, -130 75, -179.999 75, -179.999 30)))",
+          "startdate": "1998-01-01",
+          "enddate": "2022-12-31"
+        }
+      }
+    ]
+  }
+}

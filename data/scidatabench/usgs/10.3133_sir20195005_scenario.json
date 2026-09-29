@@ -1,0 +1,128 @@
+{
+  "source_doi": "10.3133/sir20195005",
+  "research_question": "Develop surrogate regression models to estimate suspended sediment and nutrient concentrations using continuous sensor data at the Kankakee River in Shelby, Indiana.",
+  "phase_1": {
+    "user_prompt": "I'm interested in building surrogate regression models to estimate sediment and nutrient loads in the Kankakee River in Indiana. Specifically, I'm looking at the main streamgage at Shelby. Can you identify the USGS site number for this location, and the 5-digit parameter codes for streamflow, specific conductance, turbidity, nitrate plus nitrite, suspended-sediment concentration, total nitrogen, and total phosphorus? Also, what data types would I need to pull to get both continuous sensor measurements and discrete lab samples?",
+    "expected": {
+      "sites": [
+        "05518000"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00095",
+        "63680",
+        "99133",
+        "80154",
+        "62855",
+        "00665"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the Kankakee River site and the parameters identified, retrieve the continuous (15-minute or daily) sensor data for specific conductance, turbidity, and nitrate plus nitrite, along with the discrete laboratory sample data for suspended sediment, total nitrogen, and total phosphorus. Limit your data retrieval to the period from December 5, 2015, to May 31, 2018.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05518000",
+          "parameter_code": "00095",
+          "time": "2015-12-05/2018-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05518000",
+          "parameter_code": "63680",
+          "time": "2015-12-05/2018-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05518000",
+          "parameter_code": "99133",
+          "time": "2015-12-05/2018-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05518000",
+          "parameter_code": "00095",
+          "time": "2015-12-05/2018-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05518000",
+          "parameter_code": "63680",
+          "time": "2015-12-05/2018-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05518000",
+          "parameter_code": "99133",
+          "time": "2015-12-05/2018-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05518000",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2015-12-05",
+          "activityStartDateUpper": "2018-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05518000",
+          "usgsPCode": "62855",
+          "activityStartDateLower": "2015-12-05",
+          "activityStartDateUpper": "2018-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05518000",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2015-12-05",
+          "activityStartDateUpper": "2018-05-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To build the surrogate models, we need concurrent measurements. Process the data by matching each discrete water-quality sample timestamp with the closest continuous sensor measurement for the corresponding parameters (within a reasonable time window, e.g., 2 hours). How many matched, complete observations (discrete sample + continuous sensor values) are available for the total nitrogen dataset after dropping records with missing values?",
+    "expected": 32.0,
+    "unit": "observations"
+  },
+  "phase_4": {
+    "user_prompt": "Using the matched dataset, fit an ordinary least squares (OLS) regression model to estimate suspended-sediment concentration. The response variable should be the base-10 logarithm of suspended sediment, and the explanatory variables should be the base-10 logarithms of turbidity and specific conductance. Before fitting the model, filter out the discrete sample collected on December 15, 2017, as it represents an outlier composed largely of sand-sized material during low turbidity. What is the adjusted R-squared value of the fitted model? Additionally, create a visualization showing the observed versus predicted log10(suspended sediment) values, and save the plot as `ssc_surrogate_model_fit.png`.",
+    "expected": 0.92,
+    "unit": null,
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The surrogate regression model utilizing log-transformed turbidity and specific conductance effectively predicts the variance in suspended-sediment concentration, with observed values clustering tightly around the 1:1 prediction line.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "ssc_surrogate_model_fit.png",
+      "visual_description": "A scatter plot showing predicted log10(suspended sediment) values on one axis and observed log10(suspended sediment) values on the other. The points should show a strong positive linear correlation corresponding to an R-squared near 0.92. A 1:1 line or regression line of best fit should typically be included for reference.",
+      "paper_figure_reference": null
+    }
+  }
+}

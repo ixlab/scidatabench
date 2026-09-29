@@ -1,0 +1,374 @@
+{
+  "source_doi": "10.3133/sir20145181",
+  "research_question": "Estimate groundwater recharge rates for springs in the East Mountain area of Bernalillo County, New Mexico using the Chloride Mass Balance method, and identify sites impacted by nonmeteoric chloride sources.",
+  "phase_1": {
+    "user_prompt": "I am researching groundwater recharge in the East Mountain area of Bernalillo County, New Mexico. I need to identify the USGS site numbers for several specific monitoring locations to access their water quality records. The sites include four groundwater wells (Piñon Ridge, Sierra Vista, Sandia Park 1, and Sandia Park 2) and twelve springs (Wolf Spring, Carlito Spring, Cañoncito Spring, Cole Spring, Upper Cienega Spring, Cienega Spring, Hondo Spring, Ojito Spring (South), Ojito Spring (North), an unnamed spring near Bills Spring, Three Gun Spring, and Lower Carlito Spring). What are the USGS site numbers for these locations, and what are the 5-digit USGS parameter codes for dissolved chloride and dissolved bromide?",
+    "expected": {
+      "sites": [
+        "350853106205701",
+        "350721106211001",
+        "350946106205401",
+        "350954106212401",
+        "351022106231401",
+        "350518106235701",
+        "350850106232001",
+        "350807106231701",
+        "351008106231601",
+        "351012106230401",
+        "350543106233901",
+        "350613106230601",
+        "350617106231101",
+        "351043106225101",
+        "350554106262201",
+        "350501106240101"
+      ],
+      "parameter_codes": [
+        "00940",
+        "71870"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that I have the site numbers for the wells and springs, I need to retrieve their water quality data. Please download the discrete water quality samples for dissolved chloride and dissolved bromide for all 16 of these sites between January 1, 2005, and December 31, 2012.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350853106205701",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350853106205701",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350721106211001",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350721106211001",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350946106205401",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350946106205401",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350954106212401",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350954106212401",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-351022106231401",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-351022106231401",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350518106235701",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350518106235701",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350850106232001",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350850106232001",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350807106231701",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350807106231701",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-351008106231601",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-351008106231601",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-351012106230401",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-351012106230401",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350543106233901",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350543106233901",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350613106230601",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350613106230601",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350617106231101",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350617106231101",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-351043106225101",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-351043106225101",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350554106262201",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350554106262201",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350501106240101",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-350501106240101",
+          "usgsPCode": "71870",
+          "activityStartDateLower": "2005-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "For my chloride mass balance (CMB) calculation, I need the characteristic chloride concentration for each spring. Please process the water quality data to calculate the median dissolved chloride concentration for Carlito Spring (using the USGS site corresponding to that name) during the 2005-2012 period. Exclude any records with missing chloride values. Report the result in micrograms per liter (µg/L).",
+    "expected": 1660.0,
+    "unit": "ug/L"
+  },
+  "phase_4": {
+    "user_prompt": "I want to estimate the annual groundwater recharge rate for Carlito Spring using the Chloride Mass Balance (CMB) method. The equation is R = P * (Cp / Cs), where P is the average annual precipitation, Cp is the chloride concentration in bulk precipitation, and Cs is the median chloride concentration of the spring water. Based on regional data, assume P = 22.0 inches/year and Cp = 0.30 mg/L. What is the estimated annual recharge rate in inches for Carlito Spring? Additionally, calculate the median Cl:Br mass ratio for all the springs. Based on typical thresholds (e.g., Cl:Br mass ratio > 300 or median Cl > 20 mg/L), briefly discuss which springs show evidence of being impacted by nonmeteoric chloride sources (such as road salt or animal waste) and thus should be excluded from CMB regional recharge averages.",
+    "expected": 3.98,
+    "unit": "inches",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis should correctly identify Wolf Spring, Cienega Spring (including Upper Cienega), and the unnamed spring near Bills Spring as being impacted by nonmeteoric chloride sources, as they exhibit elevated Cl:Br mass ratios (typically >300) and/or high chloride concentrations compared to the dilute groundwater seen at the other springs.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

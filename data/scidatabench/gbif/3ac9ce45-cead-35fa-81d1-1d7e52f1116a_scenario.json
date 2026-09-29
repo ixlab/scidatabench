@@ -1,0 +1,44 @@
+{
+  "source_doi": "10.15560/18.5.1045",
+  "research_question": "What is the known geographic distribution of Aristosyrphus carpenteri, and how far southward does a newly discovered population in Ecuador extend its known range?",
+  "phase_1": {
+    "user_prompt": "I am researching the biogeography of Neotropical ant flies, specifically the hoverfly species Aristosyrphus carpenteri. Before I analyze my newly collected South American specimens, I need to know the previously established distribution of this species. Could you find what occurrence data is currently available for this species?",
+    "expected": {
+      "taxon_keys": [
+        "1534444"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve all the available occurrence records for Aristosyrphus carpenteri so we can map its baseline geographic range. Make sure to only include records that have geographic coordinates.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "hasCoordinate": true,
+          "taxonKey": 1534444
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To understand the limits of its previously known range, analyze the historical occurrence records you downloaded. Identify the southernmost location where this species was recorded before the new South American discoveries. Provide the decimal latitude of this southernmost historical record.",
+    "expected": 8.6098,
+    "unit": "decimal degrees"
+  },
+  "phase_4": {
+    "user_prompt": "I recently collected new specimens of this species in Ecuador at the coordinates 00.1155°N, 078.9584°W. Calculate the exact geographic distance in kilometers (using the Haversine formula) between the southernmost historical record you identified and this new Ecuadorian site to quantify the range extension. Additionally, create a geographic map showing the historical records as well as this new Ecuadorian record to visualize the expansion. Save this plot as `range_extension_map.png`.",
+    "expected": 950.9,
+    "unit": "kilometers",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis confirms a significant range extension of over 950 km southward for Aristosyrphus carpenteri, establishing its first known occurrence in South America (Ecuador) compared to its historical distribution restricted to Costa Rica and Panama.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "range_extension_map.png",
+      "visual_description": "A geographic map showing the northwestern region of South America and Central America. Historical occurrence points should be visible in Costa Rica and Panama, with a distinct, newly added point located in northern Ecuador (near the equator).",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

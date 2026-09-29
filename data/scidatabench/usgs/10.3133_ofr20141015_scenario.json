@@ -1,0 +1,418 @@
+{
+  "source_doi": "10.3133/ofr20141015",
+  "research_question": "Develop and evaluate regression models for estimating salinity and selenium concentrations using specific conductance and streamflow data at selected sites in the Upper Colorado River Basin.",
+  "phase_1": {
+    "user_prompt": "I'm investigating salinity and selenium concentrations in the Upper Colorado River Basin, Colorado. I want to build regression models using data from 12 specific streamgage locations: Colorado River Above South Canyon Creek near Glenwood Springs, Piceance Creek Below Ryan Gulch near Rio Blanco, Piceance Creek at White River, Yellow Creek near White River, Dolores River at Bedrock, Dolores River near Bedrock, Colorado River near Colorado-Utah State Line, Gunnison River near Grand Junction, Gunnison River at Delta, North Fork Gunnison River above mouth near Lazear, Uncompahgre River at Delta, and Uncompahgre River at Colona. Can you find the official USGS site numbers for these locations and identify the data available from October 2008 to April 2012?",
+    "expected": {
+      "sites": [
+        "09085150",
+        "09306200",
+        "09306222",
+        "09306255",
+        "09169500",
+        "09171100",
+        "09163500",
+        "09152500",
+        "09144250",
+        "09136100",
+        "09149500",
+        "09147500"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 12 site numbers, please retrieve the discrete water-quality samples for salinity (dissolved solids) and selenium, as well as the concurrent instantaneous streamflow and specific conductance data measured at the time of sampling, for the period October 1, 2008, to April 30, 2012.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09085150",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09085150",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09085150",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09306200",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09306200",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09306200",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09306222",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09306222",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09306222",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09306255",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09306255",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09306255",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09169500",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09169500",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09169500",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09171100",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09171100",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09171100",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09163500",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09163500",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09163500",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09152500",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09152500",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09144250",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09144250",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09144250",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09136100",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09136100",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09136100",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09149500",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09149500",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09149500",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09147500",
+          "activityStartDateLower": "2008-10-01",
+          "activityStartDateUpper": "2012-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09147500",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09147500",
+          "parameter_code": "00095",
+          "time": "2008-10-01/2012-04-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved data to prepare for regression modeling. First, separate the data into a model development dataset (Water Years 2009-2011, meaning Oct 2008 - Sept 2011) and a verification dataset (Oct 2011 - Apr 2012). Focus on the 'SCanyon' site (Colorado River Above South Canyon Creek, 09085150). Filter its development dataset to keep only records that contain valid, concurrent measurements for salinity, streamflow, and specific conductance. How many valid sampling events remain in this site's development dataset?",
+    "expected": 18.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned development dataset (WY 2009-2011) for the SCanyon site, fit an ordinary least squares regression model to estimate the natural log of salinity concentration. Use the natural log of specific conductance as the sole explanatory variable. What is the calculated slope coefficient for the specific conductance term? Also, fit a competing model using the natural log of streamflow instead of specific conductance. Compare the two models. Which explanatory variable provides a better fit (higher Adjusted R-squared, lower standard error) for estimating salinity? Finally, generate a scatter plot comparing the measured salinity concentrations (y-axis) against the estimated salinity concentrations (x-axis) derived from your specific conductance model, and save it as `scanyon_salinity_model_fit.png`.",
+    "expected": 1.0133,
+    "unit": "coefficient",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The regression model using specific conductance as the explanatory variable performs better than the model using streamflow, demonstrating a higher Adjusted R-squared and a lower standard error.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "scanyon_salinity_model_fit.png",
+      "visual_description": "A scatter plot showing measured salinity concentrations on one axis and estimated salinity concentrations (from the specific conductance model) on the other. The points should fall closely along a 1:1 reference line, indicating a strong model fit.",
+      "paper_figure_reference": "Figure 2, Panel A"
+    }
+  }
+}

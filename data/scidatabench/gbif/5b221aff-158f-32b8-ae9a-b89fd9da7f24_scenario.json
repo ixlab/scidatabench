@@ -1,0 +1,43 @@
+{
+  "source_doi": "10.11606/1807-0205/2024.64.011",
+  "research_question": "I want to characterize the historical global distribution of the pink wormfish and calculate the proportion of records located in the United States using a specific GBIF dataset snapshot.",
+  "phase_1": {
+    "user_prompt": "I'm planning a biogeography study on the marine fish commonly known as the 'pink wormfish'. What is the accepted scientific name I should use to query its occurrence data on GBIF?",
+    "expected": {
+      "taxon_keys": [
+        "5210857"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "My collaborator suggested we use a stable historical snapshot of the occurrence data for our baseline mapping. Please retrieve the exact GBIF occurrence dataset associated with the DOI 10.15468/dl.uph2kb.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "taxonKey": 5210857
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded dataset to determine the total number of occurrence records it contains. How many total records are there?",
+    "expected": 151.0,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Based on the dataset, what percentage of the total global occurrences are located in the United States? Provide just the percentage. Also, create a map showing the geographic distribution of these occurrences in the Western Atlantic, saving the plot as `pink_wormfish_distribution_map.png`.",
+    "expected": 80.1,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The historical distribution of Microdesmus longipinnis is heavily concentrated in the United States (which accounts for roughly 80% of occurrences), with additional scattered records in the Caribbean and eastern coast of Brazil, revealing a noticeable geographical gap between the Caribbean and eastern Brazil.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "pink_wormfish_distribution_map.png",
+      "visual_description": "A map covering the Western Atlantic showing occurrence points. Points should be heavily clustered along the southeastern United States coast and Gulf of Mexico, with fewer scattered points extending into the Caribbean and down to the eastern coast of Brazil.",
+      "paper_figure_reference": "Figure 1 Panel A"
+    }
+  }
+}

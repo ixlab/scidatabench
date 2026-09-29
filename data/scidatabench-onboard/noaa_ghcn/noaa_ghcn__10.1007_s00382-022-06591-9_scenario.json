@@ -1,0 +1,97 @@
+{
+  "source_doi": "10.1007/s00382-022-06591-9",
+  "research_question": "How do recent rainfall trends in the Upper Blue Nile basin compare between in-situ observations and gridded precipitation datasets?",
+  "phase_1": {
+    "user_prompt": "We are analyzing recent precipitation trends in the Upper Blue Nile basin using in-situ observations from the Global Historical Climatology Network at Addis Ababa, Debre Markos, Dessie, Gondar and Nekemet. Please identify the exact locations we should search on and the corresponding weather variable parameter code.",
+    "expected": {
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve the daily rainfall observations for the stations located in Addis Ababa, Debre Markos, Dessie, Gondar, and Nekemet from the GHCN network for the period 1976 through 2019.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "ET000063450",
+          "startDate": "1976-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          9.0358,
+          38.7524
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "ET000063334",
+          "startDate": "1976-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          10.3359,
+          37.7286
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "ET000063333",
+          "startDate": "1976-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          11.1226,
+          39.635
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "ET000063331",
+          "startDate": "1976-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          12.6104,
+          37.4668
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "ET000063340",
+          "startDate": "1976-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          9.0905,
+          36.5482
+        ]
+      }
+    ]
+  }
+}

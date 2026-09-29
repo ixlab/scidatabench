@@ -1,0 +1,34 @@
+{
+  "source_doi": "10.1175/bams-d-16-0230.1",
+  "research_question": "To characterize the oceanographic features (temperature and salinity evolution) of the southern Bay of Bengal during the 2016 summer monsoon in response to intraseasonal variability.",
+  "phase_1": {
+    "user_prompt": "We are computing optimally interpolated (OI) background conditions for the 2016 BoBBLE summer monsoon field campaign. Which ocean basin was that campaign conducted in, and which primary physical oceanographic parameters from the Argo floats do we need in order to track the subsurface thermohaline features?",
+    "expected": {
+      "parameters": [
+        "TEMP",
+        "PSAL"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Bay of Bengal as our region and targeting temperature and salinity, we need to extract the specific Argo float profiles that contributed to the 8°N OI dataset. Please fetch the Argo profiles along the zonal transect spanning 83°E to 95°E, allowing a tight latitudinal band from 7.5°N to 8.5°N. Constrain the data to our campaign window: June 1, 2016 through September 30, 2016.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.region",
+        "kwargs": {
+          "box": [
+            83,
+            95,
+            7.5,
+            8.5,
+            0,
+            1000,
+            "2016-06",
+            "2016-10"
+          ]
+        }
+      }
+    ]
+  }
+}

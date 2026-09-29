@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.1007/s00267-025-02206-1",
+  "research_question": "Which iNaturalist taxon and place identifiers scope a research-grade mammal survey of an Atlantic-facing Iberian river basin, once livestock and non-representative species are excluded?",
+  "phase_1": {
+    "user_prompt": "We are assessing ecological connectivity along a river basin in the autonomous community that occupies Spain's north-west corner, directly north of Portugal, and we want the citizen-science mammal records for it. We need to work in numeric identifiers, not names, because several of the species we care about have been reclassified recently and the names in our notes are out of date. Give us the iNaturalist place ID for that autonomous community, and the iNaturalist taxon IDs for: the mammal class as a whole, plus the eight species we exclude as livestock or as non-representative of terrestrial connectivity — the serotine bat, the domestic horse, the European hedgehog, the European rabbit, the domestic sheep, the red squirrel, the Iberian mole, and the common bottlenose dolphin.",
+    "expected": {
+      "taxon_ids": [
+        "40151",
+        "1596127",
+        "209233",
+        "43042",
+        "43151",
+        "121578",
+        "46001",
+        "46969",
+        "41482"
+      ],
+      "place_ids": [
+        "6779"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the citizen science observations needed for this study. I need all 'research grade' mammal observations from 2008 to 2024 within the River Lérez Basin (or the broader Galicia region if the specific basin lacks a place boundary), ensuring that the eight excluded species (Eptesicus serotinus, Equus caballus, Erinaceus europaeus, Oryctolagus cuniculus, Ovis aries, Sciurus vulgaris, Talpa occidentalis, Tursiops truncatus) are removed from the results.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 40151,
+          "place_id": 6779,
+          "quality_grade": "research",
+          "d1": "2008-01-01",
+          "d2": "2024-12-31",
+          "without_taxon_id": [
+            1596127,
+            209233,
+            43042,
+            43151,
+            121578,
+            46001,
+            46969,
+            41482
+          ]
+        }
+      }
+    ]
+  }
+}

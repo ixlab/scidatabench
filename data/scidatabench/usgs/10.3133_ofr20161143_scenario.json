@@ -1,0 +1,394 @@
+{
+  "source_doi": "10.3133/ofr20161143",
+  "research_question": "Investigate the occurrence, distribution, and hydrogeologic correlation of arsenic and radon in private wells in Delaware using discrete groundwater quality samples.",
+  "phase_1": {
+    "user_prompt": "I am conducting a regional groundwater quality assessment of private wells in Delaware. Specifically, I'm looking for USGS groundwater sites in New Castle County and Kent County that have discrete water-quality samples for dissolved arsenic and radon-222 collected during the summer of 2015 (June 1 through August 31). Can you identify the unique USGS site numbers for these locations?",
+    "expected": {
+      "sites": [
+        "391922075425701",
+        "391727075411901",
+        "391759075451001",
+        "391903075421201",
+        "391520075440401",
+        "392013075353501",
+        "392321075381701",
+        "392301075320501",
+        "392212075362001",
+        "391106075435301",
+        "392726075371501",
+        "392402075403601",
+        "392536075392101",
+        "392359075370301",
+        "392457075374601",
+        "392245075440401",
+        "392215075421801",
+        "392217075402201",
+        "392312075342201",
+        "392228075382201",
+        "392110075454201",
+        "391949075450501",
+        "391906075420101",
+        "391536075443901",
+        "391535075420401",
+        "391202075421301",
+        "391247075414401",
+        "391055075441901",
+        "391205075442801",
+        "391356075441101",
+        "391611075432501",
+        "392119075353101",
+        "391857075354701",
+        "391914075353401",
+        "391734075401101",
+        "392344075375101"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site identifiers, please download the discrete water-quality sample results for arsenic and radon for these locations during the summer 2015 period. Also, fetch the site metadata so we can access the well depth for each site.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391922075425701",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391727075411901",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391759075451001",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391903075421201",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391520075440401",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392013075353501",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392321075381701",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392301075320501",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392212075362001",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391106075435301",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392726075371501",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392402075403601",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392536075392101",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392359075370301",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392457075374601",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392245075440401",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392215075421801",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392217075402201",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392312075342201",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392228075382201",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392110075454201",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391949075450501",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391906075420101",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391536075443901",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391535075420401",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391202075421301",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391247075414401",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391055075441901",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391205075442801",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391356075441101",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391611075432501",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392119075353101",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391857075354701",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391914075353401",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-391734075401101",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-392344075375101",
+          "activityStartDateLower": "2015-06-01",
+          "activityStartDateUpper": "2015-08-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Merge the water quality sample data with the well depths using the site numbers. For sites with censored arsenic values (e.g., '<0.1'), impute the value as half the detection limit (0.05). Evaluate the samples against regulatory thresholds: count the total number of wells where the arsenic concentration is at or above the EPA Maximum Contaminant Level of 10 µg/L.",
+    "expected": 15.0,
+    "unit": "wells"
+  },
+  "phase_4": {
+    "user_prompt": "To understand the hydrogeologic controls on these contaminants, compute the Kendall's Tau rank correlation coefficient between well depth and arsenic concentration. Also, create a scatterplot matrix visualizing the relationships between well depth, arsenic, and radon. Save the visualization as 'contaminant_depth_relations.png'.",
+    "expected": 0.42,
+    "unit": "Kendall's Tau",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Both arsenic and radon show a strong positive correlation with well depth, indicating that higher concentrations of these contaminants are typically found in the deeper parts of the aquifer system.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "contaminant_depth_relations.png",
+      "visual_description": "A scatterplot matrix or pairplot containing well depth, arsenic, and radon. The plots should demonstrate clear positive trends/correlations between well depth and both arsenic and radon concentrations.",
+      "paper_figure_reference": null
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "platform": "vizier",
+  "condition": "search",
+  "model": "gemini-3.7-flash",
+  "elapsed_s": 18.5,
+  "tokens": {
+    "input": 32191,
+    "output": 2139,
+    "thinking": 0,
+    "total": 34330,
+    "cache_read": 0
+  },
+  "tool_call_turns": 3,
+  "research_log": [
+    {
+      "kind": "search",
+      "query": "\"astroquery.vizier\" \"Vizier\" query_object query_region query_constraints",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://astroquery.readthedocs.io/en/latest/vizier/vizier.html",
+        "https://astroquery.readthedocs.io/en/latest/api.html",
+        "https://astroquery.readthedocs.io/en/stable/api/astroquery.vizier.VizierClass.html",
+        "https://astroquery.readthedocs.io/en/latest/_modules/astroquery/vizier/core.html",
+        "https://www.astrobetter.com/blog/2020/06/29/the-cds-and-python-iii-vizier-xmatch-20k-catalogues-and-tables-at-your-fingertips",
+        "https://www.youtube.com/watch?v=JH33Di4LDF8",
+        "https://cds.unistra.fr/help/faq/vizier",
+        "https://github.com/astropy/astroquery/issues/1684"
+      ]
+    },
+    {
+      "kind": "fetch",
+      "url": "https://astroquery.readthedocs.io/en/latest/vizier/vizier.html",
+      "status": "200",
+      "chars": 18287
+    },
+    {
+      "kind": "fetch",
+      "url": "https://astroquery.readthedocs.io/en/stable/api/astroquery.vizier.VizierClass.html",
+      "status": "200",
+      "chars": 16025
+    }
+  ],
+  "generated_utc": "2026-08-14T17:02:45.793638+00:00"
+}

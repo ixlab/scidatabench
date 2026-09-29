@@ -1,0 +1,120 @@
+{
+  "source_doi": "10.1007/s41748-020-00183-5",
+  "research_question": "What are the projected changes in temperature and precipitation over the Arabian Peninsula for the near and far twenty-first century, based on a 31-model CMIP6 ensemble under historical and SSP1-2.6, SSP2-4.5, and SSP5-8.5 scenarios?",
+  "phase_1": {
+    "user_prompt": "We are projecting future climate change over the Arabian Peninsula from CMIP6 multimodel simulations. Please identify the CMIP6 catalog codes for the models in our ensemble, the codes for the future projection scenarios and the necessary baseline run for the observed past, the canonical variable codes for surface air temperature and precipitation, the monthly atmospheric table ID, and the ensemble variant labels.",
+    "expected": {
+      "source_ids": [
+        "ACCESS-CM2",
+        "ACCESS-ESM1-5",
+        "AWI-CM-1-1-MR",
+        "BCC-CSM2-MR",
+        "CAMS-CSM1-0",
+        "CanESM5",
+        "CESM2",
+        "CESM2-WACCM",
+        "CIESM",
+        "CNRM-CM6-1",
+        "CNRM-CM6-1-HR",
+        "CNRM-ESM2-1",
+        "EC-Earth3",
+        "EC-Earth3-Veg",
+        "FGOALS-f3-L",
+        "FGOALS-g3",
+        "FIO-ESM-2-0",
+        "GFDL-ESM4",
+        "INM-CM4-8",
+        "INM-CM5-0",
+        "IPSL-CM6A-LR",
+        "KACE-1-0-G",
+        "MIROC6",
+        "MIROC-ES2L",
+        "MPI-ESM1-2-HR",
+        "MPI-ESM1-2-LR",
+        "MRI-ESM2-0",
+        "NESM3",
+        "NorESM2-LM",
+        "NorESM2-MM",
+        "UKESM1-0-LL"
+      ],
+      "experiment_ids": [
+        "historical",
+        "ssp126",
+        "ssp245",
+        "ssp585"
+      ],
+      "variable_ids": [
+        "tas",
+        "pr"
+      ],
+      "table_ids": [
+        "Amon"
+      ],
+      "variant_labels": [
+        "r1i1p1f1",
+        "r1i1p1f2"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the CMIP6 identifiers we found, please search for and retrieve these CMIP6 datasets. Query the CMIP6 data nodes for the surface temperature and precipitation variables across all 31 models, for both the historical baseline (1981-2010) and the three future scenarios (2030-2059 and 2070-2099), using their specified ensemble members. You do not need to download the full actual data files; just load the dataset metadata or Zarr store references so we can proceed with regional subsetting.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "ACCESS-CM2",
+            "ACCESS-ESM1-5",
+            "AWI-CM-1-1-MR",
+            "BCC-CSM2-MR",
+            "CAMS-CSM1-0",
+            "CanESM5",
+            "CESM2",
+            "CESM2-WACCM",
+            "CIESM",
+            "CNRM-CM6-1",
+            "CNRM-CM6-1-HR",
+            "CNRM-ESM2-1",
+            "EC-Earth3",
+            "EC-Earth3-Veg",
+            "FGOALS-f3-L",
+            "FGOALS-g3",
+            "FIO-ESM-2-0",
+            "GFDL-ESM4",
+            "INM-CM4-8",
+            "INM-CM5-0",
+            "IPSL-CM6A-LR",
+            "KACE-1-0-G",
+            "MIROC6",
+            "MIROC-ES2L",
+            "MPI-ESM1-2-HR",
+            "MPI-ESM1-2-LR",
+            "MRI-ESM2-0",
+            "NESM3",
+            "NorESM2-LM",
+            "NorESM2-MM",
+            "UKESM1-0-LL"
+          ],
+          "experiment_id": [
+            "historical",
+            "ssp126",
+            "ssp245",
+            "ssp585"
+          ],
+          "variable_id": [
+            "tas",
+            "pr"
+          ],
+          "table_id": [
+            "Amon"
+          ],
+          "variant_label": [
+            "r1i1p1f1",
+            "r1i1p1f2"
+          ]
+        }
+      }
+    ]
+  }
+}

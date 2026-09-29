@@ -1,0 +1,28 @@
+{
+  "source_doi": "10.1007/s10584-021-03240-8",
+  "research_question": "Which crustacean documents Arctic range expansion, and how are its occurrence records retrieved from OBIS?",
+  "phase_1": {
+    "user_prompt": "We are modelling range shifts of Arctic crustaceans under warming, and we want to start with the clearest case of one that has already moved: the large lithodid crab native to the North Pacific and the Sea of Okhotsk that Soviet scientists deliberately released into the Barents Sea in the 1960s, and which has since spread west along the Norwegian coast and become a commercial fishery there. Give us the accepted scientific name OBIS expects for it, and its AphiaID, so we can pull its occurrence records.",
+    "expected": {
+      "scientific_names": [
+        "Paralithodes camtschaticus"
+      ],
+      "aphia_ids": [
+        "233889"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now retrieve its occurrence records from OBIS from 2000 onwards, which is the period our climate reanalysis covers.",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Paralithodes camtschaticus",
+          "startdate": "2000-01-01"
+        }
+      }
+    ]
+  }
+}

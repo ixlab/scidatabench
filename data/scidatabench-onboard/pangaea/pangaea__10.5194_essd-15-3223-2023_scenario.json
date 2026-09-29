@@ -1,0 +1,64 @@
+{
+  "source_doi": "10.5194/essd-15-3223-2023",
+  "research_question": "Which specific PANGAEA ship-based sea ice observation datasets were used to validate the satellite-derived MWRI-ASI sea ice concentration product?",
+  "phase_1": {
+    "user_prompt": "We are validating a new satellite sea-ice concentration product for the polar regions and want ship-based visual sea-ice observations as the ground truth. The cruises we can use are six RV Polarstern legs archived in PANGAEA: PS111, PS118, PS117, PS103, PS86, and ARK-XXVII/3. Find the sea-ice conditions dataset for each of those legs and give me their dataset DOIs so we can pull the tables.",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.887697",
+        "10.1594/PANGAEA.901263",
+        "10.1594/PANGAEA.901279",
+        "10.1594/PANGAEA.880046",
+        "10.1594/PANGAEA.835578",
+        "10.1594/PANGAEA.803221"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the 6 PANGAEA dataset DOIs for the ship-based sea ice observations, please retrieve the tabular data for each of these datasets.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.887697"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.901263"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.901279"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.880046"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.835578"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.803221"
+        }
+      }
+    ]
+  }
+}

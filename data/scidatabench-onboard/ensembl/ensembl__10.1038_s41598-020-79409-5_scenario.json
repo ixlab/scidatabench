@@ -1,0 +1,37 @@
+{
+  "source_doi": "10.1038/s41598-020-79409-5",
+  "research_question": "How can a CRISPR/Cas9 target site for gene knock-in be identified in a non-coding region of the channel catfish genome using Ensembl to identify flanking genes?",
+  "phase_1": {
+    "user_prompt": "We are designing a CRISPR/Cas9 knock-in strategy for the channel catfish to introduce an antimicrobial peptide. We selected a target integration site on chromosome 1 at coordinate 19,129,218. Before proceeding, we need to map the genomic neighborhood. Can you use Ensembl to identify the species naming convention and the official gene symbols of the two closest genes flanking this exact integration site (one immediately upstream, and one downstream)?",
+    "expected": {
+      "gene_symbols": [
+        "grik2",
+        "hace1"
+      ],
+      "species": [
+        "ictalurus_punctatus"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the flanking genes are grik2 and hace1 in the channel catfish genome, please retrieve their full gene annotation records from Ensembl, including their exact genomic coordinates and biotypes, to help us confirm the boundaries of our safe-harbor window.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "ictalurus_punctatus",
+          "symbol": "grik2"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "ictalurus_punctatus",
+          "symbol": "hace1"
+        }
+      }
+    ]
+  }
+}

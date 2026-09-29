@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.1038/s43247-021-00113-x",
+  "research_question": "Identify the specific Argo float and physical parameters used to demonstrate the newly discovered thermohaline staircase region in the Great Australian Bight.",
+  "phase_1": {
+    "user_prompt": "We are mapping thermohaline staircases globally using profiling floats, and have found a staircase region overlying the Tasman Leakage. Can you give the geographic name for that region, and identify the float and the core hydrographic parameters we need to characterise the staircase structure?",
+    "expected": {
+      "float_wmo_ids": [
+        "5905189"
+      ],
+      "parameters": [
+        "TEMP",
+        "PSAL",
+        "PRES"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the float ID (5905189) and the key parameters (temperature, salinity, pressure), please retrieve the profile data for this float. The example in the paper was recorded on April 8, 2019, so make sure to fetch the data covering that specific date so we can eventually recreate their staircase profile plot.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5905189
+        }
+      }
+    ]
+  }
+}

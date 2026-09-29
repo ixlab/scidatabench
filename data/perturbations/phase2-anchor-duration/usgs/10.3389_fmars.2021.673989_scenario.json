@@ -1,0 +1,71 @@
+{
+  "source_doi": "10.3389/fmars.2021.673989",
+  "research_question": "How did Spring 2020 river discharge anomalies in major Great Lakes tributaries (Maumee, Detroit, and Saginaw rivers) compare to historic 2012-2019 baselines?",
+  "phase_1": {
+    "user_prompt": "I'm investigating the hydrologic conditions that influenced Great Lakes water quality in the spring of 2020. I need to find the main USGS streamgages that measure the flow of three major tributaries: the Maumee River near Waterville (OH), the Detroit River at Fort Wayne Detroit (MI), and the Saginaw River at Saginaw (MI). Can you identify the official USGS site numbers for these three streamgages?",
+    "expected": {
+      "sites": [
+        "04193500",
+        "04165710",
+        "04157005"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers for the Maumee, Detroit, and Saginaw River gages, please retrieve their daily discharge records over the 9 calendar years beginning in 2012.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04193500",
+          "parameter_code": "00060",
+          "time": "2012-01-01/2020-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04165710",
+          "parameter_code": "00060",
+          "time": "2012-01-01/2020-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04157005",
+          "parameter_code": "00060",
+          "time": "2012-01-01/2020-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the data to focus on April flow conditions. First, isolate all daily discharge values that occurred in April for each year. Calculate the historical 'baseline' April mean discharge for each site using the data from 2012 through 2019. Then, calculate the April mean discharge for the year 2020. Finally, compute the percent anomaly of the April 2020 flow relative to the 2012-2019 baseline for each site using the formula: ((April 2020 Mean - Baseline April Mean) / Baseline April Mean) * 100.",
+    "expected": {
+      "USGS-04193500": -46.2670235568283,
+      "USGS-04165710": 21.233753637245396,
+      "USGS-04157005": -51.44930557114409
+    },
+    "unit": "percent"
+  },
+  "phase_4": {
+    "user_prompt": "Review the April 2020 discharge anomalies you calculated for the three tributaries. What was the calculated percent anomaly for the Saginaw River? Furthermore, compare the anomaly direction of the Detroit River to that of the Maumee and Saginaw rivers—what pattern do you observe?",
+    "expected": -51.5,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "In April 2020, the Detroit River experienced an above-average positive discharge anomaly (+21%), while both the Maumee and Saginaw Rivers experienced severe negative anomalies (roughly 46% and 52% below their historical baselines, respectively).",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

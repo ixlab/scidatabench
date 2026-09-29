@@ -1,0 +1,45 @@
+{
+  "source_doi": "10.1029/2022gb007412",
+  "research_question": "How do plant-soil relationships, specifically total manganese concentrations, influence carbon stocks in organic soil horizons across diverse biomes?",
+  "phase_1": {
+    "user_prompt": "I am trying to reproduce a study on plant-soil interactions involving manganese and carbon across NEON biomes. The study uses three specific NEON data products: one for Megapit soil physical and chemical properties, one for Distributed initial characterization of soil properties, and one for Plant foliar traits. What are the exact DP codes for these three data products?",
+    "expected": {
+      "data_products": [
+        "DP1.00096.001",
+        "DP1.10047.001",
+        "DP1.10026.001"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the Megapit soil physical and chemical properties data product for all available NEON sites, as this contains the total carbon, bulk density, and total manganese data needed for the organic horizon analysis.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00096.001",
+          "site": "all"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Using the Megapit soil data, calculate the organic Carbon (C) stock (in kg m-2) for each organic horizon (those with designations containing Oi, Oe, or Oa). The C stock is calculated as: (organic C concentration in g kg-1) × (bulk density in g cm-3) × (horizon thickness in m). Note: If organic C is not directly provided, use estimated organic C (subtracting CaCO3-C from total C) or total C if inorganic C is negligible. Sum the O horizon C stocks within each site to determine the total O horizon C stock per site. What is the average total O horizon C stock across these four specific sites: DELA, ORNL, ABBY, and SCBI?",
+    "expected": 0.524,
+    "unit": "kg m-2"
+  },
+  "phase_4": {
+    "user_prompt": "Now, instead of summing by site, analyze the individual O subhorizons (there should be around 22). For each individual O horizon, pair its C stock (kg m-2) with its total soil Manganese (Mn) concentration (mg kg-1). Calculate the linear correlation computed on the ranks of the values between C stock and Mn concentration across these individual horizons. Additionally, create a scatterplot visualizing this relationship, with Mn concentration on the x-axis and C stock on the y-axis. Save the plot as `c_stock_mn_scatter.png`.",
+    "expected": -0.83,
+    "unit": null,
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Carbon stocks in organic soil horizons decline strongly with increasing manganese concentrations across diverse biomes, exhibiting a significant negative non-linear relationship. This suggests that high manganese bioavailability under moderately acidic conditions supports fungal decomposition of litter, thereby reducing the accumulation of carbon in surface organic soils.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "c_stock_mn_scatter.png",
+      "visual_description": "A scatterplot showing total Manganese concentration (mg kg-1) on the x-axis and Carbon stock (kg m-2) on the y-axis for individual O horizons. The plot should display a negative, non-linear relationship where higher Mn concentrations correspond to lower C stocks, resembling an inverse decay curve.",
+      "paper_figure_reference": "Figure 2a"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "source_doi": "10.3133/sir20085080",
+  "research_question": "To estimate the annual mass balance of suspended sediment transported through Milltown Reservoir in the Upper Clark Fork Basin during the water year 2007 drawdown, and interpret the primary source of sediment.",
+  "phase_1": {
+    "user_prompt": "I am studying the mass balance of suspended sediment in Milltown Reservoir in western Montana during water year 2007 (October 1, 2006 to September 30, 2007), which covers the initial drawdown phase prior to dam removal. To do this, I need to identify the three USGS streamgages representing the reservoir's inflows (on the Clark Fork at Turah Bridge and the Blackfoot River near Bonner) and its outflow (on the Clark Fork above Missoula). What are the site numbers for these three gages, and what parameter code should I use to retrieve their daily suspended sediment discharge (in short tons per day)?",
+    "expected": {
+      "sites": [
+        "12334550",
+        "12340000",
+        "12340500"
+      ],
+      "parameter_codes": [
+        "80155"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that I have the three site numbers (12334550, 12340000, 12340500) and the parameter code for suspended sediment discharge (80155), please retrieve the daily sediment discharge data for these sites for water year 2007.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-12334550",
+          "parameter_code": "80155",
+          "time": "2006-10-01/2007-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-12340000",
+          "parameter_code": "80155",
+          "time": "2006-10-01/2007-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-12340500",
+          "parameter_code": "80155",
+          "time": "2006-10-01/2007-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Calculate the total annual suspended sediment load (in metric tonnes) entering the Milltown Reservoir during water year 2007. This is the sum of the annual loads from the two inflow gages (Clark Fork at Turah Bridge and Blackfoot River near Bonner). For each of these two sites, compute the annual load by summing the daily suspended sediment discharges over the water year, and then add them together.",
+    "expected": 53070.30729,
+    "unit": "tonnes"
+  },
+  "phase_4": {
+    "user_prompt": "Now compute the annual mass balance of suspended sediment for Milltown Reservoir for water year 2007 by subtracting the total annual outflow load (at Clark Fork above Missoula) from the combined inflow load you just calculated. What is the net mass balance in tons? Additionally, interpret this number: based on the mass balance, what can you conclude about the primary source of the sediment being transported downstream during this drawdown period?",
+    "expected": -129500.0,
+    "unit": "tons",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The large negative mass balance indicates a massive net loss of suspended sediment from the reservoir. This demonstrates that the sediment transported downstream was primarily derived from the erosion and scour of previously deposited reservoir bottom sediments due to the reservoir drawdown, rather than originating from upstream sources.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

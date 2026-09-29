@@ -1,0 +1,81 @@
+{
+  "source_doi": "10.3133/sir20125185",
+  "research_question": "How did the fluxes of total nitrogen, total phosphorus, and suspended sediment from the Susquehanna River to the Chesapeake Bay change between 1978 and 2011, and what was the impact of Tropical Storm Lee on these fluxes?",
+  "phase_1": {
+    "user_prompt": "I am investigating long-term trends in nutrient and sediment transport to the Chesapeake Bay, particularly the influence of reservoir sedimentation and major flood events like Tropical Storm Lee. To begin, I need to identify the data source. Could you find the USGS site number for the streamgage on the Susquehanna River at Conowingo, Maryland? Also, please determine the 5-digit USGS parameter codes for discharge, total nitrogen, total phosphorus, and suspended sediment.",
+    "expected": {
+      "sites": [
+        "01578310"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00600",
+        "00665",
+        "80154"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site and parameters, please download the daily mean discharge data and the discrete water quality sample records for total nitrogen, total phosphorus, and suspended sediment at this site from October 1, 1977, to September 30, 2011 (Water Years 1978 to 2011).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01578310",
+          "parameter_code": "00060",
+          "time": "1977-10-01/2011-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01578310",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "1977-10-01",
+          "activityStartDateUpper": "2011-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01578310",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "1977-10-01",
+          "activityStartDateUpper": "2011-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01578310",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "1977-10-01",
+          "activityStartDateUpper": "2011-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To analyze the nutrient and sediment loads, apply the Weighted Regressions on Time, Discharge, and Season (WRTDS) model—typically implemented via the EGRET package in R or equivalent libraries in Python. Process the retrieved streamflow and water quality data to estimate daily fluxes for suspended sediment. Based on your model output, what is the estimated total flux of suspended sediment, in metric tonnes, for the 2011 water year?",
+    "expected": 22044589.182,
+    "unit": "tonnes"
+  },
+  "phase_4": {
+    "user_prompt": "Reservoir sedimentation behind dams can change long-term trapping efficiency. Using the WRTDS model outputs you generated, calculate the percentage change in the flow-normalized annual flux of suspended sediment between the water year 1996 and 2011. Additionally, create a plot showing the estimated annual flux and the flow-normalized flux of suspended sediment over the entire period of record, and save it as 'conowingo_ss_flux_trends.png'.",
+    "expected": 97.0,
+    "unit": "percent",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The flow-normalized flux of suspended sediment increased by approximately 97% between 1996 and 2011, indicating a major shift in reservoir trapping efficiency. The required plot should display both the highly variable estimated annual fluxes and the smoothed, steadily increasing flow-normalized flux curve over the 1978-2011 period.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "conowingo_ss_flux_trends.png",
+      "visual_description": "A time series line or scatter plot spanning water years 1978 to 2011. It must contain two data series: one for the estimated annual flux of suspended sediment (often shown as dots or a volatile line) and one for the flow-normalized flux (shown as a smoothed trend line). The flow-normalized line should demonstrate a clear upward trend starting around the mid-1990s.",
+      "paper_figure_reference": "Figure 17"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "source_doi": "10.1007/s40641-020-00160-0",
+  "research_question": "How do the simulated mean states of marine biogeochemical models in CMIP6 compare to observations over the modern period (1995-2014) for key biogeochemical properties?",
+  "phase_1": {
+    "user_prompt": "We are tracking improvements in marine biogeochemistry across CMIP6 Earth system models. Identify the CMIP6 models to evaluate, and the standard CMIP6 variable identifiers for six core biogeochemical properties: sea-to-air CO2 flux, surface chlorophyll, surface nitrate, surface silicic acid, surface dissolved oxygen and surface dissolved iron. Also give the experiment for the observed past and the ocean monthly table ID.",
+    "expected": {
+      "source_ids": [
+        "BCC-CSM2-MR",
+        "CanESM5",
+        "CanESM5-CanOE",
+        "CESM2",
+        "CNRM-ESM2-1",
+        "GFDL-CM4",
+        "GFDL-ESM4",
+        "GISS-E2-1-G-CC",
+        "UKESM1-0-LL",
+        "IPSL-CM6A-LR",
+        "MIROC-ES2L",
+        "MPI-ESM1-2-LR",
+        "MRI-ESM2-0",
+        "NorESM2-LM"
+      ],
+      "experiment_ids": [
+        "historical"
+      ],
+      "variable_ids": [
+        "fgco2",
+        "chl",
+        "no3",
+        "si",
+        "o2",
+        "dfe"
+      ],
+      "table_ids": [
+        "Omon"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified CMIP6 models and variables, write a script to search the CMIP6 data catalog for the monthly ocean outputs (sea-to-air CO2 flux, chlorophyll, nitrate, silicic acid, oxygen, and dissolved iron) from the historical experiment for the 14 CMIP6 models evaluated in the study. Retrieve the data catalog entries.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "BCC-CSM2-MR",
+            "CanESM5",
+            "CanESM5-CanOE",
+            "CESM2",
+            "CNRM-ESM2-1",
+            "GFDL-CM4",
+            "GFDL-ESM4",
+            "GISS-E2-1-G-CC",
+            "UKESM1-0-LL",
+            "IPSL-CM6A-LR",
+            "MIROC-ES2L",
+            "MPI-ESM1-2-LR",
+            "MRI-ESM2-0",
+            "NorESM2-LM"
+          ],
+          "experiment_id": [
+            "historical"
+          ],
+          "variable_id": [
+            "fgco2",
+            "chl",
+            "no3",
+            "si",
+            "o2",
+            "dfe"
+          ],
+          "table_id": [
+            "Omon"
+          ]
+        }
+      }
+    ]
+  }
+}

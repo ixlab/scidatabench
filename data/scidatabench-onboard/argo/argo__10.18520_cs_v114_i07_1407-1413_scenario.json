@@ -1,0 +1,28 @@
+{
+  "source_doi": "10.18520/cs/v114/i07/1407-1413",
+  "research_question": "How did the upper ocean temperature and salinity structure in the Bay of Bengal respond to Tropical Cyclone Thane, as observed by an Argo float?",
+  "phase_1": {
+    "user_prompt": "We are investigating the upper ocean response to Cyclone Thane in the Bay of Bengal during late 2011. We want high-resolution vertical profiles near moored buoy BD11 (14N/83E) to compare against the buoy's own data and confirm cyclone-induced vertical mixing and surface warming/salinification. Which Argo float should we use, and which core hydrographic parameters do we need from it?",
+    "expected": {
+      "float_wmo_ids": [
+        "2901293"
+      ],
+      "parameters": [
+        "TEMP",
+        "PSAL"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the float identifier (2901293) and parameters (temperature and salinity) discovered, retrieve the vertical profile data for this float from the Argo network. We specifically need the profiles that capture the ocean state right before the cyclone (around December 23, 2011) and immediately after (around January 2, 2012) to observe the changes in the water column.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 2901293
+        }
+      }
+    ]
+  }
+}

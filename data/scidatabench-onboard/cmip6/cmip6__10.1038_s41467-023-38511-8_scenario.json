@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.1038/s41467-023-38511-8",
+  "research_question": "What is the detectable influence of greenhouse gas increases on Arctic sea ice area, and when is an ice-free Arctic projected to occur under different emission scenarios?",
+  "phase_1": {
+    "user_prompt": "We want to perform an optimal fingerprinting detection and attribution analysis for Arctic sea ice area, and project its future changes under different emission scenarios, using CMIP6 model output. We need the experiments representing the historical period with all forcings, greenhouse-gas-only, aerosol-only, and natural-only forcings. We also need the long baseline runs used to estimate internal climate variability, and the future projections under the four main socio-economic pathways (from the lowest 1-2.6 to the highest 5-8.5 emissions considered). For the data itself, we need the monthly sea-ice concentration and the static grid-cell area to compute the sea-ice area. What are the exact CMIP6 experiment IDs, variable IDs, and table IDs (frequency/realm) we need to query the catalog?",
+    "expected": {
+      "experiment_ids": [
+        "historical",
+        "hist-GHG",
+        "hist-aer",
+        "hist-nat",
+        "piControl",
+        "ssp126",
+        "ssp245",
+        "ssp370",
+        "ssp585"
+      ],
+      "variable_ids": [
+        "siconc",
+        "areacello"
+      ],
+      "table_ids": [
+        "SImon",
+        "Ofx"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the identifiers, please write a Python script using `intake-esgf` or `pyesgf` to search the CMIP6 catalog for the necessary datasets. We need to query for the sea ice concentration ('siconc' from the 'SImon' table) and grid-cell area ('areacello' from the 'Ofx' table) across the historical, hist-GHG, hist-aer, hist-nat, piControl, ssp126, ssp245, ssp370, and ssp585 experiments. You don't need to download all the data; just execute the search and return a summary of the catalog results to verify the data is accessible.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "experiment_id": [
+            "historical",
+            "hist-GHG",
+            "hist-aer",
+            "hist-nat",
+            "piControl",
+            "ssp126",
+            "ssp245",
+            "ssp370",
+            "ssp585"
+          ],
+          "variable_id": [
+            "siconc",
+            "areacello"
+          ],
+          "table_id": [
+            "SImon",
+            "Ofx"
+          ]
+        }
+      }
+    ]
+  }
+}

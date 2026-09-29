@@ -1,0 +1,92 @@
+{
+  "source_doi": "10.3133/ofr20201094",
+  "research_question": "How can continuous sensor data (specific conductance and fDOM) be used to develop a surrogate model for dissolved organic carbon (DOC) concentrations, and what do these calculated concentrations reveal about annual DOC loads and sources in the Caloosahatchee River?",
+  "phase_1": {
+    "user_prompt": "I am investigating the transport of dissolved organic carbon (DOC) in the Caloosahatchee River in southern Florida, specifically looking at differences between inputs from Lake Okeechobee and downstream basin runoff. I want to build a continuous DOC surrogate model using sensor data at the W.P. Franklin Lock and Dam (S-79) and compare streamflow there with the Moore Haven Lock and Dam (S-77) near the lake. Can you find the official USGS site numbers for these two lock and dam locations? I also need the 5-digit USGS parameter codes for Discharge, Specific Conductance, discrete Dissolved Organic Carbon, and fDOM (fluorescence of chromophoric dissolved organic matter). I'll be looking at data from April 2014 through December 2017.",
+    "expected": {
+      "sites": [
+        "02292900",
+        "02292010"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00095",
+        "00681",
+        "32295"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site and parameter codes, please retrieve the daily discharge data for both S-77 and S-79. For S-79, I also need the high-frequency continuous (15-minute) specific conductance and fDOM data, as well as the discrete water quality samples for DOC. Please fetch all of this data over the 45 months beginning in April 2014.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02292010",
+          "parameter_code": "00060",
+          "time": "2014-04-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02292900",
+          "parameter_code": "00060",
+          "time": "2014-04-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02292900",
+          "parameter_code": "00095",
+          "time": "2014-04-01/2017-12-31"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02292900",
+          "parameter_code": "32295",
+          "time": "2014-04-01/2017-12-31"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02292900",
+          "usgsPCode": "00681",
+          "activityStartDateLower": "2014-04-01",
+          "activityStartDateUpper": "2017-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To build the surrogate model, we need to pair our discrete DOC samples with the continuous sensor readings. Please match the discrete DOC sample times at S-79 with the closest concurrent continuous specific conductance and fDOM measurements (within a 15-minute window). Once paired, fit a multiple linear regression model predicting DOC concentration from specific conductance and fDOM (DOC = Intercept + B1*SC + B2*fDOM). What is the coefficient of determination (R-squared) of this multiple regression model?",
+    "expected": 0.651,
+    "unit": "unitless"
+  },
+  "phase_4": {
+    "user_prompt": "Using our new surrogate model, estimate the continuous 15-minute DOC concentration for the entirety of 2015 at S-79. Then, calculate the total annual DOC load for 2015 in metric tons (multiplying the DOC concentrations by the S-79 discharge and converting to metric tons). Next, let's explore the source of the DOC. Calculate the monthly mean DOC concentration at S-79 and compare it to the proportion of water originating from Lake Okeechobee (calculated as monthly flow at S-77 divided by monthly flow at S-79). Create a scatter plot of these two monthly variables and save it as `doc_vs_lake_flow_proportion.png`. Finally, what does this relationship tell us about where the higher concentrations of dissolved organic carbon are coming from?",
+    "expected": 23960,
+    "unit": "metric tons",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "There is a strong negative correlation between the proportion of water attributed to Lake Okeechobee (S-77 flow / S-79 flow) and DOC concentrations at S-79. This indicates that basin runoff contributions entering the river between S-77 and S-79 have higher DOC concentrations than the water released directly from Lake Okeechobee.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "doc_vs_lake_flow_proportion.png",
+      "visual_description": "A scatter plot showing the monthly proportion of flow from Lake Okeechobee (S-77/S-79 flow ratio) on one axis and the monthly mean DOC concentration on the other, displaying a clear negative/inverse relationship.",
+      "paper_figure_reference": null
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "source_doi": "10.1093/ofid/ofaf232",
+  "research_question": "How does the prevalence of environmentally acquired mycobacteria in soil and surface water vary across geographic gradients (latitude and longitude) in the United States?",
+  "phase_1": {
+    "user_prompt": "I am studying the distribution of environmentally acquired mycobacteria in the United States to understand their natural reservoirs. I'd like to use NEON data to examine microbial communities in soil and surface water to see where these bacteria are present. Can you help me find the appropriate NEON data products for soil and surface water microbe community composition?",
+    "expected": {
+      "data_products": [
+        "DP1.10081.001",
+        "DP1.20141.001"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the product codes for soil and surface water microbe community composition, please download the sequence or taxonomy data for all available NEON sites collected between November 2015 and October 2018.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10081.001",
+          "site": "all",
+          "startdate": "2015-11",
+          "enddate": "2018-10"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20141.001",
+          "site": "all",
+          "startdate": "2015-11",
+          "enddate": "2018-10"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "I need to process this microbial data to determine the presence or absence of mycobacteria in each collected sample. Extract all samples from the date range, and classify a sample as 'positive' if any identified taxa belong to the genus Mycobacterium (or contain 'mycobacteria' in the taxonomy string). Then, aggregate the counts of total samples and mycobacteria-positive samples by the NEON site type (core terrestrial, gradient terrestrial, core aquatic, gradient aquatic). How many total valid soil and water samples are there in this processed dataset?",
+    "expected": 6343,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Let's run a spatial analysis to identify geographic trends. First, extract the latitude and longitude for each site and mean-center these values. Then, fit a binomial-family model with the dispersion estimated from the data logistic regression model predicting the presence/absence of mycobacteria at the sample level using centered latitude and centered longitude as predictors. Be sure to control for the 4 site types as categorical covariates (i.e., include separate intercepts for each site type). What is the calculated odds ratio for the main effect of latitude? Finally, create a map visualization showing the percentage of positive samples at each NEON site and save it as `mycobacteria_prevalence_map.png`.",
+    "expected": 1.038,
+    "unit": "Odds Ratio",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Mycobacteria are highly prevalent in NEON soil and water samples (over 80% globally) and show distinct spatial trends. Controlling for site type, the odds of mycobacteria detection significantly increase with both rising latitude (further north) and rising longitude (further east).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "mycobacteria_prevalence_map.png",
+      "visual_description": "A map of the United States displaying NEON site locations, with markers colored, scaled, or otherwise labeled to indicate the percentage of samples at each site that tested positive for mycobacteria. Prevalences should generally appear higher in the eastern and midwestern US, and lower in specific western and northern (Alaska) sites.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

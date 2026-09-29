@@ -1,0 +1,409 @@
+{
+  "source_doi": "10.3133/sir20195113",
+  "research_question": "Quantify the trace metal and nutrient loads entering the South Fork Coeur d'Alene River from groundwater seepage near Smelterville, Idaho, using synoptic sampling data.",
+  "phase_1": {
+    "user_prompt": "I'm investigating base-flow groundwater seepage into the South Fork Coeur d'Alene River between Kellogg and Smelterville, Idaho. I know there was a focused synoptic sampling campaign in early September 2017 (specifically September 5-7) that measured streamflow, dissolved zinc, dissolved cadmium, and total phosphorus at several mainstem and local tributary/seep sites in this reach. Can you find the USGS site numbers for the 9 monitoring locations used in this study and identify the appropriate 5-digit USGS parameter codes for these four variables?",
+    "expected": {
+      "sites": [
+        "12413250",
+        "473256116084001",
+        "473256116090601",
+        "473255116092001",
+        "473254116092701",
+        "473253116095501",
+        "473252116095301",
+        "473251116101701",
+        "12413300"
+      ],
+      "parameter_codes": [
+        "00061",
+        "01090",
+        "01025",
+        "00665"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers and parameters, please download the discrete water-quality sample records for these 9 sites between September 5, 2017 and September 7, 2017. The dataset includes the instantaneous streamflow measured at the time of sample collection (parameter 00061), so a single qw query per parameter is sufficient.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12413250",
+          "usgsPCode": "00061",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12413250",
+          "usgsPCode": "01090",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12413250",
+          "usgsPCode": "01025",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12413250",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473256116084001",
+          "usgsPCode": "00061",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473256116084001",
+          "usgsPCode": "01090",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473256116084001",
+          "usgsPCode": "01025",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473256116084001",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473256116090601",
+          "usgsPCode": "00061",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473256116090601",
+          "usgsPCode": "01090",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473256116090601",
+          "usgsPCode": "01025",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473256116090601",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473255116092001",
+          "usgsPCode": "00061",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473255116092001",
+          "usgsPCode": "01090",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473255116092001",
+          "usgsPCode": "01025",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473255116092001",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473254116092701",
+          "usgsPCode": "00061",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473254116092701",
+          "usgsPCode": "01090",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473254116092701",
+          "usgsPCode": "01025",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473254116092701",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473253116095501",
+          "usgsPCode": "00061",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473253116095501",
+          "usgsPCode": "01090",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473253116095501",
+          "usgsPCode": "01025",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473253116095501",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473252116095301",
+          "usgsPCode": "00061",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473252116095301",
+          "usgsPCode": "01090",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473252116095301",
+          "usgsPCode": "01025",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473252116095301",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473251116101701",
+          "usgsPCode": "00061",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473251116101701",
+          "usgsPCode": "01090",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473251116101701",
+          "usgsPCode": "01025",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-473251116101701",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12413300",
+          "usgsPCode": "00061",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12413300",
+          "usgsPCode": "01090",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12413300",
+          "usgsPCode": "01025",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12413300",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2017-09-05",
+          "activityStartDateUpper": "2017-09-07"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "With the data downloaded, calculate the daily dissolved zinc load in kilograms per day (kg/d) for each measurement event at the South Fork Coeur d'Alene River above Bunker Creek site (site number 473253116095501). Use the standard conversion equation: Load (kg/d) = Streamflow (cfs) × Concentration (mg/L) × 2.447. Remember to properly convert the USGS zinc concentrations from ug/L to mg/L before applying the formula. Once you have calculated the load for each sampling event at this site, what is the mean dissolved zinc load?",
+    "expected": 199.0,
+    "unit": "kg/d"
+  },
+  "phase_4": {
+    "user_prompt": "Now we want to determine the zinc loading contributed by groundwater seepage. First, calculate the mean net dissolved zinc load accrual (in kg/d) specifically for the mainstem reach between the site above the seepage area (site 473256116084001) and the site just downstream of the seepage area (site 473253116095501). Calculate the upstream-to-downstream difference for each matched sampling run, then compute the average of those accruals. Second, create a visualization showing the mean dissolved zinc load at each of the four mainstem river sites, ordered from upstream to downstream. Save this plot as `zinc_load_profile.png`. What is the mean net dissolved zinc load accrual for this seepage reach?",
+    "expected": 85.0,
+    "unit": "kg/d",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis identifies a significant gain in dissolved zinc load (approximately 85 kg/d) between the second and third mainstem sites, indicating substantial metal loading from groundwater seepage in this specific reach. The visualization should show the zinc load remaining low and stable between the first two sites, increasing sharply before the third site, and then continuing to increase slightly or plateau at the fourth site.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "zinc_load_profile.png",
+      "visual_description": "A line or scatter plot showing the mean dissolved zinc load (in kg/d) on the y-axis across the four mainstem river sites plotted in upstream-to-downstream spatial order on the x-axis. The plot should display a dramatic jump in load between the second and third sites.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

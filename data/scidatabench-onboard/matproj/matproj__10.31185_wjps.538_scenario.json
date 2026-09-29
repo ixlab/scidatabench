@@ -1,0 +1,30 @@
+{
+  "source_doi": "10.31185/wjps.538",
+  "research_question": "How can machine learning models accurately predict the density of nanomaterials using band gap and elemental composition data?",
+  "phase_1": {
+    "user_prompt": "We are training a random-forest model that predicts how heavy a material is per unit volume — the figure a materials database reports in grams per cubic centimetre — for oxide nanomaterials, using the electronic band gap together with features derived from the chemical formula as inputs. We will pull every entry from the Materials Project that contains the element defining this family and has a band gap of at least 0.1 eV. Name that element, and the two Materials Project property fields we need to retrieve.",
+    "expected": {
+      "elements": [
+        "O"
+      ],
+      "properties": [
+        "density",
+        "band_gap"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the criteria, please retrieve this dataset from the Materials Project. Fetch all materials that contain oxygen and have a band gap of at least 0.1 eV. For each of these materials, return the material ID, the chemical formula, the density, and the band gap.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "elements": "O",
+          "band_gap_min": 0.1,
+          "_fields": "material_id,formula_pretty,density,band_gap"
+        }
+      }
+    ]
+  }
+}

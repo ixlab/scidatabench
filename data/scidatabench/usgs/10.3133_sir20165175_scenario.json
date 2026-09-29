@@ -1,0 +1,234 @@
+{
+  "source_doi": "10.3133/sir20165175",
+  "research_question": "What is the relationship between lake acidity, total organic carbon, and mercury body burdens in young-of-the-year yellow perch across lakes in Voyageurs National Park?",
+  "phase_1": {
+    "user_prompt": "I'm planning a study on the environmental factors affecting mercury bioaccumulation in fish within Voyageurs National Park, Minnesota. I know the USGS conducted extensive water quality and biological tissue sampling across 20 specific midlake and nearshore sites in this park between 2013 and 2015. Can you identify the 15-digit USGS site numbers for these 20 surface-water sampling locations and determine the correct NWIS data type for retrieving discrete field samples?",
+    "expected": {
+      "sites": [
+        "481648092242301",
+        "481730092283101",
+        "482226092283301",
+        "482616092372201",
+        "482731092574701",
+        "483622092560701",
+        "483713093035201",
+        "481818092254201",
+        "481751092251901",
+        "481827092285401",
+        "481835092294401",
+        "482006092283301",
+        "482416092290401",
+        "482241092311501",
+        "482553092404801",
+        "482541092411601",
+        "482556092521601",
+        "482603092490501",
+        "483549093033001",
+        "483615093054001"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 20 site numbers, please retrieve all discrete water quality samples and biological tissue measurements collected at these locations from 2013 through 2015.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-481648092242301",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-481730092283101",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-482226092283301",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-482616092372201",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-482731092574701",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-483622092560701",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-483713093035201",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-481818092254201",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-481751092251901",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-481827092285401",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-481835092294401",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-482006092283301",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-482416092290401",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-482241092311501",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-482553092404801",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-482541092411601",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-482556092521601",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-482603092490501",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-483549093033001",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-483615093054001",
+          "activityStartDateLower": "2013-01-01",
+          "activityStartDateUpper": "2015-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the dataset by isolating the records for Total Organic Carbon (TOC). Calculate the median TOC concentration for the midlake site at Sand Point Lake below Harrison Narrows (site number 482226092283301) across all sampling events in the 2013-2015 period.",
+    "expected": 12.9,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "I want to explore the relationship between lake acidity and fish mercury bioaccumulation. First, calculate the median field pH for the Sand Point Lake west side nearshore site (482006092283301). Then, summarize the overall relationship between pH levels and fish mercury concentrations across the different lakes based on your processed data. Create a scatter plot visualizing median pH versus median fish mercury for all nearshore sites and save it as `ph_mercury_relationship.png`.",
+    "expected": 5.7,
+    "unit": "standard units",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Lakes with the highest mercury concentrations in fish (such as Little Vermilion, Crane, and Sand Point) exhibit the lowest pH values, indicating an inverse relationship where acidic waters correlate with higher mercury body burdens in fish. The visualization should show a scatter plot with median pH on the x-axis, median fish mercury on the y-axis, and a general negative trend.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "ph_mercury_relationship.png",
+      "visual_description": "A scatter plot showing median field pH on one axis and median fish mercury concentrations on the other. Data points should represent the nearshore sites, demonstrating that sites with lower pH tend to have higher fish mercury concentrations.",
+      "paper_figure_reference": null
+    }
+  }
+}

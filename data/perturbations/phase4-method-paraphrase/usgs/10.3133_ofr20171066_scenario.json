@@ -1,0 +1,68 @@
+{
+  "source_doi": "10.3133/ofr20171066",
+  "research_question": "How can continuous turbidity and discharge data be calibrated with discrete sediment samples to estimate daily and annual suspended-sediment loads in the lower Stillaguamish River?",
+  "phase_1": {
+    "user_prompt": "I am researching suspended-sediment transport in the lower Stillaguamish River in Snohomish County, Washington, focusing on water years 2014 and 2015. Can you find the USGS streamgage near Stanwood and identify the relevant parameter codes for discharge, turbidity (in FNU), and suspended-sediment concentration?",
+    "expected": {
+      "sites": [
+        "12170300"
+      ],
+      "parameter_codes": [
+        "00060",
+        "63680",
+        "80154"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the Stanwood site, please retrieve the 15-minute continuous data for discharge and turbidity, as well as all discrete field samples for suspended-sediment concentration collected between November 2013 and October 2016.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-12170300",
+          "parameter_code": "00060",
+          "time": "2013-11-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-12170300",
+          "parameter_code": "63680",
+          "time": "2013-11-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12170300",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2013-11-01",
+          "activityStartDateUpper": "2016-10-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To estimate a continuous sediment record, we need to build a rating curve. First, filter your paired discrete SSC and turbidity samples to exclude three highly anomalous fine-rich samples collected between March 24 and March 27, 2014 (these immediately followed a major landslide in the watershed). Fit an initial OLS regression of log10(SSC) on log10(Turbidity); then remove any remaining samples whose standardized residual has |z| > 2 (one iteration of outlier trimming) and refit. Compute Duan's smearing estimator (the bias correction factor) from this final refit. What is the calculated bias correction factor for this regression?",
+    "expected": 1.019,
+    "unit": "unitless"
+  },
+  "phase_4": {
+    "user_prompt": "First, use your regression equation and bias correction factor to calculate 15-minute suspended-sediment loads (SSL = SSC * Discharge * 2.809e-5). Sum these to calculate daily loads. For days with significantly missing turbidity data (>10%), fill the gaps using a secondary relationship of the form y = a·x^b regression between daily mean discharge and daily load. Make sure to exclude the disrupted period from March 22 to April 15, 2014, when fitting this secondary curve. Sum the daily loads to estimate the total suspended-sediment load for Water Year 2015. What is the total load in tons? Additionally, create a plot showing the daily mean discharge and the cumulative total suspended-sediment load from November 2013 through September 2015. Save the plot as `stillaguamish_cumulative_ssl.png`.",
+    "expected": 1530000.0,
+    "unit": "tons",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The cumulative suspended-sediment load shows a significant step-increase following the March 2014 landslide, and continues to rise in a staircase pattern driven by large autumn and winter high-flow events.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "stillaguamish_cumulative_ssl.png",
+      "visual_description": "A two-panel or multi-axis time series plot showing daily mean discharge (featuring erratic storm peaks) and a monotonically increasing cumulative suspended-sediment load curve. The cumulative load should show a sharp, almost vertical increase in late March 2014 (due to the landslide period) and other distinct step-jumps corresponding to peak discharge events, reaching nearly 3 million tons by the end of the record.",
+      "paper_figure_reference": "Figure 3 Panels A and C"
+    }
+  }
+}

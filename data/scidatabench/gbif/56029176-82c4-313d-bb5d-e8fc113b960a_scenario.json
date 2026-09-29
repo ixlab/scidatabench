@@ -1,0 +1,86 @@
+{
+  "source_doi": "10.15560/.16.1.27",
+  "research_question": "What is the conservation status and spatial distribution of the Neotropical tree Pouteria franciscana, and how does its range compare to closely related species?",
+  "phase_1": {
+    "user_prompt": "I am assessing the geographic distribution and conservation status of several closely related Neotropical tree species: Pouteria franciscana, P. leptopedicellata, P. pisquiensis, and P. bilocularis. I need to find historical herbarium specimen records for these species that include geographic coordinates so I can map them.",
+    "expected": {
+      "taxon_keys": [
+        "2884888",
+        "2884885",
+        "2884476",
+        "2884964"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the coordinate-bearing preserved specimen records for these four Pouteria species from GBIF.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 2884888
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 2884885
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 2884476
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 2884964
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the downloaded data by removing records with obvious georeferencing errors (like exactly 0,0 coordinates). Then, deduplicate the records by keeping only unique combinations of species name, latitude, and longitude. How many total cleaned records remain across all four species?",
+    "expected": 456,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Focusing only on the cleaned records for Pouteria franciscana, calculate its Area of Occupancy (AOO) in square kilometers using the standard IUCN 2x2 km grid approach. Additionally, plot a map showing the distribution of all four species (using different colors for each) to visualize their ranges. Save this map as 'pouteria_distribution_map.png'. What is the calculated AOO for P. franciscana?",
+    "expected": 148.0,
+    "unit": "km2",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Pouteria franciscana has a wide, disjunct distribution in South America, appearing prominently in the Amazon basin as well as the Atlantic Forest region of Brazil, unlike its related species which have more restricted ranges.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "pouteria_distribution_map.png",
+      "visual_description": "A map of South and Central America showing occurrence points for the four Pouteria species in different colors. Pouteria franciscana points should be widespread across the Amazon basin and coastal Brazil, while the other species show more localized clusters (e.g., Costa Rica/Panama for P. leptopedicellata, Peruvian Amazon for P. pisquiensis).",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

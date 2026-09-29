@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.12933/therya_notes-24-172",
+  "research_question": "Map the true historical northwestern range limit of the bat Glossophaga mutica in Mexico by accounting for taxonomic changes and correcting specific GBIF georeferencing errors.",
+  "phase_1": {
+    "user_prompt": "I want to map the true northwestern distribution limits of the Pallas's long-tongued bat in Mexico using occurrence data. Its taxonomy was recently updated, elevating Glossophaga mutica to a distinct species from the Glossophaga soricina complex. To ensure a complete historical dataset, I need to retrieve georeferenced occurrence data for both species names in Mexico. What parameters should I use to query GBIF for these records?",
+    "expected": {
+      "country_codes": [
+        "MX"
+      ],
+      "taxon_keys": [
+        "8836075",
+        "2433194"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know we need records for Glossophaga mutica and Glossophaga soricina in Mexico with coordinates, please retrieve this dataset from GBIF.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "MX",
+          "hasCoordinate": true,
+          "taxonKey": 8836075
+        },
+        "requires_pagination": true
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "MX",
+          "hasCoordinate": true,
+          "taxonKey": 2433194
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Some historical records in this dataset have georeferencing errors that artificially inflate the species' northern range. Specifically, there is a batch of records mapped to the 'La Aduana' locality in the municipality of Cananea in northern Sonora (near the US border, coordinates approximately 31.04°N, 110.01°W), but they were actually collected much further south in Álamos. Filter the dataset to identify this specific batch of incorrectly mapped Cananea / La Aduana records. How many records are in this problematic batch?",
+    "expected": 6.0,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "In addition to the Cananea errors, there is a historical record incorrectly mapped to Baja California Sur, and some records from Milpa Alta (Mexico City) incorrectly mapped to Nuevo León. Remove these erroneous records (along with the Cananea ones) from your dataset. After cleaning, generate a map of the valid historical distribution in northwestern Mexico (focusing on Sonora, Sinaloa, and the Baja peninsula). Save this map as `cleaned_distribution_map.png`. Based on the cleaned data, how many valid historical records remain in Baja California Sur, and what does the true historical northwestern range look like geographically?",
+    "expected": 0.0,
+    "unit": "records",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "After removing georeferencing errors, there are no valid historical records in Baja California Sur. The true northwestern limit of the species' historical distribution is restricted to southern Sonora and Sinaloa, associated with the seasonal tropical dry forest of the Sierra Madre Occidental environs, with no valid historical records extending into the arid northern desert regions near the US border.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "cleaned_distribution_map.png",
+      "visual_description": "A map of northwestern Mexico (Sonora, Sinaloa, Baja California) showing occurrence points. There should be NO points in Baja California Sur or in the far north of Sonora near Cananea. Points should be clustered in southern Sonora and southward along the coast/foothills.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

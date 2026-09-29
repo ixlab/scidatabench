@@ -1,0 +1,91 @@
+{
+  "source_doi": "10.3133/sir20195029",
+  "research_question": "How do groundwater quality and hydrology, with an emphasis on selenium mobilization and transport, behave in the Lower Gunnison River Basin, Colorado, from 2012–16, including sources of recharge and discharge, and selenium loading to surface waters?",
+  "phase_1": {
+    "user_prompt": "I'm researching selenium loading in the Lower Gunnison River Basin in Colorado. Specifically, I'm interested in two drainage sites: Sunflower Drain at Highway 92 and Loutsenhizer Arroyo below North River Road near Delta. Can you find the USGS site numbers for these two locations, as well as the parameter codes for streamflow (discharge) and filtered selenium in water? I'm looking to analyze the period from 1991 to 2016.",
+    "expected": {
+      "sites": [
+        "384551107591901",
+        "383946107595301"
+      ],
+      "parameter_codes": [
+        "00060",
+        "01145"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now retrieve the streamflow and discrete water quality (selenium) data for these two sites over the 26 calendar years beginning in 1991.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-384551107591901",
+          "parameter_code": "00060",
+          "time": "1991-01-01/2016-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-383946107595301",
+          "parameter_code": "00060",
+          "time": "1991-01-01/2016-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-384551107591901",
+          "usgsPCode": "01145",
+          "activityStartDateLower": "1991-01-01",
+          "activityStartDateUpper": "2016-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-383946107595301",
+          "usgsPCode": "01145",
+          "activityStartDateLower": "1991-01-01",
+          "activityStartDateUpper": "2016-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "For each site, calculate the instantaneous selenium load (in pounds per day) for every paired streamflow and selenium measurement. You can use the conversion factor 0.005395 (multiplying cfs and ug/L to get lbs/day). Next, group these instantaneous loads by calendar month (1-12) to find the mean instantaneous selenium load for each month. Finally, calculate the monthly mean selenium load (in pounds per month) by multiplying each month's mean instantaneous load by the number of days in that month (assume 28 days for February).",
+    "expected": {
+      "USGS-384551107591901": {},
+      "USGS-383946107595301": {
+        "3": 285.2697965,
+        "4": 505.67119199999996,
+        "5": 339.60936945,
+        "6": 324.1612725,
+        "7": 323.50702085,
+        "8": 333.85446899999994,
+        "9": 348.43067999999994,
+        "10": 361.29435615,
+        "12": 292.076668
+      }
+    },
+    "unit": "lb/mo"
+  },
+  "phase_4": {
+    "user_prompt": "Sum the monthly mean selenium loads from phase 3 (some calendar months may have no paired streamflow-and-selenium samples and should be skipped) to estimate the partial annual selenium load for Loutsenhizer Arroyo. Also, create a bar chart comparing the monthly selenium loads across the 12 calendar months for both sites. Save this plot as `monthly_selenium_load.png`.",
+    "expected": 3114.0,
+    "unit": "lb/yr",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Selenium loading at both sites exhibits a strong seasonal pattern, with the highest monthly selenium loads occurring during the late summer and fall irrigation season (August through October) and the lowest loads occurring during the winter base flow periods.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "monthly_selenium_load.png",
+      "visual_description": "A grouped bar chart showing the 12 calendar months on the x-axis and monthly selenium load (in lbs/month) on the y-axis. The plot should display bars for both Sunflower Drain and Loutsenhizer Arroyo, showing a clear seasonal peak in late summer/autumn (August, September, October) compared to lower winter/spring values.",
+      "paper_figure_reference": "Tables 15 and 16"
+    }
+  }
+}

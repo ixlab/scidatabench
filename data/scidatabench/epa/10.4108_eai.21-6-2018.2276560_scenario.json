@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.4108/eai.21-6-2018.2276560",
+  "research_question": "How can a Bidirectional LSTM Recurrent Neural Network be used to perform spatiotemporal interpolation of daily PM2.5 concentrations using data from geographical neighbors and historical/future temporal states?",
+  "phase_1": {
+    "user_prompt": "I want to study spatiotemporal interpolation of PM2.5 using EPA air quality data from the contiguous southeast U.S., specifically Georgia and Florida, for the year 2009. Could you identify the two-digit state codes for these two states and the primary AQS parameter code used for standard PM2.5 local conditions?",
+    "expected": {
+      "state_codes": [
+        "12",
+        "13"
+      ],
+      "parameter_codes": [
+        "88101"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now retrieve the daily summary data for PM2.5 across all monitoring sites in Georgia and Florida for the entire year of 2009. Please download and save this dataset for further processing.",
+    "expected": [
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2009-01-01",
+          "edate": "2009-12-31",
+          "stateFIPS": "12"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2009-01-01",
+          "edate": "2009-12-31",
+          "stateFIPS": "13"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the retrieved data by filtering for valid PM2.5 measurements (removing nulls or invalid entries). The paper notes there should be around 114 unique monitoring sites and roughly 11,056 daily measurements after cleaning. Extract the monitor ID, latitude, longitude, date, and PM2.5 value. What is the total count of valid daily measurements in your cleaned dataset?",
+    "expected": 11056,
+    "unit": "measurements"
+  },
+  "phase_4": {
+    "user_prompt": "Replicate the paper's 'Experiment 3' by training a Bidirectional LSTM (Bi-LSTM) recurrent neural network to perform spatiotemporal interpolation. For each monitor on a given day (t), use the PM2.5 values from its k=3 nearest geographical neighbors over a temporal window of t=1 (1 day before, the current day, and 1 day after) to predict the target monitor's PM2.5. Set the dropout rate to 0 and evaluate the model using k-fold cross-validation. Report the average Mean Absolute Error (MAE) across the validation folds. Also, create a scatter plot of your predicted vs. actual PM2.5 values and save it as `pm25_bilstm_predictions.png`.",
+    "expected": 2.0383,
+    "unit": "μg/m³",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The Bi-LSTM DRNN effectively captures the spatiotemporal correlations in air pollution, producing predicted PM2.5 concentrations that align closely with actual measured values across the continuous space-time domain.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "pm25_bilstm_predictions.png",
+      "visual_description": "A scatter plot with actual PM2.5 values on the x-axis and predicted PM2.5 values on the y-axis. The points should ideally cluster around a 1:1 reference line, demonstrating the model's predictive accuracy for spatialtemporal interpolation.",
+      "paper_figure_reference": null
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source_doi": "10.1007/s00382-022-06493-w",
+  "research_question": "How do CMIP6 Global Circulation Models (GCMs) hindcast observed global surface temperature warming from 1980–1990 to 2011–2021, and what are the implications for 21st-century climate projections under various SSP scenarios?",
+  "phase_1": {
+    "user_prompt": "We are comparing CMIP6 models against observed global surface temperatures. Please identify the CMIP6 variable for near-surface air temperature, the frequency/realm table that holds the monthly temperature records, and the standard experiment names for the historical run and the four main future scenarios.",
+    "expected": {
+      "variable_ids": [
+        "tas"
+      ],
+      "experiment_ids": [
+        "historical",
+        "ssp126",
+        "ssp245",
+        "ssp370",
+        "ssp585"
+      ],
+      "table_ids": [
+        "Amon"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the CMIP6 platform, retrieve the monthly surface air temperature data for the historical period and all four SSP scenarios identified in Phase 1, specifically restricting the search to the models 'CESM2' and 'UKESM1-0-LL' to evaluate a sample of the paper's models.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "experiment_id": [
+            "historical",
+            "ssp126",
+            "ssp245",
+            "ssp370",
+            "ssp585"
+          ],
+          "variable_id": [
+            "tas"
+          ],
+          "table_id": [
+            "Amon"
+          ],
+          "source_id": [
+            "CESM2",
+            "UKESM1-0-LL"
+          ]
+        }
+      }
+    ]
+  }
+}

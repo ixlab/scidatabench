@@ -1,0 +1,68 @@
+{
+  "source_doi": "10.3133/sir20245078",
+  "research_question": "How well can continuous specific conductance measurements predict dissolved bromide concentrations in the Kansas River at De Soto, and what specific conductance threshold corresponds to a bromide concentration of 150 µg/L?",
+  "phase_1": {
+    "user_prompt": "I want to develop a real-time surrogate regression model to predict dissolved bromide concentrations using electrical conductivity and volumetric flow. I am focusing on the Kansas River at the De Soto, Kansas monitoring station. Could you find the USGS site number for this station, along with the parameter codes for specific conductance, streamflow, and dissolved bromide?",
+    "expected": {
+      "sites": [
+        "06892350"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00095",
+        "91000"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site number and parameter codes identified for the De Soto station, retrieve the continuous 15-minute data (instantaneous values) for specific conductance and streamflow, as well as all discrete water-quality field samples for dissolved bromide collected between January 1, 2021, and October 31, 2023.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06892350",
+          "parameter_code": "00060",
+          "time": "2021-01-01/2023-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06892350",
+          "parameter_code": "00095",
+          "time": "2021-01-01/2023-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06892350",
+          "usgsPCode": "91000",
+          "activityStartDateLower": "2021-01-01",
+          "activityStartDateUpper": "2023-10-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded data by pairing each discrete bromide sample with the specific conductance measurement at that exact time. Restrict the analysis to routine environmental samples only (Activity_TypeCode == 'Sample-Routine'); exclude QA/QC replicates and blank samples. If a sample time falls between two 15-minute specific conductance readings, linearly interpolate the specific conductance value for that exact minute. Discard any samples where the continuous specific conductance record has a data gap exceeding 1 hour around the sample time. After completing this interpolation and filtering, how many valid discrete samples successfully pair with a specific conductance value?",
+    "expected": 41.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Using the paired dataset, develop an Ordinary Least Squares (OLS) regression model to predict the base-10 logarithm of bromide concentration (in µg/L) using the base-10 logarithm of specific conductance (in µS/cm). Parameter code 91000 already reports bromide in µg/L. What is the adjusted R-squared of this regression model? Additionally, create a scatter plot of the log-transformed variables with the fitted regression line, saving it as `bromide_sc_regression.png`. Finally, using your model equation, what specific conductance value (in µS/cm) corresponds to a water-treatment level of concern for bromide of 150 µg/L?",
+    "expected": 0.854,
+    "unit": "R-squared",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The log-linear regression model demonstrates a strong positive relationship between specific conductance and dissolved bromide. Using the model's equation, a specific conductance threshold of approximately 930 µS/cm corresponds to a bromide concentration of 150 µg/L.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "bromide_sc_regression.png",
+      "visual_description": "A scatter plot of log10(Bromide in µg/L) on the y-axis versus log10(Specific Conductance in µS/cm) on the x-axis, overlaid with a linear regression line. The plot should show roughly 41 data points.",
+      "paper_figure_reference": null
+    }
+  }
+}

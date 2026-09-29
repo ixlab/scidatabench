@@ -1,0 +1,76 @@
+{
+  "platform": "usgs_eq",
+  "condition": "search",
+  "model": "gemini-3.7-flash",
+  "elapsed_s": 17.6,
+  "tokens": {
+    "input": 31877,
+    "output": 2188,
+    "thinking": 0,
+    "total": 34065,
+    "cache_read": 0
+  },
+  "tool_call_turns": 5,
+  "research_log": [
+    {
+      "kind": "search",
+      "query": "obspy usgs fdsn get_events eventid event_ids",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://github.com/obspy/obspy/issues/2684",
+        "https://discourse.obspy.org/t/requesting-events-with-attached-picks-information-with-fdsn-client/1462",
+        "https://github.com/dimitrisdais/obspy_tutorial/blob/master/get_events.py",
+        "https://community.raspberryshake.org/t/any-ideas-to-improve-on-this-code/3763",
+        "https://seismo-live.github.io/html/ObsPy/06_FDSN_solution_wrapper.html",
+        "https://auspass.edu.au/help/obspy_request.html",
+        "https://www.fdsn.org/datacenters/detail/USGS",
+        "https://earthquake.usgs.gov/fdsnws/event/1"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "\"obspy.clients.fdsn.Client.get_events\" documentation parameters",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.client.Client.get_events.html",
+        "https://discourse.obspy.org/t/how-do-i-use-the-client-get-events-catalog-list-to-access-and-return-origin-time-and-coordinates/1362",
+        "https://github.com/obspy/obspy/blob/master/obspy/clients/fdsn/client.py",
+        "https://auspass.edu.au/help/obspy_request.html",
+        "https://community.raspberryshake.org/t/accessing-rs-data-with-obspy/4596",
+        "https://github.com/dimitrisdais/obspy_tutorial/blob/master/get_events.py",
+        "https://github.com/obspy/obspy/issues/1665",
+        "https://ds.iris.edu/ds/identitymanagement/wsauth_examples"
+      ]
+    },
+    {
+      "kind": "fetch",
+      "url": "https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.client.Client.get_events.html",
+      "status": "200",
+      "chars": 5377
+    },
+    {
+      "kind": "fetch",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1",
+      "status": "error: ConnectionError"
+    },
+    {
+      "kind": "search",
+      "query": "\"usgs\" event id format \"ci\" \"nc\" \"us\" \"uu\" \"nn\" \"ak\" earthquake",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://github.com/usgs/earthquake-processing-formats",
+        "https://ifrcgo.org/monty-stac-extension/model/sources/USGS",
+        "https://earthquake.usgs.gov/data/comcat",
+        "http://eqseis.geosc.psu.edu/cammon/HTML/Classes/AdvSeismo/USGSEQSrch/usgseqsearch.html",
+        "https://www.usgs.gov/media/videos/usgs-earthquake-event-page-natural-hazards-mission-area",
+        "https://earthquake.usgs.gov/fdsnws/event/1/catalogs",
+        "https://earthquake.alaska.edu/data_citation_guidelines",
+        "https://earthquake.usgs.gov/earthquakes/search"
+      ]
+    }
+  ],
+  "generated_utc": "2026-08-14T17:02:27.267573+00:00"
+}

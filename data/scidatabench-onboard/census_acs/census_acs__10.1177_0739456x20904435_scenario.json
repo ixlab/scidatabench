@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.1177/0739456x20904435",
+  "research_question": "To what extent do official estimates of rent misrepresent the contemporaneous rental spot market, and how do median contract and gross rents compare in Metropolitan Statistical Areas?",
+  "phase_1": {
+    "user_prompt": "We are investigating how official survey estimates of rent lag behind or misrepresent the rental spot market. We need to extract the 2014 American Community Survey (ACS) 1-year estimates for both overall median contract rent and overall median gross rent. Which specific ACS tables and variables provide these two median rent figures (contract and gross)?",
+    "expected": {
+      "variables": [
+        "B25058_001E",
+        "B25064_001E"
+      ],
+      "tables": [
+        "B25058",
+        "B25064"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified variables for Median Contract Rent (B25058_001E) and Median Gross Rent (B25064_001E), please retrieve the 2014 ACS 1-year estimates for all Metropolitan Statistical Areas in the US so we can subsequently filter for our 25 target cities.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2014,
+          "dataset": "acs/acs1",
+          "get": "NAME,B25058_001E,B25064_001E",
+          "for": "metropolitan statistical area/micropolitan statistical area:*"
+        }
+      }
+    ]
+  }
+}

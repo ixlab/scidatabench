@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.1007/s11069-025-07388-9",
+  "research_question": "What are the USGS-reported source parameters (specifically depth and magnitude) for the two major February 6, 2023 Maraş earthquakes, and how do they support the basement fault hypothesis?",
+  "phase_1": {
+    "user_prompt": "We are investigating the basement fault hypothesis for the February 6, 2023, Maraş earthquake sequence in Turkey. Our study contrasts the shallow focal depth reported by the local KOERI observatory with the deeper focal depth reported by global agencies, using this discrepancy to support a downward-converging fault model. Please search the USGS earthquake catalog to identify the specific event records for the two major mainshocks (M > 7.0) that occurred on that day, so we can extract their authoritative source parameters.",
+    "expected": {
+      "event_ids": [
+        "us6000jllz",
+        "us6000jlqa"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the specific USGS event records for the two Maraş mainshocks, please retrieve the detailed catalog information for them. We specifically need to extract the primary origin depth and magnitude for each event to evaluate whether the deeper hypocenters support our geodetic basement fault model.",
+    "expected": [
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "eventid": "us6000jllz"
+        }
+      },
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "eventid": "us6000jlqa"
+        }
+      }
+    ]
+  }
+}

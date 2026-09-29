@@ -1,0 +1,164 @@
+{
+  "source_doi": "10.3133/ofr20141039",
+  "research_question": "How have suspended-sediment yields changed between 2002-2007 and 2008-2012 in the tributary streams of the Purgatoire River near the Piñon Canyon Maneuver Site?",
+  "phase_1": {
+    "user_prompt": "I am investigating suspended-sediment yields in the tributaries of the Purgatoire River near the Piñon Canyon Maneuver Site in Colorado. Can you find the USGS site numbers for the streamgages on Van Bremer Arroyo near Model, Taylor Arroyo below Rock Crossing, Lockwood Canyon Creek near Thatcher, Red Rock Canyon Creek at the mouth, and Bent Canyon Creek at the mouth? I will also need the standard 5-digit USGS parameter codes to retrieve daily mean streamflow and daily suspended-sediment discharge.",
+    "expected": {
+      "sites": [
+        "07126200",
+        "07126325",
+        "07126390",
+        "07126415",
+        "07126480"
+      ],
+      "parameter_codes": [
+        "00060",
+        "80155"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers for the five tributary streamgages and the parameter codes for daily mean streamflow and suspended-sediment discharge, please retrieve the daily data for these sites covering the periods over the 11 calendar years beginning in 2002.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07126200",
+          "parameter_code": "00060",
+          "time": "2002-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07126200",
+          "parameter_code": "80155",
+          "time": "2002-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07126325",
+          "parameter_code": "00060",
+          "time": "2002-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07126325",
+          "parameter_code": "80155",
+          "time": "2002-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07126390",
+          "parameter_code": "00060",
+          "time": "2002-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07126390",
+          "parameter_code": "80155",
+          "time": "2002-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07126415",
+          "parameter_code": "00060",
+          "time": "2002-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07126415",
+          "parameter_code": "80155",
+          "time": "2002-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07126480",
+          "parameter_code": "00060",
+          "time": "2002-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07126480",
+          "parameter_code": "80155",
+          "time": "2002-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "We only want to analyze data collected during the seasonal monitoring window, which is April 1 through October 31 of each year. Please filter the dataset to include only these months. Then, split the data into two periods: 2002-2007 and 2008-2012. For each site and each period, calculate the total suspended-sediment discharge (in tons) and total streamflow volume (converted to acre-feet). Finally, compute the suspended-sediment yield (tons per acre-foot) for each site in both periods.",
+    "expected": {
+      "USGS-07126200": {
+        "2002-2007": 1.7942389973116677,
+        "2008-2012": 0.7937353717799304
+      },
+      "USGS-07126325": {
+        "2002-2007": 2.6065585012541606,
+        "2008-2012": 2.4983304084670848
+      },
+      "USGS-07126390": {
+        "2002-2007": 2.7579600098983263,
+        "2008-2012": 7.47592439738662
+      },
+      "USGS-07126415": {
+        "2002-2007": 4.69830394491392,
+        "2008-2012": 16.580074132540503
+      },
+      "USGS-07126480": {
+        "2002-2007": 6.4287057330520385,
+        "2008-2012": 9.273145870894306
+      }
+    },
+    "unit": "tons/acre-foot"
+  },
+  "phase_4": {
+    "user_prompt": "Based on the yields you calculated, what was the suspended-sediment yield specifically for Red Rock Canyon Creek during the 2008-2012 period? Additionally, create a grouped bar chart comparing the yields of all five sites across the two periods (2002-2007 vs. 2008-2012), and include an additional set of bars representing the mean yield across all sites for both periods. Save this plot as `sediment_yield_comparison.png`.",
+    "expected": 16.5,
+    "unit": "tons/acre-foot",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Total suspended-sediment yield increased across the majority of the monitored sites in the 2008-2012 period compared to 2002-2007, with the mean yield across all sites increasing significantly and Red Rock Canyon Creek showing the highest overall yield (over 16 tons/acre-foot).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "sediment_yield_comparison.png",
+      "visual_description": "A grouped bar chart with the 5 streamgage sites (Van Bremer Model, Taylor, Lockwood Canyon, Red Rock, Bent) and an overall 'Mean' group along the x-axis. The y-axis should represent suspended-sediment yield in tons per acre-foot. Each group should have two bars representing the 2002-2007 and 2008-2012 periods. The Red Rock bar for 2008-2012 should be the tallest, reaching approximately 16.5. The 'Mean' group should show a clear increase from the first period to the second.",
+      "paper_figure_reference": "Figure 20"
+    }
+  }
+}

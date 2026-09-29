@@ -1,0 +1,25 @@
+{
+  "source_doi": "10.1007/s10811-022-02899-5",
+  "research_question": "What is the geographic distribution of the red macroalga Palmaria palmata, and which ocean basin should be excluded based on recent taxonomic studies?",
+  "phase_1": {
+    "user_prompt": "We are preparing a distribution map for dulse from OBIS records. What is the scientific name of this macroalga, and which geographic region should we restrict the mapped occurrences to in order to exclude misidentified sibling species?",
+    "expected": {
+      "scientific_names": [
+        "Palmaria palmata"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the species name and the geographic region you identified, retrieve the occurrence records from OBIS that were used to map the species' valid distribution in the paper. Make sure to retrieve records from the appropriate basin (between 40 and 80 °N) to exclude the misidentified Pacific records.",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Palmaria palmata",
+          "geometry": "POLYGON((-100 40, 40 40, 40 80, -100 80, -100 40))"
+        }
+      }
+    ]
+  }
+}

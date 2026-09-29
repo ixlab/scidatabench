@@ -1,0 +1,468 @@
+{
+  "source_doi": "10.3133/ofr20201048",
+  "research_question": "To provide near real-time estimates of Escherichia coli (E. coli) densities and assess health risks for water-based recreational activities in the Chattahoochee River National Recreation Area, Georgia, using real-time surrogate water quality and streamflow data.",
+  "phase_1": {
+    "user_prompt": "I'm building a predictive model for E. coli in the Chattahoochee River National Recreation Area in Georgia. I need to find the three main USGS monitoring stations on the Chattahoochee River in this area (near Norcross, Powers Ferry, and Atlanta). I also need the upstream station at Buford Dam, and the 9 tributary streamgages located between Buford Dam and Atlanta (specifically: Richland Creek, Level Creek, Dick Creek, Suwanee Creek, Crooked Creek, Big Creek below Hog Wallow Creek, Willeo Creek, Sope Creek, and Rottenwood Creek). What are the 13 USGS site numbers for these locations? Additionally, what are the standard 5-digit USGS parameter codes for E. coli, discharge, and turbidity?",
+    "expected": {
+      "sites": [
+        "02334430",
+        "02334480",
+        "02334578",
+        "02334620",
+        "02334885",
+        "02335000",
+        "02335350",
+        "02335757",
+        "02335790",
+        "02335870",
+        "02335880",
+        "02335910",
+        "02336000"
+      ],
+      "parameter_codes": [
+        "50468",
+        "00060",
+        "63680"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the three main Chattahoochee River stations (Norcross, Powers Ferry, and Atlanta), please retrieve all discrete E. coli sample data over the 6787 days beginning 23 October 2000. Also, retrieve the continuous, instantaneous (15-minute) records for turbidity and discharge at these same three stations over the same time period.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02334430",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02334430",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02334430",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02334480",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02334480",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02334480",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02334578",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02334578",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02334578",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02334620",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02334620",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02334620",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02334885",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02334885",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02334885",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02335000",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335000",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335000",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02335350",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335350",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335350",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02335757",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335757",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335757",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02335790",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335790",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335790",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02335870",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335870",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335870",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02335880",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335880",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335880",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02335910",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335910",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02335910",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-02336000",
+          "usgsPCode": "50468",
+          "activityStartDateLower": "2000-10-23",
+          "activityStartDateUpper": "2019-05-23"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02336000",
+          "parameter_code": "00060",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02336000",
+          "parameter_code": "63680",
+          "time": "2000-10-23/2019-05-23"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean and filter the discrete E. coli data we retrieved. Count the total number of valid E. coli samples retrieved for the Atlanta station over the entire period (October 23, 2000 to May 23, 2019). Then, calculate the percentage of these samples at the Atlanta station that exceeded the EPA Beach Action Value (BAV) of 235 cfu/100 mL.",
+    "expected": 30.3,
+    "unit": "percent"
+  },
+  "phase_4": {
+    "user_prompt": "Previous studies indicate that turbidity is a strong surrogate for E. coli due to bacteria attaching to suspended sediments. Using the data from the Norcross station during the calibration period (October 4, 2007 to May 23, 2019), align the discrete E. coli samples with the contemporaneous 15-minute turbidity readings. Fit a simple Ordinary Least Squares (OLS) regression model predicting log10(E. coli) using log10(turbidity) as the sole predictor. What is the adjusted R-squared of this baseline model? Finally, create a scatterplot of log10(E. coli) vs log10(turbidity) with the regression line overlaid, and save it as `ecoli_turbidity_norcross.png`.",
+    "expected": 0.512,
+    "unit": "R-squared",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "There is a strong positive correlation between turbidity and E. coli densities at the Norcross station, indicating that higher suspended sediment concentrations are associated with elevated bacterial levels. This confirms turbidity's utility as a real-time surrogate for predicting recreational water quality.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "ecoli_turbidity_norcross.png",
+      "visual_description": "A scatterplot showing log10(turbidity) on the x-axis and log10(E. coli) on the y-axis. The data points should exhibit a clear positive linear trend, with a regression line fitted through the cluster of points showing increasing E. coli with increasing turbidity.",
+      "paper_figure_reference": "Figure 6 Panel F"
+    }
+  }
+}

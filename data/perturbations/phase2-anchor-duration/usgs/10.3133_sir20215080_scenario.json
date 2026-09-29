@@ -1,0 +1,192 @@
+{
+  "source_doi": "10.3133/sir20215080",
+  "research_question": "How can continuous water-quality monitoring of specific conductance and water temperature be used to estimate dissolved-solids concentrations using multiple linear regression at key monitoring sites on the Lower Colorado River?",
+  "phase_1": {
+    "user_prompt": "I am investigating salinity in the Lower Colorado River near Yuma, Arizona. I want to build regression models to estimate dissolved solids from continuous water quality data. Can you find the USGS site numbers for the four main monitoring sites in the Yuma area (Colorado River above Imperial Dam, Colorado River below Cooper Wasteway, Yuma Main Drain, and the 242 lateral above Main Drain)? Also, identify the 5-digit USGS parameter codes for specific conductance, water temperature, streamflow, and computed dissolved solids (sum of constituents). My study period is January 2017 through March 2019.",
+    "expected": {
+      "sites": [
+        "09429490",
+        "09522005",
+        "09534000",
+        "09534550"
+      ],
+      "parameter_codes": [
+        "00095",
+        "00010",
+        "00060",
+        "70301"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve the 15-minute continuous specific conductance, water temperature, and streamflow data, along with the discrete water-quality samples for dissolved solids, for the four Yuma area sites over the 27 months beginning in January 2017.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09429490",
+          "parameter_code": "00095",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09429490",
+          "parameter_code": "00010",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09429490",
+          "parameter_code": "00060",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09429490",
+          "usgsPCode": "70301",
+          "activityStartDateLower": "2017-01-01",
+          "activityStartDateUpper": "2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09522005",
+          "parameter_code": "00095",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09522005",
+          "parameter_code": "00010",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09522005",
+          "parameter_code": "00060",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09522005",
+          "usgsPCode": "70301",
+          "activityStartDateLower": "2017-01-01",
+          "activityStartDateUpper": "2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09534000",
+          "parameter_code": "00095",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09534000",
+          "parameter_code": "00010",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09534000",
+          "parameter_code": "00060",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09534000",
+          "usgsPCode": "70301",
+          "activityStartDateLower": "2017-01-01",
+          "activityStartDateUpper": "2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09534550",
+          "parameter_code": "00095",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09534550",
+          "parameter_code": "00010",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09534550",
+          "parameter_code": "00060",
+          "time": "2017-01-01/2019-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09534550",
+          "usgsPCode": "70301",
+          "activityStartDateLower": "2017-01-01",
+          "activityStartDateUpper": "2019-03-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved data by matching each discrete dissolved-solids sample with the concurrent 15-minute continuous specific conductance and water temperature readings to create a paired dataset. For the Colorado River above Imperial Dam site, count the number of valid paired samples available for regression modeling.",
+    "expected": 36.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Using the paired dataset for the Colorado River above Imperial Dam site, fit an ordinary least squares multiple linear regression model to predict dissolved solids using specific conductance and water temperature as the explanatory variables. What is the root mean square error (RMSE) of this model? Also, generate a scatterplot comparing the modeled versus observed dissolved-solids concentrations, including a 1:1 line for reference, and save it as 'imperial_dam_ds_regression.png'.",
+    "expected": 5.91,
+    "unit": "mg/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The multiple linear regression model using continuous specific conductance and water temperature explains a high degree of variance (around 96.9%) in dissolved solids at the Colorado River above Imperial Dam site. The visualization shows strong agreement between the modeled and observed dissolved solids, with the points clustering tightly along the 1:1 line.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "imperial_dam_ds_regression.png",
+      "visual_description": "A scatterplot comparing observed dissolved-solids concentrations against modeled (predicted) dissolved-solids concentrations. The plot should include a 1:1 reference line. The data points should fall very close to the 1:1 line, demonstrating low residual error.",
+      "paper_figure_reference": "Figure 20, Panel A"
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "source_doi": "10.3133/sir20225131",
+  "research_question": "Estimate nutrient and suspended-sediment loads and yields in the Upper Macoupin Creek watershed in Illinois using the WRTDS-K model, comparing an upstream site near Carlinville and a downstream site near Summerville for water years 2018-2021.",
+  "phase_1": {
+    "user_prompt": "I'm interested in evaluating nutrient and sediment transport in the Upper Macoupin Creek watershed in Illinois, specifically looking at the stream segment between Carlinville and Summerville. I need to find the USGS streamgage IDs at these two locations and identify the parameter codes for discharge, dissolved nitrate plus nitrite, total phosphorus, and suspended sediment. I plan to analyze the data from water year 2018 through water year 2021.",
+    "expected": {
+      "sites": [
+        "05586647",
+        "05586745"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00631",
+        "00665",
+        "80154"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that I have the two sites and the parameter codes, please retrieve the daily average streamflow and all discrete water quality samples for nitrate+nitrite, total phosphorus, and suspended sediment for the 2018-2021 water years.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05586647",
+          "parameter_code": "00060",
+          "time": "2017-10-01/2021-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05586745",
+          "parameter_code": "00060",
+          "time": "2017-10-01/2021-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05586647",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2017-10-01",
+          "activityStartDateUpper": "2021-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05586647",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2017-10-01",
+          "activityStartDateUpper": "2021-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05586647",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2017-10-01",
+          "activityStartDateUpper": "2021-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05586745",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2017-10-01",
+          "activityStartDateUpper": "2021-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05586745",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2017-10-01",
+          "activityStartDateUpper": "2021-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05586745",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2017-10-01",
+          "activityStartDateUpper": "2021-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Before running the load estimation models, calculate the median measured concentration of nitrate plus nitrite at the upstream site (Carlinville) from the discrete samples to ensure the data is properly formatted and filtered. Report the result in micrograms per liter (µg/L).",
+    "expected": 3040.0,
+    "unit": "ug/L"
+  },
+  "phase_4": {
+    "user_prompt": "Using the EGRET R package or an equivalent implementation, apply the WRTDS-K (Weighted Regressions on Time, Discharge, and Season with Kalman filtering) model to estimate the daily fluxes. What is the estimated total annual nitrate load (in kilograms) at the downstream site (Summerville) for water year 2019? Additionally, calculate the annual nitrate yields (load divided by drainage area) for both sites. Create a grouped bar chart comparing the estimated annual yields of nitrate at both the upstream and downstream sites for the four water years, saving it as `macoupin_nitrate_yields.png`.",
+    "expected": 1630000.0,
+    "unit": "kg",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis demonstrates that nitrate yields (tons per square kilometer) are consistently higher at the upstream site than the downstream site across all water years. This indicates that the upstream subbasin is the primary driver of nitrogen transport, and the intervening subbasin between the two sites acts to dilute the overall downstream yield.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "macoupin_nitrate_yields.png",
+      "visual_description": "A grouped bar chart displaying the annual nitrate yields for water years 2018-2021. The x-axis should represent the water years, and the y-axis should display the yield (e.g., metric tons per square kilometer). For every year, the bar representing the upstream site (05586647) must be visibly taller than the bar representing the downstream site (05586745).",
+      "paper_figure_reference": "Figure 7 Panel A"
+    }
+  }
+}

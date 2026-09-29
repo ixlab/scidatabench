@@ -1,0 +1,135 @@
+{
+  "source_doi": "10.3133/sir20235018",
+  "research_question": "What are the long-term trends (1999-2020) of nitrate contamination in specific groundwater monitoring wells in eastern Nebraska, and do their historical median concentrations exceed the 10 mg/L drinking water standard?",
+  "phase_1": {
+    "user_prompt": "I'm investigating long-term trends of nitrate contamination in groundwater in eastern Nebraska. I want to retrieve discrete water quality sample data for 'oxidised inorganic nitrogen as nitrogen' for 10 specific monitoring wells: 410243096082001, 410243096082002, 410243096082003, 411231096193201, 411231096193202, 411231096193203, 411937096213701, 414700096134901, 414700096134902, 414700096134903. What parameter code and data type should I use to retrieve this data from NWIS?",
+    "expected": {
+      "parameter_codes": [
+        "00631"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now, download the discrete water quality sample records for parameter 00631 for these 10 wells for the period from January 1, 1999 to December 31, 2020.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-410243096082001",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2020-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-410243096082002",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2020-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-410243096082003",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2020-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-411231096193201",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2020-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-411231096193202",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2020-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-411231096193203",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2020-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-411937096213701",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2020-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-414700096134901",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2020-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-414700096134902",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2020-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-414700096134903",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2020-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the retrieved water quality data by treating any non-detects (values with a '<' remark code) as equal to their reporting limits, and dropping any empty or missing results. Then, calculate the overall median nitrate concentration (in mg/L) across all valid samples specifically for the well 410243096082001 over this 1999-2020 period.",
+    "expected": 6.84,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Perform a Mann-Kendall trend analysis to determine the rate of change (Sen's slope) in nitrate concentration for the deep monitoring well 410243096082001 over the 1999-2020 period. Additionally, write a brief conclusion describing the direction of the trend and whether the historical median concentration at this site exceeds the EPA Maximum Contaminant Level (MCL) of 10 mg/L for nitrate.",
+    "expected": 0.062,
+    "unit": "mg/L/year",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The well exhibits a significantly increasing trend in nitrate concentrations over the 1999-2020 period, as indicated by a positive slope. However, its overall historical median nitrate concentration remains below the 10 mg/L EPA drinking water standard.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

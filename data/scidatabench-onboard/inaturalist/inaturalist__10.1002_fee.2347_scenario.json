@@ -1,0 +1,44 @@
+{
+  "source_doi": "10.1002/fee.2347",
+  "research_question": "What are the common nesting site characteristics of wild European honey bee colonies globally, based on citizen science observations?",
+  "phase_1": {
+    "user_prompt": "We are investigating the ecological impacts and cavity occupancy of feral European honey bees using citizen-science data, covering global records up to March 2020. Please identify the exact scientific taxon name we should use to query the citizen-science database for this species.",
+    "expected": {
+      "taxon_names": [
+        "Apis mellifera"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the taxon name 'Apis mellifera', retrieve the relevant citizen-science observations globally that were recorded on or before March 31, 2020. To focus on feral colonies and nesting sites rather than individual foraging bees, filter the retrieved observations to those that contain the terms 'nest', 'colony', or 'hive' in their text or tags.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 47219,
+          "d2": "2020-03-31",
+          "q": "nest"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 47219,
+          "d2": "2020-03-31",
+          "q": "colony"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 47219,
+          "d2": "2020-03-31",
+          "q": "hive"
+        }
+      }
+    ]
+  }
+}

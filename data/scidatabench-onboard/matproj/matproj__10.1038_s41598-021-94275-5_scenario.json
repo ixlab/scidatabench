@@ -1,0 +1,31 @@
+{
+  "source_doi": "10.1038/s41598-021-94275-5",
+  "research_question": "How can interpretable machine learning and high-throughput multi-property screening be used to discover novel Li solid-state electrolytes and anode coatings with high ionic conductivity and good stability?",
+  "phase_1": {
+    "user_prompt": "We are constructing a database to discover novel lithium solid electrolytes, starting from baseline data in the Materials Project. Which constituent element should we use to select our initial set of materials? Also identify the four fundamental properties we need to download: the structural data for our ML models, the energy data used to calculate electrochemical stability windows, and the two properties used in a second screening step on thermodynamic stability and electronic insulation.",
+    "expected": {
+      "elements": [
+        "Li"
+      ],
+      "properties": [
+        "structure",
+        "energy_per_atom",
+        "energy_above_hull",
+        "band_gap"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please access the Materials Project database and retrieve the crystal structures, DFT total energies (or energies per atom), energy above the convex hull, and band gaps for all materials that contain the element Lithium (Li).",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "elements": "Li",
+          "_fields": "material_id,formula_pretty,structure,energy_per_atom,energy_above_hull,band_gap"
+        }
+      }
+    ]
+  }
+}

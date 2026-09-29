@@ -1,0 +1,70 @@
+{
+  "source_doi": "10.1016/j.jadohealth.2022.10.013",
+  "research_question": "Do neighborhood racial and economic privilege, measured by the Index of Concentration at the Extremes (ICE) using US Census ACS data, influence the timing of pubertal onset in girls?",
+  "phase_1": {
+    "user_prompt": "We need to calculate the Index of Concentration at the Extremes (ICE) for racial privilege, economic privilege, and their combination for all census tracts in California, as part of a study of pubertal onset. We are using 2010 5-year American Community Survey estimates. Economic extremes are defined as households earning under $20,000 (least privileged) and $100,000 or more (most privileged). Racial extremes are defined as the Black and White populations. The combined measure uses the Black population earning under $20,000 and the White population earning $100,000 or more. Which specific ACS tables provide the total household income distribution, the total population by race, the household income distribution for White-only householders, and the household income distribution for Black-only householders? Also, what is the geographic summary level for census tracts and the state code for California?",
+    "expected": {
+      "tables": [
+        "B19001",
+        "B02001",
+        "B19001A",
+        "B19001B"
+      ],
+      "geographies": [
+        "tract"
+      ],
+      "state_codes": [
+        "06"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know we need tables B19001, B02001, B19001A, and B19001B for all census tracts in California (state code 06), please download this data from the 2010 5-year ACS dataset so we can compute the ICE metrics for each neighborhood.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2010,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19001)",
+          "for": "tract:*",
+          "in": "state:06"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2010,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B02001)",
+          "for": "tract:*",
+          "in": "state:06"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2010,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19001A)",
+          "for": "tract:*",
+          "in": "state:06"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2010,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19001B)",
+          "for": "tract:*",
+          "in": "state:06"
+        }
+      }
+    ]
+  }
+}

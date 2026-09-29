@@ -1,0 +1,45 @@
+{
+  "source_doi": "10.15560/21.5.857",
+  "research_question": "How far does a new 2023 observation of the Royal Sunangel hummingbird at 03°09′17.5″S, 078°33′49.4″W extend its previously known historical range based on GBIF records?",
+  "phase_1": {
+    "user_prompt": "I am researching the distribution of the Royal Sunangel hummingbird. I recently made a potential range-extending observation in 2023, and I want to analyze all historically known occurrences from 1800 to 2022 that have valid coordinate data to compare against my new sighting. What GBIF data is available for this species?",
+    "expected": {
+      "taxon_keys": [
+        "2476709"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the historical occurrence records for the Royal Sunangel that we just identified.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "hasCoordinate": true,
+          "taxonKey": 2476709,
+          "year": "1800,2022"
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "I need to clean this historical dataset before analyzing it. Please filter the downloaded records to remove any exact duplicates, and discard any records that are missing either geographic coordinates or observation dates. To remove obvious spatial errors, restrict the remaining data to records located in Ecuador and Peru. How many valid historical records remain after this cleaning step?",
+    "expected": 769,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "My new observation of the Royal Sunangel was made at coordinates 03°09′17.5″S, 078°33′49.4″W. Using the cleaned historical dataset, calculate the minimum geographic distance (in kilometers) from my new observation to the nearest previously documented occurrence of this species. Also, generate a map showing the historical records and my new observation point to visualize the range extension. Save the map as `h_regalis_range_map.png`.",
+    "expected": 59.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The new observation is located approximately 59 km northwest of the previously known northernmost historical records in the Cóndor Cordillera. This represents a meaningful range extension into the southeastern foothills of the Ecuadorian Andes.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "h_regalis_range_map.png",
+      "visual_description": "A geographic map or scatter plot showing latitude and longitude. The majority of points (historical records) should be clustered in northern Peru and near the southern Ecuador border. A single distinctly marked point (the new observation) should be located to the northwest of the main cluster at approximately -3.15 latitude, -78.56 longitude.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

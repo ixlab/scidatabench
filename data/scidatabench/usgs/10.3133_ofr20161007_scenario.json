@@ -1,0 +1,627 @@
+{
+  "source_doi": "10.3133/ofr20161007",
+  "research_question": "What are the total nitrogen loads and yields from selected rivers in the Long Island Sound Basin in Connecticut and Massachusetts for water years 2006–2013?",
+  "phase_1": {
+    "user_prompt": "I want to estimate nitrogen loads from selected rivers in the Long Island Sound Basin for water years 2006 through 2013. I have a list of specific monitoring locations: Willimantic River at Merrow (Conn.), Shetucket River at Taftville (Conn.), Natchaug River at Chaplin (Conn.), French River at North Grosvenordale (Conn.), Yantic River at Yantic (Conn.), Latimer Brook near I-95 N Exit 75 near Flanders (Conn.), Oil Mill Brook at Gurley Rd. near East Lyme (Conn.), Stony Brook at Rte. 1 near Flanders (Conn.), Broad Brook at Broad Brook (Conn.), Indian River near Clinton (Conn.), Housatonic River near Ashley Falls (Mass.), Still River at Route 7 at Brookfield Center (Conn.), Rooster River at Fairfield (Conn.), and Sasco Brook near Southport (Conn.). Please identify the official USGS site numbers for these 14 locations, as well as the 5-digit USGS parameter codes needed to pull daily discharge and discrete water quality samples for total nitrogen, total ammonia plus organic nitrogen, and nitrite plus nitrate nitrogen.",
+    "expected": {
+      "sites": [
+        "01119375",
+        "011230695",
+        "01120800",
+        "01125100",
+        "01127500",
+        "011277905",
+        "011277914",
+        "011277916",
+        "01184490",
+        "01195100",
+        "01198125",
+        "01201487",
+        "01208873",
+        "01208950"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00600",
+        "00625",
+        "00631"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 14 site numbers and the parameters for daily discharge and discrete nitrogen samples, please retrieve the continuous daily streamflow records and discrete water quality samples for all 14 sites covering water years 2006 through 2013. If Total Nitrogen is not available directly as a single parameter for some samples, retrieve the constituent nitrogen species so it can be summed later. Note that you will also need to fetch site metadata (specifically drainage areas) to calculate yields downstream.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01119375",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01119375",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01119375",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01119375",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-011230695",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011230695",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011230695",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011230695",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01120800",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01120800",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01120800",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01120800",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01125100",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01125100",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01125100",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01125100",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01127500",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01127500",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01127500",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01127500",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-011277905",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011277905",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011277905",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011277905",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-011277914",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011277914",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011277914",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011277914",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-011277916",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011277916",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011277916",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-011277916",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01184490",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01184490",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01184490",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01184490",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01195100",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01195100",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01195100",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01195100",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01198125",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01198125",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01198125",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01198125",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01201487",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01201487",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01201487",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01201487",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01208873",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01208873",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01208873",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01208873",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01208950",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01208950",
+          "usgsPCode": "00600",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01208950",
+          "usgsPCode": "00625",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01208950",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01119384",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2008-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01119382",
+          "parameter_code": "00060",
+          "time": "2008-10-01/2013-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01120790",
+          "parameter_code": "00060",
+          "time": "2005-10-01/2013-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Before estimating loads, we need to handle some missing streamflow records by using nearby surrogate gages with drainage area corrections. For the Willimantic River site (01119375), calculate its daily flow using USGS station 01119384 multiplied by 0.96 for water years 2006–2008, and station 01119382 multiplied by 0.98 for water years 2009–2013. For the Natchaug River site (01120800), calculate its flow using station 01120790 multiplied by 1.02. Retrieve these additional surrogate flow records, apply the corrections, and merge them into your discharge dataset. Next, calculate Total Nitrogen for discrete samples (using the sum of ammonia+organic N and nitrite+nitrate N if total N isn't reported directly). Once all data is prepared and filtered to water years 2006-2013, how many total paired discharge-concentration observations are available across the 14 primary sites for load estimation?",
+    "expected": 988,
+    "unit": "observations"
+  },
+  "phase_4": {
+    "user_prompt": "With the prepared daily discharge and discrete total nitrogen data, run a load estimation regression framework (such as LOADEST using Adjusted Maximum Likelihood Estimation to handle censored data appropriately) for each of the 14 sites. Select the best predefined regression model automatically based on model criteria. Calculate the annual Total Nitrogen loads for water years 2006–2013, then calculate the annual TN yield (in pounds per square mile per year) using the site drainage areas. What is the maximum annual total nitrogen yield estimated across any site-year in this dataset? Also, briefly summarize which sites generally had the highest and lowest yields, and note any sites showing visible downward trends in TN load over the study period.",
+    "expected": 23300.0,
+    "unit": "lb/mi2/yr",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Broad Brook, Still River, and Sasco Brook exhibit the highest overall TN yields. Oil Mill Brook, Natchaug River, and Indian River have the lowest overall yields. The French River and Still River exhibit visible downward trends in TN loads over the 2006-2013 period.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

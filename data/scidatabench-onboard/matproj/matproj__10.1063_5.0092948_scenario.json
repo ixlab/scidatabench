@@ -1,0 +1,61 @@
+{
+  "source_doi": "10.1063/5.0092948",
+  "research_question": "Identify and retrieve the thermodynamic stability and aqueous stability data for a specific subset of unary and binary transition metal alloys used to screen for nitrate reduction electrocatalysts.",
+  "phase_1": {
+    "user_prompt": "We are screening bimetallic electrocatalysts for nitrate reduction in water purification. Our composition space is every unary and binary combination of the transition metals running from scandium through gold, with two removed: technetium, because it is radioactive, and cadmium, because it is too toxic for anything touching drinking water. List the element symbols that leaves us with, and name the Materials Project quantity that measures how far a compound lies above the thermodynamic ground state, which we will use as our final stability filter.",
+    "expected": {
+      "elements": [
+        "Sc",
+        "Ti",
+        "V",
+        "Cr",
+        "Mn",
+        "Fe",
+        "Co",
+        "Ni",
+        "Cu",
+        "Zn",
+        "Y",
+        "Zr",
+        "Nb",
+        "Mo",
+        "Ru",
+        "Rh",
+        "Pd",
+        "Ag",
+        "Hf",
+        "Ta",
+        "W",
+        "Re",
+        "Os",
+        "Ir",
+        "Pt",
+        "Au"
+      ],
+      "properties": [
+        "energy_above_hull"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Materials Project API, retrieve the thermodynamic stability (energy above the convex hull) and fundamental material identifiers for all unary and binary combinations of the following elements: Sc, Ti, V, Cr, Mn, Fe, Co, Ni, Cu, Zn, Y, Zr, Nb, Mo, Ru, Rh, Pd, Ag, Hf, Ta, W, Re, Os, Ir, Pt, Au. You will also need to fetch the necessary aqueous stability data (Pourbaix entries) for these chemical systems to eventually calculate Pourbaix decomposition energies.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "nelements": 1,
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom,energy_above_hull"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "nelements": 2,
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom,energy_above_hull"
+        }
+      }
+    ]
+  }
+}

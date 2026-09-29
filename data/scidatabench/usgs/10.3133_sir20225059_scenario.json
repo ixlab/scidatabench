@@ -1,0 +1,137 @@
+{
+  "source_doi": "10.3133/sir20225059",
+  "research_question": "What is the long-term probability distribution of daily streamflow at key river locations in Virginia, and how can it be summarized to inform bridge pier scour risk assessments?",
+  "phase_1": {
+    "user_prompt": "I am conducting a pilot study on bridge scour in Virginia and need to retrieve long-term discharge data for 10 specific river locations: James River at Scottsville, Rappahannock River at Remington, S F Shenandoah River Near Lynnwood, Appomattox River at Mattoax, Rapidan River near Ruckersville, Hazel River at Rixeyville, Rockfish River near Greenfield, Mechums River near White Hall, N F Rivanna River near Earlysville, and Bunch Creek near Boswells Tavern. Could you identify the official USGS site numbers for these 10 locations, the parameter code for streamflow, and the data type code for daily values?",
+    "expected": {
+      "sites": [
+        "02029000",
+        "01664000",
+        "01628500",
+        "02040000",
+        "01665500",
+        "01663500",
+        "02028500",
+        "02031000",
+        "02032640",
+        "01671500"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers, please download the daily mean streamflow data for the full period of record for all 10 sites.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02029000",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01664000",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01628500",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02040000",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01665500",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01663500",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02028500",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02031000",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02032640",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01671500",
+          "parameter_code": "00060",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To understand the distribution of flow magnitudes, process the daily streamflow records for the James River at Scottsville. Filter out any missing or non-positive flow values. Then, take the base-10 logarithm of the daily discharge values. Calculate the overall mean of these log10(discharge) values for the site's entire period of record.",
+    "expected": 3.51,
+    "unit": "log10(cfs)"
+  },
+  "phase_4": {
+    "user_prompt": "Using the log10-transformed daily flow values for the James River at Scottsville, generate a probability density function (PDF) plot, specifically a histogram with an overlaid density curve, to visualize the flow distribution. Save the plot as `james_river_log_flow_pdf.png`. Also, calculate the standard deviation of the log10 discharge values to summarize the spread of the data.",
+    "expected": 0.396,
+    "unit": "log10(cfs)",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The daily flow values for the James River at Scottsville follow a relatively stable, roughly normal or slightly left-skewed distribution when log10-transformed, demonstrating the site's long-term hydrologic behavior.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "james_river_log_flow_pdf.png",
+      "visual_description": "A histogram of log10 daily flows for the James River at Scottsville with an overlaid probability density curve. The x-axis should represent log10 discharge (ranging roughly from 2.0 to 5.5). The distribution should appear roughly normal or slightly left-skewed, centered around 3.5, with the bulk of observations between 3.0 and 4.0.",
+      "paper_figure_reference": "Figure 2, Station 02029000"
+    }
+  }
+}

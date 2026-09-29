@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.3133/ds347",
+  "research_question": "How did the peak concentrations of Methyl tert-butyl ether (MTBE) vary spatially across the Sweetwater Reservoir in San Diego County between October 2001 and September 2003?",
+  "phase_1": {
+    "user_prompt": "I am conducting an assessment of historical VOC contamination in San Diego County, California, specifically looking at Methyl tert-butyl ether (MTBE) in the Sweetwater Reservoir. I want to compare records from two locations: the 'Sweetwater Reservoir near pump tower' and the 'Sweetwater Reservoir center minimum pool'. Could you find the 15-digit USGS site numbers for these two monitoring locations and the standard 5-digit USGS parameter code for MTBE in unfiltered water?",
+    "expected": {
+      "sites": [
+        "324130117002501",
+        "324131117000101"
+      ],
+      "parameter_codes": [
+        "78032"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve the discrete water quality sample data for MTBE at these two Sweetwater Reservoir sites for the period spanning October 1, 2001, to September 30, 2003.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-324130117002501",
+          "usgsPCode": "78032",
+          "activityStartDateLower": "2001-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-324131117000101",
+          "usgsPCode": "78032",
+          "activityStartDateLower": "2001-10-01",
+          "activityStartDateUpper": "2003-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved MTBE sample data for the pump tower site. Extract the concentrations, ensuring that you parse any estimated values (often recorded with an 'E' remark code or text flag) as valid numeric values. What was the maximum observed MTBE concentration (in milligrams per liter (mg/L)) at the pump tower site during this study period?",
+    "expected": 0.00207,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Now perform the same data processing to find the maximum observed MTBE concentration at the center minimum pool site. To assess the spatial variation in peak contamination, subtract the maximum concentration at the center minimum pool from the maximum concentration at the pump tower. What is the difference in µg/L?",
+    "expected": 1.91,
+    "unit": "µg/L",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

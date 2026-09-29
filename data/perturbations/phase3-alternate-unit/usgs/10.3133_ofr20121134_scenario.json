@@ -1,0 +1,81 @@
+{
+  "source_doi": "10.3133/ofr20121134",
+  "research_question": "What are the average annual streamflows for the major USGS long-term streamgages along the mainstem of the Smith River in Montana during Water Years 2005-2010?",
+  "phase_1": {
+    "user_prompt": "I am investigating the hydrology of the Smith River watershed in Montana. I need to find the USGS streamflow-gaging stations located on the mainstem of the Smith River. Specifically, I'm looking for the four long-term stations described as: 'below Newlan Creek near White Sulphur Springs', 'near Fort Logan', 'below Eagle Creek near Fort Logan', and 'near Eden'. Please identify their USGS site numbers and the parameter code for daily streamflow (discharge).",
+    "expected": {
+      "sites": [
+        "06076560",
+        "06076690",
+        "06077200",
+        "06077500"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For these four Smith River stations, please retrieve the daily mean discharge data spanning Water Years 2005 through 2010. Remember that a Water Year starts on October 1 of the previous calendar year and ends on September 30 (so WY2005 begins Oct 1, 2004).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06076560",
+          "parameter_code": "00060",
+          "time": "2004-10-01/2010-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06076690",
+          "parameter_code": "00060",
+          "time": "2004-10-01/2010-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06077200",
+          "parameter_code": "00060",
+          "time": "2004-10-01/2010-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06077500",
+          "parameter_code": "00060",
+          "time": "2004-10-01/2010-09-30",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Focusing on the 'Smith River below Newlan Creek' station, process the daily discharge data to calculate the overall average annual streamflow over Water Years 2005 through 2010. You can compute this by taking the mean of all daily discharge values across this entire 6-year period. What is this average value in cubic meters per second (m³/s)?",
+    "expected": 2.2908328893,
+    "unit": "m3/s"
+  },
+  "phase_4": {
+    "user_prompt": "Now, perform the same calculation for the 'Smith River below Eagle Creek' station. What was the average annual streamflow for Water Years 2005 through 2010 at this location? Additionally, create a line plot showing the daily mean streamflow for this station over the retrieved period to visualize the flow regime. Save the plot as 'eagle_creek_hydrograph.png'.",
+    "expected": 243.8,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The hydrograph should display continuous daily streamflow for the Smith River below Eagle Creek from October 2004 through September 2010, exhibiting typical spring snowmelt peaks (often exceeding 1,000 cfs) and low baseflows in late summer/winter.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "eagle_creek_hydrograph.png",
+      "visual_description": "A line plot of daily streamflow over time (Oct 2004 to Sep 2010). The y-axis represents streamflow in cfs, typically ranging from near 0 to over 1,500 cfs, with recurring annual peaks.",
+      "paper_figure_reference": "Figure 9"
+    }
+  }
+}

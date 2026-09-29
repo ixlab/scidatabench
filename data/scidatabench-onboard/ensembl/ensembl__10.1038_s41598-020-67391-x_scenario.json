@@ -1,0 +1,39 @@
+{
+  "source_doi": "10.1038/s41598-020-67391-x",
+  "research_question": "To explore potential sources of C-MYC relative expression between species at the mRNA level by retrieving and comparing the number and identity of mRNA isoforms between cattle and sheep.",
+  "phase_1": {
+    "user_prompt": "Our lab is comparing how gene regulation has been rewired between cattle and sheep fibroblasts. The transcription factor we care about is the basic helix-loop-helix leucine-zipper proto-oncogene that dimerises with MAX, sits at the 8q24 locus translocated in Burkitt lymphoma, and is the one oncogene among the four classic reprogramming factors. We want to line up its mRNA isoforms in the two species. Give me the standard Ensembl gene symbol for it, together with the Ensembl species names for cattle and sheep.",
+    "expected": {
+      "gene_symbols": [
+        "MYC"
+      ],
+      "species": [
+        "bos_taurus",
+        "ovis_aries"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Given the gene MYC and the species cattle (bos_taurus) and sheep (ovis_aries), retrieve the structural records of all its mRNA isoforms (transcripts) in both species from Ensembl.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "bos_taurus",
+          "symbol": "MYC",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "ovis_aries",
+          "symbol": "MYC",
+          "expand": 1
+        }
+      }
+    ]
+  }
+}

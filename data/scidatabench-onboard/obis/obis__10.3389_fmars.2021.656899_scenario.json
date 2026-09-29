@@ -1,0 +1,43 @@
+{
+  "source_doi": "10.3389/fmars.2021.656899",
+  "research_question": "What is the global deep-sea diversity and depth distribution of the scale-worm family Polynoidae, particularly contrasting the subfamilies Macellicephalinae and Polynoinae, based on OBIS records?",
+  "phase_1": {
+    "user_prompt": "We are studying deep-sea scale-worms in the Clarion-Clipperton Fracture Zone and want to contextualise our findings with a global census from an online biodiversity database, comparing depth ranges and species counts for the overarching scale-worm family and its two most species-rich subfamilies. What are the exact scientific names of that family and those two subfamilies?",
+    "expected": {
+      "scientific_names": [
+        "Polynoidae",
+        "Macellicephalinae",
+        "Polynoinae"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the target taxa (Polynoidae, Macellicephalinae, and Polynoinae), please retrieve their global occurrence records from OBIS. To match the paper's deep-sea diversity census, ensure you specifically filter the data to retrieve only records found at or below 2000 meters depth.",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Polynoidae",
+          "startdepth": 2000
+        }
+      },
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Macellicephalinae",
+          "startdepth": 2000
+        }
+      },
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Polynoinae",
+          "startdepth": 2000
+        }
+      }
+    ]
+  }
+}

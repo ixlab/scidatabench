@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.5194/cp-19-2257-2023",
+  "research_question": "To construct the AICC2023 chronology for the EPICA Dome C ice core, the researchers merged new gas measurements with prior 100-800 ka baseline records of atmospheric δ18O and δO2/N2. What are the PANGAEA dataset IDs for these prior baseline records?",
+  "phase_1": {
+    "user_prompt": "We are establishing a new chronology for the EPICA Dome C ice core. Alongside our own new high-resolution gas data we need the existing 100-800 ka records of delta 18Oatm and delta O2/N2 compiled by Extier et al. (2018), which provide the baseline over the full 800 kyr. Could you search PANGAEA and find the specific dataset DOIs for those two baseline records?",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.887323",
+        "10.1594/PANGAEA.887326"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the DOIs for the baseline Extier et al. (2018) datasets (10.1594/PANGAEA.887323 and 10.1594/PANGAEA.887326), please retrieve them. We want to extract the data tables into memory, specifically noting the AICC2012 gas age and the delta 18Oatm or delta O2/N2 values, so we could theoretically replicate the noise-removal and merging steps described in the AICC2023 study.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.887323"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.887326"
+        }
+      }
+    ]
+  }
+}

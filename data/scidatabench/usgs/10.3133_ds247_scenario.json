@@ -1,0 +1,67 @@
+{
+  "source_doi": "10.3133/ds247",
+  "research_question": "What are the historical trends in the annual percentages of zero daily mean streamflow for streamgages on the mainstem of the Canadian River in Texas up to 2003?",
+  "phase_1": {
+    "user_prompt": "I want to analyze the occurrence of zero-flow days on the Canadian River in Texas. Please find the USGS streamflow-gaging stations located on the mainstem of the Canadian River in Texas, specifically the gages 'at Tascosa', 'near Amarillo', and 'near Canadian'. What are their USGS site numbers? Also, provide the parameter code and data type code needed to retrieve daily mean discharge data.",
+    "expected": {
+      "sites": [
+        "07227470",
+        "07227500",
+        "07228000"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site numbers you found, download the complete historical daily mean discharge records for these three Canadian River gages. Since I'm comparing with a historical study, only retrieve data up through December 31, 2003.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07227470",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2003-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07227500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2003-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07228000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2003-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the daily discharge data to calculate the annual percentage of zero-flow days for each site. For every calendar year with observed data, count the number of days with a mean discharge of exactly zero, and divide by the total number of days with recorded data in that year (convert this to a percentage). What is the calculated mean of these annual zero-flow percentages for the 'Canadian River at Tascosa' gage over its period of record?",
+    "expected": 14.0,
+    "unit": "percent"
+  },
+  "phase_4": {
+    "user_prompt": "I want to know if these rivers are drying up over time. Test for monotonic trends by computing Kendall's tau rank correlation coefficient between the calendar year and the annual percentage of zero streamflow for each site. What is the Kendall's tau statistic for the Canadian River at Tascosa? Also, identify which sites have a statistically significant trend (using a p-value threshold of 0.02) and create a multi-panel plot showing the annual zero-flow percentage over time for all three sites. Save the plot as `canadian_river_zeroflow_trends.png`.",
+    "expected": 0.629,
+    "unit": "Kendall's tau",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The Canadian River at Tascosa (07227470) and near Amarillo (07227500) demonstrate statistically significant positive trends indicating increasing occurrences of zero flow (p <= 0.02). The station near Canadian (07228000) shows a non-significant negative trend. The visualizations should clearly show the scatter of annual zero-flow percentages across the period of record for each site.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "canadian_river_zeroflow_trends.png",
+      "visual_description": "A plot (or subplots) showing the calendar year on the x-axis and the annual percentage of zero streamflow on the y-axis for the three Canadian River stations. The data points for Tascosa and Amarillo should visually indicate an upward trend in zero flow occurrences over time.",
+      "paper_figure_reference": "Figures 2, 3, and 5"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.1017/pasa.2022.52",
+  "research_question": "What are the limitations of using the standard ATNF pulsar catalogue's flux density measurements for spectral fitting of specific pulsars compared to a dedicated custom catalog?",
+  "phase_1": {
+    "user_prompt": "We are assembling radio spectra for a set of pulsars and would rather pull the tabulated flux densities straight from the standard ATNF pulsar catalogue than scrape them out of individual papers. Tell me the VizieR catalogue designation that catalogue is served under, so we can query it with astroquery.",
+    "expected": {
+      "catalogs": [
+        "B/psr"
+      ],
+      "target_names": []
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the ATNF pulsar catalogue is available on VizieR as 'B/psr' and the target pulsars are PSR J0835-4510, PSR J1141-6545, PSR J1751-4657, and PSR J0953+0755, please retrieve the records for these four pulsars from this catalog using VizieR. We need these records to access their published flux density measurements.",
+    "expected": [
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_constraints",
+        "kwargs": {
+          "catalog": "B/psr/psr",
+          "column_filters": {
+            "PSRJ": "J0835-4510"
+          }
+        }
+      },
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_constraints",
+        "kwargs": {
+          "catalog": "B/psr/psr",
+          "column_filters": {
+            "PSRJ": "J1141-6545"
+          }
+        }
+      },
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_constraints",
+        "kwargs": {
+          "catalog": "B/psr/psr",
+          "column_filters": {
+            "PSRJ": "J1751-4657"
+          }
+        }
+      },
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_constraints",
+        "kwargs": {
+          "catalog": "B/psr/psr",
+          "column_filters": {
+            "PSRJ": "J0953+0755"
+          }
+        }
+      }
+    ]
+  }
+}

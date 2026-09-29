@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.5194/cp-14-1639-2018",
+  "research_question": "How did North Atlantic sea surface temperature and benthic isotopes evolve between 812 and 530 ka during the mid-Pleistocene transition?",
+  "phase_1": {
+    "user_prompt": "We are investigating changes in North Atlantic circulation during the mid-Pleistocene transition (MIS20-MIS14). Alongside our own new foraminifer data from the Iberian margin we need previously published reference datasets: benthic oxygen isotopes at Site U1385, and sea surface temperatures at DSDP Site 607. Please search PANGAEA to find the exact dataset identifiers for those two reference records.",
+    "expected": {
+      "dataset_ids": [
+        "701229",
+        "872082"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "I have the PANGAEA dataset DOIs for the required reference data: 10.1594/PANGAEA.701229 (Site 607) and 10.1594/PANGAEA.872082 (Site U1385). Please download the tabular datasets for both so that we can begin temporally aligning the sea surface temperature and benthic isotope series for the 812-530 ka interval.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "701229"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "872082"
+        }
+      }
+    ]
+  }
+}

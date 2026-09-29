@@ -1,0 +1,16 @@
+{
+  "platform": "usgs_eq",
+  "condition": "exec",
+  "model": "gemini-3.7-flash",
+  "elapsed_s": 33.0,
+  "tokens": {
+    "input": 81444,
+    "output": 4528,
+    "thinking": 0,
+    "total": 85972,
+    "cache_read": 0
+  },
+  "tool_call_turns": 16,
+  "research_log": [],
+  "generated_utc": "2026-08-14T17:09:47.962153+00:00"
+}

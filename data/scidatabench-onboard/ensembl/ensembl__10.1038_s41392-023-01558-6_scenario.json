@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.1038/s41392-023-01558-6",
+  "research_question": "Which genes encode the signalling components linking HDL to endothelial angiogenesis, and what are their gene models?",
+  "phase_1": {
+    "user_prompt": "We are dissecting how HDL signals to endothelial cells to promote angiogenesis, and three proteins define the axis we want to characterise. The first is the WW-domain-containing HECT-type E3 ubiquitin protein ligase, family member 2. The second is the type 1 G-protein-coupled receptor for sphingosine 1-phosphate, the one that HDL-bound lipid signals through on endothelium. The third is the Ras-interacting endothelial protein also known as RAIN, which localises to endothelial junctions. Give us the approved human gene symbols for those three and the Ensembl species name so we can pull their gene models.",
+    "expected": {
+      "gene_symbols": [
+        "WWP2",
+        "S1PR1",
+        "RASIP1"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now pull the full gene model for each of the three from Ensembl, expanded so every transcript comes back with it.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "WWP2",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "S1PR1",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "RASIP1",
+          "expand": 1
+        }
+      }
+    ]
+  }
+}

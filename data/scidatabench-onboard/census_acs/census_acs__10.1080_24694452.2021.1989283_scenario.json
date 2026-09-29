@@ -1,0 +1,97 @@
+{
+  "source_doi": "10.1080/24694452.2021.1989283",
+  "research_question": "How can individual-centered microdata and area-level census constraints be combined to measure coupled individual and social vulnerability to environmental hazards like Hurricane Sandy?",
+  "phase_1": {
+    "user_prompt": "We are studying individual and social vulnerability to environmental hazards (like Hurricane Sandy) in the Coney Island-Brighton Beach area of New York City, in southern Brooklyn. We are developing 'community' level social vulnerability profiles by linking individual microdata to area-level constraints via population synthesis. Find the exact US Census FIPS codes for the state and county of this study area, and identify the geographic summary level we should use to represent the 'community' scale. Additionally, we need area-level constraints for six function-based disability types: hearing difficulty, vision difficulty, cognitive difficulty, ambulatory difficulty, self-care difficulty, and independent living difficulty. Identify the primary detailed ACS table IDs (the 6 tables starting with 'B') that provide specific counts for each of these difficulty types.",
+    "expected": {
+      "state_codes": [
+        "36"
+      ],
+      "county_codes": [
+        "047"
+      ],
+      "geographies": [
+        "tract"
+      ],
+      "tables": [
+        "B18102",
+        "B18103",
+        "B18104",
+        "B18105",
+        "B18106",
+        "B18107"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the state, county, and table identifiers you found, retrieve the 2018 ACS 5-year estimate data for the six detailed disability tables for all census tracts within the identified county.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B18102)",
+          "for": "tract:*",
+          "in": "state:36 county:047"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B18103)",
+          "for": "tract:*",
+          "in": "state:36 county:047"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B18104)",
+          "for": "tract:*",
+          "in": "state:36 county:047"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B18105)",
+          "for": "tract:*",
+          "in": "state:36 county:047"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B18106)",
+          "for": "tract:*",
+          "in": "state:36 county:047"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B18107)",
+          "for": "tract:*",
+          "in": "state:36 county:047"
+        }
+      }
+    ]
+  }
+}

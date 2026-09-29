@@ -1,0 +1,74 @@
+{
+  "source_doi": "10.1007/s11606-020-05971-3",
+  "research_question": "What is the association between state-level income inequality (measured by the Gini index) and COVID-19 cases and mortality in the USA?",
+  "phase_1": {
+    "user_prompt": "I am conducting a study on the association between income inequality and COVID-19 impact across the USA. I need to pull 2018 state-level demographic and economic data to serve as confounders. Specifically, I need the Gini index of income inequality, median household income, age and sex distributions (to calculate the proportion 65+ and female), race and ethnicity distributions (to calculate the proportion of African American and Hispanic individuals), and poverty status (to calculate the proportion below poverty). Which specific detailed 'B' series tables in the American Community Survey should I use to get these estimates, and what is the target geographic summary level?",
+    "expected": {
+      "tables": [
+        "B19083",
+        "B19013",
+        "B01001",
+        "B03002",
+        "B17001"
+      ],
+      "geographies": [
+        "state"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the necessary tables (B19083 for Gini index, B19013 for median income, B01001 for age/sex, B03002 for race/ethnicity, and B17001 for poverty status), please retrieve these estimates for all US states using the 2018 ACS 1-year estimates.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs1",
+          "get": "NAME,group(B19083)",
+          "for": "state:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs1",
+          "get": "NAME,group(B19013)",
+          "for": "state:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs1",
+          "get": "NAME,group(B01001)",
+          "for": "state:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs1",
+          "get": "NAME,group(B03002)",
+          "for": "state:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs1",
+          "get": "NAME,group(B17001)",
+          "for": "state:*"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source_doi": "10.15448/1980-864x.2020.1.33976",
+  "research_question": "When was the invasive plant Leucaena leucocephala actually introduced to Brazil, and how has it spread historically based on herbarium records?",
+  "phase_1": {
+    "user_prompt": "I am investigating the historical introduction and spread of the invasive leadtree (Leucaena leucocephala) in Brazil. I want to analyze digitized herbarium specimens to determine its earliest arrival and geographic expansion. What parameters should I use to search for this data?",
+    "expected": {
+      "country_codes": [
+        "BR"
+      ],
+      "taxon_keys": [
+        "2970418"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the occurrence data for Leucaena leucocephala in Brazil, making sure to restrict the records to herbarium and preserved specimens only.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN"
+          ],
+          "country": "BR",
+          "taxonKey": 2970418
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To understand the early history of this species, filter the dataset to keep only records collected prior to the year 1940. Deduplicate these historical records (e.g., by spatial coordinates, year, and collector). How many unique pre-1940 specimen records remain?",
+    "expected": 30,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Based on your filtered historical data, what is the earliest recorded year of occurrence for this plant in Brazil? Also, using the full deduplicated dataset (all years), identify which Brazilian state has the highest total number of records. Finally, generate a bar chart showing the number of occurrences per decade from the 1830s to the 2010s, saving it as `leucaena_decadal_occurrences.png`.",
+    "expected": 1831,
+    "unit": "year",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The introduction of Leucaena leucocephala occurred long before the official date of 1940, with the earliest herbarium records dating back to 1831 in Bahia. The species spread primarily along the coastal states (Atlantic Forest biome), with São Paulo (and secondarily Paraná or Bahia) recording the highest total number of historical and modern occurrences combined.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "leucaena_decadal_occurrences.png",
+      "visual_description": "A bar chart showing the frequency of Leucaena leucocephala occurrence records aggregated by decade. The chart should display very low, sporadic counts from the 1830s through the 1920s, a steady increase starting in the 1930s/1940s, and a massive peak in the most recent decades (e.g., 1980s, 1990s, and particularly the 2000s).",
+      "paper_figure_reference": "Image 21"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "source_doi": "10.3133/sir20225015",
+  "research_question": "How can continuous streamflow data and discrete suspended-sediment samples be used to develop regression models for estimating high-resolution suspended-sediment loads entering Galveston Bay from the Trinity River?",
+  "phase_1": {
+    "user_prompt": "I am studying sediment transport into Galveston Bay from the lower Trinity River in Texas. I need to locate the USGS streamgage on the Trinity River at Liberty, Texas. What is the site number, and what are the 5-digit USGS parameter codes for instantaneous volumetric flow and discrete suspended-sediment concentration?",
+    "expected": {
+      "sites": [
+        "08067000"
+      ],
+      "parameter_codes": [
+        "00060",
+        "80154"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the Trinity River at Liberty site, please retrieve all discrete water-quality samples for suspended-sediment concentration, as well as the continuous instantaneous (15-minute) streamflow data, for the period from January 1, 2014, to July 31, 2020.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08067000",
+          "parameter_code": "00060",
+          "time": "2014-01-01/2020-07-31"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08067000",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2014-01-01",
+          "activityStartDateUpper": "2020-07-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved data by matching the timestamps of the discrete suspended-sediment samples with the concurrent instantaneous streamflow values. Filter out any missing values. Fit a base-10 logarithmic linear regression model to predict log10(SSC) from log10(streamflow). Calculate the coefficient of determination (R-squared) for this regression model.",
+    "expected": 0.79,
+    "unit": "dimensionless"
+  },
+  "phase_4": {
+    "user_prompt": "Using a suspended-sediment rating curve, estimate the total suspended-sediment load for the high-flow event that occurred from March 9, 2016, to April 10, 2016. Apply the regression equation (SSC = 0.339 * Q^0.606 * 1.09, which includes a bias correction factor) to the 15-minute continuous streamflow data to estimate continuous SSC. Calculate the total load in tons for the event by summing the 15-minute loads (where 15-min Load in tons = SSC [mg/L] * Streamflow [ft³/s] * 0.000028). Additionally, create a bar chart of the estimated daily total suspended-sediment load during this event and save it as 'liberty_sediment_load_event.png'.",
+    "expected": 65100.0,
+    "unit": "tons",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The daily suspended-sediment load during the March 9 to April 10, 2016 event shows a strong initial rise peaking in mid-March around 15,000 to 20,000 tons per day, followed by a gradual recession through the end of the event, accumulating a total load of approximately 65,100 tons.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "liberty_sediment_load_event.png",
+      "visual_description": "A bar chart or time series plot showing daily sediment load in tons per day from early March to early April 2016. The plot should display a clear peak in load around March 15-18 (exceeding 15,000 tons/day), followed by a steadily declining recession curve into April.",
+      "paper_figure_reference": "Figure 2.1"
+    }
+  }
+}

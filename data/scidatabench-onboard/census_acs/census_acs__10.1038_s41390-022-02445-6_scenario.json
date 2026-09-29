@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.1038/s41390-022-02445-6",
+  "research_question": "Is structural racism, measured by racial and income segregation (ICE scores), associated with adverse postnatal outcomes among Black preterm infants in California?",
+  "phase_1": {
+    "user_prompt": "We need to calculate the Index of Concentration at the Extremes (ICE) for race and income in California. The ICE metric compares extremes of privilege: non-Hispanic White households earning over $100,000 versus Black households earning less than $25,000, relative to the total number of households. What ACS detailed tables, geographic summary level, and state FIPS code are needed to pull this household income data by race for census tracts in California?",
+    "expected": {
+      "tables": [
+        "B19001",
+        "B19001B",
+        "B19001H"
+      ],
+      "geographies": [
+        "tract"
+      ],
+      "state_codes": [
+        "06"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the ACS 5-year estimates for 2017, please retrieve the full household income distributions for Total Households, Black or African American Alone householders, and White Alone (Not Hispanic) householders for all census tracts in California.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19001)",
+          "for": "tract:*",
+          "in": "state:06"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19001B)",
+          "for": "tract:*",
+          "in": "state:06"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19001H)",
+          "for": "tract:*",
+          "in": "state:06"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.28978/nesciences.646425",
+  "research_question": "What is the recent distribution of Porpita porpita (blue button) in Italian waters based on occurrence records from 2009 to 2019?",
+  "phase_1": {
+    "user_prompt": "I'm researching the distribution of the blue button hydrozoan in Italian coastal waters. I'm specifically interested in records from the decade between 2009 and 2019. Could you figure out what occurrence data is available on GBIF for this?",
+    "expected": {
+      "country_codes": [
+        "IT"
+      ],
+      "taxon_keys": [
+        "5185632"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve all the occurrence records for the blue button in Italy between 2009 and 2019 that we just identified. Note that the paper's analysis used the GBIF snapshot of 24 August 2019 (the baseline that predates subsequent GBIF additions); event-date filters alone will not exclude later bulk uploads with in-range event dates.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "IT",
+          "taxonKey": 5185632,
+          "year": "2009,2019"
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved records by filtering out any that do not have valid geographic coordinates. How many georeferenced records are available for this period? The paper reports 10 georeferenced GBIF records (Table 1) based on the 2019-08-24 snapshot.",
+    "expected": 10,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Now, generate a map to visualize these occurrences around the Italian coast and save it as `porpita_distribution_map.png`. Based on the spatial distribution, briefly describe where these records are located.",
+    "expected": 10,
+    "unit": "records",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The records of Porpita porpita in Italian waters during this period are relatively scarce (around 10 occurrences) but demonstrate a scattered distribution across multiple sea basins, including the Ionian, Ligurian, and Tyrrhenian seas.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "porpita_distribution_map.png",
+      "visual_description": "A map of Italy showing approximately 10 distinct occurrence points distributed along the coastlines, specifically located in the Ionian, Tyrrhenian, and Ligurian seas.",
+      "paper_figure_reference": "Figure 1 (GBIF records shown in blue)"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "source_doi": "10.1038/s41586-021-04162-2",
+  "research_question": "How does the metallicity of the newly discovered C-19 stream compare to the known metallicity distribution of Milky Way globular clusters?",
+  "phase_1": {
+    "user_prompt": "We are investigating the extremely metal-poor stellar stream C-19 and want to compare its metallicity to the rest of the Milky Way's globular clusters. To do that we need the metallicity distribution of all known globular clusters in the Galaxy. Please identify the standard VizieR catalog designation for the comprehensive compilation of Milky Way globular cluster parameters authored by Harris that contains this metallicity data.",
+    "expected": {
+      "catalogs": [
+        "VII/202"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the VizieR catalog designation you found for the Harris globular cluster compilation, retrieve the entire dataset. We need all records in the main table to extract the metallicity values and build the reference metallicity distribution for our comparative analysis.",
+    "expected": [
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_constraints",
+        "kwargs": {
+          "catalog": "VII/202/catalog",
+          "column_filters": {}
+        }
+      }
+    ]
+  }
+}

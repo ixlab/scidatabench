@@ -1,0 +1,39 @@
+{
+  "source_doi": "10.22491/2357-9730.97531",
+  "research_question": "How do the allele frequencies of key polymorphisms in the human alcohol dehydrogenase genes vary across major global populations?",
+  "phase_1": {
+    "user_prompt": "We are investigating the genetic basis of Alcohol Use Disorder (AUD) by looking at ethanol dehydrogenase isoenzymes in humans. Specifically, we want to evaluate two class I alcohol dehydrogenase genes known to contain well-studied single nucleotide polymorphisms (such as those resulting in Arg48His, Arg370Cys, Arg272Gln, and Ile350Val amino acid substitutions) that drastically alter ethanol catalytic rates. What are the Ensembl gene symbols for these two genes, and what is the standard Ensembl species name for the organism they belong to?",
+    "expected": {
+      "gene_symbols": [
+        "ADH1B",
+        "ADH1C"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the genes ADH1B and ADH1C in homo_sapiens, we need to gather their global population genetics data. Using Ensembl, retrieve the population allele frequencies for their four major variants: rs1229984, rs2066702, rs1693482, and rs698. We specifically need to extract the allele frequencies across the major continental populations (African, American, East Asian, European, and South Asian) as reported by large-scale genomic projects like 1000 Genomes.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "4:99304971-99321659",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "4:99336093-99382896",
+          "feature": "variation"
+        }
+      }
+    ]
+  }
+}

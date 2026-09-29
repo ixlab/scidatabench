@@ -1,0 +1,170 @@
+{
+  "source_doi": "10.1007/s11524-020-00476-0",
+  "research_question": "To what degree did emergency school meal distribution strategies provide equitable meal access, particularly in relation to high poverty, high minority, and youth populations, during the COVID-19 pandemic in large urban school districts?",
+  "phase_1": {
+    "user_prompt": "We want to study emergency school meal access during COVID-19 in four large urban school districts: Chicago Public Schools, Houston Independent School District, Los Angeles Unified School District, and New York City Department of Education. We need to collect demographic data from the 2014-2018 American Community Survey 5-year estimates at the census tract level. Specifically, we need to extract data that allows us to calculate: percent minority (all non-White, including Hispanic), percent poverty level (households with income in the past 12 months below poverty level divided by total households), and the total population of children ages 5-19. Can you identify the relevant ACS detailed tables, the geographic level, the 2-digit state FIPS codes, and the 5-digit county FIPS codes covering the primary counties for these school districts? (Note: New York City includes all five boroughs).",
+    "expected": {
+      "tables": [
+        "B01001",
+        "B03002",
+        "B17017"
+      ],
+      "geographies": [
+        "tract"
+      ],
+      "state_codes": [
+        "06",
+        "17",
+        "36",
+        "48"
+      ],
+      "county_codes": [
+        "06037",
+        "17031",
+        "36005",
+        "36047",
+        "36061",
+        "36081",
+        "36085",
+        "48201"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified detailed tables (B01001, B03002, B17017), retrieve the 2014-2018 ACS 5-year estimate data at the census tract level for the identified counties in Illinois (Cook), Texas (Harris), California (Los Angeles), and New York (Bronx, Kings, New York, Queens, Richmond).",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B01001)",
+          "for": "tract:*",
+          "in": "state:06 county:037"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:06 county:037"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B17017)",
+          "for": "tract:*",
+          "in": "state:06 county:037"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B01001)",
+          "for": "tract:*",
+          "in": "state:17 county:031"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:17 county:031"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B17017)",
+          "for": "tract:*",
+          "in": "state:17 county:031"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B01001)",
+          "for": "tract:*",
+          "in": "state:36 county:005,047,061,081,085"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:36 county:005,047,061,081,085"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B17017)",
+          "for": "tract:*",
+          "in": "state:36 county:005,047,061,081,085"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B01001)",
+          "for": "tract:*",
+          "in": "state:48 county:201"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:48 county:201"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B17017)",
+          "for": "tract:*",
+          "in": "state:48 county:201"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "source_doi": "10.1021/acsami.9b04933",
+  "research_question": "Which intercalating metal ions and target property were retrieved from the Materials Project to train machine learning models for predicting the voltage of electrode materials?",
+  "phase_1": {
+    "user_prompt": "We are training a model to predict intercalation voltages for battery electrode materials from the Materials Project insertion-electrode data. The working ions we want in the training set are lithium together with every multivalent intercalant the database covers, i.e. the divalent and trivalent ones; we are deliberately leaving the heavier alkali metals out, since we plan to reach those later by substituting into the lithium structures. Which working-ion element symbols does that give us, and what is the computed quantity in that dataset that we will be predicting?",
+    "expected": {
+      "elements": [
+        "Li",
+        "Mg",
+        "Ca",
+        "Al",
+        "Zn",
+        "Y"
+      ],
+      "properties": [
+        "average_voltage"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Materials Project, retrieve the dataset of intercalation-based electrode materials for the working ions we settled on: Li, Mg, Ca, Al, Zn, and Y. For each of these data instances, fetch the average voltage (the target variable) along with the structural descriptors we need: the crystal lattice type and the space group number.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/insertion_electrodes",
+        "kwargs": {
+          "working_ion": "Li",
+          "_fields": "battery_id,working_ion,average_voltage,capacity_grav,energy_grav"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/insertion_electrodes",
+        "kwargs": {
+          "working_ion": "Mg",
+          "_fields": "battery_id,working_ion,average_voltage,capacity_grav,energy_grav"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/insertion_electrodes",
+        "kwargs": {
+          "working_ion": "Ca",
+          "_fields": "battery_id,working_ion,average_voltage,capacity_grav,energy_grav"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/insertion_electrodes",
+        "kwargs": {
+          "working_ion": "Al",
+          "_fields": "battery_id,working_ion,average_voltage,capacity_grav,energy_grav"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/insertion_electrodes",
+        "kwargs": {
+          "working_ion": "Zn",
+          "_fields": "battery_id,working_ion,average_voltage,capacity_grav,energy_grav"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/insertion_electrodes",
+        "kwargs": {
+          "working_ion": "Y",
+          "_fields": "battery_id,working_ion,average_voltage,capacity_grav,energy_grav"
+        }
+      }
+    ]
+  }
+}

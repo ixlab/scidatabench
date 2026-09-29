@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.1002/joc.5396",
+  "research_question": "What long-term instrumental precipitation records from NOAA GHCN can be used to validate historical documentary rainfall reconstructions for various regions in Malawi?",
+  "phase_1": {
+    "user_prompt": "I am analyzing historical rainfall variability in Malawi during the late nineteenth century and comparing documentary evidence against modern instrumental records. I need to find the NOAA GHCN station records to validate these observations. Based on my study sites, please identify the relevant weather parameter and the geographic locations (scopes) I need to query to locate the stations for Zomba Agricultural College, Blantyre, Monkey Bay, and Mzuzu.",
+    "expected": {
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the geographic locations (Zomba, Blantyre, Monkey Bay, Mzuzu) and the parameter to look for, please retrieve the historical daily precipitation records for these corresponding stations from 1892 to 2000 using the NOAA GHCN data service.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "MI000067693",
+          "startDate": "1892-01-01",
+          "endDate": "2000-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -15.3863,
+          35.3268
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "MI000067693",
+          "startDate": "1892-01-01",
+          "endDate": "2000-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -15.7863,
+          35.0036
+        ]
+      }
+    ]
+  }
+}

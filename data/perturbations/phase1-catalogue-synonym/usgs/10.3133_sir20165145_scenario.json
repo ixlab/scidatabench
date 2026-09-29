@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.3133/sir20165145",
+  "research_question": "What is the power-law relationship between instantaneous streamflow and suspended-sediment concentration (the sediment-transport curve) at Van Bremer Arroyo near Model, CO, during Water Year 2014?",
+  "phase_1": {
+    "user_prompt": "I'm investigating sediment transport in the Lower Arkansas River Basin in southeastern Colorado. Specifically, I want to look at the streamgage 'Van Bremer Arroyo near Model, CO'. Can you find the USGS site number for this location? I also need the standard USGS 5-digit parameter codes for volumetric flow and suspended sediment concentration.",
+    "expected": {
+      "sites": [
+        "07126200"
+      ],
+      "parameter_codes": [
+        "00060",
+        "80154"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Great, now retrieve the continuous (15-minute) streamflow data and the discrete suspended sediment concentration samples for this site for Water Year 2014 (October 1, 2013 to September 30, 2014).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07126200",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07126200",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2013-10-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Since suspended sediment is collected as discrete samples, pair each sediment concentration measurement with the streamflow measured at the closest available timestamp from the 15-minute discharge record. Filter to valid paired observations for Water Year 2014. How many paired samples are there?",
+    "expected": 34.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Using these paired samples, develop a sediment-transport curve. This is typically done by fitting a power-law regression model (SSC = a * Q^b) relating suspended-sediment concentration (the dependent variable) to streamflow (the independent variable). What is the coefficient of determination (R-squared) for this relationship? Also, create a scatter plot on log-log axes showing the data points and the fitted regression line, and save it as `sediment_transport_curve.png`.",
+    "expected": 0.91,
+    "unit": "R-squared",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The sediment-transport curve for Van Bremer Arroyo during Water Year 2014 shows a strong streamflow-dependent relationship with suspended-sediment concentration. The relationship follows a power-law function with an R-squared of approximately 0.91, indicating that streamflow explains the vast majority of the variance in suspended sediment concentration.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "sediment_transport_curve.png",
+      "visual_description": "A scatter plot on log-log axes (or log10-transformed data on linear axes) showing streamflow on the x-axis and suspended-sediment concentration on the y-axis. The plot should display roughly 34 data points with a positively sloped linear regression line overlaid, representing the power-law relationship between the two variables.",
+      "paper_figure_reference": "Figure 6 Panel B"
+    }
+  }
+}

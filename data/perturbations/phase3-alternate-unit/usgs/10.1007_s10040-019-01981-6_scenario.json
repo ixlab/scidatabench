@@ -1,0 +1,89 @@
+{
+  "source_doi": "10.1007/s10040-019-01981-6",
+  "research_question": "How has the baseflow contribution to streamflow (Base Flow Index) changed over time at major rivers in the Mississippi Delta, and what are the long-term trends in groundwater-surface water interactions?",
+  "phase_1": {
+    "user_prompt": "I am conducting a regional hydrological study on surface water and groundwater interactions in the Mississippi Delta. I need to locate the USGS streamgages for five specific locations: the Tallahatchie River at Money, MS; the Big Sunflower River at Merigold, MS; the Big Sunflower River at Sunflower, MS; the Big Sunflower River near Anguilla, MS; and the Bogue Phalia River near Leland, MS. Can you find the official site numbers for these gages?",
+    "expected": {
+      "sites": [
+        "07281600",
+        "07288280",
+        "07288500",
+        "07288650",
+        "07288700"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the five streamgage site numbers, please download the daily mean streamflow data for all of them. Retrieve the full period of record available for each site up through December 31, 2017.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07281600",
+          "parameter_code": "00060",
+          "statistic_id": "00003",
+          "time": "1880-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07288280",
+          "parameter_code": "00060",
+          "statistic_id": "00003",
+          "time": "1880-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07288500",
+          "parameter_code": "00060",
+          "statistic_id": "00003",
+          "time": "1880-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07288650",
+          "parameter_code": "00060",
+          "statistic_id": "00003",
+          "time": "1880-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07288700",
+          "parameter_code": "00060",
+          "statistic_id": "00003",
+          "time": "1880-01-01/2017-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's focus our initial processing on the Big Sunflower River at Sunflower, MS. Before running complex baseflow separation algorithms, we need to ensure the data is complete and correctly subset. Filter the streamflow data for this site to the period from January 1, 1980 to December 31, 2016. Calculate the overall average daily streamflow (in cubic meters per second (m³/s)) over this exact period.",
+    "expected": 30.7753256549,
+    "unit": "m3/s"
+  },
+  "phase_4": {
+    "user_prompt": "Next, apply a standard hydrograph separation technique (such as the Base Flow Index Standard method or similar automated algorithms) to the daily streamflow record of the Big Sunflower River at Sunflower, MS. Calculate the mean annual Base Flow Index (BFI)—the ratio of baseflow to total streamflow—for the period 1980 to 2016. What is the calculated mean annual BFI for this period? Additionally, plot a hydrograph showing total streamflow and estimated baseflow on a logarithmic scale for a representative period, and save it as `hydrograph_baseflow_separation.png`. Based on a comparison of this period to earlier decades, what do your findings suggest about the long-term trend in groundwater contribution to this river?",
+    "expected": 0.418,
+    "unit": "ratio (dimensionless)",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The baseflow contribution to streamflow (BFI) decreased significantly over time at the Big Sunflower River site, dropping in the 1980-2016 period compared to earlier decades. This decrease corresponds with substantial groundwater-level declines and increased groundwater withdrawals for agricultural irrigation in the alluvial aquifer underlying the Mississippi Delta.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "hydrograph_baseflow_separation.png",
+      "visual_description": "A time series plot (hydrograph) displaying both the total daily streamflow and the estimated baseflow component. The y-axis should ideally be on a logarithmic scale, showing streamflow peaks as surface runoff and the lower continuous baseflow line tracking beneath the peaks.",
+      "paper_figure_reference": "Figure 3 (for the hydrograph visualization style) and Figure 8a (for baseflow trends)"
+    }
+  }
+}

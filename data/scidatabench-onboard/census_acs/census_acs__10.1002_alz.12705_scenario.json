@@ -1,0 +1,40 @@
+{
+  "source_doi": "10.1002/alz.12705",
+  "research_question": "How does neighborhood racial/ethnic segregation and socioeconomic status affect cognitive change among diverse older adults?",
+  "phase_1": {
+    "user_prompt": "We are constructing neighborhood socioeconomic status (SES) metrics for the Multi-Ethnic Study of Atherosclerosis (MESA) cohort, deriving neighborhood context from 2007-2011 US Census American Community Survey data. To set up the query, I need to discover the geographic summary level to use, the 2-digit state FIPS codes corresponding to the six MESA enrollment sites (Forsyth County, NC; New York, NY; Baltimore, MD; St. Paul, MN; Chicago, IL; Los Angeles, CA), and the primary ACS Detailed Table IDs (the ones starting with 'B') for two of the main variables: 'Median Household Income' and 'Median Home Value'.",
+    "expected": {
+      "geographies": [
+        "tract"
+      ],
+      "state_codes": [
+        "06",
+        "17",
+        "24",
+        "27",
+        "36",
+        "37"
+      ],
+      "tables": [
+        "B19013",
+        "B25077"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the necessary identifiers, please retrieve the 2007-2011 ACS 5-year estimates for Median Household Income (variable B19013_001E) and Median Home Value (variable B25077_001E). Fetch this data for all census tracts within the identified MESA states (FIPS 06, 17, 24, 27, 36, and 37).",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2011,
+          "dataset": "acs/acs5",
+          "get": "NAME,B19013_001E,B25077_001E",
+          "for": "tract:*",
+          "in": "state:06,17,24,27,36,37"
+        }
+      }
+    ]
+  }
+}

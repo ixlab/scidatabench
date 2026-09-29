@@ -1,0 +1,27 @@
+{
+  "source_doi": "10.1007/s00227-023-04355-5",
+  "research_question": "How are the occurrences of the crown-of-thorns seastar (CoTS) genus distributed globally according to OBIS records?",
+  "phase_1": {
+    "user_prompt": "I'm looking into the spatial distribution of crown-of-thorns seastars (CoTS) globally to understand the biogeography of the species complex. I need to get all occurrence records for this genus from the Ocean Biodiversity Information System (OBIS). Can you identify the scientific name and the WoRMS AphiaID for this genus?",
+    "expected": {
+      "scientific_names": [
+        "Acanthaster"
+      ],
+      "aphia_ids": [
+        "206734"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the scientific name (Acanthaster) and its AphiaID (206734) for the crown-of-thorns seastar genus, please retrieve all available occurrence records for this genus globally from OBIS.",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Acanthaster"
+        }
+      }
+    ]
+  }
+}

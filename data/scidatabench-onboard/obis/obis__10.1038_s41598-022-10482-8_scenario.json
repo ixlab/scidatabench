@@ -1,0 +1,38 @@
+{
+  "source_doi": "10.1038/s41598-022-10482-8",
+  "research_question": "How well do species distribution models predict the occurrence of giant manta rays in the western North Atlantic when validated against independent citizen science and open-access data sources like OBIS?",
+  "phase_1": {
+    "user_prompt": "We are running an ecological niche model for the giant manta ray in the marine waters off the eastern United States, including the Gulf of Mexico. To independently validate the models, we need open-access presence records for this species. Please determine the correct accepted scientific name and its major historical synonym needed to capture older records in biodiversity databases, as well as the named marine regions that define the spatial scope of our study.",
+    "expected": {
+      "scientific_names": [
+        "Mobula birostris",
+        "Manta birostris"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified taxonomic names for the giant manta ray, retrieve all occurrence records from OBIS that fall within the study's general geographic region (the eastern United States and the Gulf of Mexico, roughly spanning latitudes 17°N to 44°N). Restrict the search to occurrences recorded between the years 1925 and 2020, which matches the study's aggregated independent validation datasets.",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Mobula birostris",
+          "geometry": "POLYGON((-100 17, -60 17, -60 44, -100 44, -100 17))",
+          "startdate": "1925-01-01",
+          "enddate": "2020-12-31"
+        }
+      },
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Manta birostris",
+          "geometry": "POLYGON((-100 17, -60 17, -60 44, -100 44, -100 17))",
+          "startdate": "1925-01-01",
+          "enddate": "2020-12-31"
+        }
+      }
+    ]
+  }
+}

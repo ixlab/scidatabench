@@ -1,0 +1,67 @@
+{
+  "source_doi": "10.3133/sir20205003",
+  "research_question": "Extending seasonal daily mean discharge records for the North Fork and Middle Fork Fortymile Rivers using a main-stem index streamgage and evaluating optimal temporal alignment.",
+  "phase_1": {
+    "user_prompt": "I'm studying the Fortymile River basin in Alaska and want to extend seasonal streamflow records for two tributaries: the North Fork Fortymile River and the Middle Fork Fortymile River. I plan to use the main-stem Fortymile River near Steele Creek as an index station. Could you find the USGS site numbers for these three streamgages and identify the parameter code for daily mean discharge?",
+    "expected": {
+      "sites": [
+        "15330000",
+        "15331000",
+        "15348000"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers (15330000, 15331000, 15348000), please retrieve the daily mean discharge data for these three sites. We need the data covering the 2019 open-water season (specifically, from May 1 to October 31, 2019) so we can establish concurrent records.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-15330000",
+          "parameter_code": "00060",
+          "time": "2019-05-01/2019-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-15331000",
+          "parameter_code": "00060",
+          "time": "2019-05-01/2019-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-15348000",
+          "parameter_code": "00060",
+          "time": "2019-05-01/2019-10-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To evaluate if the main-stem Fortymile River is a good index station for the Middle Fork, filter the data to the concurrent study season of May 20 through September 30, 2019. Transform the daily mean discharges using a base-10 logarithm. Then, calculate the Pearson correlation coefficient (r) between the log-transformed discharges of the Middle Fork and the main-stem index station.",
+    "expected": 0.926,
+    "unit": null
+  },
+  "phase_4": {
+    "user_prompt": "Now let's look at the North Fork. Because of travel times, discharge patterns arrive at the North Fork earlier than at the downstream main-stem index station. To account for this, offset the index station's data by 1 day earlier (so the index discharge on May 21 is aligned with the North Fork's discharge on May 20). For the last day of the season (Sept 30), use the index station's value from Oct 1. After aligning the dates and applying a base-10 logarithm transformation to the data for the May 20–September 30, 2019 season, calculate the Pearson correlation coefficient between the North Fork and the offset index station.",
+    "expected": 0.809,
+    "unit": null,
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

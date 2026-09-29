@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.3389/fmars.2021.802276",
+  "research_question": "Predicting year-round habitat suitability of four migratory baleen whale species in the Southern Ocean using dynamic species distribution models based on multi-source sighting data.",
+  "phase_1": {
+    "user_prompt": "We are fitting dynamic habitat-suitability models for baleen whales in the Southern Ocean and want to fold in the visual whale-sighting records collected from RV Polarstern and archived in PANGAEA. We need the sightings from four expedition legs specifically: ANT-XXIII/6, ANT-XXIII/7, ANT-XXVIII/4 and ANT-XXIX/2. Find the PANGAEA dataset that holds the whale sightings for each of those legs and give me the four dataset DOIs.",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.729034",
+        "10.1594/PANGAEA.729035",
+        "10.1594/PANGAEA.819863",
+        "10.1594/PANGAEA.819866"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the DOIs for the RV Polarstern whale sightings (10.1594/PANGAEA.729034, 10.1594/PANGAEA.729035, 10.1594/PANGAEA.819863, and 10.1594/PANGAEA.819866), please retrieve the tabular data for these datasets so we can merge them into our larger species sighting database for the habitat suitability models.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.729034"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.729035"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.819863"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.819866"
+        }
+      }
+    ]
+  }
+}

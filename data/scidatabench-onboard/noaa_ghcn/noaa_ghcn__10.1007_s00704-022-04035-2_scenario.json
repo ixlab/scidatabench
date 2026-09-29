@@ -1,0 +1,33 @@
+{
+  "source_doi": "10.1007/s00704-022-04035-2",
+  "research_question": "Characterize observed daily precipitation and its extremes in the Lake Champlain Basin using NOAA GHCND data from 1976-2005 to establish a baseline for evaluating climate model bias-correction methods.",
+  "phase_1": {
+    "user_prompt": "We are bias-correcting downscaled climate model extremes over the Lake Champlain Basin using a hybrid empirical quantile-mapping method (EQM-LIN), and need a reference observational baseline of daily rainfall from climate station data for 1976-2005. What specific weather variable should we analyze and what is the target geographic region we should query?",
+    "expected": {
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the NOAA GHCND platform, retrieve the historical daily precipitation (PRCP) data for stations located within the Lake Champlain Basin (which spans parts of Vermont, New Hampshire, New York, and Quebec) for the period from January 1, 1976 to December 31, 2005. Please filter the results to retain only those stations that have at least 70% data completeness over this 30-year period.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014742",
+          "startDate": "1976-01-01",
+          "endDate": "2005-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          44.5,
+          -73.3
+        ]
+      }
+    ]
+  }
+}

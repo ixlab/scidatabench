@@ -1,0 +1,40 @@
+{
+  "source_doi": "10.3389/fmars.2020.00241",
+  "research_question": "How did environmental variables (bottom pressure, current velocity, and seabed temperature) change prior to and following the mud eruption at the Håkon Mosby mud volcano during the 2009 LOOME observatory deployment?",
+  "phase_1": {
+    "user_prompt": "I am investigating the environmental dynamics at the Håkon Mosby mud volcano (HMMV) captured by the LOOME observatory. I am looking for the PANGAEA dataset DOIs corresponding to the 2009 deployments for bottom pressure (published by Blandin), current velocity (by Wenzhöfer), and seabed temperature (by Feseker). Could you find these identifiers for me?",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.757577",
+        "10.1594/PANGAEA.757573",
+        "10.1594/PANGAEA.757662"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the PANGAEA DOIs 10.1594/PANGAEA.757577 (pressure), 10.1594/PANGAEA.757573 (current velocity), and 10.1594/PANGAEA.757662 (temperature), please retrieve the corresponding tabular datasets. Once downloaded, filter the records for each dataset to only include the period between July 25, 2009, and December 12, 2009.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.757577"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.757573"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.757662"
+        }
+      }
+    ]
+  }
+}

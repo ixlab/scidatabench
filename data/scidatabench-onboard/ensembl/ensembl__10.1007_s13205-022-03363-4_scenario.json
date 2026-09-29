@@ -1,0 +1,39 @@
+{
+  "source_doi": "10.1007/s13205-022-03363-4",
+  "research_question": "Retrieve single nucleotide polymorphism (SNP) data for specific 2-deoxy-d-glucose (2-DG) interacting genes identified as harboring consensus 'lethal' missense variants in a COVID-19 pharmacogenomics study.",
+  "phase_1": {
+    "user_prompt": "We are studying how genetic variation might change a patient's response to 2-deoxy-d-glucose as a COVID-19 therapy. Our in-silico screen over the drug's interacting genes flagged three amino-acid-changing variants as damaging in every predictor we ran: rs201769751, rs778604418 and rs193238922. Give me the standardised gene symbols for the genes those three variants cause a missense change in, plus the target species, so we can pull the corresponding transcript and protein records.",
+    "expected": {
+      "gene_symbols": [
+        "A2M",
+        "PARP1"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the gene symbols and species you identified (A2M and PARP1 in humans), please retrieve all available variation features (such as SNPs) that overlap the genomic coordinates of these genes from the Ensembl database.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "12:9067664-9116229",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "1:226360210-226408154",
+          "feature": "variation"
+        }
+      }
+    ]
+  }
+}

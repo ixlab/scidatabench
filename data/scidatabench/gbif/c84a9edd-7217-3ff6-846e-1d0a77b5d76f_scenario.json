@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.47603/mano.v9n1.366",
+  "research_question": "What is the spatial distribution of the tufted capuchin monkey (Sapajus apella) across Colombian administrative departments based on historical occurrence data from 1944 to 2023?",
+  "phase_1": {
+    "user_prompt": "I am researching the distribution of the tufted capuchin monkey (Sapajus apella) in Colombia. I want to compile occurrence records for this species in the country covering the period from 1944 to 2023. What search parameters should I use to find this data on GBIF?",
+    "expected": {
+      "country_codes": [
+        "CO"
+      ],
+      "taxon_keys": [
+        "7477334"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the search parameters we identified, please retrieve the occurrence records for Sapajus apella in Colombia from 1944 to 2023.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "CO",
+          "taxonKey": 7477334,
+          "year": "1944,2023"
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Now I need to clean the retrieved occurrence data. Please filter the dataset to retain only records that have valid geographic coordinates. Then, remove any records that have exactly duplicated coordinates (keep only one record per unique geographic location). How many records remain after this cleaning step?",
+    "expected": 637,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "I want to understand the spatial distribution of this species across Colombia's administrative regions. Please perform a spatial analysis using the cleaned occurrence data to determine how many unique Colombian departments (first-level administrative divisions) contain at least one record. Additionally, create a map showing the departmental boundaries of Colombia with the occurrence points overlaid. Save the map as `sapajus_apella_distribution_map.png`.",
+    "expected": 14,
+    "unit": "departments",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The spatial analysis should reveal that Sapajus apella is distributed across roughly 14 departments in Colombia, with occurrences concentrated in the eastern and southern parts of the country, including the Amazonian, Orinoquian, and eastern Andean regions.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "sapajus_apella_distribution_map.png",
+      "visual_description": "A map of Colombia displaying administrative level 1 boundaries (departments). Points representing Sapajus apella occurrences should be overlaid, concentrated primarily in the eastern half and southern parts of the country (e.g., Amazonas, Caquetá, Meta, Guaviare, Casanare, Boyacá).",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

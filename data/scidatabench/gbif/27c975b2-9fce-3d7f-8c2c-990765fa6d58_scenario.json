@@ -1,0 +1,47 @@
+{
+  "source_doi": "10.22201/fc.25942158e.2024.4.1075",
+  "research_question": "What is the known geographic distribution of the salamander Oedipina elongata based on museum specimens, and how do new field observations in northern Guatemala extend this known range?",
+  "phase_1": {
+    "user_prompt": "I am studying the historical geographic distribution of the Central American salamander Oedipina elongata. I want to build a baseline map using confirmed museum and university collection records from GBIF, as these are the most reliable. What search parameters should I use to query this specific type of data with valid spatial coordinates?",
+    "expected": {
+      "taxon_keys": [
+        "2431640"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using those parameters, retrieve all available occurrence records for this species. Download the data and load it into a working environment.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 2431640
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the downloaded dataset by ensuring all records have valid latitude and longitude values and removing any empty or explicitly invalid spatial records. How many historical preserved specimen records are available for this species after cleaning?",
+    "expected": 30,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "I recently made three new field observations of Oedipina elongata in northern Guatemala:\n1. Poptún (16.42625° N, -89.23486° W)\n2. San Luis (16.16578° N, -89.72504° W)\n3. Cobán (15.94266° N, -90.65800° W)\n\nFirst, calculate the minimum geographic distance (in kilometers) from the new San Luis observation to the nearest historical GBIF record to determine the magnitude of this range extension. Second, create a spatial map showing the historical GBIF records and these three new sites (use distinct markers, like red stars, for the new sites). Save it as `oedipina_distribution_map.png`.",
+    "expected": 79.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The new records extend the known distribution of Oedipina elongata into northern Guatemala. The visual map should show the historical records scattered across southern Mexico, Belize, Honduras, and eastern/southern Guatemala, while the new sites fill a spatial gap in the Petén and Alta Verapaz departments, representing range extensions of approximately 37 to 79 km from previously known populations.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "oedipina_distribution_map.png",
+      "visual_description": "A geographic map of northern Central America (Mexico, Guatemala, Belize, Honduras) showing historical GBIF records as points and the three new occurrences as distinct markers (e.g., red stars). The new markers should be clearly visible in the northern/central region of Guatemala (Petén and Alta Verapaz).",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "source_doi": "10.5194/bg-23-2179-2026",
+  "research_question": "How can we improve estimates of particulate organic matter (POM) flux from in-situ optics using paired UVP particle size distribution and CTD physical oceanography data?",
+  "phase_1": {
+    "user_prompt": "We are estimating particulate organic matter flux using data from the RV METEOR cruise M160 (November-December 2019) near the Cape Verde archipelago. Could you find the PANGAEA dataset identifiers for the Underwater Vision Profiler 5 (UVP5) particle data and the corresponding CTD physical oceanography measurements (temperature and oxygen) collected during this cruise?",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.924375",
+        "10.1594/PANGAEA.943432"
+      ],
+      "parameters": [
+        "particle concentration",
+        "water temperature",
+        "oxygen concentration"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the dataset identifiers (10.1594/PANGAEA.924375 for the UVP5 data and 10.1594/PANGAEA.943432 for the CTD data), please retrieve the tabular data records so we can access the particle concentrations, water temperature, and oxygen profiles.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.924375"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.943432"
+        }
+      }
+    ]
+  }
+}

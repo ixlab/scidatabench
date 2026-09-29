@@ -1,0 +1,241 @@
+{
+  "source_doi": "10.1140/epjds/s13688-022-00341-x",
+  "research_question": "How do socioeconomic attributes (specifically per capita income) and residential segregation (based on racial/ethnic composition) affect urban mobility mixing patterns across neighborhoods in large U.S. metropolitan areas?",
+  "phase_1": {
+    "user_prompt": "We are assembling the socioeconomic and demographic baseline for a study on urban mobility mixing, using data for the year 2012. To assign a socioeconomic status to each neighborhood we use the average per capita income. For the residential segregation component we calculate isolation indices based on the population sizes of four mutually exclusive racial/ethnic groups: Non-Hispanic White, Non-Hispanic Black, Non-Hispanic Asian, and Hispanic.\n\nIdentify the specific ACS tables we would need to retrieve this information, and the geographic summary level at which this data must be queried to represent 'neighborhoods' as used in ACS-based mobility studies.",
+    "expected": {
+      "tables": [
+        "B19301",
+        "B03002"
+      ],
+      "geographies": [
+        "tract"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that you have identified the appropriate ACS tables and the geographic level, please write the code to retrieve this data. Fetch the 2012 ACS 5-year estimates for per capita income and Hispanic origin by race for all census tracts within the 20 largest U.S. metropolitan areas (by population). Note that because the Census API often requires state and county codes to query tracts, you may need to first determine the CBSAs for the 20 largest metros and map them to their constituent counties.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19301)",
+          "for": "tract:*",
+          "in": "state:36"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:36"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19301)",
+          "for": "tract:*",
+          "in": "state:06"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:06"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19301)",
+          "for": "tract:*",
+          "in": "state:17"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:17"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19301)",
+          "for": "tract:*",
+          "in": "state:48"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:48"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19301)",
+          "for": "tract:*",
+          "in": "state:42"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:42"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19301)",
+          "for": "tract:*",
+          "in": "state:12"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:12"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19301)",
+          "for": "tract:*",
+          "in": "state:13"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:13"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19301)",
+          "for": "tract:*",
+          "in": "state:25"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:25"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19301)",
+          "for": "tract:*",
+          "in": "state:26"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:26"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19301)",
+          "for": "tract:*",
+          "in": "state:53"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2012,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B03002)",
+          "for": "tract:*",
+          "in": "state:53"
+        }
+      }
+    ]
+  }
+}

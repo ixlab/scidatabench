@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.1093/mnras/stz2803",
+  "research_question": "Which specific VizieR catalogs were used as primary inputs to compile the Mid-infrared stellar Diameters and Fluxes compilation Catalogue (MDFC), and how can we retrieve the foundational angular diameter and infrared photometry data for a specific exemplar star (72 Leo)?",
+  "phase_1": {
+    "user_prompt": "We are assembling the foundational data compilation for a Mid-infrared stellar Diameters and Fluxes catalogue (MDFC). Please identify the exact VizieR catalog designations we need as primary inputs: the JMMC Stellar Diameters Catalogue version 2, the JMMC Measured Stellar Diameters Catalogue, Gaia DR2, the Gaia DR2 distances of Bailer-Jones, the 2MASS All-Sky Catalogue of Point Sources, and the AllWISE Data Release.",
+    "expected": {
+      "catalogs": [
+        "II/346/jsdc_v2",
+        "II/345/jmdc",
+        "I/345/gaia2",
+        "I/347/gaia2dis",
+        "II/246/out",
+        "II/328/allwise"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the catalogs you just identified, let's retrieve the data for the M3II star '72 Leo', which we are using as our worked example for flux merging. Query the JSDC v2, 2MASS, and AllWISE catalogs to retrieve the available angular diameter estimates and infrared magnitudes for 72 Leo.",
+    "expected": [
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_region",
+        "kwargs": {
+          "catalog": "II/346/jsdc_v2",
+          "center": "168.801 23.0955",
+          "radius_arcmin": 0.0833333333
+        }
+      },
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_region",
+        "kwargs": {
+          "catalog": "II/246/out",
+          "center": "168.801 23.0955",
+          "radius_arcmin": 0.0833333333
+        }
+      },
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_region",
+        "kwargs": {
+          "catalog": "II/328/allwise",
+          "center": "168.801 23.0955",
+          "radius_arcmin": 0.0833333333
+        }
+      }
+    ]
+  }
+}

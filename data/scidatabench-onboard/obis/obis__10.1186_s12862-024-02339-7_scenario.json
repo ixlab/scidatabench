@@ -1,0 +1,34 @@
+{
+  "source_doi": "10.1186/s12862-024-02339-7",
+  "research_question": "What are the effects of climate change on the habitat suitability and ecological vulnerability of Collichthys lucidus and Collichthys niveatus in the western Pacific?",
+  "phase_1": {
+    "user_prompt": "We are projecting how warming will reshape the habitat of the croakers in the genus Collichthys across the western Pacific, comparing the sibling pair against each other — that is, every species the genus currently holds as accepted. Give us the accepted scientific names we should pass to OBIS for those species so we can pull their occurrence records.",
+    "expected": {
+      "scientific_names": [
+        "Collichthys lucidus",
+        "Collichthys niveatus"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using OBIS, retrieve all occurrence records for Collichthys lucidus and Collichthys niveatus. Limit your query to our study area: the bounding box from 105°E to 135°E longitude and 15°N to 45°N latitude.",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Collichthys lucidus",
+          "geometry": "POLYGON((105 15, 135 15, 135 45, 105 45, 105 15))"
+        }
+      },
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Collichthys niveatus",
+          "geometry": "POLYGON((105 15, 135 15, 135 45, 105 45, 105 15))"
+        }
+      }
+    ]
+  }
+}
