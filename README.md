@@ -222,8 +222,9 @@ supplementary/ supplementary material for the paper
 ## License
 
 - **Code** (`harness/`, `grading/`, `executor/`, `scripts/`): [MIT](LICENSE).
-- **Benchmark data** (`data/`) **and platform guides** (`skills/`):
-  [CC BY 4.0](data/LICENSE). You are free to use, share and adapt them;
-  please cite SciDataBench when you do.
+- **Benchmark data** (`data/`), **platform guides** (`skills/`) **and
+  supplementary material** (`supplementary/`): [CC BY 4.0](data/LICENSE).
+  You are free to use, share and adapt them; please cite SciDataBench when
+  you do.
 - **Gold snapshots** are not covered by these licenses. They hold records
   from the data platforms, which remain under each provider's own terms.
