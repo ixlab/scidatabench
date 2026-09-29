@@ -212,6 +212,7 @@ harness/       the task agent: prompts, tools, runner
 grading/       graders for all four phases
 executor/      runs API calls for phase 2 and for the gold snapshot
 scripts/       the commands above
+supplementary/ supplementary material for the paper
 ```
 
 ## Citation
