@@ -3,14 +3,14 @@
 Supplementary material for the SciDataBench paper. Each section is one
 Markdown file and can be read on its own.
 
-| | Section | What it contains | Referenced from the paper |
-|---|---|---|---|
-| S1 | [Phase 1 Key Schema](S1_phase1_key_schema.md) | How Phase 1 is scored, and the identifier keys graded on each of the 15 platforms | Section 2.2, *Phase 1* |
-| S2 | [Phase 2 Result Equivalence](S2_phase2_result_equivalence.md) | Per-platform merge unit, record key and compared columns; USGS route folding; canonicalisation; verdicts | Section 2.2, *Phase 2*; Section 2.3 |
-| S3 | [Threshold Sensitivity](S3_threshold_sensitivity.md) | Pass rates and model ordering when each grading threshold is moved | Section 3.3, *Threshold sensitivity* |
-| S4 | [Cost and Pricing](S4_cost_and_pricing.md) | Per-model token prices and how cost is computed | Section 3.1, Figure 2, Table 5 |
-| S5 | [Per-Model Results](S5_per_model_results.md) | Pass rate, tool calls and tokens for each model, by phase and by platform | Section 3.2, Figure 2, Table 2 |
-| S6 | [Results Without USGS](S6_leave_usgs_out.md) | Model comparison on SciDataBench with USGS scenarios removed | — |
+| | Section | What it contains |
+|---|---|---|
+| S1 | [Phase 1 Key Schema](S1_phase1_key_schema.md) | How Phase 1 is scored, and the identifier keys graded on each of the 15 platforms |
+| S2 | [Phase 2 Result Equivalence](S2_phase2_result_equivalence.md) | Per-platform merge unit, record key and compared columns; USGS route folding; canonicalisation; verdicts |
+| S3 | [Threshold Sensitivity](S3_threshold_sensitivity.md) | Pass rates and model ordering when each grading threshold is moved |
+| S4 | [Cost and Pricing](S4_cost_and_pricing.md) | Per-model token prices and how cost is computed |
+| S5 | [Per-Model Results](S5_per_model_results.md) | Pass rate, tool calls and tokens for each model, by phase and by platform |
+| S6 | [Results Without USGS](S6_leave_usgs_out.md) | Model comparison on SciDataBench with USGS scenarios removed |
 
 ## Contents by subsection
 
