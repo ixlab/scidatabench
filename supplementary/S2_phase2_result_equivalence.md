@@ -1,4 +1,4 @@
-# S3. Phase 2 Result Equivalence
+# S2. Phase 2 Result Equivalence
 
 This section specifies how Phase 2 (API-call construction) is graded on the
 data the calls return (paper, Section 2.2, *Phase 2*): how each side's call
@@ -8,7 +8,7 @@ measurements become a verdict. Threshold symbols ($\epsilon_{\text{rec}}$,
 $\epsilon_{\text{val}}$, $\epsilon_{\text{tim}}$, $\Omega$, $\delta$) are those
 of the paper.
 
-## S3.1 Merge specification
+## S2.1 Merge specification
 
 For each scenario, the outputs of all calls on one side (gold or agent) are
 folded into a single table. A row is identified by
@@ -32,10 +32,10 @@ the record key.
 
 | Platform | Merge unit | Record key (candidates, in order) | Time column | Compared columns |
 |---|---|---|---|---|
-| USGS | Kind of observation the endpoint returns (S3.2) | 1. `Result_MeasureIdentifier`<br>2. `monitoring_location_id`, `parameter_code`, `statistic_id`, `time`<br>3. `monitoring_location_id`, `parameter_code`, `time`<br>4. `field_measurement_id`<br>5. `monitoring_location_id`, `time` | `time`, `Activity_StartDate` | `value`, `unit_of_measure`, `approval_status`, `Result_Measure`, `Result_MeasureUnit`, `Result_Characteristic`, `Result_MeasureQualifierCode` |
+| USGS | Kind of observation the endpoint returns (S2.2) | 1. `Result_MeasureIdentifier`<br>2. `monitoring_location_id`, `parameter_code`, `statistic_id`, `time`<br>3. `monitoring_location_id`, `parameter_code`, `time`<br>4. `field_measurement_id`<br>5. `monitoring_location_id`, `time` | `time`, `Activity_StartDate` | `value`, `unit_of_measure`, `approval_status`, `Result_Measure`, `Result_MeasureUnit`, `Result_Characteristic`, `Result_MeasureQualifierCode` |
 | EPA AQS | Scenario | 1. `state_code`, `county_code`, `site_number`, `parameter_code`, `poc`, `date_local`, `sample_duration_code`, `pollutant_standard`, `event_type`<br>2. `state_code`, `county_code`, `site_number`, `parameter_code`, `poc`, `date_local` | `date_local`, `date_gmt` | `arithmetic_mean`, `first_max_value`, `first_max_hour`, `aqi`, `observation_count`, `observation_percent`, `units_of_measure`, `sample_measurement` |
 | GBIF | Scenario | 1. `gbifID`<br>2. `key` | `eventDate`, `year` | `scientificName`, `taxonKey`, `speciesKey`, `acceptedTaxonKey`, `decimalLatitude`, `decimalLongitude`, `countryCode`, `stateProvince`, `eventDate`, `year`, `month`, `day`, `basisOfRecord`, `occurrenceStatus`, `datasetKey`, `kingdom`, `phylum`, `class`, `order`, `family`, `genus`, `species`, `taxonRank`, `individualCount` |
-| NEON | Data table (S3.4) | 1. `uid`<br>2. `siteID`, `horizontalPosition`, `verticalPosition`, `startDateTime` | `collectDate`, `startDateTime`, `endDate`, `date` | All shared |
+| NEON | Data table (S2.4) | 1. `uid`<br>2. `siteID`, `horizontalPosition`, `verticalPosition`, `startDateTime` | `collectDate`, `startDateTime`, `endDate`, `date` | All shared |
 
 ### SciDataBench-Onboard
 
@@ -49,7 +49,7 @@ the record key.
 | Materials Project | Endpoint | 1. `material_id` (as returned)<br>2. `battery_id` | — | All shared |
 | NOAA GHCN | Scenario | `STATION`, `DATE` | `DATE` | `TMAX`, `TMIN`, `PRCP` |
 | OBIS | Scenario | `id` | `eventDate`, `date_year` | `decimalLatitude`, `decimalLongitude`, `eventDate`, `date_year`, `scientificName`, `aphiaID`, `depth`, `basisOfRecord`, `dataset_id` |
-| PANGAEA | Dataset DOI (`id` call argument) | None; compared on table statistics (S3.4) | — | — |
+| PANGAEA | Dataset DOI (`id` call argument) | None; compared on table statistics (S2.4) | — | — |
 | USGS Earthquake Catalog | Scenario | `event_id` | `time` | `latitude`, `longitude`, `depth_m`, `magnitude` |
 | VizieR | Catalogue table | 1. `PSRJ`<br>2. `CompId`<br>3. `RAJ2000`, `DEJ2000`<br>4. `recno` | — | All shared |
 
@@ -72,7 +72,7 @@ compared and never form part of a whole-row identity.
 | USGS Earthquake Catalog | `description`, `magnitude_type` |
 | VizieR | `recno` |
 
-## S3.2 Route folding (USGS)
+## S2.2 Route folding (USGS)
 
 USGS serves the same observations through two API generations, the legacy
 NWIS services and the Water Data OGC APIs, and `dataretrieval` exposes both.
@@ -105,7 +105,7 @@ left unchanged.
 | Cell value | `value` (rows with no value are dropped) |
 | Approval code in `<column>_cd`: `A`, `P`, `e` (first code if several) | `approval_status`: `Approved`, `Provisional`, `Estimated` |
 
-## S3.3 Canonicalisation
+## S2.3 Canonicalisation
 
 Every key cell and compared cell is canonicalised before comparison:
 
@@ -129,7 +129,7 @@ a DOI prefix (`doi:`, `https://doi.org/`, `http://doi.org/`,
 Time values are parsed as ISO 8601 with varying precision, falling back to
 mixed formats, and converted to UTC before bucketing.
 
-## S3.4 Platform-specific handling
+## S2.4 Platform-specific handling
 
 **NEON.** A data product is delivered as one archive per site and month, each
 holding several tables. Each file is assigned to its table from the file
@@ -159,7 +159,7 @@ of agent DOIs divided by the number of gold DOIs. A gold DOI that the agent
 did not retrieve scores 0 on both. A gold DOI whose table is empty is not
 scored.
 
-## S3.5 Verdicts
+## S2.5 Verdicts
 
 A scenario receives exactly one verdict, checked in this order:
 

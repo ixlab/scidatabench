@@ -20,6 +20,10 @@ There are two scenario sets:
   American Community Survey, CMIP6, Ensembl, iNaturalist, Materials Project,
   NOAA GHCN, OBIS, PANGAEA, USGS Earthquake Catalog, VizieR), phases 1 and 2.
 
+The paper's supplementary material (grading specifications, threshold
+sensitivity, pricing and per-model results) is in
+[`supplementary/`](supplementary/README.md).
+
 ## Install
 
 Python 3.12:

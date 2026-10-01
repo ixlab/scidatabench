@@ -1,10 +1,10 @@
-# S2. Phase 1 Key Schema
+# S1. Phase 1 Key Schema
 
 This section specifies the per-platform key schema against which Phase 1
 (knowledge discovery) is graded (paper, Section 2.2, *Phase 1*). It covers
 the four platforms of SciDataBench and the eleven of SciDataBench-Onboard.
 
-## S2.1 Scoring rule
+## S1.1 Scoring rule
 
 A platform indexes its content with several kinds of identifier at once, so
 the agent's Phase 1 answer is a JSON object with one list per key, and the
@@ -44,7 +44,7 @@ Conventions:
   are significant (`00060` ≠ `60`). No other normalisation is applied.
   Order and duplicates are ignored, because both sides are compared as sets.
 
-## S2.2 What the agent is shown
+## S1.2 What the agent is shown
 
 The Phase 1 prompt ends with an output template that lists every key of the
 platform's prompted schema, each holding one placeholder that shows the
@@ -57,7 +57,7 @@ expected format. For example, for NEON:
 }
 ```
 
-## S2.3 Key schema per platform
+## S1.3 Key schema per platform
 
 *Scenarios* is the number of scenarios in the published set whose gold names
 at least one identifier under the key. *Per scenario* is the mean number of

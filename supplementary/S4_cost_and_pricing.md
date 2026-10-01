@@ -1,8 +1,8 @@
-# S5. Cost and Pricing
+# S4. Cost and Pricing
 
 The table gives the per-million-token list prices (USD) used for every cost
 figure in the paper (Figure 2 and Table 5). Prices were retrieved on
-2026-09-28.
+2026-09-15.
 
 | Model | Input | Cached input | Output | Source |
 |---|---:|---:|---:|---|

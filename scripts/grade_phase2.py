@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """Grade Phase 2 on the data its calls return (paper, Section 2.2;
-supplementary S3).
+supplementary S2).
 
 Compares two already-materialised sets of results:
 

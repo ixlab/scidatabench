@@ -1,4 +1,4 @@
-"""Per-platform merge and comparison rules for Phase 2 (supplementary S3).
+"""Per-platform merge and comparison rules for Phase 2 (supplementary S2).
 
 Three things have to be fixed per platform before results can be compared:
 

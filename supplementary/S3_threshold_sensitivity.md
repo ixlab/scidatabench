@@ -1,4 +1,4 @@
-# S4. Threshold Sensitivity
+# S3. Threshold Sensitivity
 
 Every phase turns a graded measurement into a verdict at a fixed cut (paper,
 Section 2.2). This section reports how the pass rates and the ordering of
@@ -29,7 +29,7 @@ has n = 245 scenarios. SciDataBench-Onboard has n = 210 and covers Phases 1
 and 2 only; its skills are written as author · acquisition method, as in
 Section 4 of the paper.
 
-## S4.1 Phase 1: pass threshold $\tau$
+## S3.1 Phase 1: pass threshold $\tau$
 
 ### SciDataBench
 
@@ -77,9 +77,9 @@ Reversals:
 | 0.60 | Gemini 3.7 Flash, G3 · exec | Gemini 3.7 Flash, cold start | 64.3 vs 62.9 | 38.1 vs 41.0 |
 | 0.70 | Gemini 3 Flash, G3 · exec | Gemini 3 Flash, G3 · search | 43.8 vs 41.9 | 25.7 vs 26.2 |
 
-## S4.2 Phase 2: pass criterion
+## S3.2 Phase 2: pass criterion
 
-Each setting changes the cuts of the pass criterion (S3.5) as follows. A
+Each setting changes the cuts of the pass criterion (S2.5) as follows. A
 dash means that the cut stays at its published value.
 
 | Setting | $\epsilon_{\text{rec}}$ | $\epsilon_{\text{val}}$ | $\epsilon_{\text{tim}}$ | $\Omega$ | Verdicts counted as pass |
@@ -137,7 +137,7 @@ Reversals:
 | strict | Gemini 3 Flash, G3.7 · search | Gemini 3.7 Flash, G3.7 · search | 59.0 vs 58.6 | 63.3 vs 64.3 |
 | strict | Gemini 3 Flash, G3.7 · search | Gemini 3.7 Flash, G3.7 · exec | 59.0 vs 58.6 | 63.3 vs 64.3 |
 
-## S4.3 Phases 3 and 4: relative tolerance $\delta$
+## S3.3 Phases 3 and 4: relative tolerance $\delta$
 
 ### Phase 3
 

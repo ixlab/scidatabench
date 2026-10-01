@@ -1,4 +1,4 @@
-# S1. Results Without USGS
+# S6. Results Without USGS
 
 USGS contributes 160 of the 245 scenarios in SciDataBench. This section
 repeats the overall comparison of the eight models after removing USGS,
@@ -6,7 +6,7 @@ leaving 85 scenarios (GBIF 51, NEON 23, EPA AQS 11).
 
 *Overall* is the unweighted mean of the four phase pass rates (%). Pass rates
 are computed as in the paper: a scenario with no record counts as a failure,
-and Phase 2 is graded by result equivalence (S3). Models are ordered by the
+and Phase 2 is graded by result equivalence (S2). Models are ordered by the
 overall pass rate on all four platforms.
 
 | Model | All 4 | No USGS | Δ | Rank (All 4 → No USGS) |

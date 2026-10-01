@@ -1,4 +1,4 @@
-# S6. Per-Model Results
+# S5. Per-Model Results
 
 The tables give the results of the eight models on SciDataBench by phase and
 by platform: pass rate, tool calls and tokens. They underlie Figure 2 and
@@ -6,11 +6,11 @@ Table 2 of the paper.
 
 - Every cell covers the published set of 245 scenarios (USGS 160, GBIF 51,
   NEON 23, EPA AQS 11), the same in every phase and for every model.
-- Phase 2 is graded by result equivalence (S3).
+- Phase 2 is graded by result equivalence (S2).
 - Each phase is run from the gold output of the phase before it (paper,
   Section 3.1).
 
-## S6.1 Pass rate (%)
+## S5.1 Pass rate (%)
 
 A scenario with no record counts as a failure. *Mean* is the unweighted mean
 over the four phases.
@@ -63,7 +63,7 @@ over the four phases.
 |  | NEON | 23 | 26.1 | 60.9 | 4.3 | 4.3 | 23.9 |
 |  | EPA AQS | 11 | 36.4 | 9.1 | 45.5 | 9.1 | 25.0 |
 
-## S6.2 Tool calls per scenario
+## S5.2 Tool calls per scenario
 
 The number of `run_python` and `run_bash` invocations, averaged over the
 scenarios for which a record exists. In Phase 2, the count covers the tool
@@ -118,7 +118,7 @@ the grader and are not counted.
 |  | NEON | 11.4 | 5.5 | 12.2 | 10.1 |
 |  | EPA AQS | 13.8 | 10.4 | 6.5 | 4.5 |
 
-## S6.3 Tokens per scenario (thousands)
+## S5.3 Tokens per scenario (thousands)
 
 Input plus output tokens, averaged over the scenarios for which a record
 exists. This is the token use reported in Table 2 of the paper.
@@ -171,9 +171,9 @@ exists. This is the token use reported in Table 2 of the paper.
 |  | NEON | 54.8 | 20.9 | 154.8 | 164.2 |
 |  | EPA AQS | 77.0 | 36.7 | 89.9 | 44.7 |
 
-## S6.4 Token breakdown per scenario (thousands)
+## S5.4 Token breakdown per scenario (thousands)
 
-The same averages, split into the three quantities that the cost of S5 is
+The same averages, split into the three quantities that the cost of S4 is
 computed from. Cached input is part of input. Output includes thinking
 tokens. No cached input is recorded for the open-weights models, which
 were served locally.
