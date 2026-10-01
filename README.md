@@ -29,7 +29,7 @@ sensitivity, pricing and per-model results) is in
 Python 3.12:
 
 ```bash
-git clone https://github.com/yoohj0416/scidatabench.git
+git clone https://github.com/ixlab/scidatabench.git
 cd scidatabench
 pip install -r requirements.txt
 ```
