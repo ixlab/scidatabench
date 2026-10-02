@@ -1,0 +1,379 @@
+{
+ "scenario_file": "census_acs__10.1140_epjds_s13688-022-00341-x_scenario.json",
+ "platform": "census_acs",
+ "downloaded_at": "2026-08-10T23:51:22.109354+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B19301)",
+    "for": "tract:*",
+    "in": "state:36"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:50:48.799035+00:00",
+   "rows": 4918,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 1,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:36"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:50:51.815603+00:00",
+   "rows": 4918,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 2,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B19301)",
+    "for": "tract:*",
+    "in": "state:06"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:50:53.427068+00:00",
+   "rows": 8057,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 3,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:06"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:50:58.603587+00:00",
+   "rows": 8057,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 4,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B19301)",
+    "for": "tract:*",
+    "in": "state:17"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:50:59.792770+00:00",
+   "rows": 3123,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 5,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:17"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:01.840244+00:00",
+   "rows": 3123,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 6,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B19301)",
+    "for": "tract:*",
+    "in": "state:48"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:03.111089+00:00",
+   "rows": 5265,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 7,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:48"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:06.406478+00:00",
+   "rows": 5265,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 8,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B19301)",
+    "for": "tract:*",
+    "in": "state:42"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:07.378451+00:00",
+   "rows": 3218,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 9,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:42"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:09.610578+00:00",
+   "rows": 3218,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 10,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B19301)",
+    "for": "tract:*",
+    "in": "state:12"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:10.609979+00:00",
+   "rows": 4245,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 11,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:12"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:13.103877+00:00",
+   "rows": 4245,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 12,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B19301)",
+    "for": "tract:*",
+    "in": "state:13"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:13.840023+00:00",
+   "rows": 1969,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 13,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:13"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:15.325276+00:00",
+   "rows": 1969,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 14,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B19301)",
+    "for": "tract:*",
+    "in": "state:25"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:16.007107+00:00",
+   "rows": 1478,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 15,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:25"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:17.276566+00:00",
+   "rows": 1478,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 16,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B19301)",
+    "for": "tract:*",
+    "in": "state:26"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:18.120652+00:00",
+   "rows": 2813,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 17,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:26"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:19.990335+00:00",
+   "rows": 2813,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 18,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B19301)",
+    "for": "tract:*",
+    "in": "state:53"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:20.689713+00:00",
+   "rows": 1458,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 19,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2012,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:53"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:51:22.109354+00:00",
+   "rows": 1458,
+   "format": "parquet",
+   "year": 2012,
+   "dataset": "acs/acs5"
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "scenario_file": "5b221aff-158f-32b8-ae9a-b89fd9da7f24_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T05:51:32.401193+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 5210857
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T05:51:32.401193+00:00",
+   "rows": 259,
+   "format": "gbif_simple_csv",
+   "download_key": "0007419-260423192947929",
+   "doi": "10.15468/dl.bgenwq",
+   "query": {
+    "type": "equals",
+    "key": "TAXON_KEY",
+    "value": "5210857"
+   }
+  }
+ ]
+}

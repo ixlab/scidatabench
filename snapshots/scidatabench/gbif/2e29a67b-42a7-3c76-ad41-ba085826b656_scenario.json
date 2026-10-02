@@ -1,0 +1,25 @@
+{
+ "scenario_file": "2e29a67b-42a7-3c76-ad41-ba085826b656_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-06-27T03:10:53.070524+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "hasCoordinate": true,
+    "taxonKey": 4648609,
+    "year": "1800,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-06-27T03:10:53.070524+00:00",
+   "rows": 300,
+   "format": "gbif_search_results",
+   "count_total": 454,
+   "endOfRecords": false,
+   "offset": 0,
+   "limit": 300
+  }
+ ]
+}

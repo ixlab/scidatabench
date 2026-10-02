@@ -1,0 +1,61 @@
+{
+ "scenario_file": "obis__10.1186_s41610-021-00206-w_scenario.json",
+ "platform": "obis",
+ "downloaded_at": "2026-08-09T04:40:28.042973+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Saccharina japonica",
+    "geometry": "POLYGON((124 33, 131 33, 131 39, 124 39, 124 33))"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:40:22.862401+00:00",
+   "rows": 398,
+   "format": "parquet",
+   "total_available": 398
+  },
+  {
+   "idx": 1,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Sargassum thunbergii",
+    "geometry": "POLYGON((124 33, 131 33, 131 39, 124 39, 124 33))"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:40:25.218066+00:00",
+   "rows": 1050,
+   "format": "parquet",
+   "total_available": 1050
+  },
+  {
+   "idx": 2,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Sargassum horneri",
+    "geometry": "POLYGON((124 33, 131 33, 131 39, 124 39, 124 33))"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:40:28.042973+00:00",
+   "rows": 937,
+   "format": "parquet",
+   "total_available": 937
+  }
+ ]
+}

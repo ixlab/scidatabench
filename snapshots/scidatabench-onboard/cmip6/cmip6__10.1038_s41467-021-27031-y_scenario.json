@@ -1,0 +1,53 @@
+{
+ "scenario_file": "cmip6__10.1038_s41467-021-27031-y_scenario.json",
+ "platform": "cmip6",
+ "downloaded_at": "2026-08-09T01:42:07.966168+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "intake_esgf",
+   "function": "ESGFCatalog.search",
+   "kwargs": {
+    "experiment_id": [
+     "historical",
+     "ssp585"
+    ],
+    "variable_id": [
+     "pr",
+     "prsn",
+     "tas",
+     "siconc",
+     "hus",
+     "va"
+    ],
+    "table_id": [
+     "Amon",
+     "SImon"
+    ],
+    "source_id": [
+     "CESM2"
+    ],
+    "variant_label": [
+     "r1i1p1f1"
+    ]
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:07.966168+00:00",
+   "rows": 6,
+   "format": "parquet",
+   "result_kind": "dataset_listing"
+  }
+ ]
+}

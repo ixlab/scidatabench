@@ -1,0 +1,46 @@
+{
+ "scenario_file": "10.3133_sir20085080_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-04-26T14:59:25+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-12334550",
+    "parameter_code": "80155",
+    "time": "2006-10-01/2007-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T14:59:24+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 1,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-12340000",
+    "parameter_code": "80155",
+    "time": "2006-10-01/2007-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T14:59:25+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 2,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-12340500",
+    "parameter_code": "80155",
+    "time": "2006-10-01/2007-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T14:59:25+00:00",
+   "rows": 365
+  }
+ ]
+}

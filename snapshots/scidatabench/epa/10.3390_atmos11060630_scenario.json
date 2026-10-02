@@ -1,0 +1,967 @@
+{
+ "scenario_file": "10.3390_atmos11060630_scenario.json",
+ "platform": "epa",
+ "downloaded_at": "2026-05-08T23:01:06.645308+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:55:53.076942+00:00",
+   "rows": 168
+  },
+  {
+   "idx": 1,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:55:58.475230+00:00",
+   "rows": 160
+  },
+  {
+   "idx": 2,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:56:03.861867+00:00",
+   "rows": 152
+  },
+  {
+   "idx": 3,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:56:09.178659+00:00",
+   "rows": 208
+  },
+  {
+   "idx": 4,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:56:14.405918+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 5,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:56:19.726608+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 6,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:56:25.122542+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 7,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:56:30.513251+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 8,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:56:36.084567+00:00",
+   "rows": 163
+  },
+  {
+   "idx": 9,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:56:41.461080+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 10,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:56:46.875525+00:00",
+   "rows": 152
+  },
+  {
+   "idx": 11,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0075"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:56:52.211725+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 12,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:56:57.478051+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 13,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:57:02.682087+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 14,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:57:07.891240+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 15,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:57:13.113105+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 16,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:57:18.352431+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 17,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:57:23.553568+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 18,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:57:28.738426+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 19,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:57:33.946062+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 20,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:57:39.343745+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 21,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:57:44.670360+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 22,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:57:49.986899+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 23,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "0021"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:57:55.310858+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 24,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:00.512427+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 25,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:05.732894+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 26,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:10.926337+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 27,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:16.115426+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 28,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:21.326353+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 29,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:26.520513+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 30,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:31.734232+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 31,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:36.970045+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 32,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:42.377699+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 33,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:47.826322+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 34,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:53.111609+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 35,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "47",
+    "countycode": "157",
+    "sitenum": "1004"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:58:58.438744+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 36,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:59:03.789793+00:00",
+   "rows": 120
+  },
+  {
+   "idx": 37,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:59:09.381397+00:00",
+   "rows": 980
+  },
+  {
+   "idx": 38,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:59:14.906457+00:00",
+   "rows": 779
+  },
+  {
+   "idx": 39,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:59:20.508774+00:00",
+   "rows": 763
+  },
+  {
+   "idx": 40,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:59:25.787957+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 41,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:59:31.003352+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 42,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:59:36.202533+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 43,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:59:41.403143+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 44,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:59:46.693680+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 45,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:59:52.040797+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 46,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T22:59:57.338557+00:00",
+   "rows": 155
+  },
+  {
+   "idx": 47,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "28",
+    "countycode": "033",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:00:02.632355+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 48,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:00:07.926424+00:00",
+   "rows": 112
+  },
+  {
+   "idx": 49,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:00:13.238183+00:00",
+   "rows": 104
+  },
+  {
+   "idx": 50,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:00:18.515769+00:00",
+   "rows": 112
+  },
+  {
+   "idx": 51,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:00:23.807137+00:00",
+   "rows": 112
+  },
+  {
+   "idx": 52,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:00:29.127976+00:00",
+   "rows": 82
+  },
+  {
+   "idx": 53,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:00:34.396717+00:00",
+   "rows": 82
+  },
+  {
+   "idx": 54,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:00:39.665775+00:00",
+   "rows": 82
+  },
+  {
+   "idx": 55,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "42602",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:00:44.949440+00:00",
+   "rows": 82
+  },
+  {
+   "idx": 56,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20170325",
+    "edate": "20170504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:00:50.310393+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 57,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20180325",
+    "edate": "20180504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:00:55.608875+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 58,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20190325",
+    "edate": "20190504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:01:01.167234+00:00",
+   "rows": 164
+  },
+  {
+   "idx": 59,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20200325",
+    "edate": "20200504",
+    "stateFIPS": "05",
+    "countycode": "035",
+    "sitenum": "0005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-08T23:01:06.645308+00:00",
+   "rows": 164
+  }
+ ]
+}

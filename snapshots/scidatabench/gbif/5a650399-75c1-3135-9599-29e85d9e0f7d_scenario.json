@@ -1,0 +1,28 @@
+{
+ "scenario_file": "5a650399-75c1-3135-9599-29e85d9e0f7d_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-25T00:03:05+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1544486,
+    "hasCoordinate": true,
+    "year": "*,2020"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:03:05+00:00",
+   "rows": 868,
+   "format": "gbif_simple_csv",
+   "download_key": "0004053-260423192947929",
+   "doi": "10.15468/dl.bp28kr",
+   "predicates": [
+    "taxonKey = 1544486",
+    "hasCoordinate = TRUE",
+    "year <= 2020"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "scenario_file": "5861f3e5-1da2-32f2-a6e1-529fd3374427_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-25T01:02:46+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 6530,
+    "country": [
+     "US",
+     "CA",
+     "MX"
+    ],
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T01:02:46+00:00",
+   "rows": 168,
+   "format": "gbif_simple_csv",
+   "download_key": "0004257-260423192947929",
+   "doi": "10.15468/dl.4uqj8t",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "6530"
+     },
+     {
+      "type": "in",
+      "key": "COUNTRY",
+      "values": [
+       "US",
+       "CA",
+       "MX"
+      ]
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  }
+ ]
+}

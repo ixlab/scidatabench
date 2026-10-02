@@ -1,0 +1,109 @@
+{
+ "scenario_file": "10.2991_icseee-16.2016.132_scenario.json",
+ "platform": "epa",
+ "downloaded_at": "2026-05-09T18:51:07.998240+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "countycode": "061",
+    "parameter": "88101",
+    "sitenum": "0040",
+    "stateFIPS": "39",
+    "bdate": "20090101",
+    "edate": "20131231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:50:57.161122+00:00",
+   "rows": 6048,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 1,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "countycode": "061",
+    "parameter": "88502",
+    "sitenum": "0040",
+    "stateFIPS": "39",
+    "bdate": "20090101",
+    "edate": "20131231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:51:00.207098+00:00",
+   "rows": 3016,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 2,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "countycode": "061",
+    "parameter": "88403",
+    "sitenum": "0040",
+    "stateFIPS": "39",
+    "bdate": "20090101",
+    "edate": "20131231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:51:02.168435+00:00",
+   "rows": 477,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 3,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "countycode": "061",
+    "parameter": "88306",
+    "sitenum": "0040",
+    "stateFIPS": "39",
+    "bdate": "20090101",
+    "edate": "20131231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:51:04.282680+00:00",
+   "rows": 477,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 4,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "countycode": "061",
+    "parameter": "88320",
+    "sitenum": "0040",
+    "stateFIPS": "39",
+    "bdate": "20090101",
+    "edate": "20131231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:51:06.257361+00:00",
+   "rows": 0,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 5,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "countycode": "061",
+    "parameter": "88321",
+    "sitenum": "0040",
+    "stateFIPS": "39",
+    "bdate": "20090101",
+    "edate": "20131231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:51:07.998240+00:00",
+   "rows": 0,
+   "via": "RAQSAPI (R)"
+  }
+ ]
+}

@@ -1,0 +1,691 @@
+{
+ "scenario_file": "cdeb1d5e-f3e8-398c-8daa-82f0d5c7432d_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T06:22:57+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 6157026,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:09:43+00:00",
+   "rows": 118,
+   "format": "gbif_simple_csv",
+   "download_key": "0007468-260423192947929",
+   "doi": "10.15468/dl.vq3r8y",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "6157026"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 1,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2350050,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:10:49+00:00",
+   "rows": 52,
+   "format": "gbif_simple_csv",
+   "download_key": "0007470-260423192947929",
+   "doi": "10.15468/dl.dmw54v",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2350050"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 2,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2367196,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:11:24+00:00",
+   "rows": 15,
+   "format": "gbif_simple_csv",
+   "download_key": "0007471-260423192947929",
+   "doi": "10.15468/dl.zfhfjd",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2367196"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 3,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2351784,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:12:30+00:00",
+   "rows": 193,
+   "format": "gbif_simple_csv",
+   "download_key": "0007475-260423192947929",
+   "doi": "10.15468/dl.87zhtv",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2351784"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 4,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 7572096,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:13:36+00:00",
+   "rows": 171,
+   "format": "gbif_simple_csv",
+   "download_key": "0007476-260423192947929",
+   "doi": "10.15468/dl.ansx36",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "7572096"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 5,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2479798,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:14:11+00:00",
+   "rows": 74,
+   "format": "gbif_simple_csv",
+   "download_key": "0007479-260423192947929",
+   "doi": "10.15468/dl.nqpdh8",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2479798"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 6,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2346754,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:15:17+00:00",
+   "rows": 1,
+   "format": "gbif_simple_csv",
+   "download_key": "0007481-260423192947929",
+   "doi": "10.15468/dl.3tswgj",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2346754"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 7,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2360401,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:15:52+00:00",
+   "rows": 1,
+   "format": "gbif_simple_csv",
+   "download_key": "0007483-260423192947929",
+   "doi": "10.15468/dl.xkh9ab",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2360401"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 8,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2394154,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:17:01+00:00",
+   "rows": 2,
+   "format": "gbif_simple_csv",
+   "download_key": "0007485-260423192947929",
+   "doi": "10.15468/dl.axtc7k",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2394154"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 9,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2479544,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:17:40+00:00",
+   "rows": 2,
+   "format": "gbif_simple_csv",
+   "download_key": "0007487-260423192947929",
+   "doi": "10.15468/dl.4uf2tq",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2479544"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 10,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2479553,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:18:46+00:00",
+   "rows": 0,
+   "format": "gbif_simple_csv",
+   "download_key": "0007490-260423192947929",
+   "doi": "10.15468/dl.554j4p",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2479553"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 11,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 9770031,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:18:46+00:00",
+   "rows": 5,
+   "format": "gbif_simple_csv",
+   "download_key": "0007491-260423192947929",
+   "doi": "10.15468/dl.euk8xq",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "9770031"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 12,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2479158,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:19:25+00:00",
+   "rows": 2,
+   "format": "gbif_simple_csv",
+   "download_key": "0007493-260423192947929",
+   "doi": "10.15468/dl.28hpe6",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2479158"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 13,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 4845776,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:20:32+00:00",
+   "rows": 9,
+   "format": "gbif_simple_csv",
+   "download_key": "0007495-260423192947929",
+   "doi": "10.15468/dl.j9utbg",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "4845776"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 14,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2436940,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:20:33+00:00",
+   "rows": 4,
+   "format": "gbif_simple_csv",
+   "download_key": "0007496-260423192947929",
+   "doi": "10.15468/dl.sgyxar",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2436940"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 15,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 5212838,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:21:11+00:00",
+   "rows": 2,
+   "format": "gbif_simple_csv",
+   "download_key": "0007499-260423192947929",
+   "doi": "10.15468/dl.4qgwhj",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "5212838"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 16,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 5203748,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:22:17+00:00",
+   "rows": 0,
+   "format": "gbif_simple_csv",
+   "download_key": "0007501-260423192947929",
+   "doi": "10.15468/dl.p78922",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "5203748"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 17,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2493633,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:22:18+00:00",
+   "rows": 7,
+   "format": "gbif_simple_csv",
+   "download_key": "0007502-260423192947929",
+   "doi": "10.15468/dl.hu9j6a",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2493633"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 18,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 8246728,
+    "country": "IN",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:22:57+00:00",
+   "rows": 21,
+   "format": "gbif_simple_csv",
+   "download_key": "0007503-260423192947929",
+   "doi": "10.15468/dl.ezsrpv",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "8246728"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IN"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -6,7 +6,8 @@ The snapshot is what Phase 2 is graded against (scripts/grade_phase2.py) and
 what Phases 3 and 4 read as CACHE_ROOT (scripts/run_eval.py). It is "what the
 API returned at download time": the services behind SciDataBench are live and
 are revised and extended, so a snapshot rebuilt today will differ from the
-one the paper used, which is released separately.
+one the paper used. snapshots/ records when each of its calls was downloaded
+and how many rows it returned.
 
     <out>/<platform>/<scenario_stem>/manifest.json   one entry per call
     <out>/<platform>/<scenario_stem>/call_NN.*       the payloads

@@ -1,0 +1,64 @@
+{
+ "scenario_file": "cmip6__10.1175_jcli-d-21-0689.1_scenario.json",
+ "platform": "cmip6",
+ "downloaded_at": "2026-08-09T01:42:40.824751+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "intake_esgf",
+   "function": "ESGFCatalog.search",
+   "kwargs": {
+    "source_id": [
+     "BCC-CSM2-MR",
+     "CanESM5",
+     "CESM2",
+     "CMCC-ESM2",
+     "CNRM-ESM2-1",
+     "EC-Earth3-Veg",
+     "GISS-E2-1-G",
+     "IPSL-CM6A-LR",
+     "MIROC-ES2L",
+     "MPI-ESM1-2-LR",
+     "UKESM1-0-LL"
+    ],
+    "experiment_id": [
+     "piControl",
+     "deforest-globe"
+    ],
+    "variable_id": [
+     "pr",
+     "evspsbl",
+     "hus",
+     "ua",
+     "va",
+     "ps",
+     "lai",
+     "rsds",
+     "rsus"
+    ],
+    "table_id": [
+     "Amon",
+     "Lmon",
+     "day"
+    ]
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:40.824751+00:00",
+   "rows": 473,
+   "format": "parquet",
+   "result_kind": "dataset_listing"
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "scenario_file": "vizier__10.1093_mnras_staa1228_scenario.json",
+ "platform": "vizier",
+ "downloaded_at": "2026-08-09T01:55:59.832002+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "astroquery.vizier",
+   "function": "Vizier.query_region",
+   "kwargs": {
+    "catalog": "J/ApJ/807/27",
+    "center": "83.816667 -5.394444",
+    "radius_arcmin": 840
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:55:43.236353+00:00",
+   "rows": 2793,
+   "format": "parquet_multi",
+   "tables": [
+    {
+     "table": "J/ApJ/807/27/stars",
+     "rows": 2793
+    }
+   ],
+   "n_tables": 1
+  },
+  {
+   "idx": 1,
+   "module": "astroquery.vizier",
+   "function": "Vizier.query_region",
+   "kwargs": {
+    "catalog": "J/AJ/156/84",
+    "center": "83.816667 -5.394444",
+    "radius_arcmin": 840
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:55:59.832002+00:00",
+   "rows": 21529,
+   "format": "parquet_multi",
+   "tables": [
+    {
+     "table": "J/AJ/156/84/table1",
+     "rows": 7380
+    },
+    {
+     "table": "J/AJ/156/84/table2",
+     "rows": 13974
+    },
+    {
+     "table": "J/AJ/156/84/table3",
+     "rows": 175
+    }
+   ],
+   "n_tables": 3
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "scenario_file": "pangaea__10.5194_bg-16-3425-2019_scenario.json",
+ "platform": "pangaea",
+ "downloaded_at": "2026-08-09T01:42:23.946258+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.905270"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:21.706883+00:00",
+   "rows": 313,
+   "format": "parquet",
+   "dataset_title": "Concentration of Neogloboquadrina pachyderma from plankton tows during cruises NEWP-92, NEWP-93, ARK-IV/3, ARK-X/1, ARK-"
+  },
+  {
+   "idx": 1,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.91119"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:22.834892+00:00",
+   "rows": 79,
+   "format": "parquet",
+   "dataset_title": "Planktic foraminifera counts during POLARSTERN cruise ARK-XI/1"
+  },
+  {
+   "idx": 2,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.136881"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:23.946258+00:00",
+   "rows": 69,
+   "format": "parquet",
+   "dataset_title": "Planktic foraminifera counts during POLARSTERN cruise ARK-XIII/2"
+  }
+ ]
+}

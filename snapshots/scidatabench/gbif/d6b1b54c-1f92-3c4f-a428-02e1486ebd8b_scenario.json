@@ -1,0 +1,43 @@
+{
+ "scenario_file": "d6b1b54c-1f92-3c4f-a428-02e1486ebd8b_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T06:24:43+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2393184,
+    "country": "UG",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:24:43+00:00",
+   "rows": 2491,
+   "format": "gbif_simple_csv",
+   "download_key": "0007508-260423192947929",
+   "doi": "10.15468/dl.hwmqzh",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2393184"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "UG"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  }
+ ]
+}

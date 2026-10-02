@@ -1,0 +1,33 @@
+{
+ "scenario_file": "matproj__10.55003_cast.2023.06.23.014_scenario.json",
+ "platform": "matproj",
+ "downloaded_at": "2026-08-22T04:18:08.165384+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "mp_api",
+   "function": "materials/summary",
+   "kwargs": {
+    "chemsys": "Co-Sb",
+    "_fields": "material_id,formula_pretty,energy_above_hull,band_gap"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-22T04:18:08.165384+00:00",
+   "rows": 4,
+   "format": "parquet",
+   "endpoint": "materials/summary"
+  }
+ ]
+}

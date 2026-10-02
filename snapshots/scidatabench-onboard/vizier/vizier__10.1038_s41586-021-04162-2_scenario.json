@@ -1,0 +1,39 @@
+{
+ "scenario_file": "vizier__10.1038_s41586-021-04162-2_scenario.json",
+ "platform": "vizier",
+ "downloaded_at": "2026-08-09T01:55:40.587552+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "astroquery.vizier",
+   "function": "Vizier.query_constraints",
+   "kwargs": {
+    "catalog": "VII/202/catalog",
+    "column_filters": {}
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:55:40.587552+00:00",
+   "rows": 147,
+   "format": "parquet_multi",
+   "tables": [
+    {
+     "table": "VII/202/catalog",
+     "rows": 147
+    }
+   ],
+   "n_tables": 1
+  }
+ ]
+}

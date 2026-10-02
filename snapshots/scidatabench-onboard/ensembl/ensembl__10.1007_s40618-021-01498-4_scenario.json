@@ -1,0 +1,195 @@
+{
+ "scenario_file": "ensembl__10.1007_s40618-021-01498-4_scenario.json",
+ "platform": "ensembl",
+ "downloaded_at": "2026-08-09T01:43:17.637589+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "2:211375717-212539266",
+    "feature": "variation"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:33.190058+00:00",
+   "rows": 454361,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/2:211375717-212539266"
+  },
+  {
+   "idx": 1,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "8:11676785-11763223",
+    "feature": "variation"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:37.144855+00:00",
+   "rows": 41012,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/8:11676785-11763223"
+  },
+  {
+   "idx": 2,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "19:7112255-7294443",
+    "feature": "variation"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:42.396468+00:00",
+   "rows": 72201,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/19:7112255-7294443"
+  },
+  {
+   "idx": 3,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "2:48686774-48755731",
+    "feature": "variation"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:45.295114+00:00",
+   "rows": 29020,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/2:48686774-48755731"
+  },
+  {
+   "idx": 4,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "12:55996855-56006641",
+    "feature": "variation"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:46.582330+00:00",
+   "rows": 4009,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/12:55996855-56006641"
+  },
+  {
+   "idx": 5,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "11:102109968-102233534",
+    "feature": "variation"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:50.439234+00:00",
+   "rows": 48893,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/11:102109968-102233534"
+  },
+  {
+   "idx": 6,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "12:65824224-65966291",
+    "feature": "variation"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:54.607654+00:00",
+   "rows": 50084,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/12:65824224-65966291"
+  },
+  {
+   "idx": 7,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "20:32819769-32856294",
+    "feature": "variation"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:56.589642+00:00",
+   "rows": 14453,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/20:32819769-32856294"
+  },
+  {
+   "idx": 8,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "8:11769633-11787346",
+    "feature": "variation"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:59.397732+00:00",
+   "rows": 9097,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/8:11769633-11787346"
+  },
+  {
+   "idx": 9,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "9:123379648-123930154",
+    "feature": "variation"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:43:13.564291+00:00",
+   "rows": 196711,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/9:123379648-123930154"
+  },
+  {
+   "idx": 10,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "5:132556019-132646349",
+    "feature": "variation"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:43:17.637589+00:00",
+   "rows": 34405,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/5:132556019-132646349"
+  }
+ ]
+}

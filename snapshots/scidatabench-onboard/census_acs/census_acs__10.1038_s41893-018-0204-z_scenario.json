@@ -1,0 +1,901 @@
+{
+ "scenario_file": "census_acs__10.1038_s41893-018-0204-z_scenario.json",
+ "platform": "census_acs",
+ "downloaded_at": "2026-08-10T23:43:43.274917+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:01"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:07.891848+00:00",
+   "rows": 1181,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 1,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:04"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:08.795322+00:00",
+   "rows": 1526,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 2,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:05"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:09.513194+00:00",
+   "rows": 686,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 3,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:06"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:11.121132+00:00",
+   "rows": 8057,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 4,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:08"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:11.820714+00:00",
+   "rows": 1249,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 5,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:09"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:12.490657+00:00",
+   "rows": 833,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 6,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:12.995642+00:00",
+   "rows": 218,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 7,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:11"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:13.497906+00:00",
+   "rows": 179,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 8,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:12"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:14.609520+00:00",
+   "rows": 4245,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 9,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:13"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:15.417987+00:00",
+   "rows": 1969,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 10,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:16"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:16.038948+00:00",
+   "rows": 298,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 11,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:17"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:16.991557+00:00",
+   "rows": 3123,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 12,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:18"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:17.788596+00:00",
+   "rows": 1511,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 13,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:19"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:18.421062+00:00",
+   "rows": 825,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 14,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:20"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:19.046012+00:00",
+   "rows": 770,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 15,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:21"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:19.767284+00:00",
+   "rows": 1115,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 16,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:22"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:20.465525+00:00",
+   "rows": 1148,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 17,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:23"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:21.005968+00:00",
+   "rows": 358,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 18,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:24"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:21.762761+00:00",
+   "rows": 1406,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 19,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:25"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:22.603168+00:00",
+   "rows": 1478,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 20,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:26"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:23.476077+00:00",
+   "rows": 2813,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 21,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:27"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:24.193916+00:00",
+   "rows": 1338,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 22,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:28"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:24.792302+00:00",
+   "rows": 664,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 23,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:29"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:25.549672+00:00",
+   "rows": 1393,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 24,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:26.088655+00:00",
+   "rows": 271,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 25,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:26.711554+00:00",
+   "rows": 532,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 26,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:32"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:27.299052+00:00",
+   "rows": 687,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 27,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:33"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:27.837220+00:00",
+   "rows": 295,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 28,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:34"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:28.669999+00:00",
+   "rows": 2010,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 29,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:35"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:29.250514+00:00",
+   "rows": 499,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 30,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:36"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:30.455527+00:00",
+   "rows": 4918,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 31,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:37"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:31.341157+00:00",
+   "rows": 2195,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 32,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:38"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:31.827387+00:00",
+   "rows": 205,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 33,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:39"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:32.760197+00:00",
+   "rows": 2952,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 34,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:40"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:33.487773+00:00",
+   "rows": 1046,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 35,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:41"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:34.087978+00:00",
+   "rows": 834,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 36,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:42"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:35.026773+00:00",
+   "rows": 3218,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 37,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:44"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:35.597345+00:00",
+   "rows": 244,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 38,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:45"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:36.275661+00:00",
+   "rows": 1103,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 39,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:46"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:36.843056+00:00",
+   "rows": 222,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 40,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:47"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:37.548090+00:00",
+   "rows": 1497,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 41,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:48"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:38.857852+00:00",
+   "rows": 5265,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 42,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:49"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:39.457908+00:00",
+   "rows": 588,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 43,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:50"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:39.945644+00:00",
+   "rows": 184,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 44,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:51"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:40.745057+00:00",
+   "rows": 1907,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 45,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:53"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:41.477658+00:00",
+   "rows": 1458,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 46,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:54"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:42.054671+00:00",
+   "rows": 484,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 47,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:55"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:42.744878+00:00",
+   "rows": 1409,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 48,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2013,
+    "dataset": "acs/acs5",
+    "get": "NAME,B19013_001E,B25003_001E,B25003_003E,B03002_001E,B03002_003E,B03002_004E,B03002_006E,B03002_012E",
+    "for": "tract:*",
+    "in": "state:56"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:43:43.274917+00:00",
+   "rows": 132,
+   "format": "parquet",
+   "year": 2013,
+   "dataset": "acs/acs5"
+  }
+ ]
+}

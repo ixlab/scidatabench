@@ -1,0 +1,149 @@
+{
+ "scenario_file": "pangaea__10.3389_fmars.2023.1236214_scenario.json",
+ "platform": "pangaea",
+ "downloaded_at": "2026-08-09T01:41:45.515347+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.959856"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:35.834461+00:00",
+   "rows": 2370,
+   "format": "parquet",
+   "dataset_title": "European Carbonate system Time Series (November 2011 - April 2023) in the North East Atlantic, ESTOC site"
+  },
+  {
+   "idx": 1,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.856590"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:36.881261+00:00",
+   "rows": 201,
+   "format": "parquet",
+   "dataset_title": "Physical oceanography measured on water bottle samples at site ESTOC in 1994"
+  },
+  {
+   "idx": 2,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.856615"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:37.925471+00:00",
+   "rows": 149,
+   "format": "parquet",
+   "dataset_title": "Physical oceanography measured on water bottle samples at site ESTOC in 2009"
+  },
+  {
+   "idx": 3,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.856608"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:38.988922+00:00",
+   "rows": 256,
+   "format": "parquet",
+   "dataset_title": "Physical oceanography measured on water bottle samples at site ESTOC in 2003"
+  },
+  {
+   "idx": 4,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.856616"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:40.050858+00:00",
+   "rows": 94,
+   "format": "parquet",
+   "dataset_title": "Physical oceanography measured on water bottle samples at site ESTOC in 2010"
+  },
+  {
+   "idx": 5,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.856593"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:41.102753+00:00",
+   "rows": 144,
+   "format": "parquet",
+   "dataset_title": "Physical oceanography measured on water bottle samples at site ESTOC in 1995"
+  },
+  {
+   "idx": 6,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.856612"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:42.142462+00:00",
+   "rows": 68,
+   "format": "parquet",
+   "dataset_title": "Physical oceanography measured on water bottle samples at site ESTOC in 2007"
+  },
+  {
+   "idx": 7,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.856614"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:43.191920+00:00",
+   "rows": 216,
+   "format": "parquet",
+   "dataset_title": "Physical oceanography measured on water bottle samples at site ESTOC in 2008"
+  },
+  {
+   "idx": 8,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.856607"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:44.240714+00:00",
+   "rows": 163,
+   "format": "parquet",
+   "dataset_title": "Physical oceanography measured on water bottle samples at site ESTOC in 2002"
+  },
+  {
+   "idx": 9,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.956272"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:45.515347+00:00",
+   "rows": 434,
+   "format": "parquet",
+   "dataset_title": "Surface-to-bottom total alkalinity, inorganic carbon and CTD data in coastal areas leeward of the Macaronesia archipelag"
+  }
+ ]
+}

@@ -1,0 +1,305 @@
+{
+ "scenario_file": "afb7eb73-9c3f-3657-965a-fb146e1edd8d_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-25T00:15:57.710969+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1587266,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:10:44.235104+00:00",
+   "rows": 305,
+   "format": "gbif_simple_csv",
+   "download_key": "0004084-260423192947929",
+   "doi": "10.15468/dl.tdv9c7",
+   "predicates": [
+    "taxonKey = 1587266",
+    "country = ES",
+    "year >= 1951",
+    "year <= 2024"
+   ]
+  },
+  {
+   "idx": 1,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1638562,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T02:32:23.321580+00:00",
+   "rows": 13,
+   "gbif_count": 13
+  },
+  {
+   "idx": 2,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1638982,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T02:32:23.771816+00:00",
+   "rows": 0,
+   "gbif_count": 0
+  },
+  {
+   "idx": 3,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1456840,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:10:45.196065+00:00",
+   "rows": 290,
+   "format": "gbif_simple_csv",
+   "download_key": "0004086-260423192947929",
+   "doi": "10.15468/dl.j2mque",
+   "predicates": [
+    "taxonKey = 1456840",
+    "country = ES",
+    "year >= 1951",
+    "year <= 2024"
+   ]
+  },
+  {
+   "idx": 4,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1531900,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T02:32:24.964115+00:00",
+   "rows": 3,
+   "gbif_count": 3
+  },
+  {
+   "idx": 5,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1494184,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:11:54.520521+00:00",
+   "rows": 37,
+   "format": "gbif_simple_csv",
+   "download_key": "0004088-260423192947929",
+   "doi": "10.15468/dl.qhepr6",
+   "predicates": [
+    "taxonKey = 1494184",
+    "country = ES",
+    "year >= 1951",
+    "year <= 2024"
+   ]
+  },
+  {
+   "idx": 6,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1497045,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:12:29.616557+00:00",
+   "rows": 177,
+   "format": "gbif_simple_csv",
+   "download_key": "0004091-260423192947929",
+   "doi": "10.15468/dl.9a235h",
+   "predicates": [
+    "taxonKey = 1497045",
+    "country = ES",
+    "year >= 1951",
+    "year <= 2024"
+   ]
+  },
+  {
+   "idx": 7,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1496404,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:12:30.482598+00:00",
+   "rows": 120,
+   "format": "gbif_simple_csv",
+   "download_key": "0004092-260423192947929",
+   "doi": "10.15468/dl.ue7fj4",
+   "predicates": [
+    "taxonKey = 1496404",
+    "country = ES",
+    "year >= 1951",
+    "year <= 2024"
+   ]
+  },
+  {
+   "idx": 8,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1495261,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:13:39.821142+00:00",
+   "rows": 77,
+   "format": "gbif_simple_csv",
+   "download_key": "0004094-260423192947929",
+   "doi": "10.15468/dl.agr3vp",
+   "predicates": [
+    "taxonKey = 1495261",
+    "country = ES",
+    "year >= 1951",
+    "year <= 2024"
+   ]
+  },
+  {
+   "idx": 9,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1500153,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:14:14.934924+00:00",
+   "rows": 18,
+   "format": "gbif_simple_csv",
+   "download_key": "0004096-260423192947929",
+   "doi": "10.15468/dl.5d63xd",
+   "predicates": [
+    "taxonKey = 1500153",
+    "country = ES",
+    "year >= 1951",
+    "year <= 2024"
+   ]
+  },
+  {
+   "idx": 10,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1494585,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T02:32:29.469865+00:00",
+   "rows": 0,
+   "gbif_count": 0
+  },
+  {
+   "idx": 11,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1494793,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:14:15.780249+00:00",
+   "rows": 109,
+   "format": "gbif_simple_csv",
+   "download_key": "0004098-260423192947929",
+   "doi": "10.15468/dl.8fad3q",
+   "predicates": [
+    "taxonKey = 1494793",
+    "country = ES",
+    "year >= 1951",
+    "year <= 2024"
+   ]
+  },
+  {
+   "idx": 12,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1496791,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:15:55.922277+00:00",
+   "rows": 156,
+   "format": "gbif_simple_csv",
+   "download_key": "0004102-260423192947929",
+   "doi": "10.15468/dl.equys3",
+   "predicates": [
+    "taxonKey = 1496791",
+    "country = ES",
+    "year >= 1951",
+    "year <= 2024"
+   ]
+  },
+  {
+   "idx": 13,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1500840,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:15:56.764910+00:00",
+   "rows": 22,
+   "format": "gbif_simple_csv",
+   "download_key": "0004104-260423192947929",
+   "doi": "10.15468/dl.f57zdx",
+   "predicates": [
+    "taxonKey = 1500840",
+    "country = ES",
+    "year >= 1951",
+    "year <= 2024"
+   ]
+  },
+  {
+   "idx": 14,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 1444264,
+    "country": "ES",
+    "year": "1951,2024"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:15:57.710969+00:00",
+   "rows": 318,
+   "format": "gbif_simple_csv",
+   "download_key": "0004105-260423192947929",
+   "doi": "10.15468/dl.23h533",
+   "predicates": [
+    "taxonKey = 1444264",
+    "country = ES",
+    "year >= 1951",
+    "year <= 2024"
+   ]
+  }
+ ]
+}

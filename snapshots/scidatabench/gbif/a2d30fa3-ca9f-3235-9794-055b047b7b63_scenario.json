@@ -1,0 +1,55 @@
+{
+ "scenario_file": "a2d30fa3-ca9f-3235-9794-055b047b7b63_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-25T01:06:05+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2758799,
+    "continent": "AFRICA",
+    "hasCoordinate": true,
+    "basisOfRecord": [
+     "PRESERVED_SPECIMEN",
+     "HUMAN_OBSERVATION"
+    ]
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T01:06:05+00:00",
+   "rows": 6564,
+   "format": "gbif_simple_csv",
+   "download_key": "0004270-260423192947929",
+   "doi": "10.15468/dl.88372x",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2758799"
+     },
+     {
+      "type": "equals",
+      "key": "CONTINENT",
+      "value": "AFRICA"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     },
+     {
+      "type": "in",
+      "key": "BASIS_OF_RECORD",
+      "values": [
+       "PRESERVED_SPECIMEN",
+       "HUMAN_OBSERVATION"
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "scenario_file": "1527c0a6-afff-3046-880e-ab900ab147d1_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T05:49:10+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 359,
+    "country": "AR",
+    "basisOfRecord": [
+     "PRESERVED_SPECIMEN"
+    ]
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T05:49:10+00:00",
+   "rows": 87326,
+   "format": "gbif_simple_csv",
+   "download_key": "0007396-260423192947929",
+   "doi": "10.15468/dl.3jy27q",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "359"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "AR"
+     },
+     {
+      "type": "in",
+      "key": "BASIS_OF_RECORD",
+      "values": [
+       "PRESERVED_SPECIMEN"
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

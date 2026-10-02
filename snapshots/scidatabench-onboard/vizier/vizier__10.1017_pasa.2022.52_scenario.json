@@ -1,0 +1,107 @@
+{
+ "scenario_file": "vizier__10.1017_pasa.2022.52_scenario.json",
+ "platform": "vizier",
+ "downloaded_at": "2026-08-09T01:33:53.212980+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "astroquery.vizier",
+   "function": "Vizier.query_constraints",
+   "kwargs": {
+    "catalog": "B/psr/psr",
+    "column_filters": {
+     "PSRJ": "J0835-4510"
+    }
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:33:50.611665+00:00",
+   "rows": 1,
+   "format": "parquet_multi",
+   "tables": [
+    {
+     "table": "B/psr/psr",
+     "rows": 1
+    }
+   ],
+   "n_tables": 1
+  },
+  {
+   "idx": 1,
+   "module": "astroquery.vizier",
+   "function": "Vizier.query_constraints",
+   "kwargs": {
+    "catalog": "B/psr/psr",
+    "column_filters": {
+     "PSRJ": "J1141-6545"
+    }
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:33:51.675243+00:00",
+   "rows": 1,
+   "format": "parquet_multi",
+   "tables": [
+    {
+     "table": "B/psr/psr",
+     "rows": 1
+    }
+   ],
+   "n_tables": 1
+  },
+  {
+   "idx": 2,
+   "module": "astroquery.vizier",
+   "function": "Vizier.query_constraints",
+   "kwargs": {
+    "catalog": "B/psr/psr",
+    "column_filters": {
+     "PSRJ": "J1751-4657"
+    }
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:33:52.514035+00:00",
+   "rows": 1,
+   "format": "parquet_multi",
+   "tables": [
+    {
+     "table": "B/psr/psr",
+     "rows": 1
+    }
+   ],
+   "n_tables": 1
+  },
+  {
+   "idx": 3,
+   "module": "astroquery.vizier",
+   "function": "Vizier.query_constraints",
+   "kwargs": {
+    "catalog": "B/psr/psr",
+    "column_filters": {
+     "PSRJ": "J0953+0755"
+    }
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:33:53.212980+00:00",
+   "rows": 1,
+   "format": "parquet_multi",
+   "tables": [
+    {
+     "table": "B/psr/psr",
+     "rows": 1
+    }
+   ],
+   "n_tables": 1
+  }
+ ]
+}

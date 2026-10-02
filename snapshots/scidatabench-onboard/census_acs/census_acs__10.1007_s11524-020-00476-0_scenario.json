@@ -1,0 +1,235 @@
+{
+ "scenario_file": "census_acs__10.1007_s11524-020-00476-0_scenario.json",
+ "platform": "census_acs",
+ "downloaded_at": "2026-08-10T23:27:18.155683+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B01001)",
+    "for": "tract:*",
+    "in": "state:06 county:037"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:47.477478+00:00",
+   "rows": 2346,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 1,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:06 county:037"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:49.545250+00:00",
+   "rows": 2346,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 2,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B17017)",
+    "for": "tract:*",
+    "in": "state:06 county:037"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:53.442411+00:00",
+   "rows": 2346,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 3,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B01001)",
+    "for": "tract:*",
+    "in": "state:17 county:031"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:55.379817+00:00",
+   "rows": 1319,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 4,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:17 county:031"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:56.517210+00:00",
+   "rows": 1319,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 5,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B17017)",
+    "for": "tract:*",
+    "in": "state:17 county:031"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:58.618603+00:00",
+   "rows": 1319,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 6,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B01001)",
+    "for": "tract:*",
+    "in": "state:36 county:005,047,061,081,085"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:27:01.535150+00:00",
+   "rows": 2167,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 7,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:36 county:005,047,061,081,085"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:27:03.490837+00:00",
+   "rows": 2167,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 8,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B17017)",
+    "for": "tract:*",
+    "in": "state:36 county:005,047,061,081,085"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:27:13.546516+00:00",
+   "rows": 2167,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 9,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B01001)",
+    "for": "tract:*",
+    "in": "state:48 county:201"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:27:15.063729+00:00",
+   "rows": 786,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 10,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B03002)",
+    "for": "tract:*",
+    "in": "state:48 county:201"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:27:16.217682+00:00",
+   "rows": 786,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 11,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B17017)",
+    "for": "tract:*",
+    "in": "state:48 county:201"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:27:18.155683+00:00",
+   "rows": 786,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  }
+ ]
+}

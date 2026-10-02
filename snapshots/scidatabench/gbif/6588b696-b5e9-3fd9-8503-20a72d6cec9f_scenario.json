@@ -1,0 +1,48 @@
+{
+ "scenario_file": "6588b696-b5e9-3fd9-8503-20a72d6cec9f_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T05:52:07.450003+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 5185632,
+    "country": "IT",
+    "year": "2009,2019"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T05:52:07.450003+00:00",
+   "rows": 30,
+   "format": "gbif_simple_csv",
+   "download_key": "0007420-260423192947929",
+   "doi": "10.15468/dl.nh4hy5",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "5185632"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "IT"
+     },
+     {
+      "type": "greaterThanOrEquals",
+      "key": "YEAR",
+      "value": "2009"
+     },
+     {
+      "type": "lessThanOrEquals",
+      "key": "YEAR",
+      "value": "2019"
+     }
+    ]
+   }
+  }
+ ]
+}

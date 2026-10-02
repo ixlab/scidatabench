@@ -1,0 +1,79 @@
+{
+ "scenario_file": "cebd1d07-3fdb-34d1-8983-ad5828074c39_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T06:24:04+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 8836075,
+    "country": "MX",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:24:03+00:00",
+   "rows": 8528,
+   "format": "gbif_simple_csv",
+   "download_key": "0007506-260423192947929",
+   "doi": "10.15468/dl.vyjnpp",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "8836075"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "MX"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 1,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2433194,
+    "country": "MX",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:24:04+00:00",
+   "rows": 3890,
+   "format": "gbif_simple_csv",
+   "download_key": "0007507-260423192947929",
+   "doi": "10.15468/dl.qtrvrf",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2433194"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "MX"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  }
+ ]
+}

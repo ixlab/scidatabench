@@ -1,0 +1,50 @@
+{
+ "scenario_file": "usgs_eq__10.1186_s40623-026-02378-y_scenario.json",
+ "platform": "usgs_eq",
+ "downloaded_at": "2026-08-09T01:44:29.115333+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "obspy.clients.fdsn",
+   "function": "Client.get_events",
+   "kwargs": {
+    "eventid": "us6000qw60"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:25.139499+00:00",
+   "rows": 1,
+   "format": "parquet"
+  },
+  {
+   "idx": 1,
+   "module": "obspy.clients.fdsn",
+   "function": "Client.get_events",
+   "kwargs": {
+    "minlatitude": 48.0,
+    "maxlatitude": 58.0,
+    "minlongitude": 154.0,
+    "maxlongitude": 166.0,
+    "minmagnitude": 4.5,
+    "mindepth": 90.0,
+    "starttime": "2000-01-01",
+    "endtime": "2025-08-05"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:29.115333+00:00",
+   "rows": 289,
+   "format": "parquet"
+  }
+ ]
+}

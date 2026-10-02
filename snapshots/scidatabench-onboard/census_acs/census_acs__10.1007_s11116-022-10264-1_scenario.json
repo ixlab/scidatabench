@@ -1,0 +1,73 @@
+{
+ "scenario_file": "census_acs__10.1007_s11116-022-10264-1_scenario.json",
+ "platform": "census_acs",
+ "downloaded_at": "2026-08-10T23:26:38.592912+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2017,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B25077)",
+    "for": "tract:*",
+    "in": "state:06 county:037,059"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:35.050482+00:00",
+   "rows": 2929,
+   "format": "parquet",
+   "year": 2017,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 1,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2017,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B25002)",
+    "for": "tract:*",
+    "in": "state:06 county:037,059"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:36.165225+00:00",
+   "rows": 2929,
+   "format": "parquet",
+   "year": 2017,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 2,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2017,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B25063)",
+    "for": "tract:*",
+    "in": "state:06 county:037,059"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:38.592912+00:00",
+   "rows": 2929,
+   "format": "parquet",
+   "year": 2017,
+   "dataset": "acs/acs5"
+  }
+ ]
+}

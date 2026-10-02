@@ -1,0 +1,43 @@
+{
+ "scenario_file": "991ed5e2-41f1-34db-82b2-18d3711784b7_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T06:05:45+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 5217534,
+    "country": "CO",
+    "year": "*,2023"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:05:45+00:00",
+   "rows": 520,
+   "format": "gbif_simple_csv",
+   "download_key": "0007457-260423192947929",
+   "doi": "10.15468/dl.fa4nwv",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "5217534"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "CO"
+     },
+     {
+      "type": "lessThanOrEquals",
+      "key": "YEAR",
+      "value": "2023"
+     }
+    ]
+   }
+  }
+ ]
+}

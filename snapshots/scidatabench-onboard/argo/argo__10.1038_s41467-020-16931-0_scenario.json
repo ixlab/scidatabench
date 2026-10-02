@@ -1,0 +1,250 @@
+{
+ "scenario_file": "argo__10.1038_s41467-020-16931-0_scenario.json",
+ "platform": "argo",
+ "downloaded_at": "2026-08-09T01:41:16.806742+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "argopy",
+   "function": "DataFetcher.float",
+   "kwargs": {
+    "wmo": 5904467
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:40:56.031296+00:00",
+   "rows": 36680,
+   "format": "parquet",
+   "xr_dims": {
+    "N_POINTS": 36680
+   },
+   "xr_vars": [
+    "CYCLE_NUMBER",
+    "DATA_MODE",
+    "DIRECTION",
+    "PLATFORM_NUMBER",
+    "POSITION_QC",
+    "PRES",
+    "PRES_ERROR",
+    "PRES_QC",
+    "PSAL",
+    "PSAL_ERROR",
+    "PSAL_QC",
+    "TEMP",
+    "TEMP_ERROR",
+    "TEMP_QC",
+    "TIME_QC"
+   ],
+   "wmo": 5904467
+  },
+  {
+   "idx": 1,
+   "module": "argopy",
+   "function": "DataFetcher.float",
+   "kwargs": {
+    "wmo": 5904471
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:40:59.674700+00:00",
+   "rows": 39753,
+   "format": "parquet",
+   "xr_dims": {
+    "N_POINTS": 39753
+   },
+   "xr_vars": [
+    "CYCLE_NUMBER",
+    "DATA_MODE",
+    "DIRECTION",
+    "PLATFORM_NUMBER",
+    "POSITION_QC",
+    "PRES",
+    "PRES_ERROR",
+    "PRES_QC",
+    "PSAL",
+    "PSAL_ERROR",
+    "PSAL_QC",
+    "TEMP",
+    "TEMP_ERROR",
+    "TEMP_QC",
+    "TIME_QC"
+   ],
+   "wmo": 5904471
+  },
+  {
+   "idx": 2,
+   "module": "argopy",
+   "function": "DataFetcher.float",
+   "kwargs": {
+    "wmo": 5904468
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:03.333636+00:00",
+   "rows": 18863,
+   "format": "parquet",
+   "xr_dims": {
+    "N_POINTS": 18863
+   },
+   "xr_vars": [
+    "CYCLE_NUMBER",
+    "DATA_MODE",
+    "DIRECTION",
+    "PLATFORM_NUMBER",
+    "POSITION_QC",
+    "PRES",
+    "PRES_ERROR",
+    "PRES_QC",
+    "PSAL",
+    "PSAL_ERROR",
+    "PSAL_QC",
+    "TEMP",
+    "TEMP_ERROR",
+    "TEMP_QC",
+    "TIME_QC"
+   ],
+   "wmo": 5904468
+  },
+  {
+   "idx": 3,
+   "module": "argopy",
+   "function": "DataFetcher.float",
+   "kwargs": {
+    "wmo": 5904397
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:07.509409+00:00",
+   "rows": 46638,
+   "format": "parquet",
+   "xr_dims": {
+    "N_POINTS": 46638
+   },
+   "xr_vars": [
+    "CYCLE_NUMBER",
+    "DATA_MODE",
+    "DIRECTION",
+    "PLATFORM_NUMBER",
+    "POSITION_QC",
+    "PRES",
+    "PRES_ERROR",
+    "PRES_QC",
+    "PSAL",
+    "PSAL_ERROR",
+    "PSAL_QC",
+    "TEMP",
+    "TEMP_ERROR",
+    "TEMP_QC",
+    "TIME_QC"
+   ],
+   "wmo": 5904397
+  },
+  {
+   "idx": 4,
+   "module": "argopy",
+   "function": "DataFetcher.float",
+   "kwargs": {
+    "wmo": 5904472
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:10.858185+00:00",
+   "rows": 24883,
+   "format": "parquet",
+   "xr_dims": {
+    "N_POINTS": 24883
+   },
+   "xr_vars": [
+    "CYCLE_NUMBER",
+    "DATA_MODE",
+    "DIRECTION",
+    "PLATFORM_NUMBER",
+    "POSITION_QC",
+    "PRES",
+    "PRES_ERROR",
+    "PRES_QC",
+    "PSAL",
+    "PSAL_ERROR",
+    "PSAL_QC",
+    "TEMP",
+    "TEMP_ERROR",
+    "TEMP_QC",
+    "TIME_QC"
+   ],
+   "wmo": 5904472
+  },
+  {
+   "idx": 5,
+   "module": "argopy",
+   "function": "DataFetcher.float",
+   "kwargs": {
+    "wmo": 5904670
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:12.585714+00:00",
+   "rows": 5604,
+   "format": "parquet",
+   "xr_dims": {
+    "N_POINTS": 5604
+   },
+   "xr_vars": [
+    "CYCLE_NUMBER",
+    "DATA_MODE",
+    "DIRECTION",
+    "PLATFORM_NUMBER",
+    "POSITION_QC",
+    "PRES",
+    "PRES_ERROR",
+    "PRES_QC",
+    "PSAL",
+    "PSAL_ERROR",
+    "PSAL_QC",
+    "TEMP",
+    "TEMP_ERROR",
+    "TEMP_QC",
+    "TIME_QC"
+   ],
+   "wmo": 5904670
+  },
+  {
+   "idx": 6,
+   "module": "argopy",
+   "function": "DataFetcher.float",
+   "kwargs": {
+    "wmo": 5904671
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:16.806742+00:00",
+   "rows": 58231,
+   "format": "parquet",
+   "xr_dims": {
+    "N_POINTS": 58231
+   },
+   "xr_vars": [
+    "CYCLE_NUMBER",
+    "DATA_MODE",
+    "DIRECTION",
+    "PLATFORM_NUMBER",
+    "POSITION_QC",
+    "PRES",
+    "PRES_ERROR",
+    "PRES_QC",
+    "PSAL",
+    "PSAL_ERROR",
+    "PSAL_QC",
+    "TEMP",
+    "TEMP_ERROR",
+    "TEMP_QC",
+    "TIME_QC"
+   ],
+   "wmo": 5904671
+  }
+ ]
+}

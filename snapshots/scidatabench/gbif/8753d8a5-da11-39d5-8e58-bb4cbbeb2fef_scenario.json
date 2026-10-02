@@ -1,0 +1,43 @@
+{
+ "scenario_file": "8753d8a5-da11-39d5-8e58-bb4cbbeb2fef_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-25T01:04:33+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2650829,
+    "country": [
+     "ES",
+     "PT"
+    ]
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T01:04:33+00:00",
+   "rows": 3507,
+   "format": "gbif_simple_csv",
+   "download_key": "0004262-260423192947929",
+   "doi": "10.15468/dl.b8rzau",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2650829"
+     },
+     {
+      "type": "in",
+      "key": "COUNTRY",
+      "values": [
+       "ES",
+       "PT"
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

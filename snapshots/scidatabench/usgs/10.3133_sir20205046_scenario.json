@@ -1,0 +1,77 @@
+{
+ "scenario_file": "10.3133_sir20205046_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-04-26T15:29:47+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-02132000",
+    "usgsPCode": "50468",
+    "activityStartDateLower": "2013-01-01",
+    "activityStartDateUpper": "2018-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:29:42+00:00",
+   "rows": 25
+  },
+  {
+   "idx": 1,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-02173500",
+    "usgsPCode": "50468",
+    "activityStartDateLower": "2013-01-01",
+    "activityStartDateUpper": "2018-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:29:43+00:00",
+   "rows": 24
+  },
+  {
+   "idx": 2,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-02172035",
+    "usgsPCode": "50468",
+    "activityStartDateLower": "2013-01-01",
+    "activityStartDateUpper": "2018-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:29:44+00:00",
+   "rows": 16
+  },
+  {
+   "idx": 3,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-02173000",
+    "usgsPCode": "50468",
+    "activityStartDateLower": "2013-01-01",
+    "activityStartDateUpper": "2018-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:29:44+00:00",
+   "rows": 16
+  },
+  {
+   "idx": 4,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-021473415",
+    "usgsPCode": "50468",
+    "activityStartDateLower": "2013-01-01",
+    "activityStartDateUpper": "2018-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:29:47+00:00",
+   "rows": 16
+  }
+ ]
+}

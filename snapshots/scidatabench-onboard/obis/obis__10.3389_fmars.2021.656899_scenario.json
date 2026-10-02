@@ -1,0 +1,61 @@
+{
+ "scenario_file": "obis__10.3389_fmars.2021.656899_scenario.json",
+ "platform": "obis",
+ "downloaded_at": "2026-08-09T04:40:55.242138+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Polynoidae",
+    "startdepth": 2000
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:40:43.297168+00:00",
+   "rows": 3708,
+   "format": "parquet",
+   "total_available": 3708
+  },
+  {
+   "idx": 1,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Macellicephalinae",
+    "startdepth": 2000
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:40:50.241119+00:00",
+   "rows": 1933,
+   "format": "parquet",
+   "total_available": 1933
+  },
+  {
+   "idx": 2,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Polynoinae",
+    "startdepth": 2000
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:40:55.242138+00:00",
+   "rows": 285,
+   "format": "parquet",
+   "total_available": 285
+  }
+ ]
+}

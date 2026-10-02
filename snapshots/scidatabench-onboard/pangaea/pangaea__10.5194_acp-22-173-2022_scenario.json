@@ -1,0 +1,58 @@
+{
+ "scenario_file": "pangaea__10.5194_acp-22-173-2022_scenario.json",
+ "platform": "pangaea",
+ "downloaded_at": "2026-08-09T01:42:19.491476+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.879822"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:14.558683+00:00",
+   "rows": 621520,
+   "format": "parquet",
+   "dataset_title": "High resolution radiosonde measurements from station Ny-Ålesund (2017-06)"
+  },
+  {
+   "idx": 1,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.902142"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:15.648236+00:00",
+   "rows": 328,
+   "format": "parquet",
+   "dataset_title": "Integrated water vapor of HATPRO microwave radiometer at AWIPEV, Ny-Ålesund (2017)"
+  },
+  {
+   "idx": 2,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.887502"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:19.491476+00:00",
+   "rows": 43200,
+   "format": "parquet",
+   "dataset_title": "Basic and other measurements of radiation at station Ny-Ålesund (2017-06)"
+  }
+ ]
+}

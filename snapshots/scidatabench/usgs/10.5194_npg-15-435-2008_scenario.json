@@ -1,0 +1,20 @@
+{
+ "scenario_file": "10.5194_npg-15-435-2008_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-04-26T15:49:19+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-09471000",
+    "parameter_code": "00060",
+    "time": "1904-03-29/1959-02-17"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:49:19+00:00",
+   "rows": 16383
+  }
+ ]
+}

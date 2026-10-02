@@ -1,0 +1,101 @@
+{
+ "scenario_file": "10.3133_sir20195087_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-09-05T03:09:16.119028+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-05524500",
+    "parameter_code": "00060",
+    "time": "2015-03-01/2018-07-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T03:08:18.490296+00:00",
+   "rows": 102829
+  },
+  {
+   "idx": 1,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-05524500",
+    "parameter_code": "63680",
+    "time": "2015-03-01/2018-07-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T03:08:38.185966+00:00",
+   "rows": 108641
+  },
+  {
+   "idx": 2,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-05524500",
+    "parameter_code": "00095",
+    "time": "2015-03-01/2018-07-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T03:08:57.984965+00:00",
+   "rows": 114843
+  },
+  {
+   "idx": 3,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-05524500",
+    "parameter_code": "99133",
+    "time": "2015-03-01/2018-07-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T03:09:16.119028+00:00",
+   "rows": 108658
+  },
+  {
+   "idx": 4,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-05524500",
+    "usgsPCode": "80154",
+    "activityStartDateLower": "2015-03-01",
+    "activityStartDateUpper": "2018-07-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:24:36+00:00",
+   "rows": 36
+  },
+  {
+   "idx": 5,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-05524500",
+    "usgsPCode": "62855",
+    "activityStartDateLower": "2015-03-01",
+    "activityStartDateUpper": "2018-07-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:24:37+00:00",
+   "rows": 41
+  },
+  {
+   "idx": 6,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-05524500",
+    "usgsPCode": "00665",
+    "activityStartDateLower": "2015-03-01",
+    "activityStartDateUpper": "2018-07-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:24:38+00:00",
+   "rows": 41
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "scenario_file": "inaturalist__10.1007_s10530-023-03242-w_scenario.json",
+ "platform": "inaturalist",
+ "downloaded_at": "2026-08-09T02:10:04.890690+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 49322,
+    "place_id": 7259,
+    "quality_grade": "research",
+    "d1": "2008-03-16",
+    "d2": "2023-05-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:10:04.890690+00:00",
+   "rows": 209,
+   "format": "parquet",
+   "total_available": 209
+  }
+ ]
+}

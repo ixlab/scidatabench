@@ -1,0 +1,4123 @@
+{
+ "scenario_file": "10.1016_j.atmosenv.2023.120188_scenario.json",
+ "platform": "epa",
+ "downloaded_at": "2026-05-09T19:46:39.168469+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "01"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:51:02.862488+00:00",
+   "rows": 32192
+  },
+  {
+   "idx": 1,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "01"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:51:23.338376+00:00",
+   "rows": 21222
+  },
+  {
+   "idx": 2,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "01"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:51:32.623930+00:00",
+   "rows": 6764
+  },
+  {
+   "idx": 3,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "01"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:51:41.240057+00:00",
+   "rows": 6540
+  },
+  {
+   "idx": 4,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "01"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:51:46.781661+00:00",
+   "rows": 628
+  },
+  {
+   "idx": 5,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "01"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:51:52.241688+00:00",
+   "rows": 429
+  },
+  {
+   "idx": 6,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "04"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:52:05.089878+00:00",
+   "rows": 14760
+  },
+  {
+   "idx": 7,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "04"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:52:42.240973+00:00",
+   "rows": 58281
+  },
+  {
+   "idx": 8,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "04"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:52:49.492458+00:00",
+   "rows": 2282
+  },
+  {
+   "idx": 9,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "04"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:53:00.085557+00:00",
+   "rows": 4995
+  },
+  {
+   "idx": 10,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "04"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:53:06.668852+00:00",
+   "rows": 2281
+  },
+  {
+   "idx": 11,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "04"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:53:12.392355+00:00",
+   "rows": 1715
+  },
+  {
+   "idx": 12,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "05"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:53:28.680116+00:00",
+   "rows": 19344
+  },
+  {
+   "idx": 13,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "05"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:53:39.465206+00:00",
+   "rows": 12016
+  },
+  {
+   "idx": 14,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "05"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:53:44.837513+00:00",
+   "rows": 297
+  },
+  {
+   "idx": 15,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "05"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:53:51.529874+00:00",
+   "rows": 3140
+  },
+  {
+   "idx": 16,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "05"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:53:57.002481+00:00",
+   "rows": 297
+  },
+  {
+   "idx": 17,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "05"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:54:02.373000+00:00",
+   "rows": 342
+  },
+  {
+   "idx": 18,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "06"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:54:37.530640+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 19,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "06"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:55:12.687916+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 20,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "06"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:55:25.229212+00:00",
+   "rows": 14509
+  },
+  {
+   "idx": 21,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "06"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:55:52.445763+00:00",
+   "rows": 30518
+  },
+  {
+   "idx": 22,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "06"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:55:59.964489+00:00",
+   "rows": 4076
+  },
+  {
+   "idx": 23,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "06"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:56:07.843587+00:00",
+   "rows": 3401
+  },
+  {
+   "idx": 24,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "08"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:56:25.575327+00:00",
+   "rows": 20616
+  },
+  {
+   "idx": 25,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "08"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:57:00.732168+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 26,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "08"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:57:06.606783+00:00",
+   "rows": 1203
+  },
+  {
+   "idx": 27,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "08"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:57:12.809845+00:00",
+   "rows": 1755
+  },
+  {
+   "idx": 28,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "08"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:57:18.322567+00:00",
+   "rows": 1099
+  },
+  {
+   "idx": 29,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "08"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:57:23.998272+00:00",
+   "rows": 1173
+  },
+  {
+   "idx": 30,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "09"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:57:57.921385+00:00",
+   "rows": 15776
+  },
+  {
+   "idx": 31,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "09"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:58:33.076116+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 32,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "09"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:58:38.511769+00:00",
+   "rows": 208
+  },
+  {
+   "idx": 33,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "09"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:58:44.038317+00:00",
+   "rows": 114
+  },
+  {
+   "idx": 34,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "09"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:58:49.965484+00:00",
+   "rows": 209
+  },
+  {
+   "idx": 35,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "09"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:58:55.536955+00:00",
+   "rows": 230
+  },
+  {
+   "idx": 36,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:59:12.263432+00:00",
+   "rows": 8440
+  },
+  {
+   "idx": 37,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:59:33.010225+00:00",
+   "rows": 35873
+  },
+  {
+   "idx": 38,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:59:38.246982+00:00",
+   "rows": 117
+  },
+  {
+   "idx": 39,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:59:43.471859+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 40,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:59:48.719769+00:00",
+   "rows": 117
+  },
+  {
+   "idx": 41,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:59:54.234303+00:00",
+   "rows": 81
+  },
+  {
+   "idx": 42,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "11"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:00:02.156378+00:00",
+   "rows": 7056
+  },
+  {
+   "idx": 43,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "11"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:00:15.143932+00:00",
+   "rows": 13791
+  },
+  {
+   "idx": 44,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "11"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:00:21.128538+00:00",
+   "rows": 983
+  },
+  {
+   "idx": 45,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "11"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:00:26.367629+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 46,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "11"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:00:31.688418+00:00",
+   "rows": 278
+  },
+  {
+   "idx": 47,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "11"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:00:37.097358+00:00",
+   "rows": 121
+  },
+  {
+   "idx": 48,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "12"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:01:09.652947+00:00",
+   "rows": 60064
+  },
+  {
+   "idx": 49,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "12"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:01:44.847205+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 50,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "12"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:01:56.160145+00:00",
+   "rows": 12690
+  },
+  {
+   "idx": 51,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "12"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:02:10.681455+00:00",
+   "rows": 16645
+  },
+  {
+   "idx": 52,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "12"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:02:16.317153+00:00",
+   "rows": 710
+  },
+  {
+   "idx": 53,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "12"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:02:22.574050+00:00",
+   "rows": 629
+  },
+  {
+   "idx": 54,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "13"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:02:39.921698+00:00",
+   "rows": 30584
+  },
+  {
+   "idx": 55,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "13"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:03:15.079540+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 56,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "13"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:03:25.443504+00:00",
+   "rows": 9365
+  },
+  {
+   "idx": 57,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "13"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:03:34.841393+00:00",
+   "rows": 3969
+  },
+  {
+   "idx": 58,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "13"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:03:40.631856+00:00",
+   "rows": 729
+  },
+  {
+   "idx": 59,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "13"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:03:46.339501+00:00",
+   "rows": 767
+  },
+  {
+   "idx": 60,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "16"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:03:55.178220+00:00",
+   "rows": 7664
+  },
+  {
+   "idx": 61,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "16"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:04:16.241963+00:00",
+   "rows": 16781
+  },
+  {
+   "idx": 62,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "16"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:04:26.408348+00:00",
+   "rows": 10048
+  },
+  {
+   "idx": 63,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "16"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:04:42.097583+00:00",
+   "rows": 15214
+  },
+  {
+   "idx": 64,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "16"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:04:47.555415+00:00",
+   "rows": 332
+  },
+  {
+   "idx": 65,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "16"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:04:52.950032+00:00",
+   "rows": 354
+  },
+  {
+   "idx": 66,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "17"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:05:19.529083+00:00",
+   "rows": 29196
+  },
+  {
+   "idx": 67,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "17"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:05:54.686750+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 68,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "17"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:06:00.127504+00:00",
+   "rows": 505
+  },
+  {
+   "idx": 69,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "17"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:06:07.692996+00:00",
+   "rows": 4474
+  },
+  {
+   "idx": 70,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "17"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:06:13.279058+00:00",
+   "rows": 842
+  },
+  {
+   "idx": 71,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "17"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:06:18.681885+00:00",
+   "rows": 407
+  },
+  {
+   "idx": 72,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "18"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:06:46.762658+00:00",
+   "rows": 44638
+  },
+  {
+   "idx": 73,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "18"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:07:21.922314+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 74,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "18"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:07:30.309397+00:00",
+   "rows": 4166
+  },
+  {
+   "idx": 75,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "18"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:07:35.962829+00:00",
+   "rows": 669
+  },
+  {
+   "idx": 76,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "18"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:07:41.814892+00:00",
+   "rows": 944
+  },
+  {
+   "idx": 77,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "18"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:07:47.295170+00:00",
+   "rows": 400
+  },
+  {
+   "idx": 78,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "19"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:08:08.899395+00:00",
+   "rows": 20336
+  },
+  {
+   "idx": 79,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "19"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:08:44.059247+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 80,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "19"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:08:49.702655+00:00",
+   "rows": 458
+  },
+  {
+   "idx": 81,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "19"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:08:57.629343+00:00",
+   "rows": 8266
+  },
+  {
+   "idx": 82,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "19"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:09:03.763606+00:00",
+   "rows": 1423
+  },
+  {
+   "idx": 83,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "19"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:09:09.301400+00:00",
+   "rows": 356
+  },
+  {
+   "idx": 84,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "20"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:09:24.577564+00:00",
+   "rows": 11488
+  },
+  {
+   "idx": 85,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "20"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:09:29.743447+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 86,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "20"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:09:35.161410+00:00",
+   "rows": 601
+  },
+  {
+   "idx": 87,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "20"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:09:40.436942+00:00",
+   "rows": 241
+  },
+  {
+   "idx": 88,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "20"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:09:45.902881+00:00",
+   "rows": 497
+  },
+  {
+   "idx": 89,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "20"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:09:51.428924+00:00",
+   "rows": 334
+  },
+  {
+   "idx": 90,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "21"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:10:08.406131+00:00",
+   "rows": 26474
+  },
+  {
+   "idx": 91,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "21"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:10:43.564484+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 92,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "21"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:10:49.229724+00:00",
+   "rows": 584
+  },
+  {
+   "idx": 93,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "21"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:10:54.503149+00:00",
+   "rows": 122
+  },
+  {
+   "idx": 94,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "21"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:11:00.513046+00:00",
+   "rows": 708
+  },
+  {
+   "idx": 95,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "21"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:11:05.821633+00:00",
+   "rows": 366
+  },
+  {
+   "idx": 96,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "22"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:11:24.809445+00:00",
+   "rows": 35216
+  },
+  {
+   "idx": 97,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "22"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:11:37.514781+00:00",
+   "rows": 19966
+  },
+  {
+   "idx": 98,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "22"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:11:46.230680+00:00",
+   "rows": 6312
+  },
+  {
+   "idx": 99,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "22"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:11:54.419605+00:00",
+   "rows": 6281
+  },
+  {
+   "idx": 100,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "22"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:11:59.736550+00:00",
+   "rows": 235
+  },
+  {
+   "idx": 101,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "22"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:12:06.073841+00:00",
+   "rows": 193
+  },
+  {
+   "idx": 102,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "23"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:12:11.325428+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 103,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "23"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:12:26.756066+00:00",
+   "rows": 25493
+  },
+  {
+   "idx": 104,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "23"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:12:32.758527+00:00",
+   "rows": 1483
+  },
+  {
+   "idx": 105,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "23"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:12:38.383209+00:00",
+   "rows": 1279
+  },
+  {
+   "idx": 106,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "23"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:12:43.906043+00:00",
+   "rows": 1033
+  },
+  {
+   "idx": 107,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "23"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:12:49.410055+00:00",
+   "rows": 886
+  },
+  {
+   "idx": 108,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "24"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:13:00.774368+00:00",
+   "rows": 19048
+  },
+  {
+   "idx": 109,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "24"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:13:23.018785+00:00",
+   "rows": 37385
+  },
+  {
+   "idx": 110,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "24"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:13:28.526131+00:00",
+   "rows": 1099
+  },
+  {
+   "idx": 111,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "24"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:13:33.806413+00:00",
+   "rows": 118
+  },
+  {
+   "idx": 112,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "24"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:13:39.132208+00:00",
+   "rows": 496
+  },
+  {
+   "idx": 113,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "24"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:13:44.471790+00:00",
+   "rows": 476
+  },
+  {
+   "idx": 114,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "25"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:13:58.585673+00:00",
+   "rows": 21048
+  },
+  {
+   "idx": 115,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "25"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:14:29.708444+00:00",
+   "rows": 62112
+  },
+  {
+   "idx": 116,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "25"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:14:39.075797+00:00",
+   "rows": 7810
+  },
+  {
+   "idx": 117,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "25"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:14:44.340058+00:00",
+   "rows": 213
+  },
+  {
+   "idx": 118,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "25"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:14:49.744683+00:00",
+   "rows": 588
+  },
+  {
+   "idx": 119,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "25"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:14:55.073655+00:00",
+   "rows": 425
+  },
+  {
+   "idx": 120,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "26"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:15:12.547301+00:00",
+   "rows": 26016
+  },
+  {
+   "idx": 121,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "26"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:15:40.397508+00:00",
+   "rows": 53566
+  },
+  {
+   "idx": 122,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "26"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:15:45.810581+00:00",
+   "rows": 713
+  },
+  {
+   "idx": 123,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "26"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:15:52.386716+00:00",
+   "rows": 4440
+  },
+  {
+   "idx": 124,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "26"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:15:57.888356+00:00",
+   "rows": 718
+  },
+  {
+   "idx": 125,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "26"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:16:03.056424+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 126,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "27"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:16:14.778911+00:00",
+   "rows": 17576
+  },
+  {
+   "idx": 127,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "27"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:16:48.301188+00:00",
+   "rows": 74141
+  },
+  {
+   "idx": 128,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "27"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:17:00.481234+00:00",
+   "rows": 10665
+  },
+  {
+   "idx": 129,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "27"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:17:05.804588+00:00",
+   "rows": 348
+  },
+  {
+   "idx": 130,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "27"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:17:11.211020+00:00",
+   "rows": 709
+  },
+  {
+   "idx": 131,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "27"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:17:16.699614+00:00",
+   "rows": 584
+  },
+  {
+   "idx": 132,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "28"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:17:26.151187+00:00",
+   "rows": 13256
+  },
+  {
+   "idx": 133,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "28"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:17:31.319607+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 134,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "28"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:17:37.827920+00:00",
+   "rows": 3700
+  },
+  {
+   "idx": 135,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "28"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:17:43.045680+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 136,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "28"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:17:48.303463+00:00",
+   "rows": 130
+  },
+  {
+   "idx": 137,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "28"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:17:53.549189+00:00",
+   "rows": 122
+  },
+  {
+   "idx": 138,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "29"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:18:11.450181+00:00",
+   "rows": 27016
+  },
+  {
+   "idx": 139,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "29"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:18:42.564686+00:00",
+   "rows": 69150
+  },
+  {
+   "idx": 140,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "29"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:18:52.933976+00:00",
+   "rows": 5717
+  },
+  {
+   "idx": 141,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "29"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:18:58.206127+00:00",
+   "rows": 185
+  },
+  {
+   "idx": 142,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "29"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:19:03.667707+00:00",
+   "rows": 823
+  },
+  {
+   "idx": 143,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "29"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:19:08.987659+00:00",
+   "rows": 364
+  },
+  {
+   "idx": 144,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:19:18.895463+00:00",
+   "rows": 13956
+  },
+  {
+   "idx": 145,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:19:47.717066+00:00",
+   "rows": 57132
+  },
+  {
+   "idx": 146,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:19:55.691992+00:00",
+   "rows": 3398
+  },
+  {
+   "idx": 147,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:20:02.092390+00:00",
+   "rows": 4144
+  },
+  {
+   "idx": 148,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:20:07.761670+00:00",
+   "rows": 1438
+  },
+  {
+   "idx": 149,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:20:13.378614+00:00",
+   "rows": 1171
+  },
+  {
+   "idx": 150,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:20:21.330640+00:00",
+   "rows": 9528
+  },
+  {
+   "idx": 151,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:20:34.342988+00:00",
+   "rows": 16334
+  },
+  {
+   "idx": 152,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:20:39.512419+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 153,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:20:44.769016+00:00",
+   "rows": 115
+  },
+  {
+   "idx": 154,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:20:50.114572+00:00",
+   "rows": 429
+  },
+  {
+   "idx": 155,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:20:55.401816+00:00",
+   "rows": 237
+  },
+  {
+   "idx": 156,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "32"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:21:03.012877+00:00",
+   "rows": 8320
+  },
+  {
+   "idx": 157,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "32"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:21:38.173169+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 158,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "32"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:21:47.544337+00:00",
+   "rows": 4627
+  },
+  {
+   "idx": 159,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "32"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:21:53.821294+00:00",
+   "rows": 239
+  },
+  {
+   "idx": 160,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "32"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:21:59.164048+00:00",
+   "rows": 419
+  },
+  {
+   "idx": 161,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "32"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:22:04.632569+00:00",
+   "rows": 476
+  },
+  {
+   "idx": 162,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "33"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:22:11.996104+00:00",
+   "rows": 6752
+  },
+  {
+   "idx": 163,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "33"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:22:17.159360+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 164,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "33"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:22:22.442960+00:00",
+   "rows": 228
+  },
+  {
+   "idx": 165,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "33"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:22:27.753228+00:00",
+   "rows": 354
+  },
+  {
+   "idx": 166,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "33"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:22:33.026271+00:00",
+   "rows": 227
+  },
+  {
+   "idx": 167,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "33"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:22:38.328745+00:00",
+   "rows": 352
+  },
+  {
+   "idx": 168,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "34"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:22:52.440499+00:00",
+   "rows": 19928
+  },
+  {
+   "idx": 169,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "34"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:23:18.887914+00:00",
+   "rows": 48832
+  },
+  {
+   "idx": 170,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "34"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:23:27.800197+00:00",
+   "rows": 5868
+  },
+  {
+   "idx": 171,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "34"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:23:33.050776+00:00",
+   "rows": 84
+  },
+  {
+   "idx": 172,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "34"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:23:38.430747+00:00",
+   "rows": 547
+  },
+  {
+   "idx": 173,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "34"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:23:43.759166+00:00",
+   "rows": 412
+  },
+  {
+   "idx": 174,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "35"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:23:57.485566+00:00",
+   "rows": 14584
+  },
+  {
+   "idx": 175,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "35"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:24:32.730233+00:00",
+   "rows": 61708
+  },
+  {
+   "idx": 176,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "35"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:24:40.041578+00:00",
+   "rows": 7498
+  },
+  {
+   "idx": 177,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "35"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:24:45.534671+00:00",
+   "rows": 878
+  },
+  {
+   "idx": 178,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "35"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:24:50.981237+00:00",
+   "rows": 832
+  },
+  {
+   "idx": 179,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "35"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:24:56.482071+00:00",
+   "rows": 1012
+  },
+  {
+   "idx": 180,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "36"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:25:15.261684+00:00",
+   "rows": 31776
+  },
+  {
+   "idx": 181,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "36"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:25:43.295922+00:00",
+   "rows": 54168
+  },
+  {
+   "idx": 182,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "36"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:25:48.900386+00:00",
+   "rows": 1491
+  },
+  {
+   "idx": 183,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "36"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:26:00.634246+00:00",
+   "rows": 14529
+  },
+  {
+   "idx": 184,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "36"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:26:06.230974+00:00",
+   "rows": 1332
+  },
+  {
+   "idx": 185,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "36"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:26:11.594964+00:00",
+   "rows": 601
+  },
+  {
+   "idx": 186,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "37"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:26:35.186069+00:00",
+   "rows": 45942
+  },
+  {
+   "idx": 187,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "37"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:27:10.356280+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 188,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "37"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:27:23.020578+00:00",
+   "rows": 10913
+  },
+  {
+   "idx": 189,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "37"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:27:28.494306+00:00",
+   "rows": 948
+  },
+  {
+   "idx": 190,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "37"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:27:34.880756+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 191,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "37"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:27:40.348295+00:00",
+   "rows": 600
+  },
+  {
+   "idx": 192,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "38"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:27:46.514059+00:00",
+   "rows": 3712
+  },
+  {
+   "idx": 193,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "38"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:28:16.178236+00:00",
+   "rows": 56881
+  },
+  {
+   "idx": 194,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "38"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:28:21.594382+00:00",
+   "rows": 466
+  },
+  {
+   "idx": 195,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "38"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:28:26.878755+00:00",
+   "rows": 232
+  },
+  {
+   "idx": 196,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "38"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:28:32.252162+00:00",
+   "rows": 474
+  },
+  {
+   "idx": 197,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "38"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:28:37.563002+00:00",
+   "rows": 355
+  },
+  {
+   "idx": 198,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "39"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:28:59.680213+00:00",
+   "rows": 37400
+  },
+  {
+   "idx": 199,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "39"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:29:34.838258+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 200,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "39"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:29:40.669237+00:00",
+   "rows": 971
+  },
+  {
+   "idx": 201,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "39"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:29:49.356713+00:00",
+   "rows": 6555
+  },
+  {
+   "idx": 202,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "39"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:29:54.857931+00:00",
+   "rows": 976
+  },
+  {
+   "idx": 203,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "39"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:30:00.320845+00:00",
+   "rows": 775
+  },
+  {
+   "idx": 204,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "40"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:30:11.879474+00:00",
+   "rows": 18304
+  },
+  {
+   "idx": 205,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "40"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:30:47.037023+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 206,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "40"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:30:52.448249+00:00",
+   "rows": 536
+  },
+  {
+   "idx": 207,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "40"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:30:58.813464+00:00",
+   "rows": 3321
+  },
+  {
+   "idx": 208,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "40"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:31:04.172788+00:00",
+   "rows": 534
+  },
+  {
+   "idx": 209,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "40"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:31:09.514114+00:00",
+   "rows": 487
+  },
+  {
+   "idx": 210,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "41"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:31:17.547493+00:00",
+   "rows": 9080
+  },
+  {
+   "idx": 211,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "41"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:31:33.908506+00:00",
+   "rows": 25677
+  },
+  {
+   "idx": 212,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "41"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:31:48.418577+00:00",
+   "rows": 22217
+  },
+  {
+   "idx": 213,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "41"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:32:06.469648+00:00",
+   "rows": 31303
+  },
+  {
+   "idx": 214,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "41"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:32:12.096194+00:00",
+   "rows": 1004
+  },
+  {
+   "idx": 215,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "41"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:32:17.579754+00:00",
+   "rows": 793
+  },
+  {
+   "idx": 216,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "42"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:32:45.589075+00:00",
+   "rows": 55688
+  },
+  {
+   "idx": 217,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "42"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:33:20.751859+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 218,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "42"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:33:27.063956+00:00",
+   "rows": 3276
+  },
+  {
+   "idx": 219,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "42"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:33:32.410667+00:00",
+   "rows": 121
+  },
+  {
+   "idx": 220,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "42"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:33:37.971650+00:00",
+   "rows": 1326
+  },
+  {
+   "idx": 221,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "42"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:33:43.135252+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 222,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "44"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:33:50.759078+00:00",
+   "rows": 8504
+  },
+  {
+   "idx": 223,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "44"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:34:03.433954+00:00",
+   "rows": 18061
+  },
+  {
+   "idx": 224,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "44"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:34:08.688128+00:00",
+   "rows": 97
+  },
+  {
+   "idx": 225,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "44"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:34:13.899317+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 226,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "44"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:34:19.162360+00:00",
+   "rows": 96
+  },
+  {
+   "idx": 227,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "44"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:34:24.336234+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 228,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "45"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:34:39.610554+00:00",
+   "rows": 27992
+  },
+  {
+   "idx": 229,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "45"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:34:57.784991+00:00",
+   "rows": 37002
+  },
+  {
+   "idx": 230,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "45"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:35:03.313587+00:00",
+   "rows": 1034
+  },
+  {
+   "idx": 231,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "45"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:35:12.625878+00:00",
+   "rows": 4081
+  },
+  {
+   "idx": 232,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "45"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:35:18.193441+00:00",
+   "rows": 1068
+  },
+  {
+   "idx": 233,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "45"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:35:23.485811+00:00",
+   "rows": 229
+  },
+  {
+   "idx": 234,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "46"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:35:31.762432+00:00",
+   "rows": 9448
+  },
+  {
+   "idx": 235,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "46"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:35:48.831327+00:00",
+   "rows": 30024
+  },
+  {
+   "idx": 236,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "46"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:35:54.148013+00:00",
+   "rows": 290
+  },
+  {
+   "idx": 237,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "46"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:35:59.432970+00:00",
+   "rows": 235
+  },
+  {
+   "idx": 238,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "46"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:36:04.737505+00:00",
+   "rows": 289
+  },
+  {
+   "idx": 239,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "46"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:36:10.057420+00:00",
+   "rows": 346
+  },
+  {
+   "idx": 240,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "47"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:36:37.364528+00:00",
+   "rows": 38952
+  },
+  {
+   "idx": 241,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "47"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:37:13.241285+00:00",
+   "rows": 75316
+  },
+  {
+   "idx": 242,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "47"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:37:21.157721+00:00",
+   "rows": 2697
+  },
+  {
+   "idx": 243,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "47"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:37:29.349805+00:00",
+   "rows": 2409
+  },
+  {
+   "idx": 244,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "47"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:37:34.520421+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 245,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "47"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:37:39.807774+00:00",
+   "rows": 273
+  },
+  {
+   "idx": 246,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "48"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:37:57.515991+00:00",
+   "rows": 33128
+  },
+  {
+   "idx": 247,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "48"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:38:32.677743+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 248,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "48"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:38:49.066162+00:00",
+   "rows": 29633
+  },
+  {
+   "idx": 249,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "48"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:38:59.129423+00:00",
+   "rows": 9806
+  },
+  {
+   "idx": 250,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "48"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:39:04.713429+00:00",
+   "rows": 1335
+  },
+  {
+   "idx": 251,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "48"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:39:10.188724+00:00",
+   "rows": 708
+  },
+  {
+   "idx": 252,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "49"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:39:28.221967+00:00",
+   "rows": 28504
+  },
+  {
+   "idx": 253,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "49"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:40:03.382756+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 254,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "49"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:40:10.959701+00:00",
+   "rows": 3453
+  },
+  {
+   "idx": 255,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "49"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:40:16.359243+00:00",
+   "rows": 568
+  },
+  {
+   "idx": 256,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "49"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:40:21.765030+00:00",
+   "rows": 672
+  },
+  {
+   "idx": 257,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "49"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:40:27.230802+00:00",
+   "rows": 871
+  },
+  {
+   "idx": 258,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "50"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:40:38.902967+00:00",
+   "rows": 6360
+  },
+  {
+   "idx": 259,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "50"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:40:54.902593+00:00",
+   "rows": 28651
+  },
+  {
+   "idx": 260,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "50"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:41:00.242998+00:00",
+   "rows": 456
+  },
+  {
+   "idx": 261,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "50"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:41:05.557034+00:00",
+   "rows": 406
+  },
+  {
+   "idx": 262,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "50"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:41:10.869884+00:00",
+   "rows": 351
+  },
+  {
+   "idx": 263,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "50"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:41:17.409262+00:00",
+   "rows": 329
+  },
+  {
+   "idx": 264,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "51"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:41:31.907717+00:00",
+   "rows": 23376
+  },
+  {
+   "idx": 265,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "51"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:41:59.521359+00:00",
+   "rows": 55051
+  },
+  {
+   "idx": 266,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "51"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:42:04.878118+00:00",
+   "rows": 412
+  },
+  {
+   "idx": 267,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "51"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:42:10.048208+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 268,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "51"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:42:15.423316+00:00",
+   "rows": 417
+  },
+  {
+   "idx": 269,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "51"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:42:20.753933+00:00",
+   "rows": 351
+  },
+  {
+   "idx": 270,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "53"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:42:30.801664+00:00",
+   "rows": 6968
+  },
+  {
+   "idx": 271,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "53"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:43:01.017821+00:00",
+   "rows": 61286
+  },
+  {
+   "idx": 272,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "53"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:43:20.727477+00:00",
+   "rows": 38704
+  },
+  {
+   "idx": 273,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "53"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:43:40.553649+00:00",
+   "rows": 32147
+  },
+  {
+   "idx": 274,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "53"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:43:46.112198+00:00",
+   "rows": 1248
+  },
+  {
+   "idx": 275,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "53"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:43:51.641192+00:00",
+   "rows": 1233
+  },
+  {
+   "idx": 276,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "54"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:44:01.952049+00:00",
+   "rows": 16176
+  },
+  {
+   "idx": 277,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "54"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:44:14.820441+00:00",
+   "rows": 15702
+  },
+  {
+   "idx": 278,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "54"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:44:19.992647+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 279,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "54"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:44:25.266216+00:00",
+   "rows": 120
+  },
+  {
+   "idx": 280,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "54"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:44:30.574203+00:00",
+   "rows": 332
+  },
+  {
+   "idx": 281,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "54"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:44:35.883768+00:00",
+   "rows": 302
+  },
+  {
+   "idx": 282,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "55"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:44:50.661094+00:00",
+   "rows": 22624
+  },
+  {
+   "idx": 283,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "55"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:45:25.820596+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 284,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "55"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:45:32.159590+00:00",
+   "rows": 350
+  },
+  {
+   "idx": 285,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "55"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:45:37.462525+00:00",
+   "rows": 119
+  },
+  {
+   "idx": 286,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "55"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:45:42.819501+00:00",
+   "rows": 351
+  },
+  {
+   "idx": 287,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "55"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:45:48.141089+00:00",
+   "rows": 374
+  },
+  {
+   "idx": 288,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "56"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:45:56.375370+00:00",
+   "rows": 9670
+  },
+  {
+   "idx": 289,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "56"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:46:17.675921+00:00",
+   "rows": 41151
+  },
+  {
+   "idx": 290,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "56"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:46:23.075337+00:00",
+   "rows": 540
+  },
+  {
+   "idx": 291,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "56"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:46:28.415400+00:00",
+   "rows": 429
+  },
+  {
+   "idx": 292,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20060101",
+    "edate": "20061231",
+    "stateFIPS": "56"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:46:33.808410+00:00",
+   "rows": 548
+  },
+  {
+   "idx": 293,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88403",
+    "bdate": "20200101",
+    "edate": "20201231",
+    "stateFIPS": "56"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:46:39.168469+00:00",
+   "rows": 550
+  }
+ ]
+}

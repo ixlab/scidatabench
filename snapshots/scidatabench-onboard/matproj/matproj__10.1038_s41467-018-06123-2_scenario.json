@@ -1,0 +1,47 @@
+{
+ "scenario_file": "matproj__10.1038_s41467-018-06123-2_scenario.json",
+ "platform": "matproj",
+ "downloaded_at": "2026-08-10T22:37:27.400768+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "mp_api",
+   "function": "materials/summary",
+   "kwargs": {
+    "chemsys": "Li-Si-P-S",
+    "_fields": "material_id,formula_pretty"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:27.227870+00:00",
+   "rows": 2,
+   "format": "parquet",
+   "endpoint": "materials/summary"
+  },
+  {
+   "idx": 1,
+   "module": "mp_api",
+   "function": "materials/elasticity",
+   "kwargs": {
+    "chemsys": "Li-Si-P-S",
+    "_fields": "material_id,formula_pretty,bulk_modulus,homogeneous_poisson"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:27.400768+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "endpoint": "materials/elasticity"
+  }
+ ]
+}

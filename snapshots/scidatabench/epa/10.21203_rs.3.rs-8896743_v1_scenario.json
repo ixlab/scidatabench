@@ -1,0 +1,67 @@
+{
+ "scenario_file": "10.21203_rs.3.rs-8896743_v1_scenario.json",
+ "platform": "epa",
+ "downloaded_at": "2026-04-26T05:36:01+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "cbsa_code": "35620",
+    "parameter": "88101",
+    "bdate": "20130101",
+    "edate": "20221231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T05:25:02+00:00",
+   "rows": 477398,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 1,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "cbsa_code": "31080",
+    "parameter": "88101",
+    "bdate": "20130101",
+    "edate": "20221231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T05:28:01+00:00",
+   "rows": 284736,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 2,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "cbsa_code": "16980",
+    "parameter": "88101",
+    "bdate": "20130101",
+    "edate": "20221231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T05:32:15+00:00",
+   "rows": 509348,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 3,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "cbsa_code": "14460",
+    "parameter": "88101",
+    "bdate": "20130101",
+    "edate": "20221231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T05:36:01+00:00",
+   "rows": 406499,
+   "via": "RAQSAPI (R)"
+  }
+ ]
+}

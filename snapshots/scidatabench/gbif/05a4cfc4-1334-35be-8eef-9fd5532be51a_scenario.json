@@ -1,0 +1,49 @@
+{
+ "scenario_file": "05a4cfc4-1334-35be-8eef-9fd5532be51a_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-24T02:31:20+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 10698843,
+    "country": "BR",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T02:31:19.673368+00:00",
+   "rows": 3,
+   "gbif_count": 3
+  },
+  {
+   "idx": 1,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2803315,
+    "country": "BR",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T02:31:20+00:00",
+   "rows": 0,
+   "gbif_count": 0
+  },
+  {
+   "idx": 2,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2803372,
+    "country": "BR",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T02:31:20+00:00",
+   "rows": 0,
+   "gbif_count": 0
+  }
+ ]
+}

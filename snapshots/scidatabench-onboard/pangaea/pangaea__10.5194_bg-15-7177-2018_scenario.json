@@ -1,0 +1,32 @@
+{
+ "scenario_file": "pangaea__10.5194_bg-15-7177-2018_scenario.json",
+ "platform": "pangaea",
+ "downloaded_at": "2026-08-09T01:42:20.555551+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.859005"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:20.555551+00:00",
+   "rows": 170,
+   "format": "parquet",
+   "dataset_title": "Size-partitioned phytoplankton carbon concentrations retrieved from ocean color data, links to data in NetCDF format"
+  }
+ ]
+}

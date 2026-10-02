@@ -1,0 +1,24 @@
+{
+ "scenario_file": "db67456b-91c0-3054-920e-4d4b1c78c0df_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-24T02:32:36.014302+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2375708,
+    "country": "BR",
+    "basisOfRecord": [
+     "PRESERVED_SPECIMEN"
+    ],
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T02:32:36.014302+00:00",
+   "rows": 35,
+   "gbif_count": 35
+  }
+ ]
+}

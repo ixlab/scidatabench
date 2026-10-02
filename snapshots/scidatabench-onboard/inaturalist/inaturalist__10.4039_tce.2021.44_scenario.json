@@ -1,0 +1,83 @@
+{
+ "scenario_file": "inaturalist__10.4039_tce.2021.44_scenario.json",
+ "platform": "inaturalist",
+ "downloaded_at": "2026-08-09T04:44:41.988703+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 53549,
+    "verifiable": true,
+    "year": [
+     2018,
+     2019,
+     2020
+    ],
+    "month": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "lat": 45.6268,
+    "lng": -73.4702,
+    "radius": 163.26
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:44:22.616435+00:00",
+   "rows": 1281,
+   "format": "parquet",
+   "total_available": 1281
+  },
+  {
+   "idx": 1,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 53549,
+    "verifiable": true,
+    "year": [
+     2018,
+     2019,
+     2020
+    ],
+    "month": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "lat": 39.037807,
+    "lng": -77.951755,
+    "radius": 180
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:44:41.988703+00:00",
+   "rows": 1874,
+   "format": "parquet",
+   "total_available": 1874
+  }
+ ]
+}

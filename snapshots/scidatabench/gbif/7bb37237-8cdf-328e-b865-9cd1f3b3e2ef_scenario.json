@@ -1,0 +1,28 @@
+{
+ "scenario_file": "7bb37237-8cdf-328e-b865-9cd1f3b3e2ef_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-25T00:04:53+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2453857,
+    "country": "MX",
+    "stateProvince": "Oaxaca"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:04:53+00:00",
+   "rows": 174,
+   "format": "gbif_simple_csv",
+   "download_key": "0004063-260423192947929",
+   "doi": "10.15468/dl.nf46j6",
+   "predicates": [
+    "taxonKey = 2453857",
+    "country = MX",
+    "stateProvince = Oaxaca"
+   ]
+  }
+ ]
+}

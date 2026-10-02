@@ -1,0 +1,649 @@
+{
+ "scenario_file": "noaa_ghcn__10.1038_s41612-021-00186-7_scenario.json",
+ "platform": "noaa_ghcn",
+ "downloaded_at": "2026-08-10T22:38:04.900073+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00170814",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:40.314827+00:00",
+   "rows": 14181,
+   "format": "parquet",
+   "station": "USC00170814"
+  },
+  {
+   "idx": 1,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00171628",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:41.044140+00:00",
+   "rows": 14114,
+   "format": "parquet",
+   "station": "USC00171628"
+  },
+  {
+   "idx": 2,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00172765",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:41.799858+00:00",
+   "rows": 14244,
+   "format": "parquet",
+   "station": "USC00172765"
+  },
+  {
+   "idx": 3,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00173046",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:42.566645+00:00",
+   "rows": 14215,
+   "format": "parquet",
+   "station": "USC00173046"
+  },
+  {
+   "idx": 4,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00190120",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:43.288520+00:00",
+   "rows": 14214,
+   "format": "parquet",
+   "station": "USC00190120"
+  },
+  {
+   "idx": 5,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00190736",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:44.073839+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USC00190736"
+  },
+  {
+   "idx": 6,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00196783",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:44.763316+00:00",
+   "rows": 14093,
+   "format": "parquet",
+   "station": "USC00196783"
+  },
+  {
+   "idx": 7,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00198757",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:45.426352+00:00",
+   "rows": 14204,
+   "format": "parquet",
+   "station": "USC00198757"
+  },
+  {
+   "idx": 8,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00272999",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:46.183263+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USC00272999"
+  },
+  {
+   "idx": 9,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00300183",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:46.948176+00:00",
+   "rows": 14197,
+   "format": "parquet",
+   "station": "USC00300183"
+  },
+  {
+   "idx": 10,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00300443",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:47.793702+00:00",
+   "rows": 14173,
+   "format": "parquet",
+   "station": "USC00300443"
+  },
+  {
+   "idx": 11,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00301752",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:48.519616+00:00",
+   "rows": 14148,
+   "format": "parquet",
+   "station": "USC00301752"
+  },
+  {
+   "idx": 12,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00301966",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:49.231304+00:00",
+   "rows": 14115,
+   "format": "parquet",
+   "station": "USC00301966"
+  },
+  {
+   "idx": 13,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00302610",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:49.949869+00:00",
+   "rows": 14140,
+   "format": "parquet",
+   "station": "USC00302610"
+  },
+  {
+   "idx": 14,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00303184",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:50.627163+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USC00303184"
+  },
+  {
+   "idx": 15,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00304102",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:51.332969+00:00",
+   "rows": 14110,
+   "format": "parquet",
+   "station": "USC00304102"
+  },
+  {
+   "idx": 16,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00304912",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:52.046123+00:00",
+   "rows": 14213,
+   "format": "parquet",
+   "station": "USC00304912"
+  },
+  {
+   "idx": 17,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00305426",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:52.800366+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USC00305426"
+  },
+  {
+   "idx": 18,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00306085",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:53.497501+00:00",
+   "rows": 13999,
+   "format": "parquet",
+   "station": "USC00306085"
+  },
+  {
+   "idx": 19,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00306314",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:54.163338+00:00",
+   "rows": 14244,
+   "format": "parquet",
+   "station": "USC00306314"
+  },
+  {
+   "idx": 20,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00306774",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:54.871454+00:00",
+   "rows": 14178,
+   "format": "parquet",
+   "station": "USC00306774"
+  },
+  {
+   "idx": 21,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00307484",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:55.503850+00:00",
+   "rows": 14058,
+   "format": "parquet",
+   "station": "USC00307484"
+  },
+  {
+   "idx": 22,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00309000",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:56.193310+00:00",
+   "rows": 14076,
+   "format": "parquet",
+   "station": "USC00309000"
+  },
+  {
+   "idx": 23,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00374266",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:56.894371+00:00",
+   "rows": 14213,
+   "format": "parquet",
+   "station": "USC00374266"
+  },
+  {
+   "idx": 24,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00437054",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:57.583648+00:00",
+   "rows": 14182,
+   "format": "parquet",
+   "station": "USC00437054"
+  },
+  {
+   "idx": 25,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00437607",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:58.225226+00:00",
+   "rows": 14244,
+   "format": "parquet",
+   "station": "USC00437607"
+  },
+  {
+   "idx": 26,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00004725",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:58.977301+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USW00004725"
+  },
+  {
+   "idx": 27,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00014733",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:59.673119+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USW00014733"
+  },
+  {
+   "idx": 28,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00014735",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:38:00.397734+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USW00014735"
+  },
+  {
+   "idx": 29,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00014742",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:38:01.098003+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USW00014742"
+  },
+  {
+   "idx": 30,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00014764",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:38:01.801419+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USW00014764"
+  },
+  {
+   "idx": 31,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00014765",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:38:02.525230+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USW00014765"
+  },
+  {
+   "idx": 32,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00014768",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:38:03.273702+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USW00014768"
+  },
+  {
+   "idx": 33,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00014771",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:38:04.077888+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USW00014771"
+  },
+  {
+   "idx": 34,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00094728",
+    "startDate": "1980-01-01",
+    "endDate": "2018-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:38:04.900073+00:00",
+   "rows": 14245,
+   "format": "parquet",
+   "station": "USW00094728"
+  }
+ ]
+}

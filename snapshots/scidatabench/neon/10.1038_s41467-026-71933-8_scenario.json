@@ -1,0 +1,631 @@
+{
+ "scenario_file": "10.1038_s41467-026-71933-8_scenario.json",
+ "platform": "neon",
+ "downloaded_at": "2026-05-10T22:53:05.735093+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP4.00200.001",
+    "site": "HARV",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:48:11.267329+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 579056064,
+   "files": [
+    {
+     "file": "filesToStack00200/NEON.D01.HARV.DP4.00200.001.2018-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 88465160
+    },
+    {
+     "file": "filesToStack00200/NEON.D01.HARV.DP4.00200.001.2018-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 102778434
+    },
+    {
+     "file": "filesToStack00200/NEON.D01.HARV.DP4.00200.001.2018-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 98654729
+    },
+    {
+     "file": "filesToStack00200/NEON.D01.HARV.DP4.00200.001.2018-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 81199638
+    },
+    {
+     "file": "filesToStack00200/NEON.D01.HARV.DP4.00200.001.2018-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 72382316
+    },
+    {
+     "file": "filesToStack00200/NEON.D01.HARV.DP4.00200.001.2018-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 53761162
+    },
+    {
+     "file": "filesToStack00200/NEON.D01.HARV.DP4.00200.001.2018-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 81814625
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 1,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP4.00200.001",
+    "site": "KONZ",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:48:45.679247+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 569867910,
+   "files": [
+    {
+     "file": "filesToStack00200/NEON.D06.KONZ.DP4.00200.001.2018-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 78276153
+    },
+    {
+     "file": "filesToStack00200/NEON.D06.KONZ.DP4.00200.001.2018-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 85634365
+    },
+    {
+     "file": "filesToStack00200/NEON.D06.KONZ.DP4.00200.001.2018-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 57831498
+    },
+    {
+     "file": "filesToStack00200/NEON.D06.KONZ.DP4.00200.001.2018-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 91749239
+    },
+    {
+     "file": "filesToStack00200/NEON.D06.KONZ.DP4.00200.001.2018-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 83286505
+    },
+    {
+     "file": "filesToStack00200/NEON.D06.KONZ.DP4.00200.001.2018-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 85153433
+    },
+    {
+     "file": "filesToStack00200/NEON.D06.KONZ.DP4.00200.001.2018-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 87936717
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 2,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.00005.001",
+    "site": "HARV",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:49:03.782597+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 18664189,
+   "files": [
+    {
+     "file": "filesToStack00005/NEON.D01.HARV.DP1.00005.001.2018-04.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 2778372
+    },
+    {
+     "file": "filesToStack00005/NEON.D01.HARV.DP1.00005.001.2018-05.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 2933228
+    },
+    {
+     "file": "filesToStack00005/NEON.D01.HARV.DP1.00005.001.2018-06.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 2664499
+    },
+    {
+     "file": "filesToStack00005/NEON.D01.HARV.DP1.00005.001.2018-07.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 2685230
+    },
+    {
+     "file": "filesToStack00005/NEON.D01.HARV.DP1.00005.001.2018-08.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 2555101
+    },
+    {
+     "file": "filesToStack00005/NEON.D01.HARV.DP1.00005.001.2018-09.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 2467557
+    },
+    {
+     "file": "filesToStack00005/NEON.D01.HARV.DP1.00005.001.2018-10.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 2580202
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 3,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.00005.001",
+    "site": "KONZ",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:49:16.347853+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 10819794,
+   "files": [
+    {
+     "file": "filesToStack00005/NEON.D06.KONZ.DP1.00005.001.2018-04.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 689045
+    },
+    {
+     "file": "filesToStack00005/NEON.D06.KONZ.DP1.00005.001.2018-05.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 1700676
+    },
+    {
+     "file": "filesToStack00005/NEON.D06.KONZ.DP1.00005.001.2018-06.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 1416160
+    },
+    {
+     "file": "filesToStack00005/NEON.D06.KONZ.DP1.00005.001.2018-07.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 1844894
+    },
+    {
+     "file": "filesToStack00005/NEON.D06.KONZ.DP1.00005.001.2018-08.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 1779139
+    },
+    {
+     "file": "filesToStack00005/NEON.D06.KONZ.DP1.00005.001.2018-09.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 1665573
+    },
+    {
+     "file": "filesToStack00005/NEON.D06.KONZ.DP1.00005.001.2018-10.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 1724307
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 4,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.00098.001",
+    "site": "HARV",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:49:30.111544+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 15286137,
+   "files": [
+    {
+     "file": "filesToStack00098/NEON.D01.HARV.DP1.00098.001.2018-04.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 1897160
+    },
+    {
+     "file": "filesToStack00098/NEON.D01.HARV.DP1.00098.001.2018-05.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 1976628
+    },
+    {
+     "file": "filesToStack00098/NEON.D01.HARV.DP1.00098.001.2018-06.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 1833825
+    },
+    {
+     "file": "filesToStack00098/NEON.D01.HARV.DP1.00098.001.2018-07.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 1801047
+    },
+    {
+     "file": "filesToStack00098/NEON.D01.HARV.DP1.00098.001.2018-08.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 1756515
+    },
+    {
+     "file": "filesToStack00098/NEON.D01.HARV.DP1.00098.001.2018-09.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 2971684
+    },
+    {
+     "file": "filesToStack00098/NEON.D01.HARV.DP1.00098.001.2018-10.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 3049278
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 5,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.00098.001",
+    "site": "KONZ",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:49:46.014012+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 22487627,
+   "files": [
+    {
+     "file": "filesToStack00098/NEON.D06.KONZ.DP1.00098.001.2018-04.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 3077246
+    },
+    {
+     "file": "filesToStack00098/NEON.D06.KONZ.DP1.00098.001.2018-05.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 3568846
+    },
+    {
+     "file": "filesToStack00098/NEON.D06.KONZ.DP1.00098.001.2018-06.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 2431879
+    },
+    {
+     "file": "filesToStack00098/NEON.D06.KONZ.DP1.00098.001.2018-07.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 3532422
+    },
+    {
+     "file": "filesToStack00098/NEON.D06.KONZ.DP1.00098.001.2018-08.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 3463986
+    },
+    {
+     "file": "filesToStack00098/NEON.D06.KONZ.DP1.00098.001.2018-09.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 3168953
+    },
+    {
+     "file": "filesToStack00098/NEON.D06.KONZ.DP1.00098.001.2018-10.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 3244295
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 6,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.00094.001",
+    "site": "HARV",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:50:46.775521+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 110096846,
+   "files": [
+    {
+     "file": "filesToStack00094/NEON.D01.HARV.DP1.00094.001.2018-04.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 17057550
+    },
+    {
+     "file": "filesToStack00094/NEON.D01.HARV.DP1.00094.001.2018-05.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 14574585
+    },
+    {
+     "file": "filesToStack00094/NEON.D01.HARV.DP1.00094.001.2018-06.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 14082562
+    },
+    {
+     "file": "filesToStack00094/NEON.D01.HARV.DP1.00094.001.2018-07.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 14060888
+    },
+    {
+     "file": "filesToStack00094/NEON.D01.HARV.DP1.00094.001.2018-08.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 16179510
+    },
+    {
+     "file": "filesToStack00094/NEON.D01.HARV.DP1.00094.001.2018-09.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 16529407
+    },
+    {
+     "file": "filesToStack00094/NEON.D01.HARV.DP1.00094.001.2018-10.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 17612344
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 7,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.00094.001",
+    "site": "KONZ",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:52:13.548541+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 192910732,
+   "files": [
+    {
+     "file": "filesToStack00094/NEON.D06.KONZ.DP1.00094.001.2018-04.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 27575713
+    },
+    {
+     "file": "filesToStack00094/NEON.D06.KONZ.DP1.00094.001.2018-05.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 28523780
+    },
+    {
+     "file": "filesToStack00094/NEON.D06.KONZ.DP1.00094.001.2018-06.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 21784266
+    },
+    {
+     "file": "filesToStack00094/NEON.D06.KONZ.DP1.00094.001.2018-07.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 29564541
+    },
+    {
+     "file": "filesToStack00094/NEON.D06.KONZ.DP1.00094.001.2018-08.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 30346809
+    },
+    {
+     "file": "filesToStack00094/NEON.D06.KONZ.DP1.00094.001.2018-09.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 27334297
+    },
+    {
+     "file": "filesToStack00094/NEON.D06.KONZ.DP1.00094.001.2018-10.basic.20230127T120753Z.RELEASE-2026.zip",
+     "size_bytes": 27781326
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 8,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.00044.001",
+    "site": "HARV",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:52:21.427871+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 121931,
+   "files": [
+    {
+     "file": "filesToStack00044/NEON.D01.HARV.DP1.00044.001.2018-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 17437
+    },
+    {
+     "file": "filesToStack00044/NEON.D01.HARV.DP1.00044.001.2018-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 17896
+    },
+    {
+     "file": "filesToStack00044/NEON.D01.HARV.DP1.00044.001.2018-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 17625
+    },
+    {
+     "file": "filesToStack00044/NEON.D01.HARV.DP1.00044.001.2018-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 17313
+    },
+    {
+     "file": "filesToStack00044/NEON.D01.HARV.DP1.00044.001.2018-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 17317
+    },
+    {
+     "file": "filesToStack00044/NEON.D01.HARV.DP1.00044.001.2018-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 17081
+    },
+    {
+     "file": "filesToStack00044/NEON.D01.HARV.DP1.00044.001.2018-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 17262
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 9,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.00044.001",
+    "site": "KONZ",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:52:28.958148+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 118765,
+   "files": [
+    {
+     "file": "filesToStack00044/NEON.D06.KONZ.DP1.00044.001.2018-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 16850
+    },
+    {
+     "file": "filesToStack00044/NEON.D06.KONZ.DP1.00044.001.2018-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 17021
+    },
+    {
+     "file": "filesToStack00044/NEON.D06.KONZ.DP1.00044.001.2018-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 16567
+    },
+    {
+     "file": "filesToStack00044/NEON.D06.KONZ.DP1.00044.001.2018-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 17284
+    },
+    {
+     "file": "filesToStack00044/NEON.D06.KONZ.DP1.00044.001.2018-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 17126
+    },
+    {
+     "file": "filesToStack00044/NEON.D06.KONZ.DP1.00044.001.2018-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 16852
+    },
+    {
+     "file": "filesToStack00044/NEON.D06.KONZ.DP1.00044.001.2018-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 17065
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 10,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.00045.001",
+    "site": "HARV",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:52:37.916451+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 1683780,
+   "files": [
+    {
+     "file": "filesToStack00045/NEON.D01.HARV.DP1.00045.001.2018-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 236131
+    },
+    {
+     "file": "filesToStack00045/NEON.D01.HARV.DP1.00045.001.2018-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 242856
+    },
+    {
+     "file": "filesToStack00045/NEON.D01.HARV.DP1.00045.001.2018-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 236057
+    },
+    {
+     "file": "filesToStack00045/NEON.D01.HARV.DP1.00045.001.2018-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 243868
+    },
+    {
+     "file": "filesToStack00045/NEON.D01.HARV.DP1.00045.001.2018-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 244487
+    },
+    {
+     "file": "filesToStack00045/NEON.D01.HARV.DP1.00045.001.2018-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 236788
+    },
+    {
+     "file": "filesToStack00045/NEON.D01.HARV.DP1.00045.001.2018-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 243593
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 11,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.00046.001",
+    "site": "HARV",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:52:52.632821+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 8178611,
+   "files": [
+    {
+     "file": "filesToStack00046/NEON.D01.HARV.DP1.00046.001.2018-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1149386
+    },
+    {
+     "file": "filesToStack00046/NEON.D01.HARV.DP1.00046.001.2018-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1178594
+    },
+    {
+     "file": "filesToStack00046/NEON.D01.HARV.DP1.00046.001.2018-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1144627
+    },
+    {
+     "file": "filesToStack00046/NEON.D01.HARV.DP1.00046.001.2018-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1180543
+    },
+    {
+     "file": "filesToStack00046/NEON.D01.HARV.DP1.00046.001.2018-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1185445
+    },
+    {
+     "file": "filesToStack00046/NEON.D01.HARV.DP1.00046.001.2018-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1153356
+    },
+    {
+     "file": "filesToStack00046/NEON.D01.HARV.DP1.00046.001.2018-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1186660
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 12,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.00046.001",
+    "site": "KONZ",
+    "startdate": "2018-04",
+    "enddate": "2018-10"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T22:53:05.735093+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 7,
+   "num_csv_files": 0,
+   "total_bytes": 8149908,
+   "files": [
+    {
+     "file": "filesToStack00046/NEON.D06.KONZ.DP1.00046.001.2018-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1135797
+    },
+    {
+     "file": "filesToStack00046/NEON.D06.KONZ.DP1.00046.001.2018-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1174035
+    },
+    {
+     "file": "filesToStack00046/NEON.D06.KONZ.DP1.00046.001.2018-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1138896
+    },
+    {
+     "file": "filesToStack00046/NEON.D06.KONZ.DP1.00046.001.2018-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1178644
+    },
+    {
+     "file": "filesToStack00046/NEON.D06.KONZ.DP1.00046.001.2018-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1189092
+    },
+    {
+     "file": "filesToStack00046/NEON.D06.KONZ.DP1.00046.001.2018-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1144955
+    },
+    {
+     "file": "filesToStack00046/NEON.D06.KONZ.DP1.00046.001.2018-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1188489
+    }
+   ],
+   "files_truncated": false
+  }
+ ]
+}

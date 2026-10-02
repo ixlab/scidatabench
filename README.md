@@ -139,20 +139,22 @@ for phase in sorted(total):
 
 ## Gold snapshots
 
-Phases 3 and 4 read the data the gold API calls returned, and phase 2 is
-graded against it. The snapshots go under `gold/scidatabench/` and
-`gold/scidatabench-onboard/`.
-
-> **Coming soon.** The snapshots we used are not released yet. They contain
-> records from many data providers, each under its own terms, and we will
-> publish them once we have finished reviewing those licenses.
-
-In the meantime you can build a snapshot yourself from the live APIs. The
-services keep changing, so it will not match ours exactly:
+Phases 3 and 4 read the data the gold API calls return, and phase 2 is
+graded against it. Download it from the live APIs:
 
 ```bash
 python scripts/build_gold.py --bench-root data/scidatabench --out gold/scidatabench
+python scripts/build_gold.py --bench-root data/scidatabench-onboard \
+    --out gold/scidatabench-onboard
 ```
+
+The platforms keep adding records, so data downloaded today can hold more
+than ours did. `snapshots/` records the snapshot we used: for every gold call,
+when we downloaded it (`downloaded_at`) and how many rows it returned
+(`rows`). To work on the same data as the paper, drop the records dated after
+each call's `downloaded_at`, then compare row counts to find calls that still
+differ — some platforms, such as USGS and EPA AQS, also revise values in
+place.
 
 ## Other models
 
@@ -216,6 +218,7 @@ harness/       the task agent: prompts, tools, runner
 grading/       graders for all four phases
 executor/      runs API calls for phase 2 and for the gold snapshot
 scripts/       the commands above
+snapshots/     when each gold call was downloaded, and its row count
 supplementary/ supplementary material for the paper
 ```
 
@@ -226,9 +229,9 @@ supplementary/ supplementary material for the paper
 ## License
 
 - **Code** (`harness/`, `grading/`, `executor/`, `scripts/`): [MIT](LICENSE).
-- **Benchmark data** (`data/`), **platform guides** (`skills/`) **and
-  supplementary material** (`supplementary/`): [CC BY 4.0](data/LICENSE).
-  You are free to use, share and adapt them; please cite SciDataBench when
-  you do.
-- **Gold snapshots** are not covered by these licenses. They hold records
-  from the data platforms, which remain under each provider's own terms.
+- **Benchmark data** (`data/`, `snapshots/`), **platform guides**
+  (`skills/`) **and supplementary material** (`supplementary/`):
+  [CC BY 4.0](data/LICENSE). You are free to use, share and adapt them;
+  please cite SciDataBench when you do.
+- **Data you download** with `build_gold.py` or by running the benchmark
+  remains under each data platform's own terms.

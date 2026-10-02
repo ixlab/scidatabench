@@ -1,0 +1,23 @@
+{
+ "scenario_file": "10.56025_ijaresm.2025.1310250807_scenario.json",
+ "platform": "epa",
+ "downloaded_at": "2026-05-09T19:09:55.530406+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyaqsapi.bycounty",
+   "function": "dailysummary",
+   "kwargs": {
+    "countycode": "061",
+    "parameter": "88101",
+    "stateFIPS": "36",
+    "bdate": "20140101",
+    "edate": "20241231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:09:55.530406+00:00",
+   "rows": 29304,
+   "via": "RAQSAPI (R)"
+  }
+ ]
+}
