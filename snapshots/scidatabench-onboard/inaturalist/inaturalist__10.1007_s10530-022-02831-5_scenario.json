@@ -1,0 +1,451 @@
+{
+ "scenario_file": "inaturalist__10.1007_s10530-022-02831-5_scenario.json",
+ "platform": "inaturalist",
+ "downloaded_at": "2026-08-09T02:09:57.005092+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 145097,
+    "place_id": 6996,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:27.458646+00:00",
+   "rows": 5,
+   "format": "parquet",
+   "total_available": 5
+  },
+  {
+   "idx": 1,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 145097,
+    "place_id": 10782,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:28.754757+00:00",
+   "rows": 8,
+   "format": "parquet",
+   "total_available": 8
+  },
+  {
+   "idx": 2,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 145097,
+    "nelat": -8.2103136,
+    "nelng": 116.725107,
+    "swlat": -8.9561016,
+    "swlng": 115.8212014,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:30.290416+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 3,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 145095,
+    "place_id": 6996,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:32.803688+00:00",
+   "rows": 14,
+   "format": "parquet",
+   "total_available": 14
+  },
+  {
+   "idx": 4,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 145095,
+    "place_id": 10782,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:33.906906+00:00",
+   "rows": 15,
+   "format": "parquet",
+   "total_available": 15
+  },
+  {
+   "idx": 5,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 145095,
+    "nelat": -8.2103136,
+    "nelng": 116.725107,
+    "swlat": -8.9561016,
+    "swlng": 115.8212014,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:35.262401+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 6,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14872,
+    "place_id": 6996,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:36.453078+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 7,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14872,
+    "place_id": 10782,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:36.969758+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 8,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14872,
+    "nelat": -8.2103136,
+    "nelng": 116.725107,
+    "swlat": -8.9561016,
+    "swlng": 115.8212014,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:38.042137+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 9,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 204454,
+    "place_id": 6996,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:40.975332+00:00",
+   "rows": 8,
+   "format": "parquet",
+   "total_available": 8
+  },
+  {
+   "idx": 10,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 204454,
+    "place_id": 10782,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:42.594888+00:00",
+   "rows": 1,
+   "format": "parquet",
+   "total_available": 1
+  },
+  {
+   "idx": 11,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 204454,
+    "nelat": -8.2103136,
+    "nelng": 116.725107,
+    "swlat": -8.9561016,
+    "swlng": 115.8212014,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:43.991654+00:00",
+   "rows": 2,
+   "format": "parquet",
+   "total_available": 2
+  },
+  {
+   "idx": 12,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14870,
+    "place_id": 6996,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:45.287730+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 13,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14870,
+    "place_id": 10782,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:46.517050+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 14,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14870,
+    "nelat": -8.2103136,
+    "nelng": 116.725107,
+    "swlat": -8.9561016,
+    "swlng": 115.8212014,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:46.988289+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 15,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14874,
+    "place_id": 6996,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:47.985725+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 16,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14874,
+    "place_id": 10782,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:50.852034+00:00",
+   "rows": 2,
+   "format": "parquet",
+   "total_available": 2
+  },
+  {
+   "idx": 17,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14874,
+    "nelat": -8.2103136,
+    "nelng": 116.725107,
+    "swlat": -8.9561016,
+    "swlng": 115.8212014,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:51.459201+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 18,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14869,
+    "place_id": 6996,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:52.009326+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 19,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14869,
+    "place_id": 10782,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:52.971496+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 20,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14869,
+    "nelat": -8.2103136,
+    "nelng": 116.725107,
+    "swlat": -8.9561016,
+    "swlng": 115.8212014,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:53.208469+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 21,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14871,
+    "place_id": 6996,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:55.259521+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 22,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14871,
+    "place_id": 10782,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:56.467508+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  },
+  {
+   "idx": 23,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 14871,
+    "nelat": -8.2103136,
+    "nelng": 116.725107,
+    "swlat": -8.9561016,
+    "swlng": 115.8212014,
+    "quality_grade": "research",
+    "d1": "2016-08-01",
+    "d2": "2019-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:09:57.005092+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "total_available": 0
+  }
+ ]
+}

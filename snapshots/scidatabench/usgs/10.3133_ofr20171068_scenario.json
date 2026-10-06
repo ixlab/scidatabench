@@ -1,0 +1,169 @@
+{
+ "scenario_file": "10.3133_ofr20171068_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-04-25T22:20:08+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-02085000",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2014-09-30",
+    "statistic_id": "00003"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T03:18:49+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 1,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-02085070",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2014-09-30",
+    "statistic_id": "00003"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T03:18:49+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 2,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-0208521324",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2014-09-30",
+    "statistic_id": "00003"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T03:18:50+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 3,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-02085500",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2014-09-30",
+    "statistic_id": "00003"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T03:18:50+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 4,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-02096846",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2014-09-30",
+    "statistic_id": "00003"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T03:18:51+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 5,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-02097314",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2014-09-30",
+    "statistic_id": "00003"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T03:18:52+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 6,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-0209741955",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2014-09-30",
+    "statistic_id": "00003"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T03:18:52+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 7,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-02097464",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2014-09-30",
+    "statistic_id": "00003"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T03:18:53+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 8,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-02097517",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2014-09-30",
+    "statistic_id": "00003"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T03:18:53+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 9,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-0209782609",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2014-09-30",
+    "statistic_id": "00003"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T03:18:54+00:00",
+   "rows": 365
+  },
+  {
+   "idx": 10,
+   "module": "dataretrieval.waterdata",
+   "function": "get_monitoring_locations",
+   "kwargs": {
+    "monitoring_location_id": [
+     "USGS-02085000",
+     "USGS-02085070",
+     "USGS-0208521324",
+     "USGS-02085500",
+     "USGS-02096846",
+     "USGS-02097314",
+     "USGS-0209741955",
+     "USGS-02097464",
+     "USGS-02097517",
+     "USGS-0209782609"
+    ]
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T22:20:08+00:00",
+   "rows": 10
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+  "source_doi": "10.1007/s10584-021-03272-0",
+  "research_question": "What is the impact of climatic means and weather extremes on winter wheat yields across different developmental stages in Ukraine?",
+  "phase_1": {
+    "user_prompt": "We are analyzing climate impacts on wheat yields in Ukraine between 1985 and 2018 and need the corresponding meteorological station data. Can you determine the geographic scope we should search and the exact weather variables needed to capture daily minimum, maximum and average air temperature, rainfall, and snow depth?",
+    "expected": {
+      "parameters": [
+        "TMIN",
+        "TMAX",
+        "TAVG",
+        "PRCP",
+        "SNWD"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the daily records for minimum, maximum, and average temperatures, as well as precipitation and snow depth, for all available weather stations in Ukraine from January 1, 1985, to December 31, 2018.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "UPM00033609",
+          "startDate": "1985-01-01",
+          "endDate": "2018-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          49.0,
+          32.0
+        ]
+      }
+    ]
+  }
+}

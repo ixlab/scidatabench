@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.3133/ofr20191060",
+  "research_question": "What is the long-term median specific conductance for the Clark Fork River above Missoula based on historical discrete water-quality field samples?",
+  "phase_1": {
+    "user_prompt": "I am conducting a baseline water-quality assessment for the Clark Fork Basin in Montana. Specifically, I want to look at the main monitoring station on the Clark Fork River just upstream of Missoula. Could you help me identify the official USGS site number for this location, as well as the exact 5-digit parameter code used for specific conductance field measurements?",
+    "expected": {
+      "sites": [
+        "12340500"
+      ],
+      "parameter_codes": [
+        "00095"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site and parameter information, please retrieve all historical discrete water-quality sample records (not daily continuous averages) for specific conductance at this site. Limit the retrieval to the period from July 1, 1986, through September 30, 2017.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-12340500",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "1986-07-01",
+          "activityStartDateUpper": "2017-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved dataset by filtering out any records where the specific conductance measurement is missing, empty, or invalid. How many valid specific conductance samples remain during this time period?",
+    "expected": 243,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Finally, calculate the overall median specific conductance across all of these valid samples to determine the typical baseline conditions for this segment of the river.",
+    "expected": 255.0,
+    "unit": "µS/cm",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+ "scenario_file": "97e82637-6b21-379b-aa26-9d4509f54b75_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T06:04:08+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 3925377,
+    "country": [
+     "KZ",
+     "UZ",
+     "KG",
+     "TM",
+     "TJ"
+    ],
+    "year": "1916,2024",
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:04:08+00:00",
+   "rows": 66,
+   "format": "gbif_simple_csv",
+   "download_key": "0007454-260423192947929",
+   "doi": "10.15468/dl.rxdqcf",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "3925377"
+     },
+     {
+      "type": "in",
+      "key": "COUNTRY",
+      "values": [
+       "KZ",
+       "UZ",
+       "KG",
+       "TM",
+       "TJ"
+      ]
+     },
+     {
+      "type": "greaterThanOrEquals",
+      "key": "YEAR",
+      "value": "1916"
+     },
+     {
+      "type": "lessThanOrEquals",
+      "key": "YEAR",
+      "value": "2024"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,290 @@
+{
+  "source_doi": "10.3133/sir20125260",
+  "research_question": "How do dissolved iron and manganese concentrations change over time in native aquifer groundwater following the injection and storage of nonnative source water?",
+  "phase_1": {
+    "user_prompt": "I am investigating potential trace metal mobilization near a groundwater aquifer storage and recovery (ASR) site in southern Texas. I want to analyze water quality data from 12 specific USGS groundwater monitoring wells: 292557098261401, 292643098242101, 290732098251101, 290750098235301, 290809098232301, 290657098242801, 290838098241401, 290403098293201, 291330098143301, 290546098234801, 290849098174001, and 290727098211301. Between 2004 and 2011, what are the appropriate USGS NWIS parameter codes to query for dissolved iron and dissolved manganese, and what data type should I use to retrieve these discrete field samples?",
+    "expected": {
+      "sites": [
+        "292557098261401",
+        "292643098242101",
+        "290732098251101",
+        "290750098235301",
+        "290809098232301",
+        "290657098242801",
+        "290838098241401",
+        "290403098293201",
+        "291330098143301",
+        "290546098234801",
+        "290849098174001",
+        "290727098211301"
+      ],
+      "parameter_codes": [
+        "01046",
+        "01056"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the discrete water quality measurements for dissolved iron and dissolved manganese for these 12 wells between January 1, 2004, and December 31, 2011.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-292557098261401",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-292557098261401",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-292643098242101",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-292643098242101",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290732098251101",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290732098251101",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290750098235301",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290750098235301",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290809098232301",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290809098232301",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290657098242801",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290657098242801",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290838098241401",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290838098241401",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290403098293201",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290403098293201",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-291330098143301",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-291330098143301",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290546098234801",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290546098234801",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290849098174001",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290849098174001",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290727098211301",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-290727098211301",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2004-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Filter your retrieved water quality data to focus on the Ray well (USGS station 290727098211301). Extract the dissolved iron concentration measured during the sampling event on June 30, 2011. What was this concentration? Report the result in milligrams per liter (mg/L).",
+    "expected": 13.3,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Calculate the percent difference in dissolved iron concentration at the Ray well (USGS station 290727098211301) between its first baseline sample on June 17, 2004, and the later sample on June 30, 2011. Use the formula: ((Later - First) / First) * 100. Based on this percentage change, what does this suggest about groundwater chemistry and trace element behavior when nonnative water is injected into an aquifer?",
+    "expected": 421.6,
+    "unit": "percent",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Substantial increases in dissolved iron and manganese concentrations indicate that injected nonnative water (or a mix of native and injected water) has migrated into the strata supplying downgradient wells. This migration likely altered reduction-oxidation (redox) conditions, causing the mobilization of iron and manganese from the native aquifer matrix.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

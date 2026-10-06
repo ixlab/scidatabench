@@ -1,0 +1,47 @@
+{
+ "scenario_file": "matproj__10.1016_j.mtphys.2024.101549_scenario.json",
+ "platform": "matproj",
+ "downloaded_at": "2026-08-10T22:37:17.402964+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "mp_api",
+   "function": "materials/summary",
+   "kwargs": {
+    "material_ids": "mp-8062,mp-1008557,mp-1011695,mp-22922",
+    "_fields": "material_id,formula_pretty,density,volume,nsites"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:17.292397+00:00",
+   "rows": 4,
+   "format": "parquet",
+   "endpoint": "materials/summary"
+  },
+  {
+   "idx": 1,
+   "module": "mp_api",
+   "function": "materials/elasticity",
+   "kwargs": {
+    "material_ids": "mp-8062,mp-1008557,mp-1011695,mp-22922",
+    "_fields": "material_id,formula_pretty,bulk_modulus,shear_modulus"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:17.402964+00:00",
+   "rows": 4,
+   "format": "parquet",
+   "endpoint": "materials/elasticity"
+  }
+ ]
+}

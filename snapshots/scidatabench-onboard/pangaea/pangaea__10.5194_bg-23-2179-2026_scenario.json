@@ -1,0 +1,49 @@
+{
+ "scenario_file": "pangaea__10.5194_bg-23-2179-2026_scenario.json",
+ "platform": "pangaea",
+ "downloaded_at": "2026-08-10T15:00:24.722697+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.924375"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T15:00:24.722697+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "dataset_title": "The global marine particle size distribution dataset obtained with the Underwater Vision Profiler 5 - version 1",
+   "is_collection": true,
+   "n_members": 5,
+   "members_fetched": 0,
+   "truncated": false
+  },
+  {
+   "idx": 1,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.943432"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:32.690867+00:00",
+   "rows": 81152,
+   "format": "parquet",
+   "dataset_title": "Physical oceanography (CTD) during METEOR cruise M160"
+  }
+ ]
+}

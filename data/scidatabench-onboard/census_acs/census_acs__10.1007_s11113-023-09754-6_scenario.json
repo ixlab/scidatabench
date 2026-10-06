@@ -1,0 +1,50 @@
+{
+  "source_doi": "10.1007/s11113-023-09754-6",
+  "research_question": "How can we incorporate American Community Survey (ACS) sampling error covariance into the measurement of racial segregation dynamics (White, Black, and Asian populations) in California metropolitan areas over time?",
+  "phase_1": {
+    "user_prompt": "We are studying how data uncertainty affects the measurement of racial segregation dynamics in California, comparing segregation between White and Black populations, and White and Asian populations, across two time periods: 2010-2014 and 2015-2019. The analysis is at the census tract level for the entire state of California. Instead of just using the published margins of error, we will use the 80 variance replicate estimates to properly account for covariance among estimates. To pull this data, I need the primary ACS table and specific variable codes for these three race groups, as well as the standard codes for the required geography and state. Can you identify the ACS identifiers needed to locate this data?",
+    "expected": {
+      "tables": [
+        "B02001"
+      ],
+      "variables": [
+        "B02001_002E",
+        "B02001_003E",
+        "B02001_005E"
+      ],
+      "geographies": [
+        "tract"
+      ],
+      "state_codes": [
+        "06"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identifiers you found (Table B02001, specifically variables for White, Black, and Asian populations, in California at the census tract level), please retrieve the published full sample estimates as well as all 80 variance replicate estimates for these three groups. You will need to query the Variance Replicate Tables endpoint for the ACS 5-year datasets covering both 2010-2014 and 2015-2019.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2014,
+          "dataset": "acs/acs5",
+          "get": "NAME,B02001_002E,B02001_003E,B02001_005E",
+          "for": "tract:*",
+          "in": "state:06"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2019,
+          "dataset": "acs/acs5",
+          "get": "NAME,B02001_002E,B02001_003E,B02001_005E",
+          "for": "tract:*",
+          "in": "state:06"
+        }
+      }
+    ]
+  }
+}

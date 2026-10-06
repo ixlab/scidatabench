@@ -1,0 +1,133 @@
+{
+ "scenario_file": "inaturalist__10.1007_s11252-024-01526-0_scenario.json",
+ "platform": "inaturalist",
+ "downloaded_at": "2026-08-09T02:41:25.027787+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 47119,
+    "nelat": 38.763,
+    "nelng": -9.145,
+    "swlat": 38.747,
+    "swlng": -9.166,
+    "d1": "2020-09-01",
+    "d2": "2022-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:39:48.568427+00:00",
+   "rows": 132,
+   "format": "parquet",
+   "total_available": 132
+  },
+  {
+   "idx": 1,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 47170,
+    "nelat": 38.763,
+    "nelng": -9.145,
+    "swlat": 38.747,
+    "swlng": -9.166,
+    "d1": "2020-09-01",
+    "d2": "2022-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:39:59.911253+00:00",
+   "rows": 1007,
+   "format": "parquet",
+   "total_available": 1007
+  },
+  {
+   "idx": 2,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 47158,
+    "nelat": 38.763,
+    "nelng": -9.145,
+    "swlat": 38.747,
+    "swlng": -9.166,
+    "d1": "2020-09-01",
+    "d2": "2022-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:40:21.227391+00:00",
+   "rows": 1432,
+   "format": "parquet",
+   "total_available": 1432
+  },
+  {
+   "idx": 3,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 40151,
+    "nelat": 38.763,
+    "nelng": -9.145,
+    "swlat": 38.747,
+    "swlng": -9.166,
+    "d1": "2020-09-01",
+    "d2": "2022-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:40:23.311424+00:00",
+   "rows": 61,
+   "format": "parquet",
+   "total_available": 61
+  },
+  {
+   "idx": 4,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 47115,
+    "nelat": 38.763,
+    "nelng": -9.145,
+    "swlat": 38.747,
+    "swlng": -9.166,
+    "d1": "2020-09-01",
+    "d2": "2022-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:40:25.410845+00:00",
+   "rows": 87,
+   "format": "parquet",
+   "total_available": 87
+  },
+  {
+   "idx": 5,
+   "module": "pyinaturalist",
+   "function": "get_observations",
+   "kwargs": {
+    "taxon_id": 47126,
+    "nelat": 38.763,
+    "nelng": -9.145,
+    "swlat": 38.747,
+    "swlng": -9.166,
+    "d1": "2020-09-01",
+    "d2": "2022-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:41:25.027787+00:00",
+   "rows": 4427,
+   "format": "parquet",
+   "total_available": 4427
+  }
+ ]
+}

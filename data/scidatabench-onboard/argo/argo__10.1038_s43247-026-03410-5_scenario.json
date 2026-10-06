@@ -1,0 +1,34 @@
+{
+  "source_doi": "10.1038/s43247-026-03410-5",
+  "research_question": "How do microbial nitrogen transformation processes and their coupling to carbonate chemistry shift over time in the Eastern Tropical North Pacific oxygen-deficient zone, as observed by an autonomous biogeochemical float?",
+  "phase_1": {
+    "user_prompt": "We are observing high-resolution temporal shifts in nitrogen-carbon cycling within the Eastern Tropical North Pacific (ETNP) oxygen-deficient zone, using an autonomous profiling float deployed around January 2022 and recording through October 2024. Identify the float, and the full set of measured Argo parameters we need for hydrography, oxygen, nutrients, carbonate chemistry, chlorophyll and particle backscatter.",
+    "expected": {
+      "float_wmo_ids": [
+        "5906484"
+      ],
+      "parameters": [
+        "TEMP",
+        "PSAL",
+        "PRES",
+        "DOXY",
+        "NITRATE",
+        "PH_IN_SITU_TOTAL",
+        "CHLA",
+        "BBP700"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the float identifier (5906484), please retrieve its complete profile dataset. Make sure to download the full time series from its deployment in January 2022 through October 2024, including all the physical and biogeochemical measurements, so we have the raw inputs needed for the stoichiometric mass-balance model.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5906484
+        }
+      }
+    ]
+  }
+}

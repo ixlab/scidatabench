@@ -1,0 +1,55 @@
+{
+  "source_doi": "10.5430/ijhe.v11n2p143",
+  "research_question": "Retrieve iNaturalist observation records for mistletoe, crapemyrtle bark scale, and red imported fire ants collected via drone imagery in Nacogdoches, Texas.",
+  "phase_1": {
+    "user_prompt": "We are using drones to support citizen science at Stephen F. Austin State University by mapping three target pest and parasite species: the mistletoe that parasitises local hardwoods, the invasive bark scale of crape myrtle, and the invasive fire ant. Please identify the exact scientific names of these three species, as well as the city and state where our campus is located.",
+    "expected": {
+      "taxon_names": [
+        "Acanthococcus lagerstroemiae",
+        "Solenopsis invicta",
+        "Phoradendron leucarpum"
+      ],
+      "place_names": [
+        "Nacogdoches, Texas"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the target species (Acanthococcus lagerstroemiae, Solenopsis invicta, Phoradendron leucarpum) and the study location (Nacogdoches, Texas), please fetch the iNaturalist observation records for these species in that specific area.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 1513579,
+          "nelat": 31.673446,
+          "nelng": -94.593435,
+          "swlat": 31.5547536,
+          "swlng": -94.7168629
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 67598,
+          "nelat": 31.673446,
+          "nelng": -94.593435,
+          "swlat": 31.5547536,
+          "swlng": -94.7168629
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 49668,
+          "nelat": 31.673446,
+          "nelng": -94.593435,
+          "swlat": 31.5547536,
+          "swlng": -94.7168629
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+ "scenario_file": "pangaea__10.5194_essd-15-3223-2023_scenario.json",
+ "platform": "pangaea",
+ "downloaded_at": "2026-08-09T01:42:43.667778+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.887697"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:37.966979+00:00",
+   "rows": 472,
+   "format": "parquet",
+   "dataset_title": "Sea ice conditions during POLARSTERN cruise PS111 (ANT-XXXIII/2, FROST)"
+  },
+  {
+   "idx": 1,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.901263"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:39.066146+00:00",
+   "rows": 133,
+   "format": "parquet",
+   "dataset_title": "Sea ice conditions during POLARSTERN cruise PS118 (LARSEN)"
+  },
+  {
+   "idx": 2,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.901279"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:40.145010+00:00",
+   "rows": 51,
+   "format": "parquet",
+   "dataset_title": "Sea ice conditions during POLARSTERN cruise PS117"
+  },
+  {
+   "idx": 3,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.880046"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:41.225420+00:00",
+   "rows": 55,
+   "format": "parquet",
+   "dataset_title": "Sea ice conditions during POLARSTERN cruise PS103 (ANT-XXXII/2)"
+  },
+  {
+   "idx": 4,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.835578"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:42.474911+00:00",
+   "rows": 281,
+   "format": "parquet",
+   "dataset_title": "Sea ice conditions during POLARSTERN cruise PS86 (ARK-XXVIII/3 AURORA)"
+  },
+  {
+   "idx": 5,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.803221"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:43.667778+00:00",
+   "rows": 217,
+   "format": "parquet",
+   "dataset_title": "Sea ice conditions during POLARSTERN cruise ARK-XXVII/3 (IceArc)"
+  }
+ ]
+}

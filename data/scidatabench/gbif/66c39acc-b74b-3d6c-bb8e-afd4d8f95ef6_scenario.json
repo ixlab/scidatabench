@@ -1,0 +1,57 @@
+{
+  "source_doi": "10.59517/oc.e594",
+  "research_question": "What is the geographic distribution and northernmost extent of the Rufous Potoo (Phyllaemulor bracteatus) in Colombia based on available occurrence data?",
+  "phase_1": {
+    "user_prompt": "I am researching the distribution of the Rufous Potoo (Phyllaemulor bracteatus), which is also historically known as Nyctibius bracteatus, in Colombia. I want to compile all available occurrence records to map its presence across the country's regions. What are the relevant parameters to search for this data in biodiversity databases?",
+    "expected": {
+      "country_codes": [
+        "CO"
+      ],
+      "taxon_keys": [
+        "10159747",
+        "2496804"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the parameters identified, retrieve all available occurrence records for the Rufous Potoo in Colombia from GBIF.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "CO",
+          "taxonKey": 10159747
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "CO",
+          "taxonKey": 2496804
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved occurrences to standardize the location data. Based on the administrative regions provided in the data (or derived from the coordinates), how many unique Colombian departments have confirmed records for this species?",
+    "expected": 4.0,
+    "unit": "departments"
+  },
+  "phase_4": {
+    "user_prompt": "Create a visualization mapping these occurrences in Colombia and save it as `rufous_potoo_distribution_map.png`. Based on the spatial distribution, describe the broad geographic pattern of this species in the country and identify the latitude of the northernmost record.",
+    "expected": 1.22,
+    "unit": "decimal degrees",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The species is widely distributed across the Colombian Amazon (southeastern Colombia), with records in the departments of Caquetá, Putumayo, Amazonas, and Vaupés. The northernmost record occurs in Vaupés (near Mitú).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "rufous_potoo_distribution_map.png",
+      "visual_description": "A map of Colombia showing occurrence points concentrated in the southern and southeastern regions (the Amazon basin). Points should be clearly visible in areas corresponding to Amazonas, Caquetá, Putumayo, and Vaupés, with the northernmost point around ~1.2 degrees North.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

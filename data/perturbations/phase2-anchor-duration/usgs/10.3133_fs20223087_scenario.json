@@ -1,0 +1,68 @@
+{
+  "source_doi": "10.3133/fs20223087",
+  "research_question": "How can discrete water-quality samples be matched with high-frequency continuous sensor data to calibrate a linear regression surrogate model for estimating suspended-sediment concentration (SSC) from turbidity in San Francisco Bay?",
+  "phase_1": {
+    "user_prompt": "I'm developing surrogate models to estimate suspended-sediment concentration (SSC) using optical turbidity sensors in San Francisco Bay. I want to focus on the Suisun Bay at Mallard Island monitoring station. Could you find the official USGS site number for this station? Additionally, identify the appropriate 5-digit USGS parameter codes for discrete Suspended-Sediment Concentration (in mg/L) and continuous Turbidity (measured in Formazin Nephelometric Units, FNU). I need data spanning Water Years 2018 through 2020.",
+    "expected": {
+      "sites": [
+        "11185185"
+      ],
+      "parameter_codes": [
+        "80154",
+        "63680",
+        "81907"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the Mallard Island station, retrieve all discrete water-quality samples for Suspended-Sediment Concentration (SSC) and all high-frequency continuous (typically 15-minute) Turbidity data across the 3 water years beginning in October 2017.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11185185",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2017-10-01",
+          "activityStartDateUpper": "2020-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11185185",
+          "parameter_code": "63680",
+          "time": "2017-10-01/2020-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11185185",
+          "parameter_code": "81907",
+          "time": "2017-10-01/2020-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved datasets by matching each discrete SSC sample to the closest continuous turbidity measurement in time. You will need to handle timezones correctly and find the nearest continuous reading for each discrete sample. Filter out any matched pairs that contain missing values or where the time difference between the sample and the continuous reading is greater than 30 minutes. How many valid matched pairs are available for the model?",
+    "expected": 77,
+    "unit": "matched pairs"
+  },
+  "phase_4": {
+    "user_prompt": "Using the temporally matched dataset, fit an Ordinary Least Squares (OLS) linear regression model to predict Suspended-Sediment Concentration (SSC) as a function of continuous Turbidity. What is the computed slope of the best-fit line? Additionally, create a scatter plot of the calibration data with the linear best-fit regression line overlaid, and save it as 'ssc_turbidity_surrogate_model.png'.",
+    "expected": 2.21,
+    "unit": "mg/L per FNU",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The surrogate model exhibits a positive linear relationship between continuous optical turbidity and discrete suspended-sediment concentration samples, establishing a site-specific calibration curve for sediment flux estimation.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "ssc_turbidity_surrogate_model.png",
+      "visual_description": "A scatter plot showing Turbidity (FNU) on the x-axis and Suspended-Sediment Concentration (mg/L) on the y-axis. The plot should include discrete data points representing the temporally matched samples, and a clear linear best-fit regression line demonstrating a positive correlation.",
+      "paper_figure_reference": "Figure 5"
+    }
+  }
+}

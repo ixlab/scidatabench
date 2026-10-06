@@ -1,0 +1,70 @@
+{
+  "source_doi": "10.21829/abm130.2023.2200",
+  "research_question": "Analyze the spatial distribution of the orchid Vanilla karenchristianae and its synonyms in Brazil to evaluate the significance of a newly discovered population in the Atlantic Forest.",
+  "phase_1": {
+    "user_prompt": "I am documenting a new population of the orchid Vanilla karenchristianae in the Brazilian Atlantic Forest. To understand how significant this range extension is, I need to find all previous occurrence records of this species in Brazil. Since its taxonomy has been updated recently, I should also include its synonyms Vanilla uncinata and Vanilla ensifolia in my search.",
+    "expected": {
+      "country_codes": [
+        "BR"
+      ],
+      "taxon_keys": [
+        "10698843",
+        "2803315",
+        "2803372"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Download the occurrence records for these three orchid species in Brazil. Please ensure the data includes coordinate information so I can map their spatial distribution.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "BR",
+          "hasCoordinate": true,
+          "taxonKey": 10698843
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "BR",
+          "hasCoordinate": true,
+          "taxonKey": 2803315
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "BR",
+          "hasCoordinate": true,
+          "taxonKey": 2803372
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded records to identify valid occurrences. Clean the data to remove records without valid coordinates. Additionally, a previous study noted that specimens from the state of Amazonas identified as these taxa are actually misidentifications of a different species (V. labellopapillata), so please filter out any records located in the state of Amazonas. Count the total number of remaining valid occurrence records.",
+    "expected": 3,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "My new field observation is located in Candeias, Bahia, at coordinates 12°36'36''S, 38°29'02''W. Calculate the shortest distance over the Earth's surface between two latitude/longitude points (in kilometers) between this new observation and the nearest previously known occurrence from the cleaned GBIF data. Finally, generate a map showing the spatial distribution of the GBIF records alongside this new point, and save it as `vanilla_range_extension_map.png`.",
+    "expected": 2380.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The new record in Bahia represents a significant eastern range extension into the Atlantic Forest, located approximately 2380 km away from the nearest previously known locality (which was in the Amazon).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "vanilla_range_extension_map.png",
+      "visual_description": "A map of Brazil showing previous occurrence points (e.g., in Pará/Rondônia) and a new, distinct occurrence point far to the east in Bahia near the coast.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

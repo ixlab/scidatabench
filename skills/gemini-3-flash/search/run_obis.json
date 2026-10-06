@@ -1,0 +1,57 @@
+{
+  "platform": "obis",
+  "condition": "search",
+  "model": "gemini-3-flash-preview",
+  "elapsed_s": 16.4,
+  "tokens": {
+    "input": 39137,
+    "output": 2032,
+    "thinking": 0,
+    "total": 41169,
+    "cache_read": 8122
+  },
+  "tool_call_turns": 5,
+  "research_log": [
+    {
+      "kind": "search",
+      "query": "pyobis python package documentation API reference",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://iobis.github.io/pyobis",
+        "https://github.com/iobis/pyobis",
+        "https://pyobis.readthedocs.io",
+        "https://docs.python.org/3/c-api/index.html",
+        "https://community.latenode.com/t/where-can-i-find-comprehensive-python-documentation/13093",
+        "https://docs.pola.rs/api/python/stable/reference/index.html",
+        "https://docs.datarobot.com/en/docs/api/reference/sdk/index.html",
+        "https://pandas.pydata.org/docs/reference/index.html"
+      ]
+    },
+    {
+      "kind": "fetch",
+      "url": "https://iobis.github.io/pyobis",
+      "status": "200",
+      "chars": 3804
+    },
+    {
+      "kind": "fetch",
+      "url": "https://iobis.github.io/pyobis/occurrences.html",
+      "status": "200",
+      "chars": 13426
+    },
+    {
+      "kind": "fetch",
+      "url": "https://iobis.github.io/pyobis/taxa.html",
+      "status": "200",
+      "chars": 2618
+    },
+    {
+      "kind": "fetch",
+      "url": "https://iobis.github.io/pyobis/checklist.html",
+      "status": "200",
+      "chars": 4183
+    }
+  ],
+  "generated_utc": "2026-08-14T01:45:15.530410+00:00"
+}

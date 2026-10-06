@@ -1,0 +1,62 @@
+{
+  "source_doi": "10.5194/nhess-18-365-2018",
+  "research_question": "What are the long-term trends in the highest annual maximum temperatures (TXx) at specific stations in India, and how do they relate to the attribution of recent extreme heat waves?",
+  "phase_1": {
+    "user_prompt": "We are analyzing extreme daily air temperatures in India and their attribution to anthropogenic climate change. Data for the record-setting Phalodi station is not publicly available in GHCN-D, so we will rely on three other stations to represent the regions of the 2016 and 2015 heatwaves — two in Rajasthan and one in Andhra Pradesh. Can you identify the names of these three locations, as well as the standard GHCN weather parameters representing the daily maximum and minimum air temperatures we need?",
+    "expected": {
+      "parameters": [
+        "TMAX",
+        "TMIN"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified Bikaner, Jodhpur, and Machilipatnam as the study sites, please retrieve the daily maximum and minimum temperature records for these stations from 1957-01-01 to 2016-12-31 using the NOAA GHCN database. We need this raw daily data to reconstruct the extreme temperature series.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "IN019070100",
+          "startDate": "1957-01-01",
+          "endDate": "2016-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          28.0159,
+          73.3171
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "IN019180500",
+          "startDate": "1957-01-01",
+          "endDate": "2016-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        }
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "IN001111200",
+          "startDate": "1957-01-01",
+          "endDate": "2016-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          16.1817,
+          81.1348
+        ]
+      }
+    ]
+  }
+}

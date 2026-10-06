@@ -1,0 +1,119 @@
+{
+  "platform": "noaa_ghcn",
+  "condition": "search",
+  "model": "gemini-3-flash-preview",
+  "elapsed_s": 46.3,
+  "tokens": {
+    "input": 77387,
+    "output": 4059,
+    "thinking": 1946,
+    "total": 81446,
+    "cache_read": 28481
+  },
+  "tool_call_turns": 7,
+  "research_log": [
+    {
+      "kind": "search",
+      "query": "NOAA NCEI Access API documentation dataset daily-summaries global-summary-of-the-year",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://github.com/partytax/ncei-api-guide",
+        "https://casrai.org/guides/noaa-ncei-climate-ocean-data-access",
+        "https://www.ncei.noaa.gov/support/access-data-service-api-user-documentation",
+        "https://medium.com/@markwkiehl/noaa-climate-api-v2025-72e25baa26b6",
+        "https://www.ncei.noaa.gov/access",
+        "https://data.cnra.ca.gov/dataset/global-summary-of-the-year-version-1-0",
+        "https://www.ncei.noaa.gov/access/search/dataset-search",
+        "https://www.ncei.noaa.gov/access/search/datasets/global-summary-of-the-year"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "NOAA NCEI Access Data Service API dataTypes list daily-summaries global-summary-of-the-year",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://github.com/partytax/ncei-api-guide",
+        "https://medium.com/@markwkiehl/noaa-climate-api-c2e36e7a49c5",
+        "https://www.ncei.noaa.gov/support/access-data-service-api-user-documentation",
+        "https://casrai.org/guides/noaa-ncei-climate-ocean-data-access",
+        "https://data.cnra.ca.gov/dataset/global-summary-of-the-year-version-1-0",
+        "https://www.ncei.noaa.gov/access/search/datasets/global-summary-of-the-year",
+        "https://www.ncei.noaa.gov/access/search/dataset-search",
+        "https://www.ncei.noaa.gov/access/search/datasets/global-summary-of-the-month"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "GHCN station ID format and how to find them NCEI station search",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://www.ncei.noaa.gov/products/global-historical-climatology-network-hourly",
+        "https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily",
+        "https://redivis.com/datasets/7br5-41440fjzk",
+        "https://www.ncei.noaa.gov/products/land-based-station/station-histories",
+        "https://ncics.org/portfolio/monitor/ghcn-d-station-data",
+        "https://www.drought.gov/data-maps-tools/ncei-find-station-tool",
+        "https://docs.ropensci.org/rnoaa/reference/ghcnd.html",
+        "https://www.ncdc.noaa.gov/cdo-web/datatools/findstation"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "NOAA NCEI Access Data Service API v1 station search or lookup",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://www.ncei.noaa.gov/access/search/documentation/data-service",
+        "https://casrai.org/guides/noaa-ncei-climate-ocean-data-access",
+        "https://www.ncei.noaa.gov/support/access-search-service-api-user-documentation",
+        "https://www.ncei.noaa.gov/support/access-data-service-api-user-documentation",
+        "https://www.ncdc.noaa.gov/cdo-web/webservices",
+        "https://www.ncei.noaa.gov/access",
+        "https://github.com/partytax/ncei-api-guide",
+        "https://www.ncei.noaa.gov/access/search"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "NOAA NCEI Search Service API v1 find stations by name or location",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://www.ncei.noaa.gov/support/access-search-service-api-user-documentation",
+        "https://www.ncei.noaa.gov/access/search/documentation/search-service",
+        "https://medium.com/@markwkiehl/noaa-climate-api-c2e36e7a49c5",
+        "https://www.ncei.noaa.gov/access/search/documentation/data-service",
+        "https://www.ncei.noaa.gov/support/access-data-service-api-user-documentation",
+        "https://learn.microsoft.com/en-us/connectors/nceiclimatedata",
+        "https://casrai.org/guides/noaa-ncei-climate-ocean-data-access",
+        "https://www.ncei.noaa.gov/access"
+      ]
+    },
+    {
+      "kind": "fetch",
+      "url": "https://www.ncei.noaa.gov/support/access-search-service-api-user-documentation",
+      "status": "200",
+      "chars": 4836
+    },
+    {
+      "kind": "search",
+      "query": "NOAA NCEI Search Service API v1/data endpoint parameters",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://www.ncei.noaa.gov/access/search/documentation/search-service",
+        "https://www.ncei.noaa.gov/support/access-search-service-api-user-documentation",
+        "https://www.ncei.noaa.gov/access/search/documentation/data-service",
+        "https://www.ncei.noaa.gov/support/access-data-service-api-user-documentation",
+        "https://www.ncei.noaa.gov/access/search/documentation/order-service",
+        "https://github.com/partytax/ncei-api-guide",
+        "https://medium.com/@markwkiehl/noaa-historical-weather-api-85f0dd9f5b62",
+        "https://www.ncei.noaa.gov/access"
+      ]
+    }
+  ],
+  "generated_utc": "2026-08-14T01:44:59.050996+00:00"
+}

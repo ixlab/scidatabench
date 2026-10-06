@@ -1,0 +1,106 @@
+{
+ "scenario_file": "10.48550_arxiv.2305.12651_scenario.json",
+ "platform": "neon",
+ "downloaded_at": "2026-04-24T15:57:29.244181+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "neonutilities",
+   "function": "load_by_product",
+   "kwargs": {
+    "dpid": "DP1.20016.001",
+    "site": "PRIN",
+    "startdate": "2019-10",
+    "enddate": "2019-12",
+    "package": "expanded"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T15:57:20+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 3,
+   "num_csv_files": 0,
+   "total_bytes": 1980389,
+   "files": [
+    {
+     "file": "filesToStack20016/NEON.D11.PRIN.DP1.20016.001.2019-10.expanded.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 672496
+    },
+    {
+     "file": "filesToStack20016/NEON.D11.PRIN.DP1.20016.001.2019-11.expanded.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 648603
+    },
+    {
+     "file": "filesToStack20016/NEON.D11.PRIN.DP1.20016.001.2019-12.expanded.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 659290
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 1,
+   "module": "neonutilities",
+   "function": "load_by_product",
+   "kwargs": {
+    "dpid": "DP1.20053.001",
+    "site": "PRIN",
+    "startdate": "2019-10",
+    "enddate": "2019-12",
+    "package": "expanded"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T15:57:24+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 3,
+   "num_csv_files": 0,
+   "total_bytes": 1023932,
+   "files": [
+    {
+     "file": "filesToStack20053/NEON.D11.PRIN.DP1.20053.001.2019-10.expanded.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 342607
+    },
+    {
+     "file": "filesToStack20053/NEON.D11.PRIN.DP1.20053.001.2019-11.expanded.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 335101
+    },
+    {
+     "file": "filesToStack20053/NEON.D11.PRIN.DP1.20053.001.2019-12.expanded.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 346224
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 2,
+   "module": "neonutilities",
+   "function": "load_by_product",
+   "kwargs": {
+    "dpid": "DP1.20288.001",
+    "site": "PRIN",
+    "startdate": "2019-10",
+    "enddate": "2019-12",
+    "package": "expanded"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T15:57:29.244181+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 3,
+   "num_csv_files": 0,
+   "total_bytes": 7230854,
+   "files": [
+    {
+     "file": "filesToStack20288/NEON.D11.PRIN.DP1.20288.001.2019-10.expanded.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 2581951
+    },
+    {
+     "file": "filesToStack20288/NEON.D11.PRIN.DP1.20288.001.2019-11.expanded.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 2332686
+    },
+    {
+     "file": "filesToStack20288/NEON.D11.PRIN.DP1.20288.001.2019-12.expanded.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 2316217
+    }
+   ],
+   "files_truncated": false
+  }
+ ]
+}

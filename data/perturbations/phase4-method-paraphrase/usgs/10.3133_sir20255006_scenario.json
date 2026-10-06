@@ -1,0 +1,349 @@
+{
+  "source_doi": "10.3133/sir20255006",
+  "research_question": "What is the relationship between dissolved oxygen (redox conditions) and the mobilization of dissolved iron and manganese in the Snake River alluvial aquifer in Teton County, Wyoming?",
+  "phase_1": {
+    "user_prompt": "I'm studying redox conditions and trace element mobilization in the Snake River alluvial aquifer in Teton County, Wyoming. I have identified 10 key USGS groundwater monitoring wells for my study: 433615110440001, 433604110443403, 433604110443402, 433551110443501, 433600110443701, 433603110443501, 433603110443502, 433605110443801, 433613110443501, and 433641110441501. How can I map these sites to the correct 5-digit USGS parameter codes for discrete field measurements of dissolved oxygen (in mg/L), dissolved iron (in µg/L), and dissolved manganese (in µg/L)?",
+    "expected": {
+      "sites": [
+        "433615110440001",
+        "433604110443403",
+        "433604110443402",
+        "433551110443501",
+        "433600110443701",
+        "433603110443501",
+        "433603110443502",
+        "433605110443801",
+        "433613110443501",
+        "433641110441501"
+      ],
+      "parameter_codes": [
+        "00300",
+        "01046",
+        "01056"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the 10 USGS site numbers and the parameter codes for dissolved oxygen, iron, and manganese, download the discrete water quality sample records for the period from June 1, 2011, to August 31, 2020.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433615110440001",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433615110440001",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433615110440001",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443403",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443403",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443403",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443402",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443402",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443402",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433551110443501",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433551110443501",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433551110443501",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433600110443701",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433600110443701",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433600110443701",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433603110443501",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433603110443501",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433603110443501",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433603110443502",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433603110443502",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433603110443502",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433605110443801",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433605110443801",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433605110443801",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433613110443501",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433613110443501",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433613110443501",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433641110441501",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433641110441501",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433641110441501",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2020-08-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean and process the water quality data. Align the measurements so that dissolved oxygen, dissolved iron, and dissolved manganese from the same site on the same day are paired. Handle any left-censored values (e.g., '< 3.2') by converting them to the detection limit value (e.g., 3.2) to allow for non-parametric rank correlation. How many total paired samples (rows containing a valid measurement for both dissolved oxygen and dissolved iron) are there across all 10 wells?",
+    "expected": 179,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Now I want to evaluate the relationship between redox status and trace metal concentrations. Calculate the rank correlation given by the normalised excess of concordant over discordant pairs between dissolved oxygen and dissolved iron across all paired samples from the 10 wells over the study period. What is the rank correlation given by the normalised excess of concordant over discordant pairs correlation coefficient? Additionally, create a scatter plot of Dissolved Iron (y-axis, logarithmic scale if helpful) versus Dissolved Oxygen (x-axis) and save it as `iron_do_scatter.png`.",
+    "expected": -0.424,
+    "unit": "tau",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "There is a significant negative correlation between dissolved oxygen and dissolved iron in the aquifer. High concentrations of dissolved iron occur almost exclusively when groundwater conditions are anoxic (dissolved oxygen < 0.5 mg/L), indicating reductive dissolution of iron from aquifer sediments under oxygen-depleted conditions.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "iron_do_scatter.png",
+      "visual_description": "A scatter plot with Dissolved Oxygen on the x-axis and Dissolved Iron on the y-axis. The data should show an L-shaped or exponential decay pattern, with high iron concentrations clustered at the far left (DO < 1 mg/L) and mostly low or non-detect iron concentrations extending to the right as DO increases up to ~10 mg/L.",
+      "paper_figure_reference": "Figure 12 Panel A"
+    }
+  }
+}

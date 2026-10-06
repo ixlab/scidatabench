@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.3133/sir20225130",
+  "research_question": "Develop continuous water-quality surrogate regression models to compute real-time Total Dissolved Solids concentrations using continuous specific conductance sensor data.",
+  "phase_1": {
+    "user_prompt": "I want to build surrogate regression models to compute real-time water quality on the Kansas River. Specifically, I'm focusing on the monitoring site 'Kansas River above Topeka Weir at Topeka, KS'. Can you find the official USGS site number for this location, and the standard parameter codes for specific conductance (which I'll use as a continuous predictor) and streamflow?",
+    "expected": {
+      "sites": [
+        "06888990"
+      ],
+      "parameter_codes": [
+        "00095",
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site (06888990), I need to fetch both the continuous sensor data and the discrete laboratory samples. Please download the 15-minute instantaneous continuous data for specific conductance, as well as the discrete water-quality sample data for Total Dissolved Solids (TDS), over the 32 months beginning in November 2018.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06888990",
+          "parameter_code": "00095",
+          "time": "2018-11-01/2021-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06888990",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "2018-11-01",
+          "activityStartDateUpper": "2021-06-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To build the regression model, we need to pair the discrete laboratory TDS samples with the continuous sensor readings. Interpolate the 15-minute specific conductance values to the exact times of the discrete TDS samples. Exclude any paired samples where the continuous sensor data has a gap exceeding 2 hours around the sample time, or if missing values are present. After matching the datasets, calculate the mean specific conductance of this paired calibration dataset.",
+    "expected": 814.0,
+    "unit": "uS/cm"
+  },
+  "phase_4": {
+    "user_prompt": "With the paired dataset, fit an Ordinary Least Squares (OLS) linear regression model to predict TDS concentration using specific conductance as the single explanatory variable. Neither variable needs to be log-transformed. Create a scatter plot of Specific Conductance vs TDS with the fitted regression line included, and save it as 'tds_surrogate_regression.png'. What is the adjusted R-squared of your model?",
+    "expected": 0.974,
+    "unit": "unitless",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Specific conductance is highly positively correlated with total dissolved solids (TDS) and serves as an excellent surrogate predictor, explaining approximately 97% of the variance in TDS concentrations.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "tds_surrogate_regression.png",
+      "visual_description": "A scatter plot showing specific conductance on the x-axis and total dissolved solids (TDS) on the y-axis, demonstrating a strong positive linear relationship. A linear regression line of best fit should be plotted over the data points.",
+      "paper_figure_reference": null
+    }
+  }
+}

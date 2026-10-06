@@ -1,0 +1,98 @@
+{
+  "source_doi": "10.1038/s41467-021-22314-w",
+  "research_question": "How has anthropogenic forcing impacted global meteorological drought frequency, duration, and intensity between the late 19th and late 20th centuries?",
+  "phase_1": {
+    "user_prompt": "We are studying global drought characteristics in CMIP6, comparing all-forcings conditions against natural-only, greenhouse-gas-only and aerosol-only single-forcing runs, and computing SPI and SPEI drought indices from them. Could you determine the exact CMIP6 model IDs, experiment names, the atmospheric variables needed for those indices (precipitation, daily maximum and minimum temperature, surface wind speed and total cloud cover), the monthly table ID, and the ensemble members?",
+    "expected": {
+      "source_ids": [
+        "BCC-CSM2-MR",
+        "CanESM5",
+        "CNRM-CM6-1",
+        "FGOALS-g3",
+        "GISS-E2-1-G",
+        "HadGEM3-GC31-LL",
+        "IPSL-CM6A-LR",
+        "MIROC6",
+        "MRI-ESM2-0"
+      ],
+      "experiment_ids": [
+        "historical",
+        "hist-nat",
+        "hist-GHG",
+        "hist-aer"
+      ],
+      "variable_ids": [
+        "pr",
+        "tasmax",
+        "tasmin",
+        "sfcWind",
+        "clt"
+      ],
+      "table_ids": [
+        "Amon"
+      ],
+      "variant_labels": [
+        "r1i1p1f1",
+        "r2i1p1f1",
+        "r3i1p1f1",
+        "r1i1p1f2",
+        "r2i1p1f2",
+        "r4i1p1f2",
+        "r3i1p1f2",
+        "r1i1p1f3",
+        "r2i1p1f3",
+        "r3i1p1f3"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identifiers we found, please write a script to retrieve the monthly data for precipitation, maximum and minimum temperature, surface wind speed, and cloud area fraction from the CMIP6 catalog. We need the data for the 'historical', 'hist-nat', 'hist-GHG', and 'hist-aer' experiments across the 9 models (BCC-CSM2-MR, CanESM5, CNRM-CM6-1, FGOALS-g3, GISS-E2-1-G, HadGEM3-GC31-LL, IPSL-CM6A-LR, MIROC6, MRI-ESM2-0) and the specific ensemble members we identified above. Ensure the retrieval covers the period 1851 to 2005.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "BCC-CSM2-MR",
+            "CanESM5",
+            "CNRM-CM6-1",
+            "FGOALS-g3",
+            "GISS-E2-1-G",
+            "HadGEM3-GC31-LL",
+            "IPSL-CM6A-LR",
+            "MIROC6",
+            "MRI-ESM2-0"
+          ],
+          "experiment_id": [
+            "historical",
+            "hist-nat",
+            "hist-GHG",
+            "hist-aer"
+          ],
+          "variable_id": [
+            "pr",
+            "tasmax",
+            "tasmin",
+            "sfcWind",
+            "clt"
+          ],
+          "table_id": [
+            "Amon"
+          ],
+          "variant_label": [
+            "r1i1p1f1",
+            "r2i1p1f1",
+            "r3i1p1f1",
+            "r1i1p1f2",
+            "r2i1p1f2",
+            "r4i1p1f2",
+            "r3i1p1f2",
+            "r1i1p1f3",
+            "r2i1p1f3",
+            "r3i1p1f3"
+          ]
+        }
+      }
+    ]
+  }
+}

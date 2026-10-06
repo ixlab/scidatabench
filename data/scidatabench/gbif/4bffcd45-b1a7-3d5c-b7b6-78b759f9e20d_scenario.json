@@ -1,0 +1,52 @@
+{
+  "source_doi": "10.11606/1807-0205/2022.62.031",
+  "research_question": "What are the seasonal reporting patterns of the Bare-faced Curassow (Crax fasciolata) based on citizen science occurrence data in Poconé, Brazil?",
+  "phase_1": {
+    "user_prompt": "I'm researching the Bare-faced Curassow (Crax fasciolata). I'd like to analyze citizen science reports from the eBird Observation Dataset for the municipality of Poconé in Mato Grosso, Brazil, up to the end of 2020. What dataset parameters and filters should I use on GBIF to find this data?",
+    "expected": {
+      "country_codes": [
+        "BR"
+      ],
+      "taxon_keys": [
+        "2482174"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the occurrence data for the Bare-faced Curassow in Poconé, Brazil (use current GADM level-2 code BRA.12.94_2 to filter precisely; note the paper originally cited BRA.12.87_1 which has since been renumbered) from the eBird Observation Dataset. Restrict the data to human observations recorded in or before the year 2020.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "HUMAN_OBSERVATION"
+          ],
+          "country": "BR",
+          "taxonKey": 2482174,
+          "gadmGid": "BRA.12.94_2",
+          "year": "*,2020"
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved records to ensure they represent valid observations for Poconé up to 2020. What is the total number of human observations obtained in this dataset?",
+    "expected": 3220,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "I'd like to analyze the seasonal bias in these citizen science reports. Group the observations by month across all years. Calculate the average total number of observations per month during the peak dry season (July through October). Additionally, create a bar chart showing the total number of occurrences for each month, and save it as `crax_fasciolata_monthly_occurrences.png`.",
+    "expected": 671.25,
+    "unit": "observations per month",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The number of human observations of the Bare-faced Curassow is significantly higher between July and October (averaging over 600 records per month) compared to the rest of the year (averaging under 100 records per month). The bar chart should reflect this strong seasonal bias with prominent peaks in months 7-10.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "crax_fasciolata_monthly_occurrences.png",
+      "visual_description": "A bar chart with months 1-12 on the x-axis and total occurrences on the y-axis. The bars for months 7, 8, 9, and 10 should be visibly much taller (typically ranging between 500-800 occurrences) than the other months (which should mostly fall below 200 occurrences).",
+      "paper_figure_reference": "Figure 5"
+    }
+  }
+}

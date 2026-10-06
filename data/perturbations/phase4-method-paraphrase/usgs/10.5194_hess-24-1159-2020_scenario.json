@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.5194/hess-24-1159-2020",
+  "research_question": "How do streamflow recession parameters estimated from individual recession events compare to those estimated from an aggregated 'point cloud' of all historical recession data?",
+  "phase_1": {
+    "user_prompt": "I am studying streamflow recession behavior in the Oregon Cascades. I need to retrieve historical daily mean discharge data for the USGS streamgage at Lookout Creek. Please identify the correct site number and the necessary USGS parameter codes to get daily discharge data from January 1, 1949, through December 31, 2016.",
+    "expected": {
+      "sites": [
+        "14161500"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site number and parameters you identified, download the continuous daily mean streamflow data for Lookout Creek covering the requested period from 1949 to 2016.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-14161500",
+          "parameter_code": "00060",
+          "time": "1949-01-01/2016-12-31",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded discharge data to isolate independent streamflow recession events. First, convert the discharge from cubic feet per second (cfs) to cubic meters per second (m³/s). Define a valid recession event as starting 1 day after a hydrograph peak and continuing as long as the discharge strictly decreases for at least 5 consecutive days. The event ends on the day of minimum discharge before it increases again. Count the total number of valid individual recession events extracted over the 66-year period.",
+    "expected": 1309.0,
+    "unit": "events"
+  },
+  "phase_4": {
+    "user_prompt": "For each isolated recession event, compute the daily rate of change in discharge (-dQ/dt). Fit a relationship of the form y = a·x^b (-dQ/dt = aQ^b) by performing a linear regression on log10(-dQ/dt) versus log10(Q) to estimate the exponent 'b' for each event. Calculate the median of these individual 'b' values. Additionally, create a visualization plotting all the recession points as a 'point cloud' on log-log axes, and overlay the fitted lines for a subset of the individual recessions. Save this plot as `recession_point_cloud_vs_individual.png`. Evaluate whether a single average fit to the point cloud adequately captures the median recession behavior of the individual events, or if there is a systematic structural difference.",
+    "expected": 2.8,
+    "unit": "dimensionless exponent",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The collective point cloud systematically underestimates the recession parameter 'b' compared to the median of individual recessions. This occurs because individual recessions are horizontally offset in the log-log space due to varying antecedent conditions, resulting in an aggregated point cloud with a shallower slope than the true watershed response.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "recession_point_cloud_vs_individual.png",
+      "visual_description": "A scatter plot with bi-logarithmic axes showing -dQ/dt vs Q. The plot should display the dense 'point cloud' of all data points, overlaid with lines or distinct colors representing individual recession events that clearly show steeper slopes than the overall cloud's trend and horizontal parallel offsets.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

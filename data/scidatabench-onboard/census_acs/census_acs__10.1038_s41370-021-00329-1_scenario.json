@@ -1,0 +1,70 @@
+{
+  "source_doi": "10.1038/s41370-021-00329-1",
+  "research_question": "How do neighborhood characteristics across social, economic, housing, and demographic dimensions associate with age-specific COVID-19 incidence in Illinois ZIP code tabulation areas?",
+  "phase_1": {
+    "user_prompt": "We are analyzing the relationship between neighborhood characteristics and COVID-19 incidence early in the pandemic across Illinois, using the 2014-2018 American Community Survey 5-year estimates. We want all variables from the four main ACS profile tables (covering social, economic, housing, and demographic characteristics) at the ZIP code level to match with our health data. Can you identify the specific ACS table IDs and the official geographic summary level name I need to use to query the Census API for this data? Also, provide the two-digit state FIPS code for the state analyzed.",
+    "expected": {
+      "tables": [
+        "DP02",
+        "DP03",
+        "DP04",
+        "DP05"
+      ],
+      "geographies": [
+        "zip code tabulation area"
+      ],
+      "state_codes": [
+        "17"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the identifiers, please write a script to retrieve all variables from the Data Profile tables DP02, DP03, DP04, and DP05 for all ZIP Code Tabulation Areas in Illinois (FIPS 17) using the 2014-2018 ACS 5-year estimates.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5/profile",
+          "get": "group(DP02)",
+          "for": "zip code tabulation area:*",
+          "in": "state:17"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5/profile",
+          "get": "group(DP03)",
+          "for": "zip code tabulation area:*",
+          "in": "state:17"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5/profile",
+          "get": "group(DP04)",
+          "for": "zip code tabulation area:*",
+          "in": "state:17"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5/profile",
+          "get": "group(DP05)",
+          "for": "zip code tabulation area:*",
+          "in": "state:17"
+        }
+      }
+    ]
+  }
+}

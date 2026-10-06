@@ -1,0 +1,47 @@
+{
+  "source_doi": "10.1007/s12225-024-10223-2",
+  "research_question": "Are there misidentified specimens of the newly described Memecylon ebo hidden within GBIF online records of the vegetatively similar species Memecylon zenkeri?",
+  "phase_1": {
+    "user_prompt": "I am investigating potential misidentifications between two African plant species: Memecylon ebo and Memecylon zenkeri. Because M. ebo was only recently described and is vegetatively very similar to M. zenkeri, older herbarium collections might be mislabeled. I want to systematically review GBIF records of M. zenkeri to check if any actually represent M. ebo. What GBIF search parameters should I use to find records of M. zenkeri that represent physical museum materials (which I could potentially view or request)?",
+    "expected": {
+      "taxon_keys": [
+        "3863229"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now, construct and execute a query to retrieve these preserved specimens of Memecylon zenkeri. Since I need to review their morphological features remotely, please filter the search to only include records that have associated multimedia attachments (images of the herbarium sheets).",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN"
+          ],
+          "mediaType": "StillImage",
+          "taxonKey": 3863229
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Parse the retrieved records to extract the image URLs. How many individual specimen images of M. zenkeri are available for visual review? (Note: some records may contain multiple images).",
+    "expected": 173,
+    "unit": "images"
+  },
+  "phase_4": {
+    "user_prompt": "Now, evaluate the specimen images to see if any are actually Memecylon ebo. Memecylon ebo is distinguished in fruit by having subsessile or very short infructescence axes (0 - 2.8 mm long) and very short fruiting pedicels (1 - 1.5 mm). In contrast, M. zenkeri has infructescence axes roughly 10 mm long and fruiting pedicels 8 - 10 mm long. Based on a visual review of the available images on GBIF, how many records appear to be misidentified Memecylon ebo? Provide your final count and a brief conclusion.",
+    "expected": 0,
+    "unit": "records",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "After reviewing the available M. zenkeri specimen images for the morphological traits diagnostic of M. ebo (specifically short infructescence axes and pedicels), no misidentified M. ebo specimens were detected among the online records.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

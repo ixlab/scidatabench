@@ -1,0 +1,51 @@
+{
+ "scenario_file": "obis__10.1038_s41598-022-10482-8_scenario.json",
+ "platform": "obis",
+ "downloaded_at": "2026-08-09T04:10:06.236066+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Mobula birostris",
+    "geometry": "POLYGON((-100 17, -60 17, -60 44, -100 44, -100 17))",
+    "startdate": "1925-01-01",
+    "enddate": "2020-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:10:02.226048+00:00",
+   "rows": 971,
+   "format": "parquet",
+   "total_available": 971
+  },
+  {
+   "idx": 1,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Manta birostris",
+    "geometry": "POLYGON((-100 17, -60 17, -60 44, -100 44, -100 17))",
+    "startdate": "1925-01-01",
+    "enddate": "2020-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:10:06.236066+00:00",
+   "rows": 971,
+   "format": "parquet",
+   "total_available": 971
+  }
+ ]
+}

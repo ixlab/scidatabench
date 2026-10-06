@@ -1,0 +1,74 @@
+{
+  "source_doi": "10.3133/sir20225126",
+  "research_question": "Calculate long-term summer monthly mean streamflow statistics for a continuous-record streamgage on Otter Creek in Acadia National Park.",
+  "phase_1": {
+    "user_prompt": "I am evaluating baseline summer streamflow conditions on Mount Desert Island in eastern coastal Maine. I need to find the USGS continuous-record streamgage on Otter Creek near Bar Harbor and retrieve its daily discharge data for the 15-year period from 2006 through 2020.",
+    "expected": {
+      "sites": [
+        "01022840"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the Otter Creek streamgage, please download its daily mean discharge data for the continuous 15-year period over the 15 calendar years beginning in 2006.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01022840",
+          "parameter_code": "00060",
+          "time": "2006-01-01/2020-12-31",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the daily streamflow data to compute the long-term monthly mean and median discharge for the summer months (May, June, July, August, September). To do this, pool all the daily values for a given month across all 15 years, and calculate the overall mean and median for that month.",
+    "expected": [
+      {
+        "month": 5,
+        "mean": 4.373225806451613,
+        "median": 2.19
+      },
+      {
+        "month": 6,
+        "mean": 4.552422222222223,
+        "median": 1.245
+      },
+      {
+        "month": 7,
+        "mean": 1.7991182795698926,
+        "median": 0.55
+      },
+      {
+        "month": 8,
+        "mean": 1.3977849462365592,
+        "median": 0.3
+      },
+      {
+        "month": 9,
+        "mean": 1.9040666666666668,
+        "median": 0.315
+      }
+    ],
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "Based on your aggregated statistics, what is the computed long-term monthly mean discharge for August at the Otter Creek streamgage?",
+    "expected": 1.48,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

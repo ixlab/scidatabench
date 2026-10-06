@@ -1,0 +1,120 @@
+{
+  "source_doi": "10.1007/s41748-021-00199-5",
+  "research_question": "How are temperature and precipitation projected to change over the United States, Central America, and the Caribbean during the 21st century under different Shared Socioeconomic Pathways (SSPs) as simulated by CMIP6 General Circulation Models?",
+  "phase_1": {
+    "user_prompt": "We are producing CMIP6 climate projections for the United States, Central America and the Caribbean. Can you identify the CMIP6 models, experiments (a baseline for the observed past plus three future SSPs from low to high emissions), climate variables for surface air temperature and precipitation, frequency/realm tables, and ensemble members for our multi-model analysis?",
+    "expected": {
+      "source_ids": [
+        "ACCESS-CM2",
+        "ACCESS-ESM1-5",
+        "AWI-CM-1-1MR",
+        "BCC-CSM2-MR",
+        "CAMS-CSM1-0",
+        "CanESM5",
+        "CESM2",
+        "CESM2-WACCM",
+        "CIESM",
+        "CNRM-CM6-1",
+        "CNRM-CM6-1-HR",
+        "CNRM-ESM2-1",
+        "EC-Earth3",
+        "EC-Earth3-Veg",
+        "FGOALS-f3-L",
+        "FGOALS-g3",
+        "FIO-ESM-2-0",
+        "GFDL-ESM4",
+        "INM-CM4-8",
+        "INM-CM5-0",
+        "IPSL-CM6A-LR",
+        "KACE-1-0-G",
+        "MIROC6",
+        "MIROC-ES2L",
+        "MPI-ESM1-2-HR",
+        "MPI-ESM1-2-LR",
+        "MRI-ESM2-0",
+        "NESM3",
+        "NorESM2-LM",
+        "NorESM2-MM",
+        "UKESM1-0-LL"
+      ],
+      "experiment_ids": [
+        "historical",
+        "ssp126",
+        "ssp245",
+        "ssp585"
+      ],
+      "variable_ids": [
+        "tas",
+        "pr"
+      ],
+      "table_ids": [
+        "Amon"
+      ],
+      "variant_labels": [
+        "r1i1p1f1",
+        "r1i1p1f2"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the specific models, ensemble members, variables, and experiments we identified above, please retrieve this data from the CMIP6 repository. Restrict the download to our stated temporal periods: 1995-2014 for the historical period, and 2021-2099 for the future SSP projections.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "ACCESS-CM2",
+            "ACCESS-ESM1-5",
+            "AWI-CM-1-1-MR",
+            "BCC-CSM2-MR",
+            "CAMS-CSM1-0",
+            "CanESM5",
+            "CESM2",
+            "CESM2-WACCM",
+            "CIESM",
+            "CNRM-CM6-1",
+            "CNRM-CM6-1-HR",
+            "CNRM-ESM2-1",
+            "EC-Earth3",
+            "EC-Earth3-Veg",
+            "FGOALS-f3-L",
+            "FGOALS-g3",
+            "FIO-ESM-2-0",
+            "GFDL-ESM4",
+            "INM-CM4-8",
+            "INM-CM5-0",
+            "IPSL-CM6A-LR",
+            "KACE-1-0-G",
+            "MIROC6",
+            "MIROC-ES2L",
+            "MPI-ESM1-2-HR",
+            "MPI-ESM1-2-LR",
+            "MRI-ESM2-0",
+            "NESM3",
+            "NorESM2-LM",
+            "NorESM2-MM",
+            "UKESM1-0-LL"
+          ],
+          "experiment_id": [
+            "historical",
+            "ssp126",
+            "ssp245",
+            "ssp585"
+          ],
+          "variable_id": [
+            "tas",
+            "pr"
+          ],
+          "table_id": [
+            "Amon"
+          ],
+          "variant_label": [
+            "r1i1p1f1",
+            "r1i1p1f2"
+          ]
+        }
+      }
+    ]
+  }
+}

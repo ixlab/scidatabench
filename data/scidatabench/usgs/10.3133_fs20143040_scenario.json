@@ -1,0 +1,80 @@
+{
+  "source_doi": "10.3133/fs20143040",
+  "research_question": "What were the historical water quality differences, particularly concerning chloride and iron concentrations, between the Sabine River at Logansport and Bayou San Patricio near Benson in Sabine Parish, Louisiana?",
+  "phase_1": {
+    "user_prompt": "I am researching historical surface-water quality in Sabine Parish, Louisiana. I want to compare legacy discrete water-quality records from two specific USGS streamgages: the 'Sabine River at Logansport' and 'Bayou San Patricio near Benson'. Could you find the official USGS site numbers for these two locations, as well as the 5-digit parameter codes for filtered chloride (in mg/L) and filtered iron (in ug/L)?",
+    "expected": {
+      "sites": [
+        "08022500",
+        "08023400"
+      ],
+      "parameter_codes": [
+        "00940",
+        "01046"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now, using those site numbers and parameter codes, I need you to download the discrete water-quality sample data for both chloride and iron. I want the data for the Sabine River at Logansport covering the years 1971 through 1985, and for Bayou San Patricio near Benson covering 1955 through 1988.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08022500",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "1971-01-01",
+          "activityStartDateUpper": "1985-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08022500",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "1971-01-01",
+          "activityStartDateUpper": "1985-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08023400",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "1955-01-01",
+          "activityStartDateUpper": "1988-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08023400",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "1955-01-01",
+          "activityStartDateUpper": "1988-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "With the downloaded water-quality data, filter out any rows that have missing values for chloride at these sites during their respective study periods. To verify the data processing, what is the total number of valid chloride samples available for the Bayou San Patricio site during its 1955-1988 study period?",
+    "expected": 36,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Calculate the median concentration of filtered iron for both sites over their respective time periods. What is the historical median filtered iron concentration (in ug/L) for Bayou San Patricio near Benson (1955-1988)? Additionally, create a boxplot visualization comparing the distribution of filtered iron concentrations between the two sites, and add a horizontal reference line at 300 ug/L to represent the EPA Secondary Maximum Contaminant Level (SMCL) for iron. Save the plot as `historical_iron_comparison_boxplot.png`.",
+    "expected": 505.0,
+    "unit": "ug/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Historically, water in the Sabine River at Logansport had iron concentrations generally below the EPA SMCL of 300 ug/L, whereas Bayou San Patricio near Benson generally exceeded the SMCL for iron.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "historical_iron_comparison_boxplot.png",
+      "visual_description": "A boxplot comparing filtered iron concentrations between the two sites. The Bayou San Patricio box should be noticeably higher than the Sabine River box. A horizontal reference line at 300 ug/L must be present. The median line for Bayou San Patricio should be above this threshold (around 500 ug/L), while the median line for Sabine River should be below it (around 100 ug/L).",
+      "paper_figure_reference": null
+    }
+  }
+}

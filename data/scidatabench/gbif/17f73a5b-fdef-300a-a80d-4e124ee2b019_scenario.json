@@ -1,0 +1,54 @@
+{
+  "source_doi": "10.22201/fc.25942158e.2023.01.607",
+  "research_question": "How far is a newly discovered specimen of Indotyphlops braminus in Tlaxcala, Mexico from the nearest previously known occurrence in GBIF?",
+  "phase_1": {
+    "user_prompt": "I've just found what appears to be a Brahminy blindsnake (Indotyphlops braminus) in Tlaxcala, Mexico. I want to check all known occurrences of this species in Mexico to see if this represents a new state record or a range extension. Can you help me find the relevant occurrence data?",
+    "expected": {
+      "country_codes": [
+        "MX"
+      ],
+      "taxon_keys": [
+        "9357542"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download all the occurrence records for the Brahminy blindsnake in Mexico. I need the geographic coordinates so we can map them.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "MX",
+          "hasCoordinate": true,
+          "taxonKey": 9357542
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "I collected my new specimen at latitude 19.323583 and longitude -98.243333. Please process the downloaded GBIF data to ensure all records have valid coordinates, and then calculate the straight-line (Haversine) distance from my new observation to every other existing record in Mexico.",
+    "expected": {
+      "count": 904,
+      "min": 26.191050179480442,
+      "max": 2383.151366177829,
+      "mean": 563.1309271408668,
+      "median": 435.3143051074511
+    },
+    "unit": "km"
+  },
+  "phase_4": {
+    "user_prompt": "Find the minimum distance to the nearest previously recorded Brahminy blindsnake from my location. Also, create a map showing my new record as a distinct marker (e.g., a red star) alongside the downloaded GBIF records as background points to visualize the distribution. Save the map as `new_record_map.png`.",
+    "expected": 26.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The new specimen represents a new record for the state of Tlaxcala, located approximately 26 km in a straight line from the nearest previously known GBIF record in the neighboring municipality of Puebla.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "new_record_map.png",
+      "visual_description": "A map of central Mexico showing GBIF occurrence points for Indotyphlops braminus, with a distinct, highlighted marker (like a star) at coordinates (19.323, -98.243) representing the new observation.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

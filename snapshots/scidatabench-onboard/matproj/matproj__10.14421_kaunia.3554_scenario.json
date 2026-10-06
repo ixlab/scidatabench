@@ -1,0 +1,33 @@
+{
+ "scenario_file": "matproj__10.14421_kaunia.3554_scenario.json",
+ "platform": "matproj",
+ "downloaded_at": "2026-08-10T22:42:16.802125+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "mp_api",
+   "function": "materials/summary",
+   "kwargs": {
+    "material_ids": "mp-736,mp-9588,mp-28336,mp-27687,mp-19511,mp-757614,mp-1960,mp-755094,mp-774155,mp-19770,mp-19306,mp-1279742,mp-841,mp-1235059",
+    "_fields": "material_id,formula_pretty,band_gap,density,structure"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:42:16.802125+00:00",
+   "rows": 13,
+   "format": "parquet",
+   "endpoint": "materials/summary"
+  }
+ ]
+}

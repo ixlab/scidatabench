@@ -1,0 +1,103 @@
+{
+ "scenario_file": "80c355b9-972a-3684-83b0-f6ca4ec46453_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-25T01:04:32+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2435146,
+    "basisOfRecord": [
+     "PRESERVED_SPECIMEN",
+     "HUMAN_OBSERVATION",
+     "MACHINE_OBSERVATION",
+     "OBSERVATION",
+     "MATERIAL_SAMPLE"
+    ],
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T01:03:56+00:00",
+   "rows": 3521,
+   "format": "gbif_simple_csv",
+   "download_key": "0004259-260423192947929",
+   "doi": "10.15468/dl.ga9xyg",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2435146"
+     },
+     {
+      "type": "in",
+      "key": "BASIS_OF_RECORD",
+      "values": [
+       "PRESERVED_SPECIMEN",
+       "HUMAN_OBSERVATION",
+       "MACHINE_OBSERVATION",
+       "OBSERVATION",
+       "MATERIAL_SAMPLE"
+      ]
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 1,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 5787224,
+    "basisOfRecord": [
+     "PRESERVED_SPECIMEN",
+     "HUMAN_OBSERVATION",
+     "MACHINE_OBSERVATION",
+     "OBSERVATION",
+     "MATERIAL_SAMPLE"
+    ],
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T01:04:32+00:00",
+   "rows": 1897,
+   "format": "gbif_simple_csv",
+   "download_key": "0004261-260423192947929",
+   "doi": "10.15468/dl.ddwqqk",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "5787224"
+     },
+     {
+      "type": "in",
+      "key": "BASIS_OF_RECORD",
+      "values": [
+       "PRESERVED_SPECIMEN",
+       "HUMAN_OBSERVATION",
+       "MACHINE_OBSERVATION",
+       "OBSERVATION",
+       "MATERIAL_SAMPLE"
+      ]
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  }
+ ]
+}

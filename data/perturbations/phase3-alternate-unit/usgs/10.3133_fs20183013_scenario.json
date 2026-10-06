@@ -1,0 +1,373 @@
+{
+  "source_doi": "10.3133/fs20183013",
+  "research_question": "What are the extreme values and data completeness statistics for continuous water-quality monitoring stations in the San Francisco Bay estuary during Water Years 2014-2015?",
+  "phase_1": {
+    "user_prompt": "I'm researching estuarine water quality dynamics in the San Francisco Bay during the 2014-2015 water years (October 1, 2013 to September 30, 2015). I need to locate the continuous monitoring stations at prominent bay landmarks: Alviso Slough, Dumbarton Bridge, San Mateo Bridge, Pier 17, Alcatraz Island, Richmond-San Rafael Bridge, Carquinez Bridge, Benicia Bridge, and Mallard Island. What are the USGS site numbers for these locations, and what are the standard parameter codes for specific conductance, water temperature, turbidity, and dissolved oxygen?",
+    "expected": {
+      "sites": [
+        "11169750",
+        "373015122071000",
+        "11162765",
+        "374811122235001",
+        "374938122251801",
+        "375607122264701",
+        "11455820",
+        "11455780",
+        "11185185"
+      ],
+      "parameter_codes": [
+        "00095",
+        "00010",
+        "63680",
+        "00300"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve the high-frequency (15-minute) continuous data for specific conductance, temperature, turbidity, and dissolved oxygen at these 9 stations for the entire duration of Water Years 2014 and 2015.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11169750",
+          "parameter_code": "00095",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11169750",
+          "parameter_code": "00010",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11169750",
+          "parameter_code": "63680",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11169750",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-373015122071000",
+          "parameter_code": "00095",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-373015122071000",
+          "parameter_code": "00010",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-373015122071000",
+          "parameter_code": "63680",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-373015122071000",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11162765",
+          "parameter_code": "00095",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11162765",
+          "parameter_code": "00010",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11162765",
+          "parameter_code": "63680",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11162765",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374811122235001",
+          "parameter_code": "00095",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374811122235001",
+          "parameter_code": "00010",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374811122235001",
+          "parameter_code": "63680",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374811122235001",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374938122251801",
+          "parameter_code": "00095",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374938122251801",
+          "parameter_code": "00010",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374938122251801",
+          "parameter_code": "63680",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-374938122251801",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-375607122264701",
+          "parameter_code": "00095",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-375607122264701",
+          "parameter_code": "00010",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-375607122264701",
+          "parameter_code": "63680",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-375607122264701",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455820",
+          "parameter_code": "00095",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455820",
+          "parameter_code": "00010",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455820",
+          "parameter_code": "63680",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455820",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455780",
+          "parameter_code": "00095",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455780",
+          "parameter_code": "00010",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455780",
+          "parameter_code": "63680",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11455780",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11185185",
+          "parameter_code": "00095",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11185185",
+          "parameter_code": "00010",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11185185",
+          "parameter_code": "63680",
+          "time": "2013-10-01/2015-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11185185",
+          "parameter_code": "00300",
+          "time": "2013-10-01/2015-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Estuarine specific conductance can spike during dry periods. Focus specifically on the San Mateo Bridge site. Many of these deep-water stations have multiple sensors in the water column; filter the dataset to isolate the upper sensor's specific conductance records. What was the absolute maximum specific conductance recorded by this upper sensor during the two-year study period? Report the result in millisiemens per centimeter (mS/cm).",
+    "expected": 51.1,
+    "unit": "mS/cm"
+  },
+  "phase_4": {
+    "user_prompt": "Continuous water-quality datasets often have missing periods due to biological fouling or sensor maintenance. To evaluate data completeness, calculate the 'percent valid data' for the upper sensor's water temperature at the San Mateo Bridge site for Water Years 2014-2015. Compute this as the number of valid, non-null 15-minute data points divided by the maximum theoretical number of data points possible in this specific 2-year period (assuming 96 points per day), expressed as a percentage.",
+    "expected": 94.0,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

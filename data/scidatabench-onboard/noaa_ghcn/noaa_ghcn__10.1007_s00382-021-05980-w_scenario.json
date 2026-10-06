@@ -1,0 +1,33 @@
+{
+  "source_doi": "10.1007/s00382-021-05980-w",
+  "research_question": "How do dynamically and statistically downscaled regional climate models perform in simulating historical precipitation indices over Florida compared to NOAA GHCN-Daily observations?",
+  "phase_1": {
+    "user_prompt": "We are evaluating dynamically and statistically downscaled regional climate models over Florida against a reference station-based observational dataset of rainfall. Identify the specific meteorological variable to analyze and the geographic region over which we should aggregate the station data.",
+    "expected": {
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the reference data consists of daily precipitation observations for Florida, please retrieve the daily precipitation records from the NOAA GHCN-Daily dataset for all available stations within Florida covering the continuous period from 1981 to 2005.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00012842",
+          "startDate": "1981-01-01",
+          "endDate": "2005-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          27.8,
+          -81.7
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "source_doi": "10.1029/2022gl097716",
+  "research_question": "How do CMIP6 Global Climate Models (GCMs) with varying Equilibrium Climate Sensitivities (ECS) perform in simulating global surface warming patterns from 1980-2021 when compared to ERA5 reanalysis?",
+  "phase_1": {
+    "user_prompt": "We are evaluating CMIP6 models for Equilibrium Climate Sensitivity (ECS) by comparing simulated surface air temperature against the ERA5 surface record. Please identify the CMIP6 models, the reference and future projection scenarios, the core meteorological variable, and the standard frequency/realm table for these records.",
+    "expected": {
+      "source_ids": [
+        "CIESM",
+        "CanESM5",
+        "CanESM5-CanOE",
+        "HadGEM3-GC31-LL",
+        "HadGEM3-GC31-MM",
+        "UKESM1-0-LL",
+        "CESM2",
+        "CNRM-CM6-1",
+        "CNRM-ESM2-1",
+        "CESM2-WACCM",
+        "ACCESS-CM2",
+        "NESM3",
+        "IPSL-CM6A-LR",
+        "KACE-1-0-G",
+        "EC-Earth3-Veg",
+        "EC-Earth3",
+        "CNRM-CM6-1-HR",
+        "GFDL-ESM4",
+        "ACCESS-ESM1-5",
+        "MCM-UA-1-0",
+        "CMCC-CM2-SR5",
+        "AWI-CM-1-1-MR",
+        "MRI-ESM2-0",
+        "BCC-CSM2-MR",
+        "FGOALS-f3-L",
+        "MPI-ESM1-2-LR",
+        "MPI-ESM1-2-HR",
+        "FGOALS-g3",
+        "GISS-E2-1-G",
+        "MIROC-ES2L",
+        "MIROC6",
+        "NorESM2-LM",
+        "NorESM2-MM",
+        "CAMS-CSM1-0",
+        "INM-CM5-0",
+        "INM-CM4-8"
+      ],
+      "experiment_ids": [
+        "historical",
+        "ssp126",
+        "ssp245",
+        "ssp370",
+        "ssp585"
+      ],
+      "variable_ids": [
+        "tas"
+      ],
+      "table_ids": [
+        "Amon"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the 36 CMIP6 models, the historical and 4 SSP scenarios, and the monthly surface temperature variable we identified from the Scafetta (2022) paper, retrieve the corresponding global datasets spanning the 1850 to 2100 timeframe from the CMIP6 archive. Focus on obtaining one valid ensemble member for each model-experiment pair.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "CIESM",
+            "CanESM5",
+            "CanESM5-CanOE",
+            "HadGEM3-GC31-LL",
+            "HadGEM3-GC31-MM",
+            "UKESM1-0-LL",
+            "CESM2",
+            "CNRM-CM6-1",
+            "CNRM-ESM2-1",
+            "CESM2-WACCM",
+            "ACCESS-CM2",
+            "NESM3",
+            "IPSL-CM6A-LR",
+            "KACE-1-0-G",
+            "EC-Earth3-Veg",
+            "EC-Earth3",
+            "CNRM-CM6-1-HR",
+            "GFDL-ESM4",
+            "ACCESS-ESM1-5",
+            "MCM-UA-1-0",
+            "CMCC-CM2-SR5",
+            "AWI-CM-1-1-MR",
+            "MRI-ESM2-0",
+            "BCC-CSM2-MR",
+            "FGOALS-f3-L",
+            "MPI-ESM1-2-LR",
+            "MPI-ESM1-2-HR",
+            "FGOALS-g3",
+            "GISS-E2-1-G",
+            "MIROC-ES2L",
+            "MIROC6",
+            "NorESM2-LM",
+            "NorESM2-MM",
+            "CAMS-CSM1-0",
+            "INM-CM5-0",
+            "INM-CM4-8"
+          ],
+          "experiment_id": [
+            "historical",
+            "ssp126",
+            "ssp245",
+            "ssp370",
+            "ssp585"
+          ],
+          "variable_id": [
+            "tas"
+          ],
+          "table_id": [
+            "Amon"
+          ]
+        }
+      }
+    ]
+  }
+}

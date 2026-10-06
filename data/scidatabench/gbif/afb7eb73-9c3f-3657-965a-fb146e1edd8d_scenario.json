@@ -1,0 +1,202 @@
+{
+  "source_doi": "10.1186/s13071-025-06922-9",
+  "research_question": "What is the geographical distribution of potential mechanical vector genera for Surra in Spain, specifically within the families Hippoboscidae, Muscidae, and Tabanidae?",
+  "phase_1": {
+    "user_prompt": "I'm researching the geographical distribution of potential mechanical vectors for Surra (Trypanosoma evansi) in Spain between 1951 and 2024. I want to map the occurrence of relevant genera from three dipteran families: Hippoboscidae (Hippobosca, Lipoptena, Melophagus), Muscidae (Stomoxys, Haematobia), and Tabanidae (Atylotus, Chrysops, Dasyrhamphis, Haematopota, Hybomitra, Nemorius, Pangonius, Philipomyia, Silvius, and Tabanus). What would be the search parameters to retrieve these records for Spain?",
+    "expected": {
+      "country_codes": [
+        "ES"
+      ],
+      "taxon_keys": [
+        "1587266",
+        "1638562",
+        "1638982",
+        "1456840",
+        "1531900",
+        "1494184",
+        "1497045",
+        "1496404",
+        "1495261",
+        "1500153",
+        "1494585",
+        "1494793",
+        "1496791",
+        "1500840",
+        "1444264"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now, using those parameters, please download the occurrence data for these 15 genera in Spain from 1951 to 2024 from GBIF.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1587266,
+          "year": "1951,2024"
+        },
+        "requires_pagination": true
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1638562,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1638982,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1456840,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1531900,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1494184,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1497045,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1496404,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1495261,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1500153,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1494585,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1494793,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1496791,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1500840,
+          "year": "1951,2024"
+        },
+        "requires_pagination": false
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "ES",
+          "taxonKey": 1444264,
+          "year": "1951,2024"
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Once you have the data, clean it by retaining only records with valid coordinates. Since I want to compare the three families, please add a 'Family' column mapping each genus to its correct family (Hippoboscidae, Muscidae, or Tabanidae). Finally, remove any duplicate records that have the exact same coordinates and observation date. How many records remain after cleaning?",
+    "expected": 1267,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned occurrence data, calculate what percentage of the total records belong to the Tabanidae family. Then, create a map of Spain showing all the occurrence points, color-coded by their family. Please save this map as `vector_families_distribution_spain.png`.",
+    "expected": 64.8,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The paper found that Tabanidae was the most frequently recorded family among the citizen science observations (approx. 65%), widely distributed across mainland Spain and the islands. The agent's map should reflect this dominance, showing Tabanidae points spanning most of the country, with Muscidae and Hippoboscidae representing smaller but distinct portions of the observations.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "vector_families_distribution_spain.png",
+      "visual_description": "A map of Spain (including mainland, and ideally the Balearic and Canary Islands if bounds permit) with occurrence points plotted. The points must be color-coded by the three dipteran families: Tabanidae, Muscidae, and Hippoboscidae. Tabanidae points should visibly dominate the map spatially and numerically.",
+      "paper_figure_reference": "Figures 1, 2, 3, 4, 5 (Aggregate comparison)"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+ "scenario_file": "29b4db58-3f06-383a-b23e-6642b79c9e66_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T05:42:23+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2476709,
+    "hasCoordinate": true,
+    "year": "1800,2022"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T05:42:23+00:00",
+   "rows": 1105,
+   "format": "gbif_simple_csv",
+   "download_key": "0007398-260423192947929",
+   "doi": "10.15468/dl.e53wjz",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2476709"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     },
+     {
+      "type": "greaterThanOrEquals",
+      "key": "YEAR",
+      "value": "1800"
+     },
+     {
+      "type": "lessThanOrEquals",
+      "key": "YEAR",
+      "value": "2022"
+     }
+    ]
+   }
+  }
+ ]
+}

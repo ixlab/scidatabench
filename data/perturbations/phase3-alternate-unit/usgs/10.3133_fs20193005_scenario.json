@@ -1,0 +1,133 @@
+{
+  "source_doi": "10.3133/fs20193005",
+  "research_question": "What are the long-term average discharge rates and historical baseline water quality characteristics for major streams in northeastern Louisiana?",
+  "phase_1": {
+    "user_prompt": "I am studying surface water resources in northeastern Louisiana, specifically near Richland Parish. I want to identify the primary USGS streamgages on three major streams in this area: the Boeuf River, Bayou Lafourche, and Bayou Macon. I'm looking specifically for the long-term monitoring sites located near Girard, Crew Lake, and Delhi, respectively. Can you find the official USGS site numbers for these three streamgages?",
+    "expected": {
+      "sites": [
+        "07368000",
+        "07369000",
+        "07370000"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For these three streamgages, please retrieve their long-term daily discharge records. Additionally, retrieve all available historical discrete water quality samples for total hardness, filtered chloride, and filtered sulfate.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07368000",
+          "parameter_code": "00060"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07369000",
+          "parameter_code": "00060"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07370000",
+          "parameter_code": "00060"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07368000",
+          "usgsPCode": "00900"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07369000",
+          "usgsPCode": "00900"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07370000",
+          "usgsPCode": "00900"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07368000",
+          "usgsPCode": "00940"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07369000",
+          "usgsPCode": "00940"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07370000",
+          "usgsPCode": "00940"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07368000",
+          "usgsPCode": "00945"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07369000",
+          "usgsPCode": "00945"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07370000",
+          "usgsPCode": "00945"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's compute some baseline hydrological statistics. First, focus on the discharge data for the Boeuf River near Girard. Calculate the average annual discharge (the overall mean of all daily discharge values) for the period covering the complete years from 1938 through 2015. Report the result in cubic meters per second (m³/s).",
+    "expected": 7.5889148867,
+    "unit": "m3/s"
+  },
+  "phase_4": {
+    "user_prompt": "Now, analyze the discrete water quality samples to evaluate baseline hardness (as CaCO3). To establish historical baselines, filter the samples to the following historical periods: 1964-1996 for Bayou Lafourche, 1952-1998 for Bayou Macon, and 1943-1996 for the Boeuf River. Calculate the median hardness for each site during these respective periods. According to standard water quality classifications (where 61-120 mg/L is 'moderately hard'), do the median hardness values for these streams classify as moderately hard? Report the exact median hardness calculated for Bayou Lafourche.",
+    "expected": 90.5,
+    "unit": "mg/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The historical median hardness values for all three surface water sites (Bayou Lafourche, Bayou Macon, and the Boeuf River) fall within the moderately hard range of 61-120 mg/L.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

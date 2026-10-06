@@ -1,0 +1,28 @@
+{
+  "source_doi": "10.1038/s41586-025-08628-5",
+  "research_question": "What reference data from the Materials Project is needed to construct the baseline convex hull for the specific, well-explored ternary system highlighted in the paper's chemical exploration case study?",
+  "phase_1": {
+    "user_prompt": "We are evaluating a generative model's ability to explore a target chemical system by comparing the structures it produces against the known convex hull. Our test case is the well-explored ternary oxide system formed by strontium and vanadium. Give the chemical system string in the canonical form the Materials Project expects for a chemsys query, and the core thermodynamic property we need from the database to plot that convex hull (the energy relative to the constituent elements).",
+    "expected": {
+      "chemsys": [
+        "O-Sr-V"
+      ],
+      "properties": [
+        "formation_energy_per_atom"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the chemical system and property you identified, retrieve the required thermodynamic reference data (formation energies) for all known compounds in this ternary system from the Materials Project database.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "chemsys": "O-Sr-V",
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom"
+        }
+      }
+    ]
+  }
+}

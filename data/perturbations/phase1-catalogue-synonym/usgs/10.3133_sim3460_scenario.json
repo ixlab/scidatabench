@@ -1,0 +1,139 @@
+{
+  "source_doi": "10.3133/sim3460",
+  "research_question": "How have discrete groundwater levels in specific wells in the Lake Charles area of Louisiana changed between 1995 and the winter of 2011-2012?",
+  "phase_1": {
+    "user_prompt": "I'm interested in assessing long-term changes in groundwater levels in the Lake Charles area of Louisiana. I have identified 6 specific USGS wells of interest: 301356093171001, 295611093044801, 301359093162202, 301435093154601, 301300093161601, and 301414093004501. I need to retrieve their historical discrete groundwater level measurements. What parameter code represents 'water table depth, feet below land surface' and what data type or service should I use for discrete groundwater levels?",
+    "expected": {
+      "sites": [
+        "301356093171001",
+        "295611093044801",
+        "301359093162202",
+        "301435093154601",
+        "301300093161601",
+        "301414093004501"
+      ],
+      "parameter_codes": [
+        "72019"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the parameter code and data type you found, retrieve the discrete groundwater level measurements for these 6 wells for two specific time periods: the entire year of 1995, and the winter period from December 1, 2011 to March 31, 2012. Additionally, fetch the site metadata for these wells so we can obtain the altitude of the land surface at each location.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-301356093171001",
+          "time": "1995-01-01/1995-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-301356093171001",
+          "time": "2011-12-01/2012-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-295611093044801",
+          "time": "1995-01-01/1995-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-295611093044801",
+          "time": "2011-12-01/2012-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-301359093162202",
+          "time": "1995-01-01/1995-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-301359093162202",
+          "time": "2011-12-01/2012-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-301435093154601",
+          "time": "1995-01-01/1995-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-301435093154601",
+          "time": "2011-12-01/2012-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-301300093161601",
+          "time": "1995-01-01/1995-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-301300093161601",
+          "time": "2011-12-01/2012-03-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-301414093004501",
+          "time": "1995-01-01/1995-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-301414093004501",
+          "time": "2011-12-01/2012-03-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To compare water levels across sites, we need to standardize them to a common datum. For each measurement, calculate the water-level altitude by subtracting the depth-to-water value from the well's land surface altitude. Then, focus on well 301359093162202: what is the exact difference in water-level altitude between its 2011-2012 measurement and its 1995 measurement (subtract the 1995 altitude from the 2011-2012 altitude)?",
+    "expected": 30.62,
+    "unit": "feet"
+  },
+  "phase_4": {
+    "user_prompt": "Now calculate this 2011-2012 minus 1995 water-level altitude difference for all 6 wells. What is the minimum difference observed (i.e., the largest negative value representing the greatest water-level decline) among this group? Finally, create a bar chart showing the water level differences for all 6 wells to visualize which had increases versus declines, saving the plot as `gw_level_differences.png`.",
+    "expected": -22.76,
+    "unit": "feet",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Water level differences from 1995 to 2011/2012 in the Lake Charles area aquifers show a wide range of changes, with some wells experiencing substantial recoveries (increases of over 30 ft) and others experiencing significant declines (drops of over 20 ft).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "gw_level_differences.png",
+      "visual_description": "A bar chart showing 6 distinct bars corresponding to the 6 USGS site numbers. Some bars should extend upwards into positive values (e.g., one bar slightly above 30, representing site 301359093162202), while others extend downwards into negative values (e.g., one bar around -23, representing site 301414093004501).",
+      "paper_figure_reference": null
+    }
+  }
+}

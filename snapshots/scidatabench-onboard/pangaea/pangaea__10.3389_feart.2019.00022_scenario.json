@@ -1,0 +1,49 @@
+{
+ "scenario_file": "pangaea__10.3389_feart.2019.00022_scenario.json",
+ "platform": "pangaea",
+ "downloaded_at": "2026-08-10T15:00:07.273455+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.898552"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T15:00:07.273455+00:00",
+   "rows": 12,
+   "format": "parquet",
+   "dataset_title": "Reflectance measurements of different surface types from Arctic sea ice acquired during POLARSTERN cruise PS106",
+   "is_collection": true,
+   "n_members": 3,
+   "members_fetched": 3,
+   "truncated": false
+  },
+  {
+   "idx": 1,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.886302"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:40:58.877206+00:00",
+   "rows": 38791,
+   "format": "parquet",
+   "dataset_title": "Continuous meteorological surface measurement during POLARSTERN cruise PS106/1 (ARK-XXXI/1.1)"
+  }
+ ]
+}

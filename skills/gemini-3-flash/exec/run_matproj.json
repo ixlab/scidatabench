@@ -1,0 +1,16 @@
+{
+  "platform": "matproj",
+  "condition": "exec",
+  "model": "gemini-3-flash-preview",
+  "elapsed_s": 91.7,
+  "tokens": {
+    "input": 724610,
+    "output": 7790,
+    "thinking": 0,
+    "total": 732400,
+    "cache_read": 361233
+  },
+  "tool_call_turns": 57,
+  "research_log": [],
+  "generated_utc": "2026-08-14T03:46:20.981404+00:00"
+}

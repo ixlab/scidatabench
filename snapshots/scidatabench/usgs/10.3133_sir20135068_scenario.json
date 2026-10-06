@@ -1,0 +1,384 @@
+{
+ "scenario_file": "10.3133_sir20135068_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-04-26T15:05:58.718076+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474426096192901",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:11.118381+00:00",
+   "rows": 211
+  },
+  {
+   "idx": 1,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474426096192902",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:17.143428+00:00",
+   "rows": 62
+  },
+  {
+   "idx": 2,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474426096192903",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:18.270599+00:00",
+   "rows": 61
+  },
+  {
+   "idx": 3,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474426096192904",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:19.330167+00:00",
+   "rows": 61
+  },
+  {
+   "idx": 4,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474403096191401",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:21.100378+00:00",
+   "rows": 214
+  },
+  {
+   "idx": 5,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474403096191402",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:22.627551+00:00",
+   "rows": 113
+  },
+  {
+   "idx": 6,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474403096191403",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:24.386573+00:00",
+   "rows": 206
+  },
+  {
+   "idx": 7,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474403096191404",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:25.918761+00:00",
+   "rows": 128
+  },
+  {
+   "idx": 8,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474449096192701",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:27.934046+00:00",
+   "rows": 308
+  },
+  {
+   "idx": 9,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474456096193701",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:29.035408+00:00",
+   "rows": 73
+  },
+  {
+   "idx": 10,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474448096192301",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:30.116428+00:00",
+   "rows": 73
+  },
+  {
+   "idx": 11,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474445096192201",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:31.846992+00:00",
+   "rows": 212
+  },
+  {
+   "idx": 12,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474440096185101",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:38.321833+00:00",
+   "rows": 778
+  },
+  {
+   "idx": 13,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474428096184901",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:40.654343+00:00",
+   "rows": 405
+  },
+  {
+   "idx": 14,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474434096184801",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:42.889397+00:00",
+   "rows": 405
+  },
+  {
+   "idx": 15,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474443096185101",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:45.349864+00:00",
+   "rows": 409
+  },
+  {
+   "idx": 16,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474236096171801",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:47.208442+00:00",
+   "rows": 206
+  },
+  {
+   "idx": 17,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474426096192905",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:48.108467+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 18,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474426096192906",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:48.990026+00:00",
+   "rows": 10
+  },
+  {
+   "idx": 19,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474426096192907",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:49.908566+00:00",
+   "rows": 10
+  },
+  {
+   "idx": 20,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474403096191405",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:50.764746+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 21,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474403096191406",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:51.636314+00:00",
+   "rows": 10
+  },
+  {
+   "idx": 22,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474403096191407",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:52.541343+00:00",
+   "rows": 10
+  },
+  {
+   "idx": 23,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474449096192702",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:53.529366+00:00",
+   "rows": 80
+  },
+  {
+   "idx": 24,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474448096192801",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:54.640140+00:00",
+   "rows": 80
+  },
+  {
+   "idx": 25,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474448096192901",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:55.669700+00:00",
+   "rows": 80
+  },
+  {
+   "idx": 26,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474440096185201",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:56.664672+00:00",
+   "rows": 70
+  },
+  {
+   "idx": 27,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474440096185301",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:57.683774+00:00",
+   "rows": 80
+  },
+  {
+   "idx": 28,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-474440096185302",
+    "activityStartDateLower": "2007-06-01",
+    "activityStartDateUpper": "2009-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:05:58.718076+00:00",
+   "rows": 80
+  }
+ ]
+}

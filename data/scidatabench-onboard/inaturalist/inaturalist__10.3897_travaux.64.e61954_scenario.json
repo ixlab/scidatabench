@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.3897/travaux.64.e61954",
+  "research_question": "What is the distribution and temporal pattern of Vespa orientalis observations in Bucharest, Romania, between 2019 and 2020, and does it indicate establishment?",
+  "phase_1": {
+    "user_prompt": "The oriental hornet has turned up in the northern part of Bucharest, and we want to pull together every citizen-science observation of this species from the whole country so we can judge whether it is spreading beyond the capital. Before we can issue that query we need the platform's own internal identifiers rather than names. Give me the iNaturalist taxon ID for the species and the iNaturalist place ID for the country.",
+    "expected": {
+      "taxon_ids": [
+        "83801"
+      ],
+      "place_ids": [
+        "8858"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the iNaturalist taxon and place identifiers you resolved above, retrieve the observations of this hornet recorded during the years 2019 and 2020, so we can map the full set of records.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 83801,
+          "place_id": 8858,
+          "year": [
+            2019,
+            2020
+          ]
+        }
+      }
+    ]
+  }
+}

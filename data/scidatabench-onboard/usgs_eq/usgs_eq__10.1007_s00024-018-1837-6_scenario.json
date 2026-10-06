@@ -1,0 +1,24 @@
+{
+  "source_doi": "10.1007/s00024-018-1837-6",
+  "research_question": "What are the source parameters of the 2017 Chiapas earthquake, how does its aftershock distribution relate to the derived fault model, and what is the regional historical seismicity context for Coulomb stress transfer analysis?",
+  "phase_1": {
+    "user_prompt": "We are studying the massive intraplate normal-faulting earthquake that struck offshore Chiapas, Mexico, in 2017, widely considered the largest event in a century in this region (the Tehuantepec seismic gap). To model its finite-fault slip and map its 1-day aftershocks, we first need to identify its primary USGS catalog identifier.",
+    "expected": {
+      "event_ids": [
+        "us2000ahv0"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the mainshock identifier, please retrieve its full origin parameters (magnitude, depth, location) and its focal mechanism from the USGS catalog. Then, query the catalog for three sets of regional events for our maps: the 1-day aftershocks immediately following the mainshock, all background seismicity in the region from January 1, 2000, up to the mainshock's occurrence, and all historical earthquakes of magnitude 7.0 or greater in the region since 1900.",
+    "expected": [
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "eventid": "us2000ahv0"
+        }
+      }
+    ]
+  }
+}

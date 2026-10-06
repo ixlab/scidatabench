@@ -1,0 +1,74 @@
+{
+  "source_doi": "10.3133/sir20185100",
+  "research_question": "What is the concentration and relative prevalence of androgen and estrogen steroid hormones in soils irrigated with domestic septage?",
+  "phase_1": {
+    "user_prompt": "I am investigating the accumulation of steroid hormones in soil irrigated with domestic septage. I need to retrieve discrete soil sample data collected in September 2014 from four specific USGS monitoring sites in a Minnesota agricultural field. The 15-digit USGS site numbers all begin with the base string '4517000934', and their last five digits are '30001', '40001', '30002', and '30003'. Please identify the full 15-digit site numbers and the correct NWIS data type code required to retrieve discrete laboratory samples.",
+    "expected": {
+      "sites": [
+        "451700093430001",
+        "451700093440001",
+        "451700093430002",
+        "451700093430003"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 4 site numbers (451700093430001, 451700093440001, 451700093430002, 451700093430003), please retrieve the discrete sample chemistry data for them for the month of September 2014. We are specifically interested in the concentrations of the following steroid hormones: 4-androstene-3,17-dione, cis-androsterone, dihydrotestosterone, estrone, and progesterone.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-451700093430001",
+          "activityStartDateLower": "2014-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-451700093440001",
+          "activityStartDateLower": "2014-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-451700093430002",
+          "activityStartDateLower": "2014-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-451700093430003",
+          "activityStartDateLower": "2014-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Filter the retrieved dataset to isolate the androgen hormones (4-androstene-3,17-dione, cis-androsterone, and dihydrotestosterone). Treat any non-detections (e.g., values marked with a '<' remark code) as zero for this calculation. What is the total sum of these three androgen concentrations at the first site (site number 451700093430001) in micrograms per kilogram (ug/kg)?",
+    "expected": 10.63,
+    "unit": "ug/kg"
+  },
+  "phase_4": {
+    "user_prompt": "Next, calculate the total estrogen concentration (the sum of estrone and progesterone) for all four sites, again treating non-detections as zero. Create a grouped bar chart showing the total androgen and total estrogen concentrations for each of the four sites. Save this plot as `hormone_class_comparison.png`. Based on your analysis, what is the maximum total estrogen concentration observed among the four sites, and which hormone class was generally more prevalent?",
+    "expected": 0.91,
+    "unit": "ug/kg",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Androgens were significantly more prevalent than estrogens across the soil sites. The maximum total estrogen concentration observed was 0.91 µg/kg, while total androgen concentrations were notably higher, reaching up to 10.6 µg/kg.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "hormone_class_comparison.png",
+      "visual_description": "A grouped bar chart with four groups (one for each site) and two bars per group (Total Androgens, Total Estrogens). The bars representing Total Androgens should be significantly higher at sites 451700093430001, 451700093440001, and 451700093430002. The site 451700093430001 androgen bar should be around 10.6, while the maximum estrogen bar (at Site 451700093430003) should be around 0.9.",
+      "paper_figure_reference": null
+    }
+  }
+}

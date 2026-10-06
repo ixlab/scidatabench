@@ -1,0 +1,27 @@
+{
+  "source_doi": "10.1038/s41467-021-21733-z",
+  "research_question": "What novel gene candidate did researchers identify for eye loss on chromosome 3 in the Astyanax mexicanus surface fish genome, and how is it annotated in Ensembl?",
+  "phase_1": {
+    "user_prompt": "We mapped a QTL for eye size in the Mexican tetra — the surface form of the blind cavefish — against the chromosome-level 2.0 assembly, and the 1.5-LOD support interval came out as chromosome 3, 9,301,997 to 9,505,868. We want the gene that sits inside that interval; it has no gene name assigned, which is exactly why we need its stable identifier. Give me the Ensembl gene ID and the Ensembl species name we should be querying with.",
+    "expected": {
+      "gene_ids": [
+        "ENSAMXG00000005961"
+      ],
+      "species": [
+        "astyanax_mexicanus"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that you have the Ensembl gene ID (ENSAMXG00000005961) and the species (astyanax_mexicanus), use the Ensembl database to retrieve the full gene annotation record, including its exact genomic coordinates, biotype, and functional description.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_id",
+        "kwargs": {
+          "id": "ENSAMXG00000005961"
+        }
+      }
+    ]
+  }
+}

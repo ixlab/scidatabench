@@ -1,0 +1,33 @@
+{
+ "scenario_file": "obis__10.1007_s10811-022-02899-5_scenario.json",
+ "platform": "obis",
+ "downloaded_at": "2026-08-09T01:50:19.064729+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Palmaria palmata",
+    "geometry": "POLYGON((-100 40, 40 40, 40 80, -100 80, -100 40))"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:50:19.064729+00:00",
+   "rows": 11065,
+   "format": "parquet",
+   "total_available": 11065
+  }
+ ]
+}

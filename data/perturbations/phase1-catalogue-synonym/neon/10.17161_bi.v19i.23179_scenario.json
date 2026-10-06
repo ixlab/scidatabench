@@ -1,0 +1,552 @@
+{
+  "source_doi": "10.17161/bi.v19i.23179",
+  "research_question": "How can we derive a comprehensive, analysis-ready dataset of species-level estimated abundances for nighttime-collected female mosquitoes from raw NEON CO2 trap data, including the inference of zero counts?",
+  "phase_1": {
+    "user_prompt": "I'm looking for NEON data to study mosquito populations, specifically focusing on collections that use CO2 bait. What is the data product ID for culicid adults drawn to carbon-dioxide-baited traps?",
+    "expected": {
+      "data_products": [
+        "DP1.10043.001"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Download the mosquito CO2 trap data for all 47 NEON terrestrial sites (both core and gradient) spanning the years 2014 through 2022. Use the 2024 data release version if possible.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "ABBY",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "BARR",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "BART",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "BLAN",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "BONA",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "CLBJ",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "CPER",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "DCFS",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "DEJU",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "DELA",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "DSNY",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "GRSM",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "GUAN",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "HARV",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "HEAL",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "JERC",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "JORN",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "KONA",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "KONZ",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "LAJA",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "LENO",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "MLBS",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "MOAB",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "NIWO",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "NOGP",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "OAES",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "ONAQ",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "ORNL",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "OSBS",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "PUUM",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "RMNP",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "SCBI",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "SERC",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "SJER",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "SOAP",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "SRER",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "STEI",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "STER",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "TALL",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "TEAK",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "TOOL",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "TREE",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "UKFS",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "UNDE",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "WOOD",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "WREF",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10043.001",
+          "site": "YELL",
+          "startdate": "2014-01",
+          "enddate": "2022-12",
+          "release": "RELEASE-2024"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded mosquito data by joining the trapping, sorting, and taxonomic identification tables. Keep records for nighttime collections, but also retain events with zero trap hours for later. Filter the dataset to include only trap events where at least 90% of the mosquito subsample was identified to sex, and at least 90% was identified to the species level. Exclude events where trap quality flags (e.g., fan condition, CO2 sublimation, catch cup condition) indicate compromised samples. Finally, calculate the estimated total abundance for each species by dividing the individual count by the proportion of the sample identified. What is the mean estimated abundance per trap event for uncompromised nighttime traps?",
+    "expected": 134.8075,
+    "unit": "mosquitoes per trap event"
+  },
+  "phase_4": {
+    "user_prompt": "To finalize the dataset, we must infer missing zero counts. First, add zero counts for active traps that caught no female mosquitoes. Second, add zero counts for inactive traps (trap hours = 0) if metadata or remarks indicate weather issues like cold or snow made sampling impractical. Finally, if a species was detected at a site in a given year, add a zero count for that species for any other trap events at that site and year where it was not caught. Calculate the percentage of trap events in the final dataset that are zero-count events. Create a line plot showing the monthly total estimated abundance for the top 3 most common species, and save it as 'mosquito_abundance_timeseries.png'.",
+    "expected": 40.0,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "By robustly incorporating zero counts for inactive traps due to cold weather and inferring species-level absences based on site-year presence, approximately 40% of the final dataset consists of zero-count events (roughly 18,000 events). This creates a comprehensive, continuous time series of nighttime female mosquito abundance that accurately reflects phenology and sampling effort.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "mosquito_abundance_timeseries.png",
+      "visual_description": "A line plot showing monthly aggregated estimated abundances over the 2014-2022 period for the top three most abundant mosquito species. The plot should display distinct seasonal peaks (phenology) corresponding to summer months and near-zero abundances in winter, reflecting the rigorous inclusion of zero counts.",
+      "paper_figure_reference": null
+    }
+  }
+}

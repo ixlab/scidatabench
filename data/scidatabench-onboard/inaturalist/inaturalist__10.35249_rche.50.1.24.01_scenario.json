@@ -1,0 +1,28 @@
+{
+  "source_doi": "10.35249/rche.50.1.24.01",
+  "research_question": "What is the distribution of the shield mantis Choeradodis rhombicollis in Mexico based on citizen science records?",
+  "phase_1": {
+    "user_prompt": "We are updating the distribution records for the shield mantis species Choeradodis rhombicollis in Mexico using citizen science data. To pull this dataset, please identify the appropriate platform-specific numeric identifiers for both the species and the country on the iNaturalist platform.",
+    "expected": {
+      "taxon_ids": [
+        "446775"
+      ],
+      "place_ids": [
+        "6793"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identifiers you just found (species ID 446775 and country ID 6793), please retrieve all citizen science observation records for this mantis in Mexico from iNaturalist. We need the data to review and corroborate the geographic distribution points.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 446775,
+          "place_id": 6793
+        }
+      }
+    ]
+  }
+}

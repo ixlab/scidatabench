@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.3133/ofr20201078",
+  "research_question": "To investigate potential laboratory biases in dissolved selenium concentrations by comparing the ratio of selenium to calcium across two distinct operational time periods at the Gunnison River near Grand Junction.",
+  "phase_1": {
+    "user_prompt": "I am investigating potential laboratory biases in dissolved trace-element concentrations reported by USGS, specifically focusing on dissolved selenium measurements. I'm looking at the Gunnison River near Grand Junction, Colorado, which is a key site for the local Selenium Management Program. Can you identify the USGS site number for this location and the relevant 5-digit parameter codes for dissolved selenium and dissolved calcium, as I want to use calcium as a stable reference analyte for calculating concentration ratios?",
+    "expected": {
+      "sites": [
+        "09152500"
+      ],
+      "parameter_codes": [
+        "01145",
+        "00915"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve all discrete water quality sample data for dissolved selenium and dissolved calcium at the Gunnison River near Grand Junction site. I need the data from October 1, 2005, through September 30, 2018.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "usgsPCode": "01145",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "2005-10-01",
+          "activityStartDateUpper": "2018-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the data by pairing measurements of dissolved selenium and dissolved calcium taken on the same day (averaging them if there are multiple measurements on a single day). Calculate the ratio of Selenium to Calcium for each of these daily pairs. Then, split the dataset into two periods: a 'potentially affected period' from October 1, 2005 through August 8, 2015, and an 'unaffected period' from August 9, 2015 through September 30, 2018. How many valid paired daily samples are in the 'potentially affected period'?",
+    "expected": 64,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Perform a two-sided Mann-Whitney-Wilcoxon test to determine if the ratio of Selenium to Calcium is significantly different between the potentially affected period and the unaffected period. What is the resulting exact p-value? Also, create a boxplot comparing the Selenium-to-Calcium ratio between the two periods, and save it as `selenium_bias_boxplot.png`.",
+    "expected": 6.94e-05,
+    "unit": "p-value",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The Mann-Whitney-Wilcoxon test indicates a statistically significant difference between the periods, with the potentially affected period (2005-2015) exhibiting a higher median Selenium-to-Calcium ratio than the unaffected period (2015-2018). The boxplot visualization should confirm this by showing the interquartile range and median of the potentially affected period positioned visibly higher than those of the unaffected period.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "selenium_bias_boxplot.png",
+      "visual_description": "A side-by-side boxplot with two groups representing the two time periods. The y-axis should represent the Selenium-to-Calcium ratio. The median line and box for the potentially affected period (2005-2015) should be located higher on the y-axis than the box for the unaffected period.",
+      "paper_figure_reference": "Figure 3 (Selenium-to-calcium ratio panel)"
+    }
+  }
+}

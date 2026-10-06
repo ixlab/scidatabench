@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.3133/ofr20181172",
+  "research_question": "What were the peak streamflow magnitudes during Hurricane Florence (September 2018) for the Waccamaw River at Freeland, NC, and the Little Pee Dee River at Galivants Ferry, SC, and how did they compare to the historical annual peak records prior to the event?",
+  "phase_1": {
+    "user_prompt": "I'm analyzing the extreme flooding caused by Hurricane Florence in September 2018. I want to look at the streamgages on the Waccamaw River at Freeland, NC, and the Little Pee Dee River at Galivants Ferry, SC. Can you find the USGS site numbers for these two locations and identify the standard parameter codes for discharge and gage height?",
+    "expected": {
+      "sites": [
+        "02109500",
+        "02135000"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00065"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site numbers for the Waccamaw River and Little Pee Dee River, please download their historical annual peak streamflow data up through water year 2017. Also, retrieve the continuous or daily discharge data for both sites covering the entire month of September 2018 to capture the flood peaks from Hurricane Florence.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02109500",
+          "parameter_code": "00060",
+          "time": "2018-09-01/2018-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02135000",
+          "parameter_code": "00060",
+          "time": "2018-09-01/2018-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the September 2018 time series data to find the absolute maximum discharge that occurred at the Waccamaw River at Freeland, NC during the Hurricane Florence event. What was the peak discharge value in cubic meters per second (m³/s)?",
+    "expected": 1517.7829773312,
+    "unit": "m3/s"
+  },
+  "phase_4": {
+    "user_prompt": "Now determine the maximum peak discharge during Hurricane Florence for the Little Pee Dee River at Galivants Ferry, SC. Compare this Florence peak to the site's entire historical annual peak streamflow record prior to 2018. Did Florence set a new peak of record at this site, and what was the exact magnitude of the peak flow?",
+    "expected": 66900.0,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Hurricane Florence caused a peak streamflow of 66,900 cfs at the Little Pee Dee River at Galivants Ferry in September 2018, which exceeded all prior historical annual peak streamflows, establishing a new peak of record for the site.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

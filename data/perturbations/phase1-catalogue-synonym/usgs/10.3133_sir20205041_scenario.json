@@ -1,0 +1,189 @@
+{
+  "source_doi": "10.3133/sir20205041",
+  "research_question": "How have flow-normalized fluxes and yields of total phosphorus, total nitrogen, and total suspended solids changed in the major river basins of Illinois between 1978 and 2017, and how do changes in watershed management compare to changes driven by streamflow trends?",
+  "phase_1": {
+    "user_prompt": "I want to analyze long-term trends in nutrient and soil loss for the major river basins in Illinois. Specifically, I need to identify the farthest downstream USGS streamgages for the eight largest major river basins in the state (the Illinois, Rock, Kaskaskia, Little Wabash, Big Muddy, Embarras, Vermilion, and Green rivers). Can you find the official USGS site numbers for these eight streamgages so I can retrieve their daily volumetric flow and water quality records?",
+    "expected": {
+      "sites": [
+        "05586100",
+        "05446500",
+        "05594100",
+        "03381500",
+        "05599500",
+        "03345500",
+        "03339000",
+        "05447500"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For those eight major Illinois streamgages, please retrieve daily streamflow data from NWIS and paired discrete water quality samples for Total Nitrogen, Total Phosphorus, and Total Suspended Solids covering the period from 1978 to 2017. You may need to access the Water Quality Portal to get the comprehensive discrete sampling records for these sites.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05586100",
+          "parameter_code": "00060",
+          "time": "1978-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05586100",
+          "activityStartDateLower": "1978-01-01",
+          "activityStartDateUpper": "2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05446500",
+          "parameter_code": "00060",
+          "time": "1978-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05446500",
+          "activityStartDateLower": "1978-01-01",
+          "activityStartDateUpper": "2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05594100",
+          "parameter_code": "00060",
+          "time": "1978-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05594100",
+          "activityStartDateLower": "1978-01-01",
+          "activityStartDateUpper": "2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03381500",
+          "parameter_code": "00060",
+          "time": "1978-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03381500",
+          "activityStartDateLower": "1978-01-01",
+          "activityStartDateUpper": "2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05599500",
+          "parameter_code": "00060",
+          "time": "1978-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05599500",
+          "activityStartDateLower": "1978-01-01",
+          "activityStartDateUpper": "2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03345500",
+          "parameter_code": "00060",
+          "time": "1978-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03345500",
+          "activityStartDateLower": "1978-01-01",
+          "activityStartDateUpper": "2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03339000",
+          "parameter_code": "00060",
+          "time": "1978-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-03339000",
+          "activityStartDateLower": "1978-01-01",
+          "activityStartDateUpper": "2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05447500",
+          "parameter_code": "00060",
+          "time": "1978-01-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05447500",
+          "activityStartDateLower": "1978-01-01",
+          "activityStartDateUpper": "2017-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean and format the retrieved streamflow and water quality data to prepare it for a WRTDS (Weighted Regressions on Time, Discharge, and Season) trend analysis. Focus specifically on the Total Nitrogen dataset for the Illinois River site. Filter out any missing values and align the daily flow data with the discrete sample dates. How many valid paired observations of Total Nitrogen and streamflow exist for the Illinois River streamgage between 1978 and 2017?",
+    "expected": 465,
+    "unit": "observations"
+  },
+  "phase_4": {
+    "user_prompt": "Using the prepared dataset for the Illinois River (the farthest downstream streamgage), run a WRTDS (Weighted Regressions on Time, Discharge, and Season) trend analysis with generalized flow normalization for Total Nitrogen from 1978 to 2017. What is the calculated change in flow-normalized yield of Total Nitrogen (in kg/ha/yr) over this 40-year period? Additionally, partition the trend into its Concentration-Discharge Trend Component (CQTC) and Streamflow Trend Component (QTC), and create a visualization showing these components over time. Save the plot as `illinois_river_tn_trend_components.png`.",
+    "expected": -1.9,
+    "unit": "kg/ha/yr",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "From 1978 to 2017, the overall flow-normalized total nitrogen flux and yield for the Illinois River decreased. Trend partitioning reveals that this decrease was heavily driven by a reduction in the concentration-discharge trend component (CQTC), indicating improved watershed management. However, these gains were partially offset by a long-term increase in the streamflow trend component (QTC) driven by changing climatic and hydrologic conditions.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "illinois_river_tn_trend_components.png",
+      "visual_description": "A line chart or bar plot displaying the partitioned trend components of Total Nitrogen flux or yield over time (1978-2017) for the Illinois River. It should clearly show three distinct trajectories: the overall flow-normalized trend, a decreasing Concentration-Discharge Trend Component (CQTC), and an increasing Streamflow Trend Component (QTC).",
+      "paper_figure_reference": "Figure 3 (Statewide trend components showing similar patterns) and Figure 2.4 (Illinois River specific component bar chart)"
+    }
+  }
+}

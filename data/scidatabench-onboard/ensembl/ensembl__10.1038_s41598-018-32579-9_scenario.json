@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.1038/s41598-018-32579-9",
+  "research_question": "Can alternative splice isoforms explain the observed ADIPOR1 protein doublet in mouse and human Western blots?",
+  "phase_1": {
+    "user_prompt": "In our study on retinal degeneration, we found that the adiponectin receptor 1 gene exhibits a protein doublet in Western blots of eye tissues. We want to check if this is due to alternative transcripts encoding proteins of different molecular weights in mice and humans. Which gene symbol and species names should we query in the Ensembl database to retrieve these transcript variants?",
+    "expected": {
+      "gene_symbols": [
+        "ADIPOR1",
+        "Adipor1"
+      ],
+      "species": [
+        "homo_sapiens",
+        "mus_musculus"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the gene symbol ADIPOR1 for human (homo_sapiens) and Adipor1 for mouse (mus_musculus), please retrieve all of their transcript variants from Ensembl. Filter for the ones that actually code for proteins, and fetch their translated protein sequences so we can estimate their molecular weights and see if they explain our Western blot doublet.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "ADIPOR1",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSG00000159346",
+          "type": "protein",
+          "multiple_sequences": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "mus_musculus",
+          "symbol": "Adipor1",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSMUSG00000026457",
+          "type": "protein",
+          "multiple_sequences": 1
+        }
+      }
+    ]
+  }
+}

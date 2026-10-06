@@ -1,0 +1,21 @@
+{
+ "scenario_file": "8cc15ce2-ddac-3525-ab23-2b3fba38cd5a_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-06-27T03:11:00.125737+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "download_get",
+   "kwargs": {
+    "key": "0082704-200221144449610"
+   },
+   "status": "success",
+   "downloaded_at": "2026-06-27T03:11:00.125737+00:00",
+   "rows": 5138,
+   "format": "gbif_simple_csv",
+   "download_key": "0082704-200221144449610",
+   "doi": "10.15468/dl.wc2fm7"
+  }
+ ]
+}

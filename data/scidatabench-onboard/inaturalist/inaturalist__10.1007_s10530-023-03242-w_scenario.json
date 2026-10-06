@@ -1,0 +1,31 @@
+{
+  "source_doi": "10.1007/s10530-023-03242-w",
+  "research_question": "Assess the invasion status and phenology of Carpobrotus edulis in Uruguay using citizen science records.",
+  "phase_1": {
+    "user_prompt": "We manage coastal dunes along the Atlantic and outer Rio de la Plata shoreline of the South American country whose coastal departments run, west to east, Montevideo, Canelones, Maldonado and Rocha. The worst dune invader here is the mat-forming succulent in the family Aizoaceae that is native to South Africa and was planted decades ago for ornamentation and sand stabilisation: yellow flowers fading to pink, fleshy fig-like fruits, spreading by clonal branches. To pull the research-grade records we need, give me the accepted scientific name of that species and the name of the country as iNaturalist records places.",
+    "expected": {
+      "taxon_names": [
+        "Carpobrotus edulis"
+      ],
+      "place_names": [
+        "Uruguay"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have established the target parameters, please retrieve all 'research grade' observation records for 'Carpobrotus edulis' in 'Uruguay' from the beginning of the available temporal range (March 16, 2008) up to the authors' download date of May 10, 2023.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 49322,
+          "place_id": 7259,
+          "quality_grade": "research",
+          "d1": "2008-03-16",
+          "d2": "2023-05-10"
+        }
+      }
+    ]
+  }
+}

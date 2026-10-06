@@ -1,0 +1,195 @@
+{
+ "scenario_file": "ensembl__10.1038_s41598-018-25121-4_scenario.json",
+ "platform": "ensembl",
+ "downloaded_at": "2026-08-09T01:44:25.364608+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "1:6455303-6679755",
+    "feature": "gene"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:15.068390+00:00",
+   "rows": 17,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/1:6455303-6679755"
+  },
+  {
+   "idx": 1,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "region": "1:1231275-1435314",
+    "feature": "gene"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:15.684306+00:00",
+   "rows": 32,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/homo_sapiens/1:1231275-1435314"
+  },
+  {
+   "idx": 2,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "mus_musculus",
+    "region": "4:152012371-152223733",
+    "feature": "gene"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:17.000039+00:00",
+   "rows": 13,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/mus_musculus/4:152012371-152223733"
+  },
+  {
+   "idx": 3,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "mus_musculus",
+    "region": "4:155843725-156047819",
+    "feature": "gene"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:17.898916+00:00",
+   "rows": 26,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/mus_musculus/4:155843725-156047819"
+  },
+  {
+   "idx": 4,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "danio_rerio",
+    "region": "23:21324747-21540054",
+    "feature": "gene"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:18.972608+00:00",
+   "rows": 14,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/danio_rerio/23:21324747-21540054"
+  },
+  {
+   "idx": 5,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "danio_rerio",
+    "region": "11:40631602-40842507",
+    "feature": "gene"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:19.495533+00:00",
+   "rows": 8,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/danio_rerio/11:40631602-40842507"
+  },
+  {
+   "idx": 6,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "oryzias_latipes",
+    "region": "5:8690698-8901287",
+    "feature": "gene"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:20.082358+00:00",
+   "rows": 8,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/oryzias_latipes/5:8690698-8901287"
+  },
+  {
+   "idx": 7,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "takifugu_rubripes",
+    "region": "3:6943630-7147121",
+    "feature": "gene"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:20.982918+00:00",
+   "rows": 58,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/takifugu_rubripes/3:6943630-7147121"
+  },
+  {
+   "idx": 8,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "takifugu_rubripes",
+    "region": "19:10475731-10679234",
+    "feature": "gene"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:21.754099+00:00",
+   "rows": 15,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/takifugu_rubripes/19:10475731-10679234"
+  },
+  {
+   "idx": 9,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "cynoglossus_semilaevis",
+    "region": "10:1607418-1814047",
+    "feature": "gene"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:22.908172+00:00",
+   "rows": 23,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/cynoglossus_semilaevis/10:1607418-1814047"
+  },
+  {
+   "idx": 10,
+   "module": "ensembl_rest",
+   "function": "overlap_region",
+   "kwargs": {
+    "species": "cynoglossus_semilaevis",
+    "region": "11:320673-525287",
+    "feature": "gene"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:25.364608+00:00",
+   "rows": 11,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/overlap/region/cynoglossus_semilaevis/11:320673-525287"
+  }
+ ]
+}

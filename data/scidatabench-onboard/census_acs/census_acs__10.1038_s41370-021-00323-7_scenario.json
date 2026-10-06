@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.1038/s41370-021-00323-7",
+  "research_question": "What is the relationship between air pollutants, neighborhood socioeconomic factors, and preterm birth in California urban counties?",
+  "phase_1": {
+    "user_prompt": "We are studying air pollutants and preterm birth in California urban counties. For the socioeconomic covariates, I need to extract census tract-level data for the 2007-2011 period, for births to women living in six California counties: Alameda, Contra Costa, Fresno, Los Angeles, San Diego, and San Francisco. I need data on the GINI index of income inequality, median household income, highest educational attainment for populations 25 years and older, poverty status, employment status, and households receiving public assistance income, supplemental security income (SSI), or SNAP/food stamps. Please identify the geography summary level, the state and county FIPS codes, and the primary ACS detailed tables (e.g., B-series tables) that provide this information.",
+    "expected": {
+      "geographies": [
+        "tract"
+      ],
+      "state_codes": [
+        "06"
+      ],
+      "county_codes": [
+        "06001",
+        "06013",
+        "06019",
+        "06037",
+        "06073",
+        "06075"
+      ],
+      "tables": [
+        "B19083",
+        "B19013",
+        "B15003",
+        "B17001",
+        "B19056",
+        "B19057",
+        "B22001",
+        "B23001"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the 2007-2011 ACS 5-year data via the US Census API, fetch the tract-level estimates for the GINI index (B19083_001E), median household income (B19013_001E), households receiving public assistance (B19057_002E), SSI (B19056_002E), and SNAP (B22001_002E). Retrieve these variables for all census tracts within California counties Alameda, Contra Costa, Fresno, Los Angeles, San Diego, and San Francisco.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2011,
+          "dataset": "acs/acs5",
+          "get": "NAME,B19083_001E,B19013_001E,B19057_002E,B19056_002E,B22001_002E",
+          "for": "tract:*",
+          "in": "state:06 county:001,013,019,037,073,075"
+        }
+      }
+    ]
+  }
+}

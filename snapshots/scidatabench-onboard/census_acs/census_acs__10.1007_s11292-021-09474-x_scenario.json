@@ -1,0 +1,127 @@
+{
+ "scenario_file": "census_acs__10.1007_s11292-021-09474-x_scenario.json",
+ "platform": "census_acs",
+ "downloaded_at": "2026-08-10T23:26:44.122252+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B23025)",
+    "for": "tract:*",
+    "in": "state:12 county:086"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:39.255710+00:00",
+   "rows": 519,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 1,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B17001)",
+    "for": "tract:*",
+    "in": "state:12 county:086"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:40.786808+00:00",
+   "rows": 519,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 2,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B19013)",
+    "for": "tract:*",
+    "in": "state:12 county:086"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:41.441555+00:00",
+   "rows": 519,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 3,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B25077)",
+    "for": "tract:*",
+    "in": "state:12 county:086"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:42.106165+00:00",
+   "rows": 519,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 4,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B15003)",
+    "for": "tract:*",
+    "in": "state:12 county:086"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:43.235861+00:00",
+   "rows": 519,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  },
+  {
+   "idx": 5,
+   "module": "census",
+   "function": "acs_data",
+   "kwargs": {
+    "year": 2018,
+    "dataset": "acs/acs5",
+    "get": "NAME,group(B25014)",
+    "for": "tract:*",
+    "in": "state:12 county:086"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T23:26:44.122252+00:00",
+   "rows": 519,
+   "format": "parquet",
+   "year": 2018,
+   "dataset": "acs/acs5"
+  }
+ ]
+}

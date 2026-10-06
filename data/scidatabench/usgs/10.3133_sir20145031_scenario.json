@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.3133/sir20145031",
+  "research_question": "Develop a surrogate regression model relating specific conductance to dissolved-solids concentration (sum of constituents) using historical water quality data for the Colorado River near Cisco, Utah.",
+  "phase_1": {
+    "user_prompt": "I am investigating salinity in the Upper Colorado River Basin and want to estimate dissolved-solids concentrations continuously. To do this, I need to build a surrogate regression model using historical paired water quality samples. I want to focus on the main index station for this region, which is the Colorado River near Cisco, Utah. Could you help me find the official USGS site number for this station? I also need the standard 5-digit USGS parameter codes for Specific Conductance (measured at 25 °C) and Dissolved Solids calculated by the sum of constituents (SOC).",
+    "expected": {
+      "sites": [
+        "09180500"
+      ],
+      "parameter_codes": [
+        "00095",
+        "70300"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site and parameter codes, I need you to retrieve the historical paired discrete water quality measurements for Specific Conductance and Dissolved Solids (sum of constituents) at this Cisco, UT station. Please fetch all available discrete sample data spanning from the start of 1999 through the end of 2012.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09180500",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09180500",
+          "usgsPCode": "70300",
+          "activityStartDateLower": "1999-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "With the data downloaded, please clean it by keeping only the records where both Specific Conductance and Dissolved Solids (sum of constituents) were measured simultaneously in the same sample. Then, fit an ordinary least-squares linear regression model predicting Dissolved Solids from Specific Conductance (DS = m * SC + b). What is the slope (m) of this regression line?",
+    "expected": 0.691,
+    "unit": "ratio (mg/L per uS/cm)"
+  },
+  "phase_4": {
+    "user_prompt": "To evaluate if Specific Conductance is a reliable surrogate for Dissolved Solids at this site, we need to check the strength of the linear relationship. Please calculate the coefficient of determination (R-squared) for the regression model you just fit. Also, create a scatter plot of Specific Conductance (x-axis) vs Dissolved Solids (y-axis) with the regression line overlaid, and save it as `cisco_sc_ds_regression.png`.",
+    "expected": 0.98,
+    "unit": "unitless",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Specific conductance is a highly reliable surrogate for dissolved-solids concentration (sum of constituents) at the Colorado River near Cisco, UT streamgage, exhibiting a very strong positive linear relationship (R-squared = 0.98) across a broad range of flow and conductivity conditions.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "cisco_sc_ds_regression.png",
+      "visual_description": "A scatter plot with Specific Conductance on the x-axis and Dissolved Solids on the y-axis. The data points should be tightly clustered around a positively sloping linear trendline, demonstrating a very strong correlation.",
+      "paper_figure_reference": "Figure 4 Panel C"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "source_doi": "10.1016/j.mtphys.2024.101549",
+  "research_question": "How can we retrieve specific structural and elastic properties from the Materials Project for specific inorganic crystals (SiC, AlBN2, Cs2Se, AgCl) to calculate their speed of sound for thermal conductivity predictions?",
+  "phase_1": {
+    "user_prompt": "We are deriving an interpretable formula for the lattice thermal conductivity of crystals and will validate it against DFT for a handful of example materials, including SiC. Please identify the Materials Project entries for those examples, and the four computed properties our formula takes as inputs: two that describe how heavy and how large the unit cell is, and the two elastic moduli that set the sound velocities.",
+    "expected": {
+      "material_ids": [
+        "mp-8062",
+        "mp-1008557",
+        "mp-1011695",
+        "mp-22922"
+      ],
+      "properties": [
+        "density",
+        "volume",
+        "bulk_modulus",
+        "shear_modulus"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Materials Project identifiers (mp-8062, mp-1008557, mp-1011695, mp-22922), please fetch the density, unit cell volume, number of atoms in the cell, and the bulk and shear moduli for these materials.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "material_ids": "mp-8062,mp-1008557,mp-1011695,mp-22922",
+          "_fields": "material_id,formula_pretty,density,volume,nsites"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/elasticity",
+        "kwargs": {
+          "material_ids": "mp-8062,mp-1008557,mp-1011695,mp-22922",
+          "_fields": "material_id,formula_pretty,bulk_modulus,shear_modulus"
+        }
+      }
+    ]
+  }
+}

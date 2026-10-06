@@ -1,0 +1,91 @@
+{
+ "scenario_file": "noaa_ghcn__10.5194_hess-22-4155-2018_scenario.json",
+ "platform": "noaa_ghcn",
+ "downloaded_at": "2026-08-10T22:38:29.365670+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00024011",
+    "startDate": "1987-01-01",
+    "endDate": "2017-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:38:27.437788+00:00",
+   "rows": 11323,
+   "format": "parquet",
+   "station": "USW00024011"
+  },
+  {
+   "idx": 1,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00024090",
+    "startDate": "1987-01-01",
+    "endDate": "2017-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:38:28.087421+00:00",
+   "rows": 11323,
+   "format": "parquet",
+   "station": "USW00024090"
+  },
+  {
+   "idx": 2,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00024143",
+    "startDate": "1987-01-01",
+    "endDate": "2017-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:38:28.748255+00:00",
+   "rows": 11323,
+   "format": "parquet",
+   "station": "USW00024143"
+  },
+  {
+   "idx": 3,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USW00094008",
+    "startDate": "1987-01-01",
+    "endDate": "2017-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:38:29.365670+00:00",
+   "rows": 11323,
+   "format": "parquet",
+   "station": "USW00094008"
+  }
+ ]
+}

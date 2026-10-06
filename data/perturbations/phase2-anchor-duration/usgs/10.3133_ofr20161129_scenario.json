@@ -1,0 +1,143 @@
+{
+  "source_doi": "10.3133/ofr20161129",
+  "research_question": "What are the instantaneous dissolved-selenium loads and their spatial variations across the core continuous monitoring sites in the Lower Gunnison River Basin from Water Years 2011 to 2014?",
+  "phase_1": {
+    "user_prompt": "I am researching dissolved selenium transport in the Lower Gunnison River Basin, Colorado, focusing on water years 2011 through 2014. I want to analyze data from five key continuous streamgages: North Fork Gunnison River near Lazear, Gunnison River at Delta, Uncompahgre River at Colona, Uncompahgre River at Delta, and Gunnison River near Grand Junction (often called Whitewater). What are the USGS site numbers for these five locations? Also, what are the standard 5-digit USGS parameter codes I should use to request daily streamflow and discrete dissolved selenium (filtered) concentration?",
+    "expected": {
+      "sites": [
+        "09136100",
+        "09144250",
+        "09147500",
+        "09149500",
+        "09152500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "01145"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that I have the site numbers and parameter codes, please retrieve the daily streamflow records and the discrete water-quality samples for dissolved selenium for these five sites over the 48 months beginning in October 2010.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09136100",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09144250",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09147500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09149500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09152500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09136100",
+          "usgsPCode": "01145",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09144250",
+          "usgsPCode": "01145",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09147500",
+          "usgsPCode": "01145",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09149500",
+          "usgsPCode": "01145",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "usgsPCode": "01145",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To understand the transport of selenium, calculate the instantaneous dissolved-selenium daily load (in pounds per day) for each discrete water-quality sample collected at these sites. You can calculate this by matching each selenium concentration with the daily streamflow on that same date. What is the median instantaneous dissolved-selenium daily load at the Gunnison River near Grand Junction (Whitewater) site across all samples in this 4-year period?",
+    "expected": 34.1,
+    "unit": "pounds per day"
+  },
+  "phase_4": {
+    "user_prompt": "I'd like to visually compare the selenium loads across the basin. Please create a side-by-side boxplot of the instantaneous dissolved-selenium loads for the five sites using the data from water years 2011-2014. Set the y-axis to a logarithmic scale so the wide range of loads is visible. Save this visualization as 'core_sites_selenium_load_boxplots.png'. Additionally, calculate and output the exact median instantaneous selenium load for the Uncompahgre River at Delta over this same period.",
+    "expected": 17.2,
+    "unit": "pounds per day",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Dissolved-selenium loads vary significantly across the basin, generally increasing from upstream to downstream main-stem sites. The Uncompahgre River at Delta and the downstream Gunnison River near Grand Junction (Whitewater) contribute the highest instantaneous loads, exceeding 10 lb/day, while the Uncompahgre River at Colona contributes the least.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "core_sites_selenium_load_boxplots.png",
+      "visual_description": "A set of side-by-side boxplots showing instantaneous dissolved-selenium loads (in pounds per day) on a logarithmic y-axis for the five core USGS sites. The boxplots should visually demonstrate that Uncompahgre River at Colona has the lowest median load (around 0.4 lb/d), while Uncompahgre River at Delta and Gunnison River near Grand Junction have the highest median loads (around 17 lb/d and 34 lb/d respectively).",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

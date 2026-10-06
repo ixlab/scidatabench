@@ -1,0 +1,40 @@
+{
+  "source_doi": "10.1016/j.cpc.2018.01.004",
+  "research_question": "How can we retrieve the necessary bulk crystal structure, band gap, and thermodynamic phase diagram data from the Materials Project to set up point defect calculations for gallium arsenide?",
+  "phase_1": {
+    "user_prompt": "We are setting up automated point-defect calculations and will demonstrate the workflow on zinc-blende gallium arsenide. Identify the exact Materials Project identifier for that phase. Also identify the chemical system we need to query for the zero-temperature phase diagram that sets the chemical potential limits, and the two properties we must retrieve for the host itself: the relaxed atomic geometry we will build the defect supercell from, and the electronic property that tells us where the defect levels sit.",
+    "expected": {
+      "material_ids": [
+        "mp-2534"
+      ],
+      "chemsys": [
+        "Ga-As"
+      ],
+      "properties": [
+        "structure",
+        "band_gap"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identifiers you found (`mp-2534` for GaAs, and the `Ga-As` chemical system), please retrieve the bulk crystal structure and the computed band gap for the host material from the Materials Project. Additionally, retrieve the computed thermodynamic entries for the entire Ga-As system to allow for the construction of the phase diagram and determination of the atomic chemical potentials.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "material_ids": "mp-2534",
+          "_fields": "material_id,formula_pretty,structure,band_gap"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/thermo",
+        "kwargs": {
+          "chemsys": "Ga-As",
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom,energy_per_atom"
+        }
+      }
+    ]
+  }
+}

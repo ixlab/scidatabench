@@ -1,0 +1,45 @@
+{
+  "source_doi": "10.1038/s41597-022-01140-9",
+  "research_question": "How to systematically acquire, clean, and map common vampire bat occurrence data using standard coordinate error filtering?",
+  "phase_1": {
+    "user_prompt": "I want to map the historical distribution of the common vampire bat across the Americas using occurrence data. What scientific name should I query in GBIF, and what flag should I use to ensure I only get records that can be mapped spatially?",
+    "expected": {
+      "taxon_keys": [
+        "2433298"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the occurrence records for the common vampire bat from GBIF. To match a previous historical baseline for my project, restrict the search to records observed on or before October 30, 2020.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "eventDate": "*,2020-10-30",
+          "hasCoordinate": true,
+          "taxonKey": 2433298
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Before analyzing the modern spatial distribution, we need to remove paleo-ecological data. Filter the downloaded dataset to exclude any records based on fossil specimens. How many fossil records were removed during this step?",
+    "expected": 3,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Next, apply a standard spatial cleaning pipeline to remove erroneous coordinates such as country capitals, country centroids, biodiversity institution locations, the GBIF headquarters, zero/zero coordinates, and invalid latitude/longitudes. Report the final count of cleaned occurrence records remaining. Finally, create a map showing the resulting distribution of the common vampire bat across the Americas, and save it as `vampire_bat_distribution_map.png`.",
+    "expected": 12736,
+    "unit": "records",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The visualization should display the occurrence distribution of the common vampire bat endemic to the Neotropics, ranging continuously from northern Mexico southwards through Central America down to central Chile and northern Argentina. Anomalous spatial outliers (e.g., in the ocean, Europe, or deep in Canada/USA) should be absent due to the cleaning steps.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "vampire_bat_distribution_map.png",
+      "visual_description": "A map of the Americas (North, Central, and South) overlaid with occurrence points. The points should be densely clustered in Mexico, Colombia, Peru, Brazil, and Argentina, cleanly stopping around central Chile/Argentina, with no points appearing at [0,0] in the Atlantic Ocean or at obvious country centroids.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

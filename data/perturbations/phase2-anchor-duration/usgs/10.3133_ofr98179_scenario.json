@@ -1,0 +1,355 @@
+{
+  "source_doi": "10.3133/ofr98179",
+  "research_question": "What is the maximum contamination level (as measured in field and equipment blanks) for dissolved calcium at surface water monitoring sites in the Upper Snake River Basin during water years 1993-1996?",
+  "phase_1": {
+    "user_prompt": "I'm evaluating field contamination in surface water quality monitoring for a historical study. I have a list of 32 USGS surface-water monitoring sites in the Upper Snake River Basin: 13010065, 13055000, 13055340, 13056500, 13060000, 13068500, 13069500, 13073000, 13075910, 13077000, 13081500, 13090000, 13091000, 13092713, 13092724, 13092735, 13092738, 13092747, 13093300, 13093400, 13093550, 13094000, 13094700, 13095050, 13095175, 13095500, 13120500, 13134700, 13135000, 13152500, 13152930, 13154500. I need to identify the parameter code for dissolved calcium (filtered, mg/L) and define the temporal scope to retrieve discrete water quality samples for these sites during water years 1993 through 1996 (October 1, 1992 to September 30, 1996).",
+    "expected": {
+      "parameter_codes": [
+        "00915"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve the discrete water quality sample records for dissolved calcium at the 32 specified sites over the 48 months beginning in October 1992.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13010065",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13055000",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13055340",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13056500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13060000",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13068500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13069500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13073000",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13075910",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13077000",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13081500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13090000",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13091000",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13092713",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13092724",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13092735",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13092738",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13092747",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13093300",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13093400",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13093550",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13094000",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13094700",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13095050",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13095175",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13095500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13120500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13134700",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13135000",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13152500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13152930",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13154500",
+          "usgsPCode": "00915",
+          "activityStartDateLower": "1992-10-01",
+          "activityStartDateUpper": "1996-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To assess background contamination, we only want to look at quality control 'blank' samples (such as field blanks, equipment blanks, or source-solution blanks). Filter the retrieved dataset to isolate only these blank samples for dissolved calcium. What is the total number of blank samples collected across all 32 sites during this period?",
+    "expected": 35,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "For the blank samples you identified, calculate the maximum concentration of dissolved calcium detected. Note: Exclude any left-censored 'non-detect' values (e.g., values reported as '< 0.02') from your maximum calculation, as these indicate the analyte was not confidently detected. What is the maximum dissolved calcium concentration detected in a blank sample?",
+    "expected": 0.94,
+    "unit": "mg/L",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

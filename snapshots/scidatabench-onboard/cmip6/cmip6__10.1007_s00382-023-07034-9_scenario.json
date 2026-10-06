@@ -1,0 +1,86 @@
+{
+ "scenario_file": "cmip6__10.1007_s00382-023-07034-9_scenario.json",
+ "platform": "cmip6",
+ "downloaded_at": "2026-08-09T01:41:44.805454+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "intake_esgf",
+   "function": "ESGFCatalog.search",
+   "kwargs": {
+    "source_id": [
+     "ACCESS-CM2",
+     "ACCESS-ESM1-5",
+     "AWI-CM-1-1-MR",
+     "BCC-CSM2-MR",
+     "CAMS-CSM1-0",
+     "CAS-ESM2-0",
+     "CESM2-WACCM",
+     "CIESM",
+     "CMCC-CM2-SR5",
+     "CMCC-ESM2",
+     "CanESM5",
+     "E3SM-1-1",
+     "EC-Earth3",
+     "EC-Earth3-AerChem",
+     "EC-Earth3-CC",
+     "EC-Earth3-Veg",
+     "EC-Earth3-Veg-LR",
+     "FGOALS-f3-L",
+     "FGOALS-g3",
+     "FIO-ESM-2-0",
+     "GFDL-CM4",
+     "GFDL-ESM4",
+     "IITM-ESM",
+     "INM-CM4-8",
+     "INM-CM5-0",
+     "IPSL-CM5A2-INCA",
+     "IPSL-CM6A-LR",
+     "KACE-1-0-G",
+     "MIROC6",
+     "MPI-ESM1-2-HR",
+     "MPI-ESM1-2-LR",
+     "MRI-ESM2-0",
+     "NESM3",
+     "NorESM2-LM",
+     "NorESM2-MM",
+     "TaiESM1"
+    ],
+    "experiment_id": [
+     "historical",
+     "ssp126",
+     "ssp245",
+     "ssp370",
+     "ssp585"
+    ],
+    "variable_id": [
+     "pr",
+     "tas"
+    ],
+    "table_id": [
+     "Amon"
+    ],
+    "variant_label": [
+     "r1i1p1f1"
+    ]
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:44.805454+00:00",
+   "rows": 332,
+   "format": "parquet",
+   "result_kind": "dataset_listing"
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+  "source_doi": "10.3133/ofr20191144",
+  "research_question": "Assess potential shallow groundwater contamination near the Goodell Creek alluvial fan by analyzing discrete water quality samples for dissolved metals.",
+  "phase_1": {
+    "user_prompt": "I'm assessing potential shallow groundwater contamination near the Goodell Creek alluvial fan in North Cascades National Park (Whatcom County, Washington) caused by historic levee construction. I need to find the specific USGS groundwater monitoring sites in this area (roughly around 48.67° N, -121.27° W) that were sampled for water quality during a low-flow period in September 2017. How can I identify these site numbers?",
+    "expected": {
+      "sites": [
+        "484028121160101",
+        "484030121155201",
+        "484030121160201",
+        "484030121160801",
+        "484032121155601",
+        "484037121160201"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that I have the 6 site numbers, I need to retrieve their water quality sampling records for September 2017. Please download the discrete sample data, ensuring you include both the routine environmental samples and any quality assurance/quality control (QA/QC) field replicate samples. I am particularly interested in extracting the data for dissolved Aluminum.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-484028121160101",
+          "usgsPCode": "01106",
+          "activityStartDateLower": "2017-09-01",
+          "activityStartDateUpper": "2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-484030121155201",
+          "usgsPCode": "01106",
+          "activityStartDateLower": "2017-09-01",
+          "activityStartDateUpper": "2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-484030121160201",
+          "usgsPCode": "01106",
+          "activityStartDateLower": "2017-09-01",
+          "activityStartDateUpper": "2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-484030121160801",
+          "usgsPCode": "01106",
+          "activityStartDateLower": "2017-09-01",
+          "activityStartDateUpper": "2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-484032121155601",
+          "usgsPCode": "01106",
+          "activityStartDateLower": "2017-09-01",
+          "activityStartDateUpper": "2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-484037121160201",
+          "usgsPCode": "01106",
+          "activityStartDateLower": "2017-09-01",
+          "activityStartDateUpper": "2017-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Quality control is critical for this limited dataset. I noticed there was a field replicate sample collected at one of the sites, Well P4 (site 484030121160201), on September 21, 2017. Calculate the absolute difference in dissolved Aluminum concentration between the routine environmental sample and the field replicate collected at this site on that day.",
+    "expected": 14.3,
+    "unit": "µg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Finally, I want to assess whether any of these monitoring locations show clear evidence of groundwater contamination from the buried construction materials. Analyze the regular environmental samples across all 6 sites. What is the highest concentration of dissolved Aluminum observed, and which site is it associated with? Please provide the maximum Aluminum value and a brief interpretation of what this indicates about contamination in the area.",
+    "expected": 2790.0,
+    "unit": "µg/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Well P1 (site 484037121160201) exhibits anomalously high concentrations of dissolved metals (such as Aluminum at 2,790 µg/L) compared to the other five sites which have much lower background levels. This indicates highly localized groundwater contamination, likely associated with the buried levee materials located near this specific site.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

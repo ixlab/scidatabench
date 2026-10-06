@@ -1,0 +1,52 @@
+{
+  "source_doi": "10.1007/s00484-022-02238-w",
+  "research_question": "How effective is iNaturalist data, compared to herbarium records, at detecting the response of flowering time to spring temperatures for three common spring-flowering plants (ramsons, horse chestnut, black elderberry) in Denmark?",
+  "phase_1": {
+    "user_prompt": "We are investigating how spring temperatures affect the flowering time of three common spring-flowering species: ramsons, horse chestnut, and black elderberry. Our study area is the country of Denmark. Please identify the formal scientific names for these three plant taxa and the geographic place name needed to search the iNaturalist catalog.",
+    "expected": {
+      "taxon_names": [
+        "Allium ursinum",
+        "Aesculus hippocastanum",
+        "Sambucus nigra"
+      ],
+      "place_names": [
+        "Denmark"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the scientific names we identified (Allium ursinum, Aesculus hippocastanum, Sambucus nigra) and our study location (Denmark), please pull the observation set we need. We want all research-grade observations for these species in Denmark that were recorded during the year 2020.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 56152,
+          "place_id": 8051,
+          "quality_grade": "research",
+          "year": 2020
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 84298,
+          "place_id": 8051,
+          "quality_grade": "research",
+          "year": 2020
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 765394,
+          "place_id": 8051,
+          "quality_grade": "research",
+          "year": 2020
+        }
+      }
+    ]
+  }
+}

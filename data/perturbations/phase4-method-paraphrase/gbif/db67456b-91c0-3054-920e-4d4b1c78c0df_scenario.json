@@ -1,0 +1,51 @@
+{
+  "source_doi": "10.1590/1519-6984.281355",
+  "research_question": "Analyze the historical distribution of Gobionellus stomatus in Brazil to confirm and map a newly discovered range extension into the Amazon coastal region.",
+  "phase_1": {
+    "user_prompt": "I recently collected a specimen of the goby species Gobionellus stomatus from an estuary in Maranhão, Brazil. I suspect this might represent a significant westward range extension. Before I can confirm this, I need to establish the baseline historical distribution of the species. I want to find all known occurrence data for this species in Brazil. To ensure data quality, I only want reliable records—specifically museum-preserved specimens that have known geographic coordinates. What search parameters should I use to query this on GBIF?",
+    "expected": {
+      "country_codes": [
+        "BR"
+      ],
+      "taxon_keys": [
+        "2375708"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now, please execute the search and download the historical occurrence data for Gobionellus stomatus based on those parameters.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN"
+          ],
+          "country": "BR",
+          "hasCoordinate": true,
+          "taxonKey": 2375708
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "With the downloaded data, we need to clean it before performing spatial analysis. Filter the dataset to explicitly remove any records with inaccurate or uncertain taxonomic identifications (e.g., drop any records whose taxonomic names or identification remarks contain 'aff.', 'cf.', or 'sp.'). Also, double-check that all remaining records have valid latitude and longitude coordinates. How many records remain after this cleaning step?",
+    "expected": 35,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "My newly collected specimen was found at the coordinates 02°28’25.9”S, 044°12’58.7”W (approximate decimal coordinates: -2.473861, -44.216306). First, using the cleaned GBIF historical dataset, calculate the straight-line (shortest distance over the Earth's surface between two latitude/longitude points) distance in kilometers from my new location to the absolute closest historical record. Second, generate a map of the Brazilian coast showing all historical occurrences as one color/marker, and my new record as a distinct, prominently colored marker. Save this visualization as 'g_stomatus_range_extension.png'.",
+    "expected": 300.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis confirms a range extension of approximately 300 km in a straight line to the northwest. The visualization correctly maps the historical records along the eastern and southern Brazilian coast (from Piauí to Rio Grande do Sul) while clearly highlighting the new Maranhão point as a distinct geographic outlier extending into the Amazon coastal zone.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "g_stomatus_range_extension.png",
+      "visual_description": "A map of Brazil (or the Brazilian coastline) showing historical occurrences of G. stomatus clustered along the eastern and southern coast. A distinct, prominently styled point must be plotted in the northwest (Maranhão coast, near the Amazon region) representing the new record. A legend or clear visual distinction should separate historical baseline data from the new extension point.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

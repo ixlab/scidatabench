@@ -1,0 +1,51 @@
+{
+  "source_doi": "10.3389/fmars.2022.933680",
+  "research_question": "Which specific BGC-Argo floats were held out to validate the chlorophyll-a profile classification model in the Mediterranean Sea, and how can we retrieve their chlorophyll data?",
+  "phase_1": {
+    "user_prompt": "We are validating a process-oriented chlorophyll-a profile classification model for the Mediterranean Sea, holding out a subset of floats to evaluate the accuracy of our binary tree model. Could you identify the WMO identifiers of suitable held-out Mediterranean floats, and the parameter we need from them for this classification?",
+    "expected": {
+      "float_wmo_ids": [
+        "6901511",
+        "6901513",
+        "6901776",
+        "6902828"
+      ],
+      "parameters": [
+        "CHLA"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 4 validation floats (6901511, 6901513, 6901776, and 6902828) and the target parameter (Chlorophyll-a), please use the appropriate oceanographic data tools to retrieve all the available profile records for these specific floats. Make sure the retrieved dataset includes the chlorophyll measurements so we can check their vertical distributions.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 6901511
+        }
+      },
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 6901513
+        }
+      },
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 6901776
+        }
+      },
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 6902828
+        }
+      }
+    ]
+  }
+}

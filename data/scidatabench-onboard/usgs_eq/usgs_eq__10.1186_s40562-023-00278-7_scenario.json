@@ -1,0 +1,40 @@
+{
+  "source_doi": "10.1186/s40562-023-00278-7",
+  "research_question": "How do seismic sensor misorientations affect seismological analyses such as regional moment tensor inversions and receiver function stacking, and how do corrected results compare to published USGS earthquake catalog parameters?",
+  "phase_1": {
+    "user_prompt": "We are evaluating seismic sensor orientations for the Thai Meteorological Department (TMD) network. To validate our orientation corrections, we compare local regional moment tensor inversions and receiver function analyses against reference solutions for three large regional/teleseismic earthquakes: one on the Laos-Thailand border on November 20, 2019 (Mw 6.2), one in Taiwan on September 17, 2022 (M 6.5), and one in the Northern Mariana Islands on June 28, 2019 (M 6.4). Please discover the specific USGS Earthquake Catalog (ComCat) event identifiers for these three reference earthquakes.",
+    "expected": {
+      "event_ids": [
+        "us70006djl",
+        "us7000i59t",
+        "us600041xe"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that you have the event identifiers for our three reference earthquakes, retrieve their complete event information from the USGS catalog. Specifically, extract the moment tensor solutions and origin parameters (location, depth), which we will use as the ground truth for evaluating our corrected focal mechanisms and waveform polarities.",
+    "expected": [
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "eventid": "us70006djl"
+        }
+      },
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "eventid": "us7000i59t"
+        }
+      },
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "eventid": "us600041xe"
+        }
+      }
+    ]
+  }
+}

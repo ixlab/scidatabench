@@ -1,0 +1,532 @@
+{
+  "source_doi": "10.5194/hess-25-1747-2021",
+  "research_question": "Can the two-parameter Eckhardt recursive digital filter baseflow separation method be reliably calibrated using the Conductivity Mass Balance (CMB) method on a daily scale?",
+  "phase_1": {
+    "user_prompt": "I want to compare the Eckhardt baseflow separation method with the Conductivity Mass Balance (CMB) method across a diverse set of catchments. I have a list of 26 USGS streamgages to analyze: 02298202, 02303000, 02306774, 02297100, 08068275, 02160105, 02160700, 02207120, 03007800, 03044000, 03072655, 03106000, 03201980, 03321500, 06037500, 06296120, 06711565, 07079300, 07086000, 07119700, 03036000, 03067510, 03374100, 06089000, 07081200, and 07097000. To perform the baseflow separation, I need to retrieve their daily streamflow and specific conductance data. What are the correct USGS parameter codes for these variables, and how should I set up the data retrieval for these specific sites? Please limit the search period from January 1, 2010 to September 1, 2020.",
+    "expected": {
+      "sites": [
+        "02298202",
+        "02303000",
+        "02306774",
+        "02297100",
+        "08068275",
+        "02160105",
+        "02160700",
+        "02207120",
+        "03007800",
+        "03044000",
+        "03072655",
+        "03106000",
+        "03201980",
+        "03321500",
+        "06037500",
+        "06296120",
+        "06711565",
+        "07079300",
+        "07086000",
+        "07119700",
+        "03036000",
+        "03067510",
+        "03374100",
+        "06089000",
+        "07081200",
+        "07097000"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00095"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the daily streamflow and specific conductance records for all 26 sites using the parameters and date range we established.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02298202",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02298202",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02303000",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02303000",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02306774",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02306774",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02297100",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02297100",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08068275",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08068275",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02160105",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02160105",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02160700",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02160700",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02207120",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02207120",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03007800",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03007800",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03044000",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03044000",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03072655",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03072655",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03106000",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03106000",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03201980",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03201980",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03321500",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03321500",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06037500",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06037500",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06296120",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06296120",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06711565",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06711565",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07079300",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07079300",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07086000",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07086000",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07119700",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07119700",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03036000",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03036000",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03067510",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03067510",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03374100",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03374100",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06089000",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06089000",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07081200",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07081200",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07097000",
+          "parameter_code": "00060",
+          "time": "2010-01-01/2020-09-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07097000",
+          "parameter_code": "00095",
+          "time": "2010-01-01/2020-09-01"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's focus our analysis on a single catchment to start: site 02298202. First, calculate the overall Baseflow Index (BFI) using the Conductivity Mass Balance (CMB) method over its available record. For the CMB method, define the surface runoff conductivity (ROC) as the 1st percentile of the specific conductance across the entire record. Define the baseflow conductivity (BFC) dynamically: find the 99th percentile of specific conductance for each calendar year, and linearly interpolate these yearly values to get daily BFC estimates. Compute the daily baseflow, capping it at the total streamflow if the formula exceeds it. What is the overall BFI (sum of all daily baseflow divided by sum of all daily streamflow) for this site using the CMB method?",
+    "expected": 0.31,
+    "unit": "ratio"
+  },
+  "phase_4": {
+    "user_prompt": "Now apply the Eckhardt recursive digital filter to the streamflow data for site 02298202. Estimate the recession coefficient (alpha) using standard recession analysis. Next, calibrate the method's BFI_max parameter by testing values in 0.01 increments to minimize the absolute relative bias (PBIAS) between the total daily baseflow generated by the Eckhardt method and the CMB method you calculated earlier. After finding the optimal BFI_max that makes their cumulative baseflows align, calculate the percentage of days where the absolute daily bias between the two baseflow series exceeds 50%. Finally, plot the two calibrated baseflow series together over a 1-year window as 'baseflow_comparison_02298202.png'. Summarize whether calibrating the Eckhardt method against the CMB method produces genuinely matching daily hydrographs or if significant differences in timing and transient components remain.",
+    "expected": 54.0,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The calibration of the Eckhardt method against the CMB method results in a 'false' correction. While the total cumulative baseflows can be forced to match by adjusting BFI_max, the daily hydrographs remain severely misaligned. This occurs because the two methods capture different transient water components: the Eckhardt filter captures low-conductivity delayed sources like interflow and bank storage return flow during recessions, whereas the CMB method captures high-conductivity water flushed from depressions primarily during the rising limb.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "baseflow_comparison_02298202.png",
+      "visual_description": "A time-series hydrograph (typically spanning 1 year) showing total streamflow alongside two distinct baseflow lines: one for CMB and one for Eckhardt. The plot should clearly show phase misalignment, with CMB peaks often occurring earlier (rising limb) and Eckhardt peaks delayed (recession limb).",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

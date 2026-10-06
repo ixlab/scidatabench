@@ -1,0 +1,106 @@
+{
+ "scenario_file": "pangaea__10.3389_fmars.2020.00426_scenario.json",
+ "platform": "pangaea",
+ "downloaded_at": "2026-08-10T15:00:18.910663+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.863150"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:26.087383+00:00",
+   "rows": 30,
+   "format": "parquet",
+   "dataset_title": "Total carbon and total organic carbon from the Laptev Sea (MUC stations) during POLARSTERN cruise ARK-XXVII/3 from Augus"
+  },
+  {
+   "idx": 1,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.892279"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:27.172256+00:00",
+   "rows": 30,
+   "format": "parquet",
+   "dataset_title": "Prokaryotic cell abundance from the Laptev Sea (Arctic Ocean) during POLARSTERN cruise ARK-XXVII/3 from August-September"
+  },
+  {
+   "idx": 2,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.892280"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:28.213938+00:00",
+   "rows": 30,
+   "format": "parquet",
+   "dataset_title": "Chlorophyll pigments from the Laptev Sea (Arctic Ocean) during POLARSTERN cruise ARK-XXVII/3 from August-September 2012"
+  },
+  {
+   "idx": 3,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.892286"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T15:00:07.957779+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "dataset_title": "Diffusive oxygen uptake from the Laptev Sea (Arctic Ocean) during POLARSTERN cruise ARK-XXVII/3 (IceArc) from August-Sep",
+   "is_collection": false
+  },
+  {
+   "idx": 4,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.907889"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T15:00:12.795712+00:00",
+   "rows": 94,
+   "format": "parquet",
+   "dataset_title": "Benthic biogeochemical parameters measured during Polarstern expedition PS94 (TransArcII) to the Barents Sea and central",
+   "is_collection": true,
+   "n_members": 4,
+   "members_fetched": 4,
+   "truncated": false
+  },
+  {
+   "idx": 5,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.908091"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T15:00:18.910663+00:00",
+   "rows": 1624,
+   "format": "parquet",
+   "dataset_title": "Sediment oxygen uptake, benthic boundary fluxes, macrofaunal abundance and biodiversity, Chl a, phaeopigments and nitrog",
+   "is_collection": true,
+   "n_members": 4,
+   "members_fetched": 4,
+   "truncated": false
+  }
+ ]
+}

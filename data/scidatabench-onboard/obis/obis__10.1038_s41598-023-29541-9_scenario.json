@@ -1,0 +1,26 @@
+{
+  "source_doi": "10.1038/s41598-023-29541-9",
+  "research_question": "What are the present and future geographic distribution patterns of the planktonic copepod Calanus chilensis in the Humboldt Current System?",
+  "phase_1": {
+    "user_prompt": "We are modelling the distribution of the key endemic copepod used as a bioindicator of productivity in the major South American coastal upwelling zone off Chile and Peru. Please identify the scientific name of this target species and the specific marine region (current system) it inhabits, so we can prepare our OBIS query.",
+    "expected": {
+      "scientific_names": [
+        "Calanus chilensis"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the species, please retrieve all occurrence records for Calanus chilensis from the OBIS database. Filter the records to match the study's temporal resolution, which spans from the year 1960 to 2021.",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Calanus chilensis",
+          "startdate": "1960-01-01",
+          "enddate": "2021-12-31"
+        }
+      }
+    ]
+  }
+}

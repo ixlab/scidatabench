@@ -1,0 +1,60 @@
+{
+  "source_doi": "10.3133/sir20205064",
+  "research_question": "Develop a surrogate regression model to estimate continuous Suspended-Sediment Concentration (SSC) from Turbidity at the Suisun Bay at Mallard Island monitoring station using paired discrete samples and continuous sensor data.",
+  "phase_1": {
+    "user_prompt": "I want to build a surrogate regression model to estimate Suspended-Sediment Concentration (SSC) from turbidity in Suisun Bay, specifically at the Mallard Island monitoring station in California. Could you find the USGS site number for this station and the standard 5-digit NWIS parameter codes for both Suspended-Sediment Concentration (in mg/L) and Turbidity (in FNU)? I will need to know which data types to query for discrete samples and continuous 15-minute sensor readings.",
+    "expected": {
+      "sites": [
+        "11185185"
+      ],
+      "parameter_codes": [
+        "80154",
+        "63680"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the Mallard Island station, retrieve the discrete water quality samples for SSC and the continuous (15-minute) turbidity data over the 77 months beginning in May 2011. We need both datasets to build a temporally paired dataset for our regression model.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11185185",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2011-05-01",
+          "activityStartDateUpper": "2017-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11185185",
+          "parameter_code": "63680",
+          "time": "2011-05-01/2017-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Filter the discrete SSC samples to keep only those collected from the upper sensor (typically near the surface, approximately 1.0 meter depth). Then, temporally match each discrete SSC sample with the closest 15-minute continuous turbidity measurement, allowing a maximum time difference of +/- 15 minutes. Drop any records with missing values. How many valid, paired SSC-turbidity measurements are successfully matched for model calibration?",
+    "expected": 25,
+    "unit": "observations"
+  },
+  "phase_4": {
+    "user_prompt": "Using the paired dataset of observations, fit a linear ordinary least squares (OLS) regression model to predict Suspended-Sediment Concentration using Turbidity as the sole explanatory variable. What is the slope (the coefficient for Turbidity) of the resulting model? Additionally, create a scatter plot of Turbidity vs. SSC including the fitted linear regression line. Save the plot as `mallard_island_ssc_turbidity_regression.png`.",
+    "expected": 0.84,
+    "unit": "mg/L per FNU",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The linear regression model demonstrates a strong positive relationship between turbidity and suspended-sediment concentration at the Mallard Island upper sensor. The slope of the relationship is approximately 0.84. The visualization correctly plots SSC on the y-axis and Turbidity on the x-axis, displaying the discrete calibration points and the linear ordinary least squares fit line.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "mallard_island_ssc_turbidity_regression.png",
+      "visual_description": "A scatter plot with Turbidity on the x-axis and Suspended-Sediment Concentration (SSC) on the y-axis. It should contain approximately 25 data points demonstrating a positive linear correlation, overlaid with a straight linear regression line representing the OLS fit.",
+      "paper_figure_reference": "Figure 1.2 Panel A"
+    }
+  }
+}

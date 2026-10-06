@@ -1,0 +1,43 @@
+{
+  "source_doi": "10.1186/s41610-021-00206-w",
+  "research_question": "What is the local distribution of the dominant seaweed species consumed by sea turtles along the Korean shores?",
+  "phase_1": {
+    "user_prompt": "We want to check whether the seaweeds that green and loggerhead turtles stranded on our coast have been eating actually grow where we recover the animals. Three brown macroalgae dominate the plant material we recovered: the commercially farmed kelp sold here as dashima; the drifting gulfweed behind the golden tides that mass-strand on our shores and on the Chinese coast each spring; and the small perennial gulfweed that forms dense mats across the upper intertidal of our rocky shores. Give me the accepted scientific names for those three so we can resolve their AphiaIDs, plus the country whose waters we should bound the OBIS occurrence search to.",
+    "expected": {
+      "scientific_names": [
+        "Saccharina japonica",
+        "Sargassum thunbergii",
+        "Sargassum horneri"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the target species are Saccharina japonica, Sargassum thunbergii, and Sargassum horneri, and our study area is South Korea, please retrieve the occurrence records for these seaweeds from OBIS so we can plot their distribution against our turtle stranding locations.",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Saccharina japonica",
+          "geometry": "POLYGON((124 33, 131 33, 131 39, 124 39, 124 33))"
+        }
+      },
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Sargassum thunbergii",
+          "geometry": "POLYGON((124 33, 131 33, 131 39, 124 39, 124 33))"
+        }
+      },
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Sargassum horneri",
+          "geometry": "POLYGON((124 33, 131 33, 131 39, 124 39, 124 33))"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.15560/15.5.827",
+  "research_question": "What is the known geographic distribution and average elevation of the orchids Notylia barkeri and Trichocentrum cosymbephorum in Mexico?",
+  "phase_1": {
+    "user_prompt": "I am researching the habitat preferences of two specific orchid species, Notylia barkeri and Trichocentrum cosymbephorum, within Mexico. Can you determine the necessary search parameters to query biodiversity databases for occurrence records of these species in this country? I only need records that have geographic coordinates so I can map them.",
+    "expected": {
+      "country_codes": [
+        "MX"
+      ],
+      "taxon_keys": [
+        "2850658",
+        "2846449"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the parameters you identified, please retrieve all available occurrence records for these two orchid species in Mexico that include geographic coordinates.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "MX",
+          "hasCoordinate": true,
+          "taxonKey": 2850658
+        },
+        "requires_pagination": true
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "MX",
+          "hasCoordinate": true,
+          "taxonKey": 2846449
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Now that we have the occurrence data, please clean it by filtering out any records that do not contain elevation (or altitude) data. After cleaning, calculate the arithmetic mean elevation (in meters) for Notylia barkeri across its Mexican range.",
+    "expected": 241.25,
+    "unit": "meters"
+  },
+  "phase_4": {
+    "user_prompt": "Generate a geographic map showing the distribution of both orchid species in Mexico based on your filtered coordinate data. Save this visualization as `orchid_distribution_map.png`. Finally, calculate the mean elevation for Trichocentrum cosymbephorum and provide a short summary of both species' elevational and geographic preferences (e.g., which slope or coastal region they primarily inhabit).",
+    "expected": 591.36,
+    "unit": "meters",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Both Notylia barkeri and Trichocentrum cosymbephorum are distributed in the lowlands. Geographically, they are primarily distributed along the Atlantic slope / coast of the Gulf of Mexico, spanning states like Veracruz, San Luis Potosí, and Chiapas.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "orchid_distribution_map.png",
+      "visual_description": "A map of Mexico showing point occurrences for the two orchid species, with the vast majority of points clustered along the eastern/Gulf of Mexico coastline (the Atlantic slope) rather than the inland plateau or Pacific coast.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

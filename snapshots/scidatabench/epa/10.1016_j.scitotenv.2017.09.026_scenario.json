@@ -1,0 +1,24 @@
+{
+ "scenario_file": "10.1016_j.scitotenv.2017.09.026_scenario.json",
+ "platform": "epa",
+ "downloaded_at": "2026-05-09T18:50:52.209925+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyaqsapi.bysite",
+   "function": "dailysummary",
+   "kwargs": {
+    "countycode": "055",
+    "parameter": "42401",
+    "sitenum": "1007",
+    "stateFIPS": "36",
+    "bdate": "20050101",
+    "edate": "20151231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:50:52.209925+00:00",
+   "rows": 21461,
+   "via": "RAQSAPI (R)"
+  }
+ ]
+}

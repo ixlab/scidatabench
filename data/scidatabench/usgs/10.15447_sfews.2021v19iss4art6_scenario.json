@@ -1,0 +1,99 @@
+{
+  "source_doi": "10.15447/sfews.2021v19iss4art6",
+  "research_question": "Analyze multidecadal trends in streamflow and nutrient concentrations (specifically ammonium) entering the Sacramento-San Joaquin Delta using the WRTDS modeling approach.",
+  "phase_1": {
+    "user_prompt": "I am researching multidecadal trends in nutrient inputs to the Sacramento-San Joaquin Delta. I need to locate the USGS streamgages for the two primary inflows: the Sacramento River at Freeport and the San Joaquin River near Vernalis. Please identify their official USGS site numbers. Additionally, identify the 5-digit parameter codes for daily discharge and discrete ammonium concentrations.",
+    "expected": {
+      "sites": [
+        "11447650",
+        "11303500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00608",
+        "00610"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the sites and parameters you identified, download the daily discharge and discrete water quality samples for ammonium for both the Sacramento River at Freeport and the San Joaquin River near Vernalis. Retrieve all available data from January 1, 1970, through December 31, 2019.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11447650",
+          "parameter_code": "00060",
+          "time": "1970-01-01/2019-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11447650",
+          "usgsPCode": "00608",
+          "activityStartDateLower": "1970-01-01",
+          "activityStartDateUpper": "2019-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11447650",
+          "usgsPCode": "00610",
+          "activityStartDateLower": "1970-01-01",
+          "activityStartDateUpper": "2019-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-11303500",
+          "parameter_code": "00060",
+          "time": "1970-01-01/2019-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11303500",
+          "usgsPCode": "00608",
+          "activityStartDateLower": "1970-01-01",
+          "activityStartDateUpper": "2019-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-11303500",
+          "usgsPCode": "00610",
+          "activityStartDateLower": "1970-01-01",
+          "activityStartDateUpper": "2019-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Focus on the ammonium data for the Sacramento River at Freeport site from 1970 to 2019. Prepare this data for WRTDS (Weighted Regressions on Time, Discharge, and Seasons) trend analysis by aligning the daily discharge record with the discrete ammonium samples. Count the total number of valid, co-located ammonium water quality samples available for the model during this 50-year period.",
+    "expected": 412,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Run the WRTDS model on the 1970-2019 ammonium data for the Sacramento River at Freeport. Using the standard flow-normalization procedure, calculate the estimated change in flow-normalized ammonium concentration between 1970 and 2019. What is this concentration change in mg/L? Additionally, generate a plot showing the flow-normalized concentration trend over time, and save it as `freeport_ammonium_wrtds.png`.",
+    "expected": -0.17,
+    "unit": "mg/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Ammonium concentrations at the Sacramento River at Freeport site decreased rapidly from the mid-1970s through 1990 due to wastewater treatment consolidation, followed by a continuous, gradual decline through 2019. The WRTDS model shows a highly likely downward trend, with flow-normalized concentrations dropping by approximately 0.17 mg N/L over the 50-year period.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "freeport_ammonium_wrtds.png",
+      "visual_description": "A line plot (often with scatter points for raw samples) showing a steep decline in flow-normalized ammonium concentration from around 0.20 mg/L in the late 1970s to below 0.05 mg/L by 1990, stabilizing at low levels through 2019.",
+      "paper_figure_reference": "Figure 5C"
+    }
+  }
+}

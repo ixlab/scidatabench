@@ -1,0 +1,23 @@
+{
+ "scenario_file": "10.5194_amt-16-3085-2023_scenario.json",
+ "platform": "epa",
+ "downloaded_at": "2026-04-26T05:39:29+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyaqsapi.bysite",
+   "function": "sampledata",
+   "kwargs": {
+    "parameter": "44201",
+    "bdate": "20111110",
+    "edate": "20111120",
+    "stateFIPS": "06",
+    "countycode": "037",
+    "sitenum": "0002"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T05:39:29+00:00",
+   "rows": 264
+  }
+ ]
+}

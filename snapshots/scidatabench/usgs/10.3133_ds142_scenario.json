@@ -1,0 +1,161 @@
+{
+ "scenario_file": "10.3133_ds142_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-04-26T13:57:49+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08067660",
+    "usgsPCode": "00631",
+    "activityStartDateLower": "2002-12-01",
+    "activityStartDateUpper": "2004-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T13:57:39+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 1,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08067690",
+    "usgsPCode": "00631",
+    "activityStartDateLower": "2002-12-01",
+    "activityStartDateUpper": "2004-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T13:57:40+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 2,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08067700",
+    "usgsPCode": "00631",
+    "activityStartDateLower": "2002-12-01",
+    "activityStartDateUpper": "2004-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T13:57:41+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 3,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08067800",
+    "usgsPCode": "00631",
+    "activityStartDateLower": "2002-12-01",
+    "activityStartDateUpper": "2004-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T13:57:42+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 4,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08067900",
+    "usgsPCode": "00631",
+    "activityStartDateLower": "2002-12-01",
+    "activityStartDateUpper": "2004-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T13:57:43+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 5,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08070900",
+    "usgsPCode": "00631",
+    "activityStartDateLower": "2002-12-01",
+    "activityStartDateUpper": "2004-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T13:57:44+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 6,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08071000",
+    "usgsPCode": "00631",
+    "activityStartDateLower": "2002-12-01",
+    "activityStartDateUpper": "2004-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T13:57:45+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 7,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08071100",
+    "usgsPCode": "00631",
+    "activityStartDateLower": "2002-12-01",
+    "activityStartDateUpper": "2004-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T13:57:46+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 8,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08070495",
+    "usgsPCode": "00631",
+    "activityStartDateLower": "2002-12-01",
+    "activityStartDateUpper": "2004-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T13:57:47+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 9,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08070500",
+    "usgsPCode": "00631",
+    "activityStartDateLower": "2002-12-01",
+    "activityStartDateUpper": "2004-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T13:57:48+00:00",
+   "rows": 9
+  },
+  {
+   "idx": 10,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08070600",
+    "usgsPCode": "00631",
+    "activityStartDateLower": "2002-12-01",
+    "activityStartDateUpper": "2004-06-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T13:57:49+00:00",
+   "rows": 9
+  }
+ ]
+}

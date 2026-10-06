@@ -1,0 +1,19 @@
+{
+ "scenario_file": "10.3133_sir20225083_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-04-26T15:36:54+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_field_measurements",
+   "kwargs": {
+    "monitoring_location_id": "USGS-04122500",
+    "time": "1985-08-01/2019-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:36:54+00:00",
+   "rows": 458
+  }
+ ]
+}

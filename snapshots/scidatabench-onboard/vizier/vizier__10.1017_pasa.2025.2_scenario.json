@@ -1,0 +1,55 @@
+{
+ "scenario_file": "vizier__10.1017_pasa.2025.2_scenario.json",
+ "platform": "vizier",
+ "downloaded_at": "2026-08-09T01:54:29.470271+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "astroquery.vizier",
+   "function": "Vizier.query_region",
+   "kwargs": {
+    "catalog": "VIII/65/nvss",
+    "center": "40.67 18.93",
+    "radius_arcmin": 60
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:54:29.470271+00:00",
+   "rows": 169,
+   "format": "parquet_multi",
+   "tables": [
+    {
+     "table": "VIII/65/nvss",
+     "rows": 169
+    }
+   ],
+   "n_tables": 1
+  },
+  {
+   "idx": 1,
+   "module": "astroquery.vizier",
+   "function": "Vizier.query_region",
+   "kwargs": {
+    "catalog": "VIII/92/first14",
+    "center": "40.67 18.93",
+    "radius_arcmin": 60
+   },
+   "status": "success",
+   "rows": 0,
+   "format": "parquet_multi",
+   "tables": [],
+   "n_tables": 0
+  }
+ ]
+}

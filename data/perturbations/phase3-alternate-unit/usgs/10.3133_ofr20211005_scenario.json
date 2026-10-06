@@ -1,0 +1,71 @@
+{
+  "source_doi": "10.3133/ofr20211005",
+  "research_question": "Estimate suspended-sand concentrations using discrete samples and evaluate category-specific sediment rating curves by partitioning the streamflow hydrograph for the lower Minnesota River.",
+  "phase_1": {
+    "user_prompt": "I am investigating suspended sediment transport in the lower Minnesota River. I need to find the USGS streamgages for the 'Minnesota River at Fort Snelling State Park, Minn.' and the upstream gage 'Minnesota River near Jordan, Minn.'. Additionally, what are the standard USGS parameter codes for daily mean discharge, discrete suspended-sediment concentration (SSC), and suspended sediment percent fines (sieve diameter percent smaller than 0.0625 mm)?",
+    "expected": {
+      "sites": [
+        "05330920",
+        "05330000"
+      ],
+      "parameter_codes": [
+        "00060",
+        "80154",
+        "70331"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For Water Years 2012 through 2019 (October 1, 2011 to September 30, 2019), retrieve the daily mean streamflow at the Jordan gage. Additionally, retrieve all available discrete water quality samples for suspended-sediment concentration and percent fines at the Fort Snelling gage during the same period.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05330000",
+          "parameter_code": "00060",
+          "time": "2011-10-01/2019-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05330920",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2011-10-01",
+          "activityStartDateUpper": "2019-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05330920",
+          "usgsPCode": "70331",
+          "activityStartDateLower": "2011-10-01",
+          "activityStartDateUpper": "2019-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "First, compute the suspended-sand concentration (in micrograms per liter (µg/L)) for each discrete sample at Fort Snelling. According to standard methods, calculate the sand fraction by multiplying the percentage of fines by the SSC, dividing by 100, and subtracting that value from the total SSC. After computing this for all valid samples, match each sample date to the corresponding daily mean streamflow at Jordan. What is the arithmetic mean of the calculated suspended-sand concentrations across all matched samples?",
+    "expected": 35143.1168831169,
+    "unit": "ug/L"
+  },
+  "phase_4": {
+    "user_prompt": "Now, categorize the hydrograph position for every day in the full Jordan streamflow record using the following prioritized logic: (1) 'low' if flow < 2,500 cfs; (2) 'high' if flow > 20,000 cfs; (3) 'rise' if flow is greater than the previous day; (4) 'peak' if flow equals the previous day; and (5) 'falling' if flow is less than the previous day. Map these hydrograph category labels to your matched sample dataset. How many matched samples fall into the 'falling' category? Also, create a scatter plot of log10(SSC) on the y-axis vs log10(Streamflow) on the x-axis for all matched samples, coloring the points by their hydrograph category, and save it as `ssc_hydrograph_scatter.png`.",
+    "expected": 17,
+    "unit": "samples",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The plotted relations should show distinct log-log linear groupings based on hydrograph position. Specifically, rising, falling, and peak streamflows should exhibit clear positive correlations with SSC. The 'high' streamflow category may exhibit a flat or slightly negative slope due to flood plain accessing and reduced velocities, indicating non-linear transport dynamics.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "ssc_hydrograph_scatter.png",
+      "visual_description": "A scatter plot with logarithmic axes for both Streamflow (x-axis, typically ranging from 1,000 to 100,000 cfs) and SSC (y-axis, typically ranging from 10 to 1,000 mg/L). Points should be colored by their assigned hydrograph categories. The arrangement of points should reveal parallel positive slopes for rising and falling data, while the high flow data points (x > 20,000) should appear more scattered or exhibit a slight downward trend.",
+      "paper_figure_reference": "Figure 4"
+    }
+  }
+}

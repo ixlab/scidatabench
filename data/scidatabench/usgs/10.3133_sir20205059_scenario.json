@@ -1,0 +1,69 @@
+{
+  "source_doi": "10.3133/sir20205059",
+  "research_question": "How have the seasonal streamflow dynamics and flow timing of the Taiya River and its major tributary, West Creek, in southeast Alaska changed over recent decades?",
+  "phase_1": {
+    "user_prompt": "I am studying the hydrology of the Taiya River basin and its major tributary, West Creek, in southeast Alaska near the Klondike Gold Rush National Historical Park. I need to find the USGS streamgages on these two rivers to analyze their daily discharge records.",
+    "expected": {
+      "sites": [
+        "15056200",
+        "15056210"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers for West Creek and Taiya River, please retrieve the daily mean discharge data for both sites. I specifically need data covering the historical common period of record from the 1970s (Water Years 1970 to 1977) for both streams, and additionally, the more recent period for the Taiya River (Water Years 2004 to 2017).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-15056200",
+          "parameter_code": "00060",
+          "time": "1969-10-01/1977-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-15056210",
+          "parameter_code": "00060",
+          "time": "1969-10-01/1977-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-15056210",
+          "parameter_code": "00060",
+          "time": "2003-10-01/2017-09-30",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Using the daily discharge data from the 1970s common period (Water Years 1970-1977), calculate the mean annual discharge for both West Creek and the Taiya River. Then, determine what percentage of the Taiya River's mean annual discharge is contributed by West Creek during this period.",
+    "expected": 29.0,
+    "unit": "%"
+  },
+  "phase_4": {
+    "user_prompt": "To understand if there has been a decadal-scale shift in flow timing on the Taiya River, calculate the mean discharge specifically for the month of May during the historical period (Water Years 1970-1977) and compare it to the recent period (Water Years 2004-2017). What is the percentage increase in May discharge between these two periods? Additionally, create a plot overlaying the average daily hydrographs for these two periods (day of year on the x-axis, mean daily discharge on the y-axis) to visualize seasonal shifts. Save this plot as `taiya_river_hydrograph_shift.png`.",
+    "expected": 115.0,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The seasonal distribution of flow for the Taiya River shows a decadal-scale shift toward an earlier spring snowmelt pulse. Mean monthly discharge in May more than doubled (increased by ~115%) in the recent period (WY 2004-2017) compared to the historical period (WY 1970-1977), accompanied by a general increase in early summer flows.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "taiya_river_hydrograph_shift.png",
+      "visual_description": "A line plot with Day of Year on the x-axis and Discharge on the y-axis. It should feature two overlapping lines representing the historical (WY 1970-1977) and recent (WY 2004-2017) periods for the Taiya River. The recent period line should clearly show a steeper, earlier rise in spring (around days 120-150 / May) indicating an earlier snowmelt pulse.",
+      "paper_figure_reference": "Figure 8"
+    }
+  }
+}

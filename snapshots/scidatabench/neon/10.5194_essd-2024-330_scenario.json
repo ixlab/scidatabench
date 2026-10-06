@@ -1,0 +1,353 @@
+{
+ "scenario_file": "10.5194_essd-2024-330_scenario.json",
+ "platform": "neon",
+ "downloaded_at": "2026-09-05T01:52:10.920585+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.20190.001",
+    "site": "BIGC",
+    "enddate": "2023-02"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:51:07.766934+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 27,
+   "num_csv_files": 0,
+   "total_bytes": 1126027,
+   "files": [
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2017-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 46498
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2017-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42680
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2017-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42697
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2017-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42645
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2017-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42750
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2018-02.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42696
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2018-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42724
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2018-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42737
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2018-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42880
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2018-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42768
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2018-12.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42733
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2019-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42761
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2019-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42740
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2019-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42782
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2019-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42812
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2019-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42842
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2019-11.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42770
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2019-12.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42795
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2020-02.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42792
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2020-11.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42840
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2021-02.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42730
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2021-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42705
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2022-02.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 42786
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2022-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 34703
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2022-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 34722
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2022-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 34731
+    },
+    {
+     "file": "filesToStack20190/NEON.D17.BIGC.DP1.20190.001.2023-02.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 34708
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 1,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.20048.001",
+    "site": "BIGC",
+    "enddate": "2023-02"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:52:10.920585+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 59,
+   "num_csv_files": 0,
+   "total_bytes": 1451403,
+   "files": [
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2017-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24078
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2017-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24836
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2017-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24813
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2017-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24150
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2017-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24184
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2017-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24265
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2017-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24219
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2017-11.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25113
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2017-12.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24247
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-01.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25047
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-02.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23455
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-03.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23423
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23500
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24324
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24384
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25494
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25116
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23377
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24715
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-11.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24266
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2018-12.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24358
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2019-01.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25658
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2019-03.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23593
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2019-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24385
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2019-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23752
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2019-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25590
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2019-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23678
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2019-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25337
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2019-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 26351
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2019-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23264
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2019-11.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25504
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2019-12.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 27010
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2020-01.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24519
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2020-02.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24595
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2020-03.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23507
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2020-11.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25398
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2021-02.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 26422
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2021-03.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25240
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2021-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25252
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2021-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23444
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2021-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25241
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2021-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24702
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2021-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 24576
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2021-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23429
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2021-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25192
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2021-11.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23389
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2021-12.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23485
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2022-01.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 23273
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2022-02.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25568
+    },
+    {
+     "file": "filesToStack20048/NEON.D17.BIGC.DP1.20048.001.2022-03.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 25245
+    }
+   ],
+   "files_truncated": true
+  }
+ ]
+}

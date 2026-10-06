@@ -1,0 +1,56 @@
+{
+  "source_doi": "10.1038/s41558-021-01173-9",
+  "research_question": "How will projected climate change affect key oceanographic properties (SST, NPP, and plankton biomass) in the global ocean according to the CMIP6 Earth System Models used to force the Fish-MIP ensemble?",
+  "phase_1": {
+    "user_prompt": "We are driving marine ecosystem projections with CMIP6 climate forcing, using the GFDL and IPSL Earth system models. Could you identify the exact CMIP6 climate models for those two institutions, the experiments representing the observed past plus a low- and a high-emission future, and the ocean variables for sea surface temperature, integrated primary production, and phytoplankton and zooplankton carbon, along with the ocean monthly table?",
+    "expected": {
+      "source_ids": [
+        "GFDL-ESM4",
+        "IPSL-CM6A-LR"
+      ],
+      "experiment_ids": [
+        "historical",
+        "ssp126",
+        "ssp585"
+      ],
+      "variable_ids": [
+        "tos",
+        "intpp",
+        "phyc",
+        "zooc"
+      ],
+      "table_ids": [
+        "Omon"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identifiers we found, please download the monthly ocean climate datasets from ESGF for the GFDL-ESM4 and IPSL-CM6A-LR models. I need the historical runs (1970-2014) and both the SSP1-2.6 and SSP5-8.5 projections (2015-2099) for sea surface temperature ('tos'), net primary production ('intpp'), phytoplankton carbon ('phyc'), and zooplankton carbon ('zooc').",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "GFDL-ESM4",
+            "IPSL-CM6A-LR"
+          ],
+          "experiment_id": [
+            "historical",
+            "ssp126",
+            "ssp585"
+          ],
+          "variable_id": [
+            "tos",
+            "intpp",
+            "phyc",
+            "zooc"
+          ],
+          "table_id": [
+            "Omon"
+          ]
+        }
+      }
+    ]
+  }
+}

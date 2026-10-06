@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.1038/s41467-022-30316-5",
+  "research_question": "How do different climatology record lengths bias drought severity assessment (like the Standardized Precipitation Index) under non-stationary climate conditions?",
+  "phase_1": {
+    "user_prompt": "We are showing how climate change outpaces conventional drought assessment, using a single long-record weather station at Clemson University in South Carolina to demonstrate how the probability distribution of a weather variable shifts over time. Can you tell us the station identifier for that site and the weather variable we should use for a drought index?",
+    "expected": {
+      "station_ids": [
+        "USC00381770"
+      ],
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the station ID for Clemson University (USC00381770) and the parameter (PRCP), please retrieve the daily data for this variable at this station covering the period from January 1, 1950, to December 31, 2020.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USC00381770",
+          "startDate": "1950-01-01",
+          "endDate": "2020-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        }
+      }
+    ]
+  }
+}

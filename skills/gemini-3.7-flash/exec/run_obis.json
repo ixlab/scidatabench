@@ -1,0 +1,16 @@
+{
+  "platform": "obis",
+  "condition": "exec",
+  "model": "gemini-3.7-flash",
+  "elapsed_s": 42.7,
+  "tokens": {
+    "input": 146396,
+    "output": 4119,
+    "thinking": 0,
+    "total": 150515,
+    "cache_read": 0
+  },
+  "tool_call_turns": 20,
+  "research_log": [],
+  "generated_utc": "2026-08-14T17:08:35.678355+00:00"
+}

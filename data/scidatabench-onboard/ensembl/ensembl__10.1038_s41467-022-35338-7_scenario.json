@@ -1,0 +1,39 @@
+{
+  "source_doi": "10.1038/s41467-022-35338-7",
+  "research_question": "What is the Ensembl sequence and transcript structure of the transcription factor mutated in zebrafish to study the evolutionary loss of the spleen in seahorses?",
+  "phase_1": {
+    "user_prompt": "We are creating a CRISPR/Cas9 knockout zebrafish line to model the functional asplenia seen in seahorses. Identify the gene symbol and the specific Ensembl gene ID for the transcription factor that is essential for spleen development and that we should therefore target. Also identify the Ensembl species name for zebrafish.",
+    "expected": {
+      "gene_ids": [
+        "ENSDARG00000003965"
+      ],
+      "gene_symbols": [
+        "tlx1"
+      ],
+      "species": [
+        "danio_rerio"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified zebrafish gene ID, retrieve its complete genomic sequence and the coordinates of its known transcripts from the Ensembl database. This information is needed to design accurate CRISPR/Cas9 guide RNAs as performed by the authors.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_id",
+        "kwargs": {
+          "id": "ENSDARG00000003965",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSDARG00000003965",
+          "type": "genomic"
+        }
+      }
+    ]
+  }
+}

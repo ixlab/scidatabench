@@ -1,0 +1,78 @@
+{
+  "source_doi": "10.3133/sir20125088",
+  "research_question": "What is the flow-adjusted trend in dissolved selenium load and concentration in the Gunnison and Colorado Rivers near Grand Junction, Colorado, between Water Years 1986 and 2008?",
+  "phase_1": {
+    "user_prompt": "I'm interested in evaluating historical trends in dissolved selenium loads in western Colorado. Specifically, I want to look at the mainstem of the Gunnison River near Grand Junction and the Colorado River near the Colorado-Utah state line for the period covering Water Years 1986 through 2008. Can you find the official USGS site numbers for these two locations, as well as the 5-digit parameter codes for daily streamflow and dissolved selenium concentration?",
+    "expected": {
+      "sites": [
+        "09152500",
+        "09163500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "01145"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "With those site numbers and parameter codes, please retrieve the daily mean streamflow records and the discrete water quality sample data for dissolved selenium at both sites for Water Years 1986 through 2008.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09152500",
+          "parameter_code": "00060",
+          "time": "1985-10-01/2008-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09163500",
+          "parameter_code": "00060",
+          "time": "1985-10-01/2008-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "usgsPCode": "01145",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2008-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09163500",
+          "usgsPCode": "01145",
+          "activityStartDateLower": "1985-10-01",
+          "activityStartDateUpper": "2008-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Before running the trend models, we need to prepare the calibration dataset. For the Gunnison River site, merge the discrete dissolved selenium samples with the daily mean streamflow values based on the sample dates. Remove any dates that are missing either streamflow or selenium concentration data. How many paired observations are available in this calibration dataset for the Gunnison River site over our study period?",
+    "expected": 171.0,
+    "unit": "observations"
+  },
+  "phase_4": {
+    "user_prompt": "Now let's estimate the flow-adjusted trend in annual dissolved selenium load for the Colorado River site. \n\n1) Calculate 'normalized' mean-daily streamflow by averaging the daily flow for each day of the year over the 23-year record.\n2) Build a log-linear regression model for daily selenium load. Your explanatory variables should be centered ln(streamflow), centered decimal time, squared centered decimal time, sine and cosine terms of decimal time (for seasonality), and a dummy variable for the irrigation season (1 for April 1-October 31, 0 otherwise). \n3) Using this calibrated model and the normalized streamflow inputs, estimate what the annual selenium loads would be for Water Year 1986 and Water Year 2008. \n4) What is the percentage reduction in the estimated flow-adjusted annual selenium load from 1986 to 2008 at the Colorado River site?\n\nAdditionally, create a partial residual plot for dissolved selenium concentration over time from 1986 to 2008 (removing the decimal time influence from the regression) with a smoother that fits a local low-order polynomial in a moving neighbourhood smoothing line to visualize the trend. Save the plot as `selenium_trend_colorado_river.png`.",
+    "expected": 39.3,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis shows a statistically significant downward trend in flow-adjusted selenium concentration and load at the Colorado River site from 1986 to 2008, with a slight temporary leveling off in the trend line between 1998 and 2000.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "selenium_trend_colorado_river.png",
+      "visual_description": "A scatter plot displaying dissolved selenium concentration partial residuals (in natural log units) on the y-axis over the years 1986 to 2008 on the x-axis. A solid LOWESS trend line should pass through the data points, showing a distinct overall downward trajectory, potentially with a slight inflection or leveling around 1998-2000.",
+      "paper_figure_reference": "Figure 6"
+    }
+  }
+}

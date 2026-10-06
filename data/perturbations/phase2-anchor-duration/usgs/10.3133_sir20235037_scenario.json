@@ -1,0 +1,72 @@
+{
+  "source_doi": "10.3133/sir20235037",
+  "research_question": "Develop a surrogate regression model relating discrete Total Suspended Solids (TSS) samples to continuous water-quality sensor data (turbidity and specific conductance) at the North Fork Ninnescah River.",
+  "phase_1": {
+    "user_prompt": "I am researching water quality inputs to the Cheney Reservoir in south-central Kansas. I want to build a continuous surrogate model for Total Suspended Solids (TSS) on the major tributary, the North Fork Ninnescah River, just above the reservoir. To start, I need to identify the USGS streamgage site number for this specific location. I also need to find the 5-digit USGS parameter codes for discrete Total Suspended Solids (water, unfiltered, mg/L), as well as continuous in-situ Turbidity and Specific Conductance.",
+    "expected": {
+      "sites": [
+        "07144780"
+      ],
+      "parameter_codes": [
+        "00530",
+        "63680",
+        "00095"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site and parameter codes, please retrieve the discrete water-quality sample data for Total Suspended Solids, as well as the continuous (high-frequency) sensor data for Turbidity and Specific Conductance at this site. Limit the retrieval to the date range over the 2148 days beginning 14 November 2015.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07144780",
+          "usgsPCode": "00530",
+          "activityStartDateLower": "2015-11-14",
+          "activityStartDateUpper": "2021-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07144780",
+          "parameter_code": "63680",
+          "time": "2015-11-14/2021-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07144780",
+          "parameter_code": "00095",
+          "time": "2015-11-14/2021-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To build the regression model, we need to match our continuous sensor data to the exact times the discrete TSS samples were collected. For each discrete sample, time-interpolate the continuous Turbidity and Specific Conductance readings to the sample's timestamp. Restrict this interpolation to only allow a maximum 4-hour time span between the nearest continuous readings (do not extrapolate across large gaps). After matching the data, drop any observations that contain missing values for any of the three variables. How many paired discrete-continuous samples remain for model calibration?",
+    "expected": 30.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Using the matched calibration dataset, develop an Ordinary Least Squares (OLS) linear regression model to predict the base-10 logarithm of Total Suspended Solids (log10(TSS)). Use Specific Conductance and the base-10 logarithm of Turbidity (log10(Turbidity)) as your explanatory variables. What is the adjusted R-squared value of this regression model? Finally, generate a scatterplot showing the observed versus predicted log10(TSS) values and save it as 'tss_surrogate_model_fit.png'.",
+    "expected": 0.926,
+    "unit": "Adjusted R-squared",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The surrogate regression model utilizing specific conductance and log10-transformed turbidity explains approximately 93% of the variance in log10-transformed total suspended solids. The plotted relationship should show a strong linear agreement between observed and predicted log10(TSS) values.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "tss_surrogate_model_fit.png",
+      "visual_description": "A scatterplot with observed log10(TSS) on one axis and predicted log10(TSS) on the other. The points should fall tightly along a 1:1 line, reflecting a high adjusted R-squared (~0.926).",
+      "paper_figure_reference": null
+    }
+  }
+}

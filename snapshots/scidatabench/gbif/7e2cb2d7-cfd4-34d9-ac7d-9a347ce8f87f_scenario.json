@@ -1,0 +1,47 @@
+{
+ "scenario_file": "7e2cb2d7-cfd4-34d9-ac7d-9a347ce8f87f_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T05:56:49+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2970418,
+    "country": "BR",
+    "basisOfRecord": [
+     "PRESERVED_SPECIMEN"
+    ]
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T05:56:49+00:00",
+   "rows": 1527,
+   "format": "gbif_simple_csv",
+   "download_key": "0007435-260423192947929",
+   "doi": "10.15468/dl.9p72eg",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2970418"
+     },
+     {
+      "type": "equals",
+      "key": "COUNTRY",
+      "value": "BR"
+     },
+     {
+      "type": "in",
+      "key": "BASIS_OF_RECORD",
+      "values": [
+       "PRESERVED_SPECIMEN"
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

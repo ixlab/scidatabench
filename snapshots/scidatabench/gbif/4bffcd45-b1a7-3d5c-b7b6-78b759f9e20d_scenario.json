@@ -1,0 +1,29 @@
+{
+ "scenario_file": "4bffcd45-b1a7-3d5c-b7b6-78b759f9e20d_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-06-27T03:10:57.588790+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "basisOfRecord": [
+     "HUMAN_OBSERVATION"
+    ],
+    "country": "BR",
+    "taxonKey": 2482174,
+    "gadmGid": "BRA.12.94_2",
+    "year": "*,2020"
+   },
+   "status": "success",
+   "downloaded_at": "2026-06-27T03:10:57.588790+00:00",
+   "rows": 300,
+   "format": "gbif_search_results",
+   "count_total": 3958,
+   "endOfRecords": false,
+   "offset": 0,
+   "limit": 300
+  }
+ ]
+}

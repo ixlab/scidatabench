@@ -1,0 +1,227 @@
+{
+  "source_doi": "10.3133/sir20145064",
+  "research_question": "Develop regression equations to estimate continuous concentrations of water-quality constituents like dissolved solids in the Red River of the North using continuous specific conductance as a surrogate.",
+  "phase_1": {
+    "user_prompt": "I want to estimate water-quality loads in the Red River of the North at Fargo and Grand Forks, North Dakota using surrogate relationships. I need to find the USGS streamgages for these two locations. I also need to identify the parameter codes for volumetric flow, electrical conductivity, water cloudiness, dissolved solids, sulphate, chloride, oxidised inorganic nitrogen (as N), total phosphorus (as P), and suspended sediment so I can retrieve continuous daily records and discrete water-quality samples from 2003 through 2012.",
+    "expected": {
+      "sites": [
+        "05054000",
+        "05082500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00095",
+        "63680",
+        "70301",
+        "00945",
+        "00940",
+        "00631",
+        "00665",
+        "80154"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the daily mean streamflow, specific conductance, and turbidity for the Fargo and Grand Forks sites from 2003 to 2012. Also, download the discrete field samples for the water quality parameters at these sites over the same period.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05054000",
+          "parameter_code": "00060",
+          "time": "2003-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05054000",
+          "parameter_code": "00095",
+          "time": "2003-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05054000",
+          "parameter_code": "63680",
+          "time": "2003-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05082500",
+          "parameter_code": "00060",
+          "time": "2003-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05082500",
+          "parameter_code": "00095",
+          "time": "2003-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05082500",
+          "parameter_code": "63680",
+          "time": "2003-01-01/2012-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05054000",
+          "usgsPCode": "70301",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05054000",
+          "usgsPCode": "00945",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05054000",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05054000",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05054000",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05054000",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05082500",
+          "usgsPCode": "70301",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05082500",
+          "usgsPCode": "00945",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05082500",
+          "usgsPCode": "00940",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05082500",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05082500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05082500",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2003-01-01",
+          "activityStartDateUpper": "2012-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To build a surrogate regression model for the Fargo site, we need to match our explanatory variable to our response variable. Merge the discrete Dissolved Solids samples with the daily mean Specific Conductance recorded on the exact same dates at the Fargo site. Exclude any dates where either the Dissolved Solids measurement or the daily mean Specific Conductance is missing. How many matched data pairs are available?",
+    "expected": 76.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Fit an Ordinary Least Squares (OLS) linear regression predicting Dissolved Solids from Specific Conductance at the Fargo site using the paired dataset. Calculate the residuals from this initial fit, remove any observations where the residual is greater than 3 standard deviations from zero, and re-fit the regression model. What is the slope coefficient for Specific Conductance in the final model? Additionally, create a scatter plot of measured vs. estimated Dissolved Solids concentrations with a 1:1 reference line, and save it as `fargo_ds_sc_regression.png`. Provide a brief conclusion on the suitability of specific conductance as a surrogate for dissolved solids here.",
+    "expected": 0.655,
+    "unit": "(mg/L) / (uS/cm)",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Specific conductance provides a very strong linear relationship with dissolved solids (R2 approx 0.99) and is an excellent continuous surrogate variable for estimating dissolved solids concentrations at this site. The scatter plot shows tightly clustered points along the 1:1 line of equal value.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "fargo_ds_sc_regression.png",
+      "visual_description": "A scatter plot with Measured Dissolved Solids on the x-axis and Estimated Dissolved Solids on the y-axis. Data points should be tightly clustered around a diagonal 1:1 line.",
+      "paper_figure_reference": "Figure 8, top panel (Dissolved solids)"
+    }
+  }
+}

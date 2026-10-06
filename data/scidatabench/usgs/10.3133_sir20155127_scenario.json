@@ -1,0 +1,82 @@
+{
+  "source_doi": "10.3133/sir20155127",
+  "research_question": "How can daily streamflow and suspended sediment load be estimated at an un-gaged or stage-only site on the Missouri River during the 2011 flood using upstream/downstream flow subtraction?",
+  "phase_1": {
+    "user_prompt": "I am investigating sediment transport on the Missouri River during the 2011 flood. I need to estimate the streamflow and suspended sediment load for the Missouri River near Maskell, NE, which was a stage-only gage without continuous streamflow records at the time. I will estimate its daily mean streamflow by taking the flow at the downstream Missouri River at Sioux City, IA gage and subtracting the inflows from two major tributaries located between them: the Big Sioux River at Akron, IA and the Vermillion River near Vermillion, SD. Find the USGS site numbers for these four locations. Also, identify the parameter codes for 'discharge' and 'suspended sediment concentration', and the statistic code for daily 'mean'.",
+    "expected": {
+      "sites": [
+        "06478526",
+        "06486000",
+        "06485500",
+        "06479010"
+      ],
+      "parameter_codes": [
+        "00060",
+        "80154"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Download the daily mean streamflow records for the Sioux City, Akron, and Vermillion sites for June 30, 2011. Also, retrieve the discrete water quality sample data for suspended sediment concentration at the Maskell site for that same date.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06486000",
+          "parameter_code": "00060",
+          "time": "2011-06-30/2011-06-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06485500",
+          "parameter_code": "00060",
+          "time": "2011-06-30/2011-06-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06479010",
+          "parameter_code": "00060",
+          "time": "2011-06-30/2011-06-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06478526",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2011-06-30",
+          "activityStartDateUpper": "2011-06-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Using the streamflow data you retrieved, calculate the estimated daily mean streamflow for the Missouri River near Maskell on June 30, 2011. Do this by taking the streamflow at Sioux City and subtracting the streamflows of the Big Sioux River at Akron and the Vermillion River near Vermillion.",
+    "expected": 168000.0,
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "Now, using the estimated streamflow for the Maskell site and the suspended sediment concentration you retrieved for June 30, 2011, calculate the suspended sediment load in tons per day. Use the standard USGS conversion formula: Load (tons/day) = Streamflow (cfs) * SSC (mg/L) * 0.0027. What is the calculated suspended sediment load?",
+    "expected": 118000.0,
+    "unit": "tons/day",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

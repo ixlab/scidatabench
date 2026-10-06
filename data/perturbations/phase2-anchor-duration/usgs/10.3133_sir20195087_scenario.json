@@ -1,0 +1,118 @@
+{
+  "source_doi": "10.3133/sir20195087",
+  "research_question": "Develop surrogate regression models to estimate sediment and nutrient concentrations using continuous water-quality monitor data and discrete samples at the Iroquois River near Foresman, Indiana.",
+  "phase_1": {
+    "user_prompt": "I want to estimate sediment and nutrient loads in the Iroquois River basin near Foresman, Indiana. To do this using surrogate regression models, I need to find the specific USGS streamgage near Foresman that collects both continuous sensor data and discrete water-quality samples. Can you find the site number for this station? I also need the parameter codes for the variables I'll be modeling: streamflow, turbidity, specific conductance, nitrate plus nitrite, suspended-sediment concentration, total nitrogen, and total phosphorus.",
+    "expected": {
+      "sites": [
+        "05524500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00095",
+        "00665",
+        "62855",
+        "63680",
+        "80154",
+        "99133"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the 15-minute continuous sensor data and the discrete water-quality sample records for these parameters at the Foresman site over the 41 months beginning in March 2015.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05524500",
+          "parameter_code": "00060",
+          "time": "2015-03-01/2018-07-31"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05524500",
+          "parameter_code": "63680",
+          "time": "2015-03-01/2018-07-31"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05524500",
+          "parameter_code": "00095",
+          "time": "2015-03-01/2018-07-31"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05524500",
+          "parameter_code": "99133",
+          "time": "2015-03-01/2018-07-31"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05524500",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2015-03-01",
+          "activityStartDateUpper": "2018-07-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05524500",
+          "usgsPCode": "62855",
+          "activityStartDateLower": "2015-03-01",
+          "activityStartDateUpper": "2018-07-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05524500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2015-03-01",
+          "activityStartDateUpper": "2018-07-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Before modeling, we need to clean and align the datasets. First, remove two specific outlier discrete samples: the anomalous suspended-sediment sample collected on July 19, 2018, and the total nitrogen sample collected on March 28, 2016 (which had a value illogically lower than the concurrent nitrate reading). Next, match each remaining discrete sample to the closest concurrent 15-minute continuous sensor reading (e.g., using a nearest-neighbor time join). After cleaning and matching, how many valid matched observations are available in the dataset for modeling total phosphorus?",
+    "expected": 34.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Let's build a multiple linear regression model to predict suspended-sediment concentration using the continuous data. First, transform the variables: take the base-10 logarithm of suspended-sediment concentration and turbidity, and calculate the square root of streamflow. Fit an ordinary least-squares regression model using the transformed turbidity and streamflow variables as predictors for the transformed suspended-sediment concentration. What is the adjusted R-squared of this model? Please also create a scatter plot of observed vs predicted log10-suspended-sediment concentrations, saving it as `ssc_regression_fit.png`.",
+    "expected": 0.84,
+    "unit": "adjusted R2",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The regression model demonstrates a strong linear relationship between the transformed explanatory variables (log-turbidity and sqrt-streamflow) and the log-transformed suspended-sediment concentration, with points clustered tightly around a 1:1 prediction line.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "ssc_regression_fit.png",
+      "visual_description": "A scatter plot showing predicted log10(SSC) on the x-axis and observed log10(SSC) on the y-axis. The data points should show a clear positive, linear correlation reflecting the strong model fit (R2 ~ 0.84).",
+      "paper_figure_reference": null
+    }
+  }
+}

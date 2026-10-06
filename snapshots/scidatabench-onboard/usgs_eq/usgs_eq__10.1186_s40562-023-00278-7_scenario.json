@@ -1,0 +1,57 @@
+{
+ "scenario_file": "usgs_eq__10.1186_s40562-023-00278-7_scenario.json",
+ "platform": "usgs_eq",
+ "downloaded_at": "2026-08-10T18:15:38.986843+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "obspy.clients.fdsn",
+   "function": "Client.get_events",
+   "kwargs": {
+    "eventid": "us70006djl"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T18:15:38.642976+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "empty_reason": "FDSN 204 no data"
+  },
+  {
+   "idx": 1,
+   "module": "obspy.clients.fdsn",
+   "function": "Client.get_events",
+   "kwargs": {
+    "eventid": "us7000i59t"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:24.667449+00:00",
+   "rows": 1,
+   "format": "parquet"
+  },
+  {
+   "idx": 2,
+   "module": "obspy.clients.fdsn",
+   "function": "Client.get_events",
+   "kwargs": {
+    "eventid": "us600041xe"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T18:15:38.986843+00:00",
+   "rows": 0,
+   "format": "parquet",
+   "empty_reason": "FDSN 204 no data"
+  }
+ ]
+}

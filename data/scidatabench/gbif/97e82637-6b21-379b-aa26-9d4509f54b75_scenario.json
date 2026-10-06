@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.26577/bb.2024.v100.i3.03",
+  "research_question": "What is the geographic distribution and occurrence count of the endemic plant Eranthis longistipitata across Central Asian countries based on georeferenced records?",
+  "phase_1": {
+    "user_prompt": "I'm investigating the geographic distribution of the endemic medicinal plant Eranthis longistipitata in Central Asia. Specifically, I need to analyze its known populations in Kazakhstan, Uzbekistan, Kyrgyzstan, Turkmenistan, and Tajikistan. Could you help me define the parameters to locate all georeferenced occurrence records for this species in these countries, recorded from 1916 through the end of March 2024?",
+    "expected": {
+      "country_codes": [
+        "KZ",
+        "UZ",
+        "KG",
+        "TM",
+        "TJ"
+      ],
+      "taxon_keys": [
+        "3925377"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the georeferenced occurrence records for Eranthis longistipitata in the five Central Asian countries we identified, ensuring the data is restricted to the 1916-2024 time period.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": [
+            "KZ",
+            "UZ",
+            "KG",
+            "TM",
+            "TJ"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 3925377,
+          "year": "1916,2024"
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded occurrence records. Verify that no records without valid GPS coordinates slipped through, and ensure all points fall strictly within the specified five Central Asian countries. After this basic filtering, how many valid georeferenced records remain in the dataset?",
+    "expected": 37,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Calculate the number of occurrence records per country to understand which nations harbor the most documented populations. Create a bar chart of these country-level counts and save it as 'eranthis_country_counts.png'. Based on your grouped data, what is the exact number of records found in Kazakhstan?",
+    "expected": 14,
+    "unit": "records",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The distribution of Eranthis longistipitata in Central Asia is heavily concentrated in Uzbekistan and Kazakhstan, which account for the vast majority of georeferenced records (approximately 14-15 each). Populations are significantly less documented in Kyrgyzstan, Tajikistan, and Turkmenistan.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "eranthis_country_counts.png",
+      "visual_description": "A bar chart showing occurrence counts for five Central Asian countries. The highest bars should be for Uzbekistan (~15) and Kazakhstan (~14), with noticeably smaller bars for Kyrgyzstan (~4), Tajikistan (~3), and Turkmenistan (~1).",
+      "paper_figure_reference": "Figure 6"
+    }
+  }
+}

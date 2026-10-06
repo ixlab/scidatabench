@@ -1,0 +1,73 @@
+{
+  "source_doi": "10.48550/arxiv.2305.12651",
+  "research_question": "How can conditional normalization using generalized additive models (GAMs) estimate the lag time (water travel time) between upstream and downstream river sensors while accounting for variations in upstream water level and temperature?",
+  "phase_1": {
+    "user_prompt": "I want to study stream dynamics and water quality at Pringle Creek in Texas from October through December 2019. I need to find the specific NEON data products that provide high-frequency aquatic sensor data for surface water elevation, surface water temperature, and continuous water quality metrics like turbidity. What are the product codes and the site code?",
+    "expected": {
+      "data_products": [
+        "DP1.20016.001",
+        "DP1.20053.001",
+        "DP1.20288.001"
+      ],
+      "sites": [
+        "PRIN"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site code (PRIN) and product codes (DP1.20016.001, DP1.20053.001, DP1.20288.001), please download the data for the period from October 1 to December 31, 2019. Make sure to retrieve the sensor data from both the upstream and downstream locations.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20016.001",
+          "site": "PRIN",
+          "startdate": "2019-10",
+          "enddate": "2019-12",
+          "package": "expanded"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20053.001",
+          "site": "PRIN",
+          "startdate": "2019-10",
+          "enddate": "2019-12",
+          "package": "expanded"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20288.001",
+          "site": "PRIN",
+          "startdate": "2019-10",
+          "enddate": "2019-12",
+          "package": "expanded"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Please process the downloaded data. First, filter out technical anomalies using the provided NEON range quality flags and remove the periodic 'wiper' anomalies in the turbidity data. Since turbidity is at a 1-minute frequency but level and temperature are at 5-minute frequencies, aggregate the turbidity data to 5-minute intervals (e.g., using the mean). Finally, merge the upstream and downstream datasets by timestamp. What is the total number of valid 5-minute observation intervals in your merged time series from October 1 to December 31?",
+    "expected": 25163,
+    "unit": "intervals"
+  },
+  "phase_4": {
+    "user_prompt": "Using the 5-minute merged dataset, estimate the time it takes water to flow between the upstream and downstream sensors using the paper's conditional correlation between two series as a function of the lag between them approach. Impute any missing values (e.g., linear interpolation for level, Kalman smoothing for temp/turbidity). Normalize the upstream and downstream turbidity series conditional on upstream water level and temperature using regression in which each predictor enters through its own smooth functions (GAMs). Then, compute the conditional correlation between two series as a function of the lag between them between the two normalized turbidity series up to 24 lags (2 hours). For each time point, identify the optimal lag (d_t) that maximizes the conditional correlation between two series as a function of the lag between them.\n\nTwo outputs are required:\n1. What percentage of the time does your estimated optimal lag time yield a strictly greater conditional correlation between two series as a function of the lag between them than any other lag from 1 to 24?\n2. Create a visualization showing how the estimated lag time varies with upstream water level and upstream temperature. Save this plot as `lag_time_vs_covariates.png`.",
+    "expected": 96.0,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Upstream water level has a negative effect on the lag time; as fresh water input and flow increase, water moves downstream faster, decreasing the lag time. Conversely, when upstream water temperature is below 10°C, temperature has a positive effect on lag time, which is consistent with slower, low-inflow river behavior during colder periods.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "lag_time_vs_covariates.png",
+      "visual_description": "The plot should show the estimated lag time on the y-axis against upstream water level and upstream temperature on the x-axes (either as separate panels or a combined plot). It should clearly demonstrate a negative relationship between water level and lag time, and a positive relationship between water temperature (specifically in the < 10°C range) and lag time.",
+      "paper_figure_reference": "Figure 10"
+    }
+  }
+}

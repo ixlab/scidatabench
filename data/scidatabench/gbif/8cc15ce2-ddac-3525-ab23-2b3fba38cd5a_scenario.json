@@ -1,0 +1,46 @@
+{
+  "source_doi": "10.3897/bdj.8.e56850",
+  "research_question": "I want to re-analyze a specific historical GBIF dataset (DOI: 10.15468/dl.wc2fm7) to study the composition and sources of vascular plant occurrences in Uruguay, specifically comparing historical museum specimens to modern citizen science observations.",
+  "phase_1": {
+    "user_prompt": "I am taking over a botanical project and was handed a specific archival GBIF dataset (DOI: 10.15468/dl.wc2fm7) to use as the foundation for our analysis. I need to document its exact query parameters for my methods section. Can you inspect this dataset's metadata on GBIF and identify the scientific name of the high-level taxonomic group it targets, the country of focus, whether it specifically requires coordinates, and the specific basis of record types included?",
+    "expected": {
+      "country_codes": [
+        "UY"
+      ],
+      "taxon_keys": [
+        "7707728"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the scope, please download the actual occurrence data archive for DOI 10.15468/dl.wc2fm7 (the frozen GBIF download key is `0082704-200221144449610`, ~5,138 records) and load the records into your environment. Use the archived snapshot (not a live search), as the paper's downstream gold values depend on the frozen 2020-06-10 dataset.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "download_get",
+        "kwargs": {
+          "key": "0082704-200221144449610"
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "We need to clean the dataset to ensure high spatial precision, following the paper's methodology. First, filter out any records where the coordinate uncertainty is 10 kilometers or greater (i.e., keep `coordinateUncertaintyInMeters` < 10000). Second, drop records whose `georeferenceProtocol` Darwin Core field text indicates that the location was assigned at the country-centroid level (look for values containing the phrase 'country centroid', case-insensitive). How many occurrence records remain in the dataset after applying these two spatial filters?",
+    "expected": 3428,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "I want to understand the balance between historical museum data and modern citizen science in our cleaned dataset. Determine the final count of records that come from physical museum specimens. Additionally, generate a bar plot showing the top 3 contributing institutions for these physical specimens, and save the plot as `specimen_contributors_bar.png`.",
+    "expected": 1787,
+    "unit": "records",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis should reveal that the Missouri Botanical Garden is the largest contributor of preserved specimen data, followed by the Universidade Federal do Rio Grande do Sul and the Universidade de São Paulo.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "specimen_contributors_bar.png",
+      "visual_description": "A bar chart displaying three categorical bars for the top 3 contributing institutions. The Missouri Botanical Garden (or its institution code) should be the clear leader with roughly 515 records (representing about 28.8% of the specimen data), followed by two other institutions with lower counts.",
+      "paper_figure_reference": null
+    }
+  }
+}

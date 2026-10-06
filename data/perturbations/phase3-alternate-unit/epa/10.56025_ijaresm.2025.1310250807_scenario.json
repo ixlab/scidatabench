@@ -1,0 +1,55 @@
+{
+  "source_doi": "10.56025/ijaresm.2025.1310250807",
+  "research_question": "What are the trends in PM2.5 concentrations in New York County from 2014 to 2024, and how did major events like the COVID-19 lockdown and Canadian wildfires impact these levels?",
+  "phase_1": {
+    "user_prompt": "I'm looking to analyze air quality trends in New York County, New York from 2014 to 2024. I want to study four major pollutants: fine particulate matter, ozone, nitrogen dioxide, and carbon monoxide. Could you find the state and county identifiers for this area, as well as the standard EPA parameter codes for these four pollutants?",
+    "expected": {
+      "state_codes": [
+        "36"
+      ],
+      "county_codes": [
+        "061"
+      ],
+      "parameter_codes": [
+        "88101",
+        "44201",
+        "42602",
+        "42101"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the identifiers, please retrieve the daily air quality measurements specifically for fine particulate matter in New York County, NY, for the entire period from January 1, 2014, to December 31, 2024.",
+    "expected": [
+      {
+        "module": "pyaqsapi.bycounty",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2014-01-01",
+          "edate": "2024-12-31",
+          "stateFIPS": "36",
+          "countycode": "061"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the daily PM2.5 data we retrieved. First, remove any days with missing values. Then, group the data by year and calculate the average PM2.5 concentration for each year across all monitors in the county. What was the calculated annual mean PM2.5 concentration for the year 2015? Report the result in milligrams per cubic meter (mg/m³).",
+    "expected": 0.00988,
+    "unit": "mg/m3"
+  },
+  "phase_4": {
+    "user_prompt": "Based on the annual averages you computed for New York County, create a line graph showing the annual mean PM2.5 over the years from 2014 to 2024. Save this plot as `pm25_annual_trends.png`. Also, based on your calculations, what was the annual average PM2.5 concentration during the 2020 COVID-19 lockdown year?",
+    "expected": 7.26,
+    "unit": "µg/m³",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis shows a general long-term decrease in PM2.5 levels, with a significant temporary dip in 2020 corresponding to COVID-19 lockdowns, and a sharp upward spike in 2023 associated with Canadian wildfire smoke.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "pm25_annual_trends.png",
+      "visual_description": "A line plot with 'Year' on the x-axis (2014 to 2024) and 'Mean PM2.5' on the y-axis. The line should show a generally decreasing trend from ~9.4 in 2014/2015 down to ~7.0 in 2022, but with distinct peaks around 2015 and 2023, and noticeable troughs in 2020 and 2022.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

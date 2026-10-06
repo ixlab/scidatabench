@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.15560/18.4.861",
+  "research_question": "What is the geographic distribution and Extent of Occurrence (EOO) of Utricularia breviscapa in Brazil based on occurrence records?",
+  "phase_1": {
+    "user_prompt": "I'm conducting a biogeographical assessment of the carnivorous aquatic plant Utricularia breviscapa to understand its distribution and conservation status in Brazil. What occurrence records with coordinate data are available for this species in Brazil?",
+    "expected": {
+      "country_codes": [
+        "BR"
+      ],
+      "taxon_keys": [
+        "4087664"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the coordinate-referenced occurrence dataset for Utricularia breviscapa in Brazil.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "BR",
+          "hasCoordinate": true,
+          "taxonKey": 4087664
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Before calculating spatial metrics, we need to clean the dataset. Filter the records to keep only those with valid coordinates that geographically fall within the boundaries of Brazil, and remove any exact duplicate coordinate locations. How many unique occurrences remain?",
+    "expected": 74,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned occurrences, calculate the species' area of the smallest convex polygon enclosing all occurrences in square kilometers using a smallest polygon that contains every point and has no inward-facing edge (smallest polygon that contains every point and has no inward-facing edge). Additionally, create a map showing the distribution of these occurrences across Brazil. Save the map as `ubreviscapa_distribution_map.png`.",
+    "expected": 4808650.0,
+    "unit": "km²",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The species has a broad distribution in Brazil, covering an Extent of Occurrence of over 4.8 million km². The mapped occurrences should be widely spread across multiple Brazilian states, notably covering central, northern, and eastern regions (such as the Amazon and Cerrado domains) but absent from the extreme southern states (Pampa domain).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "ubreviscapa_distribution_map.png",
+      "visual_description": "A map of Brazil with occurrence points for Utricularia breviscapa. Points should be widely scattered across the country's interior and northern regions, avoiding the far south. The distribution visually spans a large area consistent with a multi-million km² EOO.",
+      "paper_figure_reference": "Figure 4"
+    }
+  }
+}

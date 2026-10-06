@@ -1,0 +1,31 @@
+{
+ "scenario_file": "ae002b7e-7c15-32e8-a602-5f6c5333ddca_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-25T00:10:09+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 8339825,
+    "country": "PL",
+    "hasCoordinate": true,
+    "year": "2007,2023"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:10:09+00:00",
+   "rows": 44,
+   "format": "gbif_simple_csv",
+   "download_key": "0004083-260423192947929",
+   "doi": "10.15468/dl.hjyby9",
+   "predicates": [
+    "taxonKey = 8339825",
+    "country = PL",
+    "hasCoordinate = TRUE",
+    "year >= 2007",
+    "year <= 2023"
+   ]
+  }
+ ]
+}

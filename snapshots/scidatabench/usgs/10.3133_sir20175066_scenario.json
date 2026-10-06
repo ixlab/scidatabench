@@ -1,0 +1,423 @@
+{
+ "scenario_file": "10.3133_sir20175066_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-04-26T15:19:39.765905+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11447650",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:17:04.072474+00:00",
+   "rows": 69985
+  },
+  {
+   "idx": 1,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11447650",
+    "parameter_code": "00300",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:17:15.696733+00:00",
+   "rows": 69670
+  },
+  {
+   "idx": 2,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11447650",
+    "parameter_code": "99133",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:17:23.354312+00:00",
+   "rows": 58130
+  },
+  {
+   "idx": 3,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11447650",
+    "parameter_code": "00630",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:17:24.143877+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 4,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11447890",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:17:34.877726+00:00",
+   "rows": 69787
+  },
+  {
+   "idx": 5,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11447890",
+    "parameter_code": "00300",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:17:44.345382+00:00",
+   "rows": 69787
+  },
+  {
+   "idx": 6,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11447890",
+    "parameter_code": "99133",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:17:51.289336+00:00",
+   "rows": 43941
+  },
+  {
+   "idx": 7,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11447890",
+    "parameter_code": "00630",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:17:52.059405+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 8,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455139",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:17:52.991993+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 9,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455139",
+    "parameter_code": "00300",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:00.983092+00:00",
+   "rows": 35971
+  },
+  {
+   "idx": 10,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455139",
+    "parameter_code": "99133",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:02.029207+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 11,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455139",
+    "parameter_code": "00630",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:02.867672+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 12,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455146",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:07.374348+00:00",
+   "rows": 36024
+  },
+  {
+   "idx": 13,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455146",
+    "parameter_code": "00300",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:13.910585+00:00",
+   "rows": 52820
+  },
+  {
+   "idx": 14,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455146",
+    "parameter_code": "99133",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:19.592508+00:00",
+   "rows": 48988
+  },
+  {
+   "idx": 15,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455146",
+    "parameter_code": "00630",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:20.355146+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 16,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455142",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:21.108006+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 17,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455142",
+    "parameter_code": "00300",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:27.656360+00:00",
+   "rows": 46304
+  },
+  {
+   "idx": 18,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455142",
+    "parameter_code": "99133",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:28.809924+00:00",
+   "rows": 2574
+  },
+  {
+   "idx": 19,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455142",
+    "parameter_code": "00630",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:29.596328+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 20,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455350",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:38.713399+00:00",
+   "rows": 69943
+  },
+  {
+   "idx": 21,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455350",
+    "parameter_code": "00300",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:56.522929+00:00",
+   "rows": 69645
+  },
+  {
+   "idx": 22,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455350",
+    "parameter_code": "99133",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:57.626734+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 23,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455350",
+    "parameter_code": "00630",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:18:58.492066+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 24,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455315",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:19:02.610710+00:00",
+   "rows": 22771
+  },
+  {
+   "idx": 25,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455315",
+    "parameter_code": "00300",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:19:08.557718+00:00",
+   "rows": 50507
+  },
+  {
+   "idx": 26,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455315",
+    "parameter_code": "99133",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:19:21.230479+00:00",
+   "rows": 46296
+  },
+  {
+   "idx": 27,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455315",
+    "parameter_code": "00630",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:19:22.010587+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 28,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455478",
+    "parameter_code": "00060",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:19:22.804472+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 29,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455478",
+    "parameter_code": "00300",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:19:30.836224+00:00",
+   "rows": 64282
+  },
+  {
+   "idx": 30,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455478",
+    "parameter_code": "99133",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:19:39.010510+00:00",
+   "rows": 67470
+  },
+  {
+   "idx": 31,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-11455478",
+    "parameter_code": "00630",
+    "time": "2013-10-01/2015-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:19:39.765905+00:00",
+   "rows": 0
+  }
+ ]
+}

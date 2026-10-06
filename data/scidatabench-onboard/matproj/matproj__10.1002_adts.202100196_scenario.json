@@ -1,0 +1,35 @@
+{
+  "source_doi": "10.1002/adts.202100196",
+  "research_question": "Identify the database identifiers for the 8 representative experimentally validated cathode materials (VO2, MnO2, VS2, V3O7, V2O3, V4O9, I2, O2) discussed in the paper, and retrieve their DFT total energies to approximate the Gibbs free energy for Zn-ion battery potential calculations.",
+  "phase_1": {
+    "user_prompt": "We are studying experimentally discovered inorganic cathodes and need the original un-intercalated host materials behind them: VO2, MnO2, VS2, V3O7, V2O3, V4O9, I2 and O2. Identify the Materials Project database identifiers for these hosts, and the energetic property we should extract to evaluate intercalation energetics.",
+    "expected": {
+      "material_ids": [
+        "mvc-13110",
+        "mp-1279979",
+        "mp-9561",
+        "mp-622640",
+        "mvc-846",
+        "mvc-10961",
+        "mp-23153",
+        "mp-1180036"
+      ],
+      "properties": [
+        "energy_per_atom"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified Materials Project identifiers for the 8 representative experimentally validated host materials, query the platform's database to retrieve their calculated total energy per atom. This property forms the thermodynamic baseline (approximated Gibbs free energy) for calculating theoretical Zn-ion intercalation voltages.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "material_ids": "mvc-13110,mp-1279979,mp-9561,mp-622640,mvc-846,mvc-10961,mp-23153,mp-1180036",
+          "_fields": "material_id,formula_pretty,energy_per_atom"
+        }
+      }
+    ]
+  }
+}

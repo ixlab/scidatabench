@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.12933/therya_notes-24-186",
+  "research_question": "What is the historical distribution of the Sinaloan mastiff bat (Molossus sinaloae) in Mexico, and how much does a newly discovered specimen in northern Sinaloa expand its known geographic range?",
+  "phase_1": {
+    "user_prompt": "I recently collected a new specimen of the Sinaloan mastiff bat (Molossus sinaloae) in Los Mochis, Mexico. I want to calculate how much this extends its known range to the north. Could you help me find historical occurrence data with spatial coordinates for this species in Mexico so I can identify its previous northernmost limit?",
+    "expected": {
+      "country_codes": [
+        "MX"
+      ],
+      "taxon_keys": [
+        "5218727"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the historical occurrence records for the Sinaloan mastiff bat in Mexico.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "MX",
+          "hasCoordinate": true,
+          "taxonKey": 5218727
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Using the downloaded data, filter for records that were observed prior to 2023 (to exclude my recent finding and establish a historical baseline). What is the latitude of the northernmost historical occurrence in Mexico?",
+    "expected": 24.823835,
+    "unit": "degrees latitude"
+  },
+  "phase_4": {
+    "user_prompt": "My new specimen was found at coordinates 25° 52' 52.32\" N, 109° 9' 39.96\" W (25.8812° N, -109.1611° W). Calculate the shortest distance over the Earth's surface between two latitude/longitude points in kilometers between this new location and the northernmost historical record you identified. How many kilometers north does this new record expand the species' known distribution? Additionally, create a map showing the historical occurrence points and this new northernmost point to visualize the range extension. Save the map as 'molossus_range_expansion_map.png'.",
+    "expected": 463.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The new observation at Los Mochis represents a significant northward range expansion of approximately 463 km compared to historical records (such as those from Escuinapa or southern Sinaloa). This indicates that Molossus sinaloae is distributed further north along the Pacific Coastal Plain than previously documented, suggesting it is not constrained by geographic barriers in this region, and highlighting its presence in the Nearctic zone after nearly 90 years without records in Sinaloa.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "molossus_range_expansion_map.png",
+      "visual_description": "A map of Mexico (or the Pacific Coast of Mexico) showing historical GBIF occurrence points for Molossus sinaloae (concentrated further south) and the newly added point at Los Mochis (25.8812° N, -109.1611° W), clearly illustrating the northward range extension.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

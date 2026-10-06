@@ -1,0 +1,248 @@
+{
+  "source_doi": "10.3133/sir20135184",
+  "research_question": "What are the dissolved iron and manganese concentrations in the Snake River alluvial aquifer underlying the Jackson Hole Airport during water years 2011-2012, and how do they relate to aquifer redox conditions?",
+  "phase_1": {
+    "user_prompt": "I'm investigating groundwater quality at the Jackson Hole Airport in Teton County, Wyoming. I want to analyze dissolved iron and dissolved manganese concentrations in groundwater wells in this immediate area from June 2011 through August 2012. How can I find the relevant USGS monitoring wells and the parameter codes for these constituents?",
+    "expected": {
+      "sites": [
+        "433615110440001",
+        "433604110443401",
+        "433604110443403",
+        "433604110443402",
+        "433551110443501",
+        "433600110443701",
+        "433603110443501",
+        "433603110443502",
+        "433605110443801",
+        "433613110443501"
+      ],
+      "parameter_codes": [
+        "01046",
+        "01056"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that I have the 10 groundwater wells and the parameter codes for dissolved iron and manganese, please retrieve the discrete water quality sample data for these sites from June 2011 through August 2012.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433615110440001",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433615110440001",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443401",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443401",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443403",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443403",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443402",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433604110443402",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433551110443501",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433551110443501",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433600110443701",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433600110443701",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433603110443501",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433603110443501",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433603110443502",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433603110443502",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433605110443801",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433605110443801",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433613110443501",
+          "usgsPCode": "01046",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-433613110443501",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2011-06-01",
+          "activityStartDateUpper": "2012-08-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved water quality data to compute the overall median concentration of dissolved iron across all collected groundwater samples from these 10 wells during the study period. Ensure units are in micrograms per liter (milligrams per liter (mg/L)).",
+    "expected": 0.368,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Compare the dissolved iron concentrations to the USEPA Secondary Maximum Contaminant Level (SMCL) of 300 µg/L. How many total samples from these wells exceeded this threshold, and what does this indicate about the aquifer's redox conditions?",
+    "expected": 13,
+    "unit": "samples",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Elevated dissolved iron and manganese concentrations exceeding SMCLs indicate reducing (anoxic or oxygen-poor) conditions in the aquifer. These reducing conditions mobilize naturally occurring metals from geologic materials, likely driven by the introduction of organic carbon sources such as aircraft deicers from airport operations.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

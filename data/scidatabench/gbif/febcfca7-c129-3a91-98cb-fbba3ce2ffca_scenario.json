@@ -1,0 +1,51 @@
+{
+  "source_doi": "10.17161/randa.v31i1.21165",
+  "research_question": "What is the historical distribution and temporal gap of Pine Woods Littersnake (Rhadinaea flavilata) observations at its northernmost range limit in Dare County, North Carolina?",
+  "phase_1": {
+    "user_prompt": "I'm researching the northernmost populations of the Pine Woods Littersnake to understand its historical presence and rarity. I want to find all observation records of this species in North Carolina, USA, specifically focusing on the Outer Banks region.",
+    "expected": {
+      "country_codes": [
+        "US"
+      ],
+      "state_provinces": [
+        "North Carolina"
+      ],
+      "taxon_keys": [
+        "5959337"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Download all occurrence records for the Pine Woods Littersnake in North Carolina from GBIF. I need the raw data to see exactly when and where these snakes have been observed.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "US",
+          "stateProvince": "North Carolina",
+          "taxonKey": 5959337
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Filter the downloaded records to only include those from Dare County (which encompasses the Outer Banks). Looking strictly at historical records prior to 2020, what was the year of the most recent observation?",
+    "expected": 1995.0,
+    "unit": "year"
+  },
+  "phase_4": {
+    "user_prompt": "Assuming a new observation was made in 2023, calculate the exact number of years between the most recent historical observation and 2023. Then, create a map showing all known localities of the Pine Woods Littersnake in Dare County, labeling the points with their observation years (e.g., 1960, 1970, 1995, 2023). Save this map as `obx_littersnake_map.png`.",
+    "expected": 28.0,
+    "unit": "years",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis reveals a 28-year gap between the 1995 historical observation and 2023. The mapped locations should show a tight geographic cluster on the Outer Banks (specifically Bodie Island and Roanoke Island), with temporal annotations highlighting the sparsity of observations over the past six decades.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "obx_littersnake_map.png",
+      "visual_description": "A map or spatial scatter plot showing the coastline or boundaries of Dare County, NC. Points should indicate occurrence coordinates for R. flavilata, specifically clustered on the barrier islands. Each point should be distinctly labeled with its observation year (e.g., 1960, 1961, 1970, 1987, 1995, 2023).",
+      "paper_figure_reference": "Figure 1 inset"
+    }
+  }
+}

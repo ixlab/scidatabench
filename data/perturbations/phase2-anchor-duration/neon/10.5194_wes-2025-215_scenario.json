@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.5194/wes-2025-215",
+  "research_question": "How can the mean canopy drag coefficient over a deciduous forest be estimated using combined 2D and 3D sonic anemometer measurements at different tower heights?",
+  "phase_1": {
+    "user_prompt": "I want to calculate the canopy drag coefficient at the NEON Mountain Lake Biological Station. I need the standard 2D wind speed and direction data to get the wind speed near the canopy top, and I also need the bundled eddy covariance data (which contains the 3D wind and friction velocity at the tower top). Could you find the specific NEON data product codes for these two measurements, and confirm the 4-letter site code for this station?",
+    "expected": {
+      "data_products": [
+        "DP1.00001.001",
+        "DP4.00200.001"
+      ],
+      "sites": [
+        "MLBS"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the product codes and the site (MLBS), please retrieve the 2D wind speed data and the Eddy covariance data over the 10 months beginning in September 2024.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00001.001",
+          "site": "MLBS",
+          "startdate": "2024-09",
+          "enddate": "2025-06"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP4.00200.001",
+          "site": "MLBS",
+          "startdate": "2024-09",
+          "enddate": "2025-06"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "From the retrieved data, we need to extract the variables to calculate the canopy drag coefficient. First, extract the 30-minute mean wind speed at 19 m above ground from the 2D wind data (this represents the canopy top wind speed, U_h). Second, parse the eddy covariance data to extract the 30-minute friction velocity (u_*) measured at the top of the tower (30 m). Join these two time series by their start and end datetimes. Filter out any intervals with missing data or negative wind speeds.",
+    "expected": 11895,
+    "unit": "matched 30-minute records"
+  },
+  "phase_4": {
+    "user_prompt": "Using the joined dataset, calculate the canopy drag coefficient (C_d) for each 30-minute period using the formula: C_d = 2 * (u_*)^2 / (U_h)^2. What is the overall mean C_d for this entire period? Additionally, create a histogram showing the distribution of these C_d values (similar to what was reported by the NEON 3D sonic anemometer benchmark in the LEAFF campaign) and save it as `mlbs_cd_histogram.png`.",
+    "expected": 0.31,
+    "unit": "dimensionless",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The calculated mean canopy drag coefficient over the deciduous forest canopy using the 3D and 2D sonic anemometers is approximately 0.31. The histogram of the 30-minute C_d values features a right-skewed distribution, typically peaking around 0.2 to 0.3, successfully representing the momentum absorption characteristic of the canopy interface.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "mlbs_cd_histogram.png",
+      "visual_description": "A histogram showing the distribution of the canopy drag coefficient (Cd). The x-axis should represent Cd values, primarily ranging from near 0 up to 0.9. The distribution should be right-skewed with a peak (mode) slightly below the mean of 0.31.",
+      "paper_figure_reference": "Figure 7 (red line)"
+    }
+  }
+}

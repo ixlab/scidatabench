@@ -1,0 +1,33 @@
+{
+  "source_doi": "10.1016/j.est.2023.107980",
+  "research_question": "Predict the energy of formation of metal hydrides by extracting intrinsic physical and electronic properties from the Materials Project to train machine learning models.",
+  "phase_1": {
+    "user_prompt": "We are building a machine-learning model for the thermodynamics of metal hydrides, and we want to merge experimental temperature/pressure measurements with the intrinsic computed properties the Materials Project holds for binary and ternary compounds of this class. Tell me the one chemical element that is by definition present in every one of them, and name the five Materials Project property fields we should fetch: the formation energy on a per-atom basis, the electronic band gap, how heavy the crystal is per unit of bulk, how much room a single atom takes up in the cell, and the net magnetic moment per formula unit.",
+    "expected": {
+      "elements": [
+        "H"
+      ],
+      "properties": [
+        "formation_energy_per_atom",
+        "band_gap",
+        "density",
+        "volume",
+        "total_magnetization"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now retrieve a subset of the dataset from the Materials Project. Fetch the 5 properties identified earlier (formation energy per atom, band gap, density, unit cell volume, and total magnetization) for binary metal hydrides. Specifically, to replicate a manageable subset of the authors' query, retrieve these properties for all binary compounds containing Hydrogen and exactly one 3d transition metal (Sc, Ti, V, Cr, Mn, Fe, Co, Ni, Cu, or Zn).",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "elements": "H",
+          "nelements": 2,
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom,band_gap,density,volume,total_magnetization"
+        }
+      }
+    ]
+  }
+}

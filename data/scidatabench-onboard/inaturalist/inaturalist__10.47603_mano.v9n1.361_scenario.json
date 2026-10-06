@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.47603/mano.v9n1.361",
+  "research_question": "Can citizen science imagery from iNaturalist be used to classify the roosting habitats (natural versus man-made) of bat species in Panama?",
+  "phase_1": {
+    "user_prompt": "We are using citizen science photos to analyze the roosting behavior of bats (whether they use natural or anthropogenic structures). Our study area is the Central American country known for bridging North and South America and containing a famous canal. Please identify the standard taxonomic group name and the geographic place name we need to use to locate these records in the platform's catalog.",
+    "expected": {
+      "taxon_names": [
+        "Chiroptera"
+      ],
+      "place_names": [
+        "Panama"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the taxonomy and location identifiers for bats in Panama, please download the observation records. Ensure you only retrieve 'wild' animals and records that the community has confirmed (research-grade). Limit the data to observations recorded between January 1, 2001, and March 31, 2023, as this matches the timeframe of the original study.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 40268,
+          "place_id": 7003,
+          "quality_grade": "research",
+          "captive": false,
+          "d1": "2001-01-01",
+          "d2": "2023-03-31"
+        }
+      }
+    ]
+  }
+}

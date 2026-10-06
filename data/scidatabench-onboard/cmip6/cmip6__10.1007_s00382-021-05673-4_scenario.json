@@ -1,0 +1,79 @@
+{
+  "source_doi": "10.1007/s00382-021-05673-4",
+  "research_question": "What are the uncertainties in projected changes of the ENSO amplitude and its relation to ENSO atmospheric feedbacks under different global warming scenarios in CMIP6 models?",
+  "phase_1": {
+    "user_prompt": "We are quantifying the uncertainty of ENSO-amplitude projections in CMIP6 models. We need to calculate the ENSO amplitude, the zonal wind stress-SST feedback, and the net heat flux-SST feedback, over a pre-industrial control baseline, the observed past, and a medium and a high emission future scenario. Could you identify the CMIP6 models, experiments and specific variables we need to fetch, and the frequency/realm tables that hold the atmospheric and oceanic fields?",
+    "expected": {
+      "source_ids": [
+        "ACCESS-CM2",
+        "ACCESS-ESM1-5",
+        "AWI-CM-1-1-MR",
+        "BCC-CSM2-MR",
+        "CAMS-CSM1-0",
+        "CESM2-WACCM",
+        "FGOALS-f3-L",
+        "FGOALS-g3",
+        "GFDL-CM4",
+        "GFDL-ESM4",
+        "INM-CM4-8",
+        "INM-CM5-0",
+        "IPSL-CM6A-LR",
+        "MIROC6",
+        "MPI-ESM1-2-HR",
+        "MPI-ESM1-2-LR",
+        "MRI-ESM2-0",
+        "NESM3",
+        "NorESM2-LM",
+        "NorESM2-MM"
+      ],
+      "experiment_ids": [
+        "piControl",
+        "historical",
+        "ssp245",
+        "ssp585"
+      ],
+      "variable_ids": [
+        "tos",
+        "tauu",
+        "hfds",
+        "rsds",
+        "rsus",
+        "rlds",
+        "rlus",
+        "hfss",
+        "hfls"
+      ],
+      "table_ids": [
+        "Amon",
+        "Omon"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the data requirements, please retrieve the monthly sea surface temperature and zonal wind stress data for the ACCESS-CM2 model. Fetch the data covering the historical period as well as the two future SSP projections we settled on, the medium- and high-emission ones.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "ACCESS-CM2"
+          ],
+          "experiment_id": [
+            "historical",
+            "ssp245",
+            "ssp585"
+          ],
+          "variable_id": [
+            "tos",
+            "tauu"
+          ],
+          "table_id": [
+            "Amon",
+            "Omon"
+          ]
+        }
+      }
+    ]
+  }
+}

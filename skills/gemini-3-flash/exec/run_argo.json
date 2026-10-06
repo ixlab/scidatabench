@@ -1,0 +1,16 @@
+{
+  "platform": "argo",
+  "condition": "exec",
+  "model": "gemini-3-flash-preview",
+  "elapsed_s": 208.2,
+  "tokens": {
+    "input": 448077,
+    "output": 7846,
+    "thinking": 0,
+    "total": 455923,
+    "cache_read": 224686
+  },
+  "tool_call_turns": 38,
+  "research_log": [],
+  "generated_utc": "2026-08-14T03:21:16.349099+00:00"
+}

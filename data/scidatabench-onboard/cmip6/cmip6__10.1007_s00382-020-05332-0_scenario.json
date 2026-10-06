@@ -1,0 +1,72 @@
+{
+  "source_doi": "10.1007/s00382-020-05332-0",
+  "research_question": "What are the sources of inter-model spread in Sahel precipitation change in CMIP6 simulations, and how do dynamic and thermodynamic components contribute?",
+  "phase_1": {
+    "user_prompt": "We are quantifying uncertainty in projected Sahel precipitation with CMIP6. We decompose precipitation change into dynamic and thermodynamic terms from monthly precipitation and near-surface specific humidity, normalise changes by global mean surface air temperature, and assess unforced natural variability and oceanic regressions from pre-industrial control runs, against a high-emission future. Which CMIP6 experiments, variables and frequency/realm table do we need?",
+    "expected": {
+      "source_ids": [
+        "BCC-CSM2-MR",
+        "CanESM5",
+        "CESM2",
+        "CNRM-CM6-1",
+        "CNRM-ESM2-1",
+        "EC-Earth3",
+        "EC-Earth3-Veg",
+        "IPSL-CM6A-LR",
+        "MIROC6",
+        "MRI-ESM2-0",
+        "UKESM1-0-LL"
+      ],
+      "experiment_ids": [
+        "historical",
+        "ssp585",
+        "piControl"
+      ],
+      "variable_ids": [
+        "pr",
+        "huss",
+        "tas"
+      ],
+      "table_ids": [
+        "Amon"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the identifiers, please write a script to search the CMIP6 ESGF catalog and retrieve the metadata for the models (BCC-CSM2-MR, CanESM5, CESM2, CNRM-CM6-1, CNRM-ESM2-1, EC-Earth3, EC-Earth3-Veg, IPSL-CM6A-LR, MIROC6, MRI-ESM2-0, UKESM1-0-LL), experiments (historical, ssp585, piControl), variables (pr, huss, tas), and monthly frequency (Amon). Just fetch the first available ensemble member for each model.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "BCC-CSM2-MR",
+            "CanESM5",
+            "CESM2",
+            "CNRM-CM6-1",
+            "CNRM-ESM2-1",
+            "EC-Earth3",
+            "EC-Earth3-Veg",
+            "IPSL-CM6A-LR",
+            "MIROC6",
+            "MRI-ESM2-0",
+            "UKESM1-0-LL"
+          ],
+          "experiment_id": [
+            "historical",
+            "ssp585",
+            "piControl"
+          ],
+          "variable_id": [
+            "pr",
+            "huss",
+            "tas"
+          ],
+          "table_id": [
+            "Amon"
+          ]
+        }
+      }
+    ]
+  }
+}

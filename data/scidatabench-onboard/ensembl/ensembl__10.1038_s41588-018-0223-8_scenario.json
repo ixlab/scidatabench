@@ -1,0 +1,36 @@
+{
+  "source_doi": "10.1038/s41588-018-0223-8",
+  "research_question": "How can we identify and retrieve the specific Ensembl transcript annotation and exon structure used to design a CRISPR/Cas9 knockout for the Efcab3-like locus on mouse chromosome 11?",
+  "phase_1": {
+    "user_prompt": "We are planning to create a knockout mouse model to study the neuroanatomical effects of deleting a large calcium-binding protein gene on chromosome 11, specifically the Efcab3 / Efcab3-like locus. Our CRISPR/Cas9 targeting strategy needs the well-supported transcript containing a constitutive coding exon (exon 5) spanning the GRCm38 genomic coordinates 11:104700610-104700692. Can you identify the Ensembl transcript ID associated with this exact target region, as well as the standard Ensembl species name?",
+    "expected": {
+      "transcript_ids": [
+        "ENSMUST00000212287"
+      ],
+      "species": [
+        "mus_musculus"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the target transcript ID ENSMUST00000212287 for the house mouse, retrieve its full nucleotide sequence and the detailed list of its exons. This data will allow us to design our CRISPR guide RNAs properly.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_id",
+        "kwargs": {
+          "id": "ENSMUST00000212287",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSMUST00000212287",
+          "type": "cdna"
+        }
+      }
+    ]
+  }
+}

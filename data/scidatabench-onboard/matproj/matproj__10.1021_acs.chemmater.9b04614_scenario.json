@@ -1,0 +1,44 @@
+{
+  "source_doi": "10.1021/acs.chemmater.9b04614",
+  "research_question": "How can we identify disorder-tolerant piezoelectric systems by analyzing the sensitivity of the piezoelectric tensor, Born effective charges, internal strain tensor, and force constant matrix to ionic disorder?",
+  "phase_1": {
+    "user_prompt": "We are studying the origin of disorder tolerance in piezoelectric materials in order to design polar systems, analyzing how ionic disorder affects the polar response across a set of top-calculated piezoelectrics, a PZT reference and several disordered analogues. Please identify the Materials Project IDs for those materials and the computed tensor property we need to retrieve for each.",
+    "expected": {
+      "material_ids": [
+        "mp-33319",
+        "mp-557873",
+        "mp-19241",
+        "mp-776952",
+        "mp-675634",
+        "mp-675531",
+        "mp-764144",
+        "mp-676400",
+        "mp-13108",
+        "mp-755018",
+        "mp-1079416",
+        "mp-1025567",
+        "mp-1014244",
+        "mp-938",
+        "mp-765135",
+        "mp-18786",
+        "mp-690526",
+        "mp-1224247"
+      ],
+      "properties": [
+        "piezoelectric"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the list of 18 Materials Project identifiers and the target property we just established, please query the Materials Project database to retrieve the full piezoelectric data records for each of these materials.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/piezoelectric",
+        "kwargs": {
+          "material_ids": "mp-33319,mp-557873,mp-19241,mp-776952,mp-675634,mp-675531,mp-764144,mp-676400,mp-13108,mp-755018,mp-1079416,mp-1025567,mp-1014244,mp-938,mp-765135,mp-18786,mp-690526,mp-1224247"
+        }
+      }
+    ]
+  }
+}

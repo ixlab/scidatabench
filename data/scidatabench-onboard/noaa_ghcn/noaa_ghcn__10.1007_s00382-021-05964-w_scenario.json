@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.1007/s00382-021-05964-w",
+  "research_question": "How well do historical WRF regional climate model simulations reproduce daily precipitation amounts and extremes in Central Chile and Peru compared to GHCN-Daily station observations?",
+  "phase_1": {
+    "user_prompt": "We are validating historical simulations (1996-2005) of South American rainfall against individual station data from the GHCN dataset, focusing on central Chile and Peru. Can you identify the specific weather variable we should extract from GHCN and the geographic regions we should evaluate with it?",
+    "expected": {
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the NOAA GHCN-Daily API or the Meteostat package, please retrieve the daily precipitation (PRCP) records for all available weather stations located in Central Chile and Peru for the period from January 1, 1996, to December 31, 2005. This data is needed to recreate the historical validation of daily extremes like Rx1day.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "CIM00085574",
+          "startDate": "1996-01-01",
+          "endDate": "2005-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -33.5,
+          -71.0
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "PEM00084534",
+          "startDate": "1996-01-01",
+          "endDate": "2005-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -9.2,
+          -75.0
+        ]
+      }
+    ]
+  }
+}

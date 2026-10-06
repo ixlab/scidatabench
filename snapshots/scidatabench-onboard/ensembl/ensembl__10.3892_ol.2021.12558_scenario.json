@@ -1,0 +1,51 @@
+{
+ "scenario_file": "ensembl__10.3892_ol.2021.12558_scenario.json",
+ "platform": "ensembl",
+ "downloaded_at": "2026-08-09T01:44:50.235247+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "ensembl_rest",
+   "function": "lookup_symbol",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "symbol": "FAM83A",
+    "expand": 1
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:49.648993+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/lookup/symbol/homo_sapiens/FAM83A"
+  },
+  {
+   "idx": 1,
+   "module": "ensembl_rest",
+   "function": "lookup_symbol",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "symbol": "FAM83A-AS1",
+    "expand": 1
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:50.235247+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/lookup/symbol/homo_sapiens/FAM83A-AS1"
+  }
+ ]
+}

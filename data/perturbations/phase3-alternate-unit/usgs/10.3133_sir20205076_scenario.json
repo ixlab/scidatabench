@@ -1,0 +1,361 @@
+{
+  "source_doi": "10.3133/sir20205076",
+  "research_question": "What are the temporal trends in groundwater-level elevations in the bedrock aquifers of Douglas County, Colorado, between 2012 and 2019?",
+  "phase_1": {
+    "user_prompt": "I'm interested in assessing groundwater-level changes in Douglas County, Colorado. Can you identify the active USGS groundwater monitoring sites in this county that have depth-to-water measurement records between January 2012 and June 2019?",
+    "expected": {
+      "sites": [
+        "391229104421901",
+        "392856104424101",
+        "392412104434201",
+        "392934104414901",
+        "392149104415501",
+        "392441104394901",
+        "391658104453101",
+        "393252104434701",
+        "393226104394401",
+        "392916104423601",
+        "390756104453801",
+        "390811104453801",
+        "392318104424601",
+        "392851104450101",
+        "391143104482501",
+        "391654104464501",
+        "392949104523401",
+        "393239104452901",
+        "393021104533101",
+        "391257104530201",
+        "393259104491001",
+        "391656104473001",
+        "391929104574101",
+        "391245104525501",
+        "392115104553501",
+        "392235105003001",
+        "393040105003201",
+        "391212104473801",
+        "390755104454001",
+        "391936104570101",
+        "393330104450701",
+        "393252104492101",
+        "392853105015001",
+        "393120105003101",
+        "392522105015001",
+        "392522105015401"
+      ],
+      "parameter_codes": [
+        "72019"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the groundwater sites you identified in Douglas County, please retrieve the discrete (manual) groundwater level measurements for the period from January 1, 2012, to June 30, 2019. Also, retrieve the site metadata to obtain the land-surface datum elevation (altitude) for each well.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-391229104421901",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392856104424101",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392412104434201",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392934104414901",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392149104415501",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392441104394901",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-391658104453101",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-393252104434701",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-393226104394401",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392916104423601",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-390756104453801",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-390811104453801",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392318104424601",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392851104450101",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-391143104482501",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-391654104464501",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392949104523401",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-393239104452901",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-393021104533101",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-391257104530201",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-393259104491001",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-391656104473001",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-391929104574101",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-391245104525501",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392115104553501",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392235105003001",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-393040105003201",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-391212104473801",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-390755104454001",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-391936104570101",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-393330104450701",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-393252104492101",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392853105015001",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-393120105003101",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392522105015001",
+          "time": "2012-01-01/2019-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-392522105015401",
+          "time": "2012-01-01/2019-06-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Calculate the groundwater-level elevation for each measurement by subtracting the depth to water from the land-surface elevation for each site. Filter the data to only include 'static' measurements (exclude records affected by recent or nearby pumping) taken in the month of February (winter) of each year from 2012 to 2019 to minimize seasonal irrigation effects. For the well with site number 392853105015001, calculate the relative difference in groundwater-level elevation between its February 2012 and February 2019 measurements (2019 value minus 2012 value). Report the result in meters.",
+    "expected": -4.757928,
+    "unit": "meters"
+  },
+  "phase_4": {
+    "user_prompt": "Using the static February discrete groundwater-level elevations from 2012 through 2019 for site 392853105015001, perform a Mann-Kendall trend test to determine significance and compute the Sen slope estimator to quantify the annual trend. What is the calculated Sen slope in feet per year? Additionally, create a scatter plot of the February elevations over time with the Sen slope trendline, and save it as `arap1_trend_plot.png`.",
+    "expected": -2.26,
+    "unit": "ft/yr",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The Arapahoe aquifer well (site 392853105015001) exhibited a statistically significant and steep negative trend in discrete groundwater-level elevations between 2012 and 2019, indicating substantial groundwater decline of approximately 2.26 feet per year.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "arap1_trend_plot.png",
+      "visual_description": "A scatter plot showing winter (February) groundwater level elevations for site 392853105015001 decreasing significantly over time, from around 5247 ft in 2012 down to approximately 5231 ft in 2019, with a clearly visible downward trendline representing the calculated Sen slope.",
+      "paper_figure_reference": null
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "source_doi": "10.1017/s0007114518001526",
+  "research_question": "What are the genomic sequences and coordinates of the adiponectin and resistin genes in mice, used to design primers for DNA methylation analysis?",
+  "phase_1": {
+    "user_prompt": "We are investigating how short-chain fatty acids (SCFA) affect the DNA methylation patterns of adiponectin and resistin in high-fat-diet-induced obese male mice. We need to design oligonucleotide primers for bisulphite sequencing from gene sequences obtained via the Ensembl Genome Browser. Can you identify the official gene symbols for these two adipokines, as well as the standard Ensembl species designation for the animal model?",
+    "expected": {
+      "gene_symbols": [
+        "Adipoq",
+        "Retn"
+      ],
+      "species": [
+        "mus_musculus"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Ensembl species `mus_musculus` and the gene symbols `Adipoq` and `Retn`, please retrieve their standard gene records and associated genomic sequences from the Ensembl database so we can verify the promoter regions for primer design.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "mus_musculus",
+          "symbol": "Adipoq",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "mus_musculus",
+          "symbol": "Retn",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSMUSG00000022878",
+          "type": "genomic"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSMUSG00000012705",
+          "type": "genomic"
+        }
+      }
+    ]
+  }
+}

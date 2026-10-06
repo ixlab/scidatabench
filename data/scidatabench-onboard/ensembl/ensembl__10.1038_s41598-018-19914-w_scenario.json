@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.1038/s41598-018-19914-w",
+  "research_question": "What are the predicted functional impacts of the missense variants associated with habitual coffee consumption in the Japanese population?",
+  "phase_1": {
+    "user_prompt": "We are following up a GWAS of habitual coffee consumption in a Japanese cohort. Three of the variants that came through are amino-acid-changing: rs671, rs1260326 and rs6265. Before we look at their functional annotations we need to know which genes they actually sit in. Give me the standard gene symbols for the genes each of those three variants causes a missense change in, along with the species name to use for Ensembl queries.",
+    "expected": {
+      "gene_symbols": [
+        "ALDH2",
+        "GCKR",
+        "BDNF"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified gene symbols (ALDH2, GCKR, BDNF) for Homo sapiens, please retrieve their transcript annotations and associated variant consequences from Ensembl. We are particularly interested in fetching the data for the missense variants located in these genes to review their predicted functional impacts (SIFT and PolyPhen scores), as performed in the study.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "12:111766887-111817532",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "2:27496055-27523688",
+          "feature": "variation"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "overlap_region",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "region": "11:27654893-27722058",
+          "feature": "variation"
+        }
+      }
+    ]
+  }
+}

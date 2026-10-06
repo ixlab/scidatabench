@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.15560/21.3.544",
+  "research_question": "What is the global elevational distribution of the Jaguar (Panthera onca), and what proportion of occurrences are found at high altitudes?",
+  "phase_1": {
+    "user_prompt": "I'm conducting a biogeographical review of the Jaguar to understand its typical elevational range globally. What taxa identifiers, coordinate requirements, and basis of record parameters should I use to query reliable occurrence data (specifically preserved specimens, human observations, and machine observations) with valid geographic coordinates from GBIF?",
+    "expected": {
+      "taxon_keys": [
+        "5219426"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the global occurrence dataset for the Jaguar using the parameters we just identified. Retrieve all matching records across the species' entire range.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN",
+            "HUMAN_OBSERVATION",
+            "MACHINE_OBSERVATION"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 5219426
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Now that we have the occurrence records, we need to clean them for our elevational analysis. Filter the dataset to include only records that contain valid numerical elevation data (either directly from the dataset's elevation column or extracted via a standard global DEM using the coordinates). How many valid occurrence points remain for the elevation profile?",
+    "expected": 2925.0,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned elevation data, calculate the percentage of Jaguar occurrences located at lowland elevations (between 0 and 500 meters). Additionally, create an elevation profile histogram showing the number of records across 500-meter bins (0-500, 501-1000, 1001-1500, etc.) and save it as `jaguar_elevation_profile.png`. Briefly explain what this tells us about the rarity of high-altitude occurrences (e.g., >2000m).",
+    "expected": 87.7,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The vast majority of Jaguar occurrences (approximately 88%) are concentrated in lowlands between 0 and 500 meters. High-altitude occurrences are extremely rare, with fewer than 1% of documented records occurring above 2000 meters.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "jaguar_elevation_profile.png",
+      "visual_description": "A histogram with elevation on the x-axis (binned into 500m intervals such as 0-500, 501-1000, etc.) and the number of records on the y-axis. The distribution should be heavily right-skewed, with the 0-500m bin containing the vast majority of points and a very long, flat tail extending past 2000m.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "platform": "cmip6",
+  "condition": "exec",
+  "model": "gemini-3-flash-preview",
+  "elapsed_s": 39.6,
+  "tokens": {
+    "input": 167139,
+    "output": 4482,
+    "thinking": 0,
+    "total": 171621,
+    "cache_read": 78691
+  },
+  "tool_call_turns": 19,
+  "research_log": [],
+  "generated_utc": "2026-08-14T01:52:45.461652+00:00"
+}

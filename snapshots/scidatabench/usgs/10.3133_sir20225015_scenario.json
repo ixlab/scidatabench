@@ -1,0 +1,34 @@
+{
+ "scenario_file": "10.3133_sir20225015_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-09-05T03:14:58.816015+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_continuous",
+   "kwargs": {
+    "monitoring_location_id": "USGS-08067000",
+    "parameter_code": "00060",
+    "time": "2014-01-01/2020-07-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T03:14:58.816015+00:00",
+   "rows": 127617
+  },
+  {
+   "idx": 1,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-08067000",
+    "usgsPCode": "80154",
+    "activityStartDateLower": "2014-01-01",
+    "activityStartDateUpper": "2020-07-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:33:14+00:00",
+   "rows": 75
+  }
+ ]
+}

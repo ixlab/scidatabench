@@ -1,0 +1,415 @@
+{
+  "source_doi": "10.3133/sir20135230",
+  "research_question": "To evaluate monotonic trends in annual mean streamflow and compute selected summary statistics (L-moments) for 38 long-term streamgages in Texas representing natural and unregulated watershed conditions.",
+  "phase_1": {
+    "user_prompt": "I am conducting a regional frequency analysis of streamflow for long-term, natural, and unregulated watersheds in Texas. I have compiled a list of 38 specific streamgages of interest and need to retrieve their historical daily streamflow records up through the end of water year 2012 to compute annual mean streamflows. What parameter code and data service type should I use to get this historical daily discharge data from the USGS database?",
+    "expected": {
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the USGS data retrieval tools, download the daily mean streamflow (parameter 00060) for the following 38 Texas streamgages from their earliest available record through September 30, 2012: 07299670, 07343000, 07346070, 08017200, 08017300, 08029500, 08041500, 08068500, 08070000, 08070500, 08078000, 08079600, 08082700, 08084800, 08101000, 08115000, 08117500, 08123800, 08134000, 08150000, 08150800, 08151500, 08153500, 08164000, 08167500, 08171000, 08175000, 08186000, 08189500, 08190000, 08190500, 08192000, 08195000, 08196000, 08198000, 08200000, 08205500, 08208000.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07299670",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07343000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07346070",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08017200",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08017300",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08029500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08041500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08068500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08070000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08070500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08078000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08079600",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08082700",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08084800",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08101000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08115000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08117500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08123800",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08134000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08150000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08150800",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08151500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08153500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08164000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08167500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08171000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08175000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08186000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08189500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08190000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08190500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08192000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08195000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08196000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08198000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08200000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08205500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08208000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2012-09-30",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "First, calculate the annual mean streamflow for each water year for all 38 gages. You can do this by averaging the daily values for each water year. Next, perform a nonparametric Kendall's tau statistical test (two-tailed) on the annual mean streamflow time series for each site to evaluate if there are monotonic trends over time. What is the computed Kendall's tau statistic for the North Concho River near Carlsbad (site 08134000)?",
+    "expected": -0.412,
+    "unit": "Kendall's tau coefficient"
+  },
+  "phase_4": {
+    "user_prompt": "Based on the Kendall's tau tests, identify the streamgages that DO NOT have statistically significant trends at the alpha=0.02 significance level. For these 'trendless' sites, we want to compute L-moments to describe their probability distributions. First, add an offset of 10 cubic feet per second (ft3/s) to their annual mean streamflow values to prevent issues with taking the logarithm of zero. Then, transform these offset values using a base-10 logarithm. Finally, compute the sample L-moments of these log-transformed values. What is the L-scale (the second L-moment, conventionally l2) for site 08123800 (Beals Creek near Westbrook)?",
+    "expected": 0.1368,
+    "unit": "log10(ft3/s)",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+ "scenario_file": "cmip6__10.1038_s41467-021-27938-6_scenario.json",
+ "platform": "cmip6",
+ "downloaded_at": "2026-08-09T01:42:17.099306+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "intake_esgf",
+   "function": "ESGFCatalog.search",
+   "kwargs": {
+    "source_id": [
+     "BCC-CSM2-MR",
+     "BCC-ESM1",
+     "CMCC-CM2-SR5",
+     "CanESM5",
+     "EC-Earth3-Veg",
+     "FGOALS-g3",
+     "GFDL-CM4",
+     "IPSL-CM6A-LR",
+     "KACE-1-0-G",
+     "MIROC6",
+     "MRI-ESM2-0",
+     "NorESM2-LM",
+     "NorESM2-MM",
+     "SAM0-UNICON",
+     "TaiESM1"
+    ],
+    "experiment_id": [
+     "historical",
+     "ssp585",
+     "land-hist"
+    ],
+    "variable_id": [
+     "tasmax",
+     "rsds",
+     "pr",
+     "evspsbl",
+     "mrsos",
+     "mrsol"
+    ],
+    "table_id": [
+     "Amon",
+     "Lmon",
+     "day"
+    ]
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:17.099306+00:00",
+   "rows": 2921,
+   "format": "parquet",
+   "result_kind": "dataset_listing"
+  }
+ ]
+}

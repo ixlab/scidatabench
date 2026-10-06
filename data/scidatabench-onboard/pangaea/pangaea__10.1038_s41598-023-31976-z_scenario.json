@@ -1,0 +1,40 @@
+{
+  "source_doi": "10.1038/s41598-023-31976-z",
+  "research_question": "How did fluctuating sea-level and reversing monsoon winds influence Holocene lagoon infill in Southeast Asia, specifically the Spermonde Archipelago?",
+  "phase_1": {
+    "user_prompt": "I am looking into the environmental drivers of Holocene lagoon infill in the Spermonde Archipelago, specifically investigating the interplay between sea-level fluctuations, monsoon wind reversals, and sediment core data from Barrang Lompo. To reconstruct these dynamics, I need to locate three specific datasets archived on PANGAEA: the offshore Java monsoon intensity record published by Mohtadi et al. in 2011, the late Holocene sea-level reconstruction from the Makassar Strait by Bender et al. in 2020, and the primary sediment core data (grain size, components, C14) from Kappelmann et al. 2023. Can you find the exact dataset identifiers for these three records?",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.767353",
+        "10.1594/PANGAEA.917685",
+        "10.1594/PANGAEA.954709"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the relevant datasets, please retrieve the actual tabular data for the offshore Java monsoon record, the Makassar Strait sea-level reconstruction, and the Barrang Lompo sediment core analysis.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.767353"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.917685"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.954709"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "platform": "argo",
+  "condition": "search",
+  "model": "gemini-3-flash-preview",
+  "elapsed_s": 23.1,
+  "tokens": {
+    "input": 28053,
+    "output": 2380,
+    "thinking": 0,
+    "total": 30433,
+    "cache_read": 8124
+  },
+  "tool_call_turns": 3,
+  "research_log": [
+    {
+      "kind": "search",
+      "query": "argopy documentation DataFetcher usage examples",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://argopy.readthedocs.io/en/latest/generated/argopy.fetchers.ArgoDataFetcher.html",
+        "https://pypi.org/project/argopy/0.1.0",
+        "https://argopy.readthedocs.io/en/latest/generated/argopy.DataFetcher.region.html",
+        "https://github.com/euroargodev/argopy",
+        "https://euroargodev.github.io/argoonlineschool/Lessons/L03_UsingArgoData/Chapter33c_ArgoDatabyDate_ArgoPy.html",
+        "https://www.youtube.com/watch?v=n0xy9Cpialk",
+        "https://github.com/euroargodev/argopy-training/blob/main/content/argo-data-fetching/select-and-fetch-data.ipynb",
+        "https://datafetcher.com/blog"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "argopy float_wmo_ids parameters lookup",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://euroargodev.github.io/argoonlineschool/Lessons/L03_UsingArgoData/Chapter32e_ArgoDatabyFloat_ArgoPy.html",
+        "https://argopy.readthedocs.io/en/latest/user-guide/working-with-argo-data/data_manipulation.html",
+        "https://argopy.readthedocs.io/en/latest/user-guide/fetching-argo-data/index.html",
+        "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2021.635922/full",
+        "https://github.com/euroargodev/argopy",
+        "https://pypi.org/project/argopy",
+        "https://archimer.ifremer.fr/doc/00843/95503",
+        "https://argo.ucsd.edu/data/argo-software-tools"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "argopy DataFetcher parameters list names",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://argopy.readthedocs.io/en/latest/generated/argopy.DataFetcher.profile.html",
+        "https://argopy.readthedocs.io/en/latest/api.html",
+        "https://argopy.readthedocs.io/en/latest/generated/argopy.DataFetcher.region.html",
+        "https://euroargodev.github.io/argoonlineschool/Lessons/L03_UsingArgoData/Chapter32e_ArgoDatabyFloat_ArgoPy.html",
+        "https://github.com/euroargodev/argopy",
+        "https://euroargodev.github.io/argoonlineschool/Lessons/L03_UsingArgoData/Chapter33c_ArgoDatabyDate_ArgoPy.html",
+        "https://pypi.org/project/argopy",
+        "https://help.datafetcher.com/custom-requests/set-request-parameters"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "argopy DataFetcher float_wmo_ids search lookup",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://argopy.readthedocs.io/en/latest/user-guide/fetching-argo-data/data_selection.html",
+        "https://argopy.readthedocs.io/en/v1.4.0/generated/argopy.DataFetcher.float.html",
+        "https://euroargodev.github.io/argoonlineschool/Lessons/L02_TheArgoData/Chapter20_TheArgoData_intro.html",
+        "https://github.com/euroargodev/argopy",
+        "https://argopy.readthedocs.io/en/latest/user-guide/fetching-argo-data/index.html",
+        "https://pypi.org/project/argopy",
+        "https://samapriyaroy.medium.com/open-ocean-data-with-argofloats-tool-50efef6c4f05",
+        "https://argo.ucsd.edu/data/argo-software-tools"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "argopy DataFetcher search by name or metadata",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://argopy.readthedocs.io/en/v0.1.14/metadata_fetching.html",
+        "https://www.euro-argo.eu/News-Meetings/News/News-archives/2023/A-new-version-of-argopy-has-been-released",
+        "https://open-oceans.github.io/projects/argopy",
+        "https://pypi.org/project/argopy/0.1.0",
+        "https://euroargodev.github.io/argoonlineschool/Lessons/L03_UsingArgoData/Chapter33c_ArgoDatabyDate_ArgoPy.html",
+        "https://github.com/euroargodev/argopy-training/blob/main/content/argo-data-fetching/select-and-fetch-data.ipynb",
+        "https://github.com/euroargodev/argopy/issues/9",
+        "https://answers.laserfiche.com/questions/224908/Search-Based-on-Metadata"
+      ]
+    },
+    {
+      "kind": "search",
+      "query": "argopy list of all parameters BGC core",
+      "provider": "tavily",
+      "n_results": 7,
+      "urls": [
+        "https://www.euro-argo.eu/News-Meetings/News/News-archives/2023/A-new-version-of-argopy-has-been-released",
+        "https://argopy.readthedocs.io/en/latest/user-guide/fetching-argo-data/data_set.html",
+        "https://euroargodev.github.io/argoonlineschool/Lessons/L03_UsingArgoData/Chapter32e_ArgoDatabyFloat_ArgoPy.html",
+        "https://github.com/euroargodev/argopy-training/blob/main/content/argo-data-fetching/bgc-specifics.ipynb",
+        "https://argopy.readthedocs.io/en/v1.2.0/whats-new.html",
+        "https://argo.ucsd.edu/wp-content/uploads/sites/361/2024/02/Whats_new_with_Argo_data_2022-2023.pdf",
+        "https://biogeochemical-argo.org/tools-and-resources.php"
+      ]
+    }
+  ],
+  "generated_utc": "2026-08-14T01:40:04.779488+00:00"
+}

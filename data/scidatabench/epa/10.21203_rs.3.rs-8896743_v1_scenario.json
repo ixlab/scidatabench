@@ -1,0 +1,81 @@
+{
+  "source_doi": "10.21203/rs.3.rs-8896743/v1",
+  "research_question": "Can a single, threshold-free scalar metric (PPI) jointly capture the magnitude and persistence of daily PM2.5 pollution across major US cities?",
+  "phase_1": {
+    "user_prompt": "I'm reading a paper about a new PM2.5 persistence index (PPI) that analyzed air quality in four major U.S. metropolitan areas: New York City, Los Angeles, Chicago, and Boston. I want to replicate this study. Can you find the exact EPA AQS parameter code used for standard PM2.5 measurements and the CBSA (Core Based Statistical Area) codes for these four specific metropolitan areas?",
+    "expected": {
+      "parameter_codes": [
+        "88101"
+      ],
+      "cbsa_codes": [
+        "35620",
+        "31080",
+        "16980",
+        "14460"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the parameter and geographic codes, please retrieve the daily PM2.5 monitoring data for these four metropolitan areas for the decade spanning from January 1, 2013, through December 31, 2022. We need all valid daily mean observations reported within the AQS.",
+    "expected": [
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2013-01-01",
+          "edate": "2022-12-31",
+          "cbsa_code": "35620"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2013-01-01",
+          "edate": "2022-12-31",
+          "cbsa_code": "31080"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2013-01-01",
+          "edate": "2022-12-31",
+          "cbsa_code": "16980"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2013-01-01",
+          "edate": "2022-12-31",
+          "cbsa_code": "14460"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "For each city and calendar day, calculate the city-level daily mean PM2.5 concentration by taking the arithmetic mean across all monitors reporting valid data on that day. Next, implement the PM2.5 persistence index (PPI). For a given city and year, rank the daily concentrations in descending order. The PPI is defined as the largest integer k such that at least k days in the year exhibited daily mean PM2.5 concentrations ≥ k µg/m³. To verify your processing, calculate and report the PPI for Los Angeles in the year 2020.",
+    "expected": 23.0,
+    "unit": "index_value"
+  },
+  "phase_4": {
+    "user_prompt": "Now, compute the annual mean PM2.5 concentration for each city-year combination. Calculate the Pearson correlation coefficient between the annual mean PM2.5 concentration and the PPI across all 40 city-years. Additionally, visualize the decadal persistence profiles by creating a line plot of the annual PPI values from 2013 to 2022 for all four cities on the same graph. Save this plot as `decadal_ppi_profiles.png`.",
+    "expected": 0.95,
+    "unit": "correlation",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Los Angeles exhibited the highest persistence values in most years (ranging 18-23). Chicago and New York City displayed intermediate persistence (14-18), while Boston consistently exhibited the lowest PPI values (12-16).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "decadal_ppi_profiles.png",
+      "visual_description": "A line graph with Year (2013-2022) on the x-axis and PPI on the y-axis. It should contain four lines (one for each city). Los Angeles should generally be the highest line (peaking at 23 in 2020), Boston should be the lowest (fluctuating between 12 and 16), and New York City and Chicago should be in the middle.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

@@ -1,0 +1,542 @@
+{
+  "source_doi": "10.5194/essd-16-5563-2024",
+  "research_question": "What is the average scaling exponent for the at-a-station wetted width hydraulic geometry across NEON wadeable stream sites?",
+  "phase_1": {
+    "user_prompt": "I want to study the hydraulic geometries of NEON streams, specifically focusing on wetted width and discharge. Can you identify the NEON data product codes for the 'Reaeration field and lab collection' (where width measurements are taken) and the 'Discharge field collection'? Also, please list the 4-letter site codes for all 24 wadeable stream sites where NEON conducts these experiments.",
+    "expected": {
+      "data_products": [
+        "DP1.20190.001",
+        "DP1.20048.001"
+      ],
+      "sites": [
+        "ARIK",
+        "BIGC",
+        "BLDE",
+        "BLUE",
+        "CARI",
+        "COMO",
+        "CUPE",
+        "GUIL",
+        "HOPB",
+        "KING",
+        "LECO",
+        "LEWI",
+        "MART",
+        "MAYF",
+        "MCDI",
+        "MCRA",
+        "OKSR",
+        "POSE",
+        "PRIN",
+        "REDB",
+        "SYCA",
+        "TECR",
+        "WALK",
+        "WLOU"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the product codes and the 24 site codes, please download the reaeration width data and the field discharge data for all 24 stream sites for the period spanning 2016 through 2023.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "ARIK",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "BIGC",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "BLDE",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "BLUE",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "CARI",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "COMO",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "CUPE",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "GUIL",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "HOPB",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "KING",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "LECO",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "LEWI",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "MART",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "MAYF",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "MCDI",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "MCRA",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "OKSR",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "POSE",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "PRIN",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "REDB",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "SYCA",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "TECR",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "WALK",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "WLOU",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "ARIK",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "BIGC",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "BLDE",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "BLUE",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "CARI",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "COMO",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "CUPE",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "GUIL",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "HOPB",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "KING",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "LECO",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "LEWI",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "MART",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "MAYF",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "MCDI",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "MCRA",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "OKSR",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "POSE",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "PRIN",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "REDB",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "SYCA",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "TECR",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "WALK",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "WLOU",
+          "startdate": "2016-01",
+          "enddate": "2023-12"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded data to pair stream discharge with wetted width for each site. For each reaeration experiment date, calculate the average wetted width across all measurement stations in the study reach. Then, find the field discharge measurement taken on or closest to that date for the same site. Merge these into a single combined dataset with site, date, average wetted width, and discharge, dropping any paired records that are missing either width or discharge.",
+    "expected": 786,
+    "unit": "paired measurements"
+  },
+  "phase_4": {
+    "user_prompt": "For each of the 24 stream sites, calculate the at-a-station hydraulic geometry for wetted width by fitting the relationship of the form y = a·x^b w = a*Q^b. You can do this by running a linear regression on the log-transformed width and discharge values (log(w) = log(a) + b*log(Q)). Extract the exponent 'b' (the slope) for each site, and then calculate the overall arithmetic mean of 'b' across all 24 sites. Also, create a visualization showing a multi-panel grid of log-log scatter plots of Discharge (Q) vs mean width (w) for all sites, overlaid with their fitted regression lines. Save this plot as `hydraulic_geometry_w_Q.png`.",
+    "expected": 0.11,
+    "unit": "unitless (exponent)",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The wetted width (w) scales with discharge (Q) according to the power law w = aQ^b. Across the 24 NEON wadeable streams, the exponent b averages 0.11, indicating a relatively weak but positive relationship between discharge and wetted width in these stream channels.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "hydraulic_geometry_w_Q.png",
+      "visual_description": "A multi-panel (facetted) scatter plot showing 24 individual subplots (one for each stream site). The x-axis should be log-scaled discharge (Q) and the y-axis should be log-scaled wetted width (w). Each panel should contain points representing paired field measurements and a fitted linear regression line representing the log-log geometric scaling relationship. Most sites should show a positive slope, with varying degrees of scatter.",
+      "paper_figure_reference": "Figure 4"
+    }
+  }
+}

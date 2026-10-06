@@ -1,0 +1,376 @@
+{
+  "source_doi": "10.3389/fmicb.2026.1752205",
+  "research_question": "What are the spatial patterns of microbial abundance and their environmental controls in soil and aquatic ecosystems across major natural biomes in the United States?",
+  "phase_1": {
+    "user_prompt": "I want to study the biogeography of microbes in US soil and aquatic ecosystems. Could you find the NEON data products that provide surface water microbe cell counts and soil microbial biomass (specifically using PLFA or total lipids)?",
+    "expected": {
+      "data_products": [
+        "DP1.20138.001",
+        "DP1.10104.001"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Great. For now, let's focus just on the aquatic ecosystems. Please download the aquatic microbe cell count data (DP1.20138.001) for all available NEON aquatic sites from 2014 to 2023. Ensure you get the tables containing both the microbial cell counts and the field metadata that includes water quality measurements like temperature and dissolved oxygen.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "ARIK",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "BARC",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "BIGC",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "BLDE",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "BLUE",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "BLWA",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "CARI",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "COMO",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "CRAM",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "CUPE",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "FLNT",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "GUIL",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "HOPB",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "KING",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "LECO",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "LEWI",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "LIRO",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "MART",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "MAYF",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "MCDI",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "MCRA",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "OKSR",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "POSE",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "PRIN",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "PRLA",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "PRPO",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "REDB",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "SUGG",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "SYCA",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "TECR",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "TOMB",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "TOOK",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "WALK",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20138.001",
+          "site": "WLOU",
+          "startdate": "2014-01",
+          "enddate": "2023-12"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Now, let's process the aquatic cell count data. The NEON dataset provides a raw microbial abundance. Because the samples were preserved in the field, we need to adjust this raw count to account for the dilution. Specifically, the field method indicates that 18 mL of sample water was preserved with 2 mL of 10% formaldehyde. Please calculate the standardized microbial cell density (C) for all records using the equation: C = C_raw * (V_s + V_p) / V_s. After calculating this adjusted cell density, what is the overall average cell density across all sites and times? Report the result in cells per liter (cells L⁻¹).",
+    "expected": 1400000000.0,
+    "unit": "cells L-1"
+  },
+  "phase_4": {
+    "user_prompt": "Using the matched aquatic dataset, let's examine the environmental drivers. Calculate the Pearson correlation coefficients between the adjusted microbial cell density and three field variables: specific conductance, water temperature, and dissolved oxygen. Also, generate a PCA biplot to visualize the multivariate relationships among these four variables, saving it as `aquatic_microbes_pca.png`. Based on the correlations and the PCA, summarize how specific conductance, water temperature, and dissolved oxygen affect aquatic microbial cell density.",
+    "expected": 0.32,
+    "unit": "r",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "In aquatic systems, microbial cell density was positively associated with specific conductance and water temperature, but negatively associated with dissolved oxygen.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "aquatic_microbes_pca.png",
+      "visual_description": "A PCA biplot showing the relationships among cell density, specific conductance, water temperature, and dissolved oxygen. The plot should illustrate the positive associations of cell density with specific conductance and temperature (vectors pointing in similar directions), and its negative association with dissolved oxygen (vector pointing in the opposite direction).",
+      "paper_figure_reference": "Figure 2b"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+ "scenario_file": "pangaea__10.5194_essd-16-3149-2024_scenario.json",
+ "platform": "pangaea",
+ "downloaded_at": "2026-08-10T15:02:23.509508+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.934732"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:44.707564+00:00",
+   "rows": 77,
+   "format": "parquet",
+   "dataset_title": "SMOS-derived sea ice thickness in the Antarctic from 2010 to 2020"
+  },
+  {
+   "idx": 1,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.785565"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T15:02:10.945485+00:00",
+   "rows": 2003858,
+   "format": "parquet",
+   "dataset_title": "Sea ice draft measured by upward looking sonars in the Weddell Sea (Antarctica)",
+   "is_collection": true,
+   "n_members": 38,
+   "members_fetched": 13,
+   "truncated": true
+  },
+  {
+   "idx": 2,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.902334"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:46.652156+00:00",
+   "rows": 984,
+   "format": "parquet",
+   "dataset_title": "Irradiance from SUIT measurements during POLARSTERN cruise PS89"
+  },
+  {
+   "idx": 3,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.944879"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T15:02:23.509508+00:00",
+   "rows": 173669,
+   "format": "parquet",
+   "dataset_title": "Airborne sea ice plus snow thickness in the Weddell Sea from Polarstern cruise PS81 (ANT-XXIX/6) in 2013",
+   "is_collection": true,
+   "n_members": 6,
+   "members_fetched": 6,
+   "truncated": false
+  },
+  {
+   "idx": 4,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.848612"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:42:48.364097+00:00",
+   "rows": 13,
+   "format": "parquet",
+   "dataset_title": "Daily MODIS composites of thin-ice thickness and ice-surface temperatures for the Southern Weddell Sea"
+  }
+ ]
+}

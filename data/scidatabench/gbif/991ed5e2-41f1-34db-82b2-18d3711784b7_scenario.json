@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.22201/fc.25942158e.2025.1.912",
+  "research_question": "Analyze the geographic range of the Savage's thin-toed frog (Leptodactylus savagei) in Colombia by finding its southernmost and westernmost occurrences using records up to 2023.",
+  "phase_1": {
+    "user_prompt": "I want to map the spatial distribution and range limits of the Savage's thin-toed frog (Leptodactylus savagei) in Colombia. I'm focusing on historical and recent occurrence data published up through 2023. What GBIF data is available for this study?",
+    "expected": {
+      "country_codes": [
+        "CO"
+      ],
+      "taxon_keys": [
+        "5217534"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the occurrence records for this species in Colombia up to 2023 so we can analyze the geographic boundaries.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "CO",
+          "taxonKey": 5217534,
+          "year": "*,2023"
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Filter the dataset to include only records with valid coordinates. To find the southern limit of its known range in this dataset, calculate the minimum (southernmost) latitude recorded for this species in Colombia.",
+    "expected": 1.85,
+    "unit": "decimal degrees"
+  },
+  "phase_4": {
+    "user_prompt": "Next, identify the westernmost boundary of its range. What is the minimum (westernmost) decimal longitude recorded for this species in the country? Finally, create a point map showing the distribution of the frog across Colombia, and save the visualization as `leptodactylus_distribution_map.png`.",
+    "expected": -77.76,
+    "unit": "decimal degrees",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The map should show Leptodactylus savagei distributed across the Caribbean and Pacific slopes of Colombia, with occurrences concentrated in the northern regions (e.g., Antioquia, Córdoba, Magdalena) and extending westward into Chocó (near longitude -77.7) and southward into Valle del Cauca and Huila.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "leptodactylus_distribution_map.png",
+      "visual_description": "A map of Colombia with scatter points representing the occurrence of Leptodactylus savagei. The points should primarily cluster in the north and northwest, with a few sparse points extending down the western coast and central regions.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

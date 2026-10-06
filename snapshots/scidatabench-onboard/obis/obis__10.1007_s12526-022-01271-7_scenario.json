@@ -1,0 +1,47 @@
+{
+ "scenario_file": "obis__10.1007_s12526-022-01271-7_scenario.json",
+ "platform": "obis",
+ "downloaded_at": "2026-08-09T01:50:44.450654+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Anthozoa",
+    "geometry": "POLYGON((-80 -56, -66 -56, -66 -17, -80 -17, -80 -56))"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:50:35.143770+00:00",
+   "rows": 5310,
+   "format": "parquet",
+   "total_available": 5310
+  },
+  {
+   "idx": 1,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Hydrozoa",
+    "geometry": "POLYGON((-80 -56, -66 -56, -66 -17, -80 -17, -80 -56))"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:50:44.450654+00:00",
+   "rows": 803,
+   "format": "parquet",
+   "total_available": 803
+  }
+ ]
+}

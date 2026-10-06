@@ -1,0 +1,80 @@
+{
+  "platform": "ensembl",
+  "condition": "search",
+  "model": "gemini-3.7-flash",
+  "elapsed_s": 150.3,
+  "tokens": {
+    "input": 135594,
+    "output": 2334,
+    "thinking": 0,
+    "total": 137928,
+    "cache_read": 44852
+  },
+  "tool_call_turns": 9,
+  "research_log": [
+    {
+      "kind": "search",
+      "query": "\"rest.ensembl.org\" lookup symbol sequence homology overlap",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://rest.ensembl.org",
+        "https://ensemblrest.readthedocs.io",
+        "https://rest.ensembl.org/documentation/info/symbol_post",
+        "https://genomics.uci.edu/wp-content/uploads/sites/30/UC_Irvine_Ensembl_REST_API_Slides-Advanced.pdf",
+        "https://www.youtube.com/watch?v=JKD2VJnjs98",
+        "https://rest.ensembl.org/documentation/info/overlap_id",
+        "https://rest.ensembl.org/documentation/info/overlap_region",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4271150"
+      ]
+    },
+    {
+      "kind": "fetch",
+      "url": "https://rest.ensembl.org/documentation/info/overlap_region",
+      "status": "200",
+      "chars": 10643
+    },
+    {
+      "kind": "fetch",
+      "url": "https://rest.ensembl.org/documentation/info/symbol_id",
+      "status": "error: HTTPError"
+    },
+    {
+      "kind": "search",
+      "query": "\"rest.ensembl.org/documentation/info/lookup\" OR \"rest.ensembl.org/documentation/info/sequence\" OR \"rest.ensembl.org/documentation/info/homology\"",
+      "provider": "tavily",
+      "n_results": 0,
+      "urls": []
+    },
+    {
+      "kind": "fetch",
+      "url": "https://rest.ensembl.org/documentation/info/lookup",
+      "status": "200",
+      "chars": 12317
+    },
+    {
+      "kind": "fetch",
+      "url": "https://rest.ensembl.org/documentation/info/symbol_lookup",
+      "status": "200",
+      "chars": 12102
+    },
+    {
+      "kind": "fetch",
+      "url": "https://rest.ensembl.org/documentation/info/sequence_id",
+      "status": "200",
+      "chars": 34480
+    },
+    {
+      "kind": "fetch",
+      "url": "https://rest.ensembl.org/documentation/info/homology_id",
+      "status": "error: HTTPError"
+    },
+    {
+      "kind": "fetch",
+      "url": "https://rest.ensembl.org/documentation/info/homology_symbol",
+      "status": "200",
+      "chars": 20998
+    }
+  ],
+  "generated_utc": "2026-08-14T16:59:44.767425+00:00"
+}

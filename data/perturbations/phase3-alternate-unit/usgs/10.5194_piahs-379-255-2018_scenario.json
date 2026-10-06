@@ -1,0 +1,57 @@
+{
+  "source_doi": "10.5194/piahs-379-255-2018",
+  "research_question": "How have long-term daily streamflow characteristics and seasonal flow regimes changed over the past century in major Texas rivers, specifically the Brazos River at Waco and the Colorado River near San Saba?",
+  "phase_1": {
+    "user_prompt": "I am investigating long-term hydrologic variability and river regulation impacts in Texas. I need to find the USGS streamgage site numbers for two specific, long-term monitoring locations: the Brazos River at Waco and the Colorado River near San Saba. I want to analyze their daily streamflow. What are the site identifiers and the correct parameter code for daily discharge?",
+    "expected": {
+      "sites": [
+        "08096500",
+        "08147000"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the sites identified, download the entire available daily discharge record for both the Brazos River at Waco and the Colorado River near San Saba from their earliest available dates up through December 31, 2017.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08096500",
+          "parameter_code": "00060",
+          "time": "1898-10-01/2017-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08147000",
+          "parameter_code": "00060",
+          "time": "1898-10-01/2017-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's establish a baseline using the Brazos River site. Filter the Brazos River dataset to cover exactly the 117-year period from January 1, 1899, through December 31, 2015. Remove any missing values. What is the long-term arithmetic mean of the daily flow (in cubic meters per second (m³/s)) over this entire period?",
+    "expected": 66.1764704855,
+    "unit": "m3/s"
+  },
+  "phase_4": {
+    "user_prompt": "Now let's analyze hydrologic alteration at both sites. First, calculate the overall standard deviation of the daily flows at the Brazos River site for the same 1899-2015 period. Second, for the Colorado River near San Saba site, split the historical data into a 'pre-impact' period (1915 to 1968) and a 'post-impact' period (1969 to 2017). Calculate the median flow for each calendar month in both periods, and plot a bar chart showing the difference (post minus pre) or percent alteration for each month. Save this plot as `colorado_monthly_alteration.png`.",
+    "expected": 5835.0,
+    "unit": "cfs",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Hydrologic alteration analysis of the Colorado River near San Saba reveals distinct seasonal patterns of change due to water resource development. Monthly median flows from January to March remain essentially unchanged between the pre-impact and post-impact periods. In contrast, monthly flows from April to October exhibit increases in magnitude (positive alteration factors).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "colorado_monthly_alteration.png",
+      "visual_description": "A bar chart or similar grouped plot displaying the difference, percent change, or hydrologic alteration factor for each calendar month. The bars for the winter months (January, February, March) should be near zero or show minimal change. The bars for the warmer months (April through October) should be distinctly positive/larger, indicating an increase in post-impact median flows.",
+      "paper_figure_reference": "Figure 6"
+    }
+  }
+}

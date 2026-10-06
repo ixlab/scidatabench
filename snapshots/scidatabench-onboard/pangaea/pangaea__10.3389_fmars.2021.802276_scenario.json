@@ -1,0 +1,71 @@
+{
+ "scenario_file": "pangaea__10.3389_fmars.2021.802276_scenario.json",
+ "platform": "pangaea",
+ "downloaded_at": "2026-08-09T01:41:34.428897+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.729034"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:31.316865+00:00",
+   "rows": 27,
+   "format": "parquet",
+   "dataset_title": "Whale sightings during POLARSTERN cruise ANT-XXIII/6"
+  },
+  {
+   "idx": 1,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.729035"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:32.351208+00:00",
+   "rows": 24,
+   "format": "parquet",
+   "dataset_title": "Whale sightings during POLARSTERN cruise ANT-XXIII/7"
+  },
+  {
+   "idx": 2,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.819863"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:33.390336+00:00",
+   "rows": 32,
+   "format": "parquet",
+   "dataset_title": "Whale sightings during POLARSTERN cruise ANT-XXVIII/4"
+  },
+  {
+   "idx": 3,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.819866"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:41:34.428897+00:00",
+   "rows": 139,
+   "format": "parquet",
+   "dataset_title": "Whale sightings during POLARSTERN cruise ANT-XXIX/2"
+  }
+ ]
+}

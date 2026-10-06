@@ -1,0 +1,33 @@
+{
+  "source_doi": "10.1007/s00382-019-04636-0",
+  "research_question": "How can a probabilistic gridded product for daily precipitation extremes over the Contiguous United States be developed using station-based observations?",
+  "phase_1": {
+    "user_prompt": "We are building a new probabilistic gridded product for daily rainfall extremes over the contiguous United States. Identify the specific meteorological variable we need from the station network and the geographic region we should query.",
+    "expected": {
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the historical daily precipitation records for weather stations across the Contiguous United States. The temporal coverage should span from December 1, 1949, through November 30, 2017. Provide the raw records so we can apply the quality control flags (QFLAG, SFLAG, MFLAG) ourselves.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013984",
+          "startDate": "1949-12-01",
+          "endDate": "2017-11-30",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          39.8,
+          -98.6
+        ]
+      }
+    ]
+  }
+}

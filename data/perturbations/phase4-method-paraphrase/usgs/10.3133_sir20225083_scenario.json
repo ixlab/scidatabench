@@ -1,0 +1,47 @@
+{
+  "source_doi": "10.3133/sir20225083",
+  "research_question": "Develop a generalized additive model (GAM) with a cubic regression spline to approximate the stage-discharge rating curve using long-term discrete field measurements, while accounting for and filtering out ice-affected data.",
+  "phase_1": {
+    "user_prompt": "I am researching how stage-discharge relationships (rating curves) evolve over time due to channel changes, using the Pere Marquette River at Scottville, Michigan as a case study site. To get started, I need the official USGS site number for this streamgage, as well as the standard 5-digit NWIS parameter codes for streamflow (discharge) and gage height (stage).",
+    "expected": {
+      "sites": [
+        "04122500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00065"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site and parameter codes, please retrieve the discrete field measurements (which contain paired stage and discharge data) from August 1, 1985 through December 31, 2019.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-04122500",
+          "time": "1985-08-01/2019-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "When working with field measurements, winter data is often affected by ice, which fundamentally alters the stage-discharge relationship. Filter the discrete measurements dataset to exclude any points where the channel control condition is flagged as ice-affected (e.g., control condition 'Ice cover' or explicit remarks noting shore ice that departs from the open-water rating). After removing these ice-affected records, how many valid open-water discrete measurements remain for our analysis period?",
+    "expected": 222.0,
+    "unit": "measurements"
+  },
+  "phase_4": {
+    "user_prompt": "To establish a baseline stage-discharge relationship across the entire study period, I want to fit a flexible curve to the open-water discrete measurements. Please fit a regression in which each predictor enters through its own smooth function predicting the natural logarithm of discharge from stage, using a 5-knot cubic regression spline. What is the coefficient of determination (R-squared) of this fitted spline model? Finally, create a scatter plot of the discrete measurements (stage vs. log-discharge) overlaid with this fitted spline curve, and save it as `pere_marquette_spline_rating.png`.",
+    "expected": 0.9494,
+    "unit": "R^2",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The fitted cubic regression spline closely follows the non-linear, monotonically increasing relationship between stage and the logarithm of discharge throughout the period of record.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "pere_marquette_spline_rating.png",
+      "visual_description": "A scatter plot with stage on one axis and discharge (or log-discharge) on the other. Individual points represent the filtered discrete field measurements. A smooth, continuous curve representing the 5-knot cubic regression spline should be overlaid, demonstrating a strong fit to the data points without excessive over-fitting.",
+      "paper_figure_reference": "Figure 8 or Figure 10"
+    }
+  }
+}

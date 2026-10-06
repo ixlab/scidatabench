@@ -1,0 +1,593 @@
+{
+  "source_doi": "10.1007/s11150-020-09526-7",
+  "research_question": "To control for the confounding effect of temperature on domestic violence rates when analyzing the impact of COVID-19 related 'staying at home' policies.",
+  "phase_1": {
+    "user_prompt": "We are analyzing the impact of COVID-19 'staying at home' policies on domestic violence rates across 36 US jurisdictions, and need daily weather data from January 1, 2019 to May 31, 2020 as a control variable, since heat is a known confounder of domestic violence. What specific GHCN weather parameter captures the daily peak temperature we should control for, and which jurisdictions should we pull stations for?",
+    "expected": {
+      "parameters": [
+        "TMAX"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "I have a list of 36 U.S. jurisdictions: Austin, TX; Baltimore, MD; Baton Rouge, LA; Burlington, VT; Chandler, AZ; Chicago, IL; Cincinnati, OH; Denver, CO; Durham, NC; Fayetteville, NC; Gilbert, AZ; Hartford, CT; Kansas City, MO; Los Angeles, CA; Louisville, KY; Memphis, TN; Mesa, AZ; Minneapolis, MN; Montgomery County, MD; Montgomery, AL; Nashville, TN; New Orleans, LA; Norfolk, VA; Omaha, NE; Phoenix, AZ; Sacramento, CA; Salt Lake, UT; San Francisco, CA; San Jose, CA; Santa Monica, CA; Santa Rosa, CA; Seattle, WA; St John, IN; St Paul, MN; St Petersburg, FL; and Tucson, AZ. For each of these jurisdictions, determine its corresponding county. Then, find the NOAA weather stations in those counties and retrieve the daily maximum temperature from January 1, 2019 to May 31, 2020. If a county has multiple stations, use the one with the most historical data coverage.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013958",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          30.2711,
+          -97.7437
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00093721",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          39.2909,
+          -76.6108
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013970",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          30.4494,
+          -91.187
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014742",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          44.4762,
+          -73.2129
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00023183",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          33.3062,
+          -111.8412
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00094846",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          41.8756,
+          -87.6244
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00093814",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          39.1013,
+          -84.5127
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00093037",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          39.7392,
+          -104.9849
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013722",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          35.9967,
+          -78.9018
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013722",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          35.0526,
+          -78.8783
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00023183",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          33.3528,
+          -111.789
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014740",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          41.7646,
+          -72.6909
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00003947",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          39.1001,
+          -94.5781
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00023174",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          34.0537,
+          -118.2428
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00093821",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          38.2542,
+          -85.7594
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013893",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          35.146,
+          -90.0518
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00023183",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          33.4151,
+          -111.8315
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014922",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          44.9773,
+          -93.2655
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00093721",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          39.1406,
+          -77.2076
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013895",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          32.3777,
+          -86.3091
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013897",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          36.1623,
+          -86.7743
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00012916",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          29.9561,
+          -90.0734
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013737",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          36.8494,
+          -76.29
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014942",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          41.2587,
+          -95.9384
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00023183",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          33.4484,
+          -112.0741
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00023232",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          38.5811,
+          -121.4939
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00024127",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          40.7596,
+          -111.8868
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00023232",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          37.7879,
+          -122.4075
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00023234",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          37.3362,
+          -121.8906
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00023174",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          34.0195,
+          -118.4912
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00023234",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          38.4405,
+          -122.7141
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00024233",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          47.6038,
+          -122.3301
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00094846",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          41.45,
+          -87.47
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014922",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          44.9497,
+          -93.0931
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00012842",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          27.7712,
+          -82.634
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00023160",
+          "startDate": "2019-01-01",
+          "endDate": "2020-05-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          32.2229,
+          -110.9748
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "source_doi": "10.3133/ds142",
+  "research_question": "Compare the distribution of nitrite plus nitrate nitrogen concentrations across three tributaries to Lake Houston (Lake Creek, Peach Creek, and Caney Creek) to assess spatial variations in nutrient loading during the 2003-2004 period.",
+  "phase_1": {
+    "user_prompt": "I'm assessing spatial variations in nutrient loading among three tributaries to Lake Houston in Texas. I have identified 11 specific USGS monitoring sites for my study: five in the Lake Creek watershed (08067660, 08067690, 08067700, 08067800, 08067900), three in the Peach Creek watershed (08070900, 08071000, 08071100), and three in the Caney Creek watershed (08070495, 08070500, 08070600). I need to retrieve discrete water-quality samples for these sites from December 2002 to June 2004. What is the USGS parameter code for filtered nitrite plus nitrate (mg/L as N), and what data type should I use for discrete samples?",
+    "expected": {
+      "sites": [
+        "08067660",
+        "08067690",
+        "08067700",
+        "08067800",
+        "08067900",
+        "08070900",
+        "08071000",
+        "08071100",
+        "08070495",
+        "08070500",
+        "08070600"
+      ],
+      "parameter_codes": [
+        "00631"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the 11 site numbers and the parameter code for nitrite plus nitrate (00631), download the discrete water-quality samples over the 19 months beginning in December 2002.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08067660",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2002-12-01",
+          "activityStartDateUpper": "2004-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08067690",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2002-12-01",
+          "activityStartDateUpper": "2004-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08067700",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2002-12-01",
+          "activityStartDateUpper": "2004-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08067800",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2002-12-01",
+          "activityStartDateUpper": "2004-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08067900",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2002-12-01",
+          "activityStartDateUpper": "2004-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08070900",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2002-12-01",
+          "activityStartDateUpper": "2004-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08071000",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2002-12-01",
+          "activityStartDateUpper": "2004-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08071100",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2002-12-01",
+          "activityStartDateUpper": "2004-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08070495",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2002-12-01",
+          "activityStartDateUpper": "2004-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08070500",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2002-12-01",
+          "activityStartDateUpper": "2004-06-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-08070600",
+          "usgsPCode": "00631",
+          "activityStartDateLower": "2002-12-01",
+          "activityStartDateUpper": "2004-06-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the retrieved data by removing any missing values for nitrite plus nitrate. Then, group the samples by their respective watersheds: Lake Creek (the 5 sites), Peach Creek (the 3 sites), and Caney Creek (the 3 sites). How many valid nitrite plus nitrate samples were collected in total across the Caney Creek watershed during this period?",
+    "expected": 27.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Calculate the median nitrite plus nitrate concentration for each of the three watersheds to compare their nutrient levels. What is the median concentration for the Caney Creek watershed? Additionally, create a boxplot showing the distribution of these concentrations grouped by watershed. Save the plot as `nitrate_watershed_boxplot.png`.",
+    "expected": 0.32,
+    "unit": "mg/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Nitrite plus nitrate nitrogen concentrations show relatively large differences in distribution among the three watersheds, with Caney Creek having the highest median concentration (0.32 mg/L), followed by Lake Creek (0.20 mg/L) and Peach Creek (0.14 mg/L).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "nitrate_watershed_boxplot.png",
+      "visual_description": "A boxplot showing nitrite plus nitrate nitrogen concentrations on the y-axis, grouped by the three watersheds (Lake, Peach, Caney) on the x-axis. The Caney Creek box should visually display the highest median line compared to the others.",
+      "paper_figure_reference": "Figure 4c"
+    }
+  }
+}

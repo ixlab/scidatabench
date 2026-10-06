@@ -1,0 +1,57 @@
+{
+  "source_doi": "10.3133/sir20255065",
+  "research_question": "How often do summer water temperatures in the lower Virgin River between Littlefield, Arizona, and Mesquite, Nevada exceed the 31°C critical thermal maximum for endangered native fish?",
+  "phase_1": {
+    "user_prompt": "I am investigating summer water temperatures for endangered native fish in the lower Virgin River. I want to compare the thermal regime at the main USGS streamgage at Littlefield, Arizona with the monitoring site located on the Virgin River just above the Bunkerville Diversion near Mesquite, Nevada. What are the USGS site numbers for these two locations, and what parameter code is used for water temperature?",
+    "expected": {
+      "sites": [
+        "09415000",
+        "09415089"
+      ],
+      "parameter_codes": [
+        "00010"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the Littlefield and Above Bunkerville Diversion sites, retrieve the continuous 15-minute water temperature data for the entire month of July 2020.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09415000",
+          "parameter_code": "00010",
+          "time": "2020-07-01/2020-07-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09415089",
+          "parameter_code": "00010",
+          "time": "2020-07-01/2020-07-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the 15-minute temperature data for the Littlefield site in July 2020 to compute the maximum water temperature for each day. What is the average of these daily maximum temperatures for the month?",
+    "expected": 29.3,
+    "unit": "°C"
+  },
+  "phase_4": {
+    "user_prompt": "Endangered native fishes in the Virgin River experience physical limitations at a critical thermal maximum (CTM) of 31 °C. Using the 15-minute data for the 'Above Bunkerville Diversion' site (09415089) in July 2020, calculate the number of days where the maximum daily water temperature was strictly greater than this 31 °C threshold. Also, create a bar chart comparing the number of days exceeding 31 °C at both the Littlefield and Above Bunkerville Diversion sites in July 2020. Save the plot as `virgin_river_ctm_exceedance.png` and briefly interpret the downstream warming trend.",
+    "expected": 27,
+    "unit": "days",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The upstream site at Littlefield experiences cooler temperatures due to nearby spring inflows, resulting in 0 days exceeding the 31°C critical thermal maximum in July 2020. In contrast, the downstream site above the Bunkerville Diversion experiences significant warming and exceeded the 31°C threshold on 27 days, indicating that critical thermal limits for native fish are frequently exceeded in the lower reaches.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "virgin_river_ctm_exceedance.png",
+      "visual_description": "A bar chart comparing the number of days in July 2020 with maximum temperatures >31°C for two sites. The bar for Littlefield (09415000) should be at 0, and the bar for Above Bunkerville Diversion (09415089) should be at 27.",
+      "paper_figure_reference": null
+    }
+  }
+}

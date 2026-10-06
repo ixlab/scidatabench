@@ -1,0 +1,224 @@
+{
+  "source_doi": "10.3133/sir20095011",
+  "research_question": "What are the long-term trends in annual mean streamflow and flow duration characteristics for the lower Platte River and Elkhorn River basins in eastern Nebraska?",
+  "phase_1": {
+    "user_prompt": "I am researching historical streamflow characteristics and trends in eastern Nebraska, specifically within the Elkhorn River, Salt Creek, and Lower Platte River basins. To set up my analysis, I need to identify the official USGS site numbers for 17 specific streamflow-gaging stations in this region. The stations are: \n1. Platte River near Duncan, NE\n2. Platte River at North Bend, NE\n3. Platte River near Leshara, NE\n4. Elkhorn River near Atkinson, NE\n5. Elkhorn River at Ewing, NE\n6. South Fork Elkhorn River at Ewing, NE\n7. Elkhorn River at Neligh, NE\n8. Elkhorn River at Norfolk, NE\n9. North Fork Elkhorn River near Pierce, NE\n10. Elkhorn River at West Point, NE\n11. Pebble Creek at Scribner, NE\n12. Logan Creek near Uehling, NE\n13. Maple Creek near Nickerson, NE\n14. Elkhorn River at Waterloo, NE\n15. Salt Creek at Greenwood, NE\n16. Wahoo Creek at Ashland, NE\n17. Platte River at Louisville, NE\n\nPlease find the official 8-digit USGS site numbers for these stations and verify that they provide daily streamflow data.",
+    "expected": {
+      "sites": [
+        "06774000",
+        "06796000",
+        "06796500",
+        "06796973",
+        "06797500",
+        "06798000",
+        "06798500",
+        "06799000",
+        "06799100",
+        "06799350",
+        "06799385",
+        "06799500",
+        "06800000",
+        "06800500",
+        "06803555",
+        "06804700",
+        "06805500"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers, please download the daily mean streamflow records for all 17 stations up through the end of Water Year 2004 (September 30, 2004). Retrieve the data starting from the earliest available date for each site so we have the full historical period of record up to that point.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06774000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06796000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06796500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06796973",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06797500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06798000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06798500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06799000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06799100",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06799350",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06799385",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06799500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06800000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06800500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06803555",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06804700",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06805500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2004-09-30",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's look closely at the Platte River at Louisville station. I want to build a basic flow duration profile for this specific site to understand the historical availability of water. Using the daily mean streamflow data for the Platte River at Louisville, calculate the 50th percentile (median) daily flow for the period covering Water Years 1953 through 2004 (October 1, 1952, to September 30, 2004). Note that data collection at this site may have started partway through WY 1953; use all available non-missing daily values in this window. What is this median streamflow value in cubic feet per second?",
+    "expected": 5313.0,
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "Next, I need to evaluate if there is a statistically significant long-term trend in the annual streamflow at this site. First, aggregate the daily data for the Platte River at Louisville into an annual mean streamflow series for complete Water Years 1954 through 2004. Then, perform a Mann-Kendall trend test on this annual mean series. What is the Kendall's tau correlation coefficient for this trend? Also, briefly interpret what the direction of this trend implies for overall water availability in this reach over the studied half-century.",
+    "expected": 0.282,
+    "unit": "unitless",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The Platte River at Louisville exhibits a significant positive trend in annual mean streamflow over the 1954-2004 period, indicating a general long-term increase in water availability at this location.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "source_doi": "10.22201/fc.25942158e.2022.4.463",
+  "research_question": "Calculate the straight-line distance from a newly discovered field observation of Pituophis lineaticollis to the nearest previously known GBIF records in Oaxaca, Mexico, and map the findings.",
+  "phase_1": {
+    "user_prompt": "I'm investigating a potential range extension for the snake Pituophis lineaticollis in southern Mexico. Specifically, I want to find historical occurrence records in the state of Oaxaca to compare with a new field observation I just made. How can I define the scope to find this occurrence data on GBIF?",
+    "expected": {
+      "country_codes": [
+        "MX"
+      ],
+      "state_provinces": [
+        "Oaxaca"
+      ],
+      "taxon_keys": [
+        "2453857"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the parameters, please download all the historical occurrence records for Pituophis lineaticollis in Oaxaca, Mexico.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "MX",
+          "stateProvince": "Oaxaca",
+          "taxonKey": 2453857
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "I recently recorded a new observation of this snake at coordinates 17.061836 N, -97.060919 W. First, we need to prep the historical GBIF data. Clean the downloaded dataset to keep only records with valid latitude and longitude coordinates. How many valid historical occurrences remain?",
+    "expected": 130,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned historical records, calculate the straight-line distance from my new observation (17.061836 N, -97.060919 W) to the absolute nearest historical occurrence to see the spatial gap. Also, create a map showing the state boundaries of Oaxaca, the historical GBIF records as standard dots, and my new record as a distinct marker (e.g., a red star). Save the map as `pituophis_range_extension_map.png`.",
+    "expected": 20.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The paper maps a new record of Pituophis lineaticollis alongside prior GBIF records for Oaxaca. The new record (red star) is located northwest of the nearest historical clusters, representing a spatial distance of approximately 20 km from the closest known occurrences.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "pituophis_range_extension_map.png",
+      "visual_description": "A map of Oaxaca, Mexico, displaying several historical occurrence points (dots) and a single visually distinct marker (e.g., red star) representing the new record at 17.061836 N, -97.060919 W, which should appear spatially separated from the nearest historical cluster.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

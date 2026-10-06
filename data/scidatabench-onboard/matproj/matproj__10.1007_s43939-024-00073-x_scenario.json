@@ -1,0 +1,30 @@
+{
+  "source_doi": "10.1007/s43939-024-00073-x",
+  "research_question": "Why do some semiconductors have a direct band gap while others have an indirect one, and what physical principles govern this property?",
+  "phase_1": {
+    "user_prompt": "We are investigating why some semiconductors have a direct band gap while others have an indirect one, and we want a matched pair to illustrate the rule we derived for rock-salt compounds. The pair should be two rock-salt (Fm-3m) binaries in which every constituent atom belongs to the same period of the periodic table — specifically period 4 — with one an alkaline-earth chalcogenide, which we expect to be indirect, and the other an alkali halide, which we expect to be direct. Identify the chemical formulas of those two compounds and the computed electronic property we need from the Materials Project to confirm the gap and its directness.",
+    "expected": {
+      "formulas": [
+        "CaSe",
+        "KBr"
+      ],
+      "properties": [
+        "band_gap"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the chemical formulas (CaSe and KBr) and the target property we identified above, query the Materials Project database. Specifically, retrieve the computed band gap and the direct/indirect gap status for the rock salt (Fm-3m space group) polymorphs of these two compounds, so we can confirm the trend we expect.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "formula": "CaSe,KBr",
+          "spacegroup_symbol": "Fm-3m",
+          "_fields": "material_id,formula_pretty,band_gap,is_gap_direct"
+        }
+      }
+    ]
+  }
+}

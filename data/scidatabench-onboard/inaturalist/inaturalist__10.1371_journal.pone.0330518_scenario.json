@@ -1,0 +1,28 @@
+{
+  "source_doi": "10.1371/journal.pone.0330518",
+  "research_question": "To map the current distribution and temporal spread of the invasive Asian mantleslug in Brazil using citizen science occurrence records.",
+  "phase_1": {
+    "user_prompt": "We are investigating the rapid spread of the invasive Asian mantleslug in the largest country of South America using citizen science data. To set up our data collection, please identify the exact scientific taxon name and the country name we should use to filter our iNaturalist observations.",
+    "expected": {
+      "taxon_names": [
+        "Meghimatium pictum"
+      ],
+      "place_names": [
+        "Brazil"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the target species and location, please retrieve all iNaturalist observations for the species Meghimatium pictum located in Brazil. We need these records to analyze the extent of its invasion.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 874798,
+          "place_id": 6878
+        }
+      }
+    ]
+  }
+}

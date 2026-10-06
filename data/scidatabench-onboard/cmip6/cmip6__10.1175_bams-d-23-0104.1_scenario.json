@@ -1,0 +1,57 @@
+{
+  "source_doi": "10.1175/bams-d-23-0104.1",
+  "research_question": "To investigate future hydrological changes (runoff, precipitation, evapotranspiration, soil moisture) under CMIP6, quantify model agreement, and decompose the sources of uncertainty.",
+  "phase_1": {
+    "user_prompt": "We are retrieving CMIP6 output for a study of hydrological projections and their uncertainty. We need four hydrological components at monthly frequency: precipitation, total soil moisture content, total runoff, and evapotranspiration (which we will compute from surface upward latent heat flux). We will evaluate the historical period plus three Shared Socioeconomic Pathways representing low, medium, and high emissions, and we restrict the analysis to the first standard ensemble member of each model. What are the specific CMIP6 variable IDs, experiment IDs, and variant label we need to query this dataset?",
+    "expected": {
+      "variable_ids": [
+        "pr",
+        "mrso",
+        "mrro",
+        "hfls"
+      ],
+      "experiment_ids": [
+        "historical",
+        "ssp126",
+        "ssp245",
+        "ssp585"
+      ],
+      "variant_labels": [
+        "r1i1p1f1"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the identifiers, please write a script to retrieve this CMIP6 data. Our full ensemble runs to 24 models, but to keep the download manageable for this test, let's just query a single representative model, 'CESM2'. Retrieve the monthly data for the variables 'pr', 'mrso', 'mrro', and 'hfls' across the 'historical', 'ssp126', 'ssp245', and 'ssp585' experiments using the 'r1i1p1f1' ensemble member.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "experiment_id": [
+            "historical",
+            "ssp126",
+            "ssp245",
+            "ssp585"
+          ],
+          "variable_id": [
+            "pr",
+            "mrso",
+            "mrro",
+            "hfls"
+          ],
+          "variant_label": [
+            "r1i1p1f1"
+          ],
+          "source_id": [
+            "CESM2"
+          ],
+          "table_id": [
+            "Amon",
+            "Lmon"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.24843/jmas.2020.v06.i02.p17",
+  "research_question": "How did Tropical Cyclone Marcus affect turbulent mixing and water mass stability in the surface layer of the Southeastern Indian Ocean?",
+  "phase_1": {
+    "user_prompt": "We are studying turbulent mixing in the Southeastern Indian Ocean caused by Tropical Cyclone Marcus in March 2018. We plan to use autonomous profiler data to estimate the Brunt-Vaisala frequency and kinetic energy dissipation from water mass density profiles. Please identify the WMO ID of a CSIRO Argo float operating in that area at the time, and the parameters we need to compute density.",
+    "expected": {
+      "float_wmo_ids": [
+        "5905214"
+      ],
+      "parameters": [
+        "TEMP",
+        "PSAL",
+        "PRES"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified float 5905214, please download its vertical profile data for temperature, salinity, and pressure covering the period from March 7, 2018, to March 27, 2018. Filter the extracted profiles to include only the upper 150 meters of the water column, which is the region most affected by the cyclone's passage.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5905214
+        }
+      }
+    ]
+  }
+}

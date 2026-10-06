@@ -1,0 +1,84 @@
+{
+  "source_doi": "10.1007/s41748-021-00203-y",
+  "research_question": "Evaluate the capability of 21 CMIP6 models in representing present-day summer monsoon extreme precipitation events and characteristics over West Africa.",
+  "phase_1": {
+    "user_prompt": "We are analyzing the daily precipitation characteristics of the West African summer monsoon in CMIP6. Could you determine the exact CMIP6 data identifiers we need to search the ESGF archive: the model identifiers (source IDs), the experiment for a present-day evaluation against observations, the precipitation variable ID, and the table ID that provides it at daily frequency?",
+    "expected": {
+      "source_ids": [
+        "MPI-ESM1-2-LR",
+        "MPI-ESM1-2-HR",
+        "CanESM5",
+        "BCC-ESM1",
+        "INM-CM5-0",
+        "KACE-1-0-G",
+        "FGOALS-f3-L",
+        "BCC-CSM2-MR",
+        "IPSL-CM6A-LR",
+        "TaiESM1",
+        "MRI-ESM2-0",
+        "NorESM2-MM",
+        "MIROC6",
+        "ACCESS-CM2",
+        "INM-CM4-8",
+        "SAM0-UNICON",
+        "NESM3",
+        "ACCESS-ESM1-5",
+        "FGOALS-g3",
+        "MPI-ESM-1-2-HAM",
+        "GFDL-ESM4"
+      ],
+      "experiment_ids": [
+        "historical"
+      ],
+      "variable_ids": [
+        "pr"
+      ],
+      "table_ids": [
+        "day"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the CMIP6 models, the historical experiment, and the daily precipitation variable we identified above, please retrieve the data at our exact spatial and temporal scope. You'll need to subset the data to our West Africa bounding box and slice the time period covering 1997 to 2014.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "MPI-ESM1-2-LR",
+            "MPI-ESM1-2-HR",
+            "CanESM5",
+            "BCC-ESM1",
+            "INM-CM5-0",
+            "KACE-1-0-G",
+            "FGOALS-f3-L",
+            "BCC-CSM2-MR",
+            "IPSL-CM6A-LR",
+            "TaiESM1",
+            "MRI-ESM2-0",
+            "NorESM2-MM",
+            "MIROC6",
+            "ACCESS-CM2",
+            "INM-CM4-8",
+            "SAM0-UNICON",
+            "NESM3",
+            "ACCESS-ESM1-5",
+            "FGOALS-g3",
+            "MPI-ESM-1-2-HAM",
+            "GFDL-ESM4"
+          ],
+          "experiment_id": [
+            "historical"
+          ],
+          "variable_id": [
+            "pr"
+          ],
+          "table_id": [
+            "day"
+          ]
+        }
+      }
+    ]
+  }
+}

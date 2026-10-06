@@ -1,0 +1,411 @@
+{
+ "scenario_file": "10.21203_rs.3.rs-6574387_v1_scenario.json",
+ "platform": "neon",
+ "downloaded_at": "2026-09-05T01:50:16.240952+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.10072.001",
+    "site": "CPER",
+    "startdate": "2013-01",
+    "enddate": "2023-12"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:49:30.964831+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 63,
+   "num_csv_files": 0,
+   "total_bytes": 5917022,
+   "files": [
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2013-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 109368
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2013-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 106383
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2013-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 111230
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2014-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 48703
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2014-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 135827
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2014-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 60072
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2014-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 85377
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2014-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 143274
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2014-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 67494
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2015-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 73569
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2015-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 85596
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2015-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 84726
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2015-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 84843
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2015-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 85474
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2015-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 83719
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2015-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 86835
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2016-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80493
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2016-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 128675
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2016-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80833
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2016-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 84180
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2016-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80147
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2016-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 77401
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2017-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 70737
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2017-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80327
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2017-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80875
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2017-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80257
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2017-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 79686
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2017-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80968
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2018-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 81005
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2018-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 81385
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2018-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 82071
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2018-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 81335
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2018-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 95504
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2018-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 68215
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2019-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 79959
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2019-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 68214
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2019-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 93749
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2019-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80165
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2019-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80033
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2019-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80866
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2020-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 78420
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2020-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 78421
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2020-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 78437
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2020-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 82841
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2020-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 111368
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2020-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 114288
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2021-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 115728
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2021-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 114571
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2021-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 111917
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.CPER.DP1.10072.001.2021-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 113564
+    }
+   ],
+   "files_truncated": true
+  },
+  {
+   "idx": 1,
+   "module": "neonutilities",
+   "function": "zips_by_product",
+   "kwargs": {
+    "dpid": "DP1.10072.001",
+    "site": "STER",
+    "startdate": "2013-01",
+    "enddate": "2023-12"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:50:16.240952+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 41,
+   "num_csv_files": 0,
+   "total_bytes": 3504144,
+   "files": [
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2014-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 49546
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2014-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 86660
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2014-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 102690
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2014-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 98125
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2015-03.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 60450
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2015-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80998
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2015-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80169
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2015-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80767
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2015-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 78351
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2016-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 76528
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2016-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 77298
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2016-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 76924
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2016-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 77597
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2017-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 89902
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2017-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 65451
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2017-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 78482
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2017-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 63679
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2018-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 78620
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2018-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 80175
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2018-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 76643
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2018-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 79355
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2019-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 78374
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2019-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 78691
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2019-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 79337
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2019-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 81345
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2020-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 72172
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2020-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 72202
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2020-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 77643
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2020-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 76583
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2021-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 104010
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2021-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 103591
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2021-08.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 104202
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2021-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 106928
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2022-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 101199
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2022-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 103207
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2022-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 105183
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2022-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 102297
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2023-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 103053
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2023-07.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 106857
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2023-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 103913
+    },
+    {
+     "file": "filesToStack10072/NEON.D10.STER.DP1.10072.001.2023-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 104947
+    }
+   ],
+   "files_truncated": false
+  }
+ ]
+}

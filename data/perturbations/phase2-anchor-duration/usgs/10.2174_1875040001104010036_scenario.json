@@ -1,0 +1,182 @@
+{
+  "source_doi": "10.2174/1875040001104010036",
+  "research_question": "Did significant changes in surface-water quality (pH and total concentrations of aluminum, iron, manganese, lead, and zinc) occur between the mid-1980s and mid-2000s in Tar Creek downstream of the Picher mining district?",
+  "phase_1": {
+    "user_prompt": "I am studying historical surface-water quality changes in the Tar Creek basin in Oklahoma, specifically at the streamgage near the 22nd Street Bridge in Miami, OK. I need to find the USGS site number for this gage, along with the 5-digit parameter codes for discharge, pH, and total (unfiltered/recoverable) concentrations of aluminum, iron, manganese, lead, and zinc. I also need the statistic code for daily mean values.",
+    "expected": {
+      "sites": [
+        "07185095"
+      ],
+      "parameter_codes": [
+        "00060",
+        "00400",
+        "01105",
+        "01045",
+        "01055",
+        "01051",
+        "01092"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site and parameter codes you found, retrieve daily streamflow data and the discrete water-quality samples for the specified parameters. Limit the retrieval to two specific historical periods: over the 25 months beginning in February 1984, and over the 23 months beginning in June 2004.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07185095",
+          "parameter_code": "00060",
+          "time": "1984-02-01/1986-02-28"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07185095",
+          "parameter_code": "00060",
+          "time": "2004-06-01/2006-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "00400",
+          "activityStartDateLower": "1984-02-01",
+          "activityStartDateUpper": "1986-02-28"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "00400",
+          "activityStartDateLower": "2004-06-01",
+          "activityStartDateUpper": "2006-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "01105",
+          "activityStartDateLower": "1984-02-01",
+          "activityStartDateUpper": "1986-02-28"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "01105",
+          "activityStartDateLower": "2004-06-01",
+          "activityStartDateUpper": "2006-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "01045",
+          "activityStartDateLower": "1984-02-01",
+          "activityStartDateUpper": "1986-02-28"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "01045",
+          "activityStartDateLower": "2004-06-01",
+          "activityStartDateUpper": "2006-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "01055",
+          "activityStartDateLower": "1984-02-01",
+          "activityStartDateUpper": "1986-02-28"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "01055",
+          "activityStartDateLower": "2004-06-01",
+          "activityStartDateUpper": "2006-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "01051",
+          "activityStartDateLower": "1984-02-01",
+          "activityStartDateUpper": "1986-02-28"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "01051",
+          "activityStartDateLower": "2004-06-01",
+          "activityStartDateUpper": "2006-04-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "01092",
+          "activityStartDateLower": "1984-02-01",
+          "activityStartDateUpper": "1986-02-28"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-07185095",
+          "usgsPCode": "01092",
+          "activityStartDateLower": "2004-06-01",
+          "activityStartDateUpper": "2006-04-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved water quality data to handle censored values (non-detects marked with '<') by substituting them with one-half of their reporting level. Separate the data into the two distinct sampling periods (mid-1980s and mid-2000s). Finally, output the total number of discrete water quality samples that were collected and analyzed for zinc during the mid-1980s (1984-1986) period.",
+    "expected": 25,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "We need to understand how total zinc concentrations have changed and how they relate to streamflow. First, perform a Wilcoxon rank sum test (with continuity correction) to compare total zinc concentrations between the mid-1980s and mid-2000s, and extract the test's normal-approximation Z-statistic. Next, create a scatter plot of total zinc concentration (y-axis) versus streamflow at the time of sampling (x-axis), plotting both periods on the same graph with log-scaled axes. Save this plot as `zinc_vs_streamflow_scatter.png`. Based on your statistical test and the plot, did zinc concentrations significantly decrease, and what does the relationship with streamflow suggest about the source of the zinc?",
+    "expected": 5.45,
+    "unit": "Z-score",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Total zinc concentrations significantly decreased from the mid-1980s to the mid-2000s. Additionally, zinc concentrations are generally lower at higher streamflows for both time periods, suggesting that the primary source of zinc is groundwater seepage from flooded underground mine workings, which becomes diluted by runoff during higher flow events.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "zinc_vs_streamflow_scatter.png",
+      "visual_description": "A scatter plot with streamflow on the x-axis and total zinc concentration on the y-axis, both log-scaled. Data points should be divided into two series (mid-1980s vs mid-2000s) with distinct markers/colors. The 1984-1986 points should generally sit higher on the y-axis than the 2004-2006 points, indicating the concentration decrease. Both series should show a general trend of lower zinc concentrations at higher streamflows (dilution effect).",
+      "paper_figure_reference": "Figure 13"
+    }
+  }
+}

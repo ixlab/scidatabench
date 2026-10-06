@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.1038/s41419-022-05000-7",
+  "research_question": "What is the gene model of the replication fork protection factor whose intron retention is regulated in ovarian cancer?",
+  "phase_1": {
+    "user_prompt": "We study intron retention in ovarian cancer, and our lead target is the replication fork protection factor that forms a heterodimer with TIPIN at the replisome and carries the same name as the core clock gene first described in Drosophila. We need to inspect its intron structure to check where the retained intron sits. Give us the approved human gene symbol, the stable Ensembl gene ID, and the Ensembl species name.",
+    "expected": {
+      "gene_symbols": [
+        "TIMELESS"
+      ],
+      "gene_ids": [
+        "ENSG00000111602"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now retrieve its complete gene model from Ensembl with every transcript expanded, so we can locate the intron in question across the isoforms.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "TIMELESS",
+          "expand": 1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "source_doi": "10.3133/ofr20121035",
+  "research_question": "What is the quantity and quality of stormwater runoff from industrial heating and cooling sites at Fort Gordon, Georgia, and how do quality assurance procedures affect the interpretation of the results?",
+  "phase_1": {
+    "user_prompt": "I am investigating the quantity and quality of stormwater runoff associated with industrial activities at Fort Gordon, Georgia. Specifically, I want to look at the three outfalls associated with the heating and cooling (H&C) plants (often designated as SWR11-3, SWR11-4, and SWR11-5). Can you find the official 15-digit USGS site numbers for these three stormwater monitoring stations that recorded data in 2011?",
+    "expected": {
+      "sites": [
+        "332452082085100",
+        "332538082085200",
+        "332540082085100"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers, please retrieve the high-frequency streamflow measurements as well as the discrete water quality field samples (such as specific conductance, pH, temperature, and dissolved oxygen) collected during the storm events that occurred at these sites in September and October of 2011.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-332452082085100",
+          "parameter_code": "00060",
+          "time": "2011-09-01/2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-332538082085200",
+          "parameter_code": "00060",
+          "time": "2011-09-01/2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-332540082085100",
+          "parameter_code": "00060",
+          "time": "2011-09-01/2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332452082085100",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332452082085100",
+          "usgsPCode": "00400",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332452082085100",
+          "usgsPCode": "00010",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332452082085100",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332538082085200",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332538082085200",
+          "usgsPCode": "00400",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332538082085200",
+          "usgsPCode": "00010",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332538082085200",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332540082085100",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332540082085100",
+          "usgsPCode": "00400",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332540082085100",
+          "usgsPCode": "00010",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-332540082085100",
+          "usgsPCode": "00300",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2011-10-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved data to identify the peak instantaneous discharge recorded among these three sites during their respective sampled storm events. Once you have identified the site with the highest peak discharge, find the specific conductance (in millisiemens per centimeter (mS/cm)) that was measured in the discrete water quality sample collected during that specific site's storm event.",
+    "expected": 0.012,
+    "unit": "mS/cm"
+  },
+  "phase_4": {
+    "user_prompt": "I need to review the conditions for the SWR11-3 heating and cooling site (plant #310) during its storm event on September 5, 2011, and check the overall data reliability. What was the pH recorded for this specific sample? Additionally, review the associated field blank QA/QC data for this sampling campaign. Which two major aggregate organic water quality parameters showed significant field blank contamination (likely due to a methanol rinse procedure) and should therefore be considered unreliable in the environmental samples?",
+    "expected": 4.3,
+    "unit": "standard units",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Total organic carbon and chemical oxygen demand should be identified as unreliable due to high levels of contamination detected in the field blanks, which was attributed to the methanol rinse step of the cleaning procedures.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

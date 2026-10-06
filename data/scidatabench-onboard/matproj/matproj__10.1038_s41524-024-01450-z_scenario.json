@@ -1,0 +1,40 @@
+{
+  "source_doi": "10.1038/s41524-024-01450-z",
+  "research_question": "Which novel high-dielectric and highly anisotropic materials were discovered using the DTNet model, and how can we retrieve their computed dielectric tensors and structures from the Materials Project?",
+  "phase_1": {
+    "user_prompt": "We are using a universal neural network potential to predict dielectric tensors for inorganic materials, screening thermodynamically stable structures from the Materials Project. Can you identify the Materials Project IDs of the top high-dielectric candidates, and the computed property we need to retrieve as the reference label for training and validation?",
+    "expected": {
+      "material_ids": [
+        "mp-1226157",
+        "mp-1219587",
+        "mp-1214622",
+        "mp-7152",
+        "mp-861871",
+        "mp-19138"
+      ],
+      "properties": [
+        "dielectric"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 6 Materials Project IDs for the top dielectric and anisotropic candidates, along with the target property, please write a script to download their computed dielectric data and their full crystal structures. This will allow us to examine their atomic configurations and independently verify the model's baseline predictions.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/dielectric",
+        "kwargs": {
+          "material_ids": "mp-1226157,mp-1219587,mp-1214622,mp-7152,mp-861871,mp-19138"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "material_ids": "mp-1226157,mp-1219587,mp-1214622,mp-7152,mp-861871,mp-19138",
+          "_fields": "material_id,formula_pretty,structure"
+        }
+      }
+    ]
+  }
+}

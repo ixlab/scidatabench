@@ -1,0 +1,37 @@
+{
+ "scenario_file": "noaa_ghcn__10.1038_s41467-022-30316-5_scenario.json",
+ "platform": "noaa_ghcn",
+ "downloaded_at": "2026-08-10T22:37:34.301423+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "USC00381770",
+    "startDate": "1950-01-01",
+    "endDate": "2020-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:34.301423+00:00",
+   "rows": 25866,
+   "format": "parquet",
+   "station": "USC00381770"
+  }
+ ]
+}

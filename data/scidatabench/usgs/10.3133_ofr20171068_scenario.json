@@ -1,0 +1,176 @@
+{
+  "source_doi": "10.3133/ofr20171068",
+  "research_question": "What was the annual streamflow runoff variability across the 10 Triangle Area monitoring network streamgages in North Carolina during Water Year 2014?",
+  "phase_1": {
+    "user_prompt": "I am analyzing regional streamflow conditions for the Triangle area of North Carolina during Water Year 2014. Please find the official USGS site numbers for the following 10 continuous streamgages: Eno River at Hillsborough, Eno River near Durham, Little River at SR 1461 near Orange Factory, Flat River at Bahama, Cane Creek near Orange Grove, New Hope Creek near Blands, Northeast Creek at SR 1100 near Genlee, Morgan Creek near White Cross, Morgan Creek near Chapel Hill, and White Oak Creek at mouth near Green Level. Also, identify the standard parameter and statistic codes for daily mean discharge, and define the exact start and end dates for Water Year 2014.",
+    "expected": {
+      "sites": [
+        "02085000",
+        "02085070",
+        "0208521324",
+        "02085500",
+        "02096846",
+        "02097314",
+        "0209741955",
+        "02097464",
+        "02097517",
+        "0209782609"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that you have the 10 site numbers, download the daily mean discharge records for these stations for Water Year 2014. You will also need to retrieve the site metadata for each station so you can access their respective drainage areas.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02085000",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02085070",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-0208521324",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02085500",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02096846",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02097314",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-0209741955",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02097464",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02097517",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-0209782609",
+          "parameter_code": "00060",
+          "time": "2013-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_monitoring_locations",
+        "kwargs": {
+          "monitoring_location_id": [
+            "USGS-02085000",
+            "USGS-02085070",
+            "USGS-0208521324",
+            "USGS-02085500",
+            "USGS-02096846",
+            "USGS-02097314",
+            "USGS-0209741955",
+            "USGS-02097464",
+            "USGS-02097517",
+            "USGS-0209782609"
+          ]
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Calculate the total annual runoff in inches for each of the 10 watersheds for Water Year 2014. To do this, calculate the total volume of water discharged over the year (by summing the daily mean flows) and divide it by the station's drainage area. Make sure to apply the correct unit conversions from cubic feet per second and square miles to yield a final value in inches.",
+    "expected": {
+      "USGS-02085000": 11.97943275732532,
+      "USGS-02085070": 13.397764199050465,
+      "USGS-0208521324": 13.593821732789415,
+      "USGS-02085500": 13.676895002495979,
+      "USGS-02096846": 10.64277571957823,
+      "USGS-02097314": 21.37654101198837,
+      "USGS-0209741955": 32.56420038384709,
+      "USGS-02097464": 12.590245954372246,
+      "USGS-02097517": 14.55624370086676,
+      "USGS-0209782609": 18.06250434057921
+    },
+    "unit": "inches"
+  },
+  "phase_4": {
+    "user_prompt": "Among the 10 streamgages, what was the maximum annual runoff value (in inches) recorded during Water Year 2014? Create a bar chart showing the annual runoff for all 10 stations and save it as `triangle_annual_runoff.png`.",
+    "expected": 32.56,
+    "unit": "inches",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Annual runoff for the 10 Triangle area streamgages during water year 2014 varied spatially, with the highest station experiencing roughly 32.56 inches of runoff and the lowest around 10.64 inches.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "triangle_annual_runoff.png",
+      "visual_description": "A bar chart showing annual streamflow runoff in inches for 10 USGS gaging stations. The y-axis should represent runoff in inches, with the maximum bar reaching approximately 32.6 inches and the minimum bar around 10.6 inches.",
+      "paper_figure_reference": "Figure 2 Panel A"
+    }
+  }
+}

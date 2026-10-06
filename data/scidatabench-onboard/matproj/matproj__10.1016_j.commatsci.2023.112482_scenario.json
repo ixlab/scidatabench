@@ -1,0 +1,30 @@
+{
+  "source_doi": "10.1016/j.commatsci.2023.112482",
+  "research_question": "How do the energetic stability, structural characteristics, and electronic properties of a newly predicted triclinic Z=1 Ta2O5 phase compare to existing Z=1 Ta2O5 phases in the Materials Project database?",
+  "phase_1": {
+    "user_prompt": "We are studying the structural and electronic properties of tantalum pentoxide (Ta2O5) and investigating possible new low-temperature phases with one formula unit (Z=1) per unit cell. To compare our newly predicted structures with known theoretical models, we need to find all existing Ta2O5 crystal phases in the Materials Project database that have exactly one formula unit (i.e., 7 atoms in the unit cell). Please identify the specific Materials Project IDs for these Z=1 Ta2O5 structures.",
+    "expected": {
+      "material_ids": [
+        "mp-1218141",
+        "mp-1238961",
+        "mp-554867"
+      ],
+      "formulas": [
+        "Ta2O5"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the relevant Z=1 Ta2O5 structures with IDs mp-1218141, mp-1238961, and mp-554867, please retrieve their fundamental structural and electronic properties from the Materials Project. Specifically, we need their unit cell lattice parameters (a, b, c, alpha, beta, gamma), mass density, the computed band gaps, and the unrelaxed crystal structures so we can re-optimize them with our own DFT settings.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "material_ids": "mp-1218141,mp-1238961,mp-554867",
+          "_fields": "material_id,formula_pretty,structure,density,band_gap"
+        }
+      }
+    ]
+  }
+}

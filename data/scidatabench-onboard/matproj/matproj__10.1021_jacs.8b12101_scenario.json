@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.1021/jacs.8b12101",
+  "research_question": "How does Fe-doping influence the thermodynamic stability of Co-based perovskite catalysts in aqueous environments, and what are the competing solid phases?",
+  "phase_1": {
+    "user_prompt": "We are studying the functional role of Fe-doping in Co-based perovskite oxide catalysts for the oxygen evolution reaction (OER). We want the thermodynamic stability of Ba0.5Sr0.5CoO3-d, Ba0.5Sr0.5Co0.8Fe0.2O3-d, La0.2Sr0.8CoO3-d and La0.2Sr0.8Co0.8Fe0.2O3-d in aqueous environments, via Pourbaix diagrams. We compute the bulk perovskite energies ourselves but need a materials database for the baseline thermodynamic data of all other competing solid phases. Identify the distinct chemical elements that define the chemical space we must pull, and the computed energy properties we need for those competing phases.",
+    "expected": {
+      "elements": [
+        "Ba",
+        "Co",
+        "Fe",
+        "La",
+        "O",
+        "Sr"
+      ],
+      "properties": [
+        "formation_energy_per_atom",
+        "energy_per_atom"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Materials Project, fetch the computed formation energies (or total energies per atom) for all solid phases within the chemical space defined by the elements Ba, Sr, La, Co, Fe, and O. This baseline data is necessary to establish the convex hull of competing solid phases to construct Pourbaix diagrams for the multinary perovskite catalysts.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "chemsys": "Ba-O,O-Sr,La-O,Co-O,Fe-O,Ba-O-Sr,Ba-La-O,Ba-Co-O,Ba-Fe-O",
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom,energy_per_atom"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "chemsys": "La-O-Sr,Co-O-Sr,Fe-O-Sr,Co-La-O,Fe-La-O,Co-Fe-O,Ba-La-O-Sr",
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom,energy_per_atom"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "chemsys": "Ba-Co-O-Sr,Ba-Fe-O-Sr,Ba-Co-La-O,Ba-Fe-La-O,Ba-Co-Fe-O",
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom,energy_per_atom"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "chemsys": "Co-La-O-Sr,Fe-La-O-Sr,Co-Fe-O-Sr,Co-Fe-La-O",
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom,energy_per_atom"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "source_doi": "10.1007/s00382-021-05859-w",
+  "research_question": "How will the daily characteristics of African precipitation change by the end of the 21st century under different socioeconomic pathways compared to a historical baseline, based on the CMIP6 multi-model ensemble?",
+  "phase_1": {
+    "user_prompt": "We are studying future daily precipitation characteristics over Africa with CMIP6. We need a historical reference period plus projected changes under the three Shared Socioeconomic Pathways that align with RCP2.6, RCP4.5, and RCP8.5. What are the exact CMIP6 data catalog identifiers needed to locate this daily rainfall data for the historical and future scenarios?",
+    "expected": {
+      "variable_ids": [
+        "pr"
+      ],
+      "table_ids": [
+        "day"
+      ],
+      "experiment_ids": [
+        "historical",
+        "ssp126",
+        "ssp245",
+        "ssp585"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the data identifiers we found, please search the CMIP6 catalog for all available datasets containing daily precipitation ('pr' from the 'day' table) for the 'historical', 'ssp126', 'ssp245', and 'ssp585' experiments. Provide the code to execute this search and retrieve the catalog of matching datasets.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "experiment_id": [
+            "historical",
+            "ssp126",
+            "ssp245",
+            "ssp585"
+          ],
+          "variable_id": [
+            "pr"
+          ],
+          "table_id": [
+            "day"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.3897/bdj.12.e125067",
+  "research_question": "How is the invasive brown marmorated stink bug distributed spatially across Belgian regions, and what is its seasonal phenology based on occurrence data?",
+  "phase_1": {
+    "user_prompt": "I am investigating the spread of the invasive brown marmorated stink bug in Belgium. Could you find what occurrence data is available for this species within the country using GBIF?",
+    "expected": {
+      "country_codes": [
+        "BE"
+      ],
+      "taxon_keys": [
+        "4485843"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we've identified the right parameters, please download occurrence records for the brown marmorated stink bug in Belgium from GBIF, restricted to records with year up to and including 2023 to align with the paper's GBIF snapshot date of 1 February 2024 (the baseline that predates subsequent GBIF additions).",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "BE",
+          "taxonKey": 4485843,
+          "year": "1800,2023"
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the dataset by removing any redundant or duplicate occurrence records (e.g., multiple observations with the exact same coordinates on the same date) to ensure we don't overcount observations from the same event. How many unique occurrences remain after this filtering?",
+    "expected": 3172,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Analyze the cleaned dataset to determine the spatial and seasonal distribution of the stink bug in Belgium. First, calculate the percentage of total occurrences found in each of the three main Belgian regions (Flanders, Brussels-Capital, and Wallonia). Second, plot the total number of observations per month to show the species' phenology over the year. Save this plot as `stinkbug_phenology_belgium.png`.",
+    "expected": 93.71,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The spatial distribution of Halyomorpha halys in Belgium is heavily concentrated in the northern region of Flanders (accounting for over 90% of records). The phenological data indicates a strong peak in observations during the late summer and early autumn, specifically reaching its maximum in October, likely driven by overwintering aggregation behavior in human environments.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "stinkbug_phenology_belgium.png",
+      "visual_description": "A bar chart or histogram displaying the monthly counts of Halyomorpha halys occurrences. The highest peak should be clearly visible in October, with lower but notable counts in August and September, and very low counts during the winter and spring months.",
+      "paper_figure_reference": "Figure 1D"
+    }
+  }
+}

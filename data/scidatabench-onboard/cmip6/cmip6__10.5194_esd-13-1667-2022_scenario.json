@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.5194/esd-13-1667-2022",
+  "research_question": "Do CMIP6 models show evidence of localised Amazon rainforest dieback under CO2-induced climate change, and can the temperature seasonal cycle amplitude serve as an early-warning signal?",
+  "phase_1": {
+    "user_prompt": "We are investigating localized Amazon rainforest dieback in sixth-generation climate models. Please identify the CMIP6 models to analyze, the experiments representing the idealized 1% per year CO2 increase and its control baseline, and the exact CMIP6 variable names for near-surface air temperature and vegetation carbon.",
+    "expected": {
+      "source_ids": [
+        "EC-Earth3-Veg",
+        "GFDL-ESM4",
+        "MPI-ESM1-2-LR",
+        "NorCPM1",
+        "TaiESM1",
+        "SAM0-UNICON",
+        "UKESM1-0-LL"
+      ],
+      "experiment_ids": [
+        "1pctCO2",
+        "piControl"
+      ],
+      "variable_ids": [
+        "tas",
+        "cVeg"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now, using the CMIP6 API/catalog, please retrieve the near-surface air temperature and vegetation carbon datasets from the idealized 1% CO2 increase and pre-industrial control experiments. We need this data for the 7 identified models: EC-Earth3-Veg, GFDL-ESM4, MPI-ESM1-2-LR, NorCPM1, TaiESM1, SAM0-UNICON, and UKESM1-0-LL.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "EC-Earth3-Veg",
+            "GFDL-ESM4",
+            "MPI-ESM1-2-LR",
+            "NorCPM1",
+            "TaiESM1",
+            "SAM0-UNICON",
+            "UKESM1-0-LL"
+          ],
+          "experiment_id": [
+            "1pctCO2",
+            "piControl"
+          ],
+          "variable_id": [
+            "tas",
+            "cVeg"
+          ],
+          "table_id": [
+            "Amon",
+            "Lmon"
+          ]
+        }
+      }
+    ]
+  }
+}

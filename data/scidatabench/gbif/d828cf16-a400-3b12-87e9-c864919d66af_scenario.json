@@ -1,0 +1,64 @@
+{
+  "source_doi": "10.3856/vol51-issue4-fulltext-3070",
+  "research_question": "How has the distribution and observation frequency of the blue button hydrozoan (Porpita porpita) changed over time along the Mexican Atlantic coast?",
+  "phase_1": {
+    "user_prompt": "I want to analyze the spatial and temporal distribution of the blue button hydrozoan along the Mexican Atlantic coast (Gulf of Mexico and Caribbean Sea) for historical records up through the year 2022. What search parameters should I use on GBIF to capture georeferenced occurrence data for this specific organism in this region?",
+    "expected": {
+      "country_codes": [
+        "MX"
+      ],
+      "state_provinces": [
+        "Tamaulipas",
+        "Veracruz",
+        "Tabasco",
+        "Campeche",
+        "Yucatán",
+        "Quintana Roo"
+      ],
+      "taxon_keys": [
+        "5185632"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the occurrence data from GBIF for the blue button hydrozoan in the Mexican Atlantic coastal states, ensuring you capture all available georeferenced records up to the end of 2022.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "MX",
+          "hasCoordinate": true,
+          "stateProvince": [
+            "Tamaulipas",
+            "Veracruz",
+            "Tabasco",
+            "Campeche",
+            "Yucatán",
+            "Quintana Roo"
+          ],
+          "taxonKey": 5185632
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded occurrences to ensure high data quality. Filter the dataset to include only records located within the specific Mexican Atlantic coastal states (Tamaulipas, Veracruz, Tabasco, Campeche, Yucatan, and Quintana Roo). Drop any records missing a specific observation date (month/year) and remove any duplicate records based on having the exact same location and date. How many cleaned occurrences remain?",
+    "expected": 27,
+    "unit": "occurrences"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned occurrence data, I want to understand the temporal and geographic patterns of the strandings/observations. Calculate the total number of records found in each state, and the total number of records by month. Create a stacked bar chart showing the occurrences by month (Jan-Dec) on the x-axis, with the bars colored by state. Save this visualization as `porpita_occurrences_by_month_state.png`. Based on the data, which state has the highest overall number of records, and which months show the peak in occurrences?",
+    "expected": 8,
+    "unit": "occurrences",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Quintana Roo is the state with the highest number of records. The occurrences peak during the warm spring months of April and May, which coincides with periods of increased tourism and field observations.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "porpita_occurrences_by_month_state.png",
+      "visual_description": "A stacked bar chart with months (January to December) on the x-axis and the number of occurrence records on the y-axis. The bars should be stacked and colored by Mexican state. The tallest bars should appear in April and May (around 4 records each). A significant portion of the total bar area across the chart should belong to the state of Quintana Roo.",
+      "paper_figure_reference": "Figure 3b"
+    }
+  }
+}

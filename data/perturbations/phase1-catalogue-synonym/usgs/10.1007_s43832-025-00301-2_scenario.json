@@ -1,0 +1,146 @@
+{
+  "source_doi": "10.1007/s43832-025-00301-2",
+  "research_question": "What is the linear trend (rate of change) in annual runoff volumes from 2002 to 2024 at key sub-basin outlets in the US portion of the Rio Grande basin?",
+  "phase_1": {
+    "user_prompt": "I'm assessing surface water depletion in the Rio Grande system from 2002 to 2024. I need to find the USGS streamgages that measure the outflow from key US sub-basins: the Rio Grande near Lobatos (Colorado), the Rio Grande below Elephant Butte Dam (New Mexico), and the Pecos River near Girvin (Texas). Could you identify the site numbers for these three stations, the parameter code needed to retrieve daily volumetric flow, and specify the temporal range?",
+    "expected": {
+      "sites": [
+        "08251500",
+        "08361000",
+        "08446500"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site numbers for the three gauges and the parameter code for discharge, please download the daily mean streamflow records from January 1, 2002, to December 31, 2024.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08251500",
+          "parameter_code": "00060",
+          "time": "2002-01-01/2024-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08361000",
+          "parameter_code": "00060",
+          "time": "2002-01-01/2024-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-08446500",
+          "parameter_code": "00060",
+          "time": "2002-01-01/2024-12-31",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Now that we have the daily streamflow data, calculate the total annual runoff volume for each year at each site. Please convert the final annual volumes from cubic feet into Million Cubic Meters (MCM) per year.",
+    "expected": {
+      "USGS-08251500": {
+        "2002": 87.589462330368,
+        "2003": 91.050871716864,
+        "2004": 266.73574736793597,
+        "2005": 552.6902926540799,
+        "2006": 280.06882818048,
+        "2007": 356.34803503104,
+        "2008": 485.82304644096,
+        "2009": 356.86670819328,
+        "2010": 283.11480972288,
+        "2011": 246.74163093504,
+        "2012": 156.03499183104,
+        "2013": 159.86020640256,
+        "2014": 283.8145291776,
+        "2015": 308.88454754304,
+        "2016": 340.28629300224,
+        "2017": 500.07677211648,
+        "2018": 110.032841511936,
+        "2019": 692.35282787328,
+        "2020": 137.72485057536,
+        "2021": 195.05046786047998,
+        "2022": 234.18582589439998,
+        "2023": 487.23716477951996,
+        "2024": 238.0758746112
+      },
+      "USGS-08361000": {
+        "2002": 1021.4387164569599,
+        "2003": 445.497676019712,
+        "2004": 521.9099029638144,
+        "2005": 889.281895675392,
+        "2006": 600.510612598272,
+        "2007": 803.0550758188032,
+        "2008": 827.901697738752,
+        "2009": 943.6004563709952,
+        "2010": 890.8253397844992,
+        "2011": 503.5636503124992,
+        "2012": 450.79719458918396,
+        "2013": 208.1389159867392,
+        "2014": 361.8809320578048,
+        "2015": 509.1418823095296,
+        "2016": 656.7475544884223,
+        "2017": 800.6464995545088,
+        "2018": 609.8010764940287,
+        "2019": 582.1916881508351,
+        "2020": 756.0453539506176,
+        "2021": 267.3574945883136,
+        "2022": 347.6170041790464,
+        "2023": 631.5060314594303,
+        "2024": 801.5733831748607
+      },
+      "USGS-08446500": {
+        "2002": 14.1529758603264,
+        "2003": 11.784768026112,
+        "2004": 32.0896724391936,
+        "2005": 27.1450046029824,
+        "2006": 20.0779849046016,
+        "2007": 36.3927758257152,
+        "2008": 25.6381856695296,
+        "2009": 22.3460790322176,
+        "2010": 23.9908112022528,
+        "2011": 14.086380183552,
+        "2012": 12.02428737792,
+        "2013": 9.5255304873984,
+        "2014": 70.9861472299008,
+        "2015": 64.52832384,
+        "2016": 44.1799683167232,
+        "2017": 21.7411152924672,
+        "2018": 17.7697425383424,
+        "2019": 13.0702456341504,
+        "2020": 8.661352495104,
+        "2021": 7.0198742651904,
+        "2022": 7.6733779838976,
+        "2023": 5.5963610919936,
+        "2024": 4.5309525921792
+      }
+    },
+    "unit": "MCM"
+  },
+  "phase_4": {
+    "user_prompt": "To understand the rate of depletion, fit a linear regression line to the annual runoff volumes (in MCM) from 2002 to 2024 for the Rio Grande below Elephant Butte Dam. What is the average annual rate of change (the slope of the trendline) in MCM/year? Also, plot the annual volumes and the trendline for this site, and save the figure as 'elephant_butte_depletion_trend.png'.",
+    "expected": -9.7,
+    "unit": "MCM/year",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Annual runoff volumes for the Rio Grande below Elephant Butte Dam have exhibited a declining trend from 2002 to 2024, depleting at an average rate of approximately 9.7 million cubic meters per year, which reflects ongoing reduction in river outflows.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "elephant_butte_depletion_trend.png",
+      "visual_description": "A time series plot (scatter or line) showing annual runoff volumes (MCM) from 2002 to 2024 for the Rio Grande below Elephant Butte Dam, overlaid with a linear regression trendline demonstrating a clear downward slope.",
+      "paper_figure_reference": null
+    }
+  }
+}

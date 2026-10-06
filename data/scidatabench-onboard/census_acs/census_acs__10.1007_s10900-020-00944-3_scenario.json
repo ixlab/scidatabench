@@ -1,0 +1,31 @@
+{
+  "source_doi": "10.1007/s10900-020-00944-3",
+  "research_question": "How does neighborhood-level poverty associate with clinical outcomes like hospitalization and mortality among COVID-19 patients in New York City?",
+  "phase_1": {
+    "user_prompt": "We are running a retrospective cohort analysis of COVID-19 clinical outcomes in New York City that investigates socioeconomic status. We need neighborhood-level poverty data from the 2014-2018 American Community Survey (ACS) — specifically, the percent of residents whose household income is below the federal poverty threshold for each ZIP code. Which ACS tables and geographic level should I query to obtain this poverty status data?",
+    "expected": {
+      "tables": [
+        "B17001",
+        "S1701"
+      ],
+      "geographies": [
+        "zip code tabulation area"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the 2014-2018 ACS 5-year estimates, please retrieve the poverty status data (from table B17001 or S1701) for all ZIP Code Tabulation Areas (ZCTAs) so that we can later filter them for the New York City region.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B17001)",
+          "for": "zip code tabulation area:*"
+        }
+      }
+    ]
+  }
+}

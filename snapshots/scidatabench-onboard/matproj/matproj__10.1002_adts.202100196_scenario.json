@@ -1,0 +1,33 @@
+{
+ "scenario_file": "matproj__10.1002_adts.202100196_scenario.json",
+ "platform": "matproj",
+ "downloaded_at": "2026-08-10T22:37:04.316413+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "mp_api",
+   "function": "materials/summary",
+   "kwargs": {
+    "material_ids": "mvc-13110,mp-1279979,mp-9561,mp-622640,mvc-846,mvc-10961,mp-23153,mp-1180036",
+    "_fields": "material_id,formula_pretty,energy_per_atom"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:04.316413+00:00",
+   "rows": 6,
+   "format": "parquet",
+   "endpoint": "materials/summary"
+  }
+ ]
+}

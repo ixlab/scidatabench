@@ -1,0 +1,38 @@
+{
+  "source_doi": "10.1038/s43247-025-02718-y",
+  "research_question": "How do marine heatwaves shape the vertical structure of phytoplankton in the global ocean, and what are the driving physical and biogeochemical factors?",
+  "phase_1": {
+    "user_prompt": "We are studying how marine heatwaves affect vertical phytoplankton structures using Biogeochemical-Argo float data. We need to observe subsurface anomalies, distinguish Deep Biomass Maxima from Deep Photoacclimation Maxima, and estimate missing nutrient data with the CANYON-B model. Can you identify the exact measured Argo parameters we need to extract from the floats to support all these steps, including the variables used as inputs for CANYON-B?",
+    "expected": {
+      "parameters": [
+        "TEMP",
+        "PSAL",
+        "PRES",
+        "CHLA",
+        "DOXY",
+        "BBP700"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the necessary parameters (Temperature, Salinity, Pressure, Chlorophyll-a, Dissolved Oxygen, and Particulate Backscattering), I want to analyze one of the extreme events highlighted in the paper: the August 2021 marine heatwave in the Equatorial Atlantic Ocean (EAO). Please fetch the relevant BGC-Argo profiles for this region, using a bounding box from 20°W to 0° longitude and 5°S to 5°N latitude, covering August 1, 2021 to August 31, 2021.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.region",
+        "kwargs": {
+          "box": [
+            -20,
+            0,
+            -5,
+            5,
+            0,
+            2000,
+            "2021-08",
+            "2021-09"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "source_doi": "10.1007/s11524-021-00582-7",
+  "research_question": "To identify predominant patterns of neighborhood-level socioenvironmental factors, derived from US Census ACS, that contribute to childhood asthma exacerbations in New York City.",
+  "phase_1": {
+    "user_prompt": "We are studying socioenvironmental contributors to childhood asthma in NYC using the 2013-2017 American Community Survey. Identify the ACS table IDs needed to calculate zip-code-level measures for: income inequality (Gini index), housing tenure (renters), building density (units in structure), building age (year built), households with children, and structural racism indicators including educational attainment and employment status for both White and Black populations. Also identify the correct geographic summary level to use for zip codes.",
+    "expected": {
+      "tables": [
+        "B19083",
+        "B25003",
+        "B25024",
+        "B25034",
+        "B11005",
+        "B15002A",
+        "B15002B",
+        "B23002A",
+        "B23002B"
+      ],
+      "geographies": [
+        "zip code tabulation area"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the ACS table identifiers you found (B19083, B25003, B25024, B25034, B11005, B15002A, B15002B, B23002A, B23002B), please retrieve the 2013-2017 5-year estimates for all zip code tabulation areas so we can extract the New York City data.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19083)",
+          "for": "zip code tabulation area:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B25003)",
+          "for": "zip code tabulation area:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B25024)",
+          "for": "zip code tabulation area:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B25034)",
+          "for": "zip code tabulation area:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B11005)",
+          "for": "zip code tabulation area:*"
+        }
+      }
+    ]
+  }
+}

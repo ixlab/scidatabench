@@ -1,0 +1,33 @@
+{
+  "source_doi": "10.1038/s41467-023-37309-y",
+  "research_question": "How intense was the 2021 Western North America heatwave, as characterized by observed daily maximum temperatures across the region?",
+  "phase_1": {
+    "user_prompt": "We are evaluating the unprecedented summer 2021 heatwave associated with a 'heat dome' over Western North America. Based on standard observational datasets, what parameter from the Global Historical Climatology Network (GHCN) database should we use to capture the peak daytime temperatures, and what specific geographic bounding box is standardly used in recent literature to represent this Western North America region?",
+    "expected": {
+      "parameters": [
+        "TMAX"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the daily station records for maximum temperature across the identified Western North America bounding box (40°N to 65°N and 125°W to 105°W) for the entire year of 2021 to analyze the evolution of the heat extreme.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "CA003010816",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          52.5,
+          -115.0
+        ]
+      }
+    ]
+  }
+}

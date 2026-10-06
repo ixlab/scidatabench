@@ -1,0 +1,16 @@
+{
+  "platform": "noaa_ghcn",
+  "condition": "exec",
+  "model": "gemini-3-flash-preview",
+  "elapsed_s": 102.9,
+  "tokens": {
+    "input": 136286,
+    "output": 5733,
+    "thinking": 0,
+    "total": 142019,
+    "cache_read": 36114
+  },
+  "tool_call_turns": 20,
+  "research_log": [],
+  "generated_utc": "2026-08-14T03:48:03.953218+00:00"
+}

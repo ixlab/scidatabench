@@ -1,0 +1,30 @@
+{
+  "source_doi": "10.1038/s41598-018-19744-w",
+  "research_question": "Identify evolutionarily constrained regions (ECRs) by comparing the human protein sequence of a target gene with its vertebrate orthologs and their phylogenetic relationships.",
+  "phase_1": {
+    "user_prompt": "We are running an evolutionary constraint analysis on the master transcriptional regulator of lysosomal degradative pathways. To start the comparative genomics pipeline, I need to know which gene and which reference species to use as the anchor for querying orthologous protein sequences and the corresponding phylogenetic tree.",
+    "expected": {
+      "gene_symbols": [
+        "TFEB"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Given the target gene TFEB in Homo sapiens, please retrieve its human protein sequence, the protein sequences of all its vertebrate orthologs, and the corresponding phylogenetic tree. We need these to construct a multiple sequence alignment and calculate relative amino acid substitution rates.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "homology_id",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "id": "ENSG00000112561",
+          "type": "orthologues",
+          "sequence": "protein"
+        }
+      }
+    ]
+  }
+}

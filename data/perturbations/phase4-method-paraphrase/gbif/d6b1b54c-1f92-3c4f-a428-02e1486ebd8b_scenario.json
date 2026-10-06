@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.1007/s40745-023-00464-6",
+  "research_question": "Investigate whether machine learning regression models (like Support Vector Machines) can better handle zero-inflated, overdispersed ecological count data compared to traditional count regression models, using Nile perch occurrence records in Uganda.",
+  "phase_1": {
+    "user_prompt": "I am conducting a study on overdispersion and zero-inflation in ecological count data. I want to use Nile perch (Lates niloticus) occurrences in Uganda as my test case to compare traditional count regressions against machine learning methods. What GBIF data is available for this species in this region that includes valid geographic coordinates?",
+    "expected": {
+      "country_codes": [
+        "UG"
+      ],
+      "taxon_keys": [
+        "2393184"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the occurrence records for Nile perch in Uganda with valid coordinates so we can analyze the observation counts spatially.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "UG",
+          "hasCoordinate": true,
+          "taxonKey": 2393184
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded occurrence records to prepare for regression modeling. We need to extract the counts of fish observed at each site, so filter for records that have an explicit individual count documented. Keep the individual count as the target variable, and the decimal latitude and decimal longitude as predictor variables. Drop any rows with missing values in these three columns. What is the mean individual count across the remaining observations?",
+    "expected": 18.82,
+    "unit": "count"
+  },
+  "phase_4": {
+    "user_prompt": "Using the processed count data, we want to evaluate how well a margin-maximising kernel regression handles the overdispersed counts compared to traditional models. First, standardize (scale) the latitude and longitude predictor variables. Then, split the data into 70% training and 30% testing sets. Train a margin-maximising kernel regression regression model using a Gaussian radial basis function (RBF) kernel with a cost parameter (C) of 1 to predict the individual count from the spatial coordinates. Finally, calculate the Mean Absolute Error (MAE) on the test set.",
+    "expected": 13.67,
+    "unit": "MAE",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Machine learning regression techniques, particularly SVM, provide a robust alternative to traditional count regression models (like Poisson or Negative Binomial) for handling highly overdispersed and zero-inflated ecological count data, as evidenced by lower Mean Absolute Error values.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

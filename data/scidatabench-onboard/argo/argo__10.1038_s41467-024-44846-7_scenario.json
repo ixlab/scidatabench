@@ -1,0 +1,40 @@
+{
+  "source_doi": "10.1038/s41467-024-44846-7",
+  "research_question": "How do episodic submesoscale fronts and mesoscale eddies influence the efficiency of biological carbon export in the North Pacific Subtropical Gyre?",
+  "phase_1": {
+    "user_prompt": "We are analyzing biological carbon export induced by submesoscale fronts in the North Pacific Subtropical Gyre. Please identify the unique identifiers for the two Biogeochemical-Argo floats that sampled the cyclonic eddies there, and list the primary physical and biogeochemical variables we need from their profiles to quantify hydrography, nutrient drawdown, phytoplankton biomass, oxygen and particle backscatter.",
+    "expected": {
+      "float_wmo_ids": [
+        "2902753",
+        "2902756"
+      ],
+      "parameters": [
+        "TEMP",
+        "PSAL",
+        "NITRATE",
+        "CHLA",
+        "DOXY",
+        "BBP700"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the float identifiers and the required parameters, please retrieve the profile data for these floats. We need to extract the specified physical and biogeochemical variables for the study period covering the float trajectories between March 30, 2019 and May 3, 2019, to capture the intensifying stages of the eddy and front.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 2902753
+        }
+      },
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 2902756
+        }
+      }
+    ]
+  }
+}

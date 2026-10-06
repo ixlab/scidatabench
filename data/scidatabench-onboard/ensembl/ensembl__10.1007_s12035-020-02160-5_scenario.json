@@ -1,0 +1,58 @@
+{
+  "source_doi": "10.1007/s12035-020-02160-5",
+  "research_question": "To characterize the transcript structure of zebrafish cacna1da and determine its sequence homology and orthology with zebrafish cacna1db and human CACNA1D.",
+  "phase_1": {
+    "user_prompt": "We are studying a zebrafish model carrying a mutation in the voltage-gated calcium channel subunit alpha 1-D. In zebrafish, this gene is duplicated. We need to identify the exact Ensembl gene identifiers for these two zebrafish duplicated genes, as well as the human ortholog(s) we will use to calculate amino acid sequence homology.",
+    "expected": {
+      "gene_ids": [
+        "ENSDARG00000102773",
+        "ENSDARG00000075917",
+        "ENSG00000157388",
+        "ENSG00000142609"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Given the identified Ensembl gene IDs for the zebrafish and human calcium channel genes, retrieve the transcript and exon structures for the primary zebrafish gene (cacna1da). Additionally, retrieve the orthology alignments and homology percentages between the zebrafish genes and their human counterparts.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_id",
+        "kwargs": {
+          "id": "ENSDARG00000102773",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "homology_id",
+        "kwargs": {
+          "species": "danio_rerio",
+          "id": "ENSDARG00000102773",
+          "target_species": "homo_sapiens",
+          "type": "orthologues",
+          "sequence": "protein"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_id",
+        "kwargs": {
+          "id": "ENSDARG00000075917",
+          "expand": 1
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "homology_id",
+        "kwargs": {
+          "species": "danio_rerio",
+          "id": "ENSDARG00000075917",
+          "target_species": "homo_sapiens",
+          "type": "orthologues",
+          "sequence": "protein"
+        }
+      }
+    ]
+  }
+}

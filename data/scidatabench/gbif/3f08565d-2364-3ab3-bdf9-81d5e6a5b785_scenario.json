@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.15560/19.3.305",
+  "research_question": "What is the distance between a newly discovered roosting site of Diclidurus albus in northern Costa Rica and the closest previously known occurrence of the species in the country?",
+  "phase_1": {
+    "user_prompt": "I've recently discovered a Northern Ghost Bat (Diclidurus albus) roosting at a new site in northern Costa Rica (10.3864° N, 84.5978° W). Before I publish this finding, I need to map it against all known historical occurrences of this species in the country. What query parameters should I use to find the historical records with valid coordinates?",
+    "expected": {
+      "country_codes": [
+        "CR"
+      ],
+      "taxon_keys": [
+        "2433092"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the parameters for the Northern Ghost Bat in Costa Rica, please download the occurrence records. I only need the ones with valid coordinates.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "CR",
+          "hasCoordinate": true,
+          "taxonKey": 2433092
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the dataset to ensure all records have valid, non-null decimal latitude and longitude values. How many valid historical occurrences remain for Costa Rica?",
+    "expected": 188,
+    "unit": null
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned historical records, calculate the straight-line (geodesic) distance in kilometers from my new observation site (10.3864 N, -84.5978 W) to the closest known historical bat occurrence. Also, plot a map showing the historical points in Costa Rica (e.g., as yellow dots) and the new site (as a red dot). Save the map as `diclidurus_distribution_map.png`.",
+    "expected": 27.3,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The new record in northern Costa Rica is located approximately 27 km from the nearest previously known occurrence, geographically expanding the documented range within the country.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "diclidurus_distribution_map.png",
+      "visual_description": "A map of Costa Rica with country boundaries. Historical occurrence points from the GBIF dataset should be plotted (e.g., as yellow points), and the specific new target coordinate (10.3864 N, -84.5978 W) should be plotted distinctly (e.g., as a red dot) to compare their spatial relationship.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

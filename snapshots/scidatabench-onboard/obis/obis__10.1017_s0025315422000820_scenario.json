@@ -1,0 +1,49 @@
+{
+ "scenario_file": "obis__10.1017_s0025315422000820_scenario.json",
+ "platform": "obis",
+ "downloaded_at": "2026-08-09T02:08:03.482317+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Acanthocybium solandri",
+    "geometry": "POLYGON((30 -5, 80 -5, 80 30, 30 30, 30 -5))",
+    "enddate": "2022-03-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:08:00.395000+00:00",
+   "rows": 21,
+   "format": "parquet",
+   "total_available": 21
+  },
+  {
+   "idx": 1,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Kajikia audax",
+    "geometry": "POLYGON((30 -5, 80 -5, 80 30, 30 30, 30 -5))",
+    "enddate": "2022-03-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T02:08:03.482317+00:00",
+   "rows": 13,
+   "format": "parquet",
+   "total_available": 13
+  }
+ ]
+}

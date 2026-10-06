@@ -1,0 +1,54 @@
+{
+  "source_doi": "10.5194/essd-2024-330",
+  "research_question": "Estimate at-a-station hydraulic geometry scaling relationships (specifically water velocity as a function of stream discharge) using tracer-gas reaeration and field discharge data for wadeable streams.",
+  "phase_1": {
+    "user_prompt": "I'm working on characterizing stream hydraulic geometries and gas exchange velocities. Could you help me find the NEON data products for reaeration field and lab collection, as well as field discharge measurements?",
+    "expected": {
+      "data_products": [
+        "DP1.20190.001",
+        "DP1.20048.001"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now, please download the reaeration and discharge data for the Upper Big Creek (BIGC) site. To match the paper's data snapshot (RELEASE-2023 plus a few provisional experiments), restrict the request to data collected on or before February 2023.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20190.001",
+          "site": "BIGC",
+          "enddate": "2023-02"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20048.001",
+          "site": "BIGC",
+          "enddate": "2023-02"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved data to pair stream discharge measurements with their corresponding salt tracer injection experiments. Use both the NaCl constant-rate injections (during full tracer-gas experiments) and the additional NaCl slug injections (model - slug) at BIGC, since both injection types are used in the paper to derive a velocity estimate. Filter the dataset to include only experiments with valid paired discharge measurements collected on or before 2023-02. How many paired velocity experiments are available for BIGC under this paper-era snapshot?",
+    "expected": 28,
+    "unit": "experiments"
+  },
+  "phase_4": {
+    "user_prompt": "Calculate the stream velocity (v) for each valid experiment at BIGC by finding the travel time between stations from the conductivity breakthrough curves. Then, model the at-a-station hydraulic geometry for velocity by fitting a relationship of the form y = a·x^b (v = k * Q^m) using log-log linear regression. Report the scaling exponent (m). Also, create a scatterplot of discharge versus velocity in log-log space with the fitted line, and save it as `BIGC_velocity_discharge_geometry.png`.",
+    "expected": 0.67,
+    "unit": "unitless",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Stream velocity scales with discharge at Upper Big Creek (BIGC) following a positive power-law relationship with an exponent of approximately 0.67. This demonstrates that velocity increases moderately with discharge, consistent with typical at-a-station hydraulic geometries for wadeable streams.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "BIGC_velocity_discharge_geometry.png",
+      "visual_description": "A scatterplot showing discharge on the x-axis and velocity on the y-axis, plotted in log-log space. Points should represent individual experimental dates at the BIGC site. A linear regression line must be overlaid, demonstrating a positive slope.",
+      "paper_figure_reference": "Figure 6, BIGC panel"
+    }
+  }
+}

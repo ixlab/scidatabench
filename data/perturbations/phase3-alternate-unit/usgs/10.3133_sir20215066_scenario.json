@@ -1,0 +1,80 @@
+{
+  "source_doi": "10.3133/sir20215066",
+  "research_question": "What is the magnitude of base-flow diel cycling for trace elements (specifically filtered zinc and filtered manganese) in the Eagle River Basin during intensive 24-hour sampling events?",
+  "phase_1": {
+    "user_prompt": "I am researching base-flow diel cycling of trace elements in the Eagle River Basin in Colorado. I need to find the official USGS site numbers for two specific streamgages: 'Eagle River near Minturn, CO' and 'Eagle River below Milk Creek near Wolcott, CO'. I also need the standard 5-digit USGS parameter codes for filtered zinc (in micrograms per liter) and filtered manganese (in micrograms per liter). Finally, my study focuses on discrete water quality sampling data collected during a specific intensive study week from September 5, 2018, to September 12, 2018.",
+    "expected": {
+      "sites": [
+        "09064600",
+        "394220106431500"
+      ],
+      "parameter_codes": [
+        "01056",
+        "01090"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site numbers and parameter codes you found, retrieve the discrete water quality sample data for filtered zinc and filtered manganese at the two Eagle River locations between September 5, 2018, and September 12, 2018.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09064600",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2018-09-05",
+          "activityStartDateUpper": "2018-09-12"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09064600",
+          "usgsPCode": "01090",
+          "activityStartDateLower": "2018-09-05",
+          "activityStartDateUpper": "2018-09-12"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-394220106431500",
+          "usgsPCode": "01056",
+          "activityStartDateLower": "2018-09-05",
+          "activityStartDateUpper": "2018-09-12"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-394220106431500",
+          "usgsPCode": "01090",
+          "activityStartDateLower": "2018-09-05",
+          "activityStartDateUpper": "2018-09-12"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Filter the retrieved data to isolate the specific 24-hour intensive sampling periods for each location: September 5-6, 2018 for the Minturn site, and September 10-11, 2018 for the Wolcott site. For each site and parameter combination during their respective sampling windows, find the minimum and maximum sampled concentrations. As an initial verification, what was the maximum sampled concentration of filtered zinc at the Minturn site during its 24-hour sampling event? Report the result in milligrams per liter (mg/L).",
+    "expected": 0.063,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Now, quantify the magnitude of the diel cycle for these trace elements. Calculate the percent diel change for each site and parameter using the formula: ((Maximum - Minimum) / Minimum) * 100. What is the calculated percent diel change for filtered manganese at the site below Milk Creek near Wolcott? Additionally, create a visualization plotting the concentrations of filtered manganese and zinc over time (by hour) at this Wolcott site during the Sept 10-11 sampling event to observe the diel curves. Save the plot as `diel_trace_elements_curve.png`.",
+    "expected": 284.0,
+    "unit": "percent",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Concentrations of filtered manganese and zinc exhibited substantial diel cycling, with maximum concentrations occurring during the nighttime or early morning hours and minimum concentrations occurring in the mid to late afternoon. The diel cycle in filtered manganese was particularly pronounced, increasing by over 250 percent from its minimum.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "diel_trace_elements_curve.png",
+      "visual_description": "A line plot with time (or hour of day) on the x-axis and concentration on the y-axis, showing two curves (filtered manganese and filtered zinc) at site 394220106431500 over the Sept 10-11 period. The manganese curve should show a dramatic peak during the nighttime/early morning (around 01:00) and a sharp trough in the afternoon. The zinc curve should follow a similar, albeit less extreme, pattern with a trough in the afternoon and peaks at night.",
+      "paper_figure_reference": "Figure 7 Panel B"
+    }
+  }
+}

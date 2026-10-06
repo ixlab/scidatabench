@@ -1,0 +1,72 @@
+{
+  "source_doi": "10.1038/s41467-020-16931-0",
+  "research_question": "To partition the biogeochemical (export) and ecological (grazing) fates of phytoplankton blooms in the Southern Ocean sea-ice zone using continuous vertical profiles from BGC-Argo floats.",
+  "phase_1": {
+    "user_prompt": "We are studying the fate of phytoplankton in the Southern Ocean sea-ice zone using SOCCOM BGC-Argo floats to track blooms and vertical export. Our analysis needs the physical hydrography of each profile, the two optical proxies for phytoplankton biomass and particulate carbon, and the biogeochemical tracers for dissolved oxygen, for the limiting macronutrient, and for carbonate chemistry. Which Argo parameter names should we extract from the float profiles?",
+    "expected": {
+      "parameters": [
+        "TEMP",
+        "PSAL",
+        "CHLA",
+        "BBP700",
+        "PH_IN_SITU_TOTAL",
+        "DOXY",
+        "NITRATE"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the target parameters (TEMP, PSAL, CHLA, BBP700, PH_IN_SITU_TOTAL, DOXY, NITRATE), please retrieve the profiles for these variables from the seven SOCCOM floats analyzed in the study (identified by float numbers 7652, 9094, 9099, 9125, 9275, 0506, and 0507) covering the observational period of 2015 to 2017.",
+    "expected": [
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5904467
+        }
+      },
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5904471
+        }
+      },
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5904468
+        }
+      },
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5904397
+        }
+      },
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5904472
+        }
+      },
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5904670
+        }
+      },
+      {
+        "module": "argopy",
+        "function": "DataFetcher.float",
+        "kwargs": {
+          "wmo": 5904671
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source_doi": "10.3897/neotropical.18.e98374",
+  "research_question": "To determine the mammal species richness and taxonomic composition in the Tandilia Mountains of Argentina using historical museum occurrence records from GBIF.",
+  "phase_1": {
+    "user_prompt": "I am planning a biodiversity inventory of the Tandilia Mountains in Buenos Aires province, Argentina, focusing on mammals. I want to build a baseline list of species from historical museum collections, explicitly excluding fossil records. What taxa, geographic regions, and record types should I use for my GBIF search to isolate these specific occurrences?",
+    "expected": {
+      "country_codes": [
+        "AR"
+      ],
+      "taxon_keys": [
+        "359"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "To ensure our analysis is perfectly reproducible and uses a stable historical baseline rather than a live search that changes daily, please download and use the specific GBIF dataset archive associated with the DOI 10.15468/dl.48ffnu.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN"
+          ],
+          "country": "AR",
+          "taxonKey": 359
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Load the downloaded GBIF dataset. Filter the data to ensure you are analyzing valid occurrence records. How many total occurrence records are present in this historical dataset snapshot?",
+    "expected": 2728,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Based on this dataset, calculate the total species richness (the number of unique species with valid scientific names). Additionally, create a bar chart showing the species richness (number of unique species, not number of records) within each taxonomic Order found in the dataset, and save it as `mammal_richness_by_order.png`.",
+    "expected": 33,
+    "unit": "species",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The dataset should display the highest species richness in the order Rodentia, followed by Chiroptera and Carnivora. The bar chart should clearly plot the number of unique species on one axis and the taxonomic orders on the other.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "mammal_richness_by_order.png",
+      "visual_description": "A bar chart where the x-axis or y-axis lists taxonomic orders (e.g., Rodentia, Chiroptera, Carnivora, Didelphimorphia) and the opposite axis shows the integer count of unique species for each order. The tallest bar must be Rodentia.",
+      "paper_figure_reference": "Figure 4"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "source_doi": "10.1186/s12862-025-02354-2",
+  "research_question": "Analyze the residency patterns and minimum resident durations (MRD) of green sea turtles in Taiwan using crowdsourced photo-identification data.",
+  "phase_1": {
+    "user_prompt": "I want to study the residency patterns of sea turtles in Taiwan using crowdsourced photo-identification data. There is a published dataset on GBIF from the 'TurtleSpot Taiwan' initiative that covers citizen science sightings from 2017 to 2022. Could you find the specific dataset DOI for this project?",
+    "expected": {
+      "dataset_keys": [
+        "336b6790-062f-407f-a783-2f1d8874e6c3"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Great, now please download all the occurrence records from this TurtleSpot Taiwan dataset.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "datasetKey": "336b6790-062f-407f-a783-2f1d8874e6c3"
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "I need to clean the data to figure out how many green turtles (Chelonia mydas) were only ever seen on a single day. Filter the dataset for green turtles, remove any records with missing date information, and group the sightings by individual turtle ID. Count the number of 'non-resighted' individuals—those that only have sightings on a single date (i.e., a Minimum Resident Duration of 0 days).",
+    "expected": 295.0,
+    "unit": "individuals"
+  },
+  "phase_4": {
+    "user_prompt": "Now let's look at the resident turtles. Using the same cleaned dataset of green turtles, calculate how many individuals are considered 'residents', defined as having a Minimum Resident Duration (MRD) of 365 days or more. Also, create a bar chart showing the count of resighted individuals (MRD > 0) broken down by MRD category: <90 days, 90-364 days, 1-2 years, and >2 years. Save the plot as `green_turtle_mrd_distribution.png`. Based on the number of long-term residents, what can we conclude about the ecological importance of Taiwan's coastal waters for these turtles?",
+    "expected": 318.0,
+    "unit": "individuals",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Taiwan's coastal waters serve as critical, long-term foraging grounds for green turtles, as evidenced by a high proportion of individuals showing site fidelity and residency spanning over a year. The prolonged residency durations indicate that these nearshore habitats provide sufficient resources to support sustained populations, highlighting their importance for sea turtle conservation.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "green_turtle_mrd_distribution.png",
+      "visual_description": "A bar chart showing four MRD categories for resighted green turtles. The '> 2 years' bin should be the tallest (representing >50% of the resighted turtles, approx 226), followed by '1-2 years' (approx 92), '90-364 days' (approx 69), and '< 90 days' (approx 41).",
+      "paper_figure_reference": "Figure 2a (pie chart equivalent) & Figure 2b"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "source_doi": "10.1007/s00382-020-05290-7",
+  "research_question": "How will the intensity and area of Southern Hemisphere subtropical anticyclones change under future global warming, and what mechanisms (diabatic heating, static stability) drive these changes in CMIP6 models?",
+  "phase_1": {
+    "user_prompt": "We are analyzing how Southern Hemisphere subtropical anticyclones respond to global warming, comparing present-day climate to future projections under the highest-emission, fossil-fueled development pathway. We compute seasonal means (austral summer and winter) for sea level pressure, 3D horizontal winds, 3D air temperature (to calculate static stability and potential temperature), precipitation rate (converted to latent heating), and surface sensible heat flux. Which CMIP6 experiments, variables, and data frequencies should we look up to acquire these core atmospheric variables?",
+    "expected": {
+      "experiment_ids": [
+        "historical",
+        "ssp585"
+      ],
+      "variable_ids": [
+        "psl",
+        "ua",
+        "va",
+        "ta",
+        "pr",
+        "hfss"
+      ],
+      "table_ids": [
+        "Amon"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the identifiers, please write a script to search the CMIP6 catalog and retrieve the historical and SSP585 monthly data for sea level pressure, winds (eastward and northward), air temperature, precipitation, and surface sensible heat flux. To keep the download manageable for this test, restrict your search and data retrieval to just the 'CESM2' model.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "experiment_id": [
+            "historical",
+            "ssp585"
+          ],
+          "variable_id": [
+            "psl",
+            "ua",
+            "va",
+            "ta",
+            "pr",
+            "hfss"
+          ],
+          "table_id": [
+            "Amon"
+          ],
+          "source_id": [
+            "CESM2"
+          ]
+        }
+      }
+    ]
+  }
+}

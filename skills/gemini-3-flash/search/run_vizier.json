@@ -1,0 +1,67 @@
+{
+  "platform": "vizier",
+  "condition": "search",
+  "model": "gemini-3-flash-preview",
+  "elapsed_s": 38.0,
+  "tokens": {
+    "input": 85327,
+    "output": 3374,
+    "thinking": 1795,
+    "total": 88701,
+    "cache_read": 35390
+  },
+  "tool_call_turns": 5,
+  "research_log": [
+    {
+      "kind": "search",
+      "query": "astroquery.vizier documentation API reference",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://astroquery.readthedocs.io/en/latest/vizier/vizier.html",
+        "https://astroquery.readthedocs.io/en/latest/api/astroquery.vizier.Conf.html",
+        "https://astroquery.readthedocs.io/en/stable/api/astroquery.vizier.VizierClass.html",
+        "https://dokk.org/documentation/astropy-astroquery/v0.4.6/_modules/astroquery/vizier/core",
+        "https://astroquery.readthedocs.io",
+        "https://lira.no-ip.org:8443/doc/python-astroquery-doc/html/api/astroquery.vizier.Conf.html",
+        "https://github.com/astropy/astroquery/issues/3509",
+        "https://stackoverflow.com/questions/37706925/astroquery-vizier-query-region-over-a-large-area-failing"
+      ]
+    },
+    {
+      "kind": "fetch",
+      "url": "https://astroquery.readthedocs.io/en/latest/vizier/vizier.html",
+      "status": "200",
+      "chars": 18287
+    },
+    {
+      "kind": "fetch",
+      "url": "https://astroquery.readthedocs.io/en/stable/api/astroquery.vizier.VizierClass.html",
+      "status": "200",
+      "chars": 16025
+    },
+    {
+      "kind": "search",
+      "query": "astroquery.vizier Vizier instance vs class",
+      "provider": "tavily",
+      "n_results": 8,
+      "urls": [
+        "https://github.com/astropy/astroquery/issues/2198",
+        "https://astroquery.readthedocs.io/en/latest/api/astroquery.vizier.VizierClass.html",
+        "https://astroquery.readthedocs.io/en/latest/vizier/vizier.html",
+        "https://astroquery.readthedocs.io/en/latest/_modules/astroquery/vizier/core.html",
+        "https://cds.unistra.fr/help/faq/vizier",
+        "https://www.astrobetter.com/blog/2020/06/29/the-cds-and-python-iii-vizier-xmatch-20k-catalogues-and-tables-at-your-fingertips",
+        "https://astronomy.stackexchange.com/questions/51672/having-trouble-using-astroquerys-vizier-query-region",
+        "https://stackoverflow.com/questions/39765998/astroquery-vizier-ucac4-full-download"
+      ]
+    },
+    {
+      "kind": "fetch",
+      "url": "https://astroquery.readthedocs.io/en/latest/_modules/astroquery/vizier/core.html",
+      "status": "200",
+      "chars": 34476
+    }
+  ],
+  "generated_utc": "2026-08-14T01:47:56.224048+00:00"
+}

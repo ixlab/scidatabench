@@ -1,0 +1,20 @@
+{
+ "scenario_file": "85426e14-4167-343a-8fd7-8f7109335a8d_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-24T02:32:11.637205+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 5981942,
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T02:32:11.637205+00:00",
+   "rows": 14,
+   "gbif_count": 14
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+  "source_doi": "10.15560/19.6.1021",
+  "research_question": "What is the geographic distribution and Extent of Occurrence (EOO) of the rare Chilean endemic hangingfly Anabittacus iridipennis based on available occurrence records?",
+  "phase_1": {
+    "user_prompt": "I'm interested in assessing the geographic range of the endemic hangingfly species, Anabittacus iridipennis. I need to find all available occurrence data for this species that includes geographic coordinates so I can map its distribution.",
+    "expected": {
+      "taxon_keys": [
+        "5981942"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the occurrence records for Anabittacus iridipennis using the filters we identified.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "hasCoordinate": true,
+          "taxonKey": 5981942
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the retrieved occurrence dataset. Ensure all records fall within South America (specifically Chile, as it is an endemic species) and remove any duplicates based on identical coordinates. How many unique occurrence locations remain?",
+    "expected": 5,
+    "unit": "unique locations"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned unique occurrences, calculate the Extent of Occurrence (EOO) in square kilometers, applying the standard minimum convex polygon method. Additionally, generate a distribution map showing the occurrence points overlaid on the country borders. Save the map as `anabittacus_distribution_map.png`. Based on the map and EOO, briefly describe the geographic limits and conservation context of this species.",
+    "expected": 37412.0,
+    "unit": "km^2",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis should confirm that Anabittacus iridipennis is highly restricted geographically to southern Chile, specifically clustering in the Los Ríos and Los Lagos regions (roughly between 39°S and 43°S). This restricted Extent of Occurrence highlights its endemism to temperate Valdivian forest habitats.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "anabittacus_distribution_map.png",
+      "visual_description": "A map of Chile (or southern South America) showing a sparse cluster of occurrence points tightly grouped in the southern central region (between latitudes -39 and -43), with no points appearing in northern or extreme southern Chile.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

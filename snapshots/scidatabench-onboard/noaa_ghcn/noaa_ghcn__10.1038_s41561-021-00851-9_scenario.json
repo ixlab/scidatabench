@@ -1,0 +1,55 @@
+{
+ "scenario_file": "noaa_ghcn__10.1038_s41561-021-00851-9_scenario.json",
+ "platform": "noaa_ghcn",
+ "downloaded_at": "2026-08-10T22:37:36.886442+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "CHM00056778",
+    "startDate": "1950-01-01",
+    "endDate": "2023-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:35.825920+00:00",
+   "rows": 26660,
+   "format": "parquet",
+   "station": "CHM00056778"
+  },
+  {
+   "idx": 1,
+   "module": "noaa_ncei",
+   "function": "access_data",
+   "kwargs": {
+    "dataset": "daily-summaries",
+    "stations": "CHM00059417",
+    "startDate": "1950-01-01",
+    "endDate": "2023-12-31",
+    "dataTypes": "TMAX,TMIN,PRCP",
+    "format": "json"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:36.886442+00:00",
+   "rows": 25906,
+   "format": "parquet",
+   "station": "CHM00059417"
+  }
+ ]
+}

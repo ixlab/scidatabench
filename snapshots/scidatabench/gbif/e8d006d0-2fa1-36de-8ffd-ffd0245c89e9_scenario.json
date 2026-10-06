@@ -1,0 +1,95 @@
+{
+ "scenario_file": "e8d006d0-2fa1-36de-8ffd-ffd0245c89e9_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T06:26:26+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2432438,
+    "basisOfRecord": [
+     "PRESERVED_SPECIMEN",
+     "MATERIAL_SAMPLE",
+     "OCCURRENCE"
+    ],
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:25:51+00:00",
+   "rows": 658,
+   "format": "gbif_simple_csv",
+   "download_key": "0007514-260423192947929",
+   "doi": "10.15468/dl.96jdcr",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2432438"
+     },
+     {
+      "type": "in",
+      "key": "BASIS_OF_RECORD",
+      "values": [
+       "PRESERVED_SPECIMEN",
+       "MATERIAL_SAMPLE",
+       "OCCURRENCE"
+      ]
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  },
+  {
+   "idx": 1,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2432411,
+    "basisOfRecord": [
+     "PRESERVED_SPECIMEN",
+     "MATERIAL_SAMPLE",
+     "OCCURRENCE"
+    ],
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:26:26+00:00",
+   "rows": 3707,
+   "format": "gbif_simple_csv",
+   "download_key": "0007515-260423192947929",
+   "doi": "10.15468/dl.ayq388",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2432411"
+     },
+     {
+      "type": "in",
+      "key": "BASIS_OF_RECORD",
+      "values": [
+       "PRESERVED_SPECIMEN",
+       "MATERIAL_SAMPLE",
+       "OCCURRENCE"
+      ]
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     }
+    ]
+   }
+  }
+ ]
+}

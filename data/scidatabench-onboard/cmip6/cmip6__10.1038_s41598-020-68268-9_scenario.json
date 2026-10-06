@@ -1,0 +1,47 @@
+{
+  "source_doi": "10.1038/s41598-020-68268-9",
+  "research_question": "How do the characteristics of the Indian Ocean Dipole (IOD) and El Niño-Southern Oscillation (ENSO), their biases, and their links compare between CMIP5 and CMIP6 historical simulations?",
+  "phase_1": {
+    "user_prompt": "We are setting up a CMIP6 data retrieval for an analysis of the Indian Ocean Dipole and ENSO, which we will diagnose from monthly sea surface temperature over the observed past. Please identify the precise CMIP6 experiment name, the standard variable ID for sea surface temperature, the table ID for monthly ocean data, and the variant label that is available for the majority of CMIP6 models.",
+    "expected": {
+      "experiment_ids": [
+        "historical"
+      ],
+      "variable_ids": [
+        "tos"
+      ],
+      "table_ids": [
+        "Omon"
+      ],
+      "variant_labels": [
+        "r1i1p1f1"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "We are reproducing our West Tropical Indian Ocean (WTIO) analysis for one of the CMIP6 models. Please retrieve the historical monthly sea surface temperature data for the CESM2 model (using its primary variant) covering the analysis period from 1850 to 2005. Once accessed, subset the dataset spatially to our WTIO region of interest, 10°S-10°N and 50°E-70°E.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "experiment_id": [
+            "historical"
+          ],
+          "variable_id": [
+            "tos"
+          ],
+          "table_id": [
+            "Omon"
+          ],
+          "variant_label": [
+            "r1i1p1f1"
+          ],
+          "source_id": [
+            "CESM2"
+          ]
+        }
+      }
+    ]
+  }
+}

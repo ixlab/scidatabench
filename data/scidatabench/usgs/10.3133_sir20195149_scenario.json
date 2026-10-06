@@ -1,0 +1,103 @@
+{
+  "source_doi": "10.3133/sir20195149",
+  "research_question": "How much streamflow volume is lost to infiltration and diversions along the Big Lost River in southeastern Idaho between Mackay Reservoir and the Big Lost River Sinks?",
+  "phase_1": {
+    "user_prompt": "I am studying surface water infiltration and streamflow losses along the Big Lost River in southeastern Idaho, from just below Mackay Reservoir down to the Big Lost River Sinks near Howe. I need to identify the active USGS streamgages along this specific river reach and prepare to retrieve their daily discharge data for Water Years 2016 through 2018.",
+    "expected": {
+      "sites": [
+        "13127000",
+        "13132500",
+        "13132513",
+        "13132520",
+        "13132535",
+        "13132565"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 6 streamgages along the Big Lost River, please download the daily mean streamflow records for all of them for Water Years 2016 through 2018.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13127000",
+          "parameter_code": "00060",
+          "time": "2015-10-01/2018-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13132500",
+          "parameter_code": "00060",
+          "time": "2015-10-01/2018-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13132513",
+          "parameter_code": "00060",
+          "time": "2015-10-01/2018-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13132520",
+          "parameter_code": "00060",
+          "time": "2015-10-01/2018-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13132535",
+          "parameter_code": "00060",
+          "time": "2015-10-01/2018-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13132565",
+          "parameter_code": "00060",
+          "time": "2015-10-01/2018-09-30",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To quantify the total water entering this reach of the system, process the daily streamflow data for the most upstream gage (Big Lost River below Mackay Reservoir) and calculate its total annual streamflow volume in acre-feet for Water Year 2018.",
+    "expected": 300961.0,
+    "unit": "acre-feet"
+  },
+  "phase_4": {
+    "user_prompt": "Next, calculate the total annual streamflow volume in acre-feet for Water Year 2018 at the most downstream gage in our set (Big Lost River above Big Lost River Sinks). Also, create a bar chart showing the WY 2018 annual streamflow volume (in acre-feet) for all 6 gages arranged in downstream order, to visualize how much water is lost to diversions and aquifer infiltration. Save the plot as `big_lost_river_streamflow_loss.png`.",
+    "expected": 30053.0,
+    "unit": "acre-feet",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Streamflow volume on the Big Lost River decreases significantly from upstream to downstream due to infiltration into the Eastern Snake River Plain aquifer and irrigation diversions. In Water Year 2018, annual streamflow dropped from approximately 301,000 acre-feet below Mackay Reservoir to about 30,000 acre-feet above the Big Lost River Sinks.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "big_lost_river_streamflow_loss.png",
+      "visual_description": "A bar chart showing annual streamflow volume (in acre-feet) for Water Year 2018 across 6 gages on the Big Lost River. The x-axis should list the gages ordered from upstream to downstream (13127000, 13132500, 13132513, 13132520, 13132535, 13132565), and the y-axis should represent volume in acre-feet. The bars should demonstrate a clear overall decreasing trend in flow volume moving downstream.",
+      "paper_figure_reference": "Table 4"
+    }
+  }
+}

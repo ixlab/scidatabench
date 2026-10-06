@@ -1,0 +1,26 @@
+{
+  "source_doi": "10.1021/acsaem.1c01223",
+  "research_question": "How can a machine learning regression model be developed to predict the mechanical properties (shear and bulk modulus) of Na-ion solid-state electrolytes using Materials Project data?",
+  "phase_1": {
+    "user_prompt": "We are building a platform for predicting the mechanical properties of solid-state electrolytes. For the initial training database we want every inorganic material in the Materials Project that has calculated elastic properties, focusing on the shear and bulk moduli derived via the Voigt-Reuss-Hill approximation, plus eight other structural and thermodynamic properties (such as volume, density, and formation energy) to use as features. Based on the Materials Project catalog, please identify the exact property identifiers we need.",
+    "expected": {
+      "properties": [
+        "bulk_modulus_vrh",
+        "shear_modulus_vrh"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Materials Project, please retrieve the bulk and shear moduli (Voigt-Reuss-Hill approximation) for all available materials that have computed elasticity data. Along with these target properties, please also fetch the material's volume, density, band gap, formation energy per atom, energy above hull, number of atoms (sites), number of elements, and crystal system to be used as machine learning features.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "has_props": "elasticity",
+          "_fields": "material_id,formula_pretty,bulk_modulus,shear_modulus,volume,density"
+        }
+      }
+    ]
+  }
+}

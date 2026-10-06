@@ -1,0 +1,125 @@
+{
+  "source_doi": "10.3133/ofr20131278",
+  "research_question": "To determine whether significant monotonic trends have occurred in annual minimum 7-day average flows in the lower Apalachicola-Chattahoochee-Flint River basin since the early 1900s.",
+  "phase_1": {
+    "user_prompt": "I am conducting a trend analysis on annual minimum 7-day average flows for 8 long-term streamgages in the lower Apalachicola-Chattahoochee-Flint River basin in Georgia. The stations are: Chattahoochee River at US 280 near Columbus, Chattahoochee River near Columbia, Flint River at US 19 near Carsonville, Flint River at GA 26 near Montezuma, Flint River at Albany, Flint River at Newton, Ichawaynochaway Creek at Milford, and Spring Creek near Iron City. Can you identify the official USGS site numbers for these 8 stations, as well as the 5-digit parameter code for discharge and the data service code for daily values?",
+    "expected": {
+      "sites": [
+        "02341505",
+        "02343801",
+        "02347500",
+        "02349605",
+        "02352500",
+        "02353000",
+        "02353500",
+        "02357000"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 8 site numbers and the parameter code for discharge, please retrieve the daily mean discharge data for all these sites for the full period of available record up through the end of 2011 (December 31, 2011).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02341505",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2011-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02343801",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2011-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02347500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2011-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02349605",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2011-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02352500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2011-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02353000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2011-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02353500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2011-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02357000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2011-12-31",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the daily discharge data to find the annual minimum 7-day average flow for each climatic year (defined as April 1 to March 31, designated by the year in which it ends). For example, climatic year 1955 runs from April 1, 1954 to March 31, 1955. As a verification step, please calculate and report the annual minimum 7-day average flow for the Flint River at Albany (site 02352500) for the climatic year 1955.",
+    "expected": 844.5714285714286,
+    "unit": "cfs"
+  },
+  "phase_4": {
+    "user_prompt": "Using the annual minimum 7-day average flows, perform a nonparametric Kendall's tau trend analysis to detect monotonic trends in these low flows over time. Run the test for each site using all available climatic years up through 2011. Focus specifically on the Flint River at Albany (site 02352500) and report its Kendall's tau statistic. Additionally, evaluate the trend direction and significance (at p < 0.05) for all 8 sites. Create a scatter plot of the annual minimum 7-day average flows over time for the Flint River at Albany, including a trend line, and save it as `flint_river_albany_trend.png`.",
+    "expected": -0.363,
+    "unit": "Kendall's tau",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Seven of the eight streamgages exhibited significant negative (downward) trends in annual minimum 7-day average flows. Only the Chattahoochee River near Columbus (site 02341505) showed a statistically insignificant trend.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "flint_river_albany_trend.png",
+      "visual_description": "A scatter plot showing annual minimum 7-day average flow on the y-axis and climatic year on the x-axis for site 02352500. A downward-sloping trend line should be visible, reflecting the negative correlation over the period of record.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

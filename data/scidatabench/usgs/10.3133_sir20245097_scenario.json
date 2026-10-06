@@ -1,0 +1,78 @@
+{
+  "source_doi": "10.3133/sir20245097",
+  "research_question": "How well can continuous turbidity data serve as a surrogate to predict total phosphorus concentrations in the Missouri River at St. Joseph?",
+  "phase_1": {
+    "user_prompt": "I'm researching continuous water-quality and nutrient monitoring on the Missouri River. Specifically, I'm focusing on the streamgages located at St. Joseph, Missouri, and Hermann, Missouri. What are the official USGS site numbers for these two monitoring locations?",
+    "expected": {
+      "sites": [
+        "06818000",
+        "06934500"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Focusing on the St. Joseph streamgage, I need to retrieve continuous turbidity data (in FNU) and discrete water-quality samples for total phosphorus. Retrieve this data for the period spanning water years 2008 through 2022 (October 1, 2007 to September 30, 2022).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06818000",
+          "parameter_code": "63680",
+          "time": "2007-10-01/2022-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06818000",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2007-10-01",
+          "activityStartDateUpper": "2022-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-06934500",
+          "parameter_code": "63680",
+          "time": "2007-10-01/2022-09-30"
+        },
+        "requires_chunking": true,
+        "chunk_max_days": 1100
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06934500",
+          "usgsPCode": "00665",
+          "activityStartDateLower": "2007-10-01",
+          "activityStartDateUpper": "2022-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To develop a surrogate model, we need to pair the discrete sample data with the continuous sensor data. Match each discrete total phosphorus sample to the nearest continuous turbidity measurement in time (e.g., within a 2-hour window). After removing any missing values, how many valid paired observations are available in the calibration dataset for the St. Joseph site?",
+    "expected": 159.0,
+    "unit": "samples"
+  },
+  "phase_4": {
+    "user_prompt": "Using the paired calibration dataset for the St. Joseph site, fit a quadratic regression model to predict log-transformed total phosphorus from log-transformed turbidity. Create a scatter plot showing the log-transformed data points with the fitted quadratic curve overlaid, and save it as 'st_joseph_turbidity_tp_regression.png'. What is the adjusted R-squared of this quadratic surrogate model?",
+    "expected": 0.885,
+    "unit": "R-squared",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The study established a strong turbidity-surrogate model for total phosphorus at the St. Joseph site using a quadratic regression on log-transformed data, achieving an adjusted R-squared of 0.885.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "st_joseph_turbidity_tp_regression.png",
+      "visual_description": "A scatter plot of log-transformed Total Phosphorus versus log-transformed Turbidity. The data points should show a clear positive relationship, and a fitted quadratic regression curve should be overlaid, capturing the curvature of the trend. Axes should be appropriately labeled.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

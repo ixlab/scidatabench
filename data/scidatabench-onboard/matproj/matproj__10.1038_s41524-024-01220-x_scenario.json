@@ -1,0 +1,28 @@
+{
+  "source_doi": "10.1038/s41524-024-01220-x",
+  "research_question": "How is a candidate flat-band kagome system specified and screened in the Materials Project?",
+  "phase_1": {
+    "user_prompt": "We are screening the Materials Project for materials that host flat electronic bands, and the cleanest place to start is the kagome net. The archetype we want is the binary intermetallic of the CoSn structure type, in which one sublattice forms an ideal kagome lattice, so we want every phase in that binary system rather than one composition. Give us the chemical system written the way the Materials Project writes it, and name the computed quantity we should retrieve to judge how far each phase sits above the thermodynamic ground state.",
+    "expected": {
+      "chemsys": [
+        "Co-Sn"
+      ],
+      "properties": [
+        "energy_above_hull"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now pull every material in that chemical system out of the Materials Project, with its identifier, formula and how far it sits above the hull.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "chemsys": "Co-Sn",
+          "_fields": "material_id,formula_pretty,energy_above_hull"
+        }
+      }
+    ]
+  }
+}

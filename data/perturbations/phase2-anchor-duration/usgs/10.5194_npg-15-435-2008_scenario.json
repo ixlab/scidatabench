@@ -1,0 +1,47 @@
+{
+  "source_doi": "10.5194/npg-15-435-2008",
+  "research_question": "Evaluate the performance of the standard IAAFT surrogate data generation algorithm in preserving the autocorrelative structure of daily river discharge data from the San Pedro River.",
+  "phase_1": {
+    "user_prompt": "I'm interested in testing surrogate data generation algorithms on historical hydrological records. I want to use a long historical streamflow record from the San Pedro river at Charleston, Arizona, covering the period from March 29, 1904, to February 17, 1959. What are the USGS site number, the parameter code for daily discharge, and the data type code I need to retrieve this daily data?",
+    "expected": {
+      "sites": [
+        "09471000"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site number and parameter code you identified, download the daily discharge time series for the San Pedro river at Charleston over the 20049 days beginning 29 March 1904.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09471000",
+          "parameter_code": "00060",
+          "time": "1904-03-29/1959-02-17"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Before generating surrogates, we need to subset the data and characterize its persistence. First, remove any missing values (NAs) from the time series, and then take exactly the first 16,384 (2^14) valid daily measurements starting from March 29, 1904. Subtract the mean from this sequence. Compute the empirical autocorrelation function R(τ) for all possible lags τ from 0 to N-1 (where N=16,384). Find the first lag (in days) where the autocorrelation function R(τ) drops below zero (the first zero-crossing). What is this lag in days?",
+    "expected": 50.0,
+    "unit": "days"
+  },
+  "phase_4": {
+    "user_prompt": "Now we will test how well the standard Iterated Amplitude Adjusted Fourier Transform (IAAFT) algorithm preserves the autocorrelation structure of this sequence. Generate 39 independent surrogate time series from the mean-subtracted discharge data using the standard IAAFT algorithm. For each of the 39 surrogates, compute its autocorrelation function R_surr(τ). Then calculate the Root-Mean-Squared Error (RMSE) between the original data's autocorrelation R_orig(τ) and the surrogate's autocorrelation R_surr(τ), normalized by the standard deviation of the original time series (σ_orig), over all N lags:\n\nRMSE = (1 / σ_orig) * sqrt( (1 / N) * sum((R_orig(τ) - R_surr(τ))^2) )\n\nFinally, calculate the median RMSE across all 39 surrogates. What is this median RMSE?",
+    "expected": 0.00069,
+    "unit": null,
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "source_doi": "10.1007/s10530-023-03071-x",
+  "research_question": "To what extent has community science on iNaturalist advanced the knowledge of the distribution of introduced predatory Testacella species in North America?",
+  "phase_1": {
+    "user_prompt": "We are studying introduced predatory semislugs, using community-scientist observations to map the distribution of the genus Testacella across North America. Please find the appropriate iNaturalist identifier for this genus and the standard geographical place identifier for North America, so we can retrieve the records.",
+    "expected": {
+      "taxon_names": [
+        "Testacella"
+      ],
+      "taxon_ids": [
+        "171803"
+      ],
+      "place_names": [
+        "North America"
+      ],
+      "place_ids": [
+        "97394"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the identifiers for Testacella (taxon ID 85375) and North America (place ID 97394), please retrieve all the corresponding observation records. The study analyzed observations published up until April 2023, so filter the records to include only those submitted on or before April 30, 2023.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 171803,
+          "place_id": 97394,
+          "created_d2": "2023-04-30"
+        }
+      }
+    ]
+  }
+}

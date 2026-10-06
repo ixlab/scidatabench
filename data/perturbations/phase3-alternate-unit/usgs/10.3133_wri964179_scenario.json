@@ -1,0 +1,114 @@
+{
+  "source_doi": "10.3133/wri964179",
+  "research_question": "Estimate stream-aquifer interactions and ground-water contribution (baseflow) to streams in the central Savannah River basin using historical streamflow data and flow-duration curves.",
+  "phase_1": {
+    "user_prompt": "I am studying stream-aquifer relations and baseflow contributions in the central Savannah River basin. My analysis focuses on seven specific streamgages: 02196820, 02197300, 02197310, 02197315, 02197600, 02197830, and 02198000. I need to retrieve daily mean streamflow data for these locations to eventually construct flow-duration curves. Please identify the necessary USGS parameter code and statistic code to query this data.",
+    "expected": {
+      "sites": [
+        "02196820",
+        "02197300",
+        "02197310",
+        "02197315",
+        "02197600",
+        "02197830",
+        "02198000"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Download the daily mean streamflow data for the seven identified streamgages from the beginning of their respective periods of record through the end of water year 1993 (September 30, 1993). Also, retrieve the site metadata for these gages so we have their drainage areas in square miles, which is critical for unit-area comparisons.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02196820",
+          "parameter_code": "00060",
+          "time": "1880-01-01/1993-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02197300",
+          "parameter_code": "00060",
+          "time": "1880-01-01/1993-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02197310",
+          "parameter_code": "00060",
+          "time": "1880-01-01/1993-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02197315",
+          "parameter_code": "00060",
+          "time": "1880-01-01/1993-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02197600",
+          "parameter_code": "00060",
+          "time": "1880-01-01/1993-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02197830",
+          "parameter_code": "00060",
+          "time": "1880-01-01/1993-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-02198000",
+          "parameter_code": "00060",
+          "time": "1880-01-01/1993-09-30",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's examine a recent period that was evaluated under steady-state conditions: water year 1987 through water year 1992 (October 1, 1986 to September 30, 1992). For the Brier Creek at Millhaven site (02198000), calculate the annual mean streamflow for each of these six individual water years. Then, calculate the overall arithmetic average of these six water-year annual means. Report the result in cubic meters per second (m³/s).",
+    "expected": 15.2486218898,
+    "unit": "m3/s"
+  },
+  "phase_4": {
+    "user_prompt": "Ground-water discharge to streams sustains flow during dry periods. A flatter flow-duration curve and higher median flow per unit area generally indicate a greater groundwater contribution. Using the full period of record through water year 1993, compute the median daily streamflow (50-percent flow duration) for Brier Creek at Millhaven (02198000) and divide it by the site's drainage area to find the unit-area median flow in (ft3/s)/mi2. Provide this unit-area median value.\n\nNext, create a visualization comparing the unit-area flow-duration curves for Brier Creek at Millhaven (02198000) and Upper Three Runs near New Ellenton (02197300). Plot the percent of time the discharge was equaled or exceeded on the x-axis (0-100%) and the unit-area discharge on the y-axis (log scale). Save the plot as `flow_duration_comparison.png`. Briefly interpret which basin receives a greater relative groundwater contribution based on these curves.",
+    "expected": 0.71,
+    "unit": "(ft3/s)/mi2",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The unit-area flow duration curve for the Upper Three Runs basin (02197300) is substantially higher and flatter than the curve for the Brier Creek basin (02198000). This indicates that Upper Three Runs receives a significantly greater relative groundwater contribution (baseflow) to streamflow from underlying aquifers compared to Brier Creek.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "flow_duration_comparison.png",
+      "visual_description": "A line plot showing flow-duration curves for sites 02198000 and 02197300. The x-axis should represent exceedance probability or percent of time discharge was equaled/exceeded (0 to 100%). The y-axis should represent unit-area discharge in cubic feet per second per square mile, scaled logarithmically. The curve for Upper Three Runs (02197300) should be positioned noticeably higher than the curve for Brier Creek (02198000).",
+      "paper_figure_reference": "Figure 9"
+    }
+  }
+}

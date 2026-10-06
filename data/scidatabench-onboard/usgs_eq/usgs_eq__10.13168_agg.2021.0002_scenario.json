@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.13168/agg.2021.0002",
+  "research_question": "How does seismic activity, specifically major historical earthquakes like the 2005 Kashmir and 1974 Pattan events, contribute to landslide susceptibility mapping in Azad Kashmir?",
+  "phase_1": {
+    "user_prompt": "We are running a landslide susceptibility study in Azad Kashmir and need regional earthquake data from USGS to evaluate the seismicity factor. For the tectonic context we want the two major historical earthquakes in this region that caused massive destruction and triggered numerous landslides prior to our study period. Please search the USGS ComCat database to discover the exact event IDs for those two earthquakes.",
+    "expected": {
+      "event_ids": [
+        "official20051008035040130",
+        "usp00009c3"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the ComCat event IDs you identified for the 2005 Kashmir and 1974 Pattan earthquakes, please retrieve their full event records from the USGS catalog.",
+    "expected": [
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "eventid": "official20051008035040130"
+        }
+      },
+      {
+        "module": "obspy.clients.fdsn",
+        "function": "Client.get_events",
+        "kwargs": {
+          "eventid": "usp00009c3"
+        }
+      }
+    ]
+  }
+}

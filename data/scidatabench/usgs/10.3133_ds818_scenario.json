@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.3133/ds818",
+  "research_question": "How did the specific conductance of a pristine prairie stream compare to a major river in Missouri during the 2012 Water Year?",
+  "phase_1": {
+    "user_prompt": "I am investigating water quality differences between a pristine prairie stream and a major river in Missouri during the 2012 Water Year (October 2011 through September 2012). Please find the USGS site numbers for the stations named 'East Drywood Creek at Prairie State Park' and 'Missouri River at St. Joseph'. Also, identify the parameter code for specific conductance.",
+    "expected": {
+      "sites": [
+        "06917630",
+        "06818000"
+      ],
+      "parameter_codes": [
+        "00095"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve all available discrete water quality sample data for specific conductance for these two sites during the 2012 Water Year (October 1, 2011 to September 30, 2012).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06917630",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2011-10-01",
+          "activityStartDateUpper": "2012-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-06818000",
+          "usgsPCode": "00095",
+          "activityStartDateLower": "2011-10-01",
+          "activityStartDateUpper": "2012-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved data to calculate the median specific conductance for each of the two sites during the 2012 Water Year. What is the median specific conductance for the East Drywood Creek station (the prairie stream)?",
+    "expected": 105.0,
+    "unit": "uS/cm"
+  },
+  "phase_4": {
+    "user_prompt": "Now report the median specific conductance for the Missouri River at St. Joseph station for Water Year 2012. Based on these medians, write a brief conclusion contrasting the specific conductance between the prairie stream and the major river. Generate a side-by-side boxplot comparing the distribution of specific conductance at the two sites and save it as `specific_conductance_comparison.png`.",
+    "expected": 773.0,
+    "unit": "uS/cm",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The median specific conductance at the major river station (Missouri River at St. Joseph) was much higher (773 µS/cm) than at the prairie stream station (East Drywood Creek, 105 µS/cm), indicating a higher concentration of dissolved ions in the major river system.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "specific_conductance_comparison.png",
+      "visual_description": "A side-by-side boxplot comparing specific conductance for the two sites, showing the Missouri River site with a notably higher median and overall range than the East Drywood Creek site.",
+      "paper_figure_reference": "Figure 5"
+    }
+  }
+}

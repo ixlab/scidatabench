@@ -1,0 +1,122 @@
+{
+  "source_doi": "10.21203/rs.3.rs-1132825/v1",
+  "research_question": "How do tree diversity, density, and leaf habit (specifically evergreen abundance) influence ground beetle diversity and density in Eastern temperate forests?",
+  "phase_1": {
+    "user_prompt": "I want to study the relationship between ground beetle communities and tree characteristics like leaf habit and density in eastern temperate forests. Can you find the NEON data products for ground beetles sampled from pitfall traps and woody plant vegetation structure? Also, please identify the 4-letter NEON site codes for the following four eastern temperate forest sites: Bartlett Experimental Forest, Harvard Forest, Jones Ecological Research Center, and Talladega National Forest.",
+    "expected": {
+      "data_products": [
+        "DP1.10022.001",
+        "DP1.10098.001"
+      ],
+      "sites": [
+        "BART",
+        "HARV",
+        "JERC",
+        "TALL"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the product and site codes, please download the ground beetle and woody plant vegetation data for BART, HARV, JERC, and TALL covering the time period from 2014 to 2019.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10022.001",
+          "site": "BART",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10022.001",
+          "site": "HARV",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10022.001",
+          "site": "JERC",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10022.001",
+          "site": "TALL",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10098.001",
+          "site": "BART",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10098.001",
+          "site": "HARV",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10098.001",
+          "site": "JERC",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10098.001",
+          "site": "TALL",
+          "startdate": "2014-01",
+          "enddate": "2019-12"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Let's clean and process the ground beetle data first. Filter out any pitfall trap samples that had disturbed cups or lids. After applying this quality control step, calculate the total number of valid ground beetle individuals collected and identified across all four sites between 2014 and 2019.",
+    "expected": 7331.0,
+    "unit": "individuals"
+  },
+  "phase_4": {
+    "user_prompt": "Finally, let's analyze how tree leaf habit affects beetle density. Using the woody plant data for HARV and TALL, classify the tree species as evergreen or deciduous (using standard botanical knowledge) to calculate the relative abundance of evergreen trees (percentage of total basal area) for each plot. Then, create a scatter plot with a trendline showing how plot-level ground beetle density (individuals per cup per year) responds to the relative abundance of evergreen trees at these two sites. Save this plot as `beetle_density_vs_evergreen_abundance.png`. Additionally, compute and output the overall average ground beetle density (individuals per cup per year) specifically for the BART site.",
+    "expected": 2.24,
+    "unit": "individuals/cup/year",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis should reveal that ground beetle density decreases as the relative abundance of evergreen trees (percent of total basal area) increases in a plot. This suggests that the lower quality litter and environmental conditions typical of evergreen stands negatively impact soil insect abundance.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "beetle_density_vs_evergreen_abundance.png",
+      "visual_description": "A scatter plot showing ground beetle density (individuals/cup) on the y-axis (possibly log-scaled) and the relative abundance of evergreen trees (%) on the x-axis for HARV and TALL sites. There should be a distinct negative trendline indicating that higher evergreen abundance is associated with lower beetle density.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

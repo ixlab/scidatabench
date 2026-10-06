@@ -1,0 +1,27 @@
+{
+  "source_doi": "10.1038/s41467-018-06625-z",
+  "research_question": "What computed materials properties from the Materials Project database can be used to construct a high-throughput screening pipeline for identifying structurally rigid and thermally robust inorganic phosphor hosts?",
+  "phase_1": {
+    "user_prompt": "We are screening for new inorganic phosphor hosts. Our plan is to train a machine learning model that estimates the Debye temperature as a proxy for structural rigidity, and then to filter candidates so that thermal photoionization is prevented. What are the three primary computed physical/electronic properties we should extract from the Materials Project database to build that training set and to construct the final screening sorting diagram?",
+    "expected": {
+      "properties": [
+        "bulk_modulus",
+        "shear_modulus",
+        "band_gap"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the key properties (bulk modulus, shear modulus, and band gap), we want to investigate the champion material's compositional space. Please query the Materials Project database for all compounds in the Na-Ba-B-O chemical system. Retrieve the chemical formula, band gap, and (if available) the bulk and shear moduli for all materials in this system.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "chemsys": "B-Ba-Na-O",
+          "_fields": "material_id,formula_pretty,band_gap,bulk_modulus,shear_modulus"
+        }
+      }
+    ]
+  }
+}

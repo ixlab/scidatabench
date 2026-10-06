@@ -1,0 +1,453 @@
+{
+  "source_doi": "10.4209/aaqr.240128",
+  "research_question": "How can PM2.5 mass be reconstructed from chemical speciation data, and how has the Organic Matter to Organic Carbon (OM/OC) ratio evolved over time at urban versus rural sites using Multiple Linear Regression?",
+  "phase_1": {
+    "user_prompt": "I want to study the PM2.5 mass deficit at three specific sites in New York State: Pinnacle State Park, Whiteface Mountain Lodge, and Queens College. Can you explore the EPA AQS API to find the exact site IDs for these locations? Additionally, identify the parameter codes for PM2.5 Local Conditions (total mass) and the chemical speciation components needed for mass closure: Sulfate, Nitrate, Organic Carbon, Elemental Carbon, Sodium, Chlorine, and the crustal elements Aluminum, Silicon, Potassium, Calcium, Titanium, and Iron.",
+    "expected": {
+      "sites": [
+        "361010003",
+        "360310003",
+        "360810124"
+      ],
+      "parameter_codes": [
+        "88101",
+        "88403",
+        "88306",
+        "88320",
+        "88321",
+        "88104",
+        "88165",
+        "88180",
+        "88111",
+        "88161",
+        "88126"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the daily measurements for PM2.5 total mass and all the identified chemical species at the three New York sites for the study period from January 1, 2002, to December 31, 2018.",
+    "expected": [
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "101",
+          "parameter": "88101",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "101",
+          "parameter": "88403",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "101",
+          "parameter": "88306",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "101",
+          "parameter": "88320",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "101",
+          "parameter": "88321",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "031",
+          "parameter": "88101",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "031",
+          "parameter": "88403",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "031",
+          "parameter": "88306",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "031",
+          "parameter": "88320",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "031",
+          "parameter": "88321",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "081",
+          "parameter": "88101",
+          "sitenum": "0124",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "081",
+          "parameter": "88403",
+          "sitenum": "0124",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "081",
+          "parameter": "88306",
+          "sitenum": "0124",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "081",
+          "parameter": "88320",
+          "sitenum": "0124",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "081",
+          "parameter": "88321",
+          "sitenum": "0124",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "031",
+          "parameter": "88104",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "031",
+          "parameter": "88165",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "031",
+          "parameter": "88180",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "031",
+          "parameter": "88111",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "031",
+          "parameter": "88161",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "031",
+          "parameter": "88126",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "081",
+          "parameter": "88104",
+          "sitenum": "0124",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "081",
+          "parameter": "88165",
+          "sitenum": "0124",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "081",
+          "parameter": "88180",
+          "sitenum": "0124",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "081",
+          "parameter": "88111",
+          "sitenum": "0124",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "081",
+          "parameter": "88161",
+          "sitenum": "0124",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "081",
+          "parameter": "88126",
+          "sitenum": "0124",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "101",
+          "parameter": "88104",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "101",
+          "parameter": "88165",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "101",
+          "parameter": "88180",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "101",
+          "parameter": "88111",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "101",
+          "parameter": "88161",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "dailysummary",
+        "kwargs": {
+          "countycode": "101",
+          "parameter": "88126",
+          "sitenum": "0003",
+          "stateFIPS": "36",
+          "bdate": "2002-01-01",
+          "edate": "2018-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the data to prepare for the mass closure regression. First, align the daily speciation data with the total PM2.5 mass measurements. Next, calculate the crustal 'Soil' component using the standard elemental oxide equation. Then, calculate non-soil potassium (KNON), and estimate ammonium sulfate and ammonium nitrate proxies from the sulfate and nitrate ions respectively. Filter the dataset to keep only days with complete records for all these components.",
+    "expected": {
+      "count": 4715,
+      "PM25_mean": 7.667276,
+      "Soil_mean": 0.33048,
+      "KNON_mean": 0.00953,
+      "Ammonium_Sulfate_mean": 2.95813,
+      "Ammonium_Nitrate_mean": 1.2159
+    },
+    "unit": null
+  },
+  "phase_4": {
+    "user_prompt": "Run a multiple linear regression (MLR) for the Queens College site using the 'early period' (2002-2006) data to estimate the contribution of Organic Carbon to the total mass. Predict PM2.5 using OC, Ammonium Sulfate, Ammonium Nitrate, and Soil as predictors with fitted coefficients, while treating EC, Na, Cl, and 1.2*KNON as fixed additions (i.e., subtract them from the total mass before regression). Report the fitted coefficient for OC (representing the OM/OC ratio). Finally, repeat this regression for the 2008-2012 and 2014-2018 periods at Queens College, and create a bar chart showing how the OM/OC ratio changes across these three periods. Save the plot as `om_oc_trend_qc.png`.",
+    "expected": 0.89,
+    "unit": "ratio",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The OM/OC ratio at the urban site (Queens College) indicates a transition from a fresh, anthropogenic emission-dominated regime (ratio ~0.89) to more aged/secondary aerosols over time (ratio increasing to ~1.88 in the later period).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "om_oc_trend_qc.png",
+      "visual_description": "A bar chart or line plot showing three distinct time periods (2002-2006, 2008-2012, 2014-2018) on the x-axis and the OM/OC ratio on the y-axis, demonstrating a clear increasing trend from approximately 0.9 up to nearly 1.9.",
+      "paper_figure_reference": "Table 1 (visualized as a trend)"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "source_doi": "10.1007/s00239-022-10071-3",
+  "research_question": "How did the genomic organization and synteny of coagulation factors, such as the F7-F10-PROZ cluster in humans and the F5 region in zebrafish, evolve across vertebrates?",
+  "phase_1": {
+    "user_prompt": "We are investigating the genomic organization of blood coagulation cascade proteins to understand their evolution through gene duplication, using the Ensembl database. First, three serine proteases of the cascade — Factor VII, Factor X, and Protein Z — sit close together on the forward strand of human chromosome 13. Second, to check the evolutionary history of Factor V we want its synteny in zebrafish, and the two genes that closely flank it there. Please identify the standard gene symbols for the three human chromosome 13 serine proteases, the zebrafish Factor V, and its two flanking genes. Also, provide the Ensembl species names for human and zebrafish.",
+    "expected": {
+      "gene_symbols": [
+        "F7",
+        "F10",
+        "PROZ",
+        "F5",
+        "ccdc80",
+        "gpr161"
+      ],
+      "species": [
+        "homo_sapiens",
+        "danio_rerio"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified gene symbols and species, please use the Ensembl REST API to retrieve the genomic coordinates (chromosome, start, and end positions) for these genes. Specifically, retrieve the data for F7, F10, and PROZ in humans to verify their physical proximity, and for F5, ccdc80, and gpr161 in zebrafish to confirm their syntenic arrangement.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "F7"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "F10"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "PROZ"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "danio_rerio",
+          "symbol": "F5"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "danio_rerio",
+          "symbol": "ccdc80"
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "danio_rerio",
+          "symbol": "gpr161a"
+        }
+      }
+    ]
+  }
+}

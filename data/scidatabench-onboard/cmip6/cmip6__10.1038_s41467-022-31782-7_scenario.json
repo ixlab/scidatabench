@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.1038/s41467-022-31782-7",
+  "research_question": "How can emergent constraints reduce uncertainty in CMIP6 projections of future temperature, precipitation, total evaporation, and snow cover changes across Asia?",
+  "phase_1": {
+    "user_prompt": "We are assessing emergent constraints on climate and water availability across Asia using CMIP6, covering the observed past as well as the four main Shared Socioeconomic Pathways. Identify the exact CMIP6 experiment IDs for those runs, and the standard CMIP6 variable IDs for the four core physical quantities in this assessment (temperature, precipitation, total evaporation, and snow cover fraction).",
+    "expected": {
+      "experiment_ids": [
+        "historical",
+        "ssp126",
+        "ssp245",
+        "ssp370",
+        "ssp585"
+      ],
+      "variable_ids": [
+        "tas",
+        "pr",
+        "evspsbl",
+        "snc"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now write a script to search the CMIP6 catalog for the historical and highest-emission future scenario data for precipitation and temperature. To keep the query execution fast and manageable, please restrict your search to monthly data ('Amon' table) and limit it to two commonly used models: 'CESM2' and 'MPI-ESM1-2-HR'.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "experiment_id": [
+            "historical",
+            "ssp585"
+          ],
+          "variable_id": [
+            "pr",
+            "tas"
+          ],
+          "table_id": [
+            "Amon"
+          ],
+          "source_id": [
+            "CESM2",
+            "MPI-ESM1-2-HR"
+          ]
+        }
+      }
+    ]
+  }
+}

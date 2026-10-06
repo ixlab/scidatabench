@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.1038/s41419-019-1929-y",
+  "research_question": "What is the gene model of the core spliceosomal Sm protein B/B-prime, whose overexpression drives NSCLC tumorigenesis?",
+  "phase_1": {
+    "user_prompt": "We are working on how a core component of the spliceosome drives tumorigenesis in non-small cell lung cancer. The protein we care about is the Sm core protein B/B-prime — one of the seven Sm proteins that form the ring shared by the major spliceosomal snRNPs, and an autoantigen in systemic lupus. Before we can look at how its own transcript is spliced we need its identifiers: give us the approved human gene symbol, the stable Ensembl gene ID it maps to, and the Ensembl species name.",
+    "expected": {
+      "gene_symbols": [
+        "SNRPB"
+      ],
+      "gene_ids": [
+        "ENSG00000125835"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now fetch the complete gene model for it from Ensembl, expanded so that every transcript isoform is included, so we can compare the splice variants.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "SNRPB",
+          "expand": 1
+        }
+      }
+    ]
+  }
+}

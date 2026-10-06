@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.21203/rs.3.rs-6574387/v1",
+  "research_question": "How do small mammal abundance, diversity, and community composition differ between native shortgrass prairie and active agricultural sites in the Great Plains, and which species act as specific habitat indicators?",
+  "phase_1": {
+    "user_prompt": "I want to compare small mammal communities between native shortgrass prairie and agricultural land in Colorado to understand the impacts of agricultural conversion. Can you find the relevant NEON data product for small mammal trapping and identify the two Colorado field sites that represent native shortgrass prairie and active agriculture, respectively?",
+    "expected": {
+      "data_products": [
+        "DP1.10072.001"
+      ],
+      "sites": [
+        "CPER",
+        "STER"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the product and sites, please download all available small mammal trapping data for these two locations from the start of their trapping efforts through the end of 2023.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "CPER",
+          "startdate": "2013-01",
+          "enddate": "2023-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "STER",
+          "startdate": "2013-01",
+          "enddate": "2023-12"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Clean the small mammal capture data by removing records where traps were not functional/not set, or the species couldn't be identified. Remove non-target species captures (like weasels, cottontails, and ground squirrels) and exclude individuals recaptured within the same 3-night trapping period. If multiple animals were caught in the same trap, treat them as separate entries. After performing this data filtering, what is the final total number of valid capture events across both sites?",
+    "expected": 4254,
+    "unit": "captures"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned data, aggregate the data by site and trapping bout (`eventID`) as the basic sampling unit. Compute the negative sum over taxa of each proportion multiplied by its natural logarithm per bout and test for significant differences between the shortgrass prairie and agricultural sites. Then perform a test of how strongly each species is associated with one group of samples using the trapping bout (one row per `eventID`) as the sample unit, where a species is recorded as present in a bout if it was captured at least once in any plot/trap during that bout. Finally, create a rank-preserving ordination plot comparing the community compositions of the two sites, saving the plot as 'community_composition_nmds.png'. What is the calculated indicator value for the silky pocket mouse (Perognathus flavus) at the shortgrass prairie site, and what are the main ecological conclusions from your analysis?",
+    "expected": 0.91,
+    "unit": "Indicator Value",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis should reveal no significant difference in species richness, but significantly higher Shannon diversity in the native shortgrass prairie compared to the agricultural site. Community composition diverges substantially: the prairie is characterized by species like Perognathus flavus (silky pocket mouse), while the agricultural site is dominated by generalists and non-natives like Onychomys leucogaster and Mus musculus.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "community_composition_nmds.png",
+      "visual_description": "An NMDS ordination plot displaying two clearly distinct clusters of points representing communities at the two sites (CPER and STER). Species vectors or labels should show prairie specialists (e.g., PEFL, REMO, DIOR) driving the CPER cluster, while generalist/agricultural species (e.g., PEMA, MUMU, ONLE) drive the tighter STER cluster.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

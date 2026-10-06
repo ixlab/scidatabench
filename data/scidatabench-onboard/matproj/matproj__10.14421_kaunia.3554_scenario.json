@@ -1,0 +1,41 @@
+{
+  "source_doi": "10.14421/kaunia.3554",
+  "research_question": "What are the stable compounds and their formation energies in the Li-P and Li-Fe-O chemical systems according to Materials Project data?",
+  "phase_1": {
+    "user_prompt": "We are determining Gibbs free energies of compound formation in the Li-P and Li-Fe-O chemical systems, in order to construct phase diagrams and find the stable compounds relevant to lithium battery applications. Please identify the Materials Project IDs of the thermodynamically stable compounds (those on the convex hull) in each of these two systems, and the computed thermodynamic property we need to evaluate their formation from the elements.",
+    "expected": {
+      "material_ids": [
+        "mp-736",
+        "mp-9588",
+        "mp-28336",
+        "mp-27687",
+        "mp-19511",
+        "mp-757614",
+        "mp-1960",
+        "mp-755094",
+        "mp-774155",
+        "mp-19770",
+        "mp-19306",
+        "mp-1279742",
+        "mp-841",
+        "mp-1235059"
+      ],
+      "properties": [
+        "formation_energy_per_atom"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the 14 Materials Project IDs we identified above (mp-736, mp-9588, mp-28336, mp-27687, mp-19511, mp-757614, mp-1960, mp-755094, mp-774155, mp-19770, mp-19306, mp-1279742, mp-841, mp-1235059), please query the Materials Project database to retrieve their formation energies and verify their thermodynamic stabilities.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "material_ids": "mp-736,mp-9588,mp-28336,mp-27687,mp-19511,mp-757614,mp-1960,mp-755094,mp-774155,mp-19770,mp-19306,mp-1279742,mp-841,mp-1235059",
+          "_fields": "material_id,formula_pretty,band_gap,density,structure"
+        }
+      }
+    ]
+  }
+}

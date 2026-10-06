@@ -1,0 +1,43 @@
+{
+ "scenario_file": "ad78e1e9-5592-3aa1-960b-acb64ee592c3_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-26T06:06:21+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 2433298,
+    "hasCoordinate": true,
+    "eventDate": "*,2020-10-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T06:06:21+00:00",
+   "rows": 14703,
+   "format": "gbif_simple_csv",
+   "download_key": "0007460-260423192947929",
+   "doi": "10.15468/dl.n3tn4b",
+   "query": {
+    "type": "and",
+    "predicates": [
+     {
+      "type": "equals",
+      "key": "TAXON_KEY",
+      "value": "2433298"
+     },
+     {
+      "type": "equals",
+      "key": "HAS_COORDINATE",
+      "value": "true"
+     },
+     {
+      "type": "lessThanOrEquals",
+      "key": "EVENT_DATE",
+      "value": "2020-10-30"
+     }
+    ]
+   }
+  }
+ ]
+}

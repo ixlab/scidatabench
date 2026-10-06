@@ -1,0 +1,114 @@
+{
+  "source_doi": "10.3389/fmars.2023.1236214",
+  "research_question": "What are the long-term trends of pH and inorganic carbon in the Eastern North Atlantic at the ESTOC site over 25 years?",
+  "phase_1": {
+    "user_prompt": "We are analyzing a 25-year time series of ocean acidification and inorganic carbon at the ESTOC site in the Eastern North Atlantic. Can you identify the PANGAEA dataset DOIs deposited for this site, and list the key physical and chemical parameters they measure?",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.959856",
+        "10.1594/PANGAEA.856590",
+        "10.1594/PANGAEA.856615",
+        "10.1594/PANGAEA.856608",
+        "10.1594/PANGAEA.856616",
+        "10.1594/PANGAEA.856593",
+        "10.1594/PANGAEA.856612",
+        "10.1594/PANGAEA.856614",
+        "10.1594/PANGAEA.856607",
+        "10.1594/PANGAEA.956272",
+        "959856",
+        "856590",
+        "856615",
+        "856608",
+        "856616",
+        "856593",
+        "856612",
+        "856614",
+        "856607",
+        "956272"
+      ],
+      "parameters": [
+        "Temperature",
+        "Salinity",
+        "Dissolved oxygen",
+        "Total alkalinity",
+        "Total dissolved inorganic carbon",
+        "pH"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 10 dataset DOIs for the ESTOC time-series, please download all of them from PANGAEA. Extract the tabular data for the physical and carbonate parameters so we can analyze the 25-year vertical profile history.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.959856"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.856590"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.856615"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.856608"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.856616"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.856593"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.856612"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.856614"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.856607"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.956272"
+        }
+      }
+    ]
+  }
+}

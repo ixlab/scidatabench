@@ -1,0 +1,64 @@
+{
+  "source_doi": "10.3133/ofr20211051",
+  "research_question": "How have groundwater levels in the C-aquifer near Flagstaff, Arizona changed historically, specifically looking at the Lake Mary 1, Woody Mountain 5, and Foxglenn wells when controlling for seasonal variability?",
+  "phase_1": {
+    "user_prompt": "I am investigating historical groundwater declines in the C-aquifer near Flagstaff, Arizona. I need to locate three specific USGS observation wells in Coconino County: 'Lake Mary 1', 'Woody Mountain 5', and 'Foxglenn'. Could you find the official USGS site numbers for these wells? Also, identify the standard USGS parameter code used for 'water table depth, feet below land surface'.",
+    "expected": {
+      "sites": [
+        "350716111354401",
+        "350856111441601",
+        "351127111360001"
+      ],
+      "parameter_codes": [
+        "72019"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the site numbers you found for Lake Mary 1, Woody Mountain 5, and Foxglenn, along with the depth-to-water parameter code, please retrieve their complete historical records of discrete groundwater level measurements. We are interested in data up through the end of the year 2019.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-350716111354401",
+          "time": "1880-01-01/2019-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-350856111441601",
+          "time": "1880-01-01/2019-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-351127111360001",
+          "time": "1880-01-01/2019-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To analyze the long-term trends while minimizing seasonal pumping effects and outliers, we need to apply a specific filtering method to the 'Lake Mary 1' well data. First, restrict the measurements to only those taken in the winter months: October, November, December, and January. Next, calculate the mean and standard deviation of these winter depth-to-water measurements. Filter out any measurements that fall outside two standard deviations from this mean. Finally, using this filtered dataset, calculate the total change in water level over the period of record (from the first valid measurement to the last). Note: represent a drop in the water table as a negative change (i.e., first depth - last depth). What is the calculated change in water level for the Lake Mary 1 well?",
+    "expected": -81.2,
+    "unit": "feet"
+  },
+  "phase_4": {
+    "user_prompt": "Now apply the exact same filtering methodology (October-January only, removing outliers beyond 2 standard deviations) to the 'Woody Mountain 5' well. Calculate the total change in water level for its period of record. Then, generate a time-series plot (hydrograph) showing the filtered winter depth-to-water measurements for both Lake Mary 1 and Woody Mountain 5 over time. Save this plot as `flagstaff_wells_hydrograph.png`. Based on the plot and your calculations, what is the change in water level for Woody Mountain 5, and what does the trend indicate about the aquifer in this area?",
+    "expected": -41.6,
+    "unit": "feet",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Both the Lake Mary 1 and Woody Mountain 5 wells exhibit significant, long-term groundwater level declines over their periods of record. This trend indicates a substantial drop in the C-aquifer potentiometric surface near the Flagstaff area, likely due to a combination of historical groundwater withdrawals and extended drought conditions.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "flagstaff_wells_hydrograph.png",
+      "visual_description": "A time-series scatter plot or line chart showing depth-to-water measurements for both Lake Mary 1 and Woody Mountain 5. The y-axis must be inverted so that increasing depth is shown moving downward on the axis. Both wells should display a clear downward trend (increasing depth) over several decades.",
+      "paper_figure_reference": "Figure 7"
+    }
+  }
+}

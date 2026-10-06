@@ -1,0 +1,47 @@
+{
+  "source_doi": "10.15560/13.2.2085",
+  "research_question": "What was the known geographic distribution and total number of localized GBIF records for Oxyrhopus fitzingeri prior to late 2016?",
+  "phase_1": {
+    "user_prompt": "I am researching the historical geographic distribution of Fitzinger's False Coral Snake (Oxyrhopus fitzingeri). What is the taxonomic identifier for this species on GBIF, and what parameters would I use to search for occurrences that have valid geographic coordinates?",
+    "expected": {
+      "taxon_keys": [
+        "2455012"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "To ensure my baseline exactly matches historical assessments from 2016, I need to use a specific snapshot of GBIF data rather than the live API. Please download the dataset associated with the GBIF download DOI 10.15468/dl.op8axd.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "hasCoordinate": true,
+          "taxonKey": 2455012
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Load the occurrence data from the downloaded archive. Clean the dataset by removing any records that do not have valid locality data (i.e., those missing latitude or longitude). Identify the unique countries present in this filtered dataset.",
+    "expected": [
+      "EC",
+      "PE"
+    ],
+    "unit": null
+  },
+  "phase_4": {
+    "user_prompt": "How many records with valid locality data are present in this historical dataset? Additionally, create a spatial scatter plot mapping these occurrences to visualize the species' known historical range. Save the map as `fitzingeri_historical_map.png`.",
+    "expected": 26,
+    "unit": "records",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The historical dataset contains exactly 26 occurrence records with valid locality data for Oxyrhopus fitzingeri. The visualization should show these points distributed along the coast of Peru (primarily northern Peru, between Tumbes and Lima/Ica) and a single record in southern Ecuador (Loja). There should be no points extending as far south as Arequipa.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "fitzingeri_historical_map.png",
+      "visual_description": "A map of western South America (Ecuador and Peru) showing occurrence points clustered mainly in northern coastal Peru, with one point in southern Ecuador and a few reaching central Peru (Lima/Ica), but no points in the far south (Arequipa).",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

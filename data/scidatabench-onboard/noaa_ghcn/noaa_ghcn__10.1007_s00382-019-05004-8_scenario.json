@@ -1,0 +1,33 @@
+{
+  "source_doi": "10.1007/s00382-019-05004-8",
+  "research_question": "How do the spatial patterns of El Niño and La Niña (e.g., ENSO Longitude Index vs. Niño3.4) affect daily winter precipitation extremes across the contiguous United States?",
+  "phase_1": {
+    "user_prompt": "We are running a statistical analysis of daily winter extremes to investigate ENSO as a source of western US hydroclimate predictability, modelling the climatological distribution of extreme rainfall events from weather station measurements. Can you tell us the specific meteorological variable to extract from the station data, and the geographic extent of the station network we should select over the contiguous United States?",
+    "expected": {
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified requirements (daily precipitation for CONUS), write code to retrieve this data from the GHCN-Daily archive. Extract the station metadata for the contiguous US and fetch the daily precipitation measurements covering the period from January 1, 1950 to December 31, 2017, so that the winter wet season (December through February) can be isolated for extreme value analysis.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00013984",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          39.8,
+          -98.6
+        ]
+      }
+    ]
+  }
+}

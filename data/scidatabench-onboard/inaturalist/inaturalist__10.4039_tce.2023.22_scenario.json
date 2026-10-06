@@ -1,0 +1,42 @@
+{
+  "source_doi": "10.4039/tce.2023.22",
+  "research_question": "What is the current distribution and temporal occurrence of the invasive Japanese beetle and its tachinid parasitoid in Québec based on iNaturalist citizen science data up to 2022?",
+  "phase_1": {
+    "user_prompt": "We are studying the establishment of the association between the invasive Japanese beetle and its tachinid fly parasitoid in the Canadian province where Montreal and Granby are located. We need to query iNaturalist for their occurrences to map their spatial distribution. What are the formal scientific names of these two insect taxa and the name of the province that we should use for the search?",
+    "expected": {
+      "taxon_names": [
+        "Popillia japonica",
+        "Istocheta aldrichi"
+      ],
+      "place_names": [
+        "Québec",
+        "Quebec"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve all 'Research Grade' iNaturalist observations of the Japanese beetle (Popillia japonica) and its parasitoid (Istocheta aldrichi) in Québec, Canada, recorded up until the end of 2022. We need the geographic coordinates of these observations to map their spatial distribution.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 67760,
+          "place_id": 13336,
+          "quality_grade": "research",
+          "d2": "2022-12-31"
+        }
+      },
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 197122,
+          "place_id": 13336,
+          "quality_grade": "research",
+          "d2": "2022-12-31"
+        }
+      }
+    ]
+  }
+}

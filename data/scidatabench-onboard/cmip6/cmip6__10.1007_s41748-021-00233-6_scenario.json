@@ -1,0 +1,144 @@
+{
+  "source_doi": "10.1007/s41748-021-00233-6",
+  "research_question": "Evaluate CMIP6 Global Climate Models over South America for a recent past reference period and examine their projections of twenty-first century precipitation and temperature changes under four Shared Socioeconomic Pathways.",
+  "phase_1": {
+    "user_prompt": "We are evaluating CMIP6 models over South America and projecting future change there. Please identify the CMIP6 climate models, their ensemble members (variant labels), the experiments representing both the reference period and the four main future scenarios, the geophysical variables for surface air temperature and precipitation, and the monthly time frequency table.",
+    "expected": {
+      "source_ids": [
+        "ACCESS-CM2",
+        "ACCESS-ESM1-5",
+        "AWI-CM-1-1-MR",
+        "BCC-CSM2-MR",
+        "CAMS-CSM1-0",
+        "CanESM5-CanOE",
+        "CanESM5",
+        "CESM2",
+        "CESM2-WACCM",
+        "CMCC-CM2-SR5",
+        "CMCC-ESM2",
+        "CNRM-CM6-1",
+        "CNRM-CM6-1-HR",
+        "CNRM-ESM2-1",
+        "EC-Earth3",
+        "EC-Earth3-Veg-LR",
+        "EC-Earth3-Veg",
+        "FGOALS-f3-L",
+        "FGOALS-g3",
+        "FIO-ESM-2-0",
+        "GFDL-ESM4",
+        "GISS-E2-1-G",
+        "HadGEM3-GC31-LL",
+        "IITM-ESM",
+        "INM-CM4-8",
+        "INM-CM5-0",
+        "IPSL-CM6A-LR",
+        "MCM-UA-1-0",
+        "MIROC6",
+        "MIROC-ES2L",
+        "MPI-ESM1-2-HR",
+        "MPI-ESM1-2-LR",
+        "MRI-ESM2-0",
+        "NESM3",
+        "NorESM2-LM",
+        "NorESM2-MM",
+        "TaiESM1",
+        "UKESM1-0-LL"
+      ],
+      "experiment_ids": [
+        "historical",
+        "ssp126",
+        "ssp245",
+        "ssp370",
+        "ssp585"
+      ],
+      "variable_ids": [
+        "tas",
+        "pr"
+      ],
+      "table_ids": [
+        "Amon"
+      ],
+      "variant_labels": [
+        "r1i1p1f1",
+        "r1i1p2f1",
+        "r4i1p1f1",
+        "r1i1p1f2",
+        "r2i1p1f1",
+        "r1i1p1f3"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the 38 CMIP6 models, their corresponding variants, the historical and SSP experiments, and the variables identified, write a script to query the ESGF nodes and fetch the monthly temperature and precipitation data for the study's historical (1995-2014) and future (2040-2099) analysis windows.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "ACCESS-CM2",
+            "ACCESS-ESM1-5",
+            "AWI-CM-1-1-MR",
+            "BCC-CSM2-MR",
+            "CAMS-CSM1-0",
+            "CanESM5-CanOE",
+            "CanESM5",
+            "CESM2",
+            "CESM2-WACCM",
+            "CMCC-CM2-SR5",
+            "CMCC-ESM2",
+            "CNRM-CM6-1",
+            "CNRM-CM6-1-HR",
+            "CNRM-ESM2-1",
+            "EC-Earth3",
+            "EC-Earth3-Veg-LR",
+            "EC-Earth3-Veg",
+            "FGOALS-f3-L",
+            "FGOALS-g3",
+            "FIO-ESM-2-0",
+            "GFDL-ESM4",
+            "GISS-E2-1-G",
+            "HadGEM3-GC31-LL",
+            "IITM-ESM",
+            "INM-CM4-8",
+            "INM-CM5-0",
+            "IPSL-CM6A-LR",
+            "MCM-UA-1-0",
+            "MIROC6",
+            "MIROC-ES2L",
+            "MPI-ESM1-2-HR",
+            "MPI-ESM1-2-LR",
+            "MRI-ESM2-0",
+            "NESM3",
+            "NorESM2-LM",
+            "NorESM2-MM",
+            "TaiESM1",
+            "UKESM1-0-LL"
+          ],
+          "experiment_id": [
+            "historical",
+            "ssp126",
+            "ssp245",
+            "ssp370",
+            "ssp585"
+          ],
+          "variable_id": [
+            "tas",
+            "pr"
+          ],
+          "table_id": [
+            "Amon"
+          ],
+          "variant_label": [
+            "r1i1p1f1",
+            "r1i1p2f1",
+            "r4i1p1f1",
+            "r1i1p1f2",
+            "r2i1p1f1",
+            "r1i1p1f3"
+          ]
+        }
+      }
+    ]
+  }
+}

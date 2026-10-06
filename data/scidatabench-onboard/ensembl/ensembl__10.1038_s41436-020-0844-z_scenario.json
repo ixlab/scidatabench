@@ -1,0 +1,37 @@
+{
+  "source_doi": "10.1038/s41436-020-0844-z",
+  "research_question": "To evaluate the evolutionary conservation of FOXC1 variants in CAKUT by retrieving orthologous protein sequences across multiple species.",
+  "phase_1": {
+    "user_prompt": "We are investigating the monogenic causes of congenital anomalies of the kidney and urinary tract (CAKUT). We discovered novel missense variants in a gene that encodes a forkhead domain transcription factor, which is already known to cause Axenfeld-Rieger syndrome type 3. To evaluate the evolutionary conservation of this protein, we want to align orthologous sequences across human and seven other specific model organisms: mouse, chicken, western clawed frog, zebrafish, vase tunicate, roundworm, and fruit fly. Please identify the gene symbol for this transcription factor and provide the exact species names formatted for Ensembl data retrieval.",
+    "expected": {
+      "gene_symbols": [
+        "FOXC1"
+      ],
+      "species": [
+        "homo_sapiens",
+        "mus_musculus",
+        "gallus_gallus",
+        "xenopus_tropicalis",
+        "danio_rerio",
+        "ciona_intestinalis",
+        "caenorhabditis_elegans",
+        "drosophila_melanogaster"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the gene FOXC1 and the list of Ensembl species (homo_sapiens, mus_musculus, gallus_gallus, xenopus_tropicalis, danio_rerio, ciona_intestinalis, caenorhabditis_elegans, and drosophila_melanogaster), please retrieve the orthologous protein sequences from Ensembl for this gene across these species so we can perform a multiple sequence alignment to check amino acid conservation.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "homology_id",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "id": "ENSG00000054598",
+          "type": "orthologues",
+          "sequence": "protein"
+        }
+      }
+    ]
+  }
+}

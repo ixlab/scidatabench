@@ -1,0 +1,24 @@
+{
+  "source_doi": "10.1186/s13595-026-01325-x",
+  "research_question": "Investigate the impact of early spring warming (such as driven by the 2024 ENSO event) on the spring phenology of temperate deciduous trees and shrubs in Southeastern Wisconsin.",
+  "phase_1": {
+    "user_prompt": "We want to compare phenology differences between native and non-native shrubs and trees in response to short-term temperature anomalies. Please search PANGAEA to find the dataset identifier for the in situ spring phenology observations of temperate deciduous shrubs and trees collected by Alison Donnelly at Downer Woods, Wisconsin.",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.984342"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that you've identified the dataset from Downer Woods, please download the actual tabular data into a pandas DataFrame so we can look at the budburst, leaf-out, and full-leaf out transition dates.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.984342"
+        }
+      }
+    ]
+  }
+}

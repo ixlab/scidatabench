@@ -1,0 +1,33 @@
+{
+  "source_doi": "10.1016/j.ejrh.2019.100608",
+  "research_question": "To evaluate gridded precipitation products in the Northern Great Plains using daily total precipitation observations from NOAA GHCN over the Assiniboine River Basin.",
+  "phase_1": {
+    "user_prompt": "We are evaluating variability among gridded precipitation products in the Northern Great Plains against station observations, over the Assiniboine River Basin. For the US portion of our study area, which weather parameter and which geographic region should we query from the NOAA global historical station dataset?",
+    "expected": {
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve the daily reference station data for the parameter and region identified in Phase 1, covering the full study period from 2002 to 2015. Use the appropriate NOAA historical station API or package (such as meteostat) to fetch this data for stations located in the North Dakota portion of the basin.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014912",
+          "startDate": "2002-01-01",
+          "endDate": "2015-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          48.5,
+          -99.8
+        ]
+      }
+    ]
+  }
+}

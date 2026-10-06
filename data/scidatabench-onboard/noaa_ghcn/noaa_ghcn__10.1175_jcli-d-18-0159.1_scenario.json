@@ -1,0 +1,129 @@
+{
+  "source_doi": "10.1175/jcli-d-18-0159.1",
+  "research_question": "How severe and widespread were the droughts during the Global Famine of 1876-78 in key regions like China and South Africa, as evidenced by historical rainfall records from NOAA GHCN?",
+  "phase_1": {
+    "user_prompt": "We want to study the Great Drought of 1876-1878 by examining historical monthly rainfall records. According to historical climatology research, excellent long-term station records exist for eastern China around 31.48°N, 121.47°E (Shanghai), as well as six stations in the Eastern Cape and KwaZulu-Natal provinces of South Africa: Durban, Brakfontein, Graaf Reinet, Somerset East, Grahamstown, and Port Elizabeth. Please identify the relevant weather parameter for monthly rainfall and the geographic scopes to query within the NOAA GHCN repository to locate these historical stations.",
+    "expected": {
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have identified the necessary parameter (PRCP) and target locations, please retrieve the monthly precipitation data from NOAA GHCN for the stations in Shanghai, China and the six South African stations (Durban, Brakfontein, Graaf Reinet, Somerset East, Grahamstown, and Port Elizabeth). Fetch the records covering the period from 1875 to 1997.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "CHM00058362",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          31.48,
+          121.47
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "SF001827940",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -29.8618,
+          31.0099
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "SF000414170",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -32.7346,
+          18.4067
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "SF000742960",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -32.2492,
+          24.5348
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "SF000570480",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -32.7179,
+          25.5876
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "SFM00068842",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -33.3071,
+          26.5263
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "SFM00068842",
+          "startDate": "1950-01-01",
+          "endDate": "2023-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          -33.9619,
+          25.6187
+        ]
+      }
+    ]
+  }
+}

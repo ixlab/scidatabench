@@ -1,0 +1,30 @@
+{
+  "source_doi": "10.17161/randa.v29i1.16269",
+  "research_question": "To determine the frequency of reports of free-living Green Iguanas in Florida and identify where they have been reported in other states of the mainland USA using iNaturalist.",
+  "phase_1": {
+    "user_prompt": "We are investigating the expansion of a large, invasive Neotropical lizard species — the one widely established in Florida and popular in the exotic pet trade — across the mainland country where Florida is located. We plan to use citizen science data from iNaturalist. What are the scientific taxon name and the country place name we need to use to query the iNaturalist catalog for this data?",
+    "expected": {
+      "taxon_names": [
+        "Iguana iguana"
+      ],
+      "place_names": [
+        "United States"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the taxon and place you identified, please retrieve all verifiable iNaturalist observations of this species in the target country up to December 8, 2021. Be sure to retrieve all pages of results, not just the first page.",
+    "expected": [
+      {
+        "module": "pyinaturalist",
+        "function": "get_observations",
+        "kwargs": {
+          "taxon_id": 35342,
+          "place_id": 1,
+          "d2": "2021-12-08",
+          "verifiable": true
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+ "scenario_file": "obis__10.1038_s41598-025-26397-z_scenario.json",
+ "platform": "obis",
+ "downloaded_at": "2026-08-09T04:16:02.150529+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Oncorhynchus keta",
+    "geometry": "MULTIPOLYGON(((110 30, 179.999 30, 179.999 75, 110 75, 110 30)), ((-179.999 30, -130 30, -130 75, -179.999 75, -179.999 30)))",
+    "startdate": "1998-01-01",
+    "enddate": "2022-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:16:02.150529+00:00",
+   "rows": 8796,
+   "format": "parquet",
+   "total_available": 8796
+  }
+ ]
+}

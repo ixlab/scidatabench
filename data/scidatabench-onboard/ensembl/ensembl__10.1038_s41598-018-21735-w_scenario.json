@@ -1,0 +1,108 @@
+{
+  "source_doi": "10.1038/s41598-018-21735-w",
+  "research_question": "What are the conserved putative skeletal transcription factor binding sites in the ~2.5 kb Dnm3os / miR-199a-2 promoter region across multiple vertebrate species?",
+  "phase_1": {
+    "user_prompt": "We want to know how far the promoter of the miR-199a-2/miR-214 cluster has been conserved across vertebrates, so we plan to pull 2.5 kb of upstream genomic sequence from Ensembl for eight species and scan them for shared transcription-factor binding sites: human, mouse, the western clawed frog, medaka, the three-spined stickleback, the green spotted pufferfish, fugu, and zebrafish. Give me the Ensembl species names for those eight, plus the standard human gene symbol for the pre-miR-199a-2 gene.",
+    "expected": {
+      "species": [
+        "homo_sapiens",
+        "mus_musculus",
+        "xenopus_tropicalis",
+        "takifugu_rubripes",
+        "oryzias_latipes",
+        "gasterosteus_aculeatus",
+        "tetraodon_nigroviridis",
+        "danio_rerio"
+      ],
+      "gene_symbols": [
+        "MIR199A2"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified vertebrate species list and the target gene MIR199A2, retrieve the 2,500 base pair genomic sequence immediately upstream of this gene's start site for each of the eight species from the Ensembl database.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSG00000208024",
+          "type": "genomic",
+          "expand_5prime": 2500
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSMUSG00000070126",
+          "type": "genomic",
+          "expand_5prime": 2500
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSXETG00000028914",
+          "type": "genomic",
+          "expand_5prime": 2500
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSTRUG00000022832",
+          "type": "genomic",
+          "expand_5prime": 2500
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSTRUG00000021142",
+          "type": "genomic",
+          "expand_5prime": 2500
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSORLG00000020961",
+          "type": "genomic",
+          "expand_5prime": 2500
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSORLG00000021129",
+          "type": "genomic",
+          "expand_5prime": 2500
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSTNIG00000019878",
+          "type": "genomic",
+          "expand_5prime": 2500
+        }
+      },
+      {
+        "module": "ensembl_rest",
+        "function": "sequence_id",
+        "kwargs": {
+          "id": "ENSDARG00000082451",
+          "type": "genomic",
+          "expand_5prime": 2500
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "source_doi": "10.1371/journal.pone.0287640",
+  "research_question": "To model and understand the complex, nonlinear relationships between nitrate concentration and other high-frequency water-quality variables (conductivity, turbidity, dissolved oxygen, water temperature, and elevation) across disparate climatic regions using generalized additive mixed models.",
+  "phase_1": {
+    "user_prompt": "I want to explore the relationships between nitrate concentration and other high-frequency water-quality variables (specifically specific conductance, dissolved oxygen, and turbidity), as well as surface water temperature and elevation. Can you identify the relevant NEON data products for these measurements? Also, find the 4-letter NEON site codes for the Arikaree River in Colorado, Caribou-Poker Creeks Research Watershed in Alaska, and Lewis Run in Virginia.",
+    "expected": {
+      "data_products": [
+        "DP1.20033.001",
+        "DP1.20288.001",
+        "DP1.20053.001",
+        "DP1.20016.001"
+      ],
+      "sites": [
+        "ARIK",
+        "CARI",
+        "LEWI"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the 15-minute resolution data for nitrate, water quality, surface water temperature, and surface water elevation for the Arikaree River, Caribou-Poker Creeks, and Lewis Run sites covering the time period from January 2018 to December 2019.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20033.001",
+          "site": "ARIK",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20033.001",
+          "site": "CARI",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20033.001",
+          "site": "LEWI",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20288.001",
+          "site": "ARIK",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20288.001",
+          "site": "CARI",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20288.001",
+          "site": "LEWI",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20053.001",
+          "site": "ARIK",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20053.001",
+          "site": "CARI",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20053.001",
+          "site": "LEWI",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20016.001",
+          "site": "ARIK",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20016.001",
+          "site": "CARI",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20016.001",
+          "site": "LEWI",
+          "startdate": "2018-01",
+          "enddate": "2019-12"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Merge the datasets for each site. Since nitrate is measured every 15 minutes and the other sensors record more frequently (e.g., 1-minute), filter the other variables (elevation, temperature, specific conductance, dissolved oxygen, and turbidity) to keep only the timestamps where a nitrate measurement exists. Remove data flagged as anomalous by NEON's quality control procedures. Apply a log(x+1) transformation to turbidity. Finally, subset the data to the specific modelling periods for each site: September 2018 to December 2019 for Arikaree, June 2018 to October 2019 for Caribou, and January 2018 to December 2019 for Lewis Run. Please report the total number of valid observations remaining for Lewis Run after this processing.",
+    "expected": 12467,
+    "unit": "rows"
+  },
+  "phase_4": {
+    "user_prompt": "Fit a Generalised Additive Model (GAM) for the Lewis Run site to explain nitrate concentration. Include nonlinear smooth terms (with maximum 6 degrees of freedom) for specific conductance, dissolved oxygen, temperature, log(turbidity + 1), surface water elevation, and a continuous time covariate. What is the percentage of deviance explained by this GAM? Also, create a visualization of the partial effects (smooth regressions) of these covariates on nitrate concentration and save it as `lewi_gam_smooths.png`.",
+    "expected": 85.0,
+    "unit": "%",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The GAM for Lewis Run demonstrates strong nonlinear relationships with water quality variables. Specific conductance should exhibit a non-linear effect, decreasing the expected nitrate concentration at lower conductance values before increasing it at higher values. The temperature effect should show a generally positive relationship with nitrate concentration.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "lewi_gam_smooths.png",
+      "visual_description": "A multi-panel plot showing the partial dependence (smooth regression terms) of covariates on the expected change in nitrate. The specific conductance panel should show a dip (negative effect) initially, turning positive at higher values. The temperature panel should display a positive, upward trending spline.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

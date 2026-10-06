@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.5091/plecevo.2019.1616",
+  "research_question": "What are the ecological preferences (habitat, season, and stream) of the newly identified diatom species Adlafia neoniana in Puerto Rican streams?",
+  "phase_1": {
+    "user_prompt": "I'm studying the ecological preferences of a recently described diatom species found in Puerto Rican streams, specifically Rio Cupeyes and Rio Guilarte. I need to access NEON's periphyton/benthic microalgae taxonomy and counts data to analyze its abundance. Can you identify the correct NEON data product code for these microalgae counts, as well as the 4-letter site codes for these two streams?",
+    "expected": {
+      "data_products": [
+        "DP1.20166.001"
+      ],
+      "sites": [
+        "CUPE",
+        "GUIL"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the benthic microalgae taxonomy and counts data for the two Puerto Rican streams covering the years 2015 and 2016.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20166.001",
+          "site": "CUPE",
+          "startdate": "2015-01",
+          "enddate": "2016-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.20166.001",
+          "site": "GUIL",
+          "startdate": "2015-01",
+          "enddate": "2016-12"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved microalgae count data. The species we are investigating was recorded in the database under its older name, 'Adlafia drouetiana' (later recognized as the new species A. neoniana). For each sample, calculate the relative abundance of this species as a percentage of the total diatom/microalgae count in that sample. What is the maximum relative abundance (%) observed across all samples from the Rio Cupeyes site?",
+    "expected": 6.4,
+    "unit": "%"
+  },
+  "phase_4": {
+    "user_prompt": "Conduct a Kruskal-Wallis test to determine if there is a statistically significant difference in the relative abundance of A. drouetiana between the two streams. What is the Kruskal-Wallis chi-squared statistic for the 'streams' comparison? Additionally, recreate the analysis comparing its relative abundance across streams, habitats (pool, riffle, run), and seasons (Autumn, Winter, Summer). Generate a plot summarizing these relative abundances (mean +/- error) by stream, habitat, and season, saving the visualization as 'neoniana_abundance_by_factors.png'.",
+    "expected": 15.35,
+    "unit": "chi-squared",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Adlafia neoniana (recorded as A. drouetiana) was significantly more abundant and frequent in the Rio Cupeyes stream compared to Rio Guilarte. Differences in abundance across microhabitats (riffle, run, pool) and seasons were not statistically significant, though there were slight observable trends in the plotted data.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "neoniana_abundance_by_factors.png",
+      "visual_description": "A plot featuring points and error bars indicating the relative abundance (%) of Adlafia neoniana. The plot should be separated by stream (CUPE and GUIL), and display categorical groupings for habitats (Run, Riffle, Pool) and seasons (Autumn, Winter, Summer). CUPE should clearly show higher overall abundance values than GUIL.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

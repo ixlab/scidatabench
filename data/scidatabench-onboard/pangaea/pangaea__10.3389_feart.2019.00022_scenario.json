@@ -1,0 +1,32 @@
+{
+  "source_doi": "10.3389/feart.2019.00022",
+  "research_question": "Evaluate the performance of atmospheric correction processors for Sentinel-2 MSI data over Arctic sea ice using in situ reflectance and meteorological measurements.",
+  "phase_1": {
+    "user_prompt": "We are validating atmospheric correction approaches for Sentinel-2 MSI data over Arctic sea ice. The validation relies on field data collected during the RV Polarstern cruise PS106.1 in June 2017. We need two PANGAEA datasets: the continuous meteorological surface measurements from the ship's weather station, and the deposited reflectance measurements and regions of interest from that campaign. Please find their dataset identifiers.",
+    "expected": {
+      "dataset_ids": [
+        "10.1594/PANGAEA.898552",
+        "10.1594/PANGAEA.886302"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the dataset DOIs (10.1594/PANGAEA.898552 for the reflectance measurements and 10.1594/PANGAEA.886302 for the meteorological data), please retrieve the actual tabular data for both datasets from PANGAEA so we can extract the visibility parameters and the spectral reflectance values.",
+    "expected": [
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.898552"
+        }
+      },
+      {
+        "module": "pangaeapy",
+        "function": "PanDataSet",
+        "kwargs": {
+          "id": "10.1594/PANGAEA.886302"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+ "scenario_file": "10.3133_ofr20191060_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-04-26T14:45:20+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-12340500",
+    "usgsPCode": "00095",
+    "activityStartDateLower": "1986-07-01",
+    "activityStartDateUpper": "2017-09-30"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T14:45:20+00:00",
+   "rows": 611
+  }
+ ]
+}

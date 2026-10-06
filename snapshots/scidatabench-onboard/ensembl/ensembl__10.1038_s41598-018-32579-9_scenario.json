@@ -1,0 +1,83 @@
+{
+ "scenario_file": "ensembl__10.1038_s41598-018-32579-9_scenario.json",
+ "platform": "ensembl",
+ "downloaded_at": "2026-08-09T01:44:29.985275+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "ensembl_rest",
+   "function": "lookup_symbol",
+   "kwargs": {
+    "species": "homo_sapiens",
+    "symbol": "ADIPOR1",
+    "expand": 1
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:26.767875+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/lookup/symbol/homo_sapiens/ADIPOR1"
+  },
+  {
+   "idx": 1,
+   "module": "ensembl_rest",
+   "function": "sequence_id",
+   "kwargs": {
+    "id": "ENSG00000159346",
+    "type": "protein",
+    "multiple_sequences": 1
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:27.595017+00:00",
+   "rows": 47,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/sequence/id/ENSG00000159346"
+  },
+  {
+   "idx": 2,
+   "module": "ensembl_rest",
+   "function": "lookup_symbol",
+   "kwargs": {
+    "species": "mus_musculus",
+    "symbol": "Adipor1",
+    "expand": 1
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:29.036304+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/lookup/symbol/mus_musculus/Adipor1"
+  },
+  {
+   "idx": 3,
+   "module": "ensembl_rest",
+   "function": "sequence_id",
+   "kwargs": {
+    "id": "ENSMUSG00000026457",
+    "type": "protein",
+    "multiple_sequences": 1
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:29.985275+00:00",
+   "rows": 34,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/sequence/id/ENSMUSG00000026457"
+  }
+ ]
+}

@@ -1,0 +1,307 @@
+{
+  "source_doi": "10.1101/2023.03.17.533171",
+  "research_question": "Are soil prokaryotic taxa predominantly multidimensional generalists or specialists, and how does this niche trajectory impact their relative abundance within soil communities?",
+  "phase_1": {
+    "user_prompt": "I want to characterize the joint distribution of the four main abiotic axes that shape soil prokaryotic niches across the US: soil pH, soil temperature, litter depth, and soil moisture. Can you find the NEON data product that provides these periodic soil physical and chemical properties at the plot level, and identify the 30 NEON sites the niche-breadth study used?",
+    "expected": {
+      "data_products": [
+        "DP1.10086.001"
+      ],
+      "sites": [
+        "BART",
+        "BLAN",
+        "CLBJ",
+        "CPER",
+        "DCFS",
+        "DELA",
+        "DSNY",
+        "GRSM",
+        "HARV",
+        "JERC",
+        "JORN",
+        "KONA",
+        "KONZ",
+        "LENO",
+        "MOAB",
+        "NIWO",
+        "NOGP",
+        "OAES",
+        "ONAQ",
+        "ORNL",
+        "OSBS",
+        "SCBI",
+        "SERC",
+        "SJER",
+        "SRER",
+        "STEI",
+        "STER",
+        "TALL",
+        "UKFS",
+        "WOOD"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the periodic soil physical and chemical properties data for the 30 sites you identified.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "BART"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "BLAN"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "CLBJ"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "CPER"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "DCFS"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "DELA"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "DSNY"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "GRSM"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "HARV"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "JERC"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "JORN"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "KONA"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "KONZ"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "LENO"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "MOAB"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "NIWO"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "NOGP"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "OAES"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "ONAQ"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "ORNL"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "OSBS"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "SCBI"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "SERC"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "SJER"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "SRER"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "STEI"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "STER"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "TALL"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "UKFS"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10086.001",
+          "site": "WOOD"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Using the downloaded soil physical and chemical properties, construct a plot-level table of the four main environmental axes from the niche-breadth study: soil pH, soil temperature, litter depth, and soil moisture. Average sub-plot measurements to the plot level when necessary, and keep only plots where all four variables are present. Then quantify how correlated these environmental axes are by computing the Spearman rank correlation between every pair of axes (six pairs in total). Report the **mean of the absolute Spearman ρ values** across the six pairs.",
+    "expected": 0.4756027330211763,
+    "unit": null
+  },
+  "phase_4": {
+    "user_prompt": "Now break the environmental correlation result down by pair, restricting to three of the four environmental axes (soil temperature, litter depth, soil moisture) and excluding soil pH from this part of the analysis. Compute the linear correlation computed on the ranks of the values for each of the three unique pairs among {soilTemp, litterDepth, soilMoisture} and identify the **most negative** pair-wise correlation among these three pairs. Then visualise the resulting 3x3 correlation matrix as a heatmap (annotated with the rho values, diagonal = 1) and save the figure as `neon_env_axis_correlations.png`.",
+    "expected": -0.51,
+    "unit": null,
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Among soil temperature, litter depth, and soil moisture, at least one pair shows a strong negative Spearman correlation around -0.5, and at least one other pair is moderately negatively correlated (rho around -0.3). The strongest negative pair is in the -0.5 range (paper reports litterDepth-soilMoisture = -0.51).",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "neon_env_axis_correlations.png",
+      "visual_description": "A 3x3 heatmap with rows and columns labelled {Soil Temperature, Litter Depth, Soil Moisture}. Diagonal cells should be 1.0. At least one off-diagonal cell should show a strong negative correlation around -0.5. Cell colour should encode the rho value with a diverging colormap centered at zero.",
+      "paper_figure_reference": "Figure 1D (subset, soil pH excluded)"
+    }
+  }
+}

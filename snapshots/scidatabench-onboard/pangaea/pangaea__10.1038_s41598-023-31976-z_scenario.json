@@ -1,0 +1,62 @@
+{
+ "scenario_file": "pangaea__10.1038_s41598-023-31976-z_scenario.json",
+ "platform": "pangaea",
+ "downloaded_at": "2026-08-10T15:00:03.472516+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.767353"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:40:51.305066+00:00",
+   "rows": 291,
+   "format": "parquet",
+   "dataset_title": "Palaeoclimate records over the past 22,000 years of sediment core GeoB10053-7"
+  },
+  {
+   "idx": 1,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.917685"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:40:52.404915+00:00",
+   "rows": 66,
+   "format": "parquet",
+   "dataset_title": "Age determination of fossil microatolls from the Spermonde Archipelago"
+  },
+  {
+   "idx": 2,
+   "module": "pangaeapy",
+   "function": "PanDataSet",
+   "kwargs": {
+    "id": "10.1594/PANGAEA.954709"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T15:00:03.472516+00:00",
+   "rows": 340,
+   "format": "parquet",
+   "dataset_title": "Grain size, skeletal components and C14 measurements of sediments from the reef island Barrang Lompo, Spermonde Archipel",
+   "is_collection": true,
+   "n_members": 6,
+   "members_fetched": 6,
+   "truncated": false
+  }
+ ]
+}

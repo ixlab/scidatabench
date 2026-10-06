@@ -1,0 +1,194 @@
+{
+  "source_doi": "10.3133/sir20155166",
+  "research_question": "To characterize baseline water quality, trace element concentrations, and constituent transport mechanisms (groundwater vs. surface runoff) in streams near the Stibnite mining area of central Idaho.",
+  "phase_1": {
+    "user_prompt": "I am studying the impacts of historical mining in the Stibnite mining area of central Idaho. I need to identify the five main USGS volumetric flow and water-quality monitoring sites located on the East Fork South Fork Salmon River, Meadow Creek, and Sugar Creek near Stibnite, Idaho. What are the 8-digit site numbers for these five monitoring stations? Additionally, identify the 5-digit USGS parameter codes for daily mean discharge, dissolved arsenic, and total arsenic.",
+    "expected": {
+      "sites": [
+        "13310800",
+        "13310850",
+        "13311000",
+        "13311250",
+        "13311450"
+      ],
+      "parameter_codes": [
+        "00060",
+        "01000",
+        "01002"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "For the five Stibnite area sites identified, retrieve daily mean discharge data and the discrete water-quality sample results for dissolved arsenic and total arsenic. The paper covers water years 2012 through 2014, but the monitoring network was installed in September 2011 and the authors included samples collected starting late September 2011 in their analyses (the paper reports 20-24 samples per site). To align with the paper, set the water-quality sample window to 2011-09-01 through 2014-09-30, and use 2011-10-01 through 2014-09-30 for daily streamflow.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13310800",
+          "parameter_code": "00060",
+          "time": "2011-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13310800",
+          "usgsPCode": "01000",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13310800",
+          "usgsPCode": "01002",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13310850",
+          "parameter_code": "00060",
+          "time": "2011-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13310850",
+          "usgsPCode": "01000",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13310850",
+          "usgsPCode": "01002",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13311000",
+          "parameter_code": "00060",
+          "time": "2011-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13311000",
+          "usgsPCode": "01000",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13311000",
+          "usgsPCode": "01002",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13311250",
+          "parameter_code": "00060",
+          "time": "2011-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13311250",
+          "usgsPCode": "01000",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13311250",
+          "usgsPCode": "01002",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-13311450",
+          "parameter_code": "00060",
+          "time": "2011-10-01/2014-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13311450",
+          "usgsPCode": "01000",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-13311450",
+          "usgsPCode": "01002",
+          "activityStartDateLower": "2011-09-01",
+          "activityStartDateUpper": "2014-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "We want to evaluate how often water quality in the East Fork South Fork Salmon River exceeds human-health criteria before the Meadow Creek confluence. Using the discrete sample data for the site 'East Fork of South Fork Salmon River above Meadow Creek' (site 13310800), calculate the percentage of discrete samples where the dissolved arsenic concentration strictly exceeded the 10 µg/L human-health criterion during water years 2012–2014. What is this exceedance frequency in percent?",
+    "expected": 45.0,
+    "unit": "percent"
+  },
+  "phase_4": {
+    "user_prompt": "Meadow Creek near Stibnite (site 13310850) is generally considered a background site upstream of the major historical tailings disposal areas. Compute the median total arsenic concentration (in µg/L) for all discrete samples collected at this site during water years 2012–2014.\n\nAdditionally, examine the correlation between daily mean streamflow and dissolved arsenic concentrations across the study sites. Based on the direction of this correlation, qualitatively interpret the primary source and transport mechanism of arsenic in this watershed (e.g., does the pattern suggest groundwater discharge or surface runoff as the primary source?).",
+    "expected": 1.3,
+    "unit": "ug/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Dissolved arsenic exhibits a significant negative correlation with streamflow across the sites, indicating that groundwater is the primary source of the constituent (as concentrations are diluted during higher flows). Surface runoff is not the primary driver for arsenic.",
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

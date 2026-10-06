@@ -1,0 +1,28 @@
+{
+  "source_doi": "10.1038/s41375-020-0803-3",
+  "research_question": "What are the specific protein-coding splice variants and transcriptional start sites of the human SIRT7 gene, and what is its primary Ensembl gene identifier?",
+  "phase_1": {
+    "user_prompt": "We are investigating the human sirtuin 7 gene (SIRT7) to understand its role in healthy aging and the development of age-dependent myeloid stem-cell disorders. To extract its specific transcription products and splice variants, please search the Ensembl database to identify the primary Ensembl Gene ID for this gene, as well as the standard formatted species name used by Ensembl.",
+    "expected": {
+      "gene_ids": [
+        "ENSG00000187531"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the Ensembl Gene ID we identified for human SIRT7 (ENSG00000187531), please retrieve the metadata for all of its transcription products. Filter the results to identify specifically the protein-coding variants (which include the isoforms commonly designated as SIRT7-201 and SIRT7-210) so we can map putative C/EBP binding sites near their transcription start sites.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_id",
+        "kwargs": {
+          "id": "ENSG00000187531",
+          "expand": 1
+        }
+      }
+    ]
+  }
+}

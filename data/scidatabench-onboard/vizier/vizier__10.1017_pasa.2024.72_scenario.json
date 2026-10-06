@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.1017/pasa.2024.72",
+  "research_question": "How does the scale and overlap of a new low-frequency radio star catalog compare to the canonical historical Catalogue of Radio Stars (CRS), specifically for detections below 3 GHz?",
+  "phase_1": {
+    "user_prompt": "We are conducting a comparative analysis of a new survey of radio stars. To establish a baseline, we need to compare our detections with the canonical historical catalog of radio stars compiled by Wendker and last updated in 1995. Please explore the VizieR database to find the standard catalog designation(s) for this specific historical compilation.",
+    "expected": {
+      "catalogs": [
+        "J/A+AS/109/177",
+        "II/199",
+        "II/199A"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the VizieR catalog designation for the Wendker 1995 Catalogue of Radio Stars (e.g., J/A+AS/109/177 or II/199A), retrieve the catalog data. Since our new survey operates at lower frequencies, we only want to compare against historical sources that were detected at similar wavelengths. Filter the retrieved catalog to isolate only those star records that have radio detections at frequencies strictly below 3 GHz.",
+    "expected": [
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_constraints",
+        "kwargs": {
+          "catalog": "II/199A/radio",
+          "column_filters": {
+            "Freq": "<3000"
+          }
+        }
+      }
+    ]
+  }
+}

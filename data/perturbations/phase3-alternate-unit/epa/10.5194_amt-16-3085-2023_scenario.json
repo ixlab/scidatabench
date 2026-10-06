@@ -1,0 +1,55 @@
+{
+  "source_doi": "10.5194/amt-16-3085-2023",
+  "research_question": "How can we systematically identify and calculate the probability of Constant Value Episodes (CVEs) occurring naturally in hourly EPA air quality time series to flag potential sensor anomalies?",
+  "phase_1": {
+    "user_prompt": "I am studying data quality control methods and need to access hourly air quality measurements for two specific locations mentioned in a recent methodology paper: a station in Azusa (Los Angeles County, California) and another in Fresno, California. Could you find the EPA AQS parameter codes for Ozone and Carbon Monoxide, as well as the state FIPS code for California and the county FIPS codes for Los Angeles and Fresno?",
+    "expected": {
+      "parameter_codes": [
+        "44201",
+        "42101"
+      ],
+      "state_codes": [
+        "06"
+      ],
+      "county_codes": [
+        "037",
+        "019"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now retrieve the hourly sample data for Ozone at the Azusa station (site number 0002) in Los Angeles County, CA. We specifically need to analyze the data from November 10, 2011 through November 20, 2011.",
+    "expected": [
+      {
+        "module": "pyaqsapi.bysite",
+        "function": "sampledata",
+        "kwargs": {
+          "parameter": "44201",
+          "bdate": "2011-11-10",
+          "edate": "2011-11-20",
+          "stateFIPS": "06",
+          "countycode": "037",
+          "sitenum": "0002"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To apply the Constant Value Test from the paper, we first need to establish the baseline statistical properties of the time series. Calculate the arithmetic mean (µ) of all available (non-missing) hourly Azusa ozone measurements over the 11-day period (November 10-20, 2011). Report the result in parts per million (ppm) (AQS reports ozone in parts per million; convert by multiplying by 1000).",
+    "expected": 0.0199,
+    "unit": "ppm"
+  },
+  "phase_4": {
+    "user_prompt": "Now calculate the total number of distinct Constant Value Episodes (CVEs) in this 11-day Azusa ozone dataset. Then, implement the probability calculation for these CVEs to identify which ones are likely erroneous. Create a visualization of the ozone time series that highlights all the CVEs, particularly drawing attention to the highly anomalous 9-hour episode of 2 ppb on November 18. Save the plot as `ozone_cve_probabilities.png`.",
+    "expected": 21.0,
+    "unit": "episodes",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The dataset contains 21 constant value episodes. While shorter episodes of 2 hours are common, a 9-hour episode of 2 ppb on November 18 has an extremely low probability of occurring naturally and likely represents a measurement or processing anomaly.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "ozone_cve_probabilities.png",
+      "visual_description": "A line plot of hourly ozone concentrations for Nov 10-20, 2011, with Constant Value Episodes (CVEs) highlighted or boxed, specifically drawing attention to the 9-hour constant value episode of 2 ppb on November 18.",
+      "paper_figure_reference": "Figure 6"
+    }
+  }
+}

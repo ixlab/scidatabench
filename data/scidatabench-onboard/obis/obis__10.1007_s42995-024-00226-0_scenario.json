@@ -1,0 +1,24 @@
+{
+  "source_doi": "10.1007/s42995-024-00226-0",
+  "research_question": "How does incorporating physiological knowledge into species distribution models for the Japanese sea cucumber affect predictions of habitat suitability and range shifts under climate change?",
+  "phase_1": {
+    "user_prompt": "We are building correlative species distribution models (SDMs) for the Japanese sea cucumber along the coastal regions of East Asia. Before pulling the marine occurrence records from biodiversity databases like OBIS, can you identify the exact scientific name of the target species?",
+    "expected": {
+      "scientific_names": [
+        "Apostichopus japonicus"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the scientific name of the Japanese sea cucumber, please retrieve all of its available geographic occurrence records from OBIS. We will subsequently merge this dataset with literature and GBIF records, clean the spatial data by removing on-land records, and apply spatial thinning.",
+    "expected": [
+      {
+        "module": "pyobis.occurrences",
+        "function": "search",
+        "kwargs": {
+          "scientificname": "Apostichopus japonicus"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "source_doi": "10.15560/16.3.649",
+  "research_question": "Calculate the distance of a new Paint-billed Crake observation in Leticia, Colombia to the nearest historical occurrence record to determine its range extension.",
+  "phase_1": {
+    "user_prompt": "I recently observed a Paint-billed Crake (Mustelirallus erythrops) at the airport in Leticia, Amazonas, Colombia. I want to check how far this observation is from known populations to document a potential range extension. Could you search for all historical occurrence data for this species in Colombia, up to March 3, 2020 (when I started my analysis), to use as a baseline?",
+    "expected": {
+      "country_codes": [
+        "CO"
+      ],
+      "taxon_keys": [
+        "8418047"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the historical occurrence dataset for the Paint-billed Crake in Colombia that you just identified.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": "CO",
+          "eventDate": "*,2020-03-03",
+          "hasCoordinate": true,
+          "taxonKey": 8418047
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Now, I need to calculate the distance from my new sighting to all the historical records. My observation was at coordinates 04°11′44″S, 069°56′34″W. Please compute the distance in kilometers from this location to every historical point you downloaded.",
+    "expected": 33,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "What is the minimum distance to a historical record, and what does this indicate about the species' known range? Additionally, please generate a map showing the historical records and my new observation point (marked clearly in red) to visualize the range extension. Save the map as `crake_range_extension_map.png`.",
+    "expected": 855.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The new record represents a significant distribution extension of over 800 km into the Colombian Amazon, far southeast of previously known and patchy records in the Andes and foothills.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "crake_range_extension_map.png",
+      "visual_description": "A map of Colombia (and surrounding regions) showing historical occurrence points mostly clustered in the western/central regions (Andes/foothills) and a single, distinctively marked (e.g., red) new observation point in the extreme southeast corner of Colombia near Leticia.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

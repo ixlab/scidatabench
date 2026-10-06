@@ -1,0 +1,143 @@
+{
+  "source_doi": "10.3133/ds871",
+  "research_question": "How have chlorinated volatile organic compound (CVOC) concentrations evolved in groundwater over time at a contaminated landfill site, and what do these trends indicate about the effectiveness of natural attenuation?",
+  "phase_1": {
+    "user_prompt": "I am evaluating the natural attenuation of chlorinated volatile organic compounds (CVOCs) in groundwater at a former landfill site in Washington state. I will be focusing on two specific USGS groundwater monitoring wells: 474152122373101 (piezometer P1-4) and 474153122373301 (well MW1-28). Identify the 5-digit USGS parameter codes for discrete water quality samples of the following primary contaminants and degradation products: Tetrachloroethene (PCE), Trichloroethene (TCE), cis-1,2-Dichloroethene (cis-DCE), trans-1,2-Dichloroethene (trans-DCE), and Vinyl Chloride (VC).",
+    "expected": {
+      "sites": [
+        "474152122373101",
+        "474153122373301"
+      ],
+      "parameter_codes": [
+        "34475",
+        "39180",
+        "77093",
+        "34546",
+        "39175"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Download the discrete groundwater quality sample data for PCE, TCE, cis-DCE, trans-DCE, and Vinyl Chloride at the two identified monitoring wells (474152122373101 and 474153122373301) for the period from January 1, 1996 through December 31, 2013.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474152122373101",
+          "usgsPCode": "34475",
+          "activityStartDateLower": "1996-01-01",
+          "activityStartDateUpper": "2013-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474152122373101",
+          "usgsPCode": "39180",
+          "activityStartDateLower": "1996-01-01",
+          "activityStartDateUpper": "2013-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474152122373101",
+          "usgsPCode": "77093",
+          "activityStartDateLower": "1996-01-01",
+          "activityStartDateUpper": "2013-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474152122373101",
+          "usgsPCode": "34546",
+          "activityStartDateLower": "1996-01-01",
+          "activityStartDateUpper": "2013-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474152122373101",
+          "usgsPCode": "39175",
+          "activityStartDateLower": "1996-01-01",
+          "activityStartDateUpper": "2013-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474153122373301",
+          "usgsPCode": "34475",
+          "activityStartDateLower": "1996-01-01",
+          "activityStartDateUpper": "2013-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474153122373301",
+          "usgsPCode": "39180",
+          "activityStartDateLower": "1996-01-01",
+          "activityStartDateUpper": "2013-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474153122373301",
+          "usgsPCode": "77093",
+          "activityStartDateLower": "1996-01-01",
+          "activityStartDateUpper": "2013-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474153122373301",
+          "usgsPCode": "34546",
+          "activityStartDateLower": "1996-01-01",
+          "activityStartDateUpper": "2013-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-474153122373301",
+          "usgsPCode": "39175",
+          "activityStartDateLower": "1996-01-01",
+          "activityStartDateUpper": "2013-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the retrieved water quality data to extract the maximum recorded concentration of cis-1,2-Dichloroethene (cis-DCE) across the entire available record up to 2013 for the piezometer site 474152122373101. Report the result in milligrams per liter (mg/L).",
+    "expected": 4.9,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Calculate the 'Total CVOC' concentration for site 474152122373101 during its July 2013 sampling event. Total CVOC is defined as the sum of all positively detected concentrations of PCE, TCE, cis-DCE, trans-DCE, and Vinyl Chloride (treat non-detects, often marked with a '<' qualifier, as 0). Create a line plot showing this Total CVOC sum over time from 1999 to 2013, saving it as `p1_4_cvoc_trend.png`. Briefly summarize if the time-series indicates active natural attenuation.",
+    "expected": 790.0,
+    "unit": "ug/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Total CVOC concentrations at the site decreased substantially from over 5,500 µg/L in 1999 to 790 µg/L in 2013, indicating significant ongoing natural attenuation and reductive dechlorination. The visualization should be a line plot showing a clear overall downward trajectory in summed CVOCs over the observation period.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "p1_4_cvoc_trend.png",
+      "visual_description": "A line plot tracking time (x-axis, 1999 to 2013) against Total CVOC concentration in µg/L (y-axis) for site 474152122373101. The curve should start high (around 5,500) and show an overall downward trend, ending near 790 µg/L in 2013.",
+      "paper_figure_reference": null
+    }
+  }
+}

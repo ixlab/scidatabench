@@ -1,0 +1,80 @@
+{
+  "source_doi": "10.3133/sir20125111",
+  "research_question": "What is the relationship between streamflow and suspended-sediment loads in the Rush River near Prosper, ND, and how accurately can a log-linear regression model estimate these loads?",
+  "phase_1": {
+    "user_prompt": "I want to analyze suspended-sediment transport in the Red River basin in North Dakota. Could you identify the specific USGS site numbers for the monitoring stations on the 'Rush River near Prosper, ND' and the 'Wild Rice River near St. Benedict, ND'? Also, provide the standard USGS parameter codes for daily volumetric flow and suspended-sediment concentration.",
+    "expected": {
+      "sites": [
+        "05060550",
+        "464243096495100"
+      ],
+      "parameter_codes": [
+        "00060",
+        "80154"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now, let's focus on the Rush River near Prosper (05060550). Please retrieve the daily mean discharge data and the discrete field measurements for suspended-sediment concentration for the entire year of 2011.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05060550",
+          "parameter_code": "00060",
+          "time": "2011-01-01/2011-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-05060550",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2011-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-464243096495100",
+          "parameter_code": "00060",
+          "time": "2011-01-01/2011-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-464243096495100",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "2011-01-01",
+          "activityStartDateUpper": "2011-12-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To prepare for modeling, we need to calculate the measured daily suspended-sediment load for each day a discrete sample was taken. Match each sediment concentration sample with that day's mean streamflow, and calculate the load in tons per day using the standard USGS conversion factor (Load = Discharge [cfs] × Concentration [mg/L] × 0.002697). What is the calculated load for April 9, 2011?",
+    "expected": 2690.0,
+    "unit": "tons/day"
+  },
+  "phase_4": {
+    "user_prompt": "Using the paired discharge and calculated load data you just prepared for the sampled days in 2011 at the Rush River, fit a simple log-linear regression model predicting the natural logarithm of sediment load, `ln(Load)`, using the natural logarithm of daily streamflow, `ln(Q)`. What is the Coefficient of Determination (R-squared) of this regression model?",
+    "expected": 0.98,
+    "unit": "unitless",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

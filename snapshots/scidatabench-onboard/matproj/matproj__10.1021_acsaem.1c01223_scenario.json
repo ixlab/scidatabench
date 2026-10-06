@@ -1,0 +1,33 @@
+{
+ "scenario_file": "matproj__10.1021_acsaem.1c01223_scenario.json",
+ "platform": "matproj",
+ "downloaded_at": "2026-08-10T22:37:20.677128+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "mp_api",
+   "function": "materials/summary",
+   "kwargs": {
+    "has_props": "elasticity",
+    "_fields": "material_id,formula_pretty,bulk_modulus,shear_modulus,volume,density"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-10T22:37:20.677128+00:00",
+   "rows": 10982,
+   "format": "parquet",
+   "endpoint": "materials/summary"
+  }
+ ]
+}

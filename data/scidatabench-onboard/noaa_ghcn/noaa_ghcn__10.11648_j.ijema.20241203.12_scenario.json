@@ -1,0 +1,36 @@
+{
+  "source_doi": "10.11648/j.ijema.20241203.12",
+  "research_question": "Analyze climate variability and time-series trends of temperature and rainfall in Jimma Zone (2015-2022), including monthly minimum, maximum, and average temperatures, and precipitation.",
+  "phase_1": {
+    "user_prompt": "We are running a climate change trend analysis for the Jimma Zone in Southwestern Ethiopia, focusing on a single weather station located around 7.6670 latitude and 36.8330 longitude. We need to locate this station in the NOAA Global Historical Climatology Network (GHCN) monthly dataset, and to know the standard codes for the variables we need: minimum, maximum and average air temperature, and rainfall.",
+    "expected": {
+      "parameters": [
+        "TMAX",
+        "TMIN",
+        "TAVG",
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the station details and weather variables we identified for Jimma, please retrieve the monthly climate records (minimum, maximum, average temperatures, and precipitation) for this station spanning from the start of 2015 through the end of 2022. Compile this into a single historical time series dataset.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "ET000063402",
+          "startDate": "2015-01-01",
+          "endDate": "2022-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          7.667,
+          36.833
+        ]
+      }
+    ]
+  }
+}

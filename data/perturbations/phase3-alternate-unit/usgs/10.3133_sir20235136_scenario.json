@@ -1,0 +1,179 @@
+{
+  "source_doi": "10.3133/sir20235136",
+  "research_question": "What are the continuous water-quality characteristics and dynamics (temperature, specific conductance, dissolved oxygen, pH, and turbidity) of the mainstem Red River of the North in the Fargo-Moorhead metropolitan area from 2019 to 2022?",
+  "phase_1": {
+    "user_prompt": "I am studying continuous water quality dynamics on the mainstem of the Red River of the North in the Fargo-Moorhead metropolitan area. I want to analyze high-frequency (15-minute) data for water temperature, specific conductance at 25°C, dissolved oxygen, pH, and turbidity. My study period is from October 1, 2019, to October 1, 2022. Can you help me identify the USGS parameter codes for these five variables and find the USGS site numbers for the three main streamgages on the Red River located at or near Hickson, ND; Fargo, ND; and Georgetown, MN?",
+    "expected": {
+      "sites": [
+        "05051522",
+        "05054000",
+        "05062130"
+      ],
+      "parameter_codes": [
+        "00010",
+        "00095",
+        "00300",
+        "00400",
+        "63680"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers (05051522, 05054000, 05062130) and parameter codes (00010, 00095, 00300, 00400, 63680), please retrieve the high-frequency instantaneous (15-minute) continuous water quality data for these sites from October 1, 2019, to October 1, 2022.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05051522",
+          "parameter_code": "00010",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05051522",
+          "parameter_code": "00095",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05051522",
+          "parameter_code": "00300",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05051522",
+          "parameter_code": "00400",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05051522",
+          "parameter_code": "63680",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05054000",
+          "parameter_code": "00010",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05054000",
+          "parameter_code": "00095",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05054000",
+          "parameter_code": "00300",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05054000",
+          "parameter_code": "00400",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05054000",
+          "parameter_code": "63680",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05062130",
+          "parameter_code": "00010",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05062130",
+          "parameter_code": "00095",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05062130",
+          "parameter_code": "00300",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05062130",
+          "parameter_code": "00400",
+          "time": "2019-10-01/2022-10-01"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_continuous",
+        "kwargs": {
+          "monitoring_location_id": "USGS-05062130",
+          "parameter_code": "63680",
+          "time": "2019-10-01/2022-10-01"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "We need to aggregate this high-frequency data to understand the baseline conditions. Calculate the annual mean specific conductance for the Fargo site (05054000) during Water Year 2020 (October 1, 2019, to September 30, 2020). Ensure you're computing the mean from the instantaneous values properly, handling any missing data according to standard practices. Report the result in millisiemens per centimeter (mS/cm).",
+    "expected": 1.004,
+    "unit": "mS/cm"
+  },
+  "phase_4": {
+    "user_prompt": "Next, let's look at the extremes and spatial differences. What was the absolute maximum instantaneous specific conductance recorded at the Fargo site (05054000) during Water Year 2022? Additionally, please generate a time-series plot comparing the daily mean specific conductance across all three sites for the entire study period. Save the plot as `red_river_spcond_timeseries.png`. From your plot and data, which site generally exhibits the highest specific conductance, and how does specific conductance generally respond to high-flow runoff events?",
+    "expected": 2570.0,
+    "unit": "uS/cm",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The continuous specific conductance data show that the downstream Georgetown site generally maintains higher specific conductance than the upstream Hickson and Fargo sites, particularly during winter low-flow periods. Specific conductance decreases rapidly at all sites during spring snowmelt and rainfall-runoff events due to dilution.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "red_river_spcond_timeseries.png",
+      "visual_description": "A line plot with time (Oct 2019 to Oct 2022) on the x-axis and specific conductance on the y-axis, featuring three distinct series for the Hickson, Fargo, and Georgetown sites. The Georgetown line should generally track higher than the other two, with all lines showing sharp, simultaneous downward spikes corresponding to dilution during spring/summer high-flow events.",
+      "paper_figure_reference": "Figures 11, 12, and 13 (Specific Conductance panels)"
+    }
+  }
+}

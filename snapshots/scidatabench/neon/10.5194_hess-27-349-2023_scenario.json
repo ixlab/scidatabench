@@ -1,0 +1,31 @@
+{
+ "scenario_file": "10.5194_hess-27-349-2023_scenario.json",
+ "platform": "neon",
+ "downloaded_at": "2026-04-24T17:22:25.227964+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "neonutilities",
+   "function": "load_by_product",
+   "kwargs": {
+    "dpid": "DP1.00002.001",
+    "site": "SJER",
+    "startdate": "2020-08",
+    "enddate": "2020-08"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T17:22:25.227964+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 1,
+   "num_csv_files": 0,
+   "total_bytes": 5190413,
+   "files": [
+    {
+     "file": "filesToStack00002/NEON.D17.SJER.DP1.00002.001.2020-08.basic.20240127T000425Z.RELEASE-2026.zip",
+     "size_bytes": 5190413
+    }
+   ],
+   "files_truncated": false
+  }
+ ]
+}

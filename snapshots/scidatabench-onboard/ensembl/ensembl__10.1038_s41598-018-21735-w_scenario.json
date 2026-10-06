@@ -1,0 +1,163 @@
+{
+ "scenario_file": "ensembl__10.1038_s41598-018-21735-w_scenario.json",
+ "platform": "ensembl",
+ "downloaded_at": "2026-08-09T01:44:14.503350+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "ensembl_rest",
+   "function": "sequence_id",
+   "kwargs": {
+    "id": "ENSG00000208024",
+    "type": "genomic",
+    "expand_5prime": 2500
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:08.682208+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/sequence/id/ENSG00000208024"
+  },
+  {
+   "idx": 1,
+   "module": "ensembl_rest",
+   "function": "sequence_id",
+   "kwargs": {
+    "id": "ENSMUSG00000070126",
+    "type": "genomic",
+    "expand_5prime": 2500
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:09.200511+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/sequence/id/ENSMUSG00000070126"
+  },
+  {
+   "idx": 2,
+   "module": "ensembl_rest",
+   "function": "sequence_id",
+   "kwargs": {
+    "id": "ENSXETG00000028914",
+    "type": "genomic",
+    "expand_5prime": 2500
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:10.420386+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/sequence/id/ENSXETG00000028914"
+  },
+  {
+   "idx": 3,
+   "module": "ensembl_rest",
+   "function": "sequence_id",
+   "kwargs": {
+    "id": "ENSTRUG00000022832",
+    "type": "genomic",
+    "expand_5prime": 2500
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:11.010796+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/sequence/id/ENSTRUG00000022832"
+  },
+  {
+   "idx": 4,
+   "module": "ensembl_rest",
+   "function": "sequence_id",
+   "kwargs": {
+    "id": "ENSTRUG00000021142",
+    "type": "genomic",
+    "expand_5prime": 2500
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:11.596615+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/sequence/id/ENSTRUG00000021142"
+  },
+  {
+   "idx": 5,
+   "module": "ensembl_rest",
+   "function": "sequence_id",
+   "kwargs": {
+    "id": "ENSORLG00000020961",
+    "type": "genomic",
+    "expand_5prime": 2500
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:12.140736+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/sequence/id/ENSORLG00000020961"
+  },
+  {
+   "idx": 6,
+   "module": "ensembl_rest",
+   "function": "sequence_id",
+   "kwargs": {
+    "id": "ENSORLG00000021129",
+    "type": "genomic",
+    "expand_5prime": 2500
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:12.706504+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/sequence/id/ENSORLG00000021129"
+  },
+  {
+   "idx": 7,
+   "module": "ensembl_rest",
+   "function": "sequence_id",
+   "kwargs": {
+    "id": "ENSTNIG00000019878",
+    "type": "genomic",
+    "expand_5prime": 2500
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:13.982810+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/sequence/id/ENSTNIG00000019878"
+  },
+  {
+   "idx": 8,
+   "module": "ensembl_rest",
+   "function": "sequence_id",
+   "kwargs": {
+    "id": "ENSDARG00000082451",
+    "type": "genomic",
+    "expand_5prime": 2500
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T01:44:14.503350+00:00",
+   "rows": 1,
+   "format": "json",
+   "ensembl_release": "116",
+   "endpoint": "/sequence/id/ENSDARG00000082451"
+  }
+ ]
+}

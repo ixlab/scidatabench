@@ -1,0 +1,16 @@
+{
+  "platform": "ensembl",
+  "condition": "exec",
+  "model": "gemini-3.7-flash",
+  "elapsed_s": 14.0,
+  "tokens": {
+    "input": 42374,
+    "output": 2515,
+    "thinking": 0,
+    "total": 44889,
+    "cache_read": 0
+  },
+  "tool_call_turns": 3,
+  "research_log": [],
+  "generated_utc": "2026-08-14T17:05:43.752294+00:00"
+}

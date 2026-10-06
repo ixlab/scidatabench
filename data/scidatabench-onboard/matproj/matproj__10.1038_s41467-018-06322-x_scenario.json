@@ -1,0 +1,31 @@
+{
+  "source_doi": "10.1038/s41467-018-06322-x",
+  "research_question": "How can we retrieve pre-calculated DFT energies from the Materials Project to construct a phase diagram and calculate the energy above the convex hull for the grossular garnet system?",
+  "phase_1": {
+    "user_prompt": "We are training a deep neural network for crystal stability and need to compute the energy above the convex hull for garnets from pre-calculated DFT data in the Materials Project, using grossular garnet as our primary worked example. Identify the constituent elements that define the chemical system for that example, and the main thermodynamic property we need from the database to evaluate structural stability.",
+    "expected": {
+      "elements": [
+        "Ca",
+        "Al",
+        "Si",
+        "O"
+      ],
+      "properties": [
+        "formation_energy_per_atom"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the elements we just identified for the grossular garnet (Ca, Al, Si, O), query the Materials Project database to retrieve the formation energies for all known materials within this complete chemical system so that a 0 K phase diagram can be constructed.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "chemsys": "Ca-Al-Si-O",
+          "_fields": "material_id,formula_pretty,formation_energy_per_atom"
+        }
+      }
+    ]
+  }
+}

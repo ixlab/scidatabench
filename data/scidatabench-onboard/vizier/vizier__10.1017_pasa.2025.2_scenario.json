@@ -1,0 +1,39 @@
+{
+  "source_doi": "10.1017/pasa.2025.2",
+  "research_question": "How do the astrometry and brightness scales of the RACS-high catalog compare to established multi-frequency radio surveys?",
+  "phase_1": {
+    "user_prompt": "We are performing the astrometric and flux density validation of the newly released RACS-high radio catalog, cross-matching our RACS-high sources against several established external reference catalogs via the CDS VizieR service. Please identify the VizieR catalog designations for the five primary external sky surveys we need: the NRAO VLA Sky Survey (NVSS), the Faint Images of the Radio Sky at Twenty Centimeters (FIRST), the third realization of the International Celestial Reference Frame (ICRF3), the Sydney University Molonglo Sky Survey (SUMSS), and the TIFR GMRT Sky Survey alternative data release (TGSS ADR1).",
+    "expected": {
+      "catalogs": [
+        "VIII/65",
+        "VIII/92",
+        "I/353",
+        "VIII/81",
+        "J/A+A/598/A78"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the proper VizieR catalog designations, we need to retrieve reference data for a specific test field to evaluate local brightness scale and cross-match statistics. Please query the NVSS and FIRST catalogs to extract all reference radio sources located within a 1-degree radius around the test coordinates RA = 40.67 deg, Dec = 18.93 deg (J2000).",
+    "expected": [
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_region",
+        "kwargs": {
+          "catalog": "VIII/65/nvss",
+          "center": "40.67 18.93",
+          "radius_arcmin": 60
+        }
+      },
+      {
+        "module": "astroquery.vizier",
+        "function": "Vizier.query_region",
+        "kwargs": {
+          "catalog": "VIII/92/first14",
+          "center": "40.67 18.93",
+          "radius_arcmin": 60
+        }
+      }
+    ]
+  }
+}

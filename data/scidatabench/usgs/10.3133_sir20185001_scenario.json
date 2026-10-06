@@ -1,0 +1,59 @@
+{
+  "source_doi": "10.3133/sir20185001",
+  "research_question": "I want to assess dissolved-selenium concentrations and instantaneous loads at the mainstem Gunnison River near Grand Junction, Colorado, focusing on water years 2011 through 2016 to evaluate compliance with state water-quality standards.",
+  "phase_1": {
+    "user_prompt": "I need to locate the USGS streamgage for the Gunnison River near Grand Junction (often referred to locally as the Whitewater gage) in Colorado. I also need to identify the parameter codes for discharge (streamflow) and dissolved selenium, and define the exact date range for Water Years 2011 through 2016.",
+    "expected": {
+      "sites": [
+        "09152500"
+      ],
+      "parameter_codes": [
+        "00060",
+        "01145"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve the daily mean streamflow and all discrete water-quality samples for dissolved selenium at the Gunnison River near Grand Junction site for Water Years 2011 through 2016.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-09152500",
+          "parameter_code": "00060",
+          "time": "2010-10-01/2016-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-09152500",
+          "usgsPCode": "01145",
+          "activityStartDateLower": "2010-10-01",
+          "activityStartDateUpper": "2016-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the data by pairing each discrete dissolved-selenium concentration sample with the corresponding daily streamflow for that date. Then, calculate the instantaneous dissolved-selenium load for each sample in pounds per day (lb/day). Use the standard conversion factor where Load (lb/d) = streamflow (cfs) × concentration (µg/L) × 0.00539. Finally, compute the median instantaneous selenium load across all paired samples collected during the combined Water Years 2011-2016 period.",
+    "expected": 33.0,
+    "unit": "lb/d"
+  },
+  "phase_4": {
+    "user_prompt": "To understand regulatory compliance against the state water-quality standard, calculate the 85th percentile of the discrete dissolved-selenium concentrations observed at this site specifically during Water Year 2016. Additionally, create a boxplot of the discrete dissolved-selenium concentrations for each water year from 2011 to 2016 to visualize the distribution and variability over time. Save this plot as 'whitewater_selenium_boxplots.png'.",
+    "expected": 3.9,
+    "unit": "µg/L",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The boxplots should display the distribution of dissolved selenium concentrations for each water year from 2011 to 2016, demonstrating how the concentrations fluctuate relative to state standards (e.g., the 4.6 µg/L threshold). The distributions should show that while median values vary slightly from year to year, multiple samples exceed the chronic standard, capturing the year-to-year variability in water quality.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "whitewater_selenium_boxplots.png",
+      "visual_description": "A set of boxplots showing dissolved-selenium concentration on the y-axis (logarithmic scale may be used) grouped by Water Year (2011-2016) on the x-axis. Each box should represent the interquartile range with median lines, showing the spread of the discrete samples.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

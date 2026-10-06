@@ -1,0 +1,26 @@
+{
+  "source_doi": "10.1038/s41467-018-06682-4",
+  "research_question": "How can we calculate temperature-dependent formation energies and evaluate the metastability of all experimentally realized inorganic compounds?",
+  "phase_1": {
+    "user_prompt": "We are running a large-scale thermodynamic stability analysis that computes temperature-dependent phase diagrams for every experimentally realized compound (those with known ICSD numbers) in a major computational database. Identify the specific ground-state properties we should retrieve from the Materials Project to serve as inputs for calculating the temperature-dependent formation energy.",
+    "expected": {
+      "properties": [
+        "formation_energy_per_atom",
+        "volume"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the properties you identified, please retrieve the required data from the Materials Project for all experimentally realized compounds. Specifically, fetch the formation energy per atom and the cell volume (along with the number of sites to compute atomic volume) for all structures that have associated ICSD numbers. Ensure you also retrieve the material ID and chemical formula to identify each entry.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "theoretical": "false",
+          "_fields": "material_id,formula_pretty,nsites,formation_energy_per_atom,volume"
+        }
+      }
+    ]
+  }
+}

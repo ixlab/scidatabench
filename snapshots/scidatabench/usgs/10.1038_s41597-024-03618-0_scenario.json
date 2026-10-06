@@ -1,0 +1,20 @@
+{
+ "scenario_file": "10.1038_s41597-024-03618-0_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-04-24T03:09:04+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_daily",
+   "kwargs": {
+    "monitoring_location_id": "USGS-05420500",
+    "parameter_code": "00060",
+    "time": "1951-01-01/2021-12-31"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T03:09:04+00:00",
+   "rows": 25933
+  }
+ ]
+}

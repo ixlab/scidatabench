@@ -1,0 +1,48 @@
+{
+  "source_doi": "10.5194/hess-2021-609-rc2",
+  "research_question": "How can we quantify the strength of diurnal cycles in NEON canopy temperature data using the custom Stacked Cycles Index (SCI)?",
+  "phase_1": {
+    "user_prompt": "I'm reading a technical note on time series aggregation that tests a new metric called the Stacked Cycles Index. The paper uses a NEON 'Single aspirated air temperature' dataset collected in the canopy of an Oak woodland in California during August 2020. Can you use the NEON API to identify the specific 13-character data product ID for this temperature data, as well as the 4-letter site code for the San Joaquin Experimental Range (the Oak woodland site)?",
+    "expected": {
+      "data_products": [
+        "DP1.00002.001"
+      ],
+      "sites": [
+        "SJER"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the single aspirated air temperature data for the San Joaquin Experimental Range (the California oak woodland site you identified) for the month of August 2020.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.00002.001",
+          "site": "SJER",
+          "startdate": "2020-08",
+          "enddate": "2020-08"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "The paper states that the raw temperature dataset contains a specific number of 5-minute observations. Load the 5-minute resolution data for August 2020 and count the total number of raw temperature records (rows) in this monthly dataset to ensure we have the complete data file for our baseline.",
+    "expected": 8952.0,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "The paper evaluates the 'Stacked Cycles Index' (SCI) on this dataset to quantify its cyclicity. I need you to implement this index and calculate it for the raw, uncontaminated data. Here is how the paper defines it:\n1. Aggregate the 5-minute data to hourly means.\n2. Divide the data into daily bins (period = 1 day, so the number of accepted bins, N_bin, should be 31 for August).\n3. Calculate the long-term trend (T) by calculating the daily mean and linearly interpolating it to each hourly timestamp.\n4. Subtract T from the hourly data (y) to get detrended data.\n5. Calculate the mean cycle (S) by averaging the detrended data across all days for each of the 24 hours.\n6. Calculate the deseasonalized residuals as y - T - S.\n7. Calculate the total sum of squares (SS_tot) as the sum of squared detrended data, and the residual sum of squares (SS_res) as the sum of squared deseasonalized data.\n8. Calculate SCI = 1 - (SS_res / SS_tot) - (1 / N_bin).\n\nWhat is the computed SCI value? Additionally, generate a line plot of the mean cycle (S) across the 24 hours of the day (in UTC) and save it as 'sjer_temperature_mean_cycle.png'.",
+    "expected": 0.88,
+    "unit": "index",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The temperature data exhibits a strong diurnal cycle, reflected by a high Stacked Cycles Index (~0.88). The visualization of the mean cycle should show a clear sinusoidal pattern indicative of diurnal warming and cooling, with a distinct peak in the late afternoon.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "sjer_temperature_mean_cycle.png",
+      "visual_description": "A line plot showing the mean diurnal cycle of temperature. The x-axis should represent hours of the day (0-23 UTC), and the y-axis should represent the detrended temperature (ranging roughly from -4 to +4 degrees C). The curve should be smooth and sinusoidal, with a trough around 13:00-14:00 UTC (morning local time) and a distinct peak around 22:00-23:00 UTC (mid-to-late afternoon local time).",
+      "paper_figure_reference": "Figure 6 panel a.2"
+    }
+  }
+}

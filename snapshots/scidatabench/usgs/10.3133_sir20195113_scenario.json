@@ -1,0 +1,511 @@
+{
+ "scenario_file": "10.3133_sir20195113_scenario.json",
+ "platform": "usgs",
+ "downloaded_at": "2026-04-26T15:28:18+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-12413250",
+    "usgsPCode": "00061",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:48+00:00",
+   "rows": 1
+  },
+  {
+   "idx": 1,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-12413250",
+    "usgsPCode": "01090",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:49+00:00",
+   "rows": 1
+  },
+  {
+   "idx": 2,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-12413250",
+    "usgsPCode": "01025",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:50+00:00",
+   "rows": 1
+  },
+  {
+   "idx": 3,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-12413250",
+    "usgsPCode": "00665",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:51+00:00",
+   "rows": 1
+  },
+  {
+   "idx": 4,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473256116084001",
+    "usgsPCode": "00061",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:52+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 5,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473256116084001",
+    "usgsPCode": "01090",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:53+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 6,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473256116084001",
+    "usgsPCode": "01025",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:53+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 7,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473256116084001",
+    "usgsPCode": "00665",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:54+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 8,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473256116090601",
+    "usgsPCode": "00061",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:55+00:00",
+   "rows": 1
+  },
+  {
+   "idx": 9,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473256116090601",
+    "usgsPCode": "01090",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:56+00:00",
+   "rows": 3
+  },
+  {
+   "idx": 10,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473256116090601",
+    "usgsPCode": "01025",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:57+00:00",
+   "rows": 3
+  },
+  {
+   "idx": 11,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473256116090601",
+    "usgsPCode": "00665",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:58+00:00",
+   "rows": 3
+  },
+  {
+   "idx": 12,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473255116092001",
+    "usgsPCode": "00061",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:59+00:00",
+   "rows": 1
+  },
+  {
+   "idx": 13,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473255116092001",
+    "usgsPCode": "01090",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:27:59+00:00",
+   "rows": 3
+  },
+  {
+   "idx": 14,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473255116092001",
+    "usgsPCode": "01025",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:00+00:00",
+   "rows": 3
+  },
+  {
+   "idx": 15,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473255116092001",
+    "usgsPCode": "00665",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:01+00:00",
+   "rows": 3
+  },
+  {
+   "idx": 16,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473254116092701",
+    "usgsPCode": "00061",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:02+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 17,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473254116092701",
+    "usgsPCode": "01090",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:03+00:00",
+   "rows": 3
+  },
+  {
+   "idx": 18,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473254116092701",
+    "usgsPCode": "01025",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:04+00:00",
+   "rows": 3
+  },
+  {
+   "idx": 19,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473254116092701",
+    "usgsPCode": "00665",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:04+00:00",
+   "rows": 3
+  },
+  {
+   "idx": 20,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473253116095501",
+    "usgsPCode": "00061",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:05+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 21,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473253116095501",
+    "usgsPCode": "01090",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:06+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 22,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473253116095501",
+    "usgsPCode": "01025",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:07+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 23,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473253116095501",
+    "usgsPCode": "00665",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:08+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 24,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473252116095301",
+    "usgsPCode": "00061",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:09+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 25,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473252116095301",
+    "usgsPCode": "01090",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:10+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 26,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473252116095301",
+    "usgsPCode": "01025",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:10+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 27,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473252116095301",
+    "usgsPCode": "00665",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:11+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 28,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473251116101701",
+    "usgsPCode": "00061",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:12+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 29,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473251116101701",
+    "usgsPCode": "01090",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:13+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 30,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473251116101701",
+    "usgsPCode": "01025",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:14+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 31,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-473251116101701",
+    "usgsPCode": "00665",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:15+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 32,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-12413300",
+    "usgsPCode": "00061",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:15+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 33,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-12413300",
+    "usgsPCode": "01090",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:16+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 34,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-12413300",
+    "usgsPCode": "01025",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:17+00:00",
+   "rows": 4
+  },
+  {
+   "idx": 35,
+   "module": "dataretrieval.waterdata",
+   "function": "get_samples",
+   "kwargs": {
+    "monitoringLocationIdentifier": "USGS-12413300",
+    "usgsPCode": "00665",
+    "activityStartDateLower": "2017-09-05",
+    "activityStartDateUpper": "2017-09-07"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-26T15:28:18+00:00",
+   "rows": 4
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+  "source_doi": "10.5194/hess-22-4155-2018",
+  "research_question": "How did daily precipitation and temperature conditions in the US Northern Great Plains during the 2017 flash drought compare to historical climatology?",
+  "phase_1": {
+    "user_prompt": "We are studying the 2017 Northern Great Plains flash drought, analyzing daily rainfall and daily average air temperature over 1987-2017 to establish climatological baselines. Can you identify the Global Historical Climatology Network (GHCN) station identifiers for our sites in that region, and the parameter codes for those two variables?",
+    "expected": {
+      "station_ids": [
+        "USW00024011",
+        "USW00024090",
+        "USW00024143",
+        "USW00094008"
+      ],
+      "parameters": [
+        "PRCP",
+        "TAVG"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the station details, please download the daily precipitation and daily average temperature data for the stations USW00024011, USW00024090, USW00024143, and USW00094008. The data should cover the entire period from January 1, 1987, through December 31, 2017.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00024011",
+          "startDate": "1987-01-01",
+          "endDate": "2017-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        }
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00024090",
+          "startDate": "1987-01-01",
+          "endDate": "2017-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        }
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00024143",
+          "startDate": "1987-01-01",
+          "endDate": "2017-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        }
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00094008",
+          "startDate": "1987-01-01",
+          "endDate": "2017-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        }
+      }
+    ]
+  }
+}

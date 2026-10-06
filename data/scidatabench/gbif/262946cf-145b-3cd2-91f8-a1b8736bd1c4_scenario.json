@@ -1,0 +1,51 @@
+{
+  "source_doi": "10.24310/abm.50.2025.21165",
+  "research_question": "What is the known historical distribution of the ornamental plant Cosmos sulphureus in the Iberian Peninsula, and how are its occurrences partitioned between Spain and Portugal?",
+  "phase_1": {
+    "user_prompt": "I'm investigating the spread of the ornamental plant Cosmos sulphureus as a non-native species in the Iberian Peninsula. I'd like to analyze its known occurrence history in this region. Could you help me figure out what occurrence data is available for this species across the Iberian Peninsula?",
+    "expected": {
+      "country_codes": [
+        "ES",
+        "PT"
+      ],
+      "taxon_keys": [
+        "3098951"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the parameters, please retrieve all the occurrence records you can find for this species within the Iberian Peninsula.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "country": [
+            "ES",
+            "PT"
+          ],
+          "taxonKey": 3098951
+        },
+        "requires_pagination": false
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded dataset to determine the overall volume of documented occurrences. Filter the data to ensure valid records and count the total number of occurrences currently documented in the Iberian Peninsula. How many total records are there?",
+    "expected": 49,
+    "unit": "records"
+  },
+  "phase_4": {
+    "user_prompt": "Calculate the breakdown of these records between Spain and Portugal. Then, generate a spatial distribution map plotting these occurrences across the Iberian Peninsula. Save the map as `cosmos_sulphureus_iberian_distribution.png`. Based on the numeric breakdown and the map, how is the species distributed between the two countries, and what does this suggest about its presence in the region?",
+    "expected": 47,
+    "unit": "records",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The occurrence records for Cosmos sulphureus in the Iberian Peninsula are overwhelmingly concentrated in Portugal (particularly central and southern regions), with only a negligible number of isolated records in Spain (specifically southern Andalusia). This highly uneven distribution suggests the species is acting as a casual alien or escaped ornamental, potentially radiating from localized sources like botanical gardens in Portugal rather than exhibiting widespread, continuous naturalization across the entire peninsula.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "cosmos_sulphureus_iberian_distribution.png",
+      "visual_description": "A map of the Iberian Peninsula (Spain and Portugal) showing occurrence points for Cosmos sulphureus. The visual should clearly depict a dense cluster of points scattered across central and southern Portugal, with only one or two isolated points visible in southern Spain.",
+      "paper_figure_reference": "Figure 3"
+    }
+  }
+}

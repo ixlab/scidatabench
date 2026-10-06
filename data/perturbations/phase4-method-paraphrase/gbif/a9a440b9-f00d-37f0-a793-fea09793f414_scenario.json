@@ -1,0 +1,47 @@
+{
+  "source_doi": "10.15560/17.4.1195",
+  "research_question": "How far south does the new observation of Oplegnathus punctatus in Malaysia extend its known geographic range compared to historical GBIF records?",
+  "phase_1": {
+    "user_prompt": "I am documenting a new field observation of the Spotted Knifejaw (Oplegnathus punctatus) in Malaysia and need to compare it against the species' known historical distribution. What parameters should I use to search GBIF for global occurrence records of this species with geographic coordinates?",
+    "expected": {
+      "taxon_keys": [
+        "2392235"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the occurrence dataset for the Spotted Knifejaw based on those parameters.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "hasCoordinate": true,
+          "taxonKey": 2392235
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded records to identify the previously known southernmost occurrence in the species' native range (Northwestern and Central Pacific, down through East Asia). Clean any obvious coordinate anomalies (e.g., records far inland or in incorrect ocean basins). What is the latitude and longitude of this southernmost historical record?",
+    "expected": [
+      16.690389,
+      145.78436
+    ],
+    "unit": "degrees latitude"
+  },
+  "phase_4": {
+    "user_prompt": "My new field observation of the Spotted Knifejaw was made at Pulau Tenggol (04°48'54\"N, 103°40'53\"E). Calculate the shortest distance over the Earth's surface between two latitude/longitude points in kilometers between the southernmost historical record you found and my new observation. Additionally, generate a map showing the historical occurrences as black dots and the new record as a red triangle to visualize this range extension. Save the map as `knifejaw_range_extension_map.png`.",
+    "expected": 1800.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The new observation in the southern South China Sea (Malaysia) represents a significant southward range extension of approximately 1800 km from the previously known southernmost records near Vietnam.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "knifejaw_range_extension_map.png",
+      "visual_description": "A map of the Western Pacific and East Asian coastline. Historical occurrences of Oplegnathus punctatus should be plotted (e.g., black dots) primarily around Japan, Korea, China, and down to northern Vietnam. The new observation at Pulau Tenggol, Malaysia (approx 4.8°N, 103.7°E) must be distinctly marked (e.g., as a red triangle) significantly south of the historical distribution, near the Malay Peninsula.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

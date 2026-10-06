@@ -1,0 +1,236 @@
+{
+  "source_doi": "10.3390/air1040019",
+  "research_question": "To disentangle background from local PM2.5 contributions in the Dallas-Fort Worth area using spatial interpolation of monitoring networks.",
+  "phase_1": {
+    "user_prompt": "I am starting a project to analyze PM2.5 concentrations in the Dallas-Fort Worth area. I need to identify the official EPA AQS parameter codes for 'PM2.5 - Local Conditions' (which represents FRM/FEM data) and 'Acceptable PM2.5 AQI & Speciation Mass'.",
+    "expected": {
+      "parameter_codes": [
+        "88101",
+        "88502"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please retrieve the daily summary PM2.5 data for these two parameters from January 1, 2013 through December 31, 2022 for all monitoring sites located in the Dallas-Fort Worth-Arlington Core-Based Statistical Area (CBSA).",
+    "expected": [
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2013-01-01",
+          "edate": "2013-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2013-01-01",
+          "edate": "2013-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2014-01-01",
+          "edate": "2014-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2014-01-01",
+          "edate": "2014-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2015-01-01",
+          "edate": "2015-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2015-01-01",
+          "edate": "2015-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2016-01-01",
+          "edate": "2016-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2016-01-01",
+          "edate": "2016-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2017-01-01",
+          "edate": "2017-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2017-01-01",
+          "edate": "2017-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2018-01-01",
+          "edate": "2018-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2018-01-01",
+          "edate": "2018-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2019-01-01",
+          "edate": "2019-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2019-01-01",
+          "edate": "2019-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2021-01-01",
+          "edate": "2021-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2021-01-01",
+          "edate": "2021-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2022-01-01",
+          "edate": "2022-12-31",
+          "cbsa_code": "19100"
+        }
+      },
+      {
+        "module": "pyaqsapi.bycbsa",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2022-01-01",
+          "edate": "2022-12-31",
+          "cbsa_code": "19100"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded data to focus on the 11 Dallas CBSA sites mentioned in the study: Arlington Municipal Airport, Convention Center, Dallas Bexar Street, Dallas Hinton, Denton Airport South, Fort Worth California Parkway North, Fort Worth Northwest, Haws Athletic Center, Italy, Kaufman, and Midlothian OFW. To resolve multiple measurements on the same day: first, for any given site and parameter code, average the measurements across different devices (POCs). Then, if a site has data for both 'PM2.5 - Local Conditions' and 'Acceptable PM2.5 AQI & Speciation Mass' on the same date, retain only the 'PM2.5 - Local Conditions' value. Calculate the overall mean 24-h PM2.5 concentration for the 'Kaufman' site across its entire temporal record. Report the result in milligrams per cubic meter (mg/m³).",
+    "expected": 0.0075,
+    "unit": "mg/m3"
+  },
+  "phase_4": {
+    "user_prompt": "Using your processed dataset (with a single PM2.5 value per day per site), compute a daily inverse distance weighted (IDW) background concentration for the 'Kaufman' monitor. For each day Kaufman has valid data, find all *other* Dallas CBSA monitors with valid data on that day. Calculate the geographic distance between Kaufman and each of these other monitors. The IDW background is the weighted average of the PM2.5 concentrations at these other monitors, where the weight is 1 divided by the distance. Finally, calculate the Spearman rank correlation coefficient between the actual measured PM2.5 at Kaufman and your calculated IDW background PM2.5. Report this correlation.",
+    "expected": 0.94,
+    "unit": null,
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

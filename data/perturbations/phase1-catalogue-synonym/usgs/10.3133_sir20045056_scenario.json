@@ -1,0 +1,80 @@
+{
+  "source_doi": "10.3133/sir20045056",
+  "research_question": "How do instantaneous suspended-sediment concentrations vary with daily discharge in the mainstem of the Susquehanna River, and what are the characteristics of their sediment-transport curves?",
+  "phase_1": {
+    "user_prompt": "I'm studying suspended-sediment transport in the mainstem of the Susquehanna River. I want to analyze the relationship between daily volumetric flow and suspended-sediment concentrations at two major locations: Towanda, PA and Conowingo, MD. Please find the USGS site numbers for these two streamgages, and the standard parameter codes for mean daily discharge and suspended-sediment concentration. The study period should cover Water Years 1985 through 2002 (October 1, 1984 to September 30, 2002).",
+    "expected": {
+      "sites": [
+        "01531500",
+        "01578310"
+      ],
+      "parameter_codes": [
+        "00060",
+        "80154"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site and parameter codes, please download the mean daily discharge data and the discrete (or instantaneous) suspended-sediment concentration samples for both Susquehanna River sites for the period of October 1, 1984 to September 30, 2002.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01531500",
+          "parameter_code": "00060",
+          "time": "1984-10-01/2002-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-01578310",
+          "parameter_code": "00060",
+          "time": "1984-10-01/2002-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01531500",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "1984-10-01",
+          "activityStartDateUpper": "2002-09-30"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-01578310",
+          "usgsPCode": "80154",
+          "activityStartDateLower": "1984-10-01",
+          "activityStartDateUpper": "2002-09-30"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded data. For each site, pair each suspended-sediment concentration sample with the mean daily discharge for that specific day. Clean the data by removing any days with missing values in either parameter. Then, calculate the 50th percentile (median) of the suspended-sediment concentrations at the Conowingo, MD site over this period. What is the median concentration?",
+    "expected": 16.0,
+    "unit": "mg/L"
+  },
+  "phase_4": {
+    "user_prompt": "Using the paired data for the Towanda, PA site, develop a sediment-transport curve. Calculate a least-squares linear regression where the base-10 logarithm of suspended-sediment concentration is the dependent variable and the base-10 logarithm of mean daily discharge is the independent variable. What is the slope of this regression line? Also, generate a scatter plot of the log-transformed discharge vs concentration with the regression line overlaid, and save it as `susquehanna_sediment_transport_curve.png`.",
+    "expected": 1.02,
+    "unit": "dimensionless",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The sediment-transport curve for the Susquehanna River at Towanda, PA exhibits a strong positive power-law relationship between discharge and suspended-sediment concentration, reflecting increased sediment mobilization at higher flows. The log-log linear regression model visually aligns with the central tendency of the scattered sample points.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "susquehanna_sediment_transport_curve.png",
+      "visual_description": "A scatter plot with log10(Discharge) on the x-axis and log10(Suspended Sediment Concentration) on the y-axis. The data points should show a clear positive trend, and a straight linear regression line should be overlaid matching the trajectory of the data scatter.",
+      "paper_figure_reference": "Figure 11b (Station 01531500)"
+    }
+  }
+}

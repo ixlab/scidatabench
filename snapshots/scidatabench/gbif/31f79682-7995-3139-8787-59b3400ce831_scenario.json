@@ -1,0 +1,25 @@
+{
+ "scenario_file": "31f79682-7995-3139-8787-59b3400ce831_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-06-27T03:10:55.242789+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "country": "BE",
+    "taxonKey": 4485843,
+    "year": "1800,2023"
+   },
+   "status": "success",
+   "downloaded_at": "2026-06-27T03:10:55.242789+00:00",
+   "rows": 300,
+   "format": "gbif_search_results",
+   "count_total": 3557,
+   "endOfRecords": false,
+   "offset": 0,
+   "limit": 300
+  }
+ ]
+}

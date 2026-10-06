@@ -1,0 +1,70 @@
+{
+  "source_doi": "10.3133/sir20255005",
+  "research_question": "How have long-term streamflow conditions and hydrological metrics, such as annual median daily flows and extreme flow pulses, changed over the last century in the Big Darby Creek Basin in Ohio?",
+  "phase_1": {
+    "user_prompt": "I am investigating long-term hydrological trends in the Big Darby Creek Basin in Ohio to understand potential flow-related stressors on local aquatic ecosystems. I need to find the primary USGS streamgages on the mainstems of Big Darby Creek, Little Darby Creek, and Hellbranch Run that have long-term historical daily discharge records suitable for decadal trend analysis. Please identify these site numbers. The key locations are near Darbyville, West Jefferson, and Harrisburg.",
+    "expected": {
+      "sites": [
+        "03230500",
+        "03230310",
+        "03230450"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the site numbers, please download the daily mean discharge data for these three streamgages from the beginning of their respective periods of record through the end of water year 2021 (September 30, 2021).",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03230500",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2021-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03230310",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2021-09-30",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-03230450",
+          "parameter_code": "00060",
+          "time": "1880-01-01/2021-09-30",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To establish a hydrological baseline before running our statistical trend tests, I want to look at the overall basin runoff. Calculate the average annual runoff depth (in inches) for the Big Darby Creek at Darbyville site (03230500) over the period from water year 1922 to water year 2020. You will need to pull the site's drainage area from the USGS metadata to convert the discharge from cubic feet per second into an annual runoff depth in inches.",
+    "expected": 12.6,
+    "unit": "inches"
+  },
+  "phase_4": {
+    "user_prompt": "Next, let's evaluate long-term temporal trends in the annual streamflow statistics. Extract the annual median daily flow for each water year from 1922 to 2021 for the Big Darby Creek at Darbyville site. Perform a non-parametric rank-based test for a monotonic trend on this annual median time series to determine if the trend is significant, and compute the median of the slopes of all pairwise point combinations estimate. Please express the median of the slopes of all pairwise point combinations as a percent change per year (divide the raw median of the slopes of all pairwise point combinations by the median of the data and multiply by 100). Finally, create a scatter plot of the annual median daily flow by water year, overlaid with a smoother that fits a local low-order polynomial in a moving neighbourhood (smoother that fits a local low-order polynomial in a moving neighbourhood) line to visualize the central tendency over time. Save this plot as `big_darby_annual_median_flow.png`.",
+    "expected": 0.8,
+    "unit": "percent per year",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Between water years 1922 and 2021, streamflow conditions at Big Darby Creek generally increased. The statistical evaluation demonstrates a significant positive trend in the annual median daily flows over this time span.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "big_darby_annual_median_flow.png",
+      "visual_description": "A scatter plot with water year (1922-2021) on the x-axis and annual median daily flow (in cubic feet per second) on the y-axis. The plot must include a lowess smoothing line that demonstrates an overall increasing pattern, particularly climbing from the 1960s through the 2000s.",
+      "paper_figure_reference": "Figure 22"
+    }
+  }
+}

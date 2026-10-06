@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.1038/s41416-021-01584-7",
+  "research_question": "To retrieve and catalog the complete set of linear transcript variants (including their sizes, exon counts, and genomic positions) for the human PVT1 (plasmacytoma variant translocation 1) gene.",
+  "phase_1": {
+    "user_prompt": "I am conducting a bioinformatics analysis on a highly complex long non-coding RNA gene in humans. This gene is located at the 8q24 chromosomal band (a known gene desert harboring fragile sites FRA8C and FRA8D) and is officially named the 'plasmacytoma variant translocation 1' gene. It is known to produce over a hundred linear splicing variants and is frequently co-amplified with MYC in cancers. Identify the official gene symbol and the Ensembl species designation needed to query its records in the Ensembl database.",
+    "expected": {
+      "gene_symbols": [
+        "PVT1"
+      ],
+      "species": [
+        "homo_sapiens"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the human PVT1 gene, retrieve the catalog of all its transcript variants from Ensembl. For every transcript associated with this gene, provide the Ensembl transcript ID, the total number of exons it contains, its size (transcript length in base pairs), and its genomic start and end positions on the current assembly.",
+    "expected": [
+      {
+        "module": "ensembl_rest",
+        "function": "lookup_symbol",
+        "kwargs": {
+          "species": "homo_sapiens",
+          "symbol": "PVT1",
+          "expand": 1
+        }
+      }
+    ]
+  }
+}

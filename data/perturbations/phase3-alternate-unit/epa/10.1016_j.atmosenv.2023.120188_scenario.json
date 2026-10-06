@@ -1,0 +1,2977 @@
+{
+  "source_doi": "10.1016/j.atmosenv.2023.120188",
+  "research_question": "How did the national annual average concentrations of PM2.5 and its major inorganic chemical component (sulfate) change in the conterminous U.S. between 2006 and 2020?",
+  "phase_1": {
+    "user_prompt": "I am researching spatiotemporal trends in fine particulate matter and its chemical composition across the United States. Could you identify the EPA AQS parameter codes for PM2.5 mass and Sulfate (SO4) that are commonly measured by the CSN and IMPROVE monitoring networks?",
+    "expected": {
+      "parameter_codes": [
+        "88101",
+        "88403",
+        "88502"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now, please download the daily measurements for PM2.5 mass and Sulfate for all available monitoring sites in the conterminous United States for the years 2006 and 2020.",
+    "expected": [
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "01"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "01"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "01"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "01"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "01"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "01"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "04"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "04"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "04"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "04"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "04"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "04"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "05"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "05"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "05"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "05"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "05"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "05"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "06"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "06"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "06"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "06"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "06"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "06"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "08"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "08"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "08"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "08"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "08"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "08"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "09"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "09"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "09"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "09"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "09"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "09"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "10"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "10"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "10"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "10"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "10"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "10"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "11"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "11"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "11"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "11"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "11"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "11"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "12"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "12"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "12"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "12"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "12"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "12"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "13"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "13"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "13"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "13"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "13"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "13"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "16"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "16"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "16"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "16"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "16"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "16"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "17"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "17"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "17"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "17"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "17"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "17"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "18"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "18"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "18"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "18"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "18"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "18"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "19"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "19"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "19"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "19"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "19"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "19"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "20"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "20"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "20"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "20"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "20"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "20"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "21"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "21"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "21"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "21"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "21"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "21"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "22"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "22"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "22"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "22"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "22"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "22"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "23"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "23"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "23"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "23"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "23"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "23"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "24"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "24"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "24"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "24"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "24"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "24"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "25"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "25"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "25"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "25"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "25"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "25"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "26"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "26"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "26"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "26"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "26"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "26"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "27"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "27"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "27"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "27"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "27"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "27"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "28"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "28"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "28"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "28"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "28"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "28"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "29"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "29"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "29"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "29"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "29"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "29"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "30"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "30"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "30"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "30"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "30"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "30"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "31"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "32"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "32"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "32"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "32"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "32"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "32"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "33"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "33"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "33"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "33"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "33"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "33"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "34"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "34"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "34"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "34"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "34"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "34"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "35"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "35"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "35"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "35"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "35"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "35"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "36"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "36"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "36"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "36"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "36"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "36"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "37"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "37"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "37"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "37"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "37"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "37"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "38"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "38"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "38"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "38"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "38"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "38"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "39"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "39"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "39"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "39"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "39"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "39"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "40"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "40"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "40"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "40"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "40"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "40"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "41"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "41"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "41"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "41"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "41"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "41"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "42"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "42"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "42"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "42"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "42"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "42"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "44"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "44"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "44"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "44"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "44"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "44"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "45"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "45"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "45"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "45"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "45"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "45"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "46"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "46"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "46"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "46"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "46"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "46"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "47"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "47"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "47"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "47"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "47"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "47"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "48"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "48"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "48"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "48"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "48"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "48"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "49"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "49"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "49"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "49"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "49"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "49"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "50"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "50"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "50"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "50"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "50"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "50"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "51"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "51"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "51"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "51"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "51"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "51"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "53"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "53"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "53"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "53"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "53"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "53"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "54"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "54"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "54"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "54"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "54"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "54"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "55"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "55"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "55"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "55"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "55"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "55"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "56"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88101",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "56"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "56"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88502",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "56"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2006-01-01",
+          "edate": "2006-12-31",
+          "stateFIPS": "56"
+        }
+      },
+      {
+        "module": "pyaqsapi.bystate",
+        "function": "dailysummary",
+        "kwargs": {
+          "parameter": "88403",
+          "bdate": "2020-01-01",
+          "edate": "2020-12-31",
+          "stateFIPS": "56"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Before calculating the national averages, we need to ensure data quality. The analysis should be restricted to PM2.5 mass measurements collected at the chemical speciation monitoring network sites (CSN and IMPROVE), i.e., the sites that also report PM2.5 chemical speciation data such as Sulfate. For each site and year, filter out any sites that do not have at least 44 valid daily measurements or do not have measurements spanning at least 9 distinct months. After applying this completeness criterion, calculate the national annual average PM2.5 concentration for the year 2006 by computing the unweighted average of the valid site-level means. Report the result in milligrams per cubic meter (mg/m³).",
+    "expected": 0.01138,
+    "unit": "mg/m3"
+  },
+  "phase_4": {
+    "user_prompt": "Using the same CSN/IMPROVE site restriction and completeness criteria, calculate the national annual average PM2.5 concentration for 2020, as well as the national annual average Sulfate concentrations for both 2006 and 2020 based on the site-level means. Create a bar chart showing the comparison of national PM2.5 and Sulfate averages between 2006 and 2020 to visualize the air quality improvements. Save the plot as `pm25_sulfate_reduction.png`. Finally, provide a brief interpretation of how the concentrations changed.",
+    "expected": 8.2,
+    "unit": "ug/m3",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The national annual average PM2.5 concentration was significantly reduced from 2006 to 2020. This decline is largely attributed to reductions in inorganic PM2.5 components, specifically sulfate, which also showed a significant concentration decrease over the same period.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "pm25_sulfate_reduction.png",
+      "visual_description": "A grouped bar chart or side-by-side plot comparing the national average concentrations of PM2.5 and Sulfate (SO4) between the years 2006 and 2020, visually demonstrating a clear decrease in both pollutants over the 15-year period.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

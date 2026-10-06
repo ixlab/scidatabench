@@ -1,0 +1,195 @@
+{
+  "source_doi": "10.1002/ecy.4478",
+  "research_question": "How do individual host conditions (like body mass and sex) and space-use behaviors (like movement distance and trappability) affect parasitism by larval and nymphal ticks in white-footed mice?",
+  "phase_1": {
+    "user_prompt": "I'm interested in how small mammal behavior and traits influence their parasite loads over large spatial scales. Can you find the NEON data product that contains capture records of small mammals, including their morphological measurements (like body mass and reproductive state), trap locations, and tick attachment data?",
+    "expected": {
+      "data_products": [
+        "DP1.10072.001"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Download the small mammal capture data for the 16 forested sites in the eastern and midwestern US where white-footed mice are commonly found (UNDE, STEI, TREE, BART, HARV, KONZ, UKFS, SCBI, BLAN, SERC, MLBS, ORNL, GRSM, CLBJ, TALL, DELA). I need the data over the 10 calendar years beginning in 2013.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "UNDE",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "STEI",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "TREE",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "BART",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "HARV",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "KONZ",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "UKFS",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SCBI",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "BLAN",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "SERC",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "MLBS",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "ORNL",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "GRSM",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "CLBJ",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "TALL",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "DELA",
+          "startdate": "2013-01",
+          "enddate": "2022-12"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Process the downloaded data to focus on adult white-footed mice (Peromyscus leucopus) of known sex in forested habitats (deciduous, evergreen, mixed, or woody wetlands based on the NLCD class). Filter out juveniles and focus only on individuals with at least two valid capture events (remove trap deaths or escapes). For each individual, calculate: 1) average body mass, 2) proportion of captures where they were reproductive, 3) trappability (total captures divided by total trap nights between their first and last capture), 4) trap-use diversity (unique trap locations used divided by total captures), and 5) average movement distance between consecutive captures (using the trap coordinates). Also, calculate the proportion of captures where they had larval ticks attached, and the proportion with nymphal ticks attached. After this filtering and aggregation, how many unique individual mice remain in the final dataset?",
+    "expected": 3956.0,
+    "unit": "individuals"
+  },
+  "phase_4": {
+    "user_prompt": "Using the processed individual-level data, analyze how host traits and behaviors predict tick parasitism. Fit models (controlling for site differences using trapping grid as a random effect) to determine if average movement distance and average body mass predict the probability of an individual ever being parasitized by larval and nymphal ticks. Create a visualization showing the predicted relationship between mean movement distance (x-axis) and the probability of parasitism by larval and nymphal ticks. Save the plot as `movement_vs_tick_parasitism.png`. Also, calculate the overall proportion of individuals in your final dataset that were observed with at least one tick attached at least once across all their captures, and summarize your findings regarding how movement and mass affect parasitism by different tick life stages.",
+    "expected": 0.36,
+    "unit": "proportion",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Individual host behavior significantly affects parasitism by ticks: mice that moved farther distances between captures had a higher probability of being parasitized by both larval and nymphal ticks. Body mass had diverging effects depending on the tick life stage, being negatively associated with larval ticks but positively associated with nymphal ticks.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "movement_vs_tick_parasitism.png",
+      "visual_description": "A line plot (or multipanel plot) showing a positive relationship between mean movement distance on the x-axis and the probability/occurrence of parasitism on the y-axis for both larval and nymphal ticks, ideally with confidence intervals shading the predicted lines.",
+      "paper_figure_reference": "Figure 3 panels a and d"
+    }
+  }
+}

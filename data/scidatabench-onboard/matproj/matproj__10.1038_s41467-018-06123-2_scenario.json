@@ -1,0 +1,37 @@
+{
+  "source_doi": "10.1038/s41467-018-06123-2",
+  "research_question": "How do the mechanical properties (specifically bulk modulus and Poisson's ratio) of solid electrolyte materials in the Li-Si-P-S chemical system correlate with their elemental composition?",
+  "phase_1": {
+    "user_prompt": "We design core-shell sulfide solid electrolytes and want to know how rigid a shell we can expect across the whole quaternary lithium-silicon-phosphorus-sulfur family that our excess-silicon LSPS material sits in. Pull the biaxial modulus for every material of that family held in the Materials Project. Give me the chemical system written the way the Materials Project itself writes it, and name the two elastic quantities we have to retrieve in order to compute the biaxial modulus from them.",
+    "expected": {
+      "chemsys": [
+        "Li-P-S-Si"
+      ],
+      "properties": [
+        "bulk_modulus",
+        "poisson_ratio"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the chemical system and the two elastic properties we settled on above, please fetch this data from the Materials Project for all matching materials.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "chemsys": "Li-Si-P-S",
+          "_fields": "material_id,formula_pretty"
+        }
+      },
+      {
+        "module": "mp_api",
+        "function": "materials/elasticity",
+        "kwargs": {
+          "chemsys": "Li-Si-P-S",
+          "_fields": "material_id,formula_pretty,bulk_modulus,homogeneous_poisson"
+        }
+      }
+    ]
+  }
+}

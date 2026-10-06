@@ -1,0 +1,97 @@
+{
+  "source_doi": "10.1007/s11292-021-09474-x",
+  "research_question": "How can we construct a neighborhood socioeconomic status index for census tracts in Miami-Dade County using US Census ACS 5-year estimates to analyze geographic disparities in violent crime?",
+  "phase_1": {
+    "user_prompt": "We are analyzing violent crime disparities in Miami-Dade County, Florida, and are building a neighborhood socioeconomic status index from 2014-2018 American Community Survey 5-year estimates at the census tract level. The index uses seven measures: percentage of unemployed persons in the labor force, percentage living below the poverty level, median household income, median value of owner-occupied dwellings, percentage of adults 25+ with less than a 12th-grade education, percentage of adults 25+ with 4 or more years of college, and percentage of households with one or more persons per room. Can you identify the specific census geography codes (state and county FIPS) and the primary detailed base tables (B-series) needed to construct these variables?",
+    "expected": {
+      "tables": [
+        "B23025",
+        "B17001",
+        "B19013",
+        "B25077",
+        "B15003",
+        "B25014"
+      ],
+      "geographies": [
+        "tract"
+      ],
+      "state_codes": [
+        "12"
+      ],
+      "county_codes": [
+        "12086"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the state FIPS is '12' (Florida) and the county FIPS is '12086' (Miami-Dade), and the variables can be found in detailed tables B23025 (employment), B17001 (poverty), B19013 (income), B25077 (home value), B15003 (education), and B25014 (occupants per room), please retrieve these tables for all census tracts in Miami-Dade County from the 2018 ACS 5-year estimates dataset.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B23025)",
+          "for": "tract:*",
+          "in": "state:12 county:086"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B17001)",
+          "for": "tract:*",
+          "in": "state:12 county:086"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B19013)",
+          "for": "tract:*",
+          "in": "state:12 county:086"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B25077)",
+          "for": "tract:*",
+          "in": "state:12 county:086"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B15003)",
+          "for": "tract:*",
+          "in": "state:12 county:086"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2018,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B25014)",
+          "for": "tract:*",
+          "in": "state:12 county:086"
+        }
+      }
+    ]
+  }
+}

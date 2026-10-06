@@ -1,0 +1,127 @@
+{
+ "scenario_file": "10.5194_wes-2025-215_scenario.json",
+ "platform": "neon",
+ "downloaded_at": "2026-04-24T17:23:39.098161+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "neonutilities",
+   "function": "load_by_product",
+   "kwargs": {
+    "dpid": "DP1.00001.001",
+    "site": "MLBS",
+    "startdate": "2024-09",
+    "enddate": "2025-06"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T17:22:49.952575+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 10,
+   "num_csv_files": 0,
+   "total_bytes": 29608785,
+   "files": [
+    {
+     "file": "filesToStack00001/NEON.D07.MLBS.DP1.00001.001.2024-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 2697147
+    },
+    {
+     "file": "filesToStack00001/NEON.D07.MLBS.DP1.00001.001.2024-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 2993757
+    },
+    {
+     "file": "filesToStack00001/NEON.D07.MLBS.DP1.00001.001.2024-11.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 3089048
+    },
+    {
+     "file": "filesToStack00001/NEON.D07.MLBS.DP1.00001.001.2024-12.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 3182643
+    },
+    {
+     "file": "filesToStack00001/NEON.D07.MLBS.DP1.00001.001.2025-01.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 3217812
+    },
+    {
+     "file": "filesToStack00001/NEON.D07.MLBS.DP1.00001.001.2025-02.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 1972136
+    },
+    {
+     "file": "filesToStack00001/NEON.D07.MLBS.DP1.00001.001.2025-03.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 3244720
+    },
+    {
+     "file": "filesToStack00001/NEON.D07.MLBS.DP1.00001.001.2025-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 3112128
+    },
+    {
+     "file": "filesToStack00001/NEON.D07.MLBS.DP1.00001.001.2025-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 3128825
+    },
+    {
+     "file": "filesToStack00001/NEON.D07.MLBS.DP1.00001.001.2025-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 2970569
+    }
+   ],
+   "files_truncated": false
+  },
+  {
+   "idx": 1,
+   "module": "neonutilities",
+   "function": "load_by_product",
+   "kwargs": {
+    "dpid": "DP4.00200.001",
+    "site": "MLBS",
+    "startdate": "2024-09",
+    "enddate": "2025-06"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T17:23:39.098161+00:00",
+   "format": "neon_zips",
+   "num_zip_files": 10,
+   "num_csv_files": 0,
+   "total_bytes": 832513449,
+   "files": [
+    {
+     "file": "filesToStack00200/NEON.D07.MLBS.DP4.00200.001.2024-09.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 88367605
+    },
+    {
+     "file": "filesToStack00200/NEON.D07.MLBS.DP4.00200.001.2024-10.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 73617758
+    },
+    {
+     "file": "filesToStack00200/NEON.D07.MLBS.DP4.00200.001.2024-11.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 79071085
+    },
+    {
+     "file": "filesToStack00200/NEON.D07.MLBS.DP4.00200.001.2024-12.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 68366081
+    },
+    {
+     "file": "filesToStack00200/NEON.D07.MLBS.DP4.00200.001.2025-01.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 77795436
+    },
+    {
+     "file": "filesToStack00200/NEON.D07.MLBS.DP4.00200.001.2025-02.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 47683740
+    },
+    {
+     "file": "filesToStack00200/NEON.D07.MLBS.DP4.00200.001.2025-03.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 103033361
+    },
+    {
+     "file": "filesToStack00200/NEON.D07.MLBS.DP4.00200.001.2025-04.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 97870704
+    },
+    {
+     "file": "filesToStack00200/NEON.D07.MLBS.DP4.00200.001.2025-05.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 96676560
+    },
+    {
+     "file": "filesToStack00200/NEON.D07.MLBS.DP4.00200.001.2025-06.basic.20260123T000749Z.RELEASE-2026.zip",
+     "size_bytes": 100031119
+    }
+   ],
+   "files_truncated": false
+  }
+ ]
+}

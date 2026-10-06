@@ -1,0 +1,62 @@
+{
+  "source_doi": "10.1007/s11116-022-10264-1",
+  "research_question": "What is the relationship between the availability of affordable housing in close proximity to jobs and commute distances for different wage groups in the Los Angeles metropolitan area?",
+  "phase_1": {
+    "user_prompt": "We are examining the 'jobs-housing fit' in the Los Angeles metropolitan area. We need to extract housing characteristics for all census tracts in Los Angeles and Orange Counties in California, using the 2013-2017 5-Year American Community Survey (ACS).\n\nSpecifically, we need to find the ACS table IDs that provide the following three metrics:\n1. Median home value\n2. Occupancy status (to calculate the vacancy rate as vacant units divided by total units)\n3. Gross rent bins (to count affordable rental units below specific monthly rent thresholds such as <$750 and <$2000, and to count units with 'no cash rent')\n\nPlease identify the relevant 6-character ACS table IDs for these three concepts, the geographic summary level used, the 2-digit state FIPS code, and the 5-digit county FIPS codes.",
+    "expected": {
+      "tables": [
+        "B25077",
+        "B25002",
+        "B25063"
+      ],
+      "geographies": [
+        "tract"
+      ],
+      "state_codes": [
+        "06"
+      ],
+      "county_codes": [
+        "06037",
+        "06059"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the ACS table IDs (B25077, B25002, B25063) and FIPS codes (State: 06, Counties: 06037, 06059) identified, retrieve the 2013-2017 5-Year ACS estimates for these tables at the census tract level for Los Angeles and Orange counties. Please fetch all variables within these tables.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B25077)",
+          "for": "tract:*",
+          "in": "state:06 county:037,059"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B25002)",
+          "for": "tract:*",
+          "in": "state:06 county:037,059"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2017,
+          "dataset": "acs/acs5",
+          "get": "NAME,group(B25063)",
+          "for": "tract:*",
+          "in": "state:06 county:037,059"
+        }
+      }
+    ]
+  }
+}

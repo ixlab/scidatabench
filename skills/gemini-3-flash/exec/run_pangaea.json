@@ -1,0 +1,16 @@
+{
+  "platform": "pangaea",
+  "condition": "exec",
+  "model": "gemini-3-flash-preview",
+  "elapsed_s": 87.4,
+  "tokens": {
+    "input": 258003,
+    "output": 5856,
+    "thinking": 0,
+    "total": 263859,
+    "cache_read": 71562
+  },
+  "tool_call_turns": 35,
+  "research_log": [],
+  "generated_utc": "2026-08-14T03:54:45.868232+00:00"
+}

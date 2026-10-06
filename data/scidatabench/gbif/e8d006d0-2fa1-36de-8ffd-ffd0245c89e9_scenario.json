@@ -1,0 +1,64 @@
+{
+  "source_doi": "10.15560/20.4.969",
+  "research_question": "What is the historical southern distribution limit of Myotis auriculus and Myotis volans, and how much would a hypothetical record in Guatemala extend the known range of M. volans?",
+  "phase_1": {
+    "user_prompt": "I am researching the southern range limits of two bat species: Myotis auriculus and Myotis volans. I want to download historical occurrence data from GBIF to establish their baseline distributions. I need to restrict the search to preserved specimens, material samples, and basic occurrence records that have exact spatial coordinates.",
+    "expected": {
+      "taxon_keys": [
+        "2432438",
+        "2432411"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Please download the GBIF occurrence records matching these criteria. Since we need to accurately map the full historical extent, ensure the data covers all available regions for these species.",
+    "expected": [
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN",
+            "MATERIAL_SAMPLE",
+            "OCCURRENCE"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 2432438
+        },
+        "requires_pagination": true
+      },
+      {
+        "module": "pygbif.occurrences",
+        "function": "search",
+        "kwargs": {
+          "basisOfRecord": [
+            "PRESERVED_SPECIMEN",
+            "MATERIAL_SAMPLE",
+            "OCCURRENCE"
+          ],
+          "hasCoordinate": true,
+          "taxonKey": 2432411
+        },
+        "requires_pagination": true
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Load the downloaded occurrence records. To establish the historical baseline prior to recent expeditions, filter the dataset to only include records collected prior to the year 2024. Then, determine the southernmost latitude (minimum decimal latitude) of the historical occurrences specifically for the Long-legged Myotis (Myotis volans).",
+    "expected": 19.49,
+    "unit": "degrees latitude"
+  },
+  "phase_4": {
+    "user_prompt": "A new field expedition recently discovered Myotis volans in the cloud forest of the Sierra de las Minas Biosphere Reserve in Guatemala, at coordinates 15.08361° N, -89.94306° W. Calculate the geodesic distance in kilometers between this newly discovered locality and the historical southernmost record of M. volans you found in the previous step. Additionally, create a geographic distribution map focusing on southern Mexico and Central America, plotting the historical records of both M. auriculus and M. volans, and highlighting this new location in Guatemala. Save the visualization as `myotis_range_extension_map.png`.",
+    "expected": 910.0,
+    "unit": "km",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The analysis demonstrates a significant southeastward range extension of approximately 910 km into Guatemala for Myotis volans from its previously known southernmost limit in Veracruz, Mexico. The visualization should show the historical distribution points for both Myotis species clustered further north in Mexico, with a distinct, highlighted point in Guatemala representing the new extreme southern range limit.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "myotis_range_extension_map.png",
+      "visual_description": "A geographic map of southern Mexico and Central America displaying historical occurrences of Myotis auriculus and Myotis volans, with a distinctly highlighted point (e.g., a star) at the specified coordinates in Guatemala representing the new range extension.",
+      "paper_figure_reference": "Figure 1"
+    }
+  }
+}

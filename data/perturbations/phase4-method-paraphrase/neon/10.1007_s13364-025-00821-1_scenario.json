@@ -1,0 +1,61 @@
+{
+  "source_doi": "10.1007/s13364-025-00821-1",
+  "research_question": "How do small mammal diversity and community composition differ between a native shortgrass prairie site and an active agricultural site in the Great Plains over a decade?",
+  "phase_1": {
+    "user_prompt": "I am researching how small mammal communities differ between native shortgrass prairie and agricultural lands in Colorado. I want to use NEON's longitudinal trapping data. Can you find the appropriate data product ID for small mammal box trapping, and identify the specific NEON 4-letter site codes for the Central Plains Experimental Range and the agricultural site located in Logan County, Colorado?",
+    "expected": {
+      "data_products": [
+        "DP1.10072.001"
+      ],
+      "sites": [
+        "CPER",
+        "STER"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we know the data product is DP1.10072.001 and the sites are CPER and STER, please download the raw small mammal trapping data for both sites from their respective starting years (2013 for CPER and 2014 for STER) through the end of 2023. Make sure to get the nightly trap-level data.",
+    "expected": [
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "CPER",
+          "startdate": "2013-01",
+          "enddate": "2023-12",
+          "package": "expanded"
+        }
+      },
+      {
+        "module": "neonutilities",
+        "function": "zips_by_product",
+        "kwargs": {
+          "dpid": "DP1.10072.001",
+          "site": "STER",
+          "startdate": "2013-01",
+          "enddate": "2023-12",
+          "package": "expanded"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Please clean the retrieved trapping data according to standard ecological protocols for this study. Exclude any records where the trap was not functional or not set, and remove entries where the animal wasn't identified to the species level. We also need to remove non-target incidental catches: the long-tailed weasel, eastern cottontail, thirteen-lined ground squirrel, spotted ground squirrel, and round-tailed ground squirrel. Finally, to standardize abundances, exclude within-bout recaptures (if an individually tagged animal is recaptured within the same 3-day trapping bout at a site, only count its first capture). Count the final number of valid capture records remaining after these steps.",
+    "expected": 4254,
+    "unit": "captures"
+  },
+  "phase_4": {
+    "user_prompt": "Using the cleaned dataset, build a bout-by-species capture-count matrix for each site (one row per trapping bout, one column per species). Compute the negative sum over taxa of each proportion multiplied by its natural logarithm on each bout's species-count vector, then report the mean H across all CPER bouts as the site-level diversity (this matches the paper's vegan-based per-bout averaging methodology, not a single H on site-aggregated totals). Then, for community composition, drop the extremely rare species Microtus longicaudus and Perognathus fasciatus from the same bout-by-species matrix and perform a rank-preserving ordination using Bray-Curtis distance. Save the resulting rank-preserving ordination plot as `community_composition_nmds.png`. What is the mean per-bout Shannon-Weiner index for the shortgrass prairie site (CPER), and what does the ordination show regarding community divergence between the two habitats?",
+    "expected": 1.36,
+    "unit": null,
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "The native shortgrass prairie (CPER) exhibits significantly higher overall diversity despite similar species richness to the agricultural site (STER). The NMDS ordination shows a clear divergence in community composition: CPER is characterized by prairie specialists like Dipodomys ordii and Perognathus flavus, whereas STER is dominated by habitat generalists such as Peromyscus maniculatus, Onychomys leucogaster, and the non-native Mus musculus.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "community_composition_nmds.png",
+      "visual_description": "A 2D scatter plot (NMDS ordination) displaying small mammal community assemblages. Data points representing individual trapping bouts should be visually separated into two distinct clusters corresponding to the two sites (CPER vs STER). Ideally, species vectors or labels indicate which species drive the separation.",
+      "paper_figure_reference": "Figure 2"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "source_doi": "10.3133/ds718",
+  "research_question": "Analyze groundwater quality and quality-control metrics (such as replicate RPD and ionic charge balance) for samples collected from monitoring wells near Pavillion, Wyoming during a spring 2012 assessment.",
+  "phase_1": {
+    "user_prompt": "I'm investigating groundwater quality near Pavillion, Wyoming, specifically focusing on a 2012 USGS quality-control study of two deep monitoring wells. Can you find the USGS site numbers for these two monitoring wells, which were sampled for water quality between late April and early May 2012?",
+    "expected": {
+      "sites": [
+        "431525108371901",
+        "431511108354101"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Retrieve the discrete water quality sample data for these two wells during the April-May 2012 timeframe. I'll need the concentrations of major cations (calcium, magnesium, sodium, potassium), major anions (chloride, sulfate, fluoride), and field alkalinity/bicarbonate to perform some quality control calculations.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-431525108371901",
+          "activityStartDateLower": "2012-04-01",
+          "activityStartDateUpper": "2012-05-31"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_samples",
+        "kwargs": {
+          "monitoringLocationIdentifier": "USGS-431511108354101",
+          "activityStartDateLower": "2012-04-01",
+          "activityStartDateUpper": "2012-05-31"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "The researchers collected replicate samples to test variability. At the first well (the site ending in 1901), a primary sample was collected on April 24, 2012, at 13:30, and a replicate was collected one minute later at 13:31. Calculate the Relative Percent Difference (RPD) for the unfiltered bicarbonate concentration between these two samples. Express the RPD as a percentage.",
+    "expected": 33.8,
+    "unit": "percent"
+  },
+  "phase_4": {
+    "user_prompt": "Next, assess the overall analytical quality of the primary environmental sample (collected at 13:30 on April 24, 2012) by calculating the ionic charge balance percentage. Use the filtered/dissolved concentrations of calcium, magnesium, sodium, potassium, chloride, sulfate, fluoride, and alkalinity (as CaCO3) converted to milliequivalents per liter (meq/L). What is the percent charge balance error? (Calculate as: ((sum of cations - sum of anions) / (sum of cations + sum of anions)) * 100).",
+    "expected": -1.94,
+    "unit": "percent",
+    "checkpoint": {
+      "enabled": false,
+      "reference_conclusion": null,
+      "requires_visual_evaluation": false,
+      "expected_visual_filename": null,
+      "visual_description": null,
+      "paper_figure_reference": null
+    }
+  }
+}

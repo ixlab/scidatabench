@@ -1,0 +1,287 @@
+{
+ "scenario_file": "10.3390_air1040019_scenario.json",
+ "platform": "epa",
+ "downloaded_at": "2026-09-05T01:45:25.667379+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "2013-01-01",
+    "edate": "2013-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:41:33.328514+00:00",
+   "rows": 9714
+  },
+  {
+   "idx": 1,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "2013-01-01",
+    "edate": "2013-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:41:41.132570+00:00",
+   "rows": 5204
+  },
+  {
+   "idx": 2,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "2014-01-01",
+    "edate": "2014-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:41:55.700331+00:00",
+   "rows": 9901
+  },
+  {
+   "idx": 3,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "2014-01-01",
+    "edate": "2014-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:42:05.076535+00:00",
+   "rows": 5203
+  },
+  {
+   "idx": 4,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "2015-01-01",
+    "edate": "2015-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:42:18.100928+00:00",
+   "rows": 9985
+  },
+  {
+   "idx": 5,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "2015-01-01",
+    "edate": "2015-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:42:28.604397+00:00",
+   "rows": 4983
+  },
+  {
+   "idx": 6,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "2016-01-01",
+    "edate": "2016-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:42:40.582129+00:00",
+   "rows": 10702
+  },
+  {
+   "idx": 7,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "2016-01-01",
+    "edate": "2016-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:42:49.353390+00:00",
+   "rows": 4258
+  },
+  {
+   "idx": 8,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "2017-01-01",
+    "edate": "2017-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:43:05.173189+00:00",
+   "rows": 10390
+  },
+  {
+   "idx": 9,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "2017-01-01",
+    "edate": "2017-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:43:11.868428+00:00",
+   "rows": 3493
+  },
+  {
+   "idx": 10,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "2018-01-01",
+    "edate": "2018-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:43:24.324695+00:00",
+   "rows": 9976
+  },
+  {
+   "idx": 11,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "2018-01-01",
+    "edate": "2018-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:43:31.911986+00:00",
+   "rows": 3253
+  },
+  {
+   "idx": 12,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "2019-01-01",
+    "edate": "2019-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:43:44.170211+00:00",
+   "rows": 12787
+  },
+  {
+   "idx": 13,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "2019-01-01",
+    "edate": "2019-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:43:51.017905+00:00",
+   "rows": 2414
+  },
+  {
+   "idx": 14,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "2020-01-01",
+    "edate": "2020-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:44:08.882902+00:00",
+   "rows": 21351
+  },
+  {
+   "idx": 15,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "2020-01-01",
+    "edate": "2020-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:44:14.953921+00:00",
+   "rows": 1378
+  },
+  {
+   "idx": 16,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "2021-01-01",
+    "edate": "2021-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:44:38.379432+00:00",
+   "rows": 21275
+  },
+  {
+   "idx": 17,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "2021-01-01",
+    "edate": "2021-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:44:44.621204+00:00",
+   "rows": 1409
+  },
+  {
+   "idx": 18,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "bdate": "2022-01-01",
+    "edate": "2022-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:45:19.783738+00:00",
+   "rows": 0
+  },
+  {
+   "idx": 19,
+   "module": "pyaqsapi.bycbsa",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88502",
+    "bdate": "2022-01-01",
+    "edate": "2022-12-31",
+    "cbsa_code": "19100"
+   },
+   "status": "success",
+   "downloaded_at": "2026-09-05T01:45:25.667379+00:00",
+   "rows": 830
+  }
+ ]
+}

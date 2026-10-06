@@ -1,0 +1,43 @@
+{
+  "source_doi": "10.1007/s10182-021-00426-4",
+  "research_question": "How can small area estimation techniques and bivariate modeling improve the reliability and coverage of county-level median income estimates for Hispanic or Latino Americans using ACS 1-year data?",
+  "phase_1": {
+    "user_prompt": "We are applying small area estimation to county-level socioeconomic indicators in 2010 and 2011, using American Community Survey (ACS) 1-year direct estimates for the 'median annual income (dollars) Hispanic or Latino origin (of any race)'. Please identify the exact ACS table ID, the specific variable code for this target vector, and the geographic summary level we should query.",
+    "expected": {
+      "tables": [
+        "S1903"
+      ],
+      "variables": [
+        "HC02_EST_VC12"
+      ],
+      "geographies": [
+        "county"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the table and variable we identified (Table S1903, variable HC02_EST_VC12), please retrieve this median income estimate for all US counties using the 1-year ACS datasets for both 2010 and 2011. Include the necessary geographic identifiers to distinguish the counties.",
+    "expected": [
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2010,
+          "dataset": "acs/acs1/subject",
+          "get": "NAME,S1903_C02_001E",
+          "for": "county:*"
+        }
+      },
+      {
+        "module": "census",
+        "function": "acs_data",
+        "kwargs": {
+          "year": 2011,
+          "dataset": "acs/acs1/subject",
+          "get": "NAME,S1903_C02_001E",
+          "for": "county:*"
+        }
+      }
+    ]
+  }
+}

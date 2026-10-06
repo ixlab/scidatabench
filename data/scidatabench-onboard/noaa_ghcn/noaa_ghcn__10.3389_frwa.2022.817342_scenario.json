@@ -1,0 +1,241 @@
+{
+  "source_doi": "10.3389/frwa.2022.817342",
+  "research_question": "What are the temporal trends in various quality-controlled daily precipitation indicators in the United States Midwest and Great Lakes region between 1951 and 2019?",
+  "phase_1": {
+    "user_prompt": "We are analyzing long-term trends in quality-controlled rainfall indicators across the Midwest and Great Lakes region. To set up our data query we need to know exactly which geographic areas to include and which weather measurement to focus on. Please identify the specific weather parameter to analyze and the complete list of US states that define this study region.",
+    "expected": {
+      "parameters": [
+        "PRCP"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the region and parameter, please retrieve the daily precipitation records from 1951 to 2019 for all US Historical Climatology Network (USHCN) stations located within Pennsylvania, Ohio, Indiana, Michigan, Illinois, Wisconsin, Minnesota, Iowa, Missouri, Kansas, Nebraska, South Dakota, New York, and North Dakota.",
+    "expected": [
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014778",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          41.0,
+          -77.5
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014821",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          40.25,
+          -82.75
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00093819",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          39.85,
+          -86.25
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00094814",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          44.35,
+          -85.6
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00093822",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          40.0,
+          -89.2
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014897",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          44.5,
+          -89.5
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014926",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          46.0,
+          -94.0
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00014933",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          42.0,
+          -93.5
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00003945",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          38.5,
+          -92.5
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00003928",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          38.5,
+          -98.0
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00024023",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          41.5,
+          -99.8
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00024025",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          44.5,
+          -100.0
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00004725",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          43.0,
+          -75.0
+        ]
+      },
+      {
+        "module": "noaa_ncei",
+        "function": "access_data",
+        "kwargs": {
+          "dataset": "daily-summaries",
+          "stations": "USW00024011",
+          "startDate": "1951-01-01",
+          "endDate": "2019-12-31",
+          "dataTypes": "TMAX,TMIN,PRCP",
+          "format": "json"
+        },
+        "resolved_from_point": [
+          47.5,
+          -100.5
+        ]
+      }
+    ]
+  }
+}

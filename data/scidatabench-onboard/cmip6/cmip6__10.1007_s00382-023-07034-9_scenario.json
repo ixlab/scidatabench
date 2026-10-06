@@ -1,0 +1,130 @@
+{
+  "source_doi": "10.1007/s00382-023-07034-9",
+  "research_question": "How do 36 CMIP6 models project monthly precipitation and near-surface temperature changes over Chile by the end of the 21st century under different socioeconomic pathways compared to the historical period?",
+  "phase_1": {
+    "user_prompt": "We are evaluating CMIP6 climate projections for Chile. Identify the CMIP6 models, the experiments (a reference run for the observed past plus the four main future scenarios), the physical variables for surface air temperature and precipitation, the single ensemble member we should use, and the standard table ID for the monthly frequency of these variables.",
+    "expected": {
+      "source_ids": [
+        "ACCESS-CM2",
+        "ACCESS-ESM1-5",
+        "AWI-CM-1-1-MR",
+        "BCC-CSM2-MR",
+        "CAMS-CSM1-0",
+        "CAS-ESM2-0",
+        "CESM2-WACCM",
+        "CIESM",
+        "CMCC-CM2-SR5",
+        "CMCC-ESM2",
+        "CanESM5",
+        "E3SM-1-1",
+        "EC-Earth3",
+        "EC-Earth3-AerChem",
+        "EC-Earth3-CC",
+        "EC-Earth3-Veg",
+        "EC-Earth3-Veg-LR",
+        "FGOALS-f3-L",
+        "FGOALS-g3",
+        "FIO-ESM-2-0",
+        "GFDL-CM4",
+        "GFDL-ESM4",
+        "IITM-ESM",
+        "INM-CM4-8",
+        "INM-CM5-0",
+        "IPSL-CM5A2-INCA",
+        "IPSL-CM6A-LR",
+        "KACE-1-0-G",
+        "MIROC6",
+        "MPI-ESM1-2-HR",
+        "MPI-ESM1-2-LR",
+        "MRI-ESM2-0",
+        "NESM3",
+        "NorESM2-LM",
+        "NorESM2-MM",
+        "TaiESM1"
+      ],
+      "experiment_ids": [
+        "historical",
+        "ssp126",
+        "ssp245",
+        "ssp370",
+        "ssp585"
+      ],
+      "variable_ids": [
+        "pr",
+        "tas"
+      ],
+      "table_ids": [
+        "Amon"
+      ],
+      "variant_labels": [
+        "r1i1p1f1"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified CMIP6 identifiers, construct a query to retrieve the monthly precipitation and near-surface temperature data for the specified 36 models, focusing only on the historical experiment and the four future socioeconomic pathway scenarios (SSP126, SSP245, SSP370, SSP585) for the ensemble member 'r1i1p1f1'. Limit the retrieval to the historical reference period (1986-2014) and the end-of-century period (2080-2099).",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "ACCESS-CM2",
+            "ACCESS-ESM1-5",
+            "AWI-CM-1-1-MR",
+            "BCC-CSM2-MR",
+            "CAMS-CSM1-0",
+            "CAS-ESM2-0",
+            "CESM2-WACCM",
+            "CIESM",
+            "CMCC-CM2-SR5",
+            "CMCC-ESM2",
+            "CanESM5",
+            "E3SM-1-1",
+            "EC-Earth3",
+            "EC-Earth3-AerChem",
+            "EC-Earth3-CC",
+            "EC-Earth3-Veg",
+            "EC-Earth3-Veg-LR",
+            "FGOALS-f3-L",
+            "FGOALS-g3",
+            "FIO-ESM-2-0",
+            "GFDL-CM4",
+            "GFDL-ESM4",
+            "IITM-ESM",
+            "INM-CM4-8",
+            "INM-CM5-0",
+            "IPSL-CM5A2-INCA",
+            "IPSL-CM6A-LR",
+            "KACE-1-0-G",
+            "MIROC6",
+            "MPI-ESM1-2-HR",
+            "MPI-ESM1-2-LR",
+            "MRI-ESM2-0",
+            "NESM3",
+            "NorESM2-LM",
+            "NorESM2-MM",
+            "TaiESM1"
+          ],
+          "experiment_id": [
+            "historical",
+            "ssp126",
+            "ssp245",
+            "ssp370",
+            "ssp585"
+          ],
+          "variable_id": [
+            "pr",
+            "tas"
+          ],
+          "table_id": [
+            "Amon"
+          ],
+          "variant_label": [
+            "r1i1p1f1"
+          ]
+        }
+      }
+    ]
+  }
+}

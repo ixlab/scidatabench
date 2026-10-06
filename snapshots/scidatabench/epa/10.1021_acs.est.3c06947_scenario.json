@@ -1,0 +1,112 @@
+{
+ "scenario_file": "10.1021_acs.est.3c06947_scenario.json",
+ "platform": "epa",
+ "downloaded_at": "2026-05-10T18:11:12.509465+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "stateFIPS": "17",
+    "bdate": "20020101",
+    "edate": "20171231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T18:54:19.275225+00:00",
+   "rows": 415841,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 1,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "stateFIPS": "18",
+    "bdate": "20020101",
+    "edate": "20171231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-10T18:11:12.509465+00:00",
+   "rows": 1128960,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 2,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "stateFIPS": "21",
+    "bdate": "20020101",
+    "edate": "20171231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:08:51.488166+00:00",
+   "rows": 413721,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 3,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "stateFIPS": "29",
+    "bdate": "20020101",
+    "edate": "20171231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:13:42.634119+00:00",
+   "rows": 587687,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 4,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "stateFIPS": "39",
+    "bdate": "20020101",
+    "edate": "20171231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:20:50.618619+00:00",
+   "rows": 888052,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 5,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "stateFIPS": "47",
+    "bdate": "20020101",
+    "edate": "20171231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:24:57.382839+00:00",
+   "rows": 515663,
+   "via": "RAQSAPI (R)"
+  },
+  {
+   "idx": 6,
+   "module": "pyaqsapi.bystate",
+   "function": "dailysummary",
+   "kwargs": {
+    "parameter": "88101",
+    "stateFIPS": "54",
+    "bdate": "20020101",
+    "edate": "20171231"
+   },
+   "status": "success",
+   "downloaded_at": "2026-05-09T19:26:49.769253+00:00",
+   "rows": 247021,
+   "via": "RAQSAPI (R)"
+  }
+ ]
+}

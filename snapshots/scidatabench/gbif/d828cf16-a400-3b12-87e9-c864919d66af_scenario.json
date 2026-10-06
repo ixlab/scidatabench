@@ -1,0 +1,29 @@
+{
+ "scenario_file": "d828cf16-a400-3b12-87e9-c864919d66af_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-24T02:32:35.239525+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 5185632,
+    "country": "MX",
+    "stateProvince": [
+     "Tamaulipas",
+     "Veracruz",
+     "Tabasco",
+     "Campeche",
+     "Yucatán",
+     "Quintana Roo"
+    ],
+    "hasCoordinate": true
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-24T02:32:35.239525+00:00",
+   "rows": 27,
+   "gbif_count": 27
+  }
+ ]
+}

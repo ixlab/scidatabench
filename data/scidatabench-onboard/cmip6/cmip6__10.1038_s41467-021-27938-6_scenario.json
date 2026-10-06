@@ -1,0 +1,90 @@
+{
+  "source_doi": "10.1038/s41467-021-27938-6",
+  "research_question": "What land surface processes and partitioning errors are responsible for the summertime warm bias in CMIP6 Earth System Models over the central United States?",
+  "phase_1": {
+    "user_prompt": "We are analyzing the central US summertime warm bias in CMIP6. We need three kinds of run: a reference simulation of the observed past, a high-emission future scenario, and the offline land-only simulations. Please identify the models, those experiments, and the standard CMIP6 variables for daily maximum temperature, precipitation, downward shortwave radiation at the surface, evapotranspiration, and both surface and full-column soil moisture, together with the tables that provide them.",
+    "expected": {
+      "source_ids": [
+        "BCC-CSM2-MR",
+        "BCC-ESM1",
+        "CMCC-CM2-SR5",
+        "CanESM5",
+        "EC-Earth3-Veg",
+        "FGOALS-g3",
+        "GFDL-CM4",
+        "IPSL-CM6A-LR",
+        "KACE-1-0-G",
+        "MIROC6",
+        "MRI-ESM2-0",
+        "NorESM2-LM",
+        "NorESM2-MM",
+        "SAM0-UNICON",
+        "TaiESM1"
+      ],
+      "experiment_ids": [
+        "historical",
+        "ssp585",
+        "land-hist"
+      ],
+      "variable_ids": [
+        "tasmax",
+        "rsds",
+        "pr",
+        "evspsbl",
+        "mrsos",
+        "mrsol"
+      ],
+      "table_ids": [
+        "Amon",
+        "Lmon",
+        "day"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified CMIP6 parameters, retrieve the 'historical' (2000-2014), 'land-hist' (2000-2014), and 'ssp585' (2020-2050) experiment data for the 15 models. Fetch the daily and monthly data for maximum temperature, precipitation, shortwave radiation, evapotranspiration, and soil moisture. You can constrain the retrieval spatially to the central contiguous United States to minimize download size.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "BCC-CSM2-MR",
+            "BCC-ESM1",
+            "CMCC-CM2-SR5",
+            "CanESM5",
+            "EC-Earth3-Veg",
+            "FGOALS-g3",
+            "GFDL-CM4",
+            "IPSL-CM6A-LR",
+            "KACE-1-0-G",
+            "MIROC6",
+            "MRI-ESM2-0",
+            "NorESM2-LM",
+            "NorESM2-MM",
+            "SAM0-UNICON",
+            "TaiESM1"
+          ],
+          "experiment_id": [
+            "historical",
+            "ssp585",
+            "land-hist"
+          ],
+          "variable_id": [
+            "tasmax",
+            "rsds",
+            "pr",
+            "evspsbl",
+            "mrsos",
+            "mrsol"
+          ],
+          "table_id": [
+            "Amon",
+            "Lmon",
+            "day"
+          ]
+        }
+      }
+    ]
+  }
+}

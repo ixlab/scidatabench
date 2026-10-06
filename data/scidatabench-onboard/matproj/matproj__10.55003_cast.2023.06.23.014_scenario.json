@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.55003/cast.2023.06.23.014",
+  "research_question": "How is the binary skutterudite thermoelectric family specified in the Materials Project, and which fields support a stability and band-gap screen?",
+  "phase_1": {
+    "user_prompt": "We are training a model that predicts thermoelectric performance from composition and structure, and we want a clean, well-characterised family to validate it on. Binary skutterudites are the obvious choice — the family built around the CoSb3 archetype — and we want the whole binary system, not just that one composition, so we can see the neighbouring phases too. Give us the chemical system in the form the Materials Project expects, and name the two computed fields we need: one telling us how far each phase lies above the convex hull, and one telling us whether it is a semiconductor rather than a metal.",
+    "expected": {
+      "chemsys": [
+        "Co-Sb"
+      ],
+      "properties": [
+        "energy_above_hull",
+        "band_gap"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now fetch every phase in that chemical system from the Materials Project, with its identifier, formula, hull distance and band gap.",
+    "expected": [
+      {
+        "module": "mp_api",
+        "function": "materials/summary",
+        "kwargs": {
+          "chemsys": "Co-Sb",
+          "_fields": "material_id,formula_pretty,energy_above_hull,band_gap"
+        }
+      }
+    ]
+  }
+}

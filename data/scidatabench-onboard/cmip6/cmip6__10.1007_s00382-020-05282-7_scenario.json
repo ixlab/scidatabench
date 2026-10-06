@@ -1,0 +1,150 @@
+{
+  "source_doi": "10.1007/s00382-020-05282-7",
+  "research_question": "How well is the global energy balance, including its components under all-sky and clear-sky conditions, represented in CMIP6 climate models compared to recent reference estimates?",
+  "phase_1": {
+    "user_prompt": "We are assessing the global energy balance as represented in CMIP6 climate models. Please identify the CMIP6 models (source IDs), the experiment ID for the observed past, the table ID, and the standard CMIP6 variable names we need to analyze shortwave and longwave radiative fluxes at the top of atmosphere and at the surface, under both all-sky and clear-sky conditions, together with the surface turbulent heat fluxes.",
+    "expected": {
+      "source_ids": [
+        "ACCESS-CM2",
+        "ACCESS-ESM1-5",
+        "BCC-CSM2-MR",
+        "BCC-ESM1",
+        "CAMS-CSM1-0",
+        "CESM2",
+        "CESM2-FV2",
+        "CESM2-WACCM",
+        "CESM2-WACCM-FV2",
+        "CIESM",
+        "CanESM5",
+        "E3SM-1-0",
+        "E3SM-1-1",
+        "E3SM-1-1-ECA",
+        "EC-Earth3",
+        "EC-Earth3-Veg",
+        "FGOALS-f3-L",
+        "FGOALS-g3",
+        "FIO-ESM-2-0",
+        "GFDL-CM4",
+        "GFDL-ESM4",
+        "GISS-E2-1-G",
+        "GISS-E2-1-G-CC",
+        "GISS-E2-1-H",
+        "INM-CM4-8",
+        "INM-CM5-0",
+        "IPSL-CM6A-LR",
+        "KACE-1-0-G",
+        "MCM-UA-1-0",
+        "MIROC6",
+        "MPI-ESM-1-2-HAM",
+        "MPI-ESM1-2-HR",
+        "MPI-ESM1-2-LR",
+        "MRI-ESM2-0",
+        "NESM3",
+        "NorCPM1",
+        "NorESM2-LM",
+        "NorESM2-MM",
+        "SAM0-UNICON",
+        "TaiESM1"
+      ],
+      "experiment_ids": [
+        "historical"
+      ],
+      "variable_ids": [
+        "rsdt",
+        "rsut",
+        "rsutcs",
+        "rlut",
+        "rlutcs",
+        "rsds",
+        "rsdscs",
+        "rsus",
+        "rsuscs",
+        "rlds",
+        "rldscs",
+        "rlus",
+        "rluscs",
+        "hfls",
+        "hfss"
+      ],
+      "table_ids": [
+        "Amon"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the identified models, variables, and experiment, write a script to download this CMIP6 data. Restrict the data to the years 2000 to 2014, and just pull the first available ensemble member (e.g., r1i1p1f1) for each model to match the paper's single-member methodology.",
+    "expected": [
+      {
+        "module": "intake_esgf",
+        "function": "ESGFCatalog.search",
+        "kwargs": {
+          "source_id": [
+            "ACCESS-CM2",
+            "ACCESS-ESM1-5",
+            "BCC-CSM2-MR",
+            "BCC-ESM1",
+            "CAMS-CSM1-0",
+            "CESM2",
+            "CESM2-FV2",
+            "CESM2-WACCM",
+            "CESM2-WACCM-FV2",
+            "CIESM",
+            "CanESM5",
+            "E3SM-1-0",
+            "E3SM-1-1",
+            "E3SM-1-1-ECA",
+            "EC-Earth3",
+            "EC-Earth3-Veg",
+            "FGOALS-f3-L",
+            "FGOALS-g3",
+            "FIO-ESM-2-0",
+            "GFDL-CM4",
+            "GFDL-ESM4",
+            "GISS-E2-1-G",
+            "GISS-E2-1-G-CC",
+            "GISS-E2-1-H",
+            "INM-CM4-8",
+            "INM-CM5-0",
+            "IPSL-CM6A-LR",
+            "KACE-1-0-G",
+            "MCM-UA-1-0",
+            "MIROC6",
+            "MPI-ESM-1-2-HAM",
+            "MPI-ESM1-2-HR",
+            "MPI-ESM1-2-LR",
+            "MRI-ESM2-0",
+            "NESM3",
+            "NorCPM1",
+            "NorESM2-LM",
+            "NorESM2-MM",
+            "SAM0-UNICON",
+            "TaiESM1"
+          ],
+          "experiment_id": [
+            "historical"
+          ],
+          "variable_id": [
+            "rsdt",
+            "rsut",
+            "rsutcs",
+            "rlut",
+            "rlutcs",
+            "rsds",
+            "rsdscs",
+            "rsus",
+            "rsuscs",
+            "rlds",
+            "rldscs",
+            "rlus",
+            "rluscs",
+            "hfls",
+            "hfss"
+          ],
+          "table_id": [
+            "Amon"
+          ]
+        }
+      }
+    ]
+  }
+}

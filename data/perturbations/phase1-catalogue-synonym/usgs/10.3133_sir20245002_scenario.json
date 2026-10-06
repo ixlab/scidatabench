@@ -1,0 +1,125 @@
+{
+  "source_doi": "10.3133/sir20245002",
+  "research_question": "What are the long-term trends in streamflow and base flow for streams upgradient from the Fort Cobb Reservoir in western Oklahoma?",
+  "phase_1": {
+    "user_prompt": "I am evaluating long-term volumetric flow and base flow trends in western Oklahoma near the Fort Cobb Reservoir. Could you help me find the USGS streamgage numbers for the following 8 locations: Canadian River at Bridgeport, Washita River near Clinton, Washita River at Carnegie, Cobb Creek near Eakly, Lake Creek near Eakly, Willow Creek near Albert, Washita River at Anadarko, and Little Washita River near Cement? I will need to analyze their daily discharge.",
+    "expected": {
+      "sites": [
+        "07228500",
+        "07325000",
+        "07325500",
+        "07325800",
+        "07325850",
+        "07325860",
+        "07326500",
+        "07327447"
+      ],
+      "parameter_codes": [
+        "00060"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Now that we have the 8 streamgages, please retrieve the daily mean discharge records for all of them from January 1, 1969, through December 31, 2020.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07228500",
+          "parameter_code": "00060",
+          "time": "1969-01-01/2020-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07325000",
+          "parameter_code": "00060",
+          "time": "1969-01-01/2020-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07325500",
+          "parameter_code": "00060",
+          "time": "1969-01-01/2020-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07325800",
+          "parameter_code": "00060",
+          "time": "1969-01-01/2020-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07325850",
+          "parameter_code": "00060",
+          "time": "1969-01-01/2020-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07325860",
+          "parameter_code": "00060",
+          "time": "1969-01-01/2020-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07326500",
+          "parameter_code": "00060",
+          "time": "1969-01-01/2020-12-31",
+          "statistic_id": "00003"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_daily",
+        "kwargs": {
+          "monitoring_location_id": "USGS-07327447",
+          "parameter_code": "00060",
+          "time": "1969-01-01/2020-12-31",
+          "statistic_id": "00003"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "To understand groundwater contributions to these streams, perform a base-flow separation on the daily streamflow data using the standard Base-Flow Index (BFI) method with a 5-day window, following the approach in the USGS Groundwater Toolbox. After separating base flow, calculate the long-term mean annual base flow for Cobb Creek near Eakly over the 1969-2020 period.",
+    "expected": 14.2,
+    "unit": "ft3/s"
+  },
+  "phase_4": {
+    "user_prompt": "Finally, perform a Mann-Kendall trend test on the annual base flow time series for Cobb Creek near Eakly. I also want you to create a multi-panel plot showing the annual streamflow and base flow trends over time for Cobb, Lake, and Willow creeks, saved as `fort_cobb_baseflow_trends.png`. What is the Kendall's tau statistic for Cobb Creek's annual base flow?",
+    "expected": 0.32,
+    "unit": "unitless",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Base flows at Cobb, Lake, and Willow Creeks generally trended upward over the period of record. The Kendall's tau statistic for Cobb Creek indicates a statistically significant upward trend, meaning base flow has become an increasingly larger component of total streamflow over time.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "fort_cobb_baseflow_trends.png",
+      "visual_description": "A multi-panel plot (or combined plot) showing time series of both annual total streamflow and annual base flow for Cobb Creek (07325800), Lake Creek (07325850), and Willow Creek (07325860) from roughly 1969 to 2020. The base flow series should generally track beneath the total streamflow series.",
+      "paper_figure_reference": "Figures 3, 4, and 5"
+    }
+  }
+}

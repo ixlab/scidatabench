@@ -1,0 +1,47 @@
+{
+ "scenario_file": "obis__10.1186_s12862-024-02339-7_scenario.json",
+ "platform": "obis",
+ "downloaded_at": "2026-08-09T04:40:18.733418+00:00",
+ "package_versions": {
+  "argopy": "1.4.0",
+  "intake_esgf": "2026.6.4",
+  "pyinaturalist": "?",
+  "astroquery": "0.4.11",
+  "pysradb": "2.5.1",
+  "pyobis": "1.6.1",
+  "pangaeapy": "?",
+  "obspy": "1.5.0",
+  "pandas": "2.3.3",
+  "requests": "2.33.1"
+ },
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Collichthys lucidus",
+    "geometry": "POLYGON((105 15, 135 15, 135 45, 105 45, 105 15))"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:40:17.354888+00:00",
+   "rows": 140,
+   "format": "parquet",
+   "total_available": 140
+  },
+  {
+   "idx": 1,
+   "module": "pyobis.occurrences",
+   "function": "search",
+   "kwargs": {
+    "scientificname": "Collichthys niveatus",
+    "geometry": "POLYGON((105 15, 135 15, 135 45, 105 45, 105 15))"
+   },
+   "status": "success",
+   "downloaded_at": "2026-08-09T04:40:18.733418+00:00",
+   "rows": 222,
+   "format": "parquet",
+   "total_available": 222
+  }
+ ]
+}

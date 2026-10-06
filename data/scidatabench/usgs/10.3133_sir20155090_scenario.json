@@ -1,0 +1,224 @@
+{
+  "source_doi": "10.3133/sir20155090",
+  "research_question": "How have groundwater levels in the Green River Basin lower Tertiary aquifer system changed from the 1960s/1970s to 2014?",
+  "phase_1": {
+    "user_prompt": "I am investigating long-term groundwater level changes in the northern Green River Basin, Wyoming. I have identified 27 specific USGS observation wells for this analysis: 420513109504701, 421005109315901, 420710109315601, 420915109403901, 421025109481901, 420901109460001, 421321109493502, 420905109540901, 420757109555601, 421045110002001, 420822110013201, 421127109354601, 421219109433801, 421421109475001, 421308109541901, 421051109543001, 421633109310701, 421847109512101, 422330109465201, 422600109523501, 422202109553801, 422348110114501, 422243110114301, 422951109344501, 423539109382201, 423140109370301, and 423913109392701. To retrieve their discrete depth-to-water measurements from the USGS NWIS database, what parameter code and data type identifier should I use?",
+    "expected": {
+      "parameter_codes": [
+        "72019"
+      ]
+    }
+  },
+  "phase_2": {
+    "user_prompt": "Using the parameter code 72019 (Depth to water level) and the discrete groundwater levels service, please retrieve the full period of record for the 27 wells listed previously.",
+    "expected": [
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-420513109504701"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-421005109315901"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-420710109315601"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-420915109403901"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-421025109481901"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-420901109460001"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-421321109493502"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-420905109540901"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-420757109555601"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-421045110002001"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-420822110013201"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-421127109354601"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-421219109433801"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-421421109475001"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-421308109541901"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-421051109543001"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-421633109310701"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-421847109512101"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-422330109465201"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-422600109523501"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-422202109553801"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-422348110114501"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-422243110114301"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-422951109344501"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-423539109382201"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-423140109370301"
+        }
+      },
+      {
+        "module": "dataretrieval.waterdata",
+        "function": "get_field_measurements",
+        "kwargs": {
+          "monitoring_location_id": "USGS-423913109392701"
+        }
+      }
+    ]
+  },
+  "phase_3": {
+    "user_prompt": "Filter the records to only include data up through the end of 2014. Then, for each of the 27 wells, identify the oldest available measurement (which should be from the 1960s or 1970s) and the most recent measurement. Calculate the net change in the groundwater level for each well, remembering that an increase in the depth-to-water value indicates a decline in the actual water level. Note: Some historical records may lack a numeric depth value if the well was artesian (flowing) at the time. If you encounter a missing historical depth value for a well that was known to be flowing, assume its depth to water was -10.0 feet (meaning the water level was 10 feet above the land surface). How many of these 27 wells experienced a net groundwater-level decline of strictly more than 10 feet?",
+    "expected": 11.0,
+    "unit": "wells"
+  },
+  "phase_4": {
+    "user_prompt": "Based on the changes calculated in the previous step, how many of the 27 wells experienced a severe groundwater-level decline of more than 50 feet? Additionally, create a spatial scatter plot (map) showing the locations of the 27 wells, coloring the points based on their calculated water level change to highlight areas of decline versus rise. Save this visualization as `gw_level_changes_map.png`. Summarize the spatial pattern and overall direction of groundwater changes across these wells.",
+    "expected": 3.0,
+    "unit": "wells",
+    "checkpoint": {
+      "enabled": true,
+      "reference_conclusion": "Overall, the majority of the 27 wells showed a net decline in groundwater levels between the historical and 2012-2014 measurements. Declines ranged up to 87 feet, with 3 wells experiencing severe drops of over 50 feet. The map illustrates that the wells with the most substantial declines are generally located in the southern and eastern portions of the study area.",
+      "requires_visual_evaluation": true,
+      "expected_visual_filename": "gw_level_changes_map.png",
+      "visual_description": "A spatial scatter plot or map of 27 well locations in Wyoming. The points should be colored or scaled according to the magnitude of groundwater level change. Most points should indicate a water level decline, with a few prominent points highlighting the severe >50 ft declines, particularly concentrated in the southern/southeastern region of the mapped area.",
+      "paper_figure_reference": "Figure 9"
+    }
+  }
+}

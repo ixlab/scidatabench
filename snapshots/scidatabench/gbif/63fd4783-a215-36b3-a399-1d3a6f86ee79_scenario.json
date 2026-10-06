@@ -1,0 +1,30 @@
+{
+ "scenario_file": "63fd4783-a215-36b3-a399-1d3a6f86ee79_scenario.json",
+ "platform": "gbif",
+ "downloaded_at": "2026-04-25T00:03:06+00:00",
+ "calls": [
+  {
+   "idx": 0,
+   "module": "pygbif.occurrences",
+   "function": "search",
+   "kwargs": {
+    "taxonKey": 8418047,
+    "country": "CO",
+    "hasCoordinate": true,
+    "eventDate": "*,2020-03-03"
+   },
+   "status": "success",
+   "downloaded_at": "2026-04-25T00:03:06+00:00",
+   "rows": 33,
+   "format": "gbif_simple_csv",
+   "download_key": "0004055-260423192947929",
+   "doi": "10.15468/dl.njnmwj",
+   "predicates": [
+    "taxonKey = 8418047",
+    "country = CO",
+    "hasCoordinate = TRUE",
+    "eventDate <= 2020-03-03"
+   ]
+  }
+ ]
+}
