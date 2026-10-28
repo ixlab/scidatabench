@@ -1,5 +1,8 @@
 # SciDataBench
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23748379.svg)](https://doi.org/10.5281/zenodo.23748379)
+
+
 ![SciDataBench overview: each scenario comes from a published paper whose reported result is the answer key, and walks an agent through four phases (find identifiers, retrieve the data, preprocess, get the answer). Two scenario sets: SciDataBench with 245 scenarios and SciDataBench-Onboard with 210.](assets/overview.png)
 
 Can a language agent get the right data out of a real scientific data API?
@@ -229,7 +232,20 @@ supplementary/ supplementary material for the paper
 
 ## Citation
 
-[to be added]
+If you use SciDataBench, please cite:
+
+```bibtex
+@software{scidatabench,
+  author    = {Yoo, Hojin and Sokol, Eric and Laney, Christine and
+               Alhazmi, Hamoud and Berger-Wolf, Tanya and Nandi, Arnab},
+  title     = {SciDataBench: A Paper-Grounded Benchmark for Language
+               Agents on Scientific Data APIs},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23748379},
+  url       = {https://doi.org/10.5281/zenodo.23748379}
+}
+```
 
 ## License
 

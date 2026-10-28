@@ -30,3 +30,4 @@ repository-code: "https://github.com/ixlab/scidatabench"
 title: "SciDataBench: A Paper-Grounded Benchmark for Language Agents on Scientific Data APIs"
 version: "1.0.0"
 type: software
+doi: "10.5281/zenodo.23748379"
