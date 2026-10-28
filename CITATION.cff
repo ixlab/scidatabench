@@ -1,0 +1,32 @@
+abstract: >-
+  Data agents that acquire and analyze data on a user's behalf are becoming part of research workflows, including acquiring data from the scientific platforms that publish it. These platforms are reached through live APIs that require identifiers the user does not know and follow conventions that are rarely fully documented. Existing data agent benchmarks skip this step, beginning with the data already in hand. We introduce SciDataBench, a benchmark of scenarios drawn from 245 published papers over four scientific data platforms. Each paper's analysis uses only one platform's API, so its reported finding serves as ground truth. Each scenario is decomposed into four phases, from resolving the identifiers a call requires to computing the headline result, and retrieval is graded on the records a call returns, since a platform often offers several routes to the same data. A platform's conventions are shared by every request to it, so they can be written down once by a separate agent as a skill and reused, a step we term onboarding. SciDataBench-Onboard measures it with 210 scenarios on eleven further platforms. Against eight models and a human reference, we find that agents are limited by the platform rather than the model. On retrieval, the best model passes 46.5% of scenarios where the human reaches 86.9%, and most failures return the wrong table without raising an error. Once the data is in hand, token use grows with the number of repositories a platform serves, without a matching gain in accuracy. Onboarding lowers cost in every configuration we test, but its effect on retrieval depends on who writes the skill rather than who reads it. A skill written by the stronger of two models lifts retrieval by up to 10 points, while one written by the weaker leaves every reader worse off than no skill at all, by up to 18 points.
+authors:
+- family-names: "Yoo"
+  given-names: "Hojin"
+- family-names: "Sokol"
+  given-names: "Eric"
+- family-names: "Laney"
+  given-names: "Christine"
+- family-names: "Alhazmi"
+  given-names: "Hamoud"
+- family-names: "Berger-Wolf"
+  given-names: "Tanya"
+- family-names: "Nandi"
+  given-names: "Arnab"
+cff-version: 1.2.0
+date-released: "2026-10-28"
+identifiers:
+  - description: "The GitHub release URL of tag 1.0.0."
+    type: url
+    value: "https://github.com/ixlab/scidatabench/releases/tag/1.0.0"
+  - description: "The GitHub source tree URL aligned to release tag 1.0.0."
+    type: url
+    value: "https://github.com/ixlab/scidatabench/tree/1.0.0"
+keywords:
+  - "imageomics"
+license: "MIT"
+message: "If you find this work helpful in your research, please cite it."
+repository-code: "https://github.com/ixlab/scidatabench"
+title: "SciDataBench: A Paper-Grounded Benchmark for Language Agents on Scientific Data APIs"
+version: "1.0.0"
+type: software
