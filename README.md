@@ -240,3 +240,26 @@ supplementary/ supplementary material for the paper
   please cite SciDataBench when you do.
 - **Data you download** with `build_gold.py` or by running the benchmark
   remains under each data platform's own terms.
+
+## Funding and acknowledgements
+
+This work was supported by the [Imageomics Institute](https://imageomics.org/),
+which is funded by the US National Science Foundation's Harnessing the Data
+Revolution (HDR) program under
+[Award #2118240](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2118240)
+(Imageomics: A New Frontier of Biological Information Powered by
+Knowledge-Guided Machine Learning), and by the
+[FAIR4AI-Bio](https://github.com/FAIR4AI-Bio) initiative, funded by the NSF
+Findable Accessible Interoperable Reusable Open Science (FAIROS) program under
+[Award #2531922](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2531922)
+(Collaborative Research: Disciplinary Improvements: AI-ready Ecology and
+Biodiversity Data Infrastructure for Open Science).
+
+This material is based in part upon work supported by the
+[National Ecological Observatory Network (NEON)](https://www.neonscience.org),
+a program sponsored by the U.S. National Science Foundation (NSF) and operated
+under cooperative agreement by Battelle.
+
+Any opinions, findings and conclusions or recommendations expressed in this
+material are those of the author(s) and do not necessarily reflect the views
+of the National Science Foundation.
