@@ -243,7 +243,7 @@ If you use SciDataBench, please cite:
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.23748379},
-  url       = {https://doi.org/10.5281/zenodo.23748379}
+  url       = {https://github.com/ixlab/scidatabench}
 }
 ```
 
