@@ -1,4 +1,9 @@
-# SciDataBench
+<h1>
+  SciDataBench
+  <a href="https://www.neonscience.org"><img align="right" height="44" hspace="6" src="assets/logos/nsf-neon.png" alt="NSF NEON, operated by Battelle"></a>
+  <a href="https://www.osu.edu"><img align="right" height="48" hspace="6" src="assets/logos/osu.png" alt="The Ohio State University"></a>
+  <a href="https://imageomics.org"><img align="right" height="48" hspace="6" src="assets/logos/imageomics.png" alt="Imageomics Institute"></a>
+</h1>
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23748379.svg)](https://doi.org/10.5281/zenodo.23748379)
 
