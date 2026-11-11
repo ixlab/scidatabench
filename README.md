@@ -28,12 +28,21 @@ the same four phases:
 Every scenario comes from a different published paper — **455 papers** in
 all, listed in [PAPERS.md](PAPERS.md). There are two scenario sets:
 
-- **SciDataBench** — 245 scenarios from **245 papers** on NEON, GBIF, USGS and
-  EPA AQS, all four phases ([list](PAPERS.md#scidatabench)).
+- **SciDataBench** — 245 scenarios from **245 papers** on the National
+  Ecological Observatory Network (NEON), the Global Biodiversity Information
+  Facility (GBIF), the U.S. Geological Survey (USGS) Water Data, and the U.S.
+  Environmental Protection Agency Air Quality System (EPA AQS), all four
+  phases ([list](PAPERS.md#scidatabench)).
 - **SciDataBench-Onboard** — 210 scenarios from **210 papers** on eleven
-  other platforms (Argo, American Community Survey, CMIP6, Ensembl,
-  iNaturalist, Materials Project, NOAA GHCN, OBIS, PANGAEA, USGS Earthquake
-  Catalog, VizieR), phases 1 and 2 ([list](PAPERS.md#scidatabench-onboard)).
+  other platforms (Argo, American Community Survey (ACS), Coupled Model
+  Intercomparison Project Phase 6 (CMIP6), Ensembl, iNaturalist, Materials
+  Project, National Oceanic and Atmospheric Administration Global Historical
+  Climatology Network (NOAA GHCN), Ocean Biodiversity Information System
+  (OBIS), PANGAEA, USGS Earthquake Catalog, VizieR), phases 1 and 2
+  ([list](PAPERS.md#scidatabench-onboard)).
+
+The scenario files and their fields are described in the
+[dataset card](data/README.md).
 
 The paper's supplementary material (grading specifications, threshold
 sensitivity, pricing and per-model results) is in
@@ -84,7 +93,12 @@ commands — see [Grading phase 2](#grading-phase-2).
 ## Running the full benchmark
 
 Phases 3 and 4 work on data that has already been downloaded, so they need the
-**gold snapshot** first (see [Gold snapshots](#gold-snapshots)). Then:
+**gold snapshot**[^gold] first (see [Gold snapshots](#gold-snapshots)). Then:
+
+[^gold]: *Gold* (also called ground truth) refers to the reference output for a
+    phase, against which an agent's output is graded. The *gold snapshot* is the
+    data returned by each scenario's gold (reference) API calls: phases 3 and 4
+    work on it, and phase 2 is graded against it.
 
 ```bash
 python scripts/run_eval.py --model gemini-3-flash-preview --run-id my_run
@@ -227,7 +241,8 @@ needs `bwrap` installed and an existing, unused directory as the parent of
 ## What's in the repository
 
 ```
-data/          the scenarios (one JSON file each) and their source papers
+data/          the scenarios (one JSON file each), lists of their source
+               papers, and the dataset card
 PAPERS.md      the 455 source papers, with DOIs
 skills/        platform guides for SciDataBench-Onboard
 harness/       the task agent: prompts, tools, runner
@@ -240,7 +255,10 @@ supplementary/ supplementary material for the paper
 
 ## Citation
 
-If you use SciDataBench, please cite:
+If you use SciDataBench, please cite the repository, as below, and cite the
+source papers of any scenarios you report on individually (see
+[PAPERS.md](PAPERS.md)) and attribute any platform data you publish as
+described in the [dataset card](data/README.md#licensing-information).
 
 ```bibtex
 @software{scidatabench,
@@ -263,7 +281,9 @@ If you use SciDataBench, please cite:
   [CC BY 4.0](data/LICENSE). You are free to use, share and adapt them;
   please cite SciDataBench when you do.
 - **Data you download** with `build_gold.py` or by running the benchmark
-  remains under each data platform's own terms.
+  remains under each data platform's own terms. See the
+  [dataset card](data/README.md#licensing-information) for how to attribute
+  it.
 
 ## Funding and acknowledgements
 

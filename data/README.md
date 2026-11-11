@@ -17,7 +17,7 @@ tags:
 - environmental-science
 size_categories:
 - n<1K
-description: SciDataBench is a benchmark of research requests drawn from published papers for evaluating whether language agents can find, retrieve, and analyze data from live scientific data APIs (NEON, GBIF, USGS, EPA AQS, and eleven further platforms).
+description: SciDataBench is a benchmark of research requests drawn from published papers for evaluating whether language agents can find, retrieve, and analyze data from live scientific data APIs in ecology, biodiversity, environmental science, and other fields.
 ---
 
 # Dataset Card for SciDataBench
@@ -44,17 +44,19 @@ The release contains three scenario sets:
 
 | Set | Folder | Platforms | Phases | Scenarios |
 |---|---|---|---|---:|
-| SciDataBench | `scidatabench/` | NEON, GBIF, USGS Water Data, EPA AQS | 1 to 4 | 245 |
-| SciDataBench-Onboard | `scidatabench-onboard/` | Argo, American Community Survey, CMIP6, Ensembl, iNaturalist, Materials Project, NOAA GHCN, OBIS, PANGAEA, USGS Earthquake Catalog, VizieR | 1 and 2 | 210 |
+| SciDataBench | `scidatabench/` | National Ecological Observatory Network (NEON), Global Biodiversity Information Facility (GBIF), U.S. Geological Survey (USGS) Water Data, U.S. Environmental Protection Agency Air Quality System (EPA AQS) | 1 to 4 | 245 |
+| SciDataBench-Onboard | `scidatabench-onboard/` | Argo, American Community Survey (ACS), Coupled Model Intercomparison Project Phase 6 (CMIP6), Ensembl, iNaturalist, Materials Project, National Oceanic and Atmospheric Administration Global Historical Climatology Network (NOAA GHCN), Ocean Biodiversity Information System (OBIS), PANGAEA, USGS Earthquake Catalog, VizieR | 1 and 2 | 210 |
 | Perturbations | `perturbations/` | Same as SciDataBench | One phase per set | 391 |
 
-**These files do not contain observational data from the platforms.** A scenario records the request, the gold platform identifiers, the gold API calls, and the gold numeric answers. The observational data itself is downloaded from each platform's live API when the benchmark is run (see [Gold snapshots](https://github.com/ixlab/scidatabench#gold-snapshots)) and remains under that platform's own terms.
+**These files do not contain observational data from the platforms.** A scenario records the request, the gold[^gold] platform identifiers, the gold API calls, and the gold numeric answers. The observational data itself is downloaded from each platform's live API when the benchmark is run (see [Gold snapshots](https://github.com/ixlab/scidatabench#gold-snapshots)) and remains under that platform's own terms.
+
+[^gold]: *Gold* (also called ground truth) refers to the reference output for a phase, against which an agent's output is graded. Gold outputs were validated by the authors against the source paper and the live API.
 
 ### Supported Tasks and Leaderboards
 
 SciDataBench is an evaluation-only benchmark for language agents that use tools to access scientific data. Each phase is graded by a binary pass criterion:
 
-- **Phase 1:** mean per-key F1 between the agent's identifiers and the gold identifiers.
+- **Phase 1:** mean per-key F1 score (the harmonic mean of precision and recall) between the agent's identifiers and the gold identifiers.
 - **Phase 2:** the agent's calls are executed against the live platform, and the returned records are compared with those of the gold calls (record coverage, value agreement, time coverage, and an upper bound on result size).
 - **Phases 3 and 4:** the agent's number must fall within a 5% relative tolerance of the gold value.
 
@@ -65,13 +67,14 @@ The evaluation harness and graders are in the [repository](https://github.com/ix
 ```
 data/
     scidatabench/
-        epa/  gbif/  neon/  usgs/
+        # platforms: epa, gbif, neon, usgs
+        <platform>/
             <scenario>.json
         papers.csv
         README.md
     scidatabench-onboard/
-        argo/  census_acs/  cmip6/  ensembl/  inaturalist/  matproj/
-        noaa_ghcn/  obis/  pangaea/  usgs_eq/  vizier/
+        # platforms: argo, census_acs, cmip6, ensembl, inaturalist, matproj, noaa_ghcn, obis, pangaea, usgs_eq, vizier
+        <platform>/
             <scenario>.json
         papers.csv
         README.md
@@ -184,11 +187,11 @@ The platforms are live services whose holdings change over time: records are add
 
 ### Recommendations
 
-Report results per phase rather than as a single end-to-end score, since each phase starts from the gold output of the previous one. When comparing with the paper, align the downloaded data with `snapshots/`. Keep the evaluation sandbox enabled so agents cannot read gold answers from the scenario files.
+Report results per phase rather than as a single end-to-end score. Each phase is given the gold output of the previous phase as its input, rather than the agent's own output, so an error in one phase does not carry over to the next and each failure is attributed to a single phase. When comparing with the paper, align the downloaded data with `snapshots/`. Keep the evaluation sandbox enabled so agents cannot read gold answers from the scenario files.
 
 ## Licensing Information
 
-The scenario files, `papers.csv`, and the perturbation sets in this folder are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). If you use them, please cite SciDataBench as shown below.
+The scenario files, `papers.csv`, and the perturbation sets in this folder are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). If you use them, please cite SciDataBench as described in [Citation](#citation).
 
 This license covers the benchmark files only. **Data downloaded from the platforms** (for example with `build_gold.py` or by running the benchmark) is not part of this dataset and remains under each platform's own terms. If you publish work that uses that data, attribute it according to the platform's citation guidelines:
 
@@ -205,7 +208,7 @@ The code in the repository (`harness/`, `grading/`, `executor/`, `scripts/`) is 
 
 ## Citation
 
-If you use SciDataBench, please cite:
+If you use SciDataBench, please cite the repository, as below, and cite the source papers of any scenarios you report on individually (see `papers.csv`) and attribute any platform data you publish as described in [Licensing Information](#licensing-information).
 
 **BibTeX:**
 
@@ -220,7 +223,7 @@ If you use SciDataBench, please cite:
 }
 ```
 
-A paper citation will be added once the paper is public. Please also cite the source papers of any scenarios you report on individually (see `papers.csv`) and attribute any platform data you publish as described in [Licensing Information](#licensing-information).
+A paper citation will be added once the paper is public.
 
 ## Acknowledgements
 
@@ -232,6 +235,7 @@ Any opinions, findings and conclusions or recommendations expressed in this mate
 
 ## Glossary
 
+- **Gold:** the reference output for a phase, against which an agent's output is graded (also called ground truth).
 - **Scenario:** one research request built from one published paper, with gold outputs for each phase.
 - **Platform:** a scientific data service reached through a live API (for example, NEON or GBIF).
 - **Gold call:** the reference API call whose returned records define the correct Phase 2 result.
